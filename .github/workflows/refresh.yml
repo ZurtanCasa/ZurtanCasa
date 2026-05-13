@@ -23,14 +23,14 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests google-ads google-analytics-data twilio anthropic
+          pip install requests google-ads google-analytics-data twilio anthropic openpyxl playwright
+          playwright install chromium --with-deps
 
-      - name: Fetch contable locales
+      - name: Fetch contable locales (Zeta Software)
         continue-on-error: true
         env:
           ZETA_USER: ${{ secrets.ZETA_USER }}
           ZETA_PASS: ${{ secrets.ZETA_PASS }}
-          ZETA_BASE_URL: ${{ secrets.ZETA_BASE_URL }}
         run: python scripts/scrape_contable.py
 
       - name: Fetch Shopify
