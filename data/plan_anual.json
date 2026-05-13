@@ -1,0 +1,30 @@
+{
+  "_instrucciones": "Completar con datos reales. monthly_share debe sumar 1.0 por local/canal.",
+  "anio": 2026,
+  "target_anual_usd": 0,
+  "split_canales": {
+    "fisico_pct": 0,
+    "web_pct": 0,
+    "marketplace_pct": 0
+  },
+  "targets_por_canal": {
+    "fisico": 0,
+    "web": 0,
+    "marketplace": 0
+  },
+  "targets_por_local": {
+    "juan_b_alberdi": {
+      "anual_usd": 0,
+      "monthly_share": {
+        "1": 0.083, "2": 0.083, "3": 0.083, "4": 0.083,
+        "5": 0.083, "6": 0.083, "7": 0.083, "8": 0.083,
+        "9": 0.083, "10": 0.083, "11": 0.083, "12": 0.087
+      }
+    }
+  },
+  "presupuesto_ads_anual_usd": 0,
+  "split_ads": {
+    "meta_pct": 0.5,
+    "google_pct": 0.5
+  }
+}

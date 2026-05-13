@@ -1,0 +1,12 @@
+{
+  "_status": "sin_datos",
+  "_ultima_actualizacion": null,
+  "mes_actual": {
+    "orders_count": 0,
+    "revenue_bruto": 0,
+    "revenue_neto_post_comision": 0,
+    "comision_pagada": 0,
+    "aov": 0
+  },
+  "historico_mensual": []
+}

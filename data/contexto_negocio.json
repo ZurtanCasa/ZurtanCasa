@@ -1,0 +1,46 @@
+{
+  "marca": "ZurtanCasa",
+  "rubro": "Decoración - Alfombras y muebles",
+  "pais": "Uruguay",
+  "moneda_principal": "USD",
+  "factor_iva_real": 0.22,
+  "margen_neto_pct": 0.28,
+  "comision_marketplace_pct": 0.17,
+  "breakeven_mensual": {
+    "usd": 13000,
+    "uyu": 0,
+    "nota": "Actualizar UYU según tipo de cambio vigente"
+  },
+  "canales": ["local_fisico", "web", "mercadolibre"],
+  "locales": [
+    {
+      "id": "juan_b_alberdi",
+      "nombre": "Zurtan Casa - Juan B Alberdi 6280",
+      "apertura": "2020-01-01",
+      "meses_temporada_alta": [],
+      "es_estacional": false,
+      "consistente_todo_el_anio": true
+    }
+  ],
+  "meses_temporada_especial": [5, 11],
+  "promo_activa_actual": {
+    "activa": true,
+    "descripcion": "Revisar mensualmente",
+    "impacto_aov": "bajo_esperado"
+  },
+  "tipos_de_campana": {
+    "performance": ["compra", "conversion", "ventas", "catalogo", "shopping", "pmax"],
+    "alcance": ["awareness", "alcance", "branding", "brand", "reach", "video_views", "engagement", "trafico", "traffic"]
+  },
+  "equipo": [
+    { "nombre": "Gerardo", "rol": "Dueño", "decide_sin_aprobacion": ["estrategia", "inversiones_grandes", "personal"] },
+    { "nombre": "Ignacio", "rol": "Marketing - Vendedor", "decide_sin_aprobacion": ["contenido", "campanas_ads", "vendedor_web"] },
+    { "nombre": "Clara", "rol": "Community Manager - Vendedora", "decide_sin_aprobacion": ["redes_sociales", "atencion_cliente_online"] },
+    { "nombre": "Maria", "rol": "Vendedora", "decide_sin_aprobacion": ["ventas_local"] },
+    { "nombre": "Nicolas", "rol": "Mejora continua, sistemas, logistica", "decide_sin_aprobacion": ["sistemas", "logistica", "procesos"] }
+  ],
+  "reglas_ceo": {
+    "priorizar": ["breakeven_primero", "tendencia_yoy", "roas_performance_no_alcance", "acciones_concretas_con_responsable"],
+    "nunca_decir": ["inventar_datos", "alertar_locales_estacionales_en_off_season", "juzgar_roas_campanas_alcance", "alertar_aov_bajo_si_promo_activa"]
+  }
+}

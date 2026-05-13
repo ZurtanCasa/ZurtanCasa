@@ -1,0 +1,12 @@
+{
+  "_status": "sin_datos",
+  "_ultima_actualizacion": null,
+  "locales": [
+    {
+      "id": "juan_b_alberdi",
+      "nombre": "Juan B Alberdi 6280",
+      "mes_actual": { "revenue": 0, "orders_count": 0 },
+      "historico_mensual": []
+    }
+  ]
+}

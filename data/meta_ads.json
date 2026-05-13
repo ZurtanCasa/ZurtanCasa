@@ -1,0 +1,12 @@
+{
+  "_status": "sin_datos",
+  "_ultima_actualizacion": null,
+  "periodos": {
+    "today": { "spend": 0, "revenue_reportado": 0, "roas": 0, "conversiones": 0, "impressions": 0, "clicks": 0 },
+    "yesterday": { "spend": 0, "revenue_reportado": 0, "roas": 0, "conversiones": 0, "impressions": 0, "clicks": 0 },
+    "last_7d": { "spend": 0, "revenue_reportado": 0, "roas": 0, "conversiones": 0, "impressions": 0, "clicks": 0 },
+    "last_30d": { "spend": 0, "revenue_reportado": 0, "roas": 0, "conversiones": 0, "impressions": 0, "clicks": 0 }
+  },
+  "campanas": [],
+  "historico_mensual": []
+}

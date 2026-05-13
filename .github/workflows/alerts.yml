@@ -1,0 +1,32 @@
+name: WhatsApp Alerts
+
+on:
+  schedule:
+    - cron: '0 12 * * *'   # 09:00 UY
+    - cron: '0 21 * * *'   # 18:00 UY
+  workflow_dispatch:
+
+jobs:
+  alerts:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install requests twilio anthropic
+
+      - name: Send alerts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH_TOKEN }}
+          TWILIO_FROM_WA: ${{ secrets.TWILIO_FROM_WA }}
+          TWILIO_TO_WA: ${{ secrets.TWILIO_TO_WA }}
+          TWILIO_TEMPLATE_SID: ${{ secrets.TWILIO_TEMPLATE_SID }}
+        run: python scripts/alerts.py

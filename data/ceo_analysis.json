@@ -1,0 +1,22 @@
+{
+  "_ultima_actualizacion": null,
+  "estado_general": "🟡",
+  "headline": "Dashboard configurándose — en breve tendrás análisis en tiempo real",
+  "carta_ceo": [
+    "El sistema está siendo configurado con las integraciones de tus canales de venta.",
+    "Una vez conectadas Shopify, MercadoLibre, Meta y Google Ads, este análisis se generará automáticamente 3 veces por día.",
+    "El breakeven mensual es USD 13.000. Cada análisis te dirá con claridad si estás en camino o no."
+  ],
+  "insight_del_dia": "Configura tus integraciones para empezar a recibir análisis reales.",
+  "que_viene_bien": [],
+  "que_hay_que_corregir": [],
+  "acciones_priorizadas": [
+    { "accion": "Conectar Shopify", "responsable": "Nicolas", "impacto": "Datos de ventas web en tiempo real", "severidad": "alta" },
+    { "accion": "Conectar MercadoLibre", "responsable": "Nicolas", "impacto": "Datos marketplace", "severidad": "alta" },
+    { "accion": "Conectar Meta Ads", "responsable": "Ignacio", "impacto": "ROAS real de campañas", "severidad": "alta" },
+    { "accion": "Conectar Google Ads", "responsable": "Ignacio", "impacto": "ROAS real de campañas", "severidad": "alta" },
+    { "accion": "Completar plan_anual.json", "responsable": "Gerardo", "impacto": "Breakeven y targets con contexto real", "severidad": "media" }
+  ],
+  "preguntas_para_pensar": ["¿Cuál es el target anual para 2026?", "¿Qué porcentaje de ventas viene de cada canal?"],
+  "outlook_proximo_mes": "Pendiente de datos"
+}

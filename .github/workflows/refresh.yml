@@ -1,0 +1,90 @@
+name: Refresh Dashboard Data
+
+on:
+  schedule:
+    - cron: '0 11 * * *'   # 08:00 UY (UTC-3)
+    - cron: '0 16 * * *'   # 13:00 UY
+    - cron: '0 23 * * *'   # 20:00 UY
+  workflow_dispatch:
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: |
+          pip install requests google-ads google-analytics-data twilio anthropic
+
+      - name: Fetch contable locales
+        continue-on-error: true
+        env:
+          ZETA_USER: ${{ secrets.ZETA_USER }}
+          ZETA_PASS: ${{ secrets.ZETA_PASS }}
+          ZETA_BASE_URL: ${{ secrets.ZETA_BASE_URL }}
+        run: python scripts/scrape_contable.py
+
+      - name: Fetch Shopify
+        continue-on-error: true
+        env:
+          SHOPIFY_STORE_URL: ${{ secrets.SHOPIFY_STORE_URL }}
+          SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ACCESS_TOKEN }}
+        run: python scripts/fetch_shopify.py
+
+      - name: Fetch MercadoLibre
+        continue-on-error: true
+        env:
+          ML_CLIENT_ID: ${{ secrets.ML_CLIENT_ID }}
+          ML_CLIENT_SECRET: ${{ secrets.ML_CLIENT_SECRET }}
+          ML_REFRESH_TOKEN: ${{ secrets.ML_REFRESH_TOKEN }}
+        run: python scripts/fetch_ml.py
+
+      - name: Fetch Meta Ads
+        continue-on-error: true
+        env:
+          META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
+          META_ACCOUNT_ID: ${{ secrets.META_ACCOUNT_ID }}
+        run: python scripts/fetch_meta.py
+
+      - name: Fetch Google Ads
+        continue-on-error: true
+        env:
+          GOOGLE_ADS_DEVELOPER_TOKEN: ${{ secrets.GOOGLE_ADS_DEVELOPER_TOKEN }}
+          GOOGLE_ADS_CLIENT_ID: ${{ secrets.GOOGLE_ADS_CLIENT_ID }}
+          GOOGLE_ADS_CLIENT_SECRET: ${{ secrets.GOOGLE_ADS_CLIENT_SECRET }}
+          GOOGLE_ADS_REFRESH_TOKEN: ${{ secrets.GOOGLE_ADS_REFRESH_TOKEN }}
+          GOOGLE_ADS_MANAGER_ID: ${{ secrets.GOOGLE_ADS_MANAGER_ID }}
+          GOOGLE_ADS_ACCOUNT_ID: ${{ secrets.GOOGLE_ADS_ACCOUNT_ID }}
+        run: python scripts/fetch_google_ads.py
+
+      - name: Fetch GA4
+        continue-on-error: true
+        env:
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+        run: |
+          echo "$GA4_SERVICE_ACCOUNT_JSON" > /tmp/ga4_sa.json
+          GA4_SERVICE_ACCOUNT_JSON=/tmp/ga4_sa.json python scripts/fetch_ga4.py
+
+      - name: Analyze CEO
+        continue-on-error: true
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/analyze_ceo.py
+
+      - name: Commit data
+        run: |
+          git config user.name "zurtancasa-bot"
+          git config user.email "bot@zurtancasa.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "chore: refresh data $(TZ='America/Montevideo' date '+%Y-%m-%d %H:%M UY')"
+          git push
