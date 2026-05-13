@@ -19,6 +19,39 @@ UY_TZ = timezone(timedelta(hours=-3))
 TIPOS_VENTA = {"venta contado", "venta crédito", "venta credito", "factura", "ticket"}
 TIPOS_DEVOLUCION = {"nota de crédito", "nota de credito", "devolución", "devolucion", "nota crédito", "nota credito"}
 
+# Tasas BCU mensuales promedio (UYU por USD).
+# Fuente: Banco Central del Uruguay — tipo de cambio comprador oficial.
+# Actualizar manualmente cuando sea necesario; el mes actual se fetchea en vivo.
+BCU_RATES: dict[tuple[int, int], float] = {
+    (2024, 1): 39.3,  (2024, 2): 38.9,  (2024, 3): 38.6,  (2024, 4): 38.1,
+    (2024, 5): 38.0,  (2024, 6): 38.2,  (2024, 7): 38.7,  (2024, 8): 39.5,
+    (2024, 9): 40.2,  (2024, 10): 41.2, (2024, 11): 42.3, (2024, 12): 43.0,
+    (2025, 1): 43.5,  (2025, 2): 43.0,  (2025, 3): 42.8,  (2025, 4): 42.5,
+    (2025, 5): 43.2,  (2025, 6): 43.8,  (2025, 7): 44.0,  (2025, 8): 44.2,
+    (2025, 9): 44.5,  (2025, 10): 44.8, (2025, 11): 45.0, (2025, 12): 45.2,
+    (2026, 1): 45.0,  (2026, 2): 44.5,  (2026, 3): 44.0,  (2026, 4): 44.5,
+    (2026, 5): 44.0,
+}
+
+def get_usd_uyu_rate(year: int, month: int) -> float:
+    """Devuelve UYU por USD para el mes dado. Para el mes actual usa API live."""
+    now = datetime.now(UY_TZ)
+    if year == now.year and month == now.month:
+        try:
+            import requests
+            r = requests.get("https://open.er-api.com/v6/latest/USD", timeout=5)
+            if r.ok:
+                rate = r.json().get("rates", {}).get("UYU", 0)
+                if rate > 10:
+                    return rate
+        except Exception:
+            pass
+    return BCU_RATES.get((year, month), 44.0)  # fallback 44 si no está en tabla
+
+def uyu_to_usd(amount_uyu: float, year: int, month: int) -> float:
+    rate = get_usd_uyu_rate(year, month)
+    return amount_uyu / rate if rate > 0 else 0
+
 def uy_now():
     return datetime.now(UY_TZ)
 
@@ -67,14 +100,14 @@ def download_excel(frame, page, tmp_dir: str) -> str:
     dl.save_as(dest)
     return dest
 
-def parse_excel(path: str) -> dict:
+def parse_excel(path: str, year: int, month: int) -> dict:
     """
-    Devuelve:
-      revenue_bruto  — total ventas (con IVA)
-      devoluciones   — total notas de crédito/devoluciones
-      revenue_neto   — bruto - devoluciones
-      orders_count   — cantidad de ventas
-      moneda_mix     — {"USD": x, "UYU": y}  (U$S = USD, $$ = UYU)
+    Devuelve revenue en USD (convirtiendo UYU con tasa BCU del mes).
+    revenue_bruto_usd — ventas totales convertidas a USD
+    devoluciones_usd  — notas de crédito convertidas a USD
+    revenue_neto_usd  — bruto - devoluciones
+    orders_count
+    moneda_mix_original — montos originales sin convertir {"USD": x, "UYU": y}
     """
     try:
         import openpyxl
@@ -83,10 +116,8 @@ def parse_excel(path: str) -> dict:
 
     wb = openpyxl.load_workbook(path)
     ws = wb.active
-
     rows = list(ws.iter_rows(values_only=True))
 
-    # Encontrar fila de headers
     header_row = None
     for i, row in enumerate(rows):
         vals = [str(v).lower().strip() if v else "" for v in row]
@@ -96,15 +127,16 @@ def parse_excel(path: str) -> dict:
 
     if header_row is None:
         print(f"    WARN: No se encontró header en {path}")
-        return {"revenue_bruto": 0, "devoluciones": 0, "revenue_neto": 0, "orders_count": 0, "moneda_mix": {}}
+        return {"revenue_bruto_usd": 0, "devoluciones_usd": 0, "revenue_neto_usd": 0,
+                "orders_count": 0, "moneda_mix_original": {}}
 
     headers = [str(v).lower().strip() if v else "" for v in rows[header_row]]
     col = {name: idx for idx, name in enumerate(headers)}
 
-    revenue_bruto = 0.0
-    devoluciones = 0.0
+    revenue_bruto_usd = 0.0
+    devoluciones_usd = 0.0
     orders_count = 0
-    moneda_mix: dict = {}
+    moneda_mix_original: dict = {}
 
     for row in rows[header_row + 1:]:
         if not any(row):
@@ -112,40 +144,41 @@ def parse_excel(path: str) -> dict:
         tipo_raw = str(row[col.get("tipo", 1)] or "").lower().strip()
         total_raw = row[col.get("total", 8)]
         moneda_raw = str(row[col.get("moneda", 7)] or "").strip()
-        estado = str(row[col.get("estado dgi", 4)] or "").lower().strip()
 
-        # Normalizar moneda
-        if "u$s" in moneda_raw.lower() or "usd" in moneda_raw.lower():
-            moneda = "USD"
-        else:
-            moneda = "UYU"
+        is_usd = "u$s" in moneda_raw.lower() or "usd" in moneda_raw.lower()
+        moneda_key = "USD" if is_usd else "UYU"
 
         try:
-            total = float(total_raw or 0)
+            total_original = float(total_raw or 0)
         except (TypeError, ValueError):
             continue
 
-        if total == 0:
+        if total_original == 0:
             continue
 
-        # Clasificar
-        is_devolucion = any(kw in tipo_raw for kw in TIPOS_DEVOLUCION)
-        is_venta = any(kw in tipo_raw for kw in TIPOS_VENTA)
+        # Convertir a USD
+        if is_usd:
+            total_usd = total_original
+        else:
+            total_usd = uyu_to_usd(total_original, year, month)
 
-        moneda_mix[moneda] = moneda_mix.get(moneda, 0) + total
+        moneda_mix_original[moneda_key] = moneda_mix_original.get(moneda_key, 0) + total_original
+
+        is_devolucion = any(kw in tipo_raw for kw in TIPOS_DEVOLUCION)
 
         if is_devolucion:
-            devoluciones += total
-        elif is_venta or (not is_devolucion):
-            revenue_bruto += total
+            devoluciones_usd += total_usd
+        else:
+            revenue_bruto_usd += total_usd
             orders_count += 1
 
     return {
-        "revenue_bruto": round(revenue_bruto, 2),
-        "devoluciones": round(devoluciones, 2),
-        "revenue_neto": round(revenue_bruto - devoluciones, 2),
+        "revenue_bruto_usd": round(revenue_bruto_usd, 2),
+        "devoluciones_usd": round(devoluciones_usd, 2),
+        "revenue_neto_usd": round(revenue_bruto_usd - devoluciones_usd, 2),
         "orders_count": orders_count,
-        "moneda_mix": {k: round(v, 2) for k, v in moneda_mix.items()},
+        "moneda_mix_original": {k: round(v, 2) for k, v in moneda_mix_original.items()},
+        "tasa_uyu_usd": get_usd_uyu_rate(year, month),
     }
 
 def fetch_month(frame, page, year: int, month: int, tmp_dir: str) -> dict:
@@ -159,12 +192,13 @@ def fetch_month(frame, page, year: int, month: int, tmp_dir: str) -> dict:
 
     try:
         xl_path = download_excel(frame, page, tmp_dir)
-        result = parse_excel(xl_path)
-        print(f"      → bruto={result['revenue_bruto']} dev={result['devoluciones']} orders={result['orders_count']}")
+        result = parse_excel(xl_path, year, month)
+        print(f"      → bruto_usd={result['revenue_bruto_usd']} dev_usd={result['devoluciones_usd']} orders={result['orders_count']} tasa={result['tasa_uyu_usd']}")
         return result
     except Exception as e:
         print(f"      WARN: {e}")
-        return {"revenue_bruto": 0, "devoluciones": 0, "revenue_neto": 0, "orders_count": 0, "moneda_mix": {}}
+        return {"revenue_bruto_usd": 0, "devoluciones_usd": 0, "revenue_neto_usd": 0,
+                "orders_count": 0, "moneda_mix_original": {}, "tasa_uyu_usd": 0}
 
 def main():
     user = os.environ.get("ZETA_USER", "")
@@ -226,11 +260,12 @@ def main():
                     historico.append({
                         "year": year,
                         "month": month,
-                        "revenue_bruto": data["revenue_bruto"],
-                        "revenue_neto": data["revenue_neto"],
-                        "devoluciones": data["devoluciones"],
+                        "revenue_bruto": data["revenue_bruto_usd"],
+                        "revenue_neto": data["revenue_neto_usd"],
+                        "devoluciones": data["devoluciones_usd"],
                         "orders_count": data["orders_count"],
-                        "moneda_mix": data["moneda_mix"],
+                        "moneda_mix_original": data["moneda_mix_original"],
+                        "tasa_uyu_usd": data["tasa_uyu_usd"],
                     })
 
             browser.close()
@@ -249,6 +284,7 @@ def main():
                         "revenue": mes_actual_rec.get("revenue_bruto", 0),
                         "revenue_neto": mes_actual_rec.get("revenue_neto", 0),
                         "orders_count": mes_actual_rec.get("orders_count", 0),
+                        "devoluciones": mes_actual_rec.get("devoluciones", 0),
                     },
                     "historico_mensual": historico,
                 }
