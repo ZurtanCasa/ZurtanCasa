@@ -9,6 +9,7 @@ import RoasTab from "./tabs/RoasTab";
 import FunnelTab from "./tabs/FunnelTab";
 import LocalesTab from "./tabs/LocalesTab";
 import PlanTab from "./tabs/PlanTab";
+import ArticulosTab from "./tabs/ArticulosTab";
 import TutorialTab from "./tabs/TutorialTab";
 
 interface DashboardProps {
@@ -18,6 +19,7 @@ interface DashboardProps {
   google: any;
   ga4: any;
   locales: any;
+  articulos: any;
   plan: any;
   contexto: any;
   ceo: any;
@@ -31,6 +33,7 @@ const TAB_TITLES: Record<TabId, string> = {
   roas: "🎯 ROAS Triangulado",
   funnel: "🛒 Funnel & Marketplace",
   locales: "🏪 Locales Físicos",
+  articulos: "📦 Artículos & Categorías",
   plan: "📅 Plan vs Real",
   tutorial: "📚 Tutorial",
 };
@@ -62,7 +65,7 @@ function buildPlanRows(plan: any, shopify: any, ml: any, locales: any): any[] {
   });
 }
 
-export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, plan, contexto, ceo }: DashboardProps) {
+export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, articulos, plan, contexto, ceo }: DashboardProps) {
   const [tab, setTab] = useState<TabId>("ceo");
 
   const lastRefresh = ceo._ultima_actualizacion || shopify._ultima_actualizacion || null;
@@ -136,6 +139,7 @@ export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, lo
               sinDatos={sinDatosLocales}
             />
           )}
+          {tab === "articulos" && <ArticulosTab data={articulos} />}
           {tab === "plan" && (
             <PlanTab
               rows={planRows}
