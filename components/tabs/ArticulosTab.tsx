@@ -225,7 +225,7 @@ export default function ArticulosTab({ data }: Props) {
               </tr>
             </thead>
             <tbody>
-              {data.top_articulos.slice(0, 20).map((art, i) => {
+              {data.top_articulos.slice(0, 50).map((art, i) => {
                 const pct = totalRev > 0 ? art.revenue_usd / totalRev : 0;
                 const ticket = art.units > 0 ? art.revenue_usd / art.units : 0;
                 const color = catColor(art.categoria, Object.keys(CAT_COLORS).indexOf(art.categoria));

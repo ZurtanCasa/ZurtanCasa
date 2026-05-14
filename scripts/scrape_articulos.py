@@ -179,13 +179,13 @@ def parse_excel(path: str) -> list[dict]:
                 return row[col_idx]
             return None
 
-        nombre   = get(COL_NOMBRE)
+        nombre   = get(COL_NOMBRE) or get(COL_ARTICULO)  # fallback al código si el nombre está vacío
         categoria = get(COL_CATEGORIA)
         fecha    = get(COL_FECHA)
         cantidad = get(COL_CANTIDAD)
         total_usd = get(COL_TOTAL_USD)
 
-        # Filas de subtotal: sin nombre (solo tiene total)
+        # Filas de subtotal/totalizadoras: sin nombre ni código
         if not nombre:
             continue
 
@@ -269,7 +269,7 @@ def aggregate(records: list[dict]) -> dict:
     top_articulos = sorted(
         [{"articulo": k, **v} for k, v in por_articulo_total.items()],
         key=lambda x: x["revenue_usd"], reverse=True
-    )[:30]
+    )[:100]
 
     return {
         "por_anio_mes_categoria": por_periodo,
