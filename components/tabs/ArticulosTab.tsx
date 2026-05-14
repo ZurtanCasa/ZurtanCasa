@@ -48,14 +48,66 @@ function catColor(cat: string, idx: number) {
   return CAT_COLORS[cat] ?? `hsl(${(idx * 53) % 360},70%,55%)`;
 }
 
+function isExpandable(cat: string): boolean {
+  return /yute|lana|pet/i.test(cat);
+}
+
+function stripCode(name: string): string {
+  const idx = name.lastIndexOf(" - ");
+  return idx !== -1 ? name.substring(0, idx).trim() : name;
+}
+
+function parseArticle(name: string): { medida: string; color: string } {
+  const clean = stripCode(name);
+  const m = clean.match(/(\d+)\s*[xX]\s*(\d+)/);
+  if (!m) return { medida: "", color: "" };
+  const idx = clean.indexOf(m[0]);
+  const medida = `${m[1]} x ${m[2]}`;
+  const color = clean.substring(idx + m[0].length).trim();
+  return { medida, color };
+}
+
+interface MedidaGroup {
+  medida: string;
+  total_usd: number;
+  total_units: number;
+  colores: { color: string; revenue_usd: number; units: number }[];
+}
+
+function buildDrilldown(catName: string, articles: Articulo[]): MedidaGroup[] {
+  const filtered = articles.filter((a) => a.categoria === catName);
+  const groups: Record<string, Record<string, { revenue_usd: number; units: number }>> = {};
+
+  for (const a of filtered) {
+    const { medida, color } = parseArticle(a.articulo);
+    const m = medida || "(sin medida)";
+    const c = color || "(sin color)";
+    if (!groups[m]) groups[m] = {};
+    if (!groups[m][c]) groups[m][c] = { revenue_usd: 0, units: 0 };
+    groups[m][c].revenue_usd += a.revenue_usd;
+    groups[m][c].units += a.units;
+  }
+
+  return Object.entries(groups)
+    .map(([medida, cols]) => ({
+      medida,
+      total_usd: Object.values(cols).reduce((s, v) => s + v.revenue_usd, 0),
+      total_units: Object.values(cols).reduce((s, v) => s + v.units, 0),
+      colores: Object.entries(cols)
+        .map(([color, v]) => ({ color, ...v }))
+        .sort((a, b) => b.revenue_usd - a.revenue_usd),
+    }))
+    .sort((a, b) => b.total_usd - a.total_usd);
+}
+
 export default function ArticulosTab({ data }: Props) {
   const chartRef = useRef<HTMLCanvasElement>(null);
   const chartInst = useRef<any>(null);
   const [selectedYear, setSelectedYear] = useState<string>("todos");
+  const [expandedCat, setExpandedCat] = useState<string | null>(null);
 
   const years = Object.keys(data.por_anio_mes_categoria).sort();
 
-  // Calcular categorías filtradas por año
   const catData: Categoria[] = (() => {
     if (selectedYear === "todos") return data.top_categorias;
     const yearData = data.por_anio_mes_categoria[selectedYear] || {};
@@ -70,21 +122,6 @@ export default function ArticulosTab({ data }: Props) {
     return Object.entries(acc)
       .map(([categoria, v]) => ({ categoria, ...v }))
       .sort((a, b) => b.revenue_usd - a.revenue_usd);
-  })();
-
-  // Artículos filtrados por año
-  const artData: Articulo[] = (() => {
-    if (selectedYear === "todos") return data.top_articulos;
-    const yearData = data.por_anio_mes_categoria[selectedYear] || {};
-    const acc: Record<string, { revenue_usd: number; units: number; categoria: string }> = {};
-    for (const mes of Object.values(yearData)) {
-      for (const [cat, vals] of Object.entries(mes)) {
-        // We only have category-level data per period, not article-level per year
-        // Fall back to top_articulos filtered heuristically
-      }
-    }
-    // Can't filter top_articulos by year from current data structure — show all
-    return data.top_articulos;
   })();
 
   const totalRev = catData.reduce((s, c) => s + c.revenue_usd, 0);
@@ -115,17 +152,10 @@ export default function ArticulosTab({ data }: Props) {
         maintainAspectRatio: false,
         plugins: {
           legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: (ctx: any) => ` ${fmtUSD(ctx.raw)}`,
-            },
-          },
+          tooltip: { callbacks: { label: (ctx: any) => ` ${fmtUSD(ctx.raw)}` } },
         },
         scales: {
-          x: {
-            ticks: { color: "#6b7280", callback: (v: any) => "$" + (v / 1000).toFixed(0) + "k" },
-            grid: { color: "#1e2230" },
-          },
+          x: { ticks: { color: "#6b7280", callback: (v: any) => "$" + (v / 1000).toFixed(0) + "k" }, grid: { color: "#1e2230" } },
           y: { ticks: { color: "#e5e7eb", font: { size: 12 } }, grid: { color: "#1e2230" } },
         },
       },
@@ -146,6 +176,9 @@ export default function ArticulosTab({ data }: Props) {
     );
   }
 
+  const tdMuted: React.CSSProperties = { padding: "8px 10px", color: "var(--text-muted)", fontSize: 13 };
+  const tdVal: React.CSSProperties = { padding: "8px 10px", textAlign: "right", fontFamily: "monospace", fontSize: 13 };
+
   return (
     <div>
       {/* Filtro de año */}
@@ -158,16 +191,12 @@ export default function ArticulosTab({ data }: Props) {
           {["todos", ...years].map((y) => (
             <button
               key={y}
-              onClick={() => setSelectedYear(y)}
+              onClick={() => { setSelectedYear(y); setExpandedCat(null); }}
               style={{
-                padding: "4px 12px",
-                borderRadius: 6,
-                border: "1px solid var(--border)",
+                padding: "4px 12px", borderRadius: 6, border: "1px solid var(--border)",
                 background: selectedYear === y ? "var(--accent)" : "var(--card-bg)",
                 color: selectedYear === y ? "#fff" : "var(--text-muted)",
-                cursor: "pointer",
-                fontSize: 12,
-                fontWeight: selectedYear === y ? 600 : 400,
+                cursor: "pointer", fontSize: 12, fontWeight: selectedYear === y ? 600 : 400,
               }}
             >
               {y === "todos" ? "Todo" : y}
@@ -200,7 +229,7 @@ export default function ArticulosTab({ data }: Props) {
         </div>
       </div>
 
-      {/* Gráfico de categorías */}
+      {/* Gráfico */}
       <div className="card section mb-16">
         <div className="card-title">Facturado por categoría</div>
         <div className="chart-container" style={{ height: Math.max(200, catData.length * 44) }}>
@@ -208,58 +237,132 @@ export default function ArticulosTab({ data }: Props) {
         </div>
       </div>
 
-      {/* Tabla de top artículos */}
+      {/* Tabla de categorías con drill-down */}
       <div className="card section">
-        <div className="card-title mb-12">Top artículos — facturado histórico</div>
+        <div className="flex-between mb-12">
+          <div className="card-title" style={{ marginBottom: 0 }}>Detalle por categoría</div>
+          {selectedYear !== "todos" && (
+            <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
+              * El desglose por medida/color usa datos históricos completos
+            </span>
+          )}
+        </div>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead>
               <tr style={{ borderBottom: "1px solid var(--border)" }}>
-                <th style={{ textAlign: "left", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>#</th>
-                <th style={{ textAlign: "left", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Artículo</th>
-                <th style={{ textAlign: "left", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Categoría</th>
-                <th style={{ textAlign: "right", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Facturado</th>
-                <th style={{ textAlign: "right", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Unidades</th>
-                <th style={{ textAlign: "right", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Ticket</th>
-                <th style={{ textAlign: "left", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Participación</th>
+                <th style={{ textAlign: "left", padding: "6px 10px", color: "var(--text-muted)", fontWeight: 500 }}>Categoría</th>
+                <th style={{ textAlign: "right", padding: "6px 10px", color: "var(--text-muted)", fontWeight: 500 }}>Facturado</th>
+                <th style={{ textAlign: "right", padding: "6px 10px", color: "var(--text-muted)", fontWeight: 500 }}>Unidades</th>
+                <th style={{ textAlign: "right", padding: "6px 10px", color: "var(--text-muted)", fontWeight: 500 }}>Ticket</th>
+                <th style={{ textAlign: "left", padding: "6px 10px", color: "var(--text-muted)", fontWeight: 500 }}>Participación</th>
               </tr>
             </thead>
             <tbody>
-              {data.top_articulos.slice(0, 50).map((art, i) => {
-                const pct = totalRev > 0 ? art.revenue_usd / totalRev : 0;
-                const ticket = art.units > 0 ? art.revenue_usd / art.units : 0;
-                const color = catColor(art.categoria, Object.keys(CAT_COLORS).indexOf(art.categoria));
+              {catData.map((cat, i) => {
+                const color = catColor(cat.categoria, i);
+                const pct = totalRev > 0 ? cat.revenue_usd / totalRev : 0;
+                const ticket = cat.units > 0 ? cat.revenue_usd / cat.units : 0;
+                const expandable = isExpandable(cat.categoria);
+                const isOpen = expandedCat === cat.categoria;
+                const drilldown = isOpen ? buildDrilldown(cat.categoria, data.top_articulos) : [];
+
                 return (
-                  <tr key={art.articulo} style={{ borderBottom: "1px solid #1e2230" }}>
-                    <td style={{ padding: "8px 8px", color: "var(--text-muted)" }}>{i + 1}</td>
-                    <td style={{ padding: "8px 8px", fontWeight: 500 }}>{art.articulo}</td>
-                    <td style={{ padding: "8px 8px" }}>
-                      <span style={{
-                        background: color + "22",
-                        color,
-                        border: `1px solid ${color}44`,
-                        borderRadius: 4,
-                        padding: "2px 7px",
-                        fontSize: 11,
-                        fontWeight: 500,
-                      }}>
-                        {art.categoria}
-                      </span>
-                    </td>
-                    <td style={{ padding: "8px 8px", textAlign: "right", fontFamily: "monospace" }}>{fmtUSD(art.revenue_usd)}</td>
-                    <td style={{ padding: "8px 8px", textAlign: "right", color: "var(--text-muted)" }}>{art.units}</td>
-                    <td style={{ padding: "8px 8px", textAlign: "right", color: "var(--text-muted)", fontFamily: "monospace" }}>{fmtUSD(ticket)}</td>
-                    <td style={{ padding: "8px 8px", minWidth: 120 }}>
-                      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                        <div style={{ flex: 1, background: "#1e2230", borderRadius: 3, height: 6 }}>
-                          <div style={{ width: `${Math.min(pct * 100, 100)}%`, height: 6, borderRadius: 3, background: color }} />
+                  <>
+                    <tr
+                      key={cat.categoria}
+                      onClick={() => expandable && setExpandedCat(isOpen ? null : cat.categoria)}
+                      style={{
+                        borderBottom: isOpen ? "none" : "1px solid #1e2230",
+                        cursor: expandable ? "pointer" : "default",
+                        background: isOpen ? "#1a1f2e" : "transparent",
+                        transition: "background 0.15s",
+                      }}
+                    >
+                      <td style={{ padding: "10px 10px", fontWeight: 500, display: "flex", alignItems: "center", gap: 8 }}>
+                        <span style={{
+                          display: "inline-block", width: 10, height: 10, borderRadius: 2,
+                          background: color, flexShrink: 0,
+                        }} />
+                        <span>{cat.categoria}</span>
+                        {expandable && (
+                          <span style={{ fontSize: 10, color: "var(--text-muted)", marginLeft: 2 }}>
+                            {isOpen ? "▼" : "▶"}
+                          </span>
+                        )}
+                      </td>
+                      <td style={{ ...tdVal, fontWeight: 600 }}>{fmtUSD(cat.revenue_usd)}</td>
+                      <td style={tdMuted}>{cat.units}</td>
+                      <td style={tdMuted}>{fmtUSD(ticket)}</td>
+                      <td style={{ padding: "10px 10px", minWidth: 130 }}>
+                        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                          <div style={{ flex: 1, background: "#1e2230", borderRadius: 3, height: 6 }}>
+                            <div style={{ width: `${Math.min(pct * 100, 100)}%`, height: 6, borderRadius: 3, background: color }} />
+                          </div>
+                          <span style={{ fontSize: 11, color: "var(--text-muted)", width: 36, textAlign: "right" }}>
+                            {(pct * 100).toFixed(1)}%
+                          </span>
                         </div>
-                        <span style={{ fontSize: 11, color: "var(--text-muted)", width: 36, textAlign: "right" }}>
-                          {(pct * 100).toFixed(1)}%
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
+                      </td>
+                    </tr>
+
+                    {/* Drilldown por medida → color */}
+                    {isOpen && (
+                      <tr key={cat.categoria + "_drill"} style={{ borderBottom: "1px solid #1e2230" }}>
+                        <td colSpan={5} style={{ padding: "0 0 4px 0", background: "#1a1f2e" }}>
+                          {drilldown.length === 0 ? (
+                            <div style={{ padding: "12px 24px", color: "var(--text-muted)", fontSize: 12 }}>
+                              Sin datos de artículos para esta categoría en el histórico.
+                            </div>
+                          ) : (
+                            <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 12 }}>
+                              <thead>
+                                <tr style={{ borderBottom: "1px solid #2a3040" }}>
+                                  <th style={{ textAlign: "left", padding: "6px 10px 6px 32px", color: color, fontWeight: 600 }}>Medida</th>
+                                  <th style={{ textAlign: "left", padding: "6px 10px", color: "var(--text-muted)", fontWeight: 500 }}>Color</th>
+                                  <th style={{ textAlign: "right", padding: "6px 10px", color: "var(--text-muted)", fontWeight: 500 }}>Facturado</th>
+                                  <th style={{ textAlign: "right", padding: "6px 10px", color: "var(--text-muted)", fontWeight: 500 }}>Unidades</th>
+                                  <th style={{ textAlign: "right", padding: "6px 10px", color: "var(--text-muted)", fontWeight: 500 }}>Ticket</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {drilldown.map((grupo) =>
+                                  grupo.colores.map((c, ci) => (
+                                    <tr
+                                      key={grupo.medida + c.color}
+                                      style={{ borderBottom: "1px solid #232838" }}
+                                    >
+                                      <td style={{ padding: "7px 10px 7px 32px", fontWeight: ci === 0 ? 600 : 400, color: ci === 0 ? "#e5e7eb" : "transparent" }}>
+                                        {ci === 0 ? grupo.medida : ""}
+                                      </td>
+                                      <td style={{ padding: "7px 10px", color: "var(--text-muted)" }}>{c.color || "—"}</td>
+                                      <td style={{ padding: "7px 10px", textAlign: "right", fontFamily: "monospace" }}>{fmtUSD(c.revenue_usd)}</td>
+                                      <td style={{ padding: "7px 10px", textAlign: "right", color: "var(--text-muted)" }}>{c.units}</td>
+                                      <td style={{ padding: "7px 10px", textAlign: "right", color: "var(--text-muted)", fontFamily: "monospace" }}>
+                                        {c.units > 0 ? fmtUSD(c.revenue_usd / c.units) : "—"}
+                                      </td>
+                                    </tr>
+                                  ))
+                                )}
+                                {/* Total del grupo */}
+                                <tr style={{ borderTop: "1px solid #2a3040", background: "#151924" }}>
+                                  <td style={{ padding: "7px 10px 7px 32px", fontWeight: 600, color: color }}>Total</td>
+                                  <td />
+                                  <td style={{ padding: "7px 10px", textAlign: "right", fontFamily: "monospace", fontWeight: 600, color: color }}>
+                                    {fmtUSD(drilldown.reduce((s, g) => s + g.total_usd, 0))}
+                                  </td>
+                                  <td style={{ padding: "7px 10px", textAlign: "right", fontWeight: 600, color: color }}>
+                                    {drilldown.reduce((s, g) => s + g.total_units, 0)}
+                                  </td>
+                                  <td />
+                                </tr>
+                              </tbody>
+                            </table>
+                          )}
+                        </td>
+                      </tr>
+                    )}
+                  </>
                 );
               })}
             </tbody>
