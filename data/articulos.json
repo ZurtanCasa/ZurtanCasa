@@ -1,0 +1,954 @@
+{
+  "_status": "ok",
+  "_ultima_actualizacion": "2026-05-14T12:00:14.670841-03:00",
+  "_rango": "01/01/24 → 14/05/26",
+  "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
+  "por_anio_mes_categoria": {
+    "2025": {
+      "5": {
+        "Muebles": {
+          "revenue_usd": -4684.86,
+          "units": -12
+        },
+        "Alfombra persa": {
+          "revenue_usd": 31920.11,
+          "units": 25
+        },
+        "Pura Lana": {
+          "revenue_usd": 8614.75,
+          "units": 11
+        },
+        "Sin categoría": {
+          "revenue_usd": 126.23,
+          "units": 1
+        },
+        "Yute y Lana": {
+          "revenue_usd": 5338.11,
+          "units": 6
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 5889.76,
+          "units": 15
+        }
+      },
+      "8": {
+        "Muebles": {
+          "revenue_usd": 4268.69,
+          "units": 9
+        },
+        "Alfombra persa": {
+          "revenue_usd": 5493.44,
+          "units": 10
+        },
+        "Yute y Lana": {
+          "revenue_usd": 604.1,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 3255.74,
+          "units": 7
+        }
+      },
+      "9": {
+        "Muebles": {
+          "revenue_usd": 1439.51,
+          "units": 6
+        },
+        "Alfombra persa": {
+          "revenue_usd": 13476.25,
+          "units": 14
+        },
+        "Exterior Pet": {
+          "revenue_usd": 487.7,
+          "units": 1
+        },
+        "Pura Lana": {
+          "revenue_usd": 688.52,
+          "units": 5
+        },
+        "Sin categoría": {
+          "revenue_usd": 87.7,
+          "units": 1
+        },
+        "Yute y Lana Diseño": {
+          "revenue_usd": 602.46,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 6077.88,
+          "units": 10
+        }
+      },
+      "7": {
+        "Alfombra persa": {
+          "revenue_usd": 14208.19,
+          "units": 16
+        },
+        "Muebles": {
+          "revenue_usd": 1732.78,
+          "units": 2
+        },
+        "Exterior Pet": {
+          "revenue_usd": 1204.07,
+          "units": 2
+        },
+        "Pura Lana": {
+          "revenue_usd": 3795.89,
+          "units": 6
+        },
+        "Yute y Lana": {
+          "revenue_usd": 3527.87,
+          "units": 5
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 3852.45,
+          "units": 5
+        }
+      },
+      "11": {
+        "Alfombra persa": {
+          "revenue_usd": 46513.92,
+          "units": 44
+        },
+        "Muebles": {
+          "revenue_usd": 1566.4,
+          "units": 3
+        },
+        "Exterior Pet": {
+          "revenue_usd": 2239.35,
+          "units": 4
+        },
+        "Sin categoría": {
+          "revenue_usd": 309.01,
+          "units": 2
+        },
+        "Pura Lana": {
+          "revenue_usd": 4314.75,
+          "units": 10
+        },
+        "Yute y Lana": {
+          "revenue_usd": 2931.15,
+          "units": 5
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 17924.61,
+          "units": 26
+        }
+      },
+      "10": {
+        "Alfombra persa": {
+          "revenue_usd": 2929.51,
+          "units": 3
+        },
+        "Exterior Pet": {
+          "revenue_usd": 836.07,
+          "units": 1
+        },
+        "Pura Lana": {
+          "revenue_usd": -495.08,
+          "units": -1
+        },
+        "Sin categoría": {
+          "revenue_usd": 134.43,
+          "units": 1
+        },
+        "Yute y Lana": {
+          "revenue_usd": 442.62,
+          "units": 3
+        },
+        "Yute y Lana Diseño": {
+          "revenue_usd": 602.46,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 3667.21,
+          "units": 7
+        }
+      },
+      "12": {
+        "Alfombra persa": {
+          "revenue_usd": 8114.74,
+          "units": 6
+        },
+        "Exterior Pet": {
+          "revenue_usd": 905.7,
+          "units": 2
+        },
+        "Pura Lana": {
+          "revenue_usd": 1745.9,
+          "units": 6
+        },
+        "Muebles": {
+          "revenue_usd": 3098.36,
+          "units": 12
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 2195.08,
+          "units": 4
+        }
+      },
+      "4": {
+        "Muebles": {
+          "revenue_usd": 557.38,
+          "units": 4
+        },
+        "Alfombra persa": {
+          "revenue_usd": 5183.61,
+          "units": 8
+        },
+        "Exterior Pet": {
+          "revenue_usd": 941.77,
+          "units": 2
+        },
+        "Pura Lana": {
+          "revenue_usd": 403.28,
+          "units": 3
+        },
+        "Yute y Lana": {
+          "revenue_usd": 1445.91,
+          "units": 3
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 1485.25,
+          "units": 7
+        }
+      },
+      "6": {
+        "Muebles": {
+          "revenue_usd": 2585.1,
+          "units": 3
+        },
+        "Alfombra persa": {
+          "revenue_usd": 4138.53,
+          "units": 3
+        },
+        "Pura Lana": {
+          "revenue_usd": 3040.98,
+          "units": 2
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 3068.84,
+          "units": 4
+        }
+      },
+      "3": {
+        "Alfombra persa": {
+          "revenue_usd": 9278.16,
+          "units": 13
+        },
+        "Muebles": {
+          "revenue_usd": 1477.87,
+          "units": 1
+        },
+        "Exterior Pet": {
+          "revenue_usd": 587.7,
+          "units": 1
+        },
+        "Pura Lana": {
+          "revenue_usd": 1202.46,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 2769.68,
+          "units": 3
+        }
+      },
+      "2": {
+        "Alfombra persa": {
+          "revenue_usd": 8764.75,
+          "units": 4
+        },
+        "Exterior Pet": {
+          "revenue_usd": 676.23,
+          "units": 1
+        },
+        "Pura Lana": {
+          "revenue_usd": 1385.25,
+          "units": 1
+        },
+        "Yute y Lana": {
+          "revenue_usd": 924.59,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 2222.95,
+          "units": 3
+        }
+      },
+      "1": {
+        "Muebles": {
+          "revenue_usd": 1659.02,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 422.95,
+          "units": 1
+        }
+      }
+    },
+    "2026": {
+      "3": {
+        "Muebles": {
+          "revenue_usd": 1531.15,
+          "units": 5
+        },
+        "Alfombra persa": {
+          "revenue_usd": 5690.18,
+          "units": 9
+        },
+        "Sin categoría": {
+          "revenue_usd": 235.25,
+          "units": 1
+        },
+        "Pura Lana": {
+          "revenue_usd": 3518.03,
+          "units": 5
+        },
+        "Yute y Lana": {
+          "revenue_usd": 386.89,
+          "units": 1
+        },
+        "Yute y Lana Diseño": {
+          "revenue_usd": 290.16,
+          "units": 3
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 3848.37,
+          "units": 6
+        }
+      },
+      "5": {
+        "Alfombra persa": {
+          "revenue_usd": 21845.64,
+          "units": 18
+        },
+        "Exterior Pet": {
+          "revenue_usd": 328.0,
+          "units": 1
+        },
+        "Muebles": {
+          "revenue_usd": 3326.07,
+          "units": 8
+        },
+        "Sin categoría": {
+          "revenue_usd": 705.48,
+          "units": 3
+        },
+        "Pura Lana": {
+          "revenue_usd": 839.86,
+          "units": 1
+        },
+        "Yute y Lana": {
+          "revenue_usd": 396.41,
+          "units": 1
+        },
+        "Yute y Lana Diseño": {
+          "revenue_usd": 145.08,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 3649.4,
+          "units": 5
+        }
+      },
+      "4": {
+        "Muebles": {
+          "revenue_usd": 508.2,
+          "units": 6
+        },
+        "Alfombra persa": {
+          "revenue_usd": 8484.43,
+          "units": 5
+        },
+        "Pura Lana": {
+          "revenue_usd": 0.0,
+          "units": 0
+        },
+        "Yute y Lana": {
+          "revenue_usd": 2111.48,
+          "units": 1
+        },
+        "Yute y Lana Diseño": {
+          "revenue_usd": 143.44,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 1003.28,
+          "units": 1
+        }
+      },
+      "2": {
+        "Pura Lana": {
+          "revenue_usd": 533.61,
+          "units": 3
+        },
+        "Yute y Lana Diseño": {
+          "revenue_usd": 154.1,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 763.94,
+          "units": 2
+        }
+      },
+      "1": {
+        "Pura Lana": {
+          "revenue_usd": 215.08,
+          "units": 2
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 338.36,
+          "units": 1
+        }
+      }
+    },
+    "2024": {
+      "4": {
+        "Alfombra persa": {
+          "revenue_usd": 4129.5,
+          "units": 6
+        },
+        "Exterior Pet": {
+          "revenue_usd": 1290.98,
+          "units": 2
+        },
+        "Pura Lana": {
+          "revenue_usd": 1119.67,
+          "units": 3
+        },
+        "Muebles": {
+          "revenue_usd": 995.9,
+          "units": 5
+        },
+        "Yute y Lana": {
+          "revenue_usd": 1970.5,
+          "units": 2
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 3340.16,
+          "units": 5
+        }
+      },
+      "9": {
+        "Alfombra persa": {
+          "revenue_usd": 16147.95,
+          "units": 25
+        },
+        "Muebles": {
+          "revenue_usd": 990.98,
+          "units": 1
+        },
+        "Exterior Pet": {
+          "revenue_usd": 2196.72,
+          "units": 4
+        },
+        "Pura Lana": {
+          "revenue_usd": 1311.47,
+          "units": 2
+        },
+        "Yute y Lana": {
+          "revenue_usd": 678.69,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 2650.82,
+          "units": 3
+        }
+      },
+      "8": {
+        "Alfombra persa": {
+          "revenue_usd": 15379.64,
+          "units": 22
+        },
+        "Muebles": {
+          "revenue_usd": 1254.09,
+          "units": 2
+        },
+        "Exterior Pet": {
+          "revenue_usd": 3672.12,
+          "units": 7
+        },
+        "Pura Lana": {
+          "revenue_usd": 1840.99,
+          "units": 2
+        },
+        "Yute y Lana": {
+          "revenue_usd": 1528.69,
+          "units": 2
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 2590.99,
+          "units": 5
+        }
+      },
+      "11": {
+        "Alfombra persa": {
+          "revenue_usd": 35937.73,
+          "units": 34
+        },
+        "Muebles": {
+          "revenue_usd": 4123.41,
+          "units": 13
+        },
+        "Exterior Pet": {
+          "revenue_usd": 900.0,
+          "units": 2
+        },
+        "Sin categoría": {
+          "revenue_usd": 200.82,
+          "units": 1
+        },
+        "Pura Lana": {
+          "revenue_usd": 13118.02,
+          "units": 19
+        },
+        "Yute y Lana": {
+          "revenue_usd": 7675.43,
+          "units": 8
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 13530.34,
+          "units": 16
+        }
+      },
+      "12": {
+        "Muebles": {
+          "revenue_usd": 4174.59,
+          "units": 13
+        },
+        "Alfombra persa": {
+          "revenue_usd": 3498.37,
+          "units": 7
+        },
+        "Exterior Pet": {
+          "revenue_usd": 0.0,
+          "units": 0
+        },
+        "Pura Lana": {
+          "revenue_usd": 1071.31,
+          "units": 3
+        },
+        "Sin categoría": {
+          "revenue_usd": 134.43,
+          "units": 1
+        },
+        "Yute y Lana": {
+          "revenue_usd": 755.74,
+          "units": 2
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 0.0,
+          "units": 0
+        }
+      },
+      "10": {
+        "Alfombra persa": {
+          "revenue_usd": 27953.27,
+          "units": 18
+        },
+        "Exterior Pet": {
+          "revenue_usd": 922.13,
+          "units": 2
+        },
+        "Pura Lana": {
+          "revenue_usd": 801.64,
+          "units": 3
+        },
+        "Yute y Lana": {
+          "revenue_usd": 2163.11,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 7389.35,
+          "units": 10
+        }
+      },
+      "6": {
+        "Alfombra persa": {
+          "revenue_usd": 12068.15,
+          "units": 16
+        },
+        "Muebles": {
+          "revenue_usd": 663.93,
+          "units": 1
+        },
+        "Exterior Pet": {
+          "revenue_usd": 685.25,
+          "units": 1
+        },
+        "Pura Lana": {
+          "revenue_usd": 2447.54,
+          "units": 4
+        },
+        "Yute y Lana": {
+          "revenue_usd": 8.1,
+          "units": 2
+        },
+        "Yute y Lana Diseño": {
+          "revenue_usd": 409.83,
+          "units": 3
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 1258.2,
+          "units": 3
+        }
+      },
+      "7": {
+        "Muebles": {
+          "revenue_usd": 4432.79,
+          "units": 12
+        },
+        "Alfombra persa": {
+          "revenue_usd": 19869.68,
+          "units": 19
+        },
+        "Exterior Pet": {
+          "revenue_usd": 2239.34,
+          "units": 4
+        },
+        "Pura Lana": {
+          "revenue_usd": 3198.35,
+          "units": 4
+        },
+        "Yute y Lana": {
+          "revenue_usd": 2705.96,
+          "units": 5
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 4402.45,
+          "units": 8
+        }
+      },
+      "3": {
+        "Alfombra persa": {
+          "revenue_usd": 15248.36,
+          "units": 15
+        },
+        "Muebles": {
+          "revenue_usd": 3829.51,
+          "units": 5
+        },
+        "Pura Lana": {
+          "revenue_usd": 268.85,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 1898.36,
+          "units": 3
+        }
+      },
+      "5": {
+        "Alfombra persa": {
+          "revenue_usd": 35027.02,
+          "units": 28
+        },
+        "Muebles": {
+          "revenue_usd": 4944.26,
+          "units": 12
+        },
+        "Exterior Pet": {
+          "revenue_usd": 2209.02,
+          "units": 4
+        },
+        "Pura Lana": {
+          "revenue_usd": 2882.78,
+          "units": 7
+        },
+        "Yute y Lana": {
+          "revenue_usd": 1949.18,
+          "units": 2
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 9718.02,
+          "units": 13
+        }
+      },
+      "2": {
+        "Muebles": {
+          "revenue_usd": 1245.9,
+          "units": 1
+        },
+        "Alfombra persa": {
+          "revenue_usd": 4552.45,
+          "units": 3
+        },
+        "Pura Lana": {
+          "revenue_usd": 2272.13,
+          "units": 3
+        },
+        "Yute y Lana": {
+          "revenue_usd": 662.3,
+          "units": 1
+        }
+      },
+      "1": {
+        "Pura Lana": {
+          "revenue_usd": 12.61,
+          "units": 1
+        },
+        "Sin categoría": {
+          "revenue_usd": 134.43,
+          "units": 1
+        }
+      }
+    }
+  },
+  "por_categoria_total": {
+    "Muebles": {
+      "revenue_usd": 45721.03,
+      "units": 113
+    },
+    "Alfombra persa": {
+      "revenue_usd": 375853.58,
+      "units": 371
+    },
+    "Exterior Pet": {
+      "revenue_usd": 22322.15,
+      "units": 41
+    },
+    "Sin categoría": {
+      "revenue_usd": 2067.78,
+      "units": 12
+    },
+    "Pura Lana": {
+      "revenue_usd": 60148.64,
+      "units": 107
+    },
+    "Yute y Lana": {
+      "revenue_usd": 38206.83,
+      "units": 53
+    },
+    "Yute y Lana Diseño": {
+      "revenue_usd": 2347.53,
+      "units": 11
+    },
+    "Yute y Lana Nuevas": {
+      "revenue_usd": 109214.44,
+      "units": 173
+    }
+  },
+  "top_categorias": [
+    {
+      "categoria": "Alfombra persa",
+      "revenue_usd": 375853.58,
+      "units": 371
+    },
+    {
+      "categoria": "Yute y Lana Nuevas",
+      "revenue_usd": 109214.44,
+      "units": 173
+    },
+    {
+      "categoria": "Pura Lana",
+      "revenue_usd": 60148.64,
+      "units": 107
+    },
+    {
+      "categoria": "Muebles",
+      "revenue_usd": 45721.03,
+      "units": 113
+    },
+    {
+      "categoria": "Yute y Lana",
+      "revenue_usd": 38206.83,
+      "units": 53
+    },
+    {
+      "categoria": "Exterior Pet",
+      "revenue_usd": 22322.15,
+      "units": 41
+    },
+    {
+      "categoria": "Yute y Lana Diseño",
+      "revenue_usd": 2347.53,
+      "units": 11
+    },
+    {
+      "categoria": "Sin categoría",
+      "revenue_usd": 2067.78,
+      "units": 12
+    }
+  ],
+  "top_articulos": [
+    {
+      "articulo": "Vintage",
+      "revenue_usd": 111641.86,
+      "units": 94,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Heriz",
+      "revenue_usd": 51640.77,
+      "units": 18,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Patchwork",
+      "revenue_usd": 24705.86,
+      "units": 38,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Garadjeh",
+      "revenue_usd": 17898.36,
+      "units": 35,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "patchwork",
+      "revenue_usd": 17450.81,
+      "units": 11,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Ziegler",
+      "revenue_usd": 16954.93,
+      "units": 7,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Varni Sirdjan",
+      "revenue_usd": 16647.97,
+      "units": 24,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 250 x 350 Beige",
+      "revenue_usd": 13229.52,
+      "units": 14,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 300 x 400 Beige",
+      "revenue_usd": 12546.72,
+      "units": 10,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Kilim Afshari",
+      "revenue_usd": 12007.39,
+      "units": 18,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Pura Lana 250 x 350 Natural",
+      "revenue_usd": 11065.57,
+      "units": 9,
+      "categoria": "Pura Lana"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 200 x 300 Beige",
+      "revenue_usd": 10252.45,
+      "units": 16,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Kashgai",
+      "revenue_usd": 10007.83,
+      "units": 12,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Kashgai-Shiraz",
+      "revenue_usd": 9508.84,
+      "units": 6,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
+      "revenue_usd": 9183.34,
+      "units": 14,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Yute y Lana 300 x 400 Natural",
+      "revenue_usd": 8337.31,
+      "units": 7,
+      "categoria": "Yute y Lana"
+    },
+    {
+      "articulo": "Pura Lana 300 x 400 Natural",
+      "revenue_usd": 8268.84,
+      "units": 5,
+      "categoria": "Pura Lana"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 250 x 350 Charcol",
+      "revenue_usd": 7712.3,
+      "units": 8,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Afghan regular vintage carpet",
+      "revenue_usd": 7640.99,
+      "units": 5,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Kilim Ghouchan",
+      "revenue_usd": 7636.06,
+      "units": 7,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Pura Lana 300 x 400 Vison",
+      "revenue_usd": 7541.8,
+      "units": 5,
+      "categoria": "Pura Lana"
+    },
+    {
+      "articulo": "Afghan vintage carpet",
+      "revenue_usd": 7152.46,
+      "units": 4,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Pura Lana 200 x 300 Natural",
+      "revenue_usd": 6905.72,
+      "units": 9,
+      "categoria": "Pura Lana"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 300 x 400 Charcol",
+      "revenue_usd": 6781.15,
+      "units": 5,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 300 x 400 Ivory",
+      "revenue_usd": 6574.6,
+      "units": 5,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 250 x 350 Green",
+      "revenue_usd": 6496.72,
+      "units": 7,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Ghochan",
+      "revenue_usd": 6477.05,
+      "units": 9,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Pet Bark 300x200",
+      "revenue_usd": 6316.4,
+      "units": 13,
+      "categoria": "Exterior Pet"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 300 x 400 Green",
+      "revenue_usd": 6149.19,
+      "units": 5,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Yute y Lana 400 x 500 Natural",
+      "revenue_usd": 6029.51,
+      "units": 3,
+      "categoria": "Yute y Lana"
+    }
+  ]
+}

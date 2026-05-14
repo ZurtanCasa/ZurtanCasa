@@ -33,6 +33,13 @@ jobs:
           ZETA_PASS: ${{ secrets.ZETA_PASS }}
         run: python scripts/scrape_contable.py
 
+      - name: Fetch articulos por categoría (Zeta Software)
+        continue-on-error: true
+        env:
+          ZETA_USER: ${{ secrets.ZETA_USER }}
+          ZETA_PASS: ${{ secrets.ZETA_PASS }}
+        run: python scripts/scrape_articulos.py
+
       - name: Fetch Shopify
         continue-on-error: true
         env:
