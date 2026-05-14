@@ -32,6 +32,7 @@ def main():
     meta = load("meta_ads.json")
     google = load("google_ads.json")
     locales = load("locales.json")
+    articulos = load("articulos.json")
     plan = load("plan_anual.json")
     contexto = load("contexto_negocio.json")
 
@@ -64,6 +65,62 @@ def main():
 
     target_anual = plan.get("target_anual_usd", 0)
     target_mtd = target_anual / 12 if target_anual > 0 else 0
+
+    # --- Sección artículos/categorías ---
+    art_section = ""
+    if articulos.get("_status") == "ok":
+        por_periodo = articulos.get("por_anio_mes_categoria", {})
+        yr = str(now.year)
+        mo = str(now.month)
+        prev_mo = str(now.month - 1) if now.month > 1 else "12"
+        prev_yr = yr if now.month > 1 else str(now.year - 1)
+
+        def cats_for(year, month):
+            data = por_periodo.get(year, {}).get(month, {})
+            return sorted(data.items(), key=lambda x: x[1]["revenue_usd"], reverse=True)
+
+        cats_mtd = cats_for(yr, mo)
+        cats_prev = cats_for(prev_yr, prev_mo)
+
+        def cat_line(cats):
+            if not cats:
+                return "  (sin datos)"
+            return "\n".join(
+                f"  {cat}: USD {v['revenue_usd']:,.0f} ({v['units']} u)"
+                for cat, v in cats[:6]
+            )
+
+        top_arts = articulos.get("top_articulos", [])[:8]
+        top_arts_str = "\n".join(
+            f"  {i+1}. {a['articulo']} ({a['categoria']}): USD {a['revenue_usd']:,.0f} · {a['units']} u · ticket USD {a['revenue_usd']/a['units']:,.0f}"
+            for i, a in enumerate(top_arts) if a.get("units", 0) > 0
+        )
+
+        top_cats_hist = articulos.get("top_categorias", [])
+        total_rev_hist = sum(c["revenue_usd"] for c in top_cats_hist)
+        top_cats_str = "\n".join(
+            f"  {c['categoria']}: USD {c['revenue_usd']:,.0f} ({c['revenue_usd']/total_rev_hist*100:.1f}% del total)"
+            for c in top_cats_hist[:6]
+        ) if total_rev_hist > 0 else "  (sin datos)"
+
+        art_section = f"""
+=== ARTÍCULOS Y CATEGORÍAS ===
+Rango histórico: {articulos.get('_rango', 'N/A')}
+
+Mes actual ({now.strftime('%B %Y')}):
+{cat_line(cats_mtd)}
+
+Mes anterior:
+{cat_line(cats_prev)}
+
+Mix histórico por categoría:
+{top_cats_str}
+
+Top artículos históricos:
+{top_arts_str}
+
+Nota: {articulos.get('_nota', '')}
+"""
 
     data_summary = f"""
 FECHA ACTUAL (Uruguay): {now.strftime('%Y-%m-%d %H:%M')}
@@ -102,7 +159,8 @@ Status datos ML: {ml.get('_status', 'sin_datos')}
 Status datos Meta: {meta.get('_status', 'sin_datos')}
 Status datos Google: {google.get('_status', 'sin_datos')}
 Status datos Locales: {locales.get('_status', 'sin_datos')}
-"""
+Status datos Artículos: {articulos.get('_status', 'sin_datos')}
+{art_section}"""
 
     equipo = contexto.get("equipo", [])
     equipo_str = "\n".join(f"- {m['nombre']}: {m['rol']}" for m in equipo)
@@ -120,6 +178,8 @@ REGLAS:
 - No alertes por AOV bajo si hay promo activa.
 - No juzgues campañas de alcance por ROAS.
 - Las acciones deben tener responsable concreto del equipo.
+- Usá el mix de categorías y artículos para detectar cambios en producto: si una categoría sube/baja vs mes anterior, mencionalo. Si un artículo de alto ticket domina, contextualizá el AOV.
+- "Otros" o "Sin categoría" en artículos indica venta sin código correcto en el sistema — alertar si supera 10% del revenue.
 - Tono: directo, sin formalidades, como dueño que habla con su gerente.
 - Respondé SOLO con JSON válido, sin markdown ni texto extra."""
 
