@@ -101,7 +101,7 @@ export default function ArticulosTab({ data }: Props) {
       data: {
         labels: sorted.map((c) => c.categoria),
         datasets: [{
-          label: "Revenue USD",
+          label: "Facturado USD",
           data: sorted.map((c) => c.revenue_usd),
           backgroundColor: sorted.map((c, i) => catColor(c.categoria, i) + "cc"),
           borderColor: sorted.map((c, i) => catColor(c.categoria, i)),
@@ -179,7 +179,7 @@ export default function ArticulosTab({ data }: Props) {
       {/* KPIs */}
       <div className="kpi-grid mb-16">
         <div className="card">
-          <div className="card-title">Revenue total</div>
+          <div className="card-title">Facturado total</div>
           <div className="card-value mono">{fmtUSD(totalRev)}</div>
           <div className="card-sub">{selectedYear === "todos" ? "Histórico" : selectedYear}</div>
         </div>
@@ -202,7 +202,7 @@ export default function ArticulosTab({ data }: Props) {
 
       {/* Gráfico de categorías */}
       <div className="card section mb-16">
-        <div className="card-title">Revenue por categoría</div>
+        <div className="card-title">Facturado por categoría</div>
         <div className="chart-container" style={{ height: Math.max(200, catData.length * 44) }}>
           <canvas ref={chartRef} />
         </div>
@@ -210,7 +210,7 @@ export default function ArticulosTab({ data }: Props) {
 
       {/* Tabla de top artículos */}
       <div className="card section">
-        <div className="card-title mb-12">Top artículos (histórico)</div>
+        <div className="card-title mb-12">Top artículos — facturado histórico</div>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
             <thead>
@@ -218,7 +218,7 @@ export default function ArticulosTab({ data }: Props) {
                 <th style={{ textAlign: "left", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>#</th>
                 <th style={{ textAlign: "left", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Artículo</th>
                 <th style={{ textAlign: "left", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Categoría</th>
-                <th style={{ textAlign: "right", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Revenue</th>
+                <th style={{ textAlign: "right", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Facturado</th>
                 <th style={{ textAlign: "right", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Unidades</th>
                 <th style={{ textAlign: "right", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Ticket</th>
                 <th style={{ textAlign: "left", padding: "6px 8px", color: "var(--text-muted)", fontWeight: 500 }}>Participación</th>
