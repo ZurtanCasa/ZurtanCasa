@@ -231,12 +231,10 @@ def parse_excel(path: str) -> list[dict]:
 
 def aggregate(records: list[dict]) -> dict:
     """Agrupa por año/mes/categoría y genera top artículos."""
-    # Por año → mes → categoría
     por_periodo: dict = {}
-    # Acumulado global por categoría
     por_categoria_total: dict = {}
-    # Acumulado global por artículo
     por_articulo_total: dict = {}
+    por_anio_articulo: dict = {}  # año → { articulo → {revenue_usd, units, categoria} }
 
     for r in records:
         yr = str(r["year"])
@@ -246,21 +244,27 @@ def aggregate(records: list[dict]) -> dict:
         rev = r["revenue_usd"]
         units = r["units"]
 
-        # Por período
+        # Por período (año → mes → categoría)
         por_periodo.setdefault(yr, {}).setdefault(mo, {})
         c = por_periodo[yr][mo].setdefault(cat, {"revenue_usd": 0.0, "units": 0})
         c["revenue_usd"] = round(c["revenue_usd"] + rev, 2)
         c["units"] += units
 
-        # Total categoría
+        # Total categoría (histórico)
         ct = por_categoria_total.setdefault(cat, {"revenue_usd": 0.0, "units": 0})
         ct["revenue_usd"] = round(ct["revenue_usd"] + rev, 2)
         ct["units"] += units
 
-        # Total artículo
+        # Total artículo (histórico)
         at = por_articulo_total.setdefault(art, {"revenue_usd": 0.0, "units": 0, "categoria": cat})
         at["revenue_usd"] = round(at["revenue_usd"] + rev, 2)
         at["units"] += units
+
+        # Por año → artículo
+        por_anio_articulo.setdefault(yr, {})
+        ay = por_anio_articulo[yr].setdefault(art, {"revenue_usd": 0.0, "units": 0, "categoria": cat})
+        ay["revenue_usd"] = round(ay["revenue_usd"] + rev, 2)
+        ay["units"] += units
 
     top_categorias = sorted(
         [{"categoria": k, **v} for k, v in por_categoria_total.items()],
@@ -271,11 +275,21 @@ def aggregate(records: list[dict]) -> dict:
         key=lambda x: x["revenue_usd"], reverse=True
     )[:100]
 
+    # Top 100 artículos por año
+    top_articulos_por_anio = {
+        yr: sorted(
+            [{"articulo": k, **v} for k, v in arts.items()],
+            key=lambda x: x["revenue_usd"], reverse=True
+        )[:100]
+        for yr, arts in por_anio_articulo.items()
+    }
+
     return {
         "por_anio_mes_categoria": por_periodo,
         "por_categoria_total": por_categoria_total,
         "top_categorias": top_categorias,
         "top_articulos": top_articulos,
+        "top_articulos_por_anio": top_articulos_por_anio,
     }
 
 def main():

@@ -21,6 +21,7 @@ interface ArticulosData {
   _nota?: string;
   top_categorias: Categoria[];
   top_articulos: Articulo[];
+  top_articulos_por_anio: Record<string, Articulo[]>;
   por_anio_mes_categoria: Record<string, Record<string, Record<string, { revenue_usd: number; units: number }>>>;
   por_categoria_total: Record<string, { revenue_usd: number; units: number }>;
 }
@@ -105,6 +106,11 @@ export default function ArticulosTab({ data }: Props) {
   const chartInst = useRef<any>(null);
   const [selectedYear, setSelectedYear] = useState<string>("todos");
   const [expandedCat, setExpandedCat] = useState<string | null>(null);
+
+  // Artículos activos según el año seleccionado (para el drill-down)
+  const articulosActivos: Articulo[] = selectedYear === "todos"
+    ? data.top_articulos
+    : (data.top_articulos_por_anio?.[selectedYear] ?? data.top_articulos);
 
   const years = Object.keys(data.por_anio_mes_categoria).sort();
 
@@ -241,11 +247,6 @@ export default function ArticulosTab({ data }: Props) {
       <div className="card section">
         <div className="flex-between mb-12">
           <div className="card-title" style={{ marginBottom: 0 }}>Detalle por categoría</div>
-          {selectedYear !== "todos" && (
-            <span style={{ fontSize: 11, color: "var(--text-muted)" }}>
-              * El desglose por medida/color usa datos históricos completos
-            </span>
-          )}
         </div>
         <div style={{ overflowX: "auto" }}>
           <table style={{ width: "100%", borderCollapse: "collapse", fontSize: 13 }}>
@@ -265,7 +266,7 @@ export default function ArticulosTab({ data }: Props) {
                 const ticket = cat.units > 0 ? cat.revenue_usd / cat.units : 0;
                 const expandable = isExpandable(cat.categoria);
                 const isOpen = expandedCat === cat.categoria;
-                const drilldown = isOpen ? buildDrilldown(cat.categoria, data.top_articulos) : [];
+                const drilldown = isOpen ? buildDrilldown(cat.categoria, articulosActivos) : [];
 
                 return (
                   <>
