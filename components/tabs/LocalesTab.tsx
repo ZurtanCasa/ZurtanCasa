@@ -60,19 +60,38 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
     const months = ["Ene", "Feb", "Mar", "Abr", "May", "Jun", "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"];
     const colors = ["#4f8ef7", "#22c55e", "#a855f7", "#eab308"];
     const currentYear = now.getFullYear();
+    const prevYear = currentYear - 1;
 
-    const datasets = locales.map((l, i) => ({
-      label: l.nombre,
-      data: months.map((_, mi) => {
-        const rec = l.historico_mensual.find((r) => r.year === currentYear && r.month === mi + 1);
-        return rec?.revenue_bruto ?? null;
-      }),
-      borderColor: colors[i % colors.length],
-      backgroundColor: colors[i % colors.length] + "33",
-      fill: true,
-      tension: 0.3,
-      pointRadius: 3,
-    }));
+    const datasets = locales.flatMap((l, i) => {
+      const color = colors[i % colors.length];
+      return [
+        {
+          label: `${l.nombre} ${prevYear}`,
+          data: months.map((_, mi) => {
+            const rec = l.historico_mensual.find((r) => r.year === prevYear && r.month === mi + 1);
+            return rec?.revenue_bruto ?? null;
+          }),
+          borderColor: color + "77",
+          backgroundColor: "transparent",
+          borderDash: [5, 4],
+          fill: false,
+          tension: 0.3,
+          pointRadius: 2,
+        },
+        {
+          label: `${l.nombre} ${currentYear}`,
+          data: months.map((_, mi) => {
+            const rec = l.historico_mensual.find((r) => r.year === currentYear && r.month === mi + 1);
+            return rec?.revenue_bruto ?? null;
+          }),
+          borderColor: color,
+          backgroundColor: color + "22",
+          fill: true,
+          tension: 0.3,
+          pointRadius: 3,
+        },
+      ];
+    });
 
     chartInst.current = new window.Chart(chartRef.current, {
       type: "line",
@@ -150,7 +169,7 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
       </div>
 
       <div className="card section">
-        <div className="card-title">Facturado mensual por local — {now.getFullYear()}</div>
+        <div className="card-title">Facturado mensual por local — {now.getFullYear() - 1} vs {now.getFullYear()}</div>
         <div className="chart-container" style={{ height: 280 }}>
           <canvas ref={chartRef} />
         </div>
