@@ -5,7 +5,7 @@ interface Local {
   id: string;
   nombre: string;
   mes_actual: { revenue: number; orders_count: number };
-  historico_mensual: { year: number; month: number; revenue: number }[];
+  historico_mensual: { year: number; month: number; revenue_bruto: number }[];
 }
 
 interface LocalConfig {
@@ -65,7 +65,7 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
       label: l.nombre,
       data: months.map((_, mi) => {
         const rec = l.historico_mensual.find((r) => r.year === currentYear && r.month === mi + 1);
-        return rec?.revenue ?? null;
+        return rec?.revenue_bruto ?? null;
       }),
       borderColor: colors[i % colors.length],
       backgroundColor: colors[i % colors.length] + "33",
@@ -112,7 +112,7 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
           const targetYTD = plan ? getTargetYTD(plan, currentMonth) : 0;
           const actualYTD = local.historico_mensual
             .filter((r) => r.year === now.getFullYear() && r.month <= currentMonth)
-            .reduce((s, r) => s + r.revenue, 0);
+            .reduce((s, r) => s + r.revenue_bruto, 0);
           const cumplimiento = targetYTD > 0 ? actualYTD / targetYTD : 0;
           const isOffSeason = config?.es_estacional && !config.meses_temporada_alta.includes(currentMonth);
 
@@ -150,7 +150,7 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
       </div>
 
       <div className="card section">
-        <div className="card-title">Revenue mensual por local — {now.getFullYear()}</div>
+        <div className="card-title">Facturado mensual por local — {now.getFullYear()}</div>
         <div className="chart-container" style={{ height: 280 }}>
           <canvas ref={chartRef} />
         </div>

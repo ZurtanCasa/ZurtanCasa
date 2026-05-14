@@ -193,7 +193,7 @@ export default function PerformanceTab({ data }: { data: PerformanceData }) {
         {[
           { title: "Web (Shopify) MTD", value: fmtUSD(webRevenue), sub: `${data.shopify.mes_actual.orders_count} órdenes` },
           { title: "Marketplace (ML) MTD", value: fmtUSD(mlRevenue), sub: `Neto: ${fmtUSD(data.mercadolibre.mes_actual.revenue_neto_post_comision)}` },
-          { title: "Locales MTD", value: fmtUSD(localesRevenue), sub: "Facturación física" },
+          { title: "Locales MTD", value: fmtUSD(localesRevenue), sub: "Facturado (IVA incl.)" },
           { title: "Total NETO MTD", value: fmtUSD(totalNeto), sub: `Margen ${(data.contexto.margen_neto_pct * 100).toFixed(0)}%` },
         ].map(({ title, value, sub }, i) => (
           <div key={i} className="card card-sm">
@@ -205,7 +205,7 @@ export default function PerformanceTab({ data }: { data: PerformanceData }) {
       </div>
 
       <div className="card section">
-        <div className="card-title">Revenue mensual — 2024 / 2025 / 2026</div>
+        <div className="card-title">Facturado mensual — 2024 / 2025 / 2026</div>
         <div className="chart-container" style={{ height: 300 }}>
           <canvas ref={chartRef} />
         </div>
