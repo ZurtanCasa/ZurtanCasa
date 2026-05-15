@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-05-15T11:35:24.247566-03:00",
+  "_ultima_actualizacion": "2026-05-15T12:10:29.231898-03:00",
   "_rango": "01/01/24 → 15/05/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -1972,6 +1972,144 @@
         "revenue_usd": 431.97,
         "units": 4,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 70 x 300 Ivory",
+        "revenue_usd": 424.6,
+        "units": 2,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Pura Lana 160 x 230 Natural",
+        "revenue_usd": 418.03,
+        "units": 1,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Banco Mesa Lateral Rattan Alto 65",
+        "revenue_usd": 416.39,
+        "units": 2,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Pura Lana Latte 230X160",
+        "revenue_usd": 384.43,
+        "units": 1,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Yute Redonda 150 x 150",
+        "revenue_usd": 378.69,
+        "units": 3,
+        "categoria": "Sin categoría"
+      },
+      {
+        "articulo": "HANDMADE PET DHURRIES - ANTHRACITE 230x160",
+        "revenue_usd": 368.0,
+        "units": 1,
+        "categoria": "Exterior Pet"
+      },
+      {
+        "articulo": "Bachtiari Mafrash",
+        "revenue_usd": 361.48,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Pura Lana 80 x 120 Vison",
+        "revenue_usd": 252.46,
+        "units": 2,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Mesa Redonda CLYPEA 50 x 50 Natural",
+        "revenue_usd": 240.98,
+        "units": 1,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Puff",
+        "revenue_usd": 190.98,
+        "units": 1,
+        "categoria": "Sin categoría"
+      },
+      {
+        "articulo": "Coffee table 160x70x50",
+        "revenue_usd": 141.0,
+        "units": 0,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Yute Redonda con Diseño 120 x 120",
+        "revenue_usd": 87.7,
+        "units": 1,
+        "categoria": "Sin categoría"
+      },
+      {
+        "articulo": "Mesa ANIKA 110 X 110 X 40 Gray Wash",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Poltrona NUBE Gris",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Super Karachi",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Yute y Lana 70 x 200 Grey",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Pura Lana 160 x 230 Grey",
+        "revenue_usd": -31.15,
+        "units": 0,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Pura Lana Graphite 080x160",
+        "revenue_usd": -144.26,
+        "units": -1,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Pura Lana Graphite 230X160",
+        "revenue_usd": -419.67,
+        "units": -1,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "berber wool hoand-woven",
+        "revenue_usd": -1350.0,
+        "units": -1,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "2009002 garden chair seater 200x53x92",
+        "revenue_usd": -2280.62,
+        "units": -4,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "2009001 garden chair 58x60x92",
+        "revenue_usd": -2948.98,
+        "units": -11,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "rectangular coffee table archre 160",
+        "revenue_usd": -4130.0,
+        "units": -5,
+        "categoria": "Muebles"
       }
     ],
     "2026": [
@@ -2864,6 +3002,150 @@
         "revenue_usd": 344.27,
         "units": 2,
         "categoria": "Muebles"
+      },
+      {
+        "articulo": "Naim 720",
+        "revenue_usd": 344.26,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 70 x 200 Charcol",
+        "revenue_usd": 321.31,
+        "units": 2,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 70 x 200 Green",
+        "revenue_usd": 321.31,
+        "units": 2,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 70 x 200 Ivory",
+        "revenue_usd": 321.31,
+        "units": 2,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Pura Lana Clay 080x160",
+        "revenue_usd": 319.67,
+        "units": 2,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Yute y Lana con Diseño 200 x 300",
+        "revenue_usd": 278.69,
+        "units": 1,
+        "categoria": "Yute y Lana Diseño"
+      },
+      {
+        "articulo": "Yute Redonda 150 x 150",
+        "revenue_usd": 268.86,
+        "units": 2,
+        "categoria": "Sin categoría"
+      },
+      {
+        "articulo": "NERO BAJA Coffee 50 x 50 x 35 Negra",
+        "revenue_usd": 235.25,
+        "units": 1,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Puff",
+        "revenue_usd": 200.82,
+        "units": 1,
+        "categoria": "Sin categoría"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 70 x 200 Beige",
+        "revenue_usd": 164.75,
+        "units": 1,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Mesa FRIDA 250 X 100 X 75 Grey Wash",
+        "revenue_usd": 163.93,
+        "units": 1,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Pura Lana 80 x 120 Grey",
+        "revenue_usd": 137.7,
+        "units": 1,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Yute y Lana con Diseño 70 x 200",
+        "revenue_usd": 131.14,
+        "units": 2,
+        "categoria": "Yute y Lana Diseño"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 80 x 120 Beige",
+        "revenue_usd": 111.48,
+        "units": 1,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Yute y Lana 120 x 80 Natural",
+        "revenue_usd": 104.1,
+        "units": 1,
+        "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Comercial",
+        "revenue_usd": 32.79,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Yute y Lana 70 x 200 Grey",
+        "revenue_usd": 8.1,
+        "units": 2,
+        "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Yute y Lana 70 x 200 Natural",
+        "revenue_usd": 3.5,
+        "units": 1,
+        "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Elsa 160 x 45 x 55 Grey Wash y Metal Black",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Kilim Sirdjan",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Poltrona NUBE Beige",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Pura Lana 70 x 300 Natural",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Super Karachi",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Yute y Lana 300 x 400 Grey",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Yute y Lana"
       }
     ]
   }
