@@ -55,7 +55,11 @@ function isExpandable(cat: string): boolean {
 
 function stripCode(name: string): string {
   const idx = name.lastIndexOf(" - ");
-  return idx !== -1 ? name.substring(0, idx).trim() : name;
+  if (idx === -1) return name;
+  const suffix = name.substring(idx + 3).trim();
+  // Si el sufijo es "Palabra NNNxNNN" o "Palabra NNN x NNN" es descripción (color+medida), no código
+  if (/^[A-Za-z]+\s+\d+\s*[xX]\s*\d+/.test(suffix)) return name;
+  return name.substring(0, idx).trim();
 }
 
 function parseArticle(name: string): { medida: string; color: string } {
@@ -69,10 +73,11 @@ function parseArticle(name: string): { medida: string; color: string } {
   const afterSize = clean.substring(idx + m[0].length).trim();
   if (afterSize) return { medida, color: afterSize };
 
-  // Color antes de la medida (ej. "Pet Bark 300x200" → color = "Bark")
-  // Tomamos la última palabra antes de la medida como color
+  // Color antes de la medida:
+  // "Pet Bark 300x200" → última palabra antes de la medida = "Bark"
+  // "HANDMADE PET DHURRIES - Anthracite 300x200" → última palabra antes de la medida = "Anthracite"
   const beforeSize = clean.substring(0, idx).trim();
-  const parts = beforeSize.split(/\s+/);
+  const parts = beforeSize.split(/\s+/).filter(p => p !== "-");
   const color = parts.length >= 2 ? parts[parts.length - 1] : "";
   return { medida, color };
 }
