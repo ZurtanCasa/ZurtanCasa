@@ -64,7 +64,16 @@ function parseArticle(name: string): { medida: string; color: string } {
   if (!m) return { medida: "", color: "" };
   const idx = clean.indexOf(m[0]);
   const medida = `${m[1]} x ${m[2]}`;
-  const color = clean.substring(idx + m[0].length).trim();
+
+  // Color después de la medida (ej. "Yute y Lana Nuevas 250 x 350 Beige")
+  const afterSize = clean.substring(idx + m[0].length).trim();
+  if (afterSize) return { medida, color: afterSize };
+
+  // Color antes de la medida (ej. "Pet Bark 300x200" → color = "Bark")
+  // Tomamos la última palabra antes de la medida como color
+  const beforeSize = clean.substring(0, idx).trim();
+  const parts = beforeSize.split(/\s+/);
+  const color = parts.length >= 2 ? parts[parts.length - 1] : "";
   return { medida, color };
 }
 
