@@ -313,12 +313,12 @@ def aggregate(records: list[dict]) -> dict:
         key=lambda x: x["revenue_usd"], reverse=True
     )[:100]
 
-    # Top 100 artículos por año
+    # Todos los artículos por año (sin límite, para drill-down completo por medida/color)
     top_articulos_por_anio = {
         yr: sorted(
             [{"articulo": k, **v} for k, v in arts.items()],
             key=lambda x: x["revenue_usd"], reverse=True
-        )[:100]
+        )
         for yr, arts in por_anio_articulo.items()
     }
 
