@@ -45,10 +45,35 @@ def submit_report(frame, page, from_str: str, to_str: str, max_retries=3) -> boo
             frame.goto(REPORT_URL, wait_until="domcontentloaded", timeout=30000)
             time.sleep(6)
 
+            # Loguear todos los campos del form para diagnóstico
+            all_fields = frame.evaluate("""() => {
+                const fields = [];
+                document.querySelectorAll('input, select').forEach(el => {
+                    if (el.name) fields.push({
+                        name: el.name,
+                        type: el.type || el.tagName,
+                        value: el.value,
+                        checked: el.checked ?? null,
+                        options: el.tagName === 'SELECT'
+                            ? Array.from(el.options).map(o => o.value + '=' + o.text.trim())
+                            : null,
+                    });
+                });
+                return fields;
+            }""")
+            print("  Campos del form:")
+            for f in all_fields:
+                if f.get('options'):
+                    print(f"    [{f['name']}] SELECT val={f['value']} opts={f['options']}")
+                elif f.get('type') == 'checkbox':
+                    print(f"    [{f['name']}] CHECKBOX checked={f['checked']}")
+                else:
+                    print(f"    [{f['name']}] {f['type']} val={f['value']!r}")
+
             frame.evaluate(f"""() => {{
                 function setVal(name, val) {{
                     const el = document.querySelector('[name="' + name + '"]');
-                    if (!el) return;
+                    if (!el) {{ console.warn('Campo no encontrado: ' + name); return; }}
                     el.value = val;
                     el.dispatchEvent(new Event('change', {{bubbles: true}}));
                     el.dispatchEvent(new Event('blur', {{bubbles: true}}));
@@ -57,6 +82,13 @@ def submit_report(frame, page, from_str: str, to_str: str, max_retries=3) -> boo
                 setVal('vHASTAFECHA', '{to_str}');
                 setVal('vFORMATO', '0');
                 setVal('vEXPRESAR', '2');
+                // IVA incluido — intentar nombres comunes de GeneXus
+                setVal('vCONIVA', '1');
+                setVal('vIVA', '1');
+                setVal('vMOSTRARIVA', '1');
+                // Todas las unidades — dejar vacío el filtro de unidad
+                setVal('vUNIDAD', '');
+                setVal('vFILTROUNIDAD', '');
                 const chk = document.querySelector('[name="vGENERARXLS"]');
                 if (chk && !chk.checked) {{
                     chk.dispatchEvent(new MouseEvent('click', {{bubbles: true, cancelable: true, view: window}}));
@@ -64,11 +96,17 @@ def submit_report(frame, page, from_str: str, to_str: str, max_retries=3) -> boo
             }}""")
             time.sleep(6)
 
-            state = frame.evaluate("""() => ({
-                xls: document.querySelector('[name="vGENERARXLS"]')?.checked,
-                btn: !!document.querySelector('[name="BTNENTER"]'),
-            })""")
+            state = frame.evaluate("""() => {
+                const fields = ['vCONIVA','vIVA','vMOSTRARIVA','vUNIDAD','vFILTROUNIDAD','vEXPRESAR','vFORMATO'];
+                const res = {xls: document.querySelector('[name="vGENERARXLS"]')?.checked, btn: !!document.querySelector('[name="BTNENTER"]')};
+                fields.forEach(n => {
+                    const el = document.querySelector('[name="' + n + '"]');
+                    if (el) res[n] = el.value;
+                });
+                return res;
+            }""")
             print(f"  Intento {attempt}: xls={state.get('xls')} btn={state.get('btn')}")
+            print(f"  Valores seteados: { {k:v for k,v in state.items() if k not in ('xls','btn')} }")
 
             frame.click("input[name='BTNENTER']", timeout=15000)
             page.wait_for_url("**/z.informes.procesosww**", timeout=60000)

@@ -234,8 +234,8 @@ def main():
 
     for twilio_var in ["TWILIO_ACCOUNT_SID", "TWILIO_AUTH_TOKEN", "TWILIO_FROM_WA", "TWILIO_TO_WA"]:
         if not os.environ.get(twilio_var):
-            print(f"ERROR: {twilio_var} requerido", file=sys.stderr)
-            sys.exit(1)
+            print(f"SKIP: {twilio_var} no configurado — alertas WhatsApp desactivadas")
+            sys.exit(0)
 
     shopify = load("shopify.json")
     ml = load("mercadolibre.json")
