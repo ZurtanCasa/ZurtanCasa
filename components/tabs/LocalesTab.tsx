@@ -69,7 +69,7 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
           label: `${l.nombre} ${prevYear}`,
           data: months.map((_, mi) => {
             const rec = l.historico_mensual.find((r) => r.year === prevYear && r.month === mi + 1);
-            return rec?.revenue_bruto ?? null;
+            return rec?.revenue_neto ?? null;
           }),
           borderColor: color + "77",
           backgroundColor: "transparent",
@@ -82,7 +82,7 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
           label: `${l.nombre} ${currentYear}`,
           data: months.map((_, mi) => {
             const rec = l.historico_mensual.find((r) => r.year === currentYear && r.month === mi + 1);
-            return rec?.revenue_bruto ?? null;
+            return rec?.revenue_neto ?? null;
           }),
           borderColor: color,
           backgroundColor: color + "22",
@@ -169,7 +169,7 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
       </div>
 
       <div className="card section">
-        <div className="card-title">Facturado mensual por local — {now.getFullYear() - 1} vs {now.getFullYear()}</div>
+        <div className="card-title">Facturado neto mensual por local — {now.getFullYear() - 1} vs {now.getFullYear()}</div>
         <div className="chart-container" style={{ height: 280 }}>
           <canvas ref={chartRef} />
         </div>
