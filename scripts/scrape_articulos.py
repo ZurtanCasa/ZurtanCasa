@@ -20,13 +20,16 @@ BASE_URL   = "https://www.zetasoftware.com/z.info.inicio"
 REPORT_URL = "https://www.zetasoftware.com/z.gestion.reportes.ventasporarticulo"
 UY_TZ = timezone(timedelta(hours=-3))
 
-# Columnas del Excel exportado (0-indexed, header en fila 3)
-COL_ARTICULO  = 0
-COL_NOMBRE    = 3
-COL_CATEGORIA = 4
-COL_FECHA     = 9
-COL_CANTIDAD  = 13
-COL_TOTAL_USD = 14  # Ya en U$S (vEXPRESAR=2)
+# Nombres de columna esperados en el Excel (se detectan por header, no por índice fijo)
+# Con IVA activo el reporte puede agregar columnas extra — detectar por nombre es más robusto
+HDR_ARTICULO  = "ARTICULO"
+HDR_NOMBRE    = "NOMBRE"
+HDR_CATEGORIA = "CATEGORÍA"
+HDR_FECHA     = "FECHA"
+HDR_CANTIDAD  = "CANTIDAD"
+# Con IVA: "TOTAL U$S" pasa a ser el total con IVA; sin IVA es el total sin IVA.
+# Si existen ambas columnas (S/IVA y C/IVA), tomamos la última que matchee "TOTAL".
+HDR_TOTAL     = "TOTAL"
 
 def login(page, user, password):
     page.goto(BASE_URL, timeout=60000, wait_until="domcontentloaded")
@@ -45,68 +48,42 @@ def submit_report(frame, page, from_str: str, to_str: str, max_retries=3) -> boo
             frame.goto(REPORT_URL, wait_until="domcontentloaded", timeout=30000)
             time.sleep(6)
 
-            # Loguear todos los campos del form para diagnóstico
-            all_fields = frame.evaluate("""() => {
-                const fields = [];
-                document.querySelectorAll('input, select').forEach(el => {
-                    if (el.name) fields.push({
-                        name: el.name,
-                        type: el.type || el.tagName,
-                        value: el.value,
-                        checked: el.checked ?? null,
-                        options: el.tagName === 'SELECT'
-                            ? Array.from(el.options).map(o => o.value + '=' + o.text.trim())
-                            : null,
-                    });
-                });
-                return fields;
-            }""")
-            print("  Campos del form:")
-            for f in all_fields:
-                if f.get('options'):
-                    print(f"    [{f['name']}] SELECT val={f['value']} opts={f['options']}")
-                elif f.get('type') == 'checkbox':
-                    print(f"    [{f['name']}] CHECKBOX checked={f['checked']}")
-                else:
-                    print(f"    [{f['name']}] {f['type']} val={f['value']!r}")
-
             frame.evaluate(f"""() => {{
                 function setVal(name, val) {{
                     const el = document.querySelector('[name="' + name + '"]');
-                    if (!el) {{ console.warn('Campo no encontrado: ' + name); return; }}
+                    if (!el) return;
                     el.value = val;
                     el.dispatchEvent(new Event('change', {{bubbles: true}}));
                     el.dispatchEvent(new Event('blur', {{bubbles: true}}));
+                }}
+                function clickChk(name) {{
+                    const el = document.querySelector('[name="' + name + '"]');
+                    if (el && !el.checked) {{
+                        el.dispatchEvent(new MouseEvent('click', {{bubbles: true, cancelable: true, view: window}}));
+                    }}
                 }}
                 setVal('vDESDEFECHA', '{from_str}');
                 setVal('vHASTAFECHA', '{to_str}');
                 setVal('vFORMATO', '0');
                 setVal('vEXPRESAR', '2');
-                // IVA incluido — intentar nombres comunes de GeneXus
-                setVal('vCONIVA', '1');
-                setVal('vIVA', '1');
-                setVal('vMOSTRARIVA', '1');
-                // Todas las unidades — dejar vacío el filtro de unidad
-                setVal('vUNIDAD', '');
-                setVal('vFILTROUNIDAD', '');
-                const chk = document.querySelector('[name="vGENERARXLS"]');
-                if (chk && !chk.checked) {{
-                    chk.dispatchEvent(new MouseEvent('click', {{bubbles: true, cancelable: true, view: window}}));
-                }}
+                setVal('vDEPID', '0');      // Todos los depósitos (0 = -)
+                clickChk('vIVAINCLUIDO');   // IVA incluido en totales
+                clickChk('vGENERARXLS');    // Generar XLS
             }}""")
             time.sleep(6)
 
             state = frame.evaluate("""() => {
-                const fields = ['vCONIVA','vIVA','vMOSTRARIVA','vUNIDAD','vFILTROUNIDAD','vEXPRESAR','vFORMATO'];
-                const res = {xls: document.querySelector('[name="vGENERARXLS"]')?.checked, btn: !!document.querySelector('[name="BTNENTER"]')};
-                fields.forEach(n => {
-                    const el = document.querySelector('[name="' + n + '"]');
-                    if (el) res[n] = el.value;
-                });
-                return res;
+                const chk = (n) => { const el = document.querySelector('[name="' + n + '"]'); return el ? el.checked : null; };
+                const val = (n) => { const el = document.querySelector('[name="' + n + '"]'); return el ? el.value : null; };
+                return {
+                    xls: chk('vGENERARXLS'),
+                    iva: chk('vIVAINCLUIDO'),
+                    btn: !!document.querySelector('[name="BTNENTER"]'),
+                    depid: val('vDEPID'),
+                    expresar: val('vEXPRESAR'),
+                };
             }""")
-            print(f"  Intento {attempt}: xls={state.get('xls')} btn={state.get('btn')}")
-            print(f"  Valores seteados: { {k:v for k,v in state.items() if k not in ('xls','btn')} }")
+            print(f"  Intento {attempt}: xls={state.get('xls')} iva={state.get('iva')} depid={state.get('depid')} expresar={state.get('expresar')} btn={state.get('btn')}")
 
             frame.click("input[name='BTNENTER']", timeout=15000)
             page.wait_for_url("**/z.informes.procesosww**", timeout=60000)
@@ -178,8 +155,8 @@ def wait_and_download(frame, page, context, dest: str, timeout_sec=600) -> bool:
 def parse_excel(path: str) -> list[dict]:
     """
     Parsea el XLS de Zeta Software (Ventas por Artículo).
-    Columnas: ARTICULO, NOMBRE, CATEGORÍA, FECHA, CANTIDAD, TOTAL U$S
-    Retorna lista de registros individuales por venta.
+    Detecta columnas por nombre de header para ser robusto ante cambios de layout
+    (p.ej. cuando se activa IVA, Zeta puede agregar columnas extra).
     """
     try:
         import openpyxl
@@ -200,28 +177,56 @@ def parse_excel(path: str) -> list[dict]:
 
     if header_row is None:
         print("    WARN: header no encontrado")
-        print("    Primeras 5 filas:")
         for r in rows[:5]:
             print(f"      {r}")
         return []
 
-    print(f"    Header en fila {header_row}: {[str(v) for v in rows[header_row] if v][:8]}")
+    headers = [str(v).upper().strip() if v else "" for v in rows[header_row]]
+    print(f"    Header en fila {header_row}: {[h for h in headers if h][:10]}")
+
+    def col(name: str) -> int:
+        """Retorna el índice de la primera columna cuyo header contiene 'name'."""
+        for i, h in enumerate(headers):
+            if name.upper() in h:
+                return i
+        return -1
+
+    def last_col(name: str) -> int:
+        """Retorna el índice de la ÚLTIMA columna cuyo header contiene 'name'.
+        Útil para TOTAL cuando hay columnas S/IVA y C/IVA: queremos la última."""
+        idx = -1
+        for i, h in enumerate(headers):
+            if name.upper() in h:
+                idx = i
+        return idx
+
+    c_articulo  = col(HDR_ARTICULO)
+    c_nombre    = col(HDR_NOMBRE)
+    c_categoria = col(HDR_CATEGORIA) if col(HDR_CATEGORIA) != -1 else col("CATEG")
+    c_fecha     = col(HDR_FECHA)
+    c_cantidad  = col(HDR_CANTIDAD)
+    c_total     = last_col(HDR_TOTAL)  # La última columna TOTAL = con IVA si está activo
+
+    print(f"    Columnas: articulo={c_articulo} nombre={c_nombre} cat={c_categoria} "
+          f"fecha={c_fecha} cant={c_cantidad} total={c_total}")
+
+    if c_total == -1:
+        print("    WARN: columna TOTAL no encontrada")
+        return []
 
     records = []
     for row in rows[header_row + 1:]:
         if not any(row):
             continue
 
-        def get(col_idx):
-            if col_idx < len(row):
-                return row[col_idx]
-            return None
+        def get(idx):
+            return row[idx] if 0 <= idx < len(row) else None
 
-        nombre   = get(COL_NOMBRE) or get(COL_ARTICULO)  # fallback al código si el nombre está vacío
-        categoria = get(COL_CATEGORIA)
-        fecha    = get(COL_FECHA)
-        cantidad = get(COL_CANTIDAD)
-        total_usd = get(COL_TOTAL_USD)
+        nombre    = get(c_nombre) or get(c_articulo)
+        categoria = get(c_categoria)
+        fecha     = get(c_fecha)
+        cantidad  = get(c_cantidad)
+        total_usd = get(c_total)
 
         # Filas de subtotal/totalizadoras: sin nombre ni código
         if not nombre:
@@ -256,10 +261,15 @@ def parse_excel(path: str) -> list[dict]:
         except (TypeError, ValueError):
             units = 0
 
+        # Normalizar nombre: agrupar variantes de "Otros" bajo un mismo nombre
+        nombre_str = str(nombre).strip()
+        if re.match(r'^otros?$', nombre_str, re.IGNORECASE):
+            nombre_str = "Otros"
+
         records.append({
             "year": year,
             "month": month,
-            "articulo": str(nombre).strip(),
+            "articulo": nombre_str,
             "categoria": str(categoria).strip() if categoria else "Sin categoría",
             "revenue_usd": round(rev, 2),
             "units": units,
@@ -281,6 +291,10 @@ def aggregate(records: list[dict]) -> dict:
         art = r["articulo"]
         rev = r["revenue_usd"]
         units = r["units"]
+
+        # Agrupar todas las variantes de "Otros" bajo un único nombre
+        if re.match(r'^otros', art, re.IGNORECASE):
+            art = "Otros"
 
         # Por período (año → mes → categoría)
         por_periodo.setdefault(yr, {}).setdefault(mo, {})
