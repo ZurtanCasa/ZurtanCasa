@@ -5,7 +5,7 @@ interface Local {
   id: string;
   nombre: string;
   mes_actual: { revenue: number; orders_count: number };
-  historico_mensual: { year: number; month: number; revenue_bruto: number }[];
+  historico_mensual: { year: number; month: number; revenue_bruto: number; revenue_neto?: number }[];
 }
 
 interface LocalConfig {
