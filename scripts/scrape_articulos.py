@@ -137,7 +137,7 @@ def wait_and_download(frame, page, context, dest: str, timeout_sec=600) -> bool:
 
     # Llamar execEvt directamente y capturar la descarga
     try:
-        with page.expect_download(timeout=60000) as dl_info:
+        with page.expect_download(timeout=180000) as dl_info:
             frame.evaluate(f"""() => {{
                 const sel = document.querySelector('select[name="vACCIONES_0001"]');
                 if (!sel) {{ console.error('select not found'); return; }}
