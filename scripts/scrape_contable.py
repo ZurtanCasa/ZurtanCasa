@@ -137,6 +137,7 @@ def parse_excel(path: str, year: int, month: int) -> dict:
     devoluciones_usd = 0.0
     orders_count = 0
     moneda_mix_original: dict = {}
+    tipo_stats: dict = {}  # diagnóstico: tipo → USD acumulado
 
     for row in rows[header_row + 1:]:
         if not any(row):
@@ -144,6 +145,10 @@ def parse_excel(path: str, year: int, month: int) -> dict:
         tipo_raw = str(row[col.get("tipo", 1)] or "").lower().strip()
         total_raw = row[col.get("total", 8)]
         moneda_raw = str(row[col.get("moneda", 7)] or "").strip()
+
+        # Saltar filas de resumen/totalizadoras (sin tipo o tipo es "total")
+        if not tipo_raw or ("total" in tipo_raw and len(tipo_raw) < 20):
+            continue
 
         is_usd = "u$s" in moneda_raw.lower() or "usd" in moneda_raw.lower()
         moneda_key = "USD" if is_usd else "UYU"
@@ -163,6 +168,7 @@ def parse_excel(path: str, year: int, month: int) -> dict:
             total_usd = uyu_to_usd(total_original, year, month)
 
         moneda_mix_original[moneda_key] = moneda_mix_original.get(moneda_key, 0) + total_original
+        tipo_stats[tipo_raw] = round(tipo_stats.get(tipo_raw, 0) + total_usd, 2)
 
         is_devolucion = any(kw in tipo_raw for kw in TIPOS_DEVOLUCION)
 
@@ -171,6 +177,11 @@ def parse_excel(path: str, year: int, month: int) -> dict:
         else:
             revenue_bruto_usd += total_usd
             orders_count += 1
+
+    # Diagnóstico: tipos de comprobante detectados en este mes
+    for t, amt in sorted(tipo_stats.items(), key=lambda x: -x[1]):
+        flag = "DEVOL" if any(kw in t for kw in TIPOS_DEVOLUCION) else "VENTA"
+        print(f"      [{flag}] tipo={t!r:35s} USD {amt:,.0f}")
 
     return {
         "revenue_bruto_usd": round(revenue_bruto_usd, 2),
@@ -249,8 +260,10 @@ def main():
                 max_month = now.month if year == now.year else 12
                 for month in range(1, max_month + 1):
                     key = ("juan_b_alberdi", year, month)
-                    # Reusar data pasada salvo el mes actual (puede estar incompleto)
-                    if key in prev_records and not (year == now.year and month == now.month):
+                    # Reusar 2024 para no sobrecargar; siempre re-scrapeamos 2025+ para datos frescos
+                    is_current_month = (year == now.year and month == now.month)
+                    reuse = key in prev_records and year < 2025 and not is_current_month
+                    if reuse:
                         rec = prev_records[key]
                         historico.append(rec)
                         print(f"    Reutilizando {year}-{month:02d}: bruto={rec.get('revenue_bruto', 0)}")
