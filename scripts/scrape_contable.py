@@ -89,6 +89,11 @@ def set_date_filter(frame, from_str: str, to_str: str):
         to.value = '{to_str}';
         to.dispatchEvent(new Event('change', {{bubbles: true}}));
         to.dispatchEvent(new Event('blur', {{bubbles: true}}));
+        // Activar IVA incluido en totales
+        const iva = document.querySelector('input[name="vIVAINCLUIDO"]');
+        if (iva && !iva.checked) {{
+            iva.dispatchEvent(new MouseEvent('click', {{bubbles: true, cancelable: true, view: window}}));
+        }}
     }}""")
     time.sleep(4)
 
@@ -260,9 +265,13 @@ def main():
                 max_month = now.month if year == now.year else 12
                 for month in range(1, max_month + 1):
                     key = ("juan_b_alberdi", year, month)
-                    # Reusar 2024 para no sobrecargar; siempre re-scrapeamos 2025+ para datos frescos
+                    # Reusar 2024 solo si el registro ya fue scrapeado con IVA incluido.
+                    # Primera corrida tras activar IVA: prev_records no tienen _iva_incluido → re-scrapea todo.
                     is_current_month = (year == now.year and month == now.month)
-                    reuse = key in prev_records and year < 2025 and not is_current_month
+                    reuse = (key in prev_records
+                             and year < 2025
+                             and not is_current_month
+                             and prev_records[key].get("_iva_incluido", False))
                     if reuse:
                         rec = prev_records[key]
                         historico.append(rec)
@@ -279,6 +288,7 @@ def main():
                         "orders_count": data["orders_count"],
                         "moneda_mix_original": data["moneda_mix_original"],
                         "tasa_uyu_usd": data["tasa_uyu_usd"],
+                        "_iva_incluido": True,
                     })
 
             browser.close()
