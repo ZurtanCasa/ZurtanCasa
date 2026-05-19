@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 interface Local {
   id: string;
   nombre: string;
-  mes_actual: { revenue: number; orders_count: number };
+  mes_actual: { revenue: number; revenue_neto?: number; orders_count: number };
   historico_mensual: { year: number; month: number; revenue_bruto: number; revenue_neto?: number }[];
 }
 
@@ -147,8 +147,8 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
                   </span>
                 )}
               </div>
-              <div className="card-value-sm mono">{fmtUSD(local.mes_actual.revenue)}</div>
-              <div className="card-sub">Este mes · {local.mes_actual.orders_count} órdenes</div>
+              <div className="card-value-sm mono">{fmtUSD(local.mes_actual.revenue_neto ?? local.mes_actual.revenue)}</div>
+              <div className="card-sub">Este mes (neto) · {local.mes_actual.orders_count} órdenes</div>
               {targetYTD > 0 && !isOffSeason && (
                 <div style={{ marginTop: 10 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "var(--text-muted)", marginBottom: 4 }}>
