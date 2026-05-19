@@ -265,13 +265,9 @@ def main():
                 max_month = now.month if year == now.year else 12
                 for month in range(1, max_month + 1):
                     key = ("juan_b_alberdi", year, month)
-                    # Reusar 2024 solo si el registro ya fue scrapeado con IVA incluido.
-                    # Primera corrida tras activar IVA: prev_records no tienen _iva_incluido → re-scrapea todo.
+                    # Reusar 2024 (no se muestra en gráfica); siempre re-scrapeamos 2025+ para datos frescos con IVA.
                     is_current_month = (year == now.year and month == now.month)
-                    reuse = (key in prev_records
-                             and year < 2025
-                             and not is_current_month
-                             and prev_records[key].get("_iva_incluido", False))
+                    reuse = key in prev_records and year < 2025 and not is_current_month
                     if reuse:
                         rec = prev_records[key]
                         historico.append(rec)
@@ -288,7 +284,6 @@ def main():
                         "orders_count": data["orders_count"],
                         "moneda_mix_original": data["moneda_mix_original"],
                         "tasa_uyu_usd": data["tasa_uyu_usd"],
-                        "_iva_incluido": True,
                     })
 
             browser.close()
