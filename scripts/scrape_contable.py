@@ -265,9 +265,9 @@ def main():
                 max_month = now.month if year == now.year else 12
                 for month in range(1, max_month + 1):
                     key = ("juan_b_alberdi", year, month)
-                    # Reusar 2024 (no se muestra en gráfica); siempre re-scrapeamos 2025+ para datos frescos con IVA.
+                    # Re-scrapear 2025 completo (corrección IVA). Cachear 2024 y meses pasados de 2026.
                     is_current_month = (year == now.year and month == now.month)
-                    reuse = key in prev_records and year < 2025 and not is_current_month
+                    reuse = key in prev_records and year != 2025 and not is_current_month
                     if reuse:
                         rec = prev_records[key]
                         historico.append(rec)
