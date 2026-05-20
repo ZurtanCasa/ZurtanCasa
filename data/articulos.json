@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-05-20T14:50:47.030249-03:00",
+  "_ultima_actualizacion": "2026-05-20T16:37:04.084372-03:00",
   "_rango": "01/01/24 → 20/05/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -351,8 +351,8 @@
       },
       "5": {
         "Alfombra persa": {
-          "revenue_usd": 27521.13,
-          "units": 19
+          "revenue_usd": 29080.65,
+          "units": 20
         },
         "Sin categoría": {
           "revenue_usd": 8072.52,
@@ -779,8 +779,8 @@
       "units": 113
     },
     "Alfombra persa": {
-      "revenue_usd": 459691.37,
-      "units": 373
+      "revenue_usd": 461250.89,
+      "units": 374
     },
     "Sin categoría": {
       "revenue_usd": 269706.57,
@@ -810,8 +810,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 459691.37,
-      "units": 373
+      "revenue_usd": 461250.89,
+      "units": 374
     },
     {
       "categoria": "Sin categoría",
@@ -899,6 +899,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Kilim Afshari",
+      "revenue_usd": 16208.52,
+      "units": 19,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 250 x 350 Beige",
       "revenue_usd": 16140.0,
       "units": 14,
@@ -909,12 +915,6 @@
       "revenue_usd": 15307.0,
       "units": 10,
       "categoria": "Yute y Lana Nuevas"
-    },
-    {
-      "articulo": "Kilim Afshari",
-      "revenue_usd": 14649.0,
-      "units": 18,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Pura Lana 250 x 350 Natural",
@@ -2312,6 +2312,12 @@
         "revenue_usd": 1721.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Kilim Afshari",
+        "revenue_usd": 1559.52,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Mafrash",
