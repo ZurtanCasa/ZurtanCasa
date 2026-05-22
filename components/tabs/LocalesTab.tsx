@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 interface Local {
   id: string;
   nombre: string;
-  mes_actual: { revenue: number; orders_count: number };
-  historico_mensual: { year: number; month: number; revenue_neto?: number; revenue_bruto?: number }[];
+  mes_actual: { revenue: number; revenue_neto?: number; orders_count: number };
+  historico_mensual: { year: number; month: number; revenue_bruto: number; revenue_neto?: number }[];
 }
 
 interface LocalConfig {
@@ -131,7 +131,7 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
           const targetYTD = plan ? getTargetYTD(plan, currentMonth) : 0;
           const actualYTD = local.historico_mensual
             .filter((r) => r.year === now.getFullYear() && r.month <= currentMonth)
-            .reduce((s, r) => s + (r.revenue_neto ?? r.revenue_bruto ?? 0), 0);
+            .reduce((s, r) => s + r.revenue_bruto, 0);
           const cumplimiento = targetYTD > 0 ? actualYTD / targetYTD : 0;
           const isOffSeason = config?.es_estacional && !config.meses_temporada_alta.includes(currentMonth);
 
@@ -147,8 +147,8 @@ export default function LocalesTab({ locales, localConfigs, planesLocales, sinDa
                   </span>
                 )}
               </div>
-              <div className="card-value-sm mono">{fmtUSD(local.mes_actual.revenue)}</div>
-              <div className="card-sub">Este mes · {local.mes_actual.orders_count} órdenes</div>
+              <div className="card-value-sm mono">{fmtUSD(local.mes_actual.revenue_neto ?? local.mes_actual.revenue)}</div>
+              <div className="card-sub">Este mes (neto) · {local.mes_actual.orders_count} órdenes</div>
               {targetYTD > 0 && !isOffSeason && (
                 <div style={{ marginTop: 10 }}>
                   <div style={{ display: "flex", justifyContent: "space-between", fontSize: 11, color: "var(--text-muted)", marginBottom: 4 }}>
