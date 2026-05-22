@@ -109,13 +109,29 @@ def set_libro_date_filter(frame, from_str: str, to_str: str):
     time.sleep(3)
 
 def download_libro_excel(frame, page, tmp_dir: str) -> str:
+    import time
     dest = os.path.join(tmp_dir, "libro_ventas.xlsx")
+
+    # Marcar checkbox vGENERARXLS para habilitar salida Excel
+    frame.evaluate("""() => {
+        const chk = document.querySelector('input[name="vGENERARXLS"]');
+        if (chk && !chk.checked) {
+            chk.click();
+        }
+    }""")
+    time.sleep(1)
+
     with page.expect_download(timeout=60000) as dl_info:
-        # Intentar los botones más comunes en Zeta reportes
-        for selector in ["input#BTNEXPORT", "input#btnGENERAR", "input[name='BTNEXPORT']",
-                         "input[name='btnGENERAR']", "button#btnGENERAR"]:
+        # El Libro de Ventas usa BTNENTER (val='Confirmar') como botón de submit
+        for selector in [
+            "button[name='BTNENTER']",
+            "input[name='BTNENTER']",
+            "#BTNENTER",
+            "input[value='Confirmar']",
+        ]:
             try:
-                frame.click(selector, timeout=3000)
+                frame.click(selector, timeout=5000)
+                print(f"    Clickeado submit: {selector}")
                 break
             except Exception:
                 continue
@@ -188,6 +204,13 @@ def parse_libro_excel(path: str) -> dict:
         "orders_count": orders_count,
     }
 
+def navigate_to_libro_form(frame, page):
+    """Re-navega a los filtros del Libro de Ventas si el form ya no está en pantalla."""
+    has_form = frame.evaluate("""() => !!document.querySelector('input[name="vDESDEFECHA"], input[name="vHASTAFECHA"]')""")
+    if not has_form:
+        print("    Frame perdió el form — re-navegando a Libro de Ventas...")
+        go_to_libro_ventas(frame, page)
+
 def fetch_month(frame, page, year: int, month: int, tmp_dir: str) -> dict:
     last_day = calendar.monthrange(year, month)[1]
     yy = str(year)[-2:]
@@ -195,6 +218,7 @@ def fetch_month(frame, page, year: int, month: int, tmp_dir: str) -> dict:
     to_str = f"{last_day:02d}/{month:02d}/{yy}"
 
     print(f"    Fetching {year}-{month:02d} ({from_str} → {to_str})")
+    navigate_to_libro_form(frame, page)
     set_libro_date_filter(frame, from_str, to_str)
 
     try:
