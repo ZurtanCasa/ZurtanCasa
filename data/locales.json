@@ -1,15 +1,13 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-05-21T07:55:24.316254-03:00",
+  "_ultima_actualizacion": "2026-05-22T16:14:03.392051-03:00",
   "locales": [
     {
       "id": "juan_b_alberdi",
       "nombre": "Juan B Alberdi 6280",
       "mes_actual": {
-        "revenue": 55802.74,
-        "revenue_neto": 53161.1,
-        "orders_count": 39,
-        "devoluciones": 2641.64
+        "revenue": 0,
+        "orders_count": 0
       },
       "historico_mensual": [
         {
@@ -175,148 +173,86 @@
         {
           "year": 2025,
           "month": 1,
-          "revenue_bruto": 4556.0,
-          "revenue_neto": 4556.0,
-          "devoluciones": 0.0,
-          "orders_count": 3,
-          "moneda_mix_original": {
-            "USD": 4556.0
-          },
-          "tasa_uyu_usd": 43.5
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 2,
-          "revenue_bruto": 18268.0,
-          "revenue_neto": 17300.0,
-          "devoluciones": 968.0,
-          "orders_count": 11,
-          "moneda_mix_original": {
-            "USD": 19236.0
-          },
-          "tasa_uyu_usd": 43.0
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 3,
-          "revenue_bruto": 28647.36,
-          "revenue_neto": 26117.36,
-          "devoluciones": 2530.0,
-          "orders_count": 18,
-          "moneda_mix_original": {
-            "UYU": 27649.0,
-            "USD": 30531.36
-          },
-          "tasa_uyu_usd": 42.8
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 4,
-          "revenue_bruto": 15079.0,
-          "revenue_neto": 15079.0,
-          "devoluciones": 0.0,
-          "orders_count": 15,
-          "moneda_mix_original": {
-            "USD": 15079.0
-          },
-          "tasa_uyu_usd": 42.5
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 5,
-          "revenue_bruto": 127565.61,
-          "revenue_neto": 79156.61,
-          "devoluciones": 48409.0,
-          "orders_count": 51,
-          "moneda_mix_original": {
-            "USD": 175974.61
-          },
-          "tasa_uyu_usd": 43.2
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 6,
-          "revenue_bruto": 22549.0,
-          "revenue_neto": 22549.0,
-          "devoluciones": 0.0,
-          "orders_count": 13,
-          "moneda_mix_original": {
-            "USD": 22549.0
-          },
-          "tasa_uyu_usd": 43.8
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 7,
-          "revenue_bruto": 75760.8,
-          "revenue_neto": 56274.8,
-          "devoluciones": 19486.0,
-          "orders_count": 45,
-          "moneda_mix_original": {
-            "USD": 95246.8
-          },
-          "tasa_uyu_usd": 44.0
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 8,
-          "revenue_bruto": 34652.73,
-          "revenue_neto": 32327.73,
-          "devoluciones": 2325.0,
-          "orders_count": 19,
-          "moneda_mix_original": {
-            "USD": 36299.0,
-            "UYU": 30000.0
-          },
-          "tasa_uyu_usd": 44.2
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 9,
-          "revenue_bruto": 56237.6,
-          "revenue_neto": 43622.6,
-          "devoluciones": 12615.0,
-          "orders_count": 22,
-          "moneda_mix_original": {
-            "USD": 68852.6
-          },
-          "tasa_uyu_usd": 44.5
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 10,
-          "revenue_bruto": 21174.0,
-          "revenue_neto": 12982.0,
-          "devoluciones": 8192.0,
-          "orders_count": 13,
-          "moneda_mix_original": {
-            "USD": 29366.0
-          },
-          "tasa_uyu_usd": 44.8
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 11,
-          "revenue_bruto": 132867.0,
-          "revenue_neto": 131146.0,
-          "devoluciones": 1721.0,
-          "orders_count": 69,
-          "moneda_mix_original": {
-            "USD": 134588.0
-          },
-          "tasa_uyu_usd": 45.0
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2025,
           "month": 12,
-          "revenue_bruto": 40726.5,
-          "revenue_neto": 36713.5,
-          "devoluciones": 4013.0,
-          "orders_count": 18,
-          "moneda_mix_original": {
-            "USD": 44739.5
-          },
-          "tasa_uyu_usd": 45.2
+          "revenue_neto": 0,
+          "orders_count": 0,
+          "_libro": true
         },
         {
           "year": 2026,
@@ -373,14 +309,8 @@
         {
           "year": 2026,
           "month": 5,
-          "revenue_bruto": 55802.74,
-          "revenue_neto": 53161.1,
-          "devoluciones": 2641.64,
-          "orders_count": 39,
-          "moneda_mix_original": {
-            "USD": 58444.38
-          },
-          "tasa_uyu_usd": 40.285981,
+          "revenue_neto": 0,
+          "orders_count": 0,
           "_libro": true
         }
       ]
