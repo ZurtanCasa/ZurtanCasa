@@ -155,54 +155,79 @@ def parse_libro_excel(path: str) -> dict:
     ws = wb.active
     rows = list(ws.iter_rows(values_only=True))
 
-    # Buscar fila de header con "total" y "fecha" o "comprobante"
+    # Debug: loguear primeras filas con contenido para entender la estructura
+    print(f"    Excel: {len(rows)} filas")
+    shown = 0
+    for i, row in enumerate(rows):
+        if any(v is not None for v in row):
+            cells = [str(v)[:25] if v is not None else "" for v in row]
+            print(f"    row[{i:02d}]: {cells}")
+            shown += 1
+            if shown >= 15:
+                break
+
+    # Estrategia 1: tabla columnar con header "fecha/comprobante" + "total"
     header_row = None
     for i, row in enumerate(rows):
-        vals = [str(v).lower().strip() if v else "" for v in row]
-        if "total" in vals and ("fecha" in vals or "comprobante" in vals):
+        vals = [str(v).lower().strip() if v is not None else "" for v in row]
+        has_total = any(v == "total" or (v.endswith("total") and "sub" not in v) for v in vals)
+        has_ref   = any("fecha" in v or "comprobante" in v or "nro" in v or "n°" in v or "numero" in v for v in vals)
+        if has_total and has_ref:
             header_row = i
             break
 
-    if header_row is None:
-        print(f"    WARN: No se encontró header en Libro de Ventas — {path}")
-        return {"revenue_neto_usd": 0, "orders_count": 0}
+    if header_row is not None:
+        headers = [str(v).lower().strip() if v is not None else "" for v in rows[header_row]]
+        print(f"    Header tabla: {headers}")
 
-    headers = [str(v).lower().strip() if v else "" for v in rows[header_row]]
-    print(f"    Header Libro: {headers}")
+        # Buscar columna total (exacta primero, luego parcial)
+        total_col = -1
+        for i, h in enumerate(headers):
+            if h == "total":
+                total_col = i
+        if total_col == -1:
+            for i, h in enumerate(headers):
+                if h.endswith("total") and "sub" not in h:
+                    total_col = i
 
-    # Columna Total: la última ocurrencia de "total" (evitar "subtotal")
-    total_col = -1
-    for i, h in enumerate(headers):
-        if h.strip() == "total":
-            total_col = i
+        if total_col != -1:
+            revenue_neto = 0.0
+            orders_count = 0
+            for row in rows[header_row + 1:]:
+                if not any(row):
+                    continue
+                val = row[total_col]
+                if val is None:
+                    continue
+                try:
+                    amount = float(val)
+                except (TypeError, ValueError):
+                    continue
+                if amount == 0:
+                    continue
+                revenue_neto += amount
+                if amount > 0:
+                    orders_count += 1
+            if revenue_neto != 0:
+                return {"revenue_neto_usd": round(revenue_neto, 2), "orders_count": orders_count}
 
-    if total_col == -1:
-        print(f"    WARN: No se encontró columna 'total'")
-        return {"revenue_neto_usd": 0, "orders_count": 0}
+    # Estrategia 2: buscar fila de total resumen (ej. "Total General ... 92897.61")
+    print("    Estrategia 2: buscando fila de total resumen...")
+    for i, row in enumerate(rows):
+        vals_str = [str(v).lower().strip() if v is not None else "" for v in row]
+        has_total_label = any(
+            v in ("total", "total general", "total ventas", "total neto", "totales")
+            or v.startswith("total")
+            for v in vals_str
+        )
+        nums = [v for v in row if isinstance(v, (int, float)) and abs(v) > 10]
+        if has_total_label and nums:
+            total_val = nums[-1]  # último número de la fila
+            print(f"    Estrategia 2 — fila {i}: total={total_val}")
+            return {"revenue_neto_usd": round(float(total_val), 2), "orders_count": 1}
 
-    revenue_neto = 0.0
-    orders_count = 0
-
-    for row in rows[header_row + 1:]:
-        if not any(row):
-            continue
-        val = row[total_col]
-        if val is None:
-            continue
-        try:
-            amount = float(val)
-        except (TypeError, ValueError):
-            continue
-        if amount == 0:
-            continue
-        revenue_neto += amount
-        if amount > 0:
-            orders_count += 1
-
-    return {
-        "revenue_neto_usd": round(revenue_neto, 2),
-        "orders_count": orders_count,
-    }
+    print(f"    WARN: No se pudo parsear Libro de Ventas — {path}")
+    return {"revenue_neto_usd": 0, "orders_count": 0}
 
 def navigate_to_libro_form(frame, page):
     """Re-navega a los filtros del Libro de Ventas si el form ya no está en pantalla."""
@@ -279,15 +304,16 @@ def main():
                     is_current_month = (year == now.year and month == now.month)
 
                     # Reusar registros ya scrapeados desde el Libro de Ventas.
-                    # 2024 no se muestra en la gráfica — reusar siempre (salvo que falte _libro).
-                    # 2025 siempre re-scrapear (corrección fuente).
-                    # 2026 meses pasados: reusar solo si ya vienen del Libro (_libro=True).
+                    # 2025 siempre re-scrapear (queremos valores correctos del Libro).
+                    # 2024 y 2026 meses pasados: reusar si vienen del Libro Y tienen valor > 0.
+                    # Nunca reusar registros con revenue=0 (podrían ser scrapes fallidos).
                     rec = prev_records.get(key)
                     reuse = (
                         rec is not None
                         and not is_current_month
                         and year != 2025
                         and rec.get("_libro", False)
+                        and rec.get("revenue_neto", 0) != 0
                     )
                     if reuse:
                         historico.append(rec)
