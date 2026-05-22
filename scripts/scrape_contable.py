@@ -35,10 +35,42 @@ def login(page, user, password):
 def go_to_libro_ventas(frame, page):
     import time
     frame.goto(LIBRO_URL)
-    time.sleep(3)
-    frame.click("#span_GESTIONNOMBRE_0001 a")
+    time.sleep(4)
+
+    # Debug: loguear todos los links disponibles para encontrar el correcto
+    links = frame.evaluate("""() => {
+        return Array.from(document.querySelectorAll('a')).map(a => ({
+            text: a.textContent.trim().slice(0, 60),
+            id: a.id || '',
+            href: a.href || ''
+        })).filter(l => l.text.length > 0);
+    }""")
+    for l in links[:20]:
+        print(f"    [LINK] id={l['id']:20s} text={l['text']}")
+
+    # Intentar múltiples selectores para el primer informe favorito
+    clicked = False
+    for selector in [
+        "a:has-text('Libro de Ventas')",
+        "#span_REPNOMBRE_0001 a",
+        "#span_INFROMBRE_0001 a",
+        "#span_GESTIONNOMBRE_0001 a",
+        "td.gri_link a",
+    ]:
+        try:
+            frame.click(selector, timeout=5000)
+            clicked = True
+            print(f"  Clickeado con selector: {selector}")
+            break
+        except Exception:
+            continue
+
+    if not clicked:
+        raise RuntimeError("No se pudo clickear el Libro de Ventas — revisar logs de links")
+
     time.sleep(4)
     print(f"  En Libro de Ventas. URL: {frame.url}")
+
     # Debug: loguear campos del formulario
     fields = frame.evaluate("""() => {
         const els = document.querySelectorAll('input, select');
