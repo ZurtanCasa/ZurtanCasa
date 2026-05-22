@@ -142,7 +142,10 @@ def parse_excel(path: str, year: int, month: int) -> dict:
     devoluciones_usd = 0.0
     orders_count = 0
     moneda_mix_original: dict = {}
-    tipo_stats: dict = {}  # diagnóstico: tipo → USD acumulado
+    tipo_stats: dict = {}  # diagnóstico: tipo → USD acumulado (emitidos)
+    skipped_no_emitida_usd = 0.0  # diagnóstico: total saltado por emitida != S
+    skipped_no_emitida_count = 0
+    emitida_col_idx = col.get("emitida", -1)
 
     for row in rows[header_row + 1:]:
         if not any(row):
@@ -150,6 +153,10 @@ def parse_excel(path: str, year: int, month: int) -> dict:
         tipo_raw = str(row[col.get("tipo", 1)] or "").lower().strip()
         total_raw = row[col.get("total", 8)]
         moneda_raw = str(row[col.get("moneda", 7)] or "").strip()
+        emitida_raw = (
+            str(row[emitida_col_idx] or "").strip().upper()
+            if emitida_col_idx >= 0 else "S"
+        )
 
         # Saltar filas de resumen/totalizadoras (sin tipo o tipo es "total")
         if not tipo_raw or ("total" in tipo_raw and len(tipo_raw) < 20):
@@ -172,6 +179,13 @@ def parse_excel(path: str, year: int, month: int) -> dict:
         else:
             total_usd = uyu_to_usd(total_original, year, month)
 
+        # Solo contar comprobantes emitidos. Si la columna 'emitida' no
+        # existe, se asume emitido (compatibilidad hacia atrás).
+        if emitida_col_idx >= 0 and emitida_raw != "S":
+            skipped_no_emitida_usd += total_usd
+            skipped_no_emitida_count += 1
+            continue
+
         moneda_mix_original[moneda_key] = moneda_mix_original.get(moneda_key, 0) + total_original
         tipo_stats[tipo_raw] = round(tipo_stats.get(tipo_raw, 0) + total_usd, 2)
 
@@ -183,10 +197,14 @@ def parse_excel(path: str, year: int, month: int) -> dict:
             revenue_bruto_usd += total_usd
             orders_count += 1
 
-    # Diagnóstico: tipos de comprobante detectados en este mes
+    # Diagnóstico: tipos de comprobante emitidos detectados en este mes
     for t, amt in sorted(tipo_stats.items(), key=lambda x: -x[1]):
         flag = "DEVOL" if any(kw in t for kw in TIPOS_DEVOLUCION) else "VENTA"
         print(f"      [{flag}] tipo={t!r:35s} USD {amt:,.0f}")
+    if skipped_no_emitida_count > 0:
+        print(f"      [SKIP] no-emitidos: {skipped_no_emitida_count} filas, USD {skipped_no_emitida_usd:,.0f}")
+    if emitida_col_idx < 0:
+        print(f"      WARN: columna 'emitida' NO encontrada en headers — sumando todo. Headers: {headers}")
 
     return {
         "revenue_bruto_usd": round(revenue_bruto_usd, 2),
