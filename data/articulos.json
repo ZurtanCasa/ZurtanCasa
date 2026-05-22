@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-05-22T14:43:21.444031-03:00",
+  "_ultima_actualizacion": "2026-05-22T17:03:28.997487-03:00",
   "_rango": "01/01/24 → 22/05/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -389,12 +389,12 @@
           "units": 6
         },
         "Alfombra persa": {
-          "revenue_usd": 10351.0,
-          "units": 5
+          "revenue_usd": 8433.0,
+          "units": 4
         },
         "Sin categoría": {
-          "revenue_usd": 1705.0,
-          "units": 11
+          "revenue_usd": 692.0,
+          "units": 9
         },
         "Pura Lana": {
           "revenue_usd": 0.0,
@@ -779,12 +779,12 @@
       "units": 113
     },
     "Alfombra persa": {
-      "revenue_usd": 462209.69,
-      "units": 375
+      "revenue_usd": 460291.69,
+      "units": 374
     },
     "Sin categoría": {
-      "revenue_usd": 269706.57,
-      "units": 273
+      "revenue_usd": 268693.57,
+      "units": 271
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -810,13 +810,13 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 462209.69,
-      "units": 375
+      "revenue_usd": 460291.69,
+      "units": 374
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 269706.57,
-      "units": 273
+      "revenue_usd": 268693.57,
+      "units": 271
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -852,8 +852,8 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 263013.36,
-      "units": 252,
+      "revenue_usd": 262000.36,
+      "units": 250,
       "categoria": "Sin categoría"
     },
     {
@@ -1091,12 +1091,6 @@
       "categoria": "Muebles"
     },
     {
-      "articulo": "Fine Vintage",
-      "revenue_usd": 5304.0,
-      "units": 2,
-      "categoria": "Alfombra persa"
-    },
-    {
       "articulo": "Pet Ivory 300x200",
       "revenue_usd": 5172.0,
       "units": 8,
@@ -1179,6 +1173,12 @@
       "revenue_usd": 3695.0,
       "units": 4,
       "categoria": "Exterior Pet"
+    },
+    {
+      "articulo": "Fine Vintage",
+      "revenue_usd": 3386.0,
+      "units": 1,
+      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Yute y Lana Nuevas 160 x 230 Green",
@@ -2213,8 +2213,8 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 37608.21,
-        "units": 34,
+        "revenue_usd": 36595.21,
+        "units": 32,
         "categoria": "Sin categoría"
       },
       {
@@ -2282,12 +2282,6 @@
         "revenue_usd": 1968.0,
         "units": 1,
         "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "Fine Vintage",
-        "revenue_usd": 1918.0,
-        "units": 1,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 200 x 300 Natural",
@@ -2528,6 +2522,12 @@
         "revenue_usd": 136.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Fine Vintage",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 70 x 300 Grey",
