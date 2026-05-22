@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 interface Local {
   id: string;
   nombre: string;
-  mes_actual: { revenue: number; revenue_neto?: number; orders_count: number };
-  historico_mensual: { year: number; month: number; revenue_bruto: number; revenue_neto?: number }[];
+  mes_actual: { revenue: number; orders_count: number };
+  historico_mensual: { year: number; month: number; revenue_neto?: number; revenue_bruto?: number }[];
 }
 
 interface LocalConfig {
