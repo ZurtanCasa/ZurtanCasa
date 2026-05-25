@@ -10,6 +10,7 @@ import FunnelTab from "./tabs/FunnelTab";
 import LocalesTab from "./tabs/LocalesTab";
 import PlanTab from "./tabs/PlanTab";
 import ArticulosTab from "./tabs/ArticulosTab";
+import PreciosTab from "./tabs/PreciosTab";
 import TutorialTab from "./tabs/TutorialTab";
 
 interface DashboardProps {
@@ -20,6 +21,7 @@ interface DashboardProps {
   ga4: any;
   locales: any;
   articulos: any;
+  precios: any;
   plan: any;
   contexto: any;
   ceo: any;
@@ -34,6 +36,7 @@ const TAB_TITLES: Record<TabId, string> = {
   funnel: "🛒 Funnel & Marketplace",
   locales: "🏪 Locales Físicos",
   articulos: "📦 Artículos & Categorías",
+  precios: "💰 Lista de Precios",
   plan: "📅 Plan vs Real",
   tutorial: "📚 Tutorial",
 };
@@ -65,7 +68,7 @@ function buildPlanRows(plan: any, shopify: any, ml: any, locales: any): any[] {
   });
 }
 
-export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, articulos, plan, contexto, ceo }: DashboardProps) {
+export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, articulos, precios, plan, contexto, ceo }: DashboardProps) {
   const [tab, setTab] = useState<TabId>("ceo");
 
   const lastRefresh = ceo._ultima_actualizacion || shopify._ultima_actualizacion || null;
@@ -140,6 +143,7 @@ export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, lo
             />
           )}
           {tab === "articulos" && <ArticulosTab data={articulos} />}
+          {tab === "precios" && <PreciosTab data={precios} />}
           {tab === "plan" && (
             <PlanTab
               rows={planRows}
