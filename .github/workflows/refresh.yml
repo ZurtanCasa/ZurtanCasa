@@ -40,12 +40,10 @@ jobs:
           ZETA_PASS: ${{ secrets.ZETA_PASS }}
         run: python scripts/scrape_articulos.py
 
-      - name: Fetch lista de precios (Zeta Software — Stock Actual)
-        continue-on-error: true
-        env:
-          ZETA_USER: ${{ secrets.ZETA_USER }}
-          ZETA_PASS: ${{ secrets.ZETA_PASS }}
-        run: python scripts/scrape_precios.py
+      # Lista de precios: no se incluye en el refresh automático.
+      # Los precios se actualizan manualmente cuando se cargan productos
+      # nuevos. El script scripts/scrape_precios.py queda disponible por
+      # si en el futuro se quiere automatizar.
 
       - name: Fetch Shopify
         continue-on-error: true
