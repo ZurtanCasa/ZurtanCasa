@@ -1,0 +1,270 @@
+{
+  "_status": "ok",
+  "_ultima_actualizacion": "2026-05-25T17:14:08.706209-03:00",
+  "_fuente": "Proforma Invoice PI#006 — Yudhistira, Indonesia",
+  "total_articulos": 45,
+  "articulos": [
+    {
+      "codigo": "2212071",
+      "nombre": "Bar Chair",
+      "precio_usd": 350.0,
+      "foto": "/muebles-imgs/img_26.jpg"
+    },
+    {
+      "codigo": "GR2102001-220",
+      "nombre": "Cabinet Uruguay 1",
+      "precio_usd": 2600.0,
+      "foto": "/muebles-imgs/img_01.jpg"
+    },
+    {
+      "codigo": "GR2109005",
+      "nombre": "Cabinet Uruguay 1",
+      "precio_usd": 1475.0,
+      "foto": "/muebles-imgs/img_08.jpg"
+    },
+    {
+      "codigo": "GR2102001-200",
+      "nombre": "Cabinet Uruguay 1",
+      "precio_usd": 2500.0,
+      "foto": "/muebles-imgs/img_01.jpg"
+    },
+    {
+      "codigo": "170243",
+      "nombre": "Carnival Sideboar",
+      "precio_usd": 2450.0,
+      "foto": "/muebles-imgs/img_17.jpg"
+    },
+    {
+      "codigo": "1903012",
+      "nombre": "Coffee Table",
+      "precio_usd": 1575.0,
+      "foto": "/muebles-imgs/img_23.jpg"
+    },
+    {
+      "codigo": "GR2109013",
+      "nombre": "Coffee Table 160",
+      "precio_usd": 1000.0,
+      "foto": "/muebles-imgs/img_07.jpg"
+    },
+    {
+      "codigo": "GR2109013",
+      "nombre": "Console Table 150",
+      "precio_usd": 920.0,
+      "foto": "/muebles-imgs/img_06.jpg"
+    },
+    {
+      "codigo": "GR2109012",
+      "nombre": "Console Table 180",
+      "precio_usd": 1100.0,
+      "foto": "/muebles-imgs/img_06.jpg"
+    },
+    {
+      "codigo": "GR2109012",
+      "nombre": "Console Table 210",
+      "precio_usd": 1300.0,
+      "foto": "/muebles-imgs/img_06.jpg"
+    },
+    {
+      "codigo": "170251",
+      "nombre": "Dili TV Stand",
+      "precio_usd": 1600.0,
+      "foto": "/muebles-imgs/img_19.jpg"
+    },
+    {
+      "codigo": "YU200076A",
+      "nombre": "Dining Chair Frame With Teak Wood",
+      "precio_usd": 650.0,
+      "foto": "/muebles-imgs/img_14.jpg"
+    },
+    {
+      "codigo": "YU200076B",
+      "nombre": "Dining Chair Frame With Teak Wood",
+      "precio_usd": 650.0,
+      "foto": "/muebles-imgs/img_13.jpg"
+    },
+    {
+      "codigo": "GR2102007",
+      "nombre": "Dining Table Uruguay 200",
+      "precio_usd": 1750.0,
+      "foto": "/muebles-imgs/img_04.jpg"
+    },
+    {
+      "codigo": "GR2102008",
+      "nombre": "Dining Table Uruguay 220",
+      "precio_usd": 1850.0,
+      "foto": "/muebles-imgs/img_04.jpg"
+    },
+    {
+      "codigo": "GR2102009",
+      "nombre": "Dining Table Uruguay 250",
+      "precio_usd": 2100.0
+    },
+    {
+      "codigo": "GR2109002",
+      "nombre": "Dining Table Uruguay 300",
+      "precio_usd": 2750.0
+    },
+    {
+      "codigo": "GR2102002-270",
+      "nombre": "Dressoir Uruguay",
+      "precio_usd": 2500.0,
+      "foto": "/muebles-imgs/img_02.jpg"
+    },
+    {
+      "codigo": "GR2102002-220",
+      "nombre": "Dressoir Uruguay",
+      "precio_usd": 2250.0,
+      "foto": "/muebles-imgs/img_02.jpg"
+    },
+    {
+      "codigo": "GR2102002-240",
+      "nombre": "Dressoir Uruguay",
+      "precio_usd": 2375.0,
+      "foto": "/muebles-imgs/img_02.jpg"
+    },
+    {
+      "codigo": "GR2102002-240",
+      "nombre": "Dressoir Uruguay 1 Shelves",
+      "precio_usd": 2375.0,
+      "foto": "/muebles-imgs/img_02.jpg"
+    },
+    {
+      "codigo": "GR2102002-240",
+      "nombre": "Dressoir Uruguay 2 Shelves",
+      "precio_usd": 2375.0,
+      "foto": "/muebles-imgs/img_02.jpg"
+    },
+    {
+      "codigo": "2104003",
+      "nombre": "Flare Console Table",
+      "precio_usd": 920.0,
+      "foto": "/muebles-imgs/img_22.jpg"
+    },
+    {
+      "codigo": "GR2102011-200",
+      "nombre": "Library Cabinet",
+      "precio_usd": 2650.0,
+      "foto": "/muebles-imgs/img_11.jpg"
+    },
+    {
+      "codigo": "14576",
+      "nombre": "Madura Dining Chair",
+      "precio_usd": 290.0,
+      "foto": "/muebles-imgs/img_20.jpg"
+    },
+    {
+      "codigo": "GR2102004",
+      "nombre": "Metal Dining Table Uruguay 200",
+      "precio_usd": 2000.0,
+      "foto": "/muebles-imgs/img_09.jpg"
+    },
+    {
+      "codigo": "GR2102005",
+      "nombre": "Metal Dining Table Uruguay 220",
+      "precio_usd": 2200.0
+    },
+    {
+      "codigo": "GR2102006",
+      "nombre": "Metal Dining Table Uruguay 250",
+      "precio_usd": 2400.0
+    },
+    {
+      "codigo": "GR2109001",
+      "nombre": "Metal Dining Table Uruguay 300",
+      "precio_usd": 2850.0
+    },
+    {
+      "codigo": "2007014B",
+      "nombre": "Nero Coffee Table",
+      "precio_usd": 410.0,
+      "foto": "/muebles-imgs/img_21.jpg"
+    },
+    {
+      "codigo": "1911026",
+      "nombre": "Nero Stool",
+      "precio_usd": 280.0,
+      "foto": "/muebles-imgs/img_25.jpg"
+    },
+    {
+      "codigo": "GR2109007",
+      "nombre": "Prisma Chair",
+      "precio_usd": 320.0,
+      "foto": "/muebles-imgs/img_05.jpg"
+    },
+    {
+      "codigo": "170210",
+      "nombre": "Puzzle Display Rack",
+      "precio_usd": 2350.0,
+      "foto": "/muebles-imgs/img_18.jpg"
+    },
+    {
+      "codigo": "GR2102003A",
+      "nombre": "Round Dining Table Uruguay 120",
+      "precio_usd": 1500.0,
+      "foto": "/muebles-imgs/img_03.jpg"
+    },
+    {
+      "codigo": "GR2102003B",
+      "nombre": "Round Dining Table Uruguay 150",
+      "precio_usd": 1800.0
+    },
+    {
+      "codigo": "YU2007021A",
+      "nombre": "Round Set Coffee Table Set As Wood",
+      "precio_usd": 550.0,
+      "foto": "/muebles-imgs/img_12.jpg"
+    },
+    {
+      "codigo": "YU2007021B",
+      "nombre": "Round Set Coffee Table Set As Wood",
+      "precio_usd": 420.0
+    },
+    {
+      "codigo": "YU2007021C",
+      "nombre": "Round Set Coffee Table Set As Wood",
+      "precio_usd": 310.0
+    },
+    {
+      "codigo": "YU2007022-55",
+      "nombre": "Round Side Table Table plain top no wood stripes",
+      "precio_usd": 425.0,
+      "foto": "/muebles-imgs/img_15.jpg"
+    },
+    {
+      "codigo": "YU2007027",
+      "nombre": "Round Side Table with shelf Ash Wood",
+      "precio_usd": 325.0,
+      "foto": "/muebles-imgs/img_16.jpg"
+    },
+    {
+      "codigo": "YU2007025",
+      "nombre": "Square Coffee Table plain top no wood stripes",
+      "precio_usd": 1300.0,
+      "foto": "/muebles-imgs/img_10.jpg"
+    },
+    {
+      "codigo": "203592",
+      "nombre": "Waldorf Dining Table 200",
+      "precio_usd": 1900.0,
+      "foto": "/muebles-imgs/img_24.jpg"
+    },
+    {
+      "codigo": "203592",
+      "nombre": "Waldorf Dining Table 220",
+      "precio_usd": 2170.0,
+      "foto": "/muebles-imgs/img_24.jpg"
+    },
+    {
+      "codigo": "203592",
+      "nombre": "Waldorf Dining Table 250",
+      "precio_usd": 2350.0,
+      "foto": "/muebles-imgs/img_24.jpg"
+    },
+    {
+      "codigo": "203592",
+      "nombre": "Waldorf Dining Table 300",
+      "precio_usd": 2500.0,
+      "foto": "/muebles-imgs/img_24.jpg"
+    }
+  ]
+}

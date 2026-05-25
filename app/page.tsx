@@ -10,6 +10,7 @@ import contextoRaw from "@/data/contexto_negocio.json";
 import ceoRaw from "@/data/ceo_analysis.json";
 import articulosRaw from "@/data/articulos.json";
 import preciosRaw from "@/data/precios.json";
+import mueblesRaw from "@/data/muebles.json";
 
 export const revalidate = 0;
 
@@ -24,6 +25,7 @@ export default function Home() {
       locales={localesRaw as any}
       articulos={articulosRaw as any}
       precios={preciosRaw as any}
+      muebles={mueblesRaw as any}
       plan={planRaw as any}
       contexto={contextoRaw as any}
       ceo={ceoRaw as any}

@@ -1,10 +1,12 @@
 "use client";
 import { useMemo, useState } from "react";
 
+// ── Tipos ──────────────────────────────────────────────────────────────────
 interface ArticuloPrecio {
   codigo: string;
   nombre: string;
   precio_usd: number;
+  foto?: string;          // solo muebles
 }
 
 interface PreciosData {
@@ -17,63 +19,159 @@ interface PreciosData {
 
 interface Props {
   data: PreciosData;
-  /** Si false, oculta los KPIs y muestra solo la lista (modo standalone). */
+  muebles?: PreciosData;
   showStats?: boolean;
 }
 
 type SortKey = "nombre" | "codigo" | "precio_usd";
 type SortDir = "asc" | "desc";
 
+// ── Constantes ─────────────────────────────────────────────────────────────
 const DESCUENTO = 0.20;
 
-function fmtUSD(n: number) {
-  return new Intl.NumberFormat("es-UY", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
+const NEUTRAS_KW = ["yute", "lana", " pet "];  // pet con espacios para evitar falsos positivos
+// También detectar "PET" al inicio o fin de la descripción
+function esNeutra(nombre: string) {
+  const n = ` ${nombre.toLowerCase()} `;
+  return n.includes(" yute ") || n.includes(" lana ") || n.includes(" pet ");
 }
 
-export default function PreciosTab({ data, showStats = true }: Props) {
+// ── Helpers ─────────────────────────────────────────────────────────────────
+function fmtUSD(n: number) {
+  return new Intl.NumberFormat("es-UY", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  }).format(n);
+}
+
+function sortArticulos(list: ArticuloPrecio[], key: SortKey, dir: SortDir) {
+  return [...list].sort((a, b) => {
+    let cmp = 0;
+    if (key === "precio_usd") cmp = a.precio_usd - b.precio_usd;
+    else if (key === "codigo") cmp = a.codigo.localeCompare(b.codigo, "es");
+    else cmp = a.nombre.localeCompare(b.nombre, "es");
+    return dir === "asc" ? cmp : -cmp;
+  });
+}
+
+// ── Subcomponente: fila de artículo ────────────────────────────────────────
+function ArticuloRow({
+  a,
+  conFoto,
+}: {
+  a: ArticuloPrecio;
+  conFoto: boolean;
+}) {
+  const precioDesc = a.precio_usd * (1 - DESCUENTO);
+  return (
+    <div className={`precio-row${conFoto ? " precio-row-con-foto" : ""}`}>
+      {conFoto && a.foto && (
+        <div className="precio-foto-wrap">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={a.foto}
+            alt={a.nombre}
+            className="precio-foto"
+            loading="lazy"
+          />
+        </div>
+      )}
+      <div className="precio-row-info">
+        <div className="precio-row-codigo mono">#{a.codigo}</div>
+        <div className="precio-row-nombre">{a.nombre}</div>
+      </div>
+      <div className="precio-row-prices">
+        <div className="precio-row-precio mono">{fmtUSD(a.precio_usd)}</div>
+        <div className="precio-row-descuento mono">
+          {fmtUSD(precioDesc)}{" "}
+          <span className="precio-row-pct">-20%</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ── Subcomponente: sección colapsable ──────────────────────────────────────
+function SeccionHeader({
+  titulo,
+  count,
+  open,
+  onToggle,
+  accentColor,
+}: {
+  titulo: string;
+  count: number;
+  open: boolean;
+  onToggle: () => void;
+  accentColor: string;
+}) {
+  return (
+    <button
+      className="seccion-header"
+      onClick={onToggle}
+      style={{ "--seccion-color": accentColor } as React.CSSProperties}
+    >
+      <span className="seccion-dot" />
+      <span className="seccion-titulo">{titulo}</span>
+      <span className="seccion-count">{count}</span>
+      <span className="seccion-arrow">{open ? "▲" : "▼"}</span>
+    </button>
+  );
+}
+
+// ── Componente principal ───────────────────────────────────────────────────
+export default function PreciosTab({
+  data,
+  muebles,
+  showStats = true,
+}: Props) {
   const [query, setQuery] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("nombre");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
+  const [openPersas, setOpenPersas] = useState(true);
+  const [openNeutras, setOpenNeutras] = useState(true);
+  const [openMuebles, setOpenMuebles] = useState(true);
 
-  const articulos = data?.articulos ?? [];
+  // Separar alfombras en Persas / Neutras
+  const alfombras = data?.articulos ?? [];
+  const mueblesList = muebles?.articulos ?? [];
 
-  const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-    let list = articulos;
-    if (q) {
-      list = articulos.filter(
-        (a) => a.nombre.toLowerCase().includes(q) || a.codigo.toLowerCase().includes(q)
-      );
+  const { persas, neutras } = useMemo(() => {
+    const persas: ArticuloPrecio[] = [];
+    const neutras: ArticuloPrecio[] = [];
+    for (const a of alfombras) {
+      (esNeutra(a.nombre) ? neutras : persas).push(a);
     }
-    const sorted = [...list].sort((a, b) => {
-      let cmp = 0;
-      if (sortKey === "precio_usd") cmp = a.precio_usd - b.precio_usd;
-      else if (sortKey === "codigo") cmp = a.codigo.localeCompare(b.codigo, "es");
-      else cmp = a.nombre.localeCompare(b.nombre, "es");
-      return sortDir === "asc" ? cmp : -cmp;
-    });
-    return sorted;
-  }, [articulos, query, sortKey, sortDir]);
+    return { persas, neutras };
+  }, [alfombras]);
+
+  // Filtrar + ordenar cada sección
+  const q = query.trim().toLowerCase();
+
+  function filterSort(list: ArticuloPrecio[]) {
+    const filtered = q
+      ? list.filter(
+          (a) =>
+            a.nombre.toLowerCase().includes(q) ||
+            a.codigo.toLowerCase().includes(q)
+        )
+      : list;
+    return sortArticulos(filtered, sortKey, sortDir);
+  }
+
+  const filtPersas  = useMemo(() => filterSort(persas),    [persas,    q, sortKey, sortDir]);
+  const filtNeutras = useMemo(() => filterSort(neutras),   [neutras,   q, sortKey, sortDir]);
+  const filtMuebles = useMemo(() => filterSort(mueblesList),[mueblesList,q,sortKey, sortDir]);
+
+  const totalMostrado = filtPersas.length + filtNeutras.length + filtMuebles.length;
 
   function toggleSort(k: SortKey) {
     if (sortKey === k) setSortDir(sortDir === "asc" ? "desc" : "asc");
-    else { setSortKey(k); setSortDir(k === "precio_usd" ? "desc" : "asc"); }
-  }
-
-  const precioPromedio = filtered.length > 0
-    ? filtered.reduce((s, a) => s + a.precio_usd, 0) / filtered.length
-    : 0;
-
-  if (!articulos || articulos.length === 0) {
-    return (
-      <div className="card">
-        <div className="sin-datos">
-          <div className="sin-datos-icon">💰</div>
-          <div className="sin-datos-titulo">Sin datos de precios</div>
-          <div className="sin-datos-desc">El scraper aún no descargó la lista de precios.</div>
-        </div>
-      </div>
-    );
+    else {
+      setSortKey(k);
+      setSortDir(k === "precio_usd" ? "desc" : "asc");
+    }
   }
 
   function sortArrow(k: SortKey) {
@@ -81,38 +179,61 @@ export default function PreciosTab({ data, showStats = true }: Props) {
     return sortDir === "asc" ? " ↑" : " ↓";
   }
 
+  const totalArticulos = alfombras.length + mueblesList.length;
+
+  if (totalArticulos === 0) {
+    return (
+      <div className="card">
+        <div className="sin-datos">
+          <div className="sin-datos-icon">💰</div>
+          <div className="sin-datos-titulo">Sin datos de precios</div>
+          <div className="sin-datos-desc">
+            El scraper aún no descargó la lista de precios.
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div>
       {showStats && (
         <div className="kpi-grid mb-16">
           <div className="card">
-            <div className="card-title">Artículos con precio</div>
-            <div className="card-value mono">{articulos.length.toLocaleString("es-UY")}</div>
-            <div className="card-sub">USD &gt; 0</div>
+            <div className="card-title">Total artículos</div>
+            <div className="card-value mono">
+              {totalArticulos.toLocaleString("es-UY")}
+            </div>
+            <div className="card-sub">con precio &gt; 0</div>
           </div>
           <div className="card">
             <div className="card-title">Mostrando</div>
-            <div className="card-value mono">{filtered.length.toLocaleString("es-UY")}</div>
-            <div className="card-sub">{query ? `Filtro: "${query}"` : "Sin filtro"}</div>
-          </div>
-          <div className="card">
-            <div className="card-title">Precio promedio</div>
-            <div className="card-value mono">{fmtUSD(precioPromedio)}</div>
-            <div className="card-sub">de la selección actual</div>
-          </div>
-          <div className="card">
-            <div className="card-title">Fuente</div>
-            <div className="card-value-sm mono">{data._fuente ?? "Zeta"}</div>
-            <div className="card-sub">
-              {data._ultima_actualizacion
-                ? new Date(data._ultima_actualizacion).toLocaleString("es-UY", { dateStyle: "short", timeStyle: "short" })
-                : "—"}
+            <div className="card-value mono">
+              {totalMostrado.toLocaleString("es-UY")}
             </div>
+            <div className="card-sub">
+              {query ? `Filtro: "${query}"` : "Sin filtro"}
+            </div>
+          </div>
+          <div className="card">
+            <div className="card-title">Alfombras Persas</div>
+            <div className="card-value mono">
+              {persas.length.toLocaleString("es-UY")}
+            </div>
+            <div className="card-sub">artículos</div>
+          </div>
+          <div className="card">
+            <div className="card-title">Alfombras Neutras</div>
+            <div className="card-value mono">
+              {neutras.length.toLocaleString("es-UY")}
+            </div>
+            <div className="card-sub">Yute · Lana · PET</div>
           </div>
         </div>
       )}
 
-      <div className="card">
+      {/* Toolbar: búsqueda + orden */}
+      <div className="card mb-16">
         <div className="precios-toolbar">
           <input
             type="text"
@@ -144,32 +265,87 @@ export default function PreciosTab({ data, showStats = true }: Props) {
             </button>
           </div>
         </div>
+      </div>
 
-        <div className="precios-list">
-          {filtered.map((a) => {
-            const precioDesc = a.precio_usd * (1 - DESCUENTO);
-            return (
-              <div key={a.codigo} className="precio-row">
-                <div className="precio-row-info">
-                  <div className="precio-row-codigo mono">#{a.codigo}</div>
-                  <div className="precio-row-nombre">{a.nombre}</div>
-                </div>
-                <div className="precio-row-prices">
-                  <div className="precio-row-precio mono">{fmtUSD(a.precio_usd)}</div>
-                  <div className="precio-row-descuento mono">
-                    {fmtUSD(precioDesc)} <span className="precio-row-pct">-20%</span>
-                  </div>
-                </div>
+      {/* ── Sección: Alfombras Persas ── */}
+      {filtPersas.length > 0 && (
+        <div className="seccion mb-16">
+          <SeccionHeader
+            titulo="Alfombras Persas"
+            count={filtPersas.length}
+            open={openPersas}
+            onToggle={() => setOpenPersas(!openPersas)}
+            accentColor="#a855f7"
+          />
+          {openPersas && (
+            <div className="card seccion-body">
+              <div className="precios-list">
+                {filtPersas.map((a) => (
+                  <ArticuloRow key={a.codigo} a={a} conFoto={false} />
+                ))}
               </div>
-            );
-          })}
-          {filtered.length === 0 && (
-            <div style={{ textAlign: "center", padding: 24, color: "var(--text-muted)" }}>
-              Sin resultados para "{query}"
             </div>
           )}
         </div>
-      </div>
+      )}
+
+      {/* ── Sección: Alfombras Neutras ── */}
+      {filtNeutras.length > 0 && (
+        <div className="seccion mb-16">
+          <SeccionHeader
+            titulo="Alfombras Neutras"
+            count={filtNeutras.length}
+            open={openNeutras}
+            onToggle={() => setOpenNeutras(!openNeutras)}
+            accentColor="#4f8ef7"
+          />
+          {openNeutras && (
+            <div className="card seccion-body">
+              <div className="precios-list">
+                {filtNeutras.map((a) => (
+                  <ArticuloRow key={a.codigo} a={a} conFoto={false} />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* ── Sección: Muebles ── */}
+      {filtMuebles.length > 0 && (
+        <div className="seccion mb-16">
+          <SeccionHeader
+            titulo="Muebles"
+            count={filtMuebles.length}
+            open={openMuebles}
+            onToggle={() => setOpenMuebles(!openMuebles)}
+            accentColor="#22c55e"
+          />
+          {openMuebles && (
+            <div className="card seccion-body">
+              <div className="precios-list">
+                {filtMuebles.map((a) => (
+                  <ArticuloRow
+                    key={`${a.codigo}|${a.nombre}`}
+                    a={a}
+                    conFoto={true}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Sin resultados */}
+      {totalMostrado === 0 && query && (
+        <div
+          className="card"
+          style={{ textAlign: "center", padding: 24, color: "var(--text-muted)" }}
+        >
+          Sin resultados para &ldquo;{query}&rdquo;
+        </div>
+      )}
     </div>
   );
 }

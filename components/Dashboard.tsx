@@ -22,6 +22,7 @@ interface DashboardProps {
   locales: any;
   articulos: any;
   precios: any;
+  muebles: any;
   plan: any;
   contexto: any;
   ceo: any;
@@ -68,7 +69,7 @@ function buildPlanRows(plan: any, shopify: any, ml: any, locales: any): any[] {
   });
 }
 
-export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, articulos, precios, plan, contexto, ceo }: DashboardProps) {
+export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, articulos, precios, muebles, plan, contexto, ceo }: DashboardProps) {
   const [tab, setTab] = useState<TabId>("ceo");
 
   const lastRefresh = ceo._ultima_actualizacion || shopify._ultima_actualizacion || null;
@@ -143,7 +144,7 @@ export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, lo
             />
           )}
           {tab === "articulos" && <ArticulosTab data={articulos} />}
-          {tab === "precios" && <PreciosTab data={precios} />}
+          {tab === "precios" && <PreciosTab data={precios} muebles={muebles} />}
           {tab === "plan" && (
             <PlanTab
               rows={planRows}
