@@ -40,6 +40,13 @@ jobs:
           ZETA_PASS: ${{ secrets.ZETA_PASS }}
         run: python scripts/scrape_articulos.py
 
+      - name: Fetch lista de precios (Zeta Software — Stock Actual)
+        continue-on-error: true
+        env:
+          ZETA_USER: ${{ secrets.ZETA_USER }}
+          ZETA_PASS: ${{ secrets.ZETA_PASS }}
+        run: python scripts/scrape_precios.py
+
       - name: Fetch Shopify
         continue-on-error: true
         env:
