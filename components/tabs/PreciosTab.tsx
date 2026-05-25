@@ -39,9 +39,12 @@ const DESCUENTO = 0.20;
 // Regex para detectar dimensiones: 160 x 230, 080x160, 4x3, etc.
 const SIZE_RE = /(\d{1,4})\s*[xX*]\s*(\d{1,4})/;
 
-// Colores conocidos — multi-palabra primero para que el replace no los parta
+// Colores genéricos que se eliminan del tipo
 const COLORS_RE =
-  /\b(natural grey|light grey|natural|grey|vison|clay|graphite|latte|beige|charcol|charcoal|green|ivory|anthracite|bark)\b/gi;
+  /\b(natural grey|light grey|natural|grey|vison|beige|charcol|charcoal|green|ivory|anthracite|bark)\b/gi;
+
+// Colores que pertenecen a la colección "Qayyum" y reemplazan el tipo base
+const QAYYUM_COLORS_RE = /\b(clay|latte|graphite)\b/i;
 
 function esNeutra(nombre: string) {
   const n = ` ${nombre.toLowerCase()} `;
@@ -56,13 +59,21 @@ function toNeutrasKey(nombre: string): { key: string; tipo: string; medida: stri
   const sizeIdx = m.index;
   let before = nombre.slice(0, sizeIdx);
 
-  // Quitar patrón "- COLOR" al final del tramo previo (e.g. "HANDMADE PET DHURRIES - ANTHRACITE")
+  // Quitar patrón "- COLOR" al final (e.g. "HANDMADE PET DHURRIES - ANTHRACITE")
   before = before.replace(/\s*-\s*\S+\s*$/, "").trim();
-  // Quitar palabras de color
-  const tipo = before
+
+  // Detectar colección Qayyum antes de eliminar colores
+  const isQayyum = QAYYUM_COLORS_RE.test(before);
+
+  // Quitar colores genéricos (Clay/Latte/Graphite también, ya que se capturó el flag)
+  const tipoBase = before
     .replace(COLORS_RE, " ")
+    .replace(QAYYUM_COLORS_RE, " ")
     .replace(/\s+/g, " ")
     .trim();
+
+  // Si era Qayyum, agregar el sufijo al tipo base
+  const tipo = isQayyum ? `${tipoBase} Qayyum` : tipoBase;
 
   const n1 = parseInt(m[1], 10);
   const n2 = parseInt(m[2], 10);
