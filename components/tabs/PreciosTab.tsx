@@ -15,7 +15,11 @@ interface PreciosData {
   articulos: ArticuloPrecio[];
 }
 
-interface Props { data: PreciosData; }
+interface Props {
+  data: PreciosData;
+  /** Si false, oculta los KPIs y muestra solo la tabla (modo standalone). */
+  showStats?: boolean;
+}
 
 type SortKey = "nombre" | "codigo" | "precio_usd";
 type SortDir = "asc" | "desc";
@@ -24,7 +28,7 @@ function fmtUSD(n: number) {
   return new Intl.NumberFormat("es-UY", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
 }
 
-export default function PreciosTab({ data }: Props) {
+export default function PreciosTab({ data, showStats = true }: Props) {
   const [query, setQuery] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("nombre");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
@@ -77,32 +81,34 @@ export default function PreciosTab({ data }: Props) {
 
   return (
     <div>
-      <div className="kpi-grid mb-16">
-        <div className="card">
-          <div className="card-title">Artículos con precio</div>
-          <div className="card-value mono">{articulos.length.toLocaleString("es-UY")}</div>
-          <div className="card-sub">USD &gt; 0</div>
-        </div>
-        <div className="card">
-          <div className="card-title">Mostrando</div>
-          <div className="card-value mono">{filtered.length.toLocaleString("es-UY")}</div>
-          <div className="card-sub">{query ? `Filtro: "${query}"` : "Sin filtro"}</div>
-        </div>
-        <div className="card">
-          <div className="card-title">Precio promedio</div>
-          <div className="card-value mono">{fmtUSD(precioPromedio)}</div>
-          <div className="card-sub">de la selección actual</div>
-        </div>
-        <div className="card">
-          <div className="card-title">Fuente</div>
-          <div className="card-value-sm mono">{data._fuente ?? "Zeta"}</div>
-          <div className="card-sub">
-            {data._ultima_actualizacion
-              ? new Date(data._ultima_actualizacion).toLocaleString("es-UY", { dateStyle: "short", timeStyle: "short" })
-              : "—"}
+      {showStats && (
+        <div className="kpi-grid mb-16">
+          <div className="card">
+            <div className="card-title">Artículos con precio</div>
+            <div className="card-value mono">{articulos.length.toLocaleString("es-UY")}</div>
+            <div className="card-sub">USD &gt; 0</div>
+          </div>
+          <div className="card">
+            <div className="card-title">Mostrando</div>
+            <div className="card-value mono">{filtered.length.toLocaleString("es-UY")}</div>
+            <div className="card-sub">{query ? `Filtro: "${query}"` : "Sin filtro"}</div>
+          </div>
+          <div className="card">
+            <div className="card-title">Precio promedio</div>
+            <div className="card-value mono">{fmtUSD(precioPromedio)}</div>
+            <div className="card-sub">de la selección actual</div>
+          </div>
+          <div className="card">
+            <div className="card-title">Fuente</div>
+            <div className="card-value-sm mono">{data._fuente ?? "Zeta"}</div>
+            <div className="card-sub">
+              {data._ultima_actualizacion
+                ? new Date(data._ultima_actualizacion).toLocaleString("es-UY", { dateStyle: "short", timeStyle: "short" })
+                : "—"}
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       <div className="card">
         <div className="flex-between mb-8" style={{ alignItems: "center", flexWrap: "wrap", gap: 12 }}>
