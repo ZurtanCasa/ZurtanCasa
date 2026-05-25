@@ -17,12 +17,14 @@ interface PreciosData {
 
 interface Props {
   data: PreciosData;
-  /** Si false, oculta los KPIs y muestra solo la tabla (modo standalone). */
+  /** Si false, oculta los KPIs y muestra solo la lista (modo standalone). */
   showStats?: boolean;
 }
 
 type SortKey = "nombre" | "codigo" | "precio_usd";
 type SortDir = "asc" | "desc";
+
+const DESCUENTO = 0.20;
 
 function fmtUSD(n: number) {
   return new Intl.NumberFormat("es-UY", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
@@ -58,11 +60,6 @@ export default function PreciosTab({ data, showStats = true }: Props) {
     else { setSortKey(k); setSortDir(k === "precio_usd" ? "desc" : "asc"); }
   }
 
-  function sortIcon(k: SortKey) {
-    if (sortKey !== k) return "↕";
-    return sortDir === "asc" ? "↑" : "↓";
-  }
-
   const precioPromedio = filtered.length > 0
     ? filtered.reduce((s, a) => s + a.precio_usd, 0) / filtered.length
     : 0;
@@ -77,6 +74,11 @@ export default function PreciosTab({ data, showStats = true }: Props) {
         </div>
       </div>
     );
+  }
+
+  function sortArrow(k: SortKey) {
+    if (sortKey !== k) return "";
+    return sortDir === "asc" ? " ↑" : " ↓";
   }
 
   return (
@@ -111,61 +113,61 @@ export default function PreciosTab({ data, showStats = true }: Props) {
       )}
 
       <div className="card">
-        <div className="flex-between mb-8" style={{ alignItems: "center", flexWrap: "wrap", gap: 12 }}>
-          <div className="card-title" style={{ marginBottom: 0 }}>Lista de Precios</div>
+        <div className="precios-toolbar">
           <input
             type="text"
             placeholder="Buscar por nombre o código…"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            style={{
-              background: "var(--bg-card)",
-              border: "1px solid var(--border)",
-              borderRadius: 8,
-              padding: "8px 12px",
-              color: "var(--text)",
-              fontSize: 13,
-              minWidth: 260,
-              outline: "none",
-            }}
+            className="precios-search"
+            inputMode="search"
           />
+          <div className="precios-sort">
+            <span className="precios-sort-label">Ordenar:</span>
+            <button
+              className={`precios-sort-btn${sortKey === "nombre" ? " active" : ""}`}
+              onClick={() => toggleSort("nombre")}
+            >
+              Nombre{sortArrow("nombre")}
+            </button>
+            <button
+              className={`precios-sort-btn${sortKey === "codigo" ? " active" : ""}`}
+              onClick={() => toggleSort("codigo")}
+            >
+              Código{sortArrow("codigo")}
+            </button>
+            <button
+              className={`precios-sort-btn${sortKey === "precio_usd" ? " active" : ""}`}
+              onClick={() => toggleSort("precio_usd")}
+            >
+              Precio{sortArrow("precio_usd")}
+            </button>
+          </div>
         </div>
 
-        <div style={{ overflowX: "auto", marginTop: 12 }}>
-          <table className="precios-table">
-            <thead>
-              <tr>
-                <th onClick={() => toggleSort("codigo")} style={{ cursor: "pointer", width: 110 }}>
-                  Código <span style={{ opacity: 0.6 }}>{sortIcon("codigo")}</span>
-                </th>
-                <th onClick={() => toggleSort("nombre")} style={{ cursor: "pointer" }}>
-                  Nombre <span style={{ opacity: 0.6 }}>{sortIcon("nombre")}</span>
-                </th>
-                <th
-                  onClick={() => toggleSort("precio_usd")}
-                  style={{ cursor: "pointer", textAlign: "right", width: 140 }}
-                >
-                  Precio (USD) <span style={{ opacity: 0.6 }}>{sortIcon("precio_usd")}</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {filtered.map((a) => (
-                <tr key={a.codigo}>
-                  <td className="mono" style={{ color: "var(--text-muted)" }}>{a.codigo}</td>
-                  <td>{a.nombre}</td>
-                  <td className="mono" style={{ textAlign: "right" }}>{fmtUSD(a.precio_usd)}</td>
-                </tr>
-              ))}
-              {filtered.length === 0 && (
-                <tr>
-                  <td colSpan={3} style={{ textAlign: "center", padding: 24, color: "var(--text-muted)" }}>
-                    Sin resultados para "{query}"
-                  </td>
-                </tr>
-              )}
-            </tbody>
-          </table>
+        <div className="precios-list">
+          {filtered.map((a) => {
+            const precioDesc = a.precio_usd * (1 - DESCUENTO);
+            return (
+              <div key={a.codigo} className="precio-row">
+                <div className="precio-row-info">
+                  <div className="precio-row-codigo mono">#{a.codigo}</div>
+                  <div className="precio-row-nombre">{a.nombre}</div>
+                </div>
+                <div className="precio-row-prices">
+                  <div className="precio-row-precio mono">{fmtUSD(a.precio_usd)}</div>
+                  <div className="precio-row-descuento mono">
+                    {fmtUSD(precioDesc)} <span className="precio-row-pct">-20%</span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+          {filtered.length === 0 && (
+            <div style={{ textAlign: "center", padding: 24, color: "var(--text-muted)" }}>
+              Sin resultados para "{query}"
+            </div>
+          )}
         </div>
       </div>
     </div>
