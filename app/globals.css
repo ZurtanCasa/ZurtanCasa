@@ -172,6 +172,42 @@ tr:hover td { background: var(--bg-card-hover); }
 .precios-table th:hover { color: var(--text); }
 .precios-table tbody tr:hover td { background: var(--bg-card-hover); }
 
+/* Página standalone /precios — independiente del dashboard */
+.precios-standalone {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+.precios-standalone-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 24px;
+}
+.precios-standalone-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.precios-standalone-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.precios-standalone-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.precios-standalone-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
 .badge {
   display: inline-block;
   font-size: 11px;
