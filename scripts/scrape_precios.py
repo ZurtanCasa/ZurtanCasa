@@ -203,8 +203,9 @@ def parse_excel(path: str) -> list[dict]:
       - Header en fila 4
       - Col A (0): ARTICULO (código)
       - Col B (1): NOMBRE
-      - Col K (10): TOTAL (precio USD con IVA)
-    Pero detectamos por nombre de header para ser robusto.
+      - Col J (9): PRECIOS DE VENTA 2026 (precio unitario USD con IVA) ← este es el que queremos
+      - Col K (10): TOTAL (= precio × stock; NO usamos esto)
+    Detectamos por nombre de header para ser robusto a cambios de orden.
     """
     try:
         import openpyxl
@@ -232,7 +233,7 @@ def parse_excel(path: str) -> list[dict]:
     headers = [str(v).upper().strip() if v is not None else "" for v in rows[header_row]]
     print(f"    Header fila {header_row}: {headers}")
 
-    def col(*names) -> int:
+    def col_exact(*names) -> int:
         """Devuelve el índice de la primera columna cuyo header == alguno de los nombres."""
         for n in names:
             for i, h in enumerate(headers):
@@ -240,27 +241,36 @@ def parse_excel(path: str) -> list[dict]:
                     return i
         return -1
 
-    c_articulo = col("ARTICULO", "CODIGO", "CÓDIGO")
-    c_nombre   = col("NOMBRE", "DESCRIPCION", "DESCRIPCIÓN")
-    c_total    = col("TOTAL")  # En el Stock Actual con stock valorado, TOTAL = precio * stock... o precio?
+    def col_contains(*needles) -> int:
+        """Devuelve el índice de la primera columna cuyo header contiene alguno de los strings."""
+        for n in needles:
+            for i, h in enumerate(headers):
+                if n.upper() in h:
+                    return i
+        return -1
 
-    # Si TOTAL no aparece, intentar otras opciones
-    if c_total == -1:
-        c_total = col("PRECIO", "PRECIO VENTA", "IMPORTE")
+    c_articulo = col_exact("ARTICULO", "CODIGO", "CÓDIGO")
+    c_nombre   = col_exact("NOMBRE", "DESCRIPCION", "DESCRIPCIÓN")
+    # Precio: columna "PRECIOS DE VENTA 2026" (o similar con el año).
+    # NO usar TOTAL — TOTAL = precio × stock, queremos el unitario.
+    c_precio   = col_contains("PRECIOS DE VENTA", "PRECIO DE VENTA", "PRECIO VENTA")
+    if c_precio == -1:
+        c_precio = col_exact("PRECIO", "IMPORTE")
 
-    print(f"    Columnas: articulo={c_articulo} nombre={c_nombre} precio={c_total}")
+    print(f"    Columnas: articulo={c_articulo} nombre={c_nombre} precio={c_precio} "
+          f"(header={headers[c_precio] if c_precio >= 0 else 'N/A'})")
 
-    if c_articulo == -1 or c_nombre == -1 or c_total == -1:
+    if c_articulo == -1 or c_nombre == -1 or c_precio == -1:
         print(f"    ERROR: faltan columnas requeridas. Headers: {headers}")
         return []
 
     articulos = []
     for row in rows[header_row + 1:]:
-        if not row or len(row) <= max(c_articulo, c_nombre, c_total):
+        if not row or len(row) <= max(c_articulo, c_nombre, c_precio):
             continue
         codigo = row[c_articulo]
         nombre = row[c_nombre]
-        precio = row[c_total]
+        precio = row[c_precio]
         if not codigo or not nombre:
             continue
         try:

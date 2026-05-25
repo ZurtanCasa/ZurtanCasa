@@ -1,8 +1,8 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-05-25T13:36:13.670132-03:00",
-  "_fuente": "Stock Actual (manual)",
-  "total_articulos": 697,
+  "_ultima_actualizacion": "2026-05-25T16:25:48.143655-03:00",
+  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA",
+  "total_articulos": 917,
   "articulos": [
     {
       "codigo": "16186",
@@ -167,7 +167,7 @@
     {
       "codigo": "2265",
       "nombre": "Afghan vintage carpet",
-      "precio_usd": 3278.0
+      "precio_usd": 1639.0
     },
     {
       "codigo": "2268",
@@ -217,7 +217,7 @@
     {
       "codigo": "2289",
       "nombre": "Afghan vintage carpet",
-      "precio_usd": 3688.0
+      "precio_usd": 1844.0
     },
     {
       "codigo": "9",
@@ -243,6 +243,36 @@
       "codigo": "59565",
       "nombre": "Bachtiari Mafrash",
       "precio_usd": 1056.0
+    },
+    {
+      "codigo": "608G",
+      "nombre": "Bachtiari Mafrash",
+      "precio_usd": 686.0
+    },
+    {
+      "codigo": "571G",
+      "nombre": "Bakthiari Mafrash",
+      "precio_usd": 1307.0
+    },
+    {
+      "codigo": "574G",
+      "nombre": "Bakthiari Mafrash",
+      "precio_usd": 1345.0
+    },
+    {
+      "codigo": "577G",
+      "nombre": "Bakthiari Mafrash",
+      "precio_usd": 1448.0
+    },
+    {
+      "codigo": "578G",
+      "nombre": "Bakthiari Mafrash",
+      "precio_usd": 1385.0
+    },
+    {
+      "codigo": "580G",
+      "nombre": "Bakthiari Mafrash",
+      "precio_usd": 1188.0
     },
     {
       "codigo": "59762",
@@ -455,6 +485,11 @@
       "precio_usd": 1924.0
     },
     {
+      "codigo": "589G",
+      "nombre": "Garadjeh",
+      "precio_usd": 1350.0
+    },
+    {
       "codigo": "59637",
       "nombre": "Garadjeh",
       "precio_usd": 1562.0
@@ -475,6 +510,21 @@
       "precio_usd": 2130.0
     },
     {
+      "codigo": "632G",
+      "nombre": "Garadjeh",
+      "precio_usd": 1619.0
+    },
+    {
+      "codigo": "634G",
+      "nombre": "Garadjeh",
+      "precio_usd": 4990.0
+    },
+    {
+      "codigo": "640G",
+      "nombre": "Garadjeh",
+      "precio_usd": 1124.0
+    },
+    {
       "codigo": "59827",
       "nombre": "Gardjeh",
       "precio_usd": 1397.0
@@ -488,6 +538,26 @@
       "codigo": "59829",
       "nombre": "Gardjeh",
       "precio_usd": 555.0
+    },
+    {
+      "codigo": "765G",
+      "nombre": "Gashgai",
+      "precio_usd": 220.0
+    },
+    {
+      "codigo": "768G",
+      "nombre": "Gashgai",
+      "precio_usd": 342.0
+    },
+    {
+      "codigo": "770G",
+      "nombre": "Gashgai",
+      "precio_usd": 262.0
+    },
+    {
+      "codigo": "777G",
+      "nombre": "Gashgai",
+      "precio_usd": 1100.0
     },
     {
       "codigo": "59754",
@@ -565,6 +635,81 @@
       "precio_usd": 455.0
     },
     {
+      "codigo": "595G",
+      "nombre": "Ghouchan",
+      "precio_usd": 1090.0
+    },
+    {
+      "codigo": "742G",
+      "nombre": "Ghouchan",
+      "precio_usd": 175.0
+    },
+    {
+      "codigo": "743G",
+      "nombre": "Ghouchan",
+      "precio_usd": 160.0
+    },
+    {
+      "codigo": "744G",
+      "nombre": "Ghouchan",
+      "precio_usd": 168.0
+    },
+    {
+      "codigo": "745G",
+      "nombre": "Ghouchan",
+      "precio_usd": 190.0
+    },
+    {
+      "codigo": "748G",
+      "nombre": "Ghouchan",
+      "precio_usd": 383.0
+    },
+    {
+      "codigo": "752G",
+      "nombre": "Ghouchan",
+      "precio_usd": 1241.0
+    },
+    {
+      "codigo": "753G",
+      "nombre": "Ghouchan",
+      "precio_usd": 441.0
+    },
+    {
+      "codigo": "754G",
+      "nombre": "Ghouchan",
+      "precio_usd": 472.0
+    },
+    {
+      "codigo": "755G",
+      "nombre": "Ghouchan",
+      "precio_usd": 495.0
+    },
+    {
+      "codigo": "756G",
+      "nombre": "Ghouchan",
+      "precio_usd": 541.0
+    },
+    {
+      "codigo": "759G",
+      "nombre": "Ghouchan",
+      "precio_usd": 785.0
+    },
+    {
+      "codigo": "760G",
+      "nombre": "Ghouchan",
+      "precio_usd": 648.0
+    },
+    {
+      "codigo": "761G",
+      "nombre": "Ghouchan",
+      "precio_usd": 763.0
+    },
+    {
+      "codigo": "762G",
+      "nombre": "Ghouchan",
+      "precio_usd": 1284.0
+    },
+    {
       "codigo": "290",
       "nombre": "Hamedam",
       "precio_usd": 1188.0
@@ -573,6 +718,36 @@
       "codigo": "295",
       "nombre": "Hamedam",
       "precio_usd": 1121.0
+    },
+    {
+      "codigo": "245416",
+      "nombre": "HANDMADE PET DHURRIES - ANTHRACITE 230x160",
+      "precio_usd": 460.0
+    },
+    {
+      "codigo": "245417",
+      "nombre": "HANDMADE PET DHURRIES - ANTHRACITE 4x3",
+      "precio_usd": 1650.0
+    },
+    {
+      "codigo": "245411",
+      "nombre": "HANDMADE PET DHURRIES - BARK 230x160",
+      "precio_usd": 460.0
+    },
+    {
+      "codigo": "245414",
+      "nombre": "HANDMADE PET DHURRIES - BARK 4x3",
+      "precio_usd": 1650.0
+    },
+    {
+      "codigo": "245408",
+      "nombre": "HANDMADE PET DHURRIES - IVORY 230x160",
+      "precio_usd": 460.0
+    },
+    {
+      "codigo": "245409",
+      "nombre": "HANDMADE PET DHURRIES - IVORY 4x3",
+      "precio_usd": 1650.0
     },
     {
       "codigo": "1001",
@@ -815,6 +990,36 @@
       "precio_usd": 848.0
     },
     {
+      "codigo": "620G",
+      "nombre": "Kashgai",
+      "precio_usd": 1387.0
+    },
+    {
+      "codigo": "621G",
+      "nombre": "Kashgai",
+      "precio_usd": 1363.0
+    },
+    {
+      "codigo": "622G",
+      "nombre": "Kashgai",
+      "precio_usd": 1409.0
+    },
+    {
+      "codigo": "623G",
+      "nombre": "Kashgai",
+      "precio_usd": 1143.0
+    },
+    {
+      "codigo": "624G",
+      "nombre": "Kashgai",
+      "precio_usd": 1289.0
+    },
+    {
+      "codigo": "763G",
+      "nombre": "Kashgai",
+      "precio_usd": 201.0
+    },
+    {
       "codigo": "51550",
       "nombre": "Kashgai Bag",
       "precio_usd": 619.0
@@ -838,6 +1043,26 @@
       "codigo": "59710",
       "nombre": "Kashgai-Shiraz",
       "precio_usd": 1665.0
+    },
+    {
+      "codigo": "584G",
+      "nombre": "Kelim Afshari",
+      "precio_usd": 842.0
+    },
+    {
+      "codigo": "734G",
+      "nombre": "Kelim Afshari",
+      "precio_usd": 3109.0
+    },
+    {
+      "codigo": "735G",
+      "nombre": "Kelim Afshari",
+      "precio_usd": 3209.0
+    },
+    {
+      "codigo": "739G",
+      "nombre": "Kelim Afshari",
+      "precio_usd": 5843.0
     },
     {
       "codigo": "13185",
@@ -930,9 +1155,19 @@
       "precio_usd": 2228.0
     },
     {
+      "codigo": "728G",
+      "nombre": "Kilim Afsahari",
+      "precio_usd": 1302.0
+    },
+    {
       "codigo": "57296",
       "nombre": "Kilim Afschari",
       "precio_usd": 4154.0
+    },
+    {
+      "codigo": "586G",
+      "nombre": "Kilim Afshari",
+      "precio_usd": 865.0
     },
     {
       "codigo": "59533",
@@ -998,6 +1233,31 @@
       "codigo": "59671",
       "nombre": "Kilim Afshari",
       "precio_usd": 2033.0
+    },
+    {
+      "codigo": "710G",
+      "nombre": "Kilim Afshari",
+      "precio_usd": 210.0
+    },
+    {
+      "codigo": "713G",
+      "nombre": "Kilim Afshari",
+      "precio_usd": 509.0
+    },
+    {
+      "codigo": "715G",
+      "nombre": "Kilim Afshari",
+      "precio_usd": 1178.0
+    },
+    {
+      "codigo": "716G",
+      "nombre": "Kilim Afshari",
+      "precio_usd": 1248.0
+    },
+    {
+      "codigo": "717G",
+      "nombre": "Kilim Afshari",
+      "precio_usd": 1261.0
     },
     {
       "codigo": "1017",
@@ -1350,6 +1610,61 @@
       "precio_usd": 1195.0
     },
     {
+      "codigo": "939G",
+      "nombre": "Koosan",
+      "precio_usd": 868.0
+    },
+    {
+      "codigo": "940G",
+      "nombre": "Koosan",
+      "precio_usd": 862.0
+    },
+    {
+      "codigo": "941G",
+      "nombre": "Koosan",
+      "precio_usd": 987.0
+    },
+    {
+      "codigo": "942G",
+      "nombre": "Koosan",
+      "precio_usd": 959.0
+    },
+    {
+      "codigo": "943G",
+      "nombre": "Koosan",
+      "precio_usd": 1018.0
+    },
+    {
+      "codigo": "945G",
+      "nombre": "Koosan",
+      "precio_usd": 971.0
+    },
+    {
+      "codigo": "946G",
+      "nombre": "Koosan",
+      "precio_usd": 977.0
+    },
+    {
+      "codigo": "948G",
+      "nombre": "Koosan",
+      "precio_usd": 956.0
+    },
+    {
+      "codigo": "949G",
+      "nombre": "Koosan",
+      "precio_usd": 906.0
+    },
+    {
+      "codigo": "950G",
+      "nombre": "Koosan",
+      "precio_usd": 906.0
+    },
+    {
+      "codigo": "962G",
+      "nombre": "Koosan",
+      "precio_usd": 1170.0
+    },
+    {
       "codigo": "58049",
       "nombre": "Ku.Ghuchan",
       "precio_usd": 2327.0
@@ -1377,7 +1692,7 @@
     {
       "codigo": "1076",
       "nombre": "Lahore",
-      "precio_usd": 2148.0
+      "precio_usd": 1074.0
     },
     {
       "codigo": "1080",
@@ -1645,6 +1960,16 @@
       "precio_usd": 2841.0
     },
     {
+      "codigo": "579G",
+      "nombre": "Mafrash",
+      "precio_usd": 1292.0
+    },
+    {
+      "codigo": "582G",
+      "nombre": "Mafrash",
+      "precio_usd": 1216.0
+    },
+    {
       "codigo": "59791",
       "nombre": "Mafrash",
       "precio_usd": 543.0
@@ -1662,7 +1987,7 @@
     {
       "codigo": "59810",
       "nombre": "Mafrash",
-      "precio_usd": 2504.0
+      "precio_usd": 1252.0
     },
     {
       "codigo": "59813",
@@ -2233,6 +2558,231 @@
       "codigo": "59970",
       "nombre": "Patchwork",
       "precio_usd": 1929.0
+    },
+    {
+      "codigo": "915G",
+      "nombre": "patchwork",
+      "precio_usd": 3791.0
+    },
+    {
+      "codigo": "921G",
+      "nombre": "patchwork",
+      "precio_usd": 1888.0
+    },
+    {
+      "codigo": "245412",
+      "nombre": "Pet Anthracite 300x200",
+      "precio_usd": 875.0
+    },
+    {
+      "codigo": "245413",
+      "nombre": "Pet Anthracite 350x250",
+      "precio_usd": 1275.0
+    },
+    {
+      "codigo": "245403",
+      "nombre": "Pet Bark 300x200",
+      "precio_usd": 875.0
+    },
+    {
+      "codigo": "245404",
+      "nombre": "Pet Bark 350x250",
+      "precio_usd": 1275.0
+    },
+    {
+      "codigo": "245401",
+      "nombre": "Pet Ivory 300x200",
+      "precio_usd": 875.0
+    },
+    {
+      "codigo": "245402",
+      "nombre": "Pet Ivory 350x250",
+      "precio_usd": 1275.0
+    },
+    {
+      "codigo": "1346-160230",
+      "nombre": "Pura Lana 160 x 230 Grey",
+      "precio_usd": 755.0
+    },
+    {
+      "codigo": "1325-160230",
+      "nombre": "Pura Lana 160 x 230 Natural",
+      "precio_usd": 755.0
+    },
+    {
+      "codigo": "HO11326-160*230",
+      "nombre": "Pura Lana 160 x 230 Natural Grey",
+      "precio_usd": 755.0
+    },
+    {
+      "codigo": "1346B-160230",
+      "nombre": "Pura Lana 160 x 230 Vison",
+      "precio_usd": 755.0
+    },
+    {
+      "codigo": "1346-200300",
+      "nombre": "Pura Lana 200 x 300 Grey",
+      "precio_usd": 1250.0
+    },
+    {
+      "codigo": "1325-200300",
+      "nombre": "Pura Lana 200 x 300 Natural",
+      "precio_usd": 1250.0
+    },
+    {
+      "codigo": "HO11326-200*300",
+      "nombre": "Pura Lana 200 x 300 Natural Grey",
+      "precio_usd": 1250.0
+    },
+    {
+      "codigo": "1346B-200300",
+      "nombre": "Pura Lana 200 x 300 Vison",
+      "precio_usd": 1250.0
+    },
+    {
+      "codigo": "1346-250350",
+      "nombre": "Pura Lana 250 x 350 Grey",
+      "precio_usd": 1790.0
+    },
+    {
+      "codigo": "1325-250350",
+      "nombre": "Pura Lana 250 x 350 Natural",
+      "precio_usd": 1790.0
+    },
+    {
+      "codigo": "HO11326-250*350",
+      "nombre": "Pura Lana 250 x 350 Natural Grey",
+      "precio_usd": 1790.0
+    },
+    {
+      "codigo": "1346B-250350",
+      "nombre": "Pura Lana 250 x 350 Vison",
+      "precio_usd": 1790.0
+    },
+    {
+      "codigo": "1346-300400",
+      "nombre": "Pura Lana 300 x 400 Grey",
+      "precio_usd": 2460.0
+    },
+    {
+      "codigo": "1325-300400",
+      "nombre": "Pura Lana 300 x 400 Natural",
+      "precio_usd": 2460.0
+    },
+    {
+      "codigo": "1346B-300400",
+      "nombre": "Pura Lana 300 x 400 Vison",
+      "precio_usd": 2460.0
+    },
+    {
+      "codigo": "1346-70200",
+      "nombre": "Pura Lana 70 x 200 Grey",
+      "precio_usd": 285.0
+    },
+    {
+      "codigo": "1325-70200",
+      "nombre": "Pura Lana 70 x 200 Natural",
+      "precio_usd": 285.0
+    },
+    {
+      "codigo": "1346B-70200",
+      "nombre": "Pura Lana 70 x 200 Vison",
+      "precio_usd": 285.0
+    },
+    {
+      "codigo": "1346-70300",
+      "nombre": "Pura Lana 70 x 300 Grey",
+      "precio_usd": 430.0
+    },
+    {
+      "codigo": "1325-70300",
+      "nombre": "Pura Lana 70 x 300 Natural",
+      "precio_usd": 430.0
+    },
+    {
+      "codigo": "HO11326-70*300",
+      "nombre": "Pura Lana 70 x 300 Natural Grey",
+      "precio_usd": 430.0
+    },
+    {
+      "codigo": "1346B-70300",
+      "nombre": "Pura Lana 70 x 300 Vison",
+      "precio_usd": 430.0
+    },
+    {
+      "codigo": "1346-80120",
+      "nombre": "Pura Lana 80 x 120 Grey",
+      "precio_usd": 205.0
+    },
+    {
+      "codigo": "1325-80120",
+      "nombre": "Pura Lana 80 x 120 Natural",
+      "precio_usd": 205.0
+    },
+    {
+      "codigo": "HO11326-80*120",
+      "nombre": "Pura Lana 80 x 120 Natural Grey",
+      "precio_usd": 205.0
+    },
+    {
+      "codigo": "1346B-80120",
+      "nombre": "Pura Lana 80 x 120 Vison",
+      "precio_usd": 205.0
+    },
+    {
+      "codigo": "789437",
+      "nombre": "Pura Lana Clay 080x160",
+      "precio_usd": 215.0
+    },
+    {
+      "codigo": "789434",
+      "nombre": "Pura Lana Clay 230x160",
+      "precio_usd": 625.0
+    },
+    {
+      "codigo": "789435",
+      "nombre": "Pura Lana Clay 300x200",
+      "precio_usd": 1000.0
+    },
+    {
+      "codigo": "789436",
+      "nombre": "Pura Lana Clay 350x250",
+      "precio_usd": 1460.0
+    },
+    {
+      "codigo": "789430",
+      "nombre": "Pura Lana Graphite 080x160",
+      "precio_usd": 215.0
+    },
+    {
+      "codigo": "789428",
+      "nombre": "Pura Lana Graphite 230X160",
+      "precio_usd": 625.0
+    },
+    {
+      "codigo": "789429",
+      "nombre": "Pura Lana Graphite 300x200",
+      "precio_usd": 1000.0
+    },
+    {
+      "codigo": "789405",
+      "nombre": "Pura Lana Latte 080x160",
+      "precio_usd": 215.0
+    },
+    {
+      "codigo": "789402",
+      "nombre": "Pura Lana Latte 230X160",
+      "precio_usd": 625.0
+    },
+    {
+      "codigo": "789403",
+      "nombre": "Pura Lana Latte 300x200",
+      "precio_usd": 1000.0
+    },
+    {
+      "codigo": "789404",
+      "nombre": "Pura Lana Latte350x250",
+      "precio_usd": 1460.0
     },
     {
       "codigo": "1084",
@@ -3310,9 +3860,99 @@
       "precio_usd": 598.0
     },
     {
+      "codigo": "598G",
+      "nombre": "Vintage",
+      "precio_usd": 2897.0
+    },
+    {
+      "codigo": "599G",
+      "nombre": "Vintage",
+      "precio_usd": 2922.0
+    },
+    {
+      "codigo": "603G",
+      "nombre": "Vintage",
+      "precio_usd": 4041.0
+    },
+    {
+      "codigo": "644G",
+      "nombre": "Vintage",
+      "precio_usd": 2809.0
+    },
+    {
+      "codigo": "646G",
+      "nombre": "Vintage",
+      "precio_usd": 3717.0
+    },
+    {
+      "codigo": "650G",
+      "nombre": "Vintage",
+      "precio_usd": 228.0
+    },
+    {
+      "codigo": "666G",
+      "nombre": "Vintage",
+      "precio_usd": 516.0
+    },
+    {
+      "codigo": "667G",
+      "nombre": "Vintage",
+      "precio_usd": 338.0
+    },
+    {
+      "codigo": "668G",
+      "nombre": "Vintage",
+      "precio_usd": 662.0
+    },
+    {
+      "codigo": "670G",
+      "nombre": "Vintage",
+      "precio_usd": 666.0
+    },
+    {
+      "codigo": "672G",
+      "nombre": "Vintage",
+      "precio_usd": 2001.0
+    },
+    {
+      "codigo": "674G",
+      "nombre": "Vintage",
+      "precio_usd": 849.0
+    },
+    {
+      "codigo": "675G",
+      "nombre": "Vintage",
+      "precio_usd": 390.0
+    },
+    {
+      "codigo": "676G",
+      "nombre": "Vintage",
+      "precio_usd": 3089.0
+    },
+    {
+      "codigo": "679G",
+      "nombre": "Vintage",
+      "precio_usd": 2066.0
+    },
+    {
       "codigo": "68253",
       "nombre": "Vintage",
       "precio_usd": 2881.0
+    },
+    {
+      "codigo": "686G",
+      "nombre": "Vintage",
+      "precio_usd": 1784.0
+    },
+    {
+      "codigo": "692G",
+      "nombre": "vintage",
+      "precio_usd": 3951.0
+    },
+    {
+      "codigo": "706G",
+      "nombre": "Vintage",
+      "precio_usd": 1863.0
     },
     {
       "codigo": "73201",
@@ -3330,6 +3970,156 @@
       "precio_usd": 1906.0
     },
     {
+      "codigo": "785G",
+      "nombre": "vintage",
+      "precio_usd": 796.0
+    },
+    {
+      "codigo": "786G",
+      "nombre": "vintage",
+      "precio_usd": 796.0
+    },
+    {
+      "codigo": "788G",
+      "nombre": "vintage",
+      "precio_usd": 354.0
+    },
+    {
+      "codigo": "789G",
+      "nombre": "vintage",
+      "precio_usd": 354.0
+    },
+    {
+      "codigo": "791G",
+      "nombre": "Vintage",
+      "precio_usd": 354.0
+    },
+    {
+      "codigo": "792G",
+      "nombre": "Vintage",
+      "precio_usd": 796.0
+    },
+    {
+      "codigo": "795G",
+      "nombre": "Vintage",
+      "precio_usd": 598.0
+    },
+    {
+      "codigo": "797G",
+      "nombre": "Vintage",
+      "precio_usd": 354.0
+    },
+    {
+      "codigo": "798G",
+      "nombre": "Vintage",
+      "precio_usd": 1415.0
+    },
+    {
+      "codigo": "799G",
+      "nombre": "Vintage",
+      "precio_usd": 3364.0
+    },
+    {
+      "codigo": "800G",
+      "nombre": "Vintage",
+      "precio_usd": 796.0
+    },
+    {
+      "codigo": "874G",
+      "nombre": "Vintage",
+      "precio_usd": 1415.0
+    },
+    {
+      "codigo": "876G",
+      "nombre": "Vintage",
+      "precio_usd": 598.0
+    },
+    {
+      "codigo": "877G",
+      "nombre": "Vintage",
+      "precio_usd": 598.0
+    },
+    {
+      "codigo": "879G",
+      "nombre": "Vintage",
+      "precio_usd": 1733.0
+    },
+    {
+      "codigo": "881G",
+      "nombre": "Vintage",
+      "precio_usd": 4460.0
+    },
+    {
+      "codigo": "882G",
+      "nombre": "Vintage",
+      "precio_usd": 1415.0
+    },
+    {
+      "codigo": "886G",
+      "nombre": "Vintage",
+      "precio_usd": 1415.0
+    },
+    {
+      "codigo": "887G",
+      "nombre": "Vintage",
+      "precio_usd": 1733.0
+    },
+    {
+      "codigo": "888G",
+      "nombre": "Vintage",
+      "precio_usd": 796.0
+    },
+    {
+      "codigo": "890G",
+      "nombre": "Vintage",
+      "precio_usd": 2211.0
+    },
+    {
+      "codigo": "892G",
+      "nombre": "Vintage",
+      "precio_usd": 2211.0
+    },
+    {
+      "codigo": "893G",
+      "nombre": "Vintage",
+      "precio_usd": 1327.0
+    },
+    {
+      "codigo": "894G",
+      "nombre": "Vintage",
+      "precio_usd": 1415.0
+    },
+    {
+      "codigo": "896G",
+      "nombre": "Vintage",
+      "precio_usd": 598.0
+    },
+    {
+      "codigo": "897G",
+      "nombre": "Vintage",
+      "precio_usd": 354.0
+    },
+    {
+      "codigo": "899G",
+      "nombre": "Vintage",
+      "precio_usd": 354.0
+    },
+    {
+      "codigo": "911G",
+      "nombre": "Vintage",
+      "precio_usd": 354.0
+    },
+    {
+      "codigo": "929G",
+      "nombre": "Vintage",
+      "precio_usd": 354.0
+    },
+    {
+      "codigo": "930G",
+      "nombre": "Vintage",
+      "precio_usd": 796.0
+    },
+    {
       "codigo": "58726",
       "nombre": "Vintage Kerman",
       "precio_usd": 4402.0
@@ -3343,6 +4133,16 @@
       "codigo": "58735",
       "nombre": "Vintage Kerman",
       "precio_usd": 4143.0
+    },
+    {
+      "codigo": "606G",
+      "nombre": "vintage kerman",
+      "precio_usd": 753.0
+    },
+    {
+      "codigo": "652G",
+      "nombre": "Vintage kerman",
+      "precio_usd": 1253.0
     },
     {
       "codigo": "57902",
@@ -3428,6 +4228,306 @@
       "codigo": "74809",
       "nombre": "Vintage Ornate",
       "precio_usd": 3952.0
+    },
+    {
+      "codigo": "HO10162G-80*120",
+      "nombre": "Yute y Lana 120 x 80 Grey",
+      "precio_usd": 155.0
+    },
+    {
+      "codigo": "HO10162-80*120",
+      "nombre": "Yute y Lana 120 x 80 Natural",
+      "precio_usd": 155.0
+    },
+    {
+      "codigo": "HO10162G-160*230",
+      "nombre": "Yute y Lana 160 x 230 Grey",
+      "precio_usd": 590.0
+    },
+    {
+      "codigo": "HO10162-160*230",
+      "nombre": "Yute y Lana 160 x 230 Natural",
+      "precio_usd": 590.0
+    },
+    {
+      "codigo": "HO10162G-200*300",
+      "nombre": "Yute y Lana 200 x 300 Grey",
+      "precio_usd": 970.0
+    },
+    {
+      "codigo": "HO10162-200*300",
+      "nombre": "Yute y Lana 200 x 300 Natural",
+      "precio_usd": 970.0
+    },
+    {
+      "codigo": "0162G-250250",
+      "nombre": "Yute y Lana 250 x 250 Grey",
+      "precio_usd": 1010.0
+    },
+    {
+      "codigo": "0162-250250",
+      "nombre": "Yute y Lana 250 x 250 Natural",
+      "precio_usd": 1010.0
+    },
+    {
+      "codigo": "HO10162G-250*350",
+      "nombre": "Yute y Lana 250 x 350 Grey",
+      "precio_usd": 1410.0
+    },
+    {
+      "codigo": "HO10162-250*350",
+      "nombre": "Yute y Lana 250 x 350 Natural",
+      "precio_usd": 1410.0
+    },
+    {
+      "codigo": "HO10162G-300*400",
+      "nombre": "Yute y Lana 300 x 400 Grey",
+      "precio_usd": 1930.0
+    },
+    {
+      "codigo": "HO10162-300*400",
+      "nombre": "Yute y Lana 300 x 400 Natural",
+      "precio_usd": 1930.0
+    },
+    {
+      "codigo": "HO10162G-70*300",
+      "nombre": "Yute y Lana 300 x 70 Grey",
+      "precio_usd": 340.0
+    },
+    {
+      "codigo": "HO10162-400*500",
+      "nombre": "Yute y Lana 400 x 500 Natural",
+      "precio_usd": 3220.0
+    },
+    {
+      "codigo": "HO10162G-70*200",
+      "nombre": "Yute y Lana 70 x 200 Grey",
+      "precio_usd": 225.0
+    },
+    {
+      "codigo": "HO10162-70*200",
+      "nombre": "Yute y Lana 70 x 200 Natural",
+      "precio_usd": 225.0
+    },
+    {
+      "codigo": "HO10162-70*300",
+      "nombre": "Yute y Lana 70 x 300 Natural",
+      "precio_usd": 340.0
+    },
+    {
+      "codigo": "HO 52730-250X250",
+      "nombre": "Yute y Lana Beige 250x250",
+      "precio_usd": 1100.0
+    },
+    {
+      "codigo": "HO 51030-250*250",
+      "nombre": "Yute y Lana Charcoal 250x250",
+      "precio_usd": 1100.0
+    },
+    {
+      "codigo": "HO46063-160*230",
+      "nombre": "Yute y Lana con Diseño 160 x 230",
+      "precio_usd": 620.0
+    },
+    {
+      "codigo": "HO46598-160*230",
+      "nombre": "Yute y Lana con Diseño 160 x 230",
+      "precio_usd": 620.0
+    },
+    {
+      "codigo": "HO46063-200*300",
+      "nombre": "Yute y Lana con Diseño 200 x 300",
+      "precio_usd": 1010.0
+    },
+    {
+      "codigo": "HO46598-200*300",
+      "nombre": "Yute y Lana con Diseño 200 x 300",
+      "precio_usd": 1010.0
+    },
+    {
+      "codigo": "HO46063-250*350",
+      "nombre": "Yute y Lana con Diseño 250 x 350",
+      "precio_usd": 1470.0
+    },
+    {
+      "codigo": "HO46063-70*200",
+      "nombre": "Yute y Lana con Diseño 70 x 200",
+      "precio_usd": 235.0
+    },
+    {
+      "codigo": "HO46598-70*200",
+      "nombre": "Yute y Lana con Diseño 70 x 200",
+      "precio_usd": 235.0
+    },
+    {
+      "codigo": "HO46063-70*300",
+      "nombre": "Yute y Lana con Diseño 70 x 300",
+      "precio_usd": 355.0
+    },
+    {
+      "codigo": "HO46598-70*300",
+      "nombre": "Yute y Lana con Diseño 70 x 300",
+      "precio_usd": 355.0
+    },
+    {
+      "codigo": "HO10162G-250*250",
+      "nombre": "Yute y Lana Grey 250x250",
+      "precio_usd": 1010.0
+    },
+    {
+      "codigo": "HO10162-200*200",
+      "nombre": "Yute y Lana Natural 2x2",
+      "precio_usd": 645.0
+    },
+    {
+      "codigo": "HO 52730-160X230",
+      "nombre": "Yute y Lana Nuevas 160 x 230 Beige",
+      "precio_usd": 645.0
+    },
+    {
+      "codigo": "HO 51030-160X230",
+      "nombre": "Yute y Lana Nuevas 160 x 230 Charcol",
+      "precio_usd": 645.0
+    },
+    {
+      "codigo": "HO 48548-160X230",
+      "nombre": "Yute y Lana Nuevas 160 x 230 Green",
+      "precio_usd": 645.0
+    },
+    {
+      "codigo": "HO 53164-160X230",
+      "nombre": "Yute y Lana Nuevas 160 x 230 Ivory",
+      "precio_usd": 645.0
+    },
+    {
+      "codigo": "HO 48551-160X230",
+      "nombre": "Yute y Lana Nuevas 160 x 230 Light Grey",
+      "precio_usd": 645.0
+    },
+    {
+      "codigo": "HO 52730-200X300",
+      "nombre": "Yute y Lana Nuevas 200 x 300 Beige",
+      "precio_usd": 1050.0
+    },
+    {
+      "codigo": "HO 51030-200X300",
+      "nombre": "Yute y Lana Nuevas 200 x 300 Charcol",
+      "precio_usd": 1050.0
+    },
+    {
+      "codigo": "HO 48548-200X300",
+      "nombre": "Yute y Lana Nuevas 200 x 300 Green",
+      "precio_usd": 1050.0
+    },
+    {
+      "codigo": "HO 53164-200X300",
+      "nombre": "Yute y Lana Nuevas 200 x 300 Ivory",
+      "precio_usd": 1050.0
+    },
+    {
+      "codigo": "HO 51030-250X350",
+      "nombre": "Yute y Lana Nuevas 250 x 350 Charcol",
+      "precio_usd": 1530.0
+    },
+    {
+      "codigo": "HO 48548-250X350",
+      "nombre": "Yute y Lana Nuevas 250 x 350 Green",
+      "precio_usd": 1530.0
+    },
+    {
+      "codigo": "HO 53164-250X350",
+      "nombre": "Yute y Lana Nuevas 250 x 350 Ivory",
+      "precio_usd": 1530.0
+    },
+    {
+      "codigo": "HO 48551-250X350",
+      "nombre": "Yute y Lana Nuevas 250 x 350 Light Grey",
+      "precio_usd": 1530.0
+    },
+    {
+      "codigo": "HO 51030-300X400",
+      "nombre": "Yute y Lana Nuevas 300 x 400 Charcol",
+      "precio_usd": 2100.0
+    },
+    {
+      "codigo": "HO 48548-300X400",
+      "nombre": "Yute y Lana Nuevas 300 x 400 Green",
+      "precio_usd": 2100.0
+    },
+    {
+      "codigo": "HO 53164-300X400",
+      "nombre": "Yute y Lana Nuevas 300 x 400 Ivory",
+      "precio_usd": 2100.0
+    },
+    {
+      "codigo": "HO 52730-70X200",
+      "nombre": "Yute y Lana Nuevas 70 x 200 Beige",
+      "precio_usd": 245.0
+    },
+    {
+      "codigo": "HO 51030-70X200",
+      "nombre": "Yute y Lana Nuevas 70 x 200 Charcol",
+      "precio_usd": 245.0
+    },
+    {
+      "codigo": "HO 48548-70X200",
+      "nombre": "Yute y Lana Nuevas 70 x 200 Green",
+      "precio_usd": 245.0
+    },
+    {
+      "codigo": "HO 53164-70X200",
+      "nombre": "Yute y Lana Nuevas 70 x 200 Ivory",
+      "precio_usd": 245.0
+    },
+    {
+      "codigo": "HO 52730-70X300",
+      "nombre": "Yute y Lana Nuevas 70 x 300 Beige",
+      "precio_usd": 370.0
+    },
+    {
+      "codigo": "HO 51030-70X300",
+      "nombre": "Yute y Lana Nuevas 70 x 300 Charcol",
+      "precio_usd": 370.0
+    },
+    {
+      "codigo": "HO 48548-70X300",
+      "nombre": "Yute y Lana Nuevas 70 x 300 Green",
+      "precio_usd": 370.0
+    },
+    {
+      "codigo": "HO 53164-70X300",
+      "nombre": "Yute y Lana Nuevas 70 x 300 Ivory",
+      "precio_usd": 370.0
+    },
+    {
+      "codigo": "HO 52730-80X120",
+      "nombre": "Yute y Lana Nuevas 80 x 120 Beige",
+      "precio_usd": 170.0
+    },
+    {
+      "codigo": "HO 51030-80X120",
+      "nombre": "Yute y Lana Nuevas 80 x 120 Charcol",
+      "precio_usd": 170.0
+    },
+    {
+      "codigo": "HO 48548-80X120",
+      "nombre": "Yute y Lana Nuevas 80 x 120 Green",
+      "precio_usd": 170.0
+    },
+    {
+      "codigo": "HO 53164-80X120",
+      "nombre": "Yute y Lana Nuevas 80 x 120 Ivory",
+      "precio_usd": 170.0
+    },
+    {
+      "codigo": "627G",
+      "nombre": "Zabol Kilim",
+      "precio_usd": 4898.0
+    },
+    {
+      "codigo": "631G",
+      "nombre": "Zabol Kilim",
+      "precio_usd": 729.0
     },
     {
       "codigo": "13372",
