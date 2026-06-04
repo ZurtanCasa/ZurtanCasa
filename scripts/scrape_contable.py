@@ -100,22 +100,34 @@ def login(page, user, password):
     print(f"  Login OK — {frame.url}")
     return frame
 
+FORM_SEL = "[name='BTNENTER'], [name='vDOCFECHA1'], [name='BTNEXPORT']"
+
+def _form_ready(frame) -> bool:
+    """Devuelve True si el formulario de ventas está cargado en el frame."""
+    return frame.evaluate("""() => !!(
+        document.querySelector('[name="BTNENTER"]') ||
+        document.querySelector('[name="vDOCFECHA1"]') ||
+        document.querySelector('[name="BTNEXPORT"]')
+    )""")
+
 def go_to_ventas(frame, page):
     """Navega al formulario Ventas y Devoluciones.
-    Intenta la URL directa primero; si no carga el form, usa el panel de favoritos."""
+    Intenta la URL directa primero; si no carga el form, usa el panel de favoritos.
+    Después de la navegación, espera activamente a que el form aparezca."""
 
     # Intento 1: URL directa
     try:
-        frame.goto(VENTAS_URL, wait_until="domcontentloaded", timeout=20000)
-        time.sleep(4)
-        has_form = frame.evaluate(
-            "() => !!(document.querySelector('[name=\"vDOCFECHA1\"]') "
-            "|| document.querySelector('[name=\"BTNENTER\"]') "
-            "|| document.querySelector('[name=\"BTNEXPORT\"]'))"
-        )
-        if has_form:
+        frame.goto(VENTAS_URL, wait_until="domcontentloaded", timeout=30000)
+        try:
+            frame.wait_for_load_state("networkidle", timeout=15000)
+        except Exception:
+            pass
+        try:
+            frame.wait_for_selector(FORM_SEL, timeout=15000)
             print(f"  Ventas form cargado vía URL directa — {frame.url}")
             return
+        except Exception:
+            pass
         print("  URL directa cargó pero sin formulario, intentando favoritos...")
     except Exception as e:
         print(f"  URL directa falló ({e}), intentando favoritos...")
@@ -125,7 +137,6 @@ def go_to_ventas(frame, page):
     frame.goto(FAV_URL, wait_until="domcontentloaded", timeout=20000)
     time.sleep(4)
 
-    # Primero intentar el selector original
     clicked = frame.evaluate("""() => {
         const a = document.querySelector('#span_GESTIONNOMBRE_0001 a');
         if (a) { a.click(); return 'original'; }
@@ -135,8 +146,14 @@ def go_to_ventas(frame, page):
         if (target) { target.click(); return 'text-ventas'; }
         return null;
     }""")
-    time.sleep(5)
-    print(f"  Navegación por favoritos: {clicked} — {frame.url}")
+    print(f"  Favoritos click: {clicked}")
+
+    # Esperar activamente que el form aparezca en el frame (navegación AJAX)
+    try:
+        frame.wait_for_selector(FORM_SEL, timeout=30000)
+        print(f"  Ventas form cargado vía favoritos — {frame.url}")
+    except Exception:
+        print(f"  ⚠ Form no apareció tras favoritos ({frame.url})")
 
 def submit_month(frame, page, from_str: str, to_str: str, tmp_dir: str) -> str | None:
     """Configura fechas, genera XLS y devuelve la ruta del archivo descargado.
@@ -145,31 +162,33 @@ def submit_month(frame, page, from_str: str, to_str: str, tmp_dir: str) -> str |
 
     dest = os.path.join(tmp_dir, "ventas.xlsx")
 
-    # Navegar al formulario de ventas y esperar que el JS lo renderice
-    try:
-        frame.goto(VENTAS_URL, wait_until="domcontentloaded", timeout=30000)
-        # Esperar networkidle (GeneXus hace fetch de recursos adicionales)
+    # Si el form ya está cargado (go_to_ventas lo dejó listo) no navegamos.
+    # Si no está, intentamos cargar de nuevo (para llamadas posteriores a la primera).
+    if not _form_ready(frame):
         try:
-            frame.wait_for_load_state("networkidle", timeout=20000)
-        except Exception:
-            pass
-        # Esperar el elemento que indica que el formulario está listo
-        try:
-            frame.wait_for_selector(
-                "[name='BTNENTER'], [name='vDOCFECHA1'], [name='BTNEXPORT']",
-                timeout=20000
-            )
-        except Exception:
-            # Dump de diagnóstico si el form sigue sin aparecer
-            all_fields = frame.evaluate("""() =>
-                Array.from(document.querySelectorAll('input,select,button')).map(e =>
-                    (e.name||e.id||'?') + '/' + (e.tagName) + '/' + (e.type||'')
-                ).slice(0, 30)
-            """)
-            print(f"      [debug] Campos en página: {all_fields[:15]}")
-    except Exception as e:
-        print(f"      ⚠ No se pudo cargar formulario: {e}")
-        return None
+            frame.goto(VENTAS_URL, wait_until="domcontentloaded", timeout=30000)
+            try:
+                frame.wait_for_load_state("networkidle", timeout=15000)
+            except Exception:
+                pass
+            try:
+                frame.wait_for_selector(FORM_SEL, timeout=20000)
+            except Exception:
+                # URL directa no funcionó — intentar favoritos de nuevo
+                go_to_ventas(frame, page)
+                try:
+                    frame.wait_for_selector(FORM_SEL, timeout=20000)
+                except Exception:
+                    all_fields = frame.evaluate("""() =>
+                        Array.from(document.querySelectorAll('input,select,button')).map(e =>
+                            (e.name||e.id||'?') + '/' + (e.tagName) + '/' + (e.type||'')
+                        ).slice(0, 20)
+                    """)
+                    print(f"      [debug] Campos en página: {all_fields}")
+                    return None
+        except Exception as e:
+            print(f"      ⚠ No se pudo cargar formulario: {e}")
+            return None
 
     # Configurar fechas + IVA + XLS
     # Usamos triple-click para limpiar el campo antes de escribir (GeneXus a veces

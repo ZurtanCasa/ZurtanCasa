@@ -164,6 +164,17 @@ def wait_and_download(frame, page, context, dest: str, timeout_sec=600) -> bool:
     p1, p2, evtname, rowid = m.group(1), m.group(2), m.group(3), m.group(4)
     print(f"  execEvt params: evtname={evtname!r} rowid={rowid}")
 
+    # Estrategia 0: select_option nativo (dispara el onchange del browser sin execEvt)
+    try:
+        with page.expect_download(timeout=120000) as dl_info:
+            frame.select_option('select[name="vACCIONES_0001"]', '2')
+        dl = dl_info.value
+        dl.save_as(dest)
+        print(f"  ✅ Descargado (select_option): {dl.suggested_filename} ({os.path.getsize(dest):,} bytes)")
+        return True
+    except Exception as e:
+        print(f"  ⚠ select_option falló: {e}")
+
     # Estrategia 1: execEvt + expect_download (patrón normal Zeta)
     try:
         with page.expect_download(timeout=300000) as dl_info:
