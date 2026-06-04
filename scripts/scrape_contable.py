@@ -62,11 +62,38 @@ def uy_now():
 
 def login(page, user, password):
     page.goto(BASE_URL, timeout=60000, wait_until="domcontentloaded")
-    # Esperar que el formulario de login termine de renderizarse (GeneXus carga los
-    # inputs via JS después del DOM load — sin este wait, fill() agota su timeout)
-    page.wait_for_selector("input[name='vUSULIBRAPASSWORD']", timeout=90000)
-    page.fill("input[name='vUSULIBRAEMAIL']", user, timeout=60000)
-    page.fill("input[name='vUSULIBRAPASSWORD']", password, timeout=60000)
+    # Esperar networkidle para que el JS de GeneXus termine de renderizar el form
+    try:
+        page.wait_for_load_state("networkidle", timeout=30000)
+    except Exception:
+        pass
+
+    # Diagnóstico: mostrar URL y campos presentes
+    print(f"  [login] URL: {page.url}")
+    fields = page.evaluate("""() =>
+        Array.from(document.querySelectorAll('input')).map(e =>
+            e.name + '/' + e.type + '/' + (e.offsetParent !== null ? 'vis' : 'hid')
+        )
+    """)
+    print(f"  [login] Campos: {fields}")
+
+    # Si el campo de password ya está en el DOM, llenar directamente
+    has_pw = page.evaluate(
+        "() => !!document.querySelector(\"input[name='vUSULIBRAPASSWORD']\")"
+    )
+    if not has_pw:
+        # Flujo email-primero: algunos builds GeneXus muestran el password
+        # solo después de confirmar el email
+        print("  [login] Campo password no encontrado, probando flujo email-first...")
+        email_el = page.wait_for_selector("input[name='vUSULIBRAEMAIL']", timeout=30000)
+        email_el.fill(user)
+        email_el.press("Enter")
+        time.sleep(4)
+        print(f"  [login] Campos tras Enter: {page.evaluate('() => Array.from(document.querySelectorAll(\"input\")).map(e => e.name)')}")
+
+    page.wait_for_selector("input[name='vUSULIBRAPASSWORD']", timeout=60000)
+    page.fill("input[name='vUSULIBRAEMAIL']", user, timeout=30000)
+    page.fill("input[name='vUSULIBRAPASSWORD']", password, timeout=30000)
     page.click("input[name='BTNENTER']")
     time.sleep(10)
     frame = page.frames[0]
