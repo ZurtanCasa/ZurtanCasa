@@ -1,9 +1,19 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-05-25T16:25:48.143655-03:00",
-  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA",
-  "total_articulos": 917,
+  "_ultima_actualizacion": "2026-06-04T16:16:28.177805-03:00",
+  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27",
+  "total_articulos": 1003,
   "articulos": [
+    {
+      "codigo": "2009001 GARDEN CHAIR",
+      "nombre": "2009001 garden chair 58x60x92",
+      "precio_usd": 450.0
+    },
+    {
+      "codigo": "2009002 GARDEN CHAIR",
+      "nombre": "2009002 garden chair seater 200x53x92",
+      "precio_usd": 750.0
+    },
     {
       "codigo": "16186",
       "nombre": "Afghan handknotted carpet",
@@ -43,6 +53,86 @@
       "codigo": "2336",
       "nombre": "Afghan handknotted carpet",
       "precio_usd": 1066.0
+    },
+    {
+      "codigo": "H32404",
+      "nombre": "afghan handwoven kilim",
+      "precio_usd": 1704.0
+    },
+    {
+      "codigo": "H32408",
+      "nombre": "afghan handwoven kilim",
+      "precio_usd": 1396.0
+    },
+    {
+      "codigo": "H32413",
+      "nombre": "afghan handwoven kilim",
+      "precio_usd": 1404.0
+    },
+    {
+      "codigo": "H32414",
+      "nombre": "afghan handwoven kilim",
+      "precio_usd": 1711.0
+    },
+    {
+      "codigo": "H32619",
+      "nombre": "afghan handwoven kilim",
+      "precio_usd": 492.0
+    },
+    {
+      "codigo": "H752",
+      "nombre": "Afghan handwoven kilim",
+      "precio_usd": 1241.0
+    },
+    {
+      "codigo": "H14641",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 1942.0
+    },
+    {
+      "codigo": "H14662",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 2073.0
+    },
+    {
+      "codigo": "H14691",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 616.0
+    },
+    {
+      "codigo": "H15015",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 2102.0
+    },
+    {
+      "codigo": "H26",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 3547.0
+    },
+    {
+      "codigo": "H447",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 3160.0
+    },
+    {
+      "codigo": "H460",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 2467.0
+    },
+    {
+      "codigo": "H464",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 2672.0
+    },
+    {
+      "codigo": "H996",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 598.0
+    },
+    {
+      "codigo": "H997",
+      "nombre": "Afghan regular vintage carpet",
+      "precio_usd": 573.0
     },
     {
       "codigo": "14598",
@@ -235,6 +325,26 @@
       "precio_usd": 261.0
     },
     {
+      "codigo": "GR 2102002-270GRAY W",
+      "nombre": "Aparador Escandinavo 270 x 48 x 85 Gray wash",
+      "precio_usd": 2850.0
+    },
+    {
+      "codigo": "90004",
+      "nombre": "Aparador ESCANDINAVO 270 x 48 x 85 Negro",
+      "precio_usd": 2850.0
+    },
+    {
+      "codigo": "90022",
+      "nombre": "Aparador PIA 180 x 50 x 90 Grey Wash",
+      "precio_usd": 2450.0
+    },
+    {
+      "codigo": "GR 2102001-220",
+      "nombre": "Aparador YUDHISTIRA 120 X 48 X 220",
+      "precio_usd": 2600.0
+    },
+    {
       "codigo": "59551",
       "nombre": "Bachtiari Mafrash",
       "precio_usd": 605.0
@@ -300,9 +410,89 @@
       "precio_usd": 880.0
     },
     {
+      "codigo": "90025",
+      "nombre": "Banco Mesa Lateral Rattan Alto 65",
+      "precio_usd": 350.0
+    },
+    {
+      "codigo": "90026",
+      "nombre": "Banco Mesa Lateral Rattan Bajo 45",
+      "precio_usd": 270.0
+    },
+    {
+      "codigo": "90005",
+      "nombre": "Banqueta DUETO",
+      "precio_usd": 510.0
+    },
+    {
+      "codigo": "GR2102010B",
+      "nombre": "Banqueta OTTO Cuero Negro",
+      "precio_usd": 650.0
+    },
+    {
+      "codigo": "H13313",
+      "nombre": "barjasta kilim wool",
+      "precio_usd": 1698.0
+    },
+    {
+      "codigo": "H13315",
+      "nombre": "barjasta kilim wool",
+      "precio_usd": 2452.0
+    },
+    {
+      "codigo": "H13320",
+      "nombre": "barjasta kilim wool",
+      "precio_usd": 1343.0
+    },
+    {
+      "codigo": "H13331",
+      "nombre": "barjasta kilim wool",
+      "precio_usd": 2320.0
+    },
+    {
+      "codigo": "H13332",
+      "nombre": "barjasta kilim wool",
+      "precio_usd": 1903.0
+    },
+    {
+      "codigo": "H7147",
+      "nombre": "barjasta kilim wool",
+      "precio_usd": 1808.0
+    },
+    {
+      "codigo": "H25605",
+      "nombre": "berber wool hoand-woven",
+      "precio_usd": 2059.0
+    },
+    {
+      "codigo": "H25606",
+      "nombre": "berber wool hoand-woven",
+      "precio_usd": 2059.0
+    },
+    {
       "codigo": "58033",
       "nombre": "Bidjar",
       "precio_usd": 1427.0
+    },
+    {
+      "codigo": "GR2109003B",
+      "nombre": "Butaca Velvet BEIGE",
+      "precio_usd": 500.0
+    },
+    {
+      "codigo": "GR2109003",
+      "nombre": "Butaca Velvet GRIS",
+      "precio_usd": 500.0
+    },
+    {
+      "codigo": "90040",
+      "nombre": "Cabinet OLAF 120 x 48 x220 Black",
+      "precio_usd": 2600.0
+    },
+    {
+      "codigo": "GR 2102001",
+      "nombre": "Cabinet OLAF 120 x 48 x220 Grey Wash",
+      "precio_usd": 2600.0
     },
     {
       "codigo": "1390",
@@ -328,6 +518,26 @@
       "codigo": "879",
       "nombre": "Comercial",
       "precio_usd": 1733.0
+    },
+    {
+      "codigo": "90012",
+      "nombre": "Consola ONDINA 150 x 50 x 86 Negra",
+      "precio_usd": 920.0
+    },
+    {
+      "codigo": "GR 2109012_180 CONSO",
+      "nombre": "Consola Ondina Table 180  x 50 x 86 Black",
+      "precio_usd": 1100.0
+    },
+    {
+      "codigo": "GR 2109012-210 BLACK",
+      "nombre": "Consola Ondina Table 210 x 53 x 86 Black",
+      "precio_usd": 1300.0
+    },
+    {
+      "codigo": "2104003",
+      "nombre": "Consola SUAR Natural 140 x 40 x 75",
+      "precio_usd": 920.0
     },
     {
       "codigo": "14547",
@@ -708,6 +918,16 @@
       "codigo": "762G",
       "nombre": "Ghouchan",
       "precio_usd": 1284.0
+    },
+    {
+      "codigo": "GR YU2007021B",
+      "nombre": "gray wash Coffee Table B - set 65 x 65 x 37",
+      "precio_usd": 420.0
+    },
+    {
+      "codigo": "GR YU2007021C",
+      "nombre": "Gray wash Coffee table C - set 50 x 50 x 32",
+      "precio_usd": 310.0
     },
     {
       "codigo": "290",
@@ -2005,6 +2225,66 @@
       "precio_usd": 1228.0
     },
     {
+      "codigo": "GR YU2007025 GRAY WA",
+      "nombre": "Mesa ANIKA 110 X 110 X 40 Gray Wash",
+      "precio_usd": 1300.0
+    },
+    {
+      "codigo": "90016",
+      "nombre": "Mesa EBBA 55 x 55 x 65 Negra",
+      "precio_usd": 450.0
+    },
+    {
+      "codigo": "YU 2007022-55 GRAY W",
+      "nombre": "Mesa EBBA Lateral Gray wash 55 x 55 x 65",
+      "precio_usd": 450.0
+    },
+    {
+      "codigo": "GR 2102004",
+      "nombre": "Mesa FRIDA 200 x 100 x 75 Grey Wash",
+      "precio_usd": 2000.0
+    },
+    {
+      "codigo": "GR 2102006 GREY WASH",
+      "nombre": "Mesa FRIDA 250 X 100 X 75 Grey Wash",
+      "precio_usd": 2400.0
+    },
+    {
+      "codigo": "GR 2109002 GRAY WASH",
+      "nombre": "Mesa MOA 300 300 x 100 x 75",
+      "precio_usd": 2750.0
+    },
+    {
+      "codigo": "GR 2102007",
+      "nombre": "Mesa MOA Uruguay 200 Grey wash 200 x 100 x 75",
+      "precio_usd": 1750.0
+    },
+    {
+      "codigo": "GR 203592_200",
+      "nombre": "Mesa OLGA 200 x 100 x 75 Grey Wash",
+      "precio_usd": 1900.0
+    },
+    {
+      "codigo": "GR 203592",
+      "nombre": "Mesa OLGA 220 x 100 x 75 Grey wash",
+      "precio_usd": 2170.0
+    },
+    {
+      "codigo": "GR 203592_250",
+      "nombre": "Mesa OLGA 250 x 100 x 75 Grey Wash",
+      "precio_usd": 2350.0
+    },
+    {
+      "codigo": "90024",
+      "nombre": "Mesa OLGA 300 x 100 x 75 Grey Wash",
+      "precio_usd": 2500.0
+    },
+    {
+      "codigo": "90033",
+      "nombre": "Mesa Redonda CLYPEA 50 x 50 Natural",
+      "precio_usd": 420.0
+    },
+    {
       "codigo": "6934",
       "nombre": "Moud",
       "precio_usd": 2717.0
@@ -2058,6 +2338,16 @@
       "codigo": "8501/8319",
       "nombre": "Nain",
       "precio_usd": 822.0
+    },
+    {
+      "codigo": "GR 1911026",
+      "nombre": "NERO ALTA 30 x 30 x 45 Negra",
+      "precio_usd": 280.0
+    },
+    {
+      "codigo": "2007014",
+      "nombre": "NERO BAJA Coffee 50 x 50 x 35 Negra",
+      "precio_usd": 410.0
     },
     {
       "codigo": "1212",
@@ -2600,6 +2890,36 @@
       "precio_usd": 1275.0
     },
     {
+      "codigo": "90002",
+      "nombre": "Poltrona AMETISTA Gris",
+      "precio_usd": 1550.0
+    },
+    {
+      "codigo": "90015",
+      "nombre": "Poltrona BARITO Marron",
+      "precio_usd": 1680.0
+    },
+    {
+      "codigo": "90039",
+      "nombre": "Poltrona Duna Beige",
+      "precio_usd": 1100.0
+    },
+    {
+      "codigo": "90008",
+      "nombre": "Poltrona NUBE Beige",
+      "precio_usd": 1580.0
+    },
+    {
+      "codigo": "90013",
+      "nombre": "Poltrona NUBE Gris",
+      "precio_usd": 1580.0
+    },
+    {
+      "codigo": "1007662VO",
+      "nombre": "Poltrona Versatile Verde Oliva",
+      "precio_usd": 1550.0
+    },
+    {
       "codigo": "1346-160230",
       "nombre": "Pura Lana 160 x 230 Grey",
       "precio_usd": 755.0
@@ -2783,6 +3103,61 @@
       "codigo": "789404",
       "nombre": "Pura Lana Latte350x250",
       "precio_usd": 1460.0
+    },
+    {
+      "codigo": "90007",
+      "nombre": "Set Mesas RUBY",
+      "precio_usd": 1680.0
+    },
+    {
+      "codigo": "GR 14576 NATURAL BEL",
+      "nombre": "Silla CRUZ 42 x 50 x 90",
+      "precio_usd": 290.0
+    },
+    {
+      "codigo": "GRYU200076A",
+      "nombre": "SILLA CUERO MARRON (GRYU200076A)",
+      "precio_usd": 650.0
+    },
+    {
+      "codigo": "GR YU200076 B",
+      "nombre": "Silla OTTO Teak Cuero Marron 50 x 52 x 85",
+      "precio_usd": 650.0
+    },
+    {
+      "codigo": "GR YU-200076 A",
+      "nombre": "Silla OTTO Teak Cuero Negro 50 x 52 x 85",
+      "precio_usd": 650.0
+    },
+    {
+      "codigo": "GR 2109007 GREY WASH",
+      "nombre": "Silla PRISMA 48 x 40 x 87 Grey wash",
+      "precio_usd": 320.0
+    },
+    {
+      "codigo": "GR 2109007 BLACK",
+      "nombre": "Silla PRISMA 48 x 40 x 87 Negra",
+      "precio_usd": 320.0
+    },
+    {
+      "codigo": "90032",
+      "nombre": "Sillon IMO Verde 225",
+      "precio_usd": 3110.0
+    },
+    {
+      "codigo": "90019",
+      "nombre": "Sillon IMO Verde 245",
+      "precio_usd": 3650.0
+    },
+    {
+      "codigo": "8001308B",
+      "nombre": "Sillón Spirit Beige",
+      "precio_usd": 2600.0
+    },
+    {
+      "codigo": "8001308VO",
+      "nombre": "Sillón Spirit Verde Oliva",
+      "precio_usd": 2600.0
     },
     {
       "codigo": "1084",
@@ -4230,6 +4605,21 @@
       "precio_usd": 3952.0
     },
     {
+      "codigo": "HO30102-150*150",
+      "nombre": "Yute Redonda 150 x 150",
+      "precio_usd": 205.0
+    },
+    {
+      "codigo": "HO30478-120*120",
+      "nombre": "Yute Redonda con Diseño 120 x 120",
+      "precio_usd": 130.0
+    },
+    {
+      "codigo": "HO30478-150*150",
+      "nombre": "Yute Redonda con Diseño 150 x 150",
+      "precio_usd": 205.0
+    },
+    {
       "codigo": "HO10162G-80*120",
       "nombre": "Yute y Lana 120 x 80 Grey",
       "precio_usd": 155.0
@@ -4588,6 +4978,46 @@
       "codigo": "695",
       "nombre": "Ziegler",
       "precio_usd": 3044.0
+    },
+    {
+      "codigo": "H162",
+      "nombre": "ziegler hand knotted carpet wool",
+      "precio_usd": 2465.0
+    },
+    {
+      "codigo": "H16299",
+      "nombre": "ziegler hand knotted carpet wool",
+      "precio_usd": 2998.0
+    },
+    {
+      "codigo": "H32",
+      "nombre": "ziegler hand knotted carpet wool",
+      "precio_usd": 2705.0
+    },
+    {
+      "codigo": "H367",
+      "nombre": "ziegler hand knotted carpet wool",
+      "precio_usd": 2465.0
+    },
+    {
+      "codigo": "H43",
+      "nombre": "ziegler hand knotted carpet wool",
+      "precio_usd": 2593.0
+    },
+    {
+      "codigo": "H455",
+      "nombre": "ziegler hand knotted carpet wool",
+      "precio_usd": 1266.0
+    },
+    {
+      "codigo": "H478",
+      "nombre": "ziegler hand knotted carpet wool",
+      "precio_usd": 1322.0
+    },
+    {
+      "codigo": "H523",
+      "nombre": "ziegler hand knotted carpet wool",
+      "precio_usd": 1148.0
     }
   ]
 }
