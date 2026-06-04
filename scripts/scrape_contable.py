@@ -79,7 +79,7 @@ def login(page, user, password):
 
     # Si el campo de password ya está en el DOM, llenar directamente
     has_pw = page.evaluate(
-        "() => !!document.querySelector(\"input[name='vUSULIBRAPASSWORD']\")"
+        "() => !!document.querySelector(\"input[name='vSIMPLEPASSWORD']\")"
     )
     if not has_pw:
         # Flujo email-primero: algunos builds GeneXus muestran el password
@@ -91,9 +91,9 @@ def login(page, user, password):
         time.sleep(4)
         print(f"  [login] Campos tras Enter: {page.evaluate('() => Array.from(document.querySelectorAll(\"input\")).map(e => e.name)')}")
 
-    page.wait_for_selector("input[name='vUSULIBRAPASSWORD']", timeout=60000)
+    page.wait_for_selector("input[name='vSIMPLEPASSWORD']", timeout=60000)
     page.fill("input[name='vUSULIBRAEMAIL']", user, timeout=30000)
-    page.fill("input[name='vUSULIBRAPASSWORD']", password, timeout=30000)
+    page.fill("input[name='vSIMPLEPASSWORD']", password, timeout=30000)
     page.click("input[name='BTNENTER']")
     time.sleep(10)
     frame = page.frames[0]
