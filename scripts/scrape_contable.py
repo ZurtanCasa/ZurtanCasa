@@ -125,11 +125,18 @@ def submit_month(frame, page, from_str: str, to_str: str, tmp_dir: str) -> str |
         return None
 
     # Configurar fechas + IVA + XLS
+    # Usamos triple-click para limpiar el campo antes de escribir (GeneXus a veces
+    # ignora el seteo directo si el campo tiene un valor previo cacheado).
     frame.evaluate(f"""() => {{
-        function setVal(name, val) {{
+        function clearAndSet(name, val) {{
             const el = document.querySelector('[name="' + name + '"]');
             if (!el) return false;
+            // Limpiar primero
+            el.value = '';
+            el.dispatchEvent(new Event('input',  {{bubbles: true}}));
+            // Ahora setear el nuevo valor
             el.value = val;
+            el.dispatchEvent(new Event('input',  {{bubbles: true}}));
             el.dispatchEvent(new Event('change', {{bubbles: true}}));
             el.dispatchEvent(new Event('blur',   {{bubbles: true}}));
             return true;
@@ -139,21 +146,22 @@ def submit_month(frame, page, from_str: str, to_str: str, tmp_dir: str) -> str |
             if (el && el.type === 'checkbox' && !el.checked)
                 el.dispatchEvent(new MouseEvent('click', {{bubbles: true, cancelable: true, view: window}}));
         }}
-        setVal('vDOCFECHA1',    '{from_str}');
-        setVal('vDOCFECHA1_TO', '{to_str}');
+        clearAndSet('vDOCFECHA1',    '{from_str}');
+        clearAndSet('vDOCFECHA1_TO', '{to_str}');
         clickChk('vIVAINCLUIDO');
         clickChk('vGENERARXLS');
     }}""")
     time.sleep(3)
 
-    # Verificar qué botones existen
+    # Verificar que las fechas quedaron seteadas correctamente
     btns = frame.evaluate("""() => ({
         btnEnter:  !!document.querySelector('[name="BTNENTER"]'),
         btnExport: !!document.querySelector('input#BTNEXPORT, [name="BTNEXPORT"]'),
-        fechaFrom: (document.querySelector('[name="vDOCFECHA1"]') || {}).value || null,
+        fechaFrom: (document.querySelector('[name="vDOCFECHA1"]')    || {}).value || null,
+        fechaTo:   (document.querySelector('[name="vDOCFECHA1_TO"]') || {}).value || null,
     })""")
     print(f"      form: btnEnter={btns.get('btnEnter')} btnExport={btns.get('btnExport')} "
-          f"fechaFrom={btns.get('fechaFrom')!r}")
+          f"fechaFrom={btns.get('fechaFrom')!r} fechaTo={btns.get('fechaTo')!r}")
 
     # ── Flujo 1: BTNENTER → procesosww (patrón habitual Zeta) ──────────────
     if btns.get("btnEnter"):
