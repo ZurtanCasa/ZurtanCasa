@@ -164,9 +164,9 @@ def wait_and_download(frame, page, context, dest: str, timeout_sec=600) -> bool:
     p1, p2, evtname, rowid = m.group(1), m.group(2), m.group(3), m.group(4)
     print(f"  execEvt params: evtname={evtname!r} rowid={rowid}")
 
-    # Llamar execEvt directamente y capturar la descarga
+    # Estrategia 1: execEvt + expect_download (patrón normal Zeta)
     try:
-        with page.expect_download(timeout=180000) as dl_info:
+        with page.expect_download(timeout=300000) as dl_info:
             frame.evaluate(f"""() => {{
                 const sel = document.querySelector('select[name="vACCIONES_0001"]');
                 if (!sel) {{ console.error('select not found'); return; }}
@@ -175,11 +175,64 @@ def wait_and_download(frame, page, context, dest: str, timeout_sec=600) -> bool:
             }}""")
         dl = dl_info.value
         dl.save_as(dest)
-        print(f"  ✅ Descargado: {dl.suggested_filename} ({os.path.getsize(dest):,} bytes)")
+        print(f"  ✅ Descargado (execEvt): {dl.suggested_filename} ({os.path.getsize(dest):,} bytes)")
         return True
     except Exception as e:
-        print(f"  ⚠ Download falló: {e}")
-        return False
+        print(f"  ⚠ execEvt/download falló: {e}")
+
+    # Estrategia 2: execEvt abre nueva pestaña — capturar con expect_page
+    try:
+        with page.context.expect_page(timeout=60000) as new_pg_info:
+            frame.evaluate(f"""() => {{
+                const sel = document.querySelector('select[name="vACCIONES_0001"]');
+                if (!sel) return;
+                sel.value = '2';
+                gx.evt.execEvt('{p1}', {p2}, '{evtname}', sel, {rowid});
+            }}""")
+        new_pg = new_pg_info.value
+        new_pg.wait_for_load_state("domcontentloaded", timeout=30000)
+        file_url = new_pg.url
+        print(f"  Nueva pestaña: {file_url}")
+        if file_url and "descargar" in file_url.lower():
+            # Descargar con requests usando las cookies de sesión
+            import requests
+            cookies = {c["name"]: c["value"] for c in page.context.cookies()}
+            r = requests.get(file_url, cookies=cookies, timeout=120)
+            if r.ok and len(r.content) > 1000:
+                with open(dest, "wb") as f:
+                    f.write(r.content)
+                print(f"  ✅ Descargado (nueva pestaña→requests): {len(r.content):,} bytes")
+                return True
+        new_pg.close()
+    except Exception as e:
+        print(f"  ⚠ Estrategia nueva-pestaña falló: {e}")
+
+    # Estrategia 3: buscar link de descarga directa en la página
+    try:
+        link_url = frame.evaluate("""() => {
+            // Buscar <a> cuyo href apunte a descargar
+            const a = Array.from(document.querySelectorAll('a')).find(el =>
+                (el.href || '').toLowerCase().includes('descargar') ||
+                (el.textContent || '').toLowerCase().includes('xls')
+            );
+            return a ? a.href : null;
+        }""")
+        if link_url:
+            import requests
+            cookies = {c["name"]: c["value"] for c in page.context.cookies()}
+            r = requests.get(link_url, cookies=cookies, timeout=120)
+            if r.ok and len(r.content) > 1000:
+                with open(dest, "wb") as f:
+                    f.write(r.content)
+                print(f"  ✅ Descargado (link directo): {link_url}")
+                return True
+            print(f"  ⚠ Link directo falló: {r.status_code} {len(r.content)} bytes")
+        else:
+            print("  ⚠ No se encontró link de descarga en la página")
+    except Exception as e:
+        print(f"  ⚠ Estrategia link-directo falló: {e}")
+
+    return False
 
 def parse_excel(path: str) -> list[dict]:
     """

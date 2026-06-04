@@ -145,10 +145,28 @@ def submit_month(frame, page, from_str: str, to_str: str, tmp_dir: str) -> str |
 
     dest = os.path.join(tmp_dir, "ventas.xlsx")
 
-    # Navegar al formulario de ventas
+    # Navegar al formulario de ventas y esperar que el JS lo renderice
     try:
-        frame.goto(VENTAS_URL, wait_until="domcontentloaded", timeout=20000)
-        time.sleep(4)
+        frame.goto(VENTAS_URL, wait_until="domcontentloaded", timeout=30000)
+        # Esperar networkidle (GeneXus hace fetch de recursos adicionales)
+        try:
+            frame.wait_for_load_state("networkidle", timeout=20000)
+        except Exception:
+            pass
+        # Esperar el elemento que indica que el formulario está listo
+        try:
+            frame.wait_for_selector(
+                "[name='BTNENTER'], [name='vDOCFECHA1'], [name='BTNEXPORT']",
+                timeout=20000
+            )
+        except Exception:
+            # Dump de diagnóstico si el form sigue sin aparecer
+            all_fields = frame.evaluate("""() =>
+                Array.from(document.querySelectorAll('input,select,button')).map(e =>
+                    (e.name||e.id||'?') + '/' + (e.tagName) + '/' + (e.type||'')
+                ).slice(0, 30)
+            """)
+            print(f"      [debug] Campos en página: {all_fields[:15]}")
     except Exception as e:
         print(f"      ⚠ No se pudo cargar formulario: {e}")
         return None
