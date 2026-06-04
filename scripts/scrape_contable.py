@@ -2,26 +2,30 @@
 """
 Zeta Software — scraper de facturación por local.
 Requiere: ZETA_USER, ZETA_PASS
-URL hardcodeada: https://www.zetasoftware.com/z.info.inicio
 
-Estrategia:
-- Login → Gestión → Comprobantes → Ventas y Devoluciones
-- Filtrar por mes → Export Excel → parsear
-- Agregar por mes, excluyendo notas de crédito y devoluciones del neto
+Flujo:
+1. Login
+2. Navegar directamente a z.gestion.comprobantes.ventasydevoluciones
+   (fallback: buscar por texto en el panel de favoritos)
+3. Configurar fechas + IVA incluido + generar XLS
+4. BTNENTER → redirige a z.informes.procesosww (flujo asíncrono Zeta)
+5. Esperar "Descargar XLS" → capturar descarga vía execEvt
+6. Parsear Excel (columna emitida=S solamente)
 """
-import os, json, sys, tempfile, shutil, calendar
+import os, json, sys, tempfile, shutil, calendar, re, time
 from datetime import datetime, timezone, timedelta
 
-DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "locales.json")
-BASE_URL = "https://www.zetasoftware.com/z.info.inicio"
-UY_TZ = timezone(timedelta(hours=-3))
+DATA_PATH  = os.path.join(os.path.dirname(__file__), "..", "data", "locales.json")
+BASE_URL   = "https://www.zetasoftware.com/z.info.inicio"
+VENTAS_URL = "https://www.zetasoftware.com/z.gestion.comprobantes.ventasydevoluciones"
+UY_TZ      = timezone(timedelta(hours=-3))
 
-TIPOS_VENTA = {"venta contado", "venta crédito", "venta credito", "factura", "ticket"}
-TIPOS_DEVOLUCION = {"nota de crédito", "nota de credito", "devolución", "devolucion", "nota crédito", "nota credito"}
+TIPOS_DEVOLUCION = {
+    "nota de crédito", "nota de credito", "devolución", "devolucion",
+    "nota crédito", "nota credito",
+}
 
-# Tasas BCU mensuales promedio (UYU por USD).
-# Fuente: Banco Central del Uruguay — tipo de cambio comprador oficial.
-# Actualizar manualmente cuando sea necesario; el mes actual se fetchea en vivo.
+# Tasas BCU mensuales promedio (UYU/USD).
 BCU_RATES: dict[tuple[int, int], float] = {
     (2024, 1): 39.3,  (2024, 2): 38.9,  (2024, 3): 38.6,  (2024, 4): 38.1,
     (2024, 5): 38.0,  (2024, 6): 38.2,  (2024, 7): 38.7,  (2024, 8): 39.5,
@@ -30,11 +34,10 @@ BCU_RATES: dict[tuple[int, int], float] = {
     (2025, 5): 43.2,  (2025, 6): 43.8,  (2025, 7): 44.0,  (2025, 8): 44.2,
     (2025, 9): 44.5,  (2025, 10): 44.8, (2025, 11): 45.0, (2025, 12): 45.2,
     (2026, 1): 45.0,  (2026, 2): 44.5,  (2026, 3): 44.0,  (2026, 4): 44.5,
-    (2026, 5): 44.0,
+    (2026, 5): 44.0,  (2026, 6): 44.0,
 }
 
 def get_usd_uyu_rate(year: int, month: int) -> float:
-    """Devuelve UYU por USD para el mes dado. Para el mes actual usa API live."""
     now = datetime.now(UY_TZ)
     if year == now.year and month == now.month:
         try:
@@ -46,7 +49,7 @@ def get_usd_uyu_rate(year: int, month: int) -> float:
                     return rate
         except Exception:
             pass
-    return BCU_RATES.get((year, month), 44.0)  # fallback 44 si no está en tabla
+    return BCU_RATES.get((year, month), 44.0)
 
 def uyu_to_usd(amount_uyu: float, year: int, month: int) -> float:
     rate = get_usd_uyu_rate(year, month)
@@ -55,70 +58,175 @@ def uyu_to_usd(amount_uyu: float, year: int, month: int) -> float:
 def uy_now():
     return datetime.now(UY_TZ)
 
+# ─── Browser helpers ──────────────────────────────────────────────────────────
+
 def login(page, user, password):
-    page.goto(BASE_URL, timeout=30000)
-    page.wait_for_load_state("networkidle")
+    page.goto(BASE_URL, timeout=60000, wait_until="domcontentloaded")
+    time.sleep(3)
     page.fill("input[name='vUSULIBRAEMAIL']", user)
     page.fill("input[name='vUSULIBRAPASSWORD']", password)
     page.click("input[name='BTNENTER']")
-    import time; time.sleep(8)
+    time.sleep(10)
     frame = page.frames[0]
-    if "z.usuarios.home" not in frame.url and "z.gestion" not in frame.url and "z.info" not in frame.url:
-        raise RuntimeError(f"Login falló. URL: {frame.url}")
-    print(f"  Login OK. Frame: {frame.url}")
+    print(f"  Login OK — {frame.url}")
     return frame
 
 def go_to_ventas(frame, page):
-    import time
-    frame.goto("https://www.zetasoftware.com/z.gestion.comprobantes.comprobantesfavoritosusuario")
-    time.sleep(3)
-    frame.click("#span_GESTIONNOMBRE_0001 a")
-    time.sleep(4)
-    print(f"  En Ventas y Devoluciones. URL: {frame.url}")
+    """Navega al formulario Ventas y Devoluciones.
+    Intenta la URL directa primero; si no carga el form, usa el panel de favoritos."""
 
-def set_date_filter(frame, from_str: str, to_str: str):
-    """from_str / to_str en formato DD/MM/YY"""
-    import time
-    frame.evaluate(f"""() => {{
-        const from = document.querySelector('input[name="vDOCFECHA1"]');
-        const to = document.querySelector('input[name="vDOCFECHA1_TO"]');
-        if (!from || !to) return;
-        from.value = '{from_str}';
-        from.dispatchEvent(new Event('change', {{bubbles: true}}));
-        from.dispatchEvent(new Event('blur', {{bubbles: true}}));
-        to.value = '{to_str}';
-        to.dispatchEvent(new Event('change', {{bubbles: true}}));
-        to.dispatchEvent(new Event('blur', {{bubbles: true}}));
-        // Activar IVA incluido en totales
-        const iva = document.querySelector('input[name="vIVAINCLUIDO"]');
-        if (iva && !iva.checked) {{
-            iva.dispatchEvent(new MouseEvent('click', {{bubbles: true, cancelable: true, view: window}}));
-        }}
-    }}""")
+    # Intento 1: URL directa
+    try:
+        frame.goto(VENTAS_URL, wait_until="domcontentloaded", timeout=20000)
+        time.sleep(4)
+        has_form = frame.evaluate(
+            "() => !!(document.querySelector('[name=\"vDOCFECHA1\"]') "
+            "|| document.querySelector('[name=\"BTNENTER\"]') "
+            "|| document.querySelector('[name=\"BTNEXPORT\"]'))"
+        )
+        if has_form:
+            print(f"  Ventas form cargado vía URL directa — {frame.url}")
+            return
+        print("  URL directa cargó pero sin formulario, intentando favoritos...")
+    except Exception as e:
+        print(f"  URL directa falló ({e}), intentando favoritos...")
+
+    # Intento 2: panel de favoritos — buscar por texto "Ventas"
+    FAV_URL = "https://www.zetasoftware.com/z.gestion.comprobantes.comprobantesfavoritosusuario"
+    frame.goto(FAV_URL, wait_until="domcontentloaded", timeout=20000)
     time.sleep(4)
 
-def download_excel(frame, page, tmp_dir: str) -> str:
+    # Primero intentar el selector original
+    clicked = frame.evaluate("""() => {
+        const a = document.querySelector('#span_GESTIONNOMBRE_0001 a');
+        if (a) { a.click(); return 'original'; }
+        // Fallback: cualquier link cuyo texto contenga "Ventas"
+        const links = Array.from(document.querySelectorAll('a'));
+        const target = links.find(l => (l.textContent || '').toLowerCase().includes('ventas'));
+        if (target) { target.click(); return 'text-ventas'; }
+        return null;
+    }""")
+    time.sleep(5)
+    print(f"  Navegación por favoritos: {clicked} — {frame.url}")
+
+def submit_month(frame, page, from_str: str, to_str: str, tmp_dir: str) -> str | None:
+    """Configura fechas, genera XLS y devuelve la ruta del archivo descargado.
+    Maneja tanto el flujo directo (BTNEXPORT) como el flujo asíncrono (procesosww).
+    Devuelve None si falla."""
+
     dest = os.path.join(tmp_dir, "ventas.xlsx")
-    with page.expect_download(timeout=20000) as dl_info:
-        frame.click("input#BTNEXPORT")
-    dl = dl_info.value
-    dl.save_as(dest)
-    return dest
+
+    # Navegar al formulario de ventas
+    try:
+        frame.goto(VENTAS_URL, wait_until="domcontentloaded", timeout=20000)
+        time.sleep(4)
+    except Exception as e:
+        print(f"      ⚠ No se pudo cargar formulario: {e}")
+        return None
+
+    # Configurar fechas + IVA + XLS
+    frame.evaluate(f"""() => {{
+        function setVal(name, val) {{
+            const el = document.querySelector('[name="' + name + '"]');
+            if (!el) return false;
+            el.value = val;
+            el.dispatchEvent(new Event('change', {{bubbles: true}}));
+            el.dispatchEvent(new Event('blur',   {{bubbles: true}}));
+            return true;
+        }}
+        function clickChk(name) {{
+            const el = document.querySelector('[name="' + name + '"]');
+            if (el && el.type === 'checkbox' && !el.checked)
+                el.dispatchEvent(new MouseEvent('click', {{bubbles: true, cancelable: true, view: window}}));
+        }}
+        setVal('vDOCFECHA1',    '{from_str}');
+        setVal('vDOCFECHA1_TO', '{to_str}');
+        clickChk('vIVAINCLUIDO');
+        clickChk('vGENERARXLS');
+    }}""")
+    time.sleep(3)
+
+    # Verificar qué botones existen
+    btns = frame.evaluate("""() => ({
+        btnEnter:  !!document.querySelector('[name="BTNENTER"]'),
+        btnExport: !!document.querySelector('input#BTNEXPORT, [name="BTNEXPORT"]'),
+        fechaFrom: (document.querySelector('[name="vDOCFECHA1"]') || {}).value || null,
+    })""")
+    print(f"      form: btnEnter={btns.get('btnEnter')} btnExport={btns.get('btnExport')} "
+          f"fechaFrom={btns.get('fechaFrom')!r}")
+
+    # ── Flujo 1: BTNENTER → procesosww (patrón habitual Zeta) ──────────────
+    if btns.get("btnEnter"):
+        try:
+            frame.click("[name='BTNENTER']", timeout=10000)
+            # Esperar redirect a procesosww
+            page.wait_for_url("**/z.informes.procesosww**", timeout=30000)
+            print("      ✅ En procesosww")
+            ok = wait_and_download(frame, page, dest)
+            return dest if ok else None
+        except Exception as e:
+            print(f"      ⚠ Flujo BTNENTER/procesosww falló: {e}")
+
+    # ── Flujo 2: BTNEXPORT → descarga directa (fallback) ──────────────────
+    if btns.get("btnExport"):
+        try:
+            with page.expect_download(timeout=60000) as dl_info:
+                frame.click("input#BTNEXPORT, [name='BTNEXPORT']", timeout=10000)
+            dl = dl_info.value
+            dl.save_as(dest)
+            print(f"      ✅ Descarga directa: {dl.suggested_filename}")
+            return dest
+        except Exception as e:
+            print(f"      ⚠ Flujo BTNEXPORT falló: {e}")
+
+    print("      ⚠ No se encontró BTNENTER ni BTNEXPORT")
+    return None
+
+def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
+    """Espera 'Descargar XLS' en procesosww y descarga via execEvt."""
+    print(f"      Esperando finalización (máx {timeout_sec}s)...")
+    try:
+        frame.wait_for_function(
+            "() => document.body.innerText.includes('Descargar XLS')",
+            timeout=timeout_sec * 1000,
+        )
+    except Exception as e:
+        print(f"      ⚠ Timeout esperando proceso: {e}")
+        return False
+
+    gxoch = frame.evaluate("""() => {
+        const sel = document.querySelector('select[name="vACCIONES_0001"]');
+        return sel ? sel.getAttribute('data-gxoch0') : null;
+    }""")
+    if not gxoch:
+        print("      ⚠ No se encontró select vACCIONES_0001")
+        return False
+
+    m = re.search(r"execEvt\('([^']*)',([^,]*),\s*'([^']*)',this,(\d+)\)", gxoch)
+    if not m:
+        print(f"      ⚠ No se pudo parsear gxoch0: {gxoch!r}")
+        return False
+
+    p1, p2, evtname, rowid = m.group(1), m.group(2), m.group(3), m.group(4)
+    try:
+        with page.expect_download(timeout=180000) as dl_info:
+            frame.evaluate(f"""() => {{
+                const sel = document.querySelector('select[name="vACCIONES_0001"]');
+                sel.value = '2';
+                gx.evt.execEvt('{p1}', {p2}, '{evtname}', sel, {rowid});
+            }}""")
+        dl = dl_info.value
+        dl.save_as(dest)
+        print(f"      ✅ {dl.suggested_filename} ({os.path.getsize(dest):,} bytes)")
+        return True
+    except Exception as e:
+        print(f"      ⚠ execEvt download falló: {e}")
+        return False
+
+# ─── Excel parser ─────────────────────────────────────────────────────────────
 
 def parse_excel(path: str, year: int, month: int) -> dict:
-    """
-    Devuelve revenue en USD (convirtiendo UYU con tasa BCU del mes).
-    revenue_bruto_usd — ventas totales convertidas a USD
-    devoluciones_usd  — notas de crédito convertidas a USD
-    revenue_neto_usd  — bruto - devoluciones
-    orders_count
-    moneda_mix_original — montos originales sin convertir {"USD": x, "UYU": y}
-    """
-    try:
-        import openpyxl
-    except ImportError:
-        raise ImportError("openpyxl requerido: pip install openpyxl")
-
+    import openpyxl
     wb = openpyxl.load_workbook(path)
     ws = wb.active
     rows = list(ws.iter_rows(values_only=True))
@@ -131,34 +239,30 @@ def parse_excel(path: str, year: int, month: int) -> dict:
             break
 
     if header_row is None:
-        print(f"    WARN: No se encontró header en {path}")
-        return {"revenue_bruto_usd": 0, "devoluciones_usd": 0, "revenue_neto_usd": 0,
-                "orders_count": 0, "moneda_mix_original": {}}
+        print(f"      WARN: header no encontrado en {os.path.basename(path)}")
+        return _empty_result(year, month)
 
     headers = [str(v).lower().strip() if v else "" for v in rows[header_row]]
     col = {name: idx for idx, name in enumerate(headers)}
+    emitida_col = col.get("emitida", -1)
 
-    revenue_bruto_usd = 0.0
-    devoluciones_usd = 0.0
-    orders_count = 0
-    moneda_mix_original: dict = {}
-    tipo_stats: dict = {}  # diagnóstico: tipo → USD acumulado (emitidos)
-    skipped_no_emitida_usd = 0.0  # diagnóstico: total saltado por emitida != S
-    skipped_no_emitida_count = 0
-    emitida_col_idx = col.get("emitida", -1)
+    revenue_bruto = 0.0
+    devoluciones  = 0.0
+    orders_count  = 0
+    moneda_mix: dict = {}
+    tipo_stats: dict = {}
+    skipped_n = 0
+    skipped_usd = 0.0
 
     for row in rows[header_row + 1:]:
         if not any(row):
             continue
-        tipo_raw = str(row[col.get("tipo", 1)] or "").lower().strip()
-        total_raw = row[col.get("total", 8)]
+        tipo_raw   = str(row[col.get("tipo", 1)] or "").lower().strip()
+        total_raw  = row[col.get("total", 8)]
         moneda_raw = str(row[col.get("moneda", 7)] or "").strip()
-        emitida_raw = (
-            str(row[emitida_col_idx] or "").strip().upper()
-            if emitida_col_idx >= 0 else "S"
-        )
+        emitida    = (str(row[emitida_col] or "").strip().upper()
+                      if emitida_col >= 0 else "S")
 
-        # Saltar filas de resumen/totalizadoras (sin tipo o tipo es "total")
         if not tipo_raw or ("total" in tipo_raw and len(tipo_raw) < 20):
             continue
 
@@ -166,76 +270,55 @@ def parse_excel(path: str, year: int, month: int) -> dict:
         moneda_key = "USD" if is_usd else "UYU"
 
         try:
-            total_original = float(total_raw or 0)
+            total_orig = float(total_raw or 0)
         except (TypeError, ValueError):
             continue
-
-        if total_original == 0:
+        if total_orig == 0:
             continue
 
-        # Convertir a USD
-        if is_usd:
-            total_usd = total_original
-        else:
-            total_usd = uyu_to_usd(total_original, year, month)
+        total_usd = total_orig if is_usd else uyu_to_usd(total_orig, year, month)
 
-        # Solo contar comprobantes emitidos. Si la columna 'emitida' no
-        # existe, se asume emitido (compatibilidad hacia atrás).
-        if emitida_col_idx >= 0 and emitida_raw != "S":
-            skipped_no_emitida_usd += total_usd
-            skipped_no_emitida_count += 1
+        if emitida_col >= 0 and emitida != "S":
+            skipped_n += 1
+            skipped_usd += total_usd
             continue
 
-        moneda_mix_original[moneda_key] = moneda_mix_original.get(moneda_key, 0) + total_original
+        moneda_mix[moneda_key] = moneda_mix.get(moneda_key, 0) + total_orig
         tipo_stats[tipo_raw] = round(tipo_stats.get(tipo_raw, 0) + total_usd, 2)
 
-        is_devolucion = any(kw in tipo_raw for kw in TIPOS_DEVOLUCION)
-
-        if is_devolucion:
-            devoluciones_usd += total_usd
+        if any(kw in tipo_raw for kw in TIPOS_DEVOLUCION):
+            devoluciones += total_usd
         else:
-            revenue_bruto_usd += total_usd
-            orders_count += 1
+            revenue_bruto += total_usd
+            orders_count  += 1
 
-    # Diagnóstico: tipos de comprobante emitidos detectados en este mes
     for t, amt in sorted(tipo_stats.items(), key=lambda x: -x[1]):
         flag = "DEVOL" if any(kw in t for kw in TIPOS_DEVOLUCION) else "VENTA"
-        print(f"      [{flag}] tipo={t!r:35s} USD {amt:,.0f}")
-    if skipped_no_emitida_count > 0:
-        print(f"      [SKIP] no-emitidos: {skipped_no_emitida_count} filas, USD {skipped_no_emitida_usd:,.0f}")
-    if emitida_col_idx < 0:
-        print(f"      WARN: columna 'emitida' NO encontrada en headers — sumando todo. Headers: {headers}")
+        print(f"        [{flag}] {t!r:35s} USD {amt:,.0f}")
+    if skipped_n:
+        print(f"        [SKIP] no-emitidos: {skipped_n} filas, USD {skipped_usd:,.0f}")
+    if emitida_col < 0:
+        print(f"        WARN: columna 'emitida' no encontrada — sumando todo. Headers: {headers}")
 
     return {
-        "revenue_bruto_usd": round(revenue_bruto_usd, 2),
-        "devoluciones_usd": round(devoluciones_usd, 2),
-        "revenue_neto_usd": round(revenue_bruto_usd - devoluciones_usd, 2),
-        "orders_count": orders_count,
-        "moneda_mix_original": {k: round(v, 2) for k, v in moneda_mix_original.items()},
-        "tasa_uyu_usd": get_usd_uyu_rate(year, month),
+        "revenue_bruto_usd": round(revenue_bruto, 2),
+        "devoluciones_usd":  round(devoluciones, 2),
+        "revenue_neto_usd":  round(revenue_bruto - devoluciones, 2),
+        "orders_count":      orders_count,
+        "moneda_mix_original": {k: round(v, 2) for k, v in moneda_mix.items()},
+        "tasa_uyu_usd":      get_usd_uyu_rate(year, month),
     }
 
-def fetch_month(frame, page, year: int, month: int, tmp_dir: str) -> dict:
-    last_day = calendar.monthrange(year, month)[1]
-    yy = str(year)[-2:]
-    from_str = f"01/{month:02d}/{yy}"
-    to_str = f"{last_day:02d}/{month:02d}/{yy}"
+def _empty_result(year: int, month: int) -> dict:
+    return {
+        "revenue_bruto_usd": 0, "devoluciones_usd": 0, "revenue_neto_usd": 0,
+        "orders_count": 0, "moneda_mix_original": {}, "tasa_uyu_usd": get_usd_uyu_rate(year, month),
+    }
 
-    print(f"    Fetching {year}-{month:02d} ({from_str} → {to_str})")
-    set_date_filter(frame, from_str, to_str)
-
-    try:
-        xl_path = download_excel(frame, page, tmp_dir)
-        result = parse_excel(xl_path, year, month)
-        print(f"      → bruto_usd={result['revenue_bruto_usd']} dev_usd={result['devoluciones_usd']} orders={result['orders_count']} tasa={result['tasa_uyu_usd']}")
-        return result
-    except Exception as e:
-        print(f"      WARN: {e}")
-        return {"revenue_bruto_usd": 0, "devoluciones_usd": 0, "revenue_neto_usd": 0,
-                "orders_count": 0, "moneda_mix_original": {}, "tasa_uyu_usd": 0}
+# ─── Main ─────────────────────────────────────────────────────────────────────
 
 def main():
-    user = os.environ.get("ZETA_USER", "")
+    user     = os.environ.get("ZETA_USER", "")
     password = os.environ.get("ZETA_PASS", "")
 
     if not user or not password:
@@ -246,103 +329,122 @@ def main():
         from playwright.sync_api import sync_playwright
         import openpyxl
     except ImportError as e:
-        print(f"ERROR: {e}. Corré: pip install playwright openpyxl && playwright install chromium", file=sys.stderr)
+        print(f"ERROR: {e}", file=sys.stderr)
         sys.exit(1)
 
-    import time
     now = uy_now()
 
-    # Cargar JSON existente para preservar histórico anterior
+    # Cargar histórico existente para reutilizar meses ya scrapeados
     existing = {"locales": []}
     if os.path.exists(DATA_PATH):
         try:
             with open(DATA_PATH) as f:
                 existing = json.load(f)
-        except:
+        except Exception:
             pass
 
     prev_records: dict = {}
     for loc in existing.get("locales", []):
         for rec in loc.get("historico_mensual", []):
-            prev_records[(loc["id"], rec["year"], rec["month"])] = rec
+            prev_records[("juan_b_alberdi", rec["year"], rec["month"])] = rec
 
     tmp_dir = tempfile.mkdtemp()
+    historico = []
+    scrape_ok = False
+
     try:
         with sync_playwright() as p:
             browser = p.chromium.launch(headless=True)
-            page = browser.new_page()
-
-            frame = login(page, user, password)
+            page    = browser.new_page()
+            frame   = login(page, user, password)
             go_to_ventas(frame, page)
 
-            # Scrapear desde Jan 2024 hasta el mes actual
-            # (Si ya tenemos datos de un mes pasado, los reutilizamos para no sobrecargar)
-            historico = []
-            start_year = 2024
-            for year in range(start_year, now.year + 1):
+            for year in range(2024, now.year + 1):
                 max_month = now.month if year == now.year else 12
                 for month in range(1, max_month + 1):
                     key = ("juan_b_alberdi", year, month)
-                    is_current_month = (year == now.year and month == now.month)
-                    # Reutilizar meses pasados solo si ya fueron scrapeados con el
-                    # filtro emitida=S (marcador _emitida_filtered). Mes actual
-                    # siempre se re-scrapea.
-                    rec_prev = prev_records.get(key)
-                    reuse = (
-                        rec_prev is not None
-                        and not is_current_month
-                        and rec_prev.get("_emitida_filtered", False)
-                    )
-                    if reuse:
+                    is_current = (year == now.year and month == now.month)
+                    rec_prev   = prev_records.get(key)
+
+                    # Reutilizar meses pasados con filtro emitida ya aplicado
+                    if rec_prev and not is_current and rec_prev.get("_emitida_filtered"):
                         historico.append(rec_prev)
-                        print(f"    Reutilizando {year}-{month:02d}: neto={rec_prev.get('revenue_neto', 0)}")
+                        print(f"    Reutilizando {year}-{month:02d}: "
+                              f"neto={rec_prev.get('revenue_neto', 0):.0f}")
                         continue
 
-                    data = fetch_month(frame, page, year, month, tmp_dir)
+                    last_day = calendar.monthrange(year, month)[1]
+                    yy       = str(year)[-2:]
+                    from_str = f"01/{month:02d}/{yy}"
+                    to_str   = f"{last_day:02d}/{month:02d}/{yy}"
+                    print(f"    Scrapeando {year}-{month:02d} ({from_str} → {to_str})")
+
+                    xl_path = submit_month(frame, page, from_str, to_str, tmp_dir)
+
+                    if xl_path and os.path.exists(xl_path):
+                        data = parse_excel(xl_path, year, month)
+                        print(f"      → bruto={data['revenue_bruto_usd']:.0f} "
+                              f"dev={data['devoluciones_usd']:.0f} "
+                              f"orders={data['orders_count']}")
+                        scrape_ok = True
+                    else:
+                        print(f"      ⚠ Sin archivo — usando ceros")
+                        data = _empty_result(year, month)
+
                     historico.append({
-                        "year": year,
+                        "year":  year,
                         "month": month,
-                        "revenue_bruto": data["revenue_bruto_usd"],
-                        "revenue_neto": data["revenue_neto_usd"],
-                        "devoluciones": data["devoluciones_usd"],
-                        "orders_count": data["orders_count"],
+                        "revenue_bruto":       data["revenue_bruto_usd"],
+                        "revenue_neto":        data["revenue_neto_usd"],
+                        "devoluciones":        data["devoluciones_usd"],
+                        "orders_count":        data["orders_count"],
                         "moneda_mix_original": data["moneda_mix_original"],
-                        "tasa_uyu_usd": data["tasa_uyu_usd"],
-                        "_emitida_filtered": True,
+                        "tasa_uyu_usd":        data["tasa_uyu_usd"],
+                        "_emitida_filtered":   True,
                     })
 
             browser.close()
 
-        # Mes actual
-        mes_actual_rec = next((r for r in historico if r["year"] == now.year and r["month"] == now.month), {})
-
-        output = {
-            "_status": "ok",
-            "_ultima_actualizacion": now.isoformat(),
-            "locales": [
-                {
-                    "id": "juan_b_alberdi",
-                    "nombre": "Juan B Alberdi 6280",
-                    "mes_actual": {
-                        "revenue": mes_actual_rec.get("revenue_bruto", 0),
-                        "revenue_neto": mes_actual_rec.get("revenue_neto", 0),
-                        "orders_count": mes_actual_rec.get("orders_count", 0),
-                        "devoluciones": mes_actual_rec.get("devoluciones", 0),
-                    },
-                    "historico_mensual": historico,
-                }
-            ],
-        }
-
-        with open(DATA_PATH, "w") as f:
-            json.dump(output, f, indent=2, ensure_ascii=False)
-
-        total_meses = len(historico)
-        total_bruto_actual = mes_actual_rec.get("revenue_bruto", 0)
-        print(f"✅ locales.json actualizado — {total_meses} meses | mes actual: USD {total_bruto_actual:,.2f}")
-
+    except Exception as e:
+        print(f"ERROR en scraper: {e}", file=sys.stderr)
+        import traceback; traceback.print_exc()
+        # Si no pudo scrapear nada nuevo, conservar histórico previo intacto
+        if not historico:
+            for loc in existing.get("locales", []):
+                historico = loc.get("historico_mensual", [])
+            print("  Conservando histórico previo sin cambios.")
     finally:
         shutil.rmtree(tmp_dir, ignore_errors=True)
+
+    if not historico:
+        print("ERROR: sin datos para guardar", file=sys.stderr)
+        sys.exit(1)
+
+    mes_actual = next(
+        (r for r in historico if r["year"] == now.year and r["month"] == now.month), {}
+    )
+
+    output = {
+        "_status": "ok",
+        "_ultima_actualizacion": now.isoformat(),
+        "locales": [{
+            "id":     "juan_b_alberdi",
+            "nombre": "Juan B Alberdi 6280",
+            "mes_actual": {
+                "revenue":       mes_actual.get("revenue_bruto", 0),
+                "revenue_neto":  mes_actual.get("revenue_neto", 0),
+                "orders_count":  mes_actual.get("orders_count", 0),
+                "devoluciones":  mes_actual.get("devoluciones", 0),
+            },
+            "historico_mensual": historico,
+        }],
+    }
+
+    with open(DATA_PATH, "w") as f:
+        json.dump(output, f, indent=2, ensure_ascii=False)
+
+    print(f"✅ locales.json — {len(historico)} meses | "
+          f"mes actual: USD {mes_actual.get('revenue_bruto', 0):,.0f}")
 
 if __name__ == "__main__":
     main()
