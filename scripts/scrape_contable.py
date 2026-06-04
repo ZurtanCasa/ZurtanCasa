@@ -62,9 +62,11 @@ def uy_now():
 
 def login(page, user, password):
     page.goto(BASE_URL, timeout=60000, wait_until="domcontentloaded")
-    time.sleep(3)
-    page.fill("input[name='vUSULIBRAEMAIL']", user)
-    page.fill("input[name='vUSULIBRAPASSWORD']", password)
+    # Esperar que el formulario de login termine de renderizarse (GeneXus carga los
+    # inputs via JS después del DOM load — sin este wait, fill() agota su timeout)
+    page.wait_for_selector("input[name='vUSULIBRAPASSWORD']", timeout=90000)
+    page.fill("input[name='vUSULIBRAEMAIL']", user, timeout=60000)
+    page.fill("input[name='vUSULIBRAPASSWORD']", password, timeout=60000)
     page.click("input[name='BTNENTER']")
     time.sleep(10)
     frame = page.frames[0]
