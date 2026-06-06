@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-05T18:13:28.026314-03:00",
-  "_rango": "01/01/24 → 05/06/26",
+  "_ultima_actualizacion": "2026-06-06T05:17:58.202975-03:00",
+  "_rango": "01/01/24 → 06/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -433,12 +433,12 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 4673.12,
-          "units": 3
+          "revenue_usd": 7214.56,
+          "units": 6
         },
         "Sin categoría": {
-          "revenue_usd": 21421.0,
-          "units": 3
+          "revenue_usd": 22294.6,
+          "units": 5
         },
         "Pura Lana": {
           "revenue_usd": 1000.0,
@@ -451,6 +451,10 @@
         "Yute y Lana": {
           "revenue_usd": 4530.0,
           "units": 3
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 840.0,
+          "units": 1
         }
       },
       "1": {
@@ -801,12 +805,12 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 470757.93,
-      "units": 385
+      "revenue_usd": 473299.37,
+      "units": 388
     },
     "Sin categoría": {
-      "revenue_usd": 292308.77,
-      "units": 279
+      "revenue_usd": 293182.37,
+      "units": 281
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -825,25 +829,25 @@
       "units": 11
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 134081.58,
-      "units": 174
+      "revenue_usd": 134921.58,
+      "units": 175
     }
   },
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 470757.93,
-      "units": 385
+      "revenue_usd": 473299.37,
+      "units": 388
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 292308.77,
-      "units": 279
+      "revenue_usd": 293182.37,
+      "units": 281
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 134081.58,
-      "units": 174
+      "revenue_usd": 134921.58,
+      "units": 175
     },
     {
       "categoria": "Pura Lana",
@@ -874,14 +878,14 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 285615.56,
-      "units": 258,
+      "revenue_usd": 286325.16,
+      "units": 259,
       "categoria": "Sin categoría"
     },
     {
       "articulo": "Vintage",
-      "revenue_usd": 137072.51,
-      "units": 95,
+      "revenue_usd": 139613.95,
+      "units": 98,
       "categoria": "Alfombra persa"
     },
     {
@@ -945,6 +949,12 @@
       "categoria": "Pura Lana"
     },
     {
+      "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
+      "revenue_usd": 12883.69,
+      "units": 16,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 200 x 300 Beige",
       "revenue_usd": 12508.0,
       "units": 16,
@@ -961,12 +971,6 @@
       "revenue_usd": 12209.54,
       "units": 12,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
-      "revenue_usd": 12043.69,
-      "units": 15,
-      "categoria": "Yute y Lana Nuevas"
     },
     {
       "articulo": "Pura Lana 300 x 400 Natural",
@@ -2235,14 +2239,14 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 60210.41,
-        "units": 40,
+        "revenue_usd": 60920.01,
+        "units": 41,
         "categoria": "Sin categoría"
       },
       {
         "articulo": "Vintage",
-        "revenue_usd": 16907.18,
-        "units": 15,
+        "revenue_usd": 19448.62,
+        "units": 18,
         "categoria": "Alfombra persa"
       },
       {
@@ -2276,6 +2280,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
+        "revenue_usd": 3380.69,
+        "units": 4,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
         "articulo": "Mafrash",
         "revenue_usd": 3370.68,
         "units": 4,
@@ -2292,12 +2302,6 @@
         "revenue_usd": 2647.63,
         "units": 2,
         "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
-        "revenue_usd": 2540.69,
-        "units": 3,
-        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "Kashgai-Shiraz",
@@ -2574,6 +2578,12 @@
         "revenue_usd": 196.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Yute Redonda con Diseño 150 x 150",
+        "revenue_usd": 164.0,
+        "units": 1,
+        "categoria": "Sin categoría"
       },
       {
         "articulo": "Yute y Lana Nuevas 80 x 120 Ivory",
