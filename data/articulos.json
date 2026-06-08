@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-08T16:38:34.161077-03:00",
+  "_ultima_actualizacion": "2026-06-08T19:12:49.468258-03:00",
   "_rango": "01/01/24 → 08/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -441,8 +441,8 @@
           "units": 9
         },
         "Pura Lana": {
-          "revenue_usd": 1000.0,
-          "units": 1
+          "revenue_usd": 2432.0,
+          "units": 2
         },
         "Muebles": {
           "revenue_usd": 2432.0,
@@ -817,8 +817,8 @@
       "units": 42
     },
     "Pura Lana": {
-      "revenue_usd": 80026.01,
-      "units": 113
+      "revenue_usd": 81458.01,
+      "units": 114
     },
     "Yute y Lana": {
       "revenue_usd": 51658.27,
@@ -851,8 +851,8 @@
     },
     {
       "categoria": "Pura Lana",
-      "revenue_usd": 80026.01,
-      "units": 113
+      "revenue_usd": 81458.01,
+      "units": 114
     },
     {
       "categoria": "Muebles",
@@ -1207,6 +1207,12 @@
       "categoria": "Yute y Lana"
     },
     {
+      "articulo": "Pura Lana 250 x 350 Vison",
+      "revenue_usd": 3425.0,
+      "units": 3,
+      "categoria": "Pura Lana"
+    },
+    {
       "articulo": "Fine Vintage",
       "revenue_usd": 3386.0,
       "units": 1,
@@ -1367,12 +1373,6 @@
       "revenue_usd": 1995.0,
       "units": 5,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Pura Lana 250 x 350 Vison",
-      "revenue_usd": 1993.0,
-      "units": 2,
-      "categoria": "Pura Lana"
     },
     {
       "articulo": "Kilim Turkman",
@@ -2365,6 +2365,12 @@
       },
       {
         "articulo": "Pura Lana 250 x 350 Natural",
+        "revenue_usd": 1432.0,
+        "units": 1,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Pura Lana 250 x 350 Vison",
         "revenue_usd": 1432.0,
         "units": 1,
         "categoria": "Pura Lana"
