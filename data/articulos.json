@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-08T11:37:38.924286-03:00",
+  "_ultima_actualizacion": "2026-06-08T16:38:34.161077-03:00",
   "_rango": "01/01/24 → 08/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -433,12 +433,12 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 7214.56,
-          "units": 6
+          "revenue_usd": 7991.28,
+          "units": 7
         },
         "Sin categoría": {
-          "revenue_usd": 22294.6,
-          "units": 5
+          "revenue_usd": 23332.0,
+          "units": 9
         },
         "Pura Lana": {
           "revenue_usd": 1000.0,
@@ -805,12 +805,12 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 473299.37,
-      "units": 388
+      "revenue_usd": 474076.09,
+      "units": 389
     },
     "Sin categoría": {
-      "revenue_usd": 293182.37,
-      "units": 281
+      "revenue_usd": 294219.77,
+      "units": 285
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -836,13 +836,13 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 473299.37,
-      "units": 388
+      "revenue_usd": 474076.09,
+      "units": 389
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 293182.37,
-      "units": 281
+      "revenue_usd": 294219.77,
+      "units": 285
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -878,14 +878,14 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 286325.16,
-      "units": 259,
+      "revenue_usd": 287362.56,
+      "units": 263,
       "categoria": "Sin categoría"
     },
     {
       "articulo": "Vintage",
-      "revenue_usd": 139613.95,
-      "units": 98,
+      "revenue_usd": 140390.67,
+      "units": 99,
       "categoria": "Alfombra persa"
     },
     {
@@ -2239,14 +2239,14 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 60920.01,
-        "units": 41,
+        "revenue_usd": 61957.41,
+        "units": 45,
         "categoria": "Sin categoría"
       },
       {
         "articulo": "Vintage",
-        "revenue_usd": 19448.62,
-        "units": 18,
+        "revenue_usd": 20225.34,
+        "units": 19,
         "categoria": "Alfombra persa"
       },
       {
