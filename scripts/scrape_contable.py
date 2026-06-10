@@ -37,6 +37,12 @@ BCU_RATES: dict[tuple[int, int], float] = {
     (2026, 5): 44.0,  (2026, 6): 44.0,
 }
 
+# Facturas excluidas manualmente (no cuentan para la facturación del dashboard).
+# Clave: year, month, day (opcional), total_usd exacto ± tolerancia USD.
+EXCLUSIONES: list[dict] = [
+    {"year": 2026, "month": 6, "day": 2, "total_usd": 20000.0, "tolerancia": 10.0},
+]
+
 def get_usd_uyu_rate(year: int, month: int) -> float:
     now = datetime.now(UY_TZ)
     if year == now.year and month == now.month:
@@ -319,6 +325,7 @@ def parse_excel(path: str, year: int, month: int) -> dict:
     headers = [str(v).lower().strip() if v else "" for v in rows[header_row]]
     col = {name: idx for idx, name in enumerate(headers)}
     emitida_col = col.get("emitida", -1)
+    fecha_col   = col.get("fecha", -1)
 
     revenue_bruto = 0.0
     devoluciones  = 0.0
@@ -351,6 +358,29 @@ def parse_excel(path: str, year: int, month: int) -> dict:
             continue
 
         total_usd = total_orig if is_usd else uyu_to_usd(total_orig, year, month)
+
+        # Verificar exclusiones manuales (facturas que no cuentan para el dashboard)
+        _excluida = False
+        if EXCLUSIONES:
+            _fval = row[fecha_col] if 0 <= fecha_col < len(row) else None
+            _day  = None
+            if isinstance(_fval, datetime):
+                _day = _fval.day
+            elif isinstance(_fval, str):
+                for _fmt in ("%d/%m/%Y", "%d/%m/%y", "%Y-%m-%d"):
+                    try:
+                        _day = datetime.strptime(_fval.strip(), _fmt).day; break
+                    except ValueError:
+                        pass
+            for exc in EXCLUSIONES:
+                if (exc["year"] == year and exc["month"] == month
+                        and (exc.get("day") is None or _day == exc["day"])
+                        and abs(total_usd - exc["total_usd"]) <= exc.get("tolerancia", 10.0)):
+                    print(f"        [EXCL] Factura excluida: {tipo_raw!r} USD {total_usd:,.0f} día={_day}")
+                    _excluida = True
+                    break
+        if _excluida:
+            continue
 
         if emitida_col >= 0 and emitida != "S":
             skipped_n += 1

@@ -31,6 +31,12 @@ HDR_CANTIDAD  = "CANTIDAD"
 # Si existen ambas columnas (S/IVA y C/IVA), tomamos la última que matchee "TOTAL".
 HDR_TOTAL     = "TOTAL"
 
+# Facturas excluidas manualmente (no cuentan para la facturación del dashboard).
+# Clave: year, month, day (opcional), total_usd exacto ± tolerancia USD.
+EXCLUSIONES: list[dict] = [
+    {"year": 2026, "month": 6, "day": 2, "total_usd": 20000.0, "tolerancia": 10.0},
+]
+
 def login(page, user, password):
     page.goto(BASE_URL, timeout=60000, wait_until="domcontentloaded")
     # Esperar networkidle para que el JS de GeneXus termine de renderizar el form
@@ -326,14 +332,14 @@ def parse_excel(path: str) -> list[dict]:
             continue
 
         # Parsear fecha
-        year, month = None, None
+        year, month, day = None, None, None
         if isinstance(fecha, datetime):
-            year, month = fecha.year, fecha.month
+            year, month, day = fecha.year, fecha.month, fecha.day
         elif isinstance(fecha, str) and fecha:
             for fmt in ("%d/%m/%Y", "%Y-%m-%d", "%d/%m/%y"):
                 try:
                     dt = datetime.strptime(fecha.strip(), fmt)
-                    year, month = dt.year, dt.month
+                    year, month, day = dt.year, dt.month, dt.day
                     break
                 except ValueError:
                     pass
@@ -347,6 +353,18 @@ def parse_excel(path: str) -> list[dict]:
             continue
 
         if rev == 0:
+            continue
+
+        # Verificar exclusiones manuales (facturas que no cuentan para el dashboard)
+        _excluida = False
+        for exc in EXCLUSIONES:
+            if (exc["year"] == year and exc["month"] == month
+                    and (exc.get("day") is None or day == exc["day"])
+                    and abs(rev - exc["total_usd"]) <= exc.get("tolerancia", 10.0)):
+                print(f"    [EXCL] Artículo excluido: {str(nombre).strip()!r} USD {rev:,.0f} fecha={fecha}")
+                _excluida = True
+                break
+        if _excluida:
             continue
 
         try:
