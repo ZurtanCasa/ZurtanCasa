@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-11T09:56:54.356012-03:00",
+  "_ultima_actualizacion": "2026-06-11T17:01:21.957340-03:00",
   "_rango": "01/01/24 → 11/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -433,8 +433,8 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 9442.48,
-          "units": 10
+          "revenue_usd": 12916.48,
+          "units": 11
         },
         "Sin categoría": {
           "revenue_usd": 23332.0,
@@ -453,8 +453,8 @@
           "units": 3
         },
         "Yute y Lana Nuevas": {
-          "revenue_usd": 1680.0,
-          "units": 2
+          "revenue_usd": 2196.0,
+          "units": 3
         }
       },
       "1": {
@@ -805,8 +805,8 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 475527.29,
-      "units": 392
+      "revenue_usd": 479001.29,
+      "units": 393
     },
     "Sin categoría": {
       "revenue_usd": 294219.77,
@@ -829,15 +829,15 @@
       "units": 11
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 135761.58,
-      "units": 176
+      "revenue_usd": 136277.58,
+      "units": 177
     }
   },
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 475527.29,
-      "units": 392
+      "revenue_usd": 479001.29,
+      "units": 393
     },
     {
       "categoria": "Sin categoría",
@@ -846,8 +846,8 @@
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 135761.58,
-      "units": 176
+      "revenue_usd": 136277.58,
+      "units": 177
     },
     {
       "categoria": "Pura Lana",
@@ -1093,6 +1093,12 @@
       "categoria": "Muebles"
     },
     {
+      "articulo": "Fine Vintage",
+      "revenue_usd": 6860.0,
+      "units": 2,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Silla OTTO Teak Cuero Negro 50 x 52 x 85",
       "revenue_usd": 6601.0,
       "units": 16,
@@ -1213,12 +1219,6 @@
       "categoria": "Pura Lana"
     },
     {
-      "articulo": "Fine Vintage",
-      "revenue_usd": 3386.0,
-      "units": 1,
-      "categoria": "Alfombra persa"
-    },
-    {
       "articulo": "Yute y Lana Nuevas 160 x 230 Green",
       "revenue_usd": 3362.0,
       "units": 7,
@@ -1247,6 +1247,12 @@
       "revenue_usd": 3086.0,
       "units": 2,
       "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 160 x 230 Ivory",
+      "revenue_usd": 2999.75,
+      "units": 6,
+      "categoria": "Yute y Lana Nuevas"
     },
     {
       "articulo": "Yute y Lana 200 x 300 Grey",
@@ -1295,12 +1301,6 @@
       "revenue_usd": 2627.0,
       "units": 1,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Yute y Lana Nuevas 160 x 230 Ivory",
-      "revenue_usd": 2483.75,
-      "units": 5,
-      "categoria": "Yute y Lana Nuevas"
     },
     {
       "articulo": "Poltrona Nube Verde Oliva",
@@ -2280,6 +2280,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Fine Vintage",
+        "revenue_usd": 3474.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
         "revenue_usd": 3380.69,
         "units": 4,
@@ -2358,6 +2364,12 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
+        "articulo": "Yute y Lana Nuevas 160 x 230 Ivory",
+        "revenue_usd": 1515.75,
+        "units": 3,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
         "articulo": "Vintage Ornate",
         "revenue_usd": 1478.0,
         "units": 1,
@@ -2410,12 +2422,6 @@
         "revenue_usd": 1024.63,
         "units": 1,
         "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "Yute y Lana Nuevas 160 x 230 Ivory",
-        "revenue_usd": 999.75,
-        "units": 2,
-        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "Hamedam",
@@ -2608,12 +2614,6 @@
         "revenue_usd": 136.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
-      },
-      {
-        "articulo": "Fine Vintage",
-        "revenue_usd": 0.0,
-        "units": 0,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 70 x 300 Grey",
