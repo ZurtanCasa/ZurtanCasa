@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-15T13:13:10.622273-03:00",
+  "_ultima_actualizacion": "2026-06-15T16:41:34.741512-03:00",
   "_rango": "01/01/24 → 15/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -433,8 +433,8 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 14265.48,
-          "units": 12
+          "revenue_usd": 19287.88,
+          "units": 14
         },
         "Sin categoría": {
           "revenue_usd": 24232.0,
@@ -805,8 +805,8 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 480350.29,
-      "units": 394
+      "revenue_usd": 485372.69,
+      "units": 396
     },
     "Sin categoría": {
       "revenue_usd": 295119.77,
@@ -836,8 +836,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 480350.29,
-      "units": 394
+      "revenue_usd": 485372.69,
+      "units": 396
     },
     {
       "categoria": "Sin categoría",
@@ -985,6 +985,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Fine Vintage",
+      "revenue_usd": 10670.4,
+      "units": 3,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana 300 x 400 Natural",
       "revenue_usd": 10171.5,
       "units": 7,
@@ -1091,12 +1097,6 @@
       "revenue_usd": 7119.0,
       "units": 22,
       "categoria": "Muebles"
-    },
-    {
-      "articulo": "Fine Vintage",
-      "revenue_usd": 6860.0,
-      "units": 2,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Silla OTTO Teak Cuero Negro 50 x 52 x 85",
@@ -1453,6 +1453,12 @@
       "categoria": "Muebles"
     },
     {
+      "articulo": "Naim 720",
+      "revenue_usd": 1632.0,
+      "units": 2,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Pura Lana 160 x 230 Natural",
       "revenue_usd": 1611.38,
       "units": 4,
@@ -1469,12 +1475,6 @@
       "revenue_usd": 1578.0,
       "units": 9,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Mesa FRIDA 200 x 100 x 75 Grey Wash",
-      "revenue_usd": 1520.0,
-      "units": 1,
-      "categoria": "Muebles"
     }
   ],
   "top_articulos_por_anio": {
@@ -2262,6 +2262,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Fine Vintage",
+        "revenue_usd": 7284.4,
+        "units": 2,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Yute y Lana 400 x 500 Natural",
         "revenue_usd": 5076.0,
         "units": 2,
@@ -2277,12 +2283,6 @@
         "articulo": "Varni Sirdjan",
         "revenue_usd": 3474.99,
         "units": 3,
-        "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Fine Vintage",
-        "revenue_usd": 3474.0,
-        "units": 1,
         "categoria": "Alfombra persa"
       },
       {
@@ -2410,6 +2410,12 @@
         "revenue_usd": 1224.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Naim 720",
+        "revenue_usd": 1212.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Ghouchan",
