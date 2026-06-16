@@ -40,7 +40,7 @@ BCU_RATES: dict[tuple[int, int], float] = {
 # Facturas excluidas manualmente (no cuentan para la facturación del dashboard).
 # Clave: year, month, day (opcional), total_usd exacto ± tolerancia USD.
 EXCLUSIONES: list[dict] = [
-    {"year": 2026, "month": 6, "total_usd": 20000.0, "tolerancia": 10.0},
+    {"year": 2026, "month": 6, "total_usd": 20281.0, "tolerancia": 10.0},
 ]
 
 def get_usd_uyu_rate(year: int, month: int) -> float:

@@ -6,9 +6,9 @@
       "id": "juan_b_alberdi",
       "nombre": "Juan B Alberdi 6280",
       "mes_actual": {
-        "revenue": 58111.88,
-        "revenue_neto": 58111.88,
-        "orders_count": 22,
+        "revenue": 37830.88,
+        "revenue_neto": 37830.88,
+        "orders_count": 21,
         "devoluciones": 0.0
       },
       "historico_mensual": [
@@ -398,12 +398,12 @@
         {
           "year": 2026,
           "month": 6,
-          "revenue_bruto": 58111.88,
-          "revenue_neto": 58111.88,
+          "revenue_bruto": 37830.88,
+          "revenue_neto": 37830.88,
           "devoluciones": 0.0,
-          "orders_count": 22,
+          "orders_count": 21,
           "moneda_mix_original": {
-            "USD": 58111.88
+            "USD": 37830.88
           },
           "tasa_uyu_usd": 40.43662,
           "_emitida_filtered": true
