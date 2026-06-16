@@ -359,10 +359,6 @@ def parse_excel(path: str, year: int, month: int) -> dict:
 
         total_usd = total_orig if is_usd else uyu_to_usd(total_orig, year, month)
 
-        # Debug: mostrar cada fila para diagnóstico de exclusiones
-        print(f"        [ROW] tipo={tipo_raw!r} moneda={moneda_raw!r} "
-              f"total_orig={total_orig} total_usd={total_usd:.2f} emitida={emitida}")
-
         # Verificar exclusiones manuales (facturas que no cuentan para el dashboard)
         _excluida = False
         if EXCLUSIONES:
