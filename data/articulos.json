@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-16T17:06:20.789424-03:00",
+  "_ultima_actualizacion": "2026-06-16T21:07:47.681787-03:00",
   "_rango": "01/01/24 → 16/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -433,8 +433,8 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 19287.88,
-          "units": 14
+          "revenue_usd": 18075.88,
+          "units": 13
         },
         "Sin categoría": {
           "revenue_usd": 3951.0,
@@ -805,8 +805,8 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 485372.69,
-      "units": 396
+      "revenue_usd": 484160.69,
+      "units": 395
     },
     "Sin categoría": {
       "revenue_usd": 274838.77,
@@ -836,8 +836,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 485372.69,
-      "units": 396
+      "revenue_usd": 484160.69,
+      "units": 395
     },
     {
       "categoria": "Sin categoría",
@@ -1453,12 +1453,6 @@
       "categoria": "Muebles"
     },
     {
-      "articulo": "Naim 720",
-      "revenue_usd": 1632.0,
-      "units": 2,
-      "categoria": "Alfombra persa"
-    },
-    {
       "articulo": "Pura Lana 160 x 230 Natural",
       "revenue_usd": 1611.38,
       "units": 4,
@@ -1475,6 +1469,12 @@
       "revenue_usd": 1578.0,
       "units": 9,
       "categoria": "Pura Lana"
+    },
+    {
+      "articulo": "Mesa FRIDA 200 x 100 x 75 Grey Wash",
+      "revenue_usd": 1520.0,
+      "units": 1,
+      "categoria": "Muebles"
     }
   ],
   "top_articulos_por_anio": {
@@ -2412,12 +2412,6 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
-        "articulo": "Naim 720",
-        "revenue_usd": 1212.0,
-        "units": 1,
-        "categoria": "Alfombra persa"
-      },
-      {
         "articulo": "Ghouchan",
         "revenue_usd": 1131.12,
         "units": 3,
@@ -2620,6 +2614,12 @@
         "revenue_usd": 136.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Naim 720",
+        "revenue_usd": 0.0,
+        "units": 0,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 70 x 300 Grey",
