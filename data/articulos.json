@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-17T15:11:39.337232-03:00",
+  "_ultima_actualizacion": "2026-06-17T21:07:02.552369-03:00",
   "_rango": "01/01/24 → 17/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -437,8 +437,8 @@
           "units": 13
         },
         "Sin categoría": {
-          "revenue_usd": 3951.0,
-          "units": 11
+          "revenue_usd": 4279.0,
+          "units": 13
         },
         "Pura Lana": {
           "revenue_usd": 2432.0,
@@ -809,8 +809,8 @@
       "units": 395
     },
     "Sin categoría": {
-      "revenue_usd": 274838.77,
-      "units": 287
+      "revenue_usd": 275166.77,
+      "units": 289
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -841,8 +841,8 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 274838.77,
-      "units": 287
+      "revenue_usd": 275166.77,
+      "units": 289
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -2542,6 +2542,12 @@
         "revenue_usd": 328.0,
         "units": 1,
         "categoria": "Exterior Pet"
+      },
+      {
+        "articulo": "Yute Redonda 150 x 150",
+        "revenue_usd": 328.0,
+        "units": 2,
+        "categoria": "Sin categoría"
       },
       {
         "articulo": "Banco Mesa Lateral Rattan Bajo 45",
