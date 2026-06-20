@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-20T09:23:16.614875-03:00",
+  "_ultima_actualizacion": "2026-06-20T14:19:59.239454-03:00",
   "_rango": "01/01/24 → 20/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -349,6 +349,32 @@
           "units": 6
         }
       },
+      "6": {
+        "Alfombra persa": {
+          "revenue_usd": 18459.08,
+          "units": 14
+        },
+        "Sin categoría": {
+          "revenue_usd": 4279.0,
+          "units": 13
+        },
+        "Pura Lana": {
+          "revenue_usd": 2432.0,
+          "units": 2
+        },
+        "Muebles": {
+          "revenue_usd": 2432.0,
+          "units": 10
+        },
+        "Yute y Lana": {
+          "revenue_usd": 4530.0,
+          "units": 3
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 2196.0,
+          "units": 3
+        }
+      },
       "5": {
         "Alfombra persa": {
           "revenue_usd": 35832.57,
@@ -429,32 +455,6 @@
         "Yute y Lana Nuevas": {
           "revenue_usd": 932.0,
           "units": 2
-        }
-      },
-      "6": {
-        "Alfombra persa": {
-          "revenue_usd": 18075.88,
-          "units": 13
-        },
-        "Sin categoría": {
-          "revenue_usd": 4279.0,
-          "units": 13
-        },
-        "Pura Lana": {
-          "revenue_usd": 2432.0,
-          "units": 2
-        },
-        "Muebles": {
-          "revenue_usd": 2432.0,
-          "units": 10
-        },
-        "Yute y Lana": {
-          "revenue_usd": 4530.0,
-          "units": 3
-        },
-        "Yute y Lana Nuevas": {
-          "revenue_usd": 2196.0,
-          "units": 3
         }
       },
       "1": {
@@ -805,8 +805,8 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 484160.69,
-      "units": 395
+      "revenue_usd": 484543.89,
+      "units": 396
     },
     "Sin categoría": {
       "revenue_usd": 275166.77,
@@ -836,8 +836,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 484160.69,
-      "units": 395
+      "revenue_usd": 484543.89,
+      "units": 396
     },
     {
       "categoria": "Sin categoría",
@@ -1028,8 +1028,8 @@
     },
     {
       "articulo": "Afghan vintage carpet",
-      "revenue_usd": 8726.0,
-      "units": 4,
+      "revenue_usd": 9109.2,
+      "units": 5,
       "categoria": "Alfombra persa"
     },
     {
@@ -2524,6 +2524,12 @@
         "revenue_usd": 516.0,
         "units": 1,
         "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Afghan vintage carpet",
+        "revenue_usd": 383.2,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Ghochan",
