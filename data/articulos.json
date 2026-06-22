@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-21T21:02:06.490554-03:00",
-  "_rango": "01/01/24 → 21/06/26",
+  "_ultima_actualizacion": "2026-06-22T12:48:11.801568-03:00",
+  "_rango": "01/01/24 → 22/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -351,8 +351,8 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 18459.08,
-          "units": 14
+          "revenue_usd": 19959.08,
+          "units": 15
         },
         "Sin categoría": {
           "revenue_usd": 4279.0,
@@ -805,8 +805,8 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 484543.89,
-      "units": 396
+      "revenue_usd": 486043.89,
+      "units": 397
     },
     "Sin categoría": {
       "revenue_usd": 275166.77,
@@ -836,8 +836,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 484543.89,
-      "units": 396
+      "revenue_usd": 486043.89,
+      "units": 397
     },
     {
       "categoria": "Sin categoría",
@@ -902,8 +902,8 @@
     },
     {
       "articulo": "Garadjeh",
-      "revenue_usd": 21835.99,
-      "units": 35,
+      "revenue_usd": 23335.99,
+      "units": 36,
       "categoria": "Alfombra persa"
     },
     {
@@ -2274,6 +2274,12 @@
         "categoria": "Yute y Lana"
       },
       {
+        "articulo": "Garadjeh",
+        "revenue_usd": 4147.63,
+        "units": 3,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Pura Lana 200 x 300 Natural",
         "revenue_usd": 3900.0,
         "units": 4,
@@ -2300,12 +2306,6 @@
       {
         "articulo": "Kashgai",
         "revenue_usd": 2984.54,
-        "units": 2,
-        "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Garadjeh",
-        "revenue_usd": 2647.63,
         "units": 2,
         "categoria": "Alfombra persa"
       },
