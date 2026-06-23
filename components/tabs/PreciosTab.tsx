@@ -240,7 +240,7 @@ export default function PreciosTab({ data, muebles, showStats = true }: Props) {
 
   const filtPersas = useMemo(() => {
     const f = q ? persas.filter(a =>
-      a.nombre.toLowerCase().includes(q) || a.codigo.toLowerCase().includes(q)
+      a.nombre.toLowerCase().includes(q) || a.codigo.toLowerCase().startsWith(q)
     ) : persas;
     return sortArticulos(f, sortKey, sortDir);
   }, [persas, q, sortKey, sortDir]);
@@ -252,7 +252,7 @@ export default function PreciosTab({ data, muebles, showStats = true }: Props) {
 
   const filtMuebles = useMemo(() => {
     const f = q ? mueblesList.filter(a =>
-      a.nombre.toLowerCase().includes(q) || a.codigo.toLowerCase().includes(q)
+      a.nombre.toLowerCase().includes(q) || a.codigo.toLowerCase().startsWith(q)
     ) : mueblesList;
     return sortArticulos(f, sortKey, sortDir);
   }, [mueblesList, q, sortKey, sortDir]);
