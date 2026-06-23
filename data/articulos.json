@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-23T14:47:38.438830-03:00",
+  "_ultima_actualizacion": "2026-06-23T20:45:32.965893-03:00",
   "_rango": "01/01/24 → 23/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -351,12 +351,12 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 20633.08,
-          "units": 16
+          "revenue_usd": 21638.68,
+          "units": 17
         },
         "Sin categoría": {
-          "revenue_usd": 4279.0,
-          "units": 13
+          "revenue_usd": 4280.0,
+          "units": 14
         },
         "Pura Lana": {
           "revenue_usd": 2432.0,
@@ -805,12 +805,12 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 486717.89,
-      "units": 398
+      "revenue_usd": 487723.49,
+      "units": 399
     },
     "Sin categoría": {
-      "revenue_usd": 275166.77,
-      "units": 289
+      "revenue_usd": 275167.77,
+      "units": 290
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -836,13 +836,13 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 486717.89,
-      "units": 398
+      "revenue_usd": 487723.49,
+      "units": 399
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 275166.77,
-      "units": 289
+      "revenue_usd": 275167.77,
+      "units": 290
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -878,8 +878,8 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 267981.56,
-      "units": 265,
+      "revenue_usd": 267982.56,
+      "units": 266,
       "categoria": "Sin categoría"
     },
     {
@@ -979,15 +979,15 @@
       "categoria": "Pura Lana"
     },
     {
-      "articulo": "Kashgai-Shiraz",
-      "revenue_usd": 11600.77,
-      "units": 6,
+      "articulo": "Fine Vintage",
+      "revenue_usd": 11676.0,
+      "units": 4,
       "categoria": "Alfombra persa"
     },
     {
-      "articulo": "Fine Vintage",
-      "revenue_usd": 10670.4,
-      "units": 3,
+      "articulo": "Kashgai-Shiraz",
+      "revenue_usd": 11600.77,
+      "units": 6,
       "categoria": "Alfombra persa"
     },
     {
@@ -2239,8 +2239,8 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 42576.41,
-        "units": 47,
+        "revenue_usd": 42577.41,
+        "units": 48,
         "categoria": "Sin categoría"
       },
       {
@@ -2263,8 +2263,8 @@
       },
       {
         "articulo": "Fine Vintage",
-        "revenue_usd": 7284.4,
-        "units": 2,
+        "revenue_usd": 8290.0,
+        "units": 3,
         "categoria": "Alfombra persa"
       },
       {
