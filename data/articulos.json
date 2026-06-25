@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-25T10:10:23.416833-03:00",
+  "_ultima_actualizacion": "2026-06-25T15:06:23.143032-03:00",
   "_rango": "01/01/24 → 25/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -351,8 +351,8 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 21638.68,
-          "units": 17
+          "revenue_usd": 24401.08,
+          "units": 19
         },
         "Sin categoría": {
           "revenue_usd": 4280.0,
@@ -805,8 +805,8 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 487723.49,
-      "units": 399
+      "revenue_usd": 490485.89,
+      "units": 401
     },
     "Sin categoría": {
       "revenue_usd": 275167.77,
@@ -836,8 +836,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 487723.49,
-      "units": 399
+      "revenue_usd": 490485.89,
+      "units": 401
     },
     {
       "categoria": "Sin categoría",
@@ -943,6 +943,12 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
+      "articulo": "Kashgai",
+      "revenue_usd": 13759.94,
+      "units": 13,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Pura Lana 250 x 350 Natural",
       "revenue_usd": 13500.0,
       "units": 9,
@@ -965,12 +971,6 @@
       "revenue_usd": 12325.0,
       "units": 13,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Kashgai",
-      "revenue_usd": 12209.54,
-      "units": 12,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Pura Lana 300 x 400 Natural",
@@ -1453,6 +1453,12 @@
       "categoria": "Muebles"
     },
     {
+      "articulo": "Naim 720",
+      "revenue_usd": 1632.0,
+      "units": 2,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Pura Lana 160 x 230 Natural",
       "revenue_usd": 1611.38,
       "units": 4,
@@ -1469,12 +1475,6 @@
       "revenue_usd": 1578.0,
       "units": 9,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Mesa FRIDA 200 x 100 x 75 Grey Wash",
-      "revenue_usd": 1520.0,
-      "units": 1,
-      "categoria": "Muebles"
     }
   ],
   "top_articulos_por_anio": {
@@ -2274,6 +2274,12 @@
         "categoria": "Yute y Lana"
       },
       {
+        "articulo": "Kashgai",
+        "revenue_usd": 4534.94,
+        "units": 3,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Garadjeh",
         "revenue_usd": 4147.63,
         "units": 3,
@@ -2301,12 +2307,6 @@
         "articulo": "Mafrash",
         "revenue_usd": 3370.68,
         "units": 4,
-        "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Kashgai",
-        "revenue_usd": 2984.54,
-        "units": 2,
         "categoria": "Alfombra persa"
       },
       {
@@ -2410,6 +2410,12 @@
         "revenue_usd": 1224.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Naim 720",
+        "revenue_usd": 1212.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Ghouchan",
@@ -2626,12 +2632,6 @@
         "revenue_usd": 136.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
-      },
-      {
-        "articulo": "Naim 720",
-        "revenue_usd": 0.0,
-        "units": 0,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 70 x 300 Grey",
