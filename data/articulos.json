@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-26T14:43:21.131585-03:00",
+  "_ultima_actualizacion": "2026-06-26T20:52:56.325508-03:00",
   "_rango": "01/01/24 → 26/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -351,8 +351,8 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 26001.88,
-          "units": 20
+          "revenue_usd": 26405.08,
+          "units": 21
         },
         "Sin categoría": {
           "revenue_usd": 4280.0,
@@ -805,8 +805,8 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 492086.69,
-      "units": 402
+      "revenue_usd": 492489.89,
+      "units": 403
     },
     "Sin categoría": {
       "revenue_usd": 275167.77,
@@ -836,8 +836,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 492086.69,
-      "units": 402
+      "revenue_usd": 492489.89,
+      "units": 403
     },
     {
       "categoria": "Sin categoría",
@@ -1003,6 +1003,12 @@
       "categoria": "Yute y Lana"
     },
     {
+      "articulo": "Afghan vintage carpet",
+      "revenue_usd": 9512.4,
+      "units": 6,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 250 x 350 Charcol",
       "revenue_usd": 9409.0,
       "units": 8,
@@ -1025,12 +1031,6 @@
       "revenue_usd": 9201.0,
       "units": 5,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Afghan vintage carpet",
-      "revenue_usd": 9109.2,
-      "units": 5,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Ghochan",
@@ -2484,6 +2484,12 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
+        "articulo": "Afghan vintage carpet",
+        "revenue_usd": 786.4,
+        "units": 2,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Varni- Sirdjan Design",
         "revenue_usd": 778.44,
         "units": 2,
@@ -2530,12 +2536,6 @@
         "revenue_usd": 516.0,
         "units": 1,
         "categoria": "Yute y Lana"
-      },
-      {
-        "articulo": "Afghan vintage carpet",
-        "revenue_usd": 383.2,
-        "units": 1,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Ghochan",
