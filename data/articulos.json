@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-25T15:06:23.143032-03:00",
+  "_ultima_actualizacion": "2026-06-25T21:02:21.478724-03:00",
   "_rango": "01/01/24 → 25/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -351,8 +351,8 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 24401.08,
-          "units": 19
+          "revenue_usd": 26001.88,
+          "units": 20
         },
         "Sin categoría": {
           "revenue_usd": 4280.0,
@@ -805,8 +805,8 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 490485.89,
-      "units": 401
+      "revenue_usd": 492086.69,
+      "units": 402
     },
     "Sin categoría": {
       "revenue_usd": 275167.77,
@@ -836,8 +836,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 490485.89,
-      "units": 401
+      "revenue_usd": 492086.69,
+      "units": 402
     },
     {
       "categoria": "Sin categoría",
@@ -884,8 +884,8 @@
     },
     {
       "articulo": "Vintage",
-      "revenue_usd": 140834.67,
-      "units": 100,
+      "revenue_usd": 142435.47,
+      "units": 101,
       "categoria": "Alfombra persa"
     },
     {
@@ -2245,8 +2245,8 @@
       },
       {
         "articulo": "Vintage",
-        "revenue_usd": 20669.34,
-        "units": 20,
+        "revenue_usd": 22270.14,
+        "units": 21,
         "categoria": "Alfombra persa"
       },
       {
