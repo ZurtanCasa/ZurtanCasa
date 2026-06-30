@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-06-30T14:49:01.704910-03:00",
+  "_ultima_actualizacion": "2026-06-30T20:55:43.235776-03:00",
   "_rango": "01/01/24 → 30/06/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -351,8 +351,8 @@
       },
       "6": {
         "Alfombra persa": {
-          "revenue_usd": 26405.08,
-          "units": 21
+          "revenue_usd": 26710.18,
+          "units": 22
         },
         "Sin categoría": {
           "revenue_usd": 4280.0,
@@ -805,8 +805,8 @@
       "units": 124
     },
     "Alfombra persa": {
-      "revenue_usd": 492489.89,
-      "units": 403
+      "revenue_usd": 492794.99,
+      "units": 404
     },
     "Sin categoría": {
       "revenue_usd": 275167.77,
@@ -836,8 +836,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 492489.89,
-      "units": 403
+      "revenue_usd": 492794.99,
+      "units": 404
     },
     {
       "categoria": "Sin categoría",
@@ -2566,6 +2566,12 @@
         "revenue_usd": 320.0,
         "units": 4,
         "categoria": "Muebles"
+      },
+      {
+        "articulo": "Kilim Soumak",
+        "revenue_usd": 305.1,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana con Diseño 70 x 200",
