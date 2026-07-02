@@ -6,6 +6,7 @@ interface ArticuloPrecio {
   codigo: string;
   nombre: string;
   precio_usd: number;
+  medida?: string;
   foto?: string;
 }
 
@@ -130,6 +131,7 @@ function AlfombraRow({ a }: { a: ArticuloPrecio }) {
       <div className="precio-row-info">
         <div className="precio-row-codigo mono">#{a.codigo}</div>
         <div className="precio-row-nombre">{a.nombre}</div>
+        {a.medida && <div className="precio-row-medida">{a.medida} cm</div>}
       </div>
       <div className="precio-row-prices">
         <div className="precio-row-precio mono">{fmtUSD(a.precio_usd)}</div>
