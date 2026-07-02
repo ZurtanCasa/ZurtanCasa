@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-02T09:53:57.616688-03:00",
+  "_ultima_actualizacion": "2026-07-02T14:40:23.538503-03:00",
   "_rango": "01/01/24 → 02/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -890,8 +890,8 @@
     },
     {
       "articulo": "Vintage",
-      "revenue_usd": 142435.47,
-      "units": 101,
+      "revenue_usd": 141182.47,
+      "units": 100,
       "categoria": "Alfombra persa"
     },
     {
@@ -908,8 +908,8 @@
     },
     {
       "articulo": "Garadjeh",
-      "revenue_usd": 23335.99,
-      "units": 36,
+      "revenue_usd": 21835.99,
+      "units": 35,
       "categoria": "Alfombra persa"
     },
     {
@@ -943,16 +943,16 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
+      "articulo": "Kashgai",
+      "revenue_usd": 15633.94,
+      "units": 14,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 300 x 400 Beige",
       "revenue_usd": 15307.0,
       "units": 10,
       "categoria": "Yute y Lana Nuevas"
-    },
-    {
-      "articulo": "Kashgai",
-      "revenue_usd": 13759.94,
-      "units": 13,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Pura Lana 250 x 350 Natural",
@@ -991,12 +991,6 @@
       "categoria": "Alfombra persa"
     },
     {
-      "articulo": "Kashgai-Shiraz",
-      "revenue_usd": 11600.77,
-      "units": 6,
-      "categoria": "Alfombra persa"
-    },
-    {
       "articulo": "Yute y Lana 300 x 400 Natural",
       "revenue_usd": 10171.5,
       "units": 7,
@@ -1009,9 +1003,9 @@
       "categoria": "Yute y Lana"
     },
     {
-      "articulo": "Afghan vintage carpet",
-      "revenue_usd": 9512.4,
-      "units": 6,
+      "articulo": "Kashgai-Shiraz",
+      "revenue_usd": 9726.77,
+      "units": 5,
       "categoria": "Alfombra persa"
     },
     {
@@ -1027,21 +1021,15 @@
       "categoria": "Alfombra persa"
     },
     {
-      "articulo": "Kilim Ghouchan",
-      "revenue_usd": 9316.0,
-      "units": 7,
-      "categoria": "Alfombra persa"
-    },
-    {
       "articulo": "Pura Lana 300 x 400 Vison",
       "revenue_usd": 9201.0,
       "units": 5,
       "categoria": "Pura Lana"
     },
     {
-      "articulo": "Ghochan",
-      "revenue_usd": 8281.2,
-      "units": 10,
+      "articulo": "Afghan vintage carpet",
+      "revenue_usd": 8379.4,
+      "units": 5,
       "categoria": "Alfombra persa"
     },
     {
@@ -1055,6 +1043,12 @@
       "revenue_usd": 8021.0,
       "units": 5,
       "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Kilim Ghouchan",
+      "revenue_usd": 7949.0,
+      "units": 6,
+      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Yute y Lana Nuevas 250 x 350 Green",
@@ -1087,6 +1081,12 @@
       "categoria": "Yute y Lana"
     },
     {
+      "articulo": "Ghochan",
+      "revenue_usd": 7266.2,
+      "units": 9,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 200 x 300 Green",
       "revenue_usd": 7191.0,
       "units": 9,
@@ -1103,6 +1103,12 @@
       "revenue_usd": 7119.0,
       "units": 22,
       "categoria": "Muebles"
+    },
+    {
+      "articulo": "Lahore",
+      "revenue_usd": 7031.0,
+      "units": 9,
+      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Silla OTTO Teak Cuero Negro 50 x 52 x 85",
@@ -1135,12 +1141,6 @@
       "categoria": "Muebles"
     },
     {
-      "articulo": "Varni- Sirdjan Design",
-      "revenue_usd": 5274.04,
-      "units": 6,
-      "categoria": "Alfombra persa"
-    },
-    {
       "articulo": "Pet Ivory 300x200",
       "revenue_usd": 5172.0,
       "units": 8,
@@ -1163,6 +1163,12 @@
       "revenue_usd": 4757.0,
       "units": 6,
       "categoria": "Yute y Lana"
+    },
+    {
+      "articulo": "Varni- Sirdjan Design",
+      "revenue_usd": 4689.6,
+      "units": 5,
+      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Yute y Lana 200 x 300 Natural",
@@ -1237,12 +1243,6 @@
       "categoria": "Exterior Pet"
     },
     {
-      "articulo": "Lahore",
-      "revenue_usd": 3145.0,
-      "units": 6,
-      "categoria": "Alfombra persa"
-    },
-    {
       "articulo": "Yute y Lana Nuevas 200 x 300 Charcol",
       "revenue_usd": 3098.0,
       "units": 4,
@@ -1276,6 +1276,12 @@
       "articulo": "Bachtiari Mafrash",
       "revenue_usd": 2884.0,
       "units": 6,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Kilim Varni",
+      "revenue_usd": 2829.44,
+      "units": 2,
       "categoria": "Alfombra persa"
     },
     {
@@ -1315,9 +1321,9 @@
       "categoria": "Muebles"
     },
     {
-      "articulo": "Kilim Varni",
-      "revenue_usd": 2245.0,
-      "units": 1,
+      "articulo": "Kilim Gouchan",
+      "revenue_usd": 2382.0,
+      "units": 2,
       "categoria": "Alfombra persa"
     },
     {
@@ -1475,12 +1481,6 @@
       "revenue_usd": 1596.0,
       "units": 1,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Pura Lana 80 x 120 Natural",
-      "revenue_usd": 1578.0,
-      "units": 9,
-      "categoria": "Pura Lana"
     }
   ],
   "top_articulos_por_anio": {
@@ -1493,8 +1493,8 @@
       },
       {
         "articulo": "Vintage",
-        "revenue_usd": 36475.0,
-        "units": 26,
+        "revenue_usd": 37608.0,
+        "units": 27,
         "categoria": "Alfombra persa"
       },
       {
@@ -1540,16 +1540,22 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Afghan vintage carpet",
-        "revenue_usd": 8726.0,
-        "units": 4,
-        "categoria": "Alfombra persa"
-      },
-      {
         "articulo": "Yute y Lana Nuevas 200 x 300 Beige",
         "revenue_usd": 7749.0,
         "units": 10,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Afghan vintage carpet",
+        "revenue_usd": 7593.0,
+        "units": 3,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Kashgai",
+        "revenue_usd": 6953.0,
+        "units": 5,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 200 x 300 Natural",
@@ -1570,21 +1576,9 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
-        "articulo": "Kashgai",
-        "revenue_usd": 5079.0,
-        "units": 4,
-        "categoria": "Alfombra persa"
-      },
-      {
         "articulo": "Ghochan",
         "revenue_usd": 4911.0,
         "units": 5,
-        "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Kashgai-Shiraz",
-        "revenue_usd": 4662.0,
-        "units": 2,
         "categoria": "Alfombra persa"
       },
       {
@@ -1634,12 +1628,6 @@
         "revenue_usd": 3827.0,
         "units": 2,
         "categoria": "Muebles"
-      },
-      {
-        "articulo": "Kilim Ghouchan",
-        "revenue_usd": 3603.0,
-        "units": 3,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana Nuevas 250 x 350 Green",
@@ -1726,6 +1714,12 @@
         "categoria": "Pura Lana"
       },
       {
+        "articulo": "Kashgai-Shiraz",
+        "revenue_usd": 2788.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Exento Iva",
         "revenue_usd": 2690.51,
         "units": 6,
@@ -1765,6 +1759,12 @@
         "articulo": "Kelim Afshari",
         "revenue_usd": 2246.0,
         "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Kilim Ghouchan",
+        "revenue_usd": 2236.0,
+        "units": 2,
         "categoria": "Alfombra persa"
       },
       {
@@ -1868,6 +1868,12 @@
         "revenue_usd": 1447.5,
         "units": 1,
         "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Kilim Gouchan",
+        "revenue_usd": 1367.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 250 x 350 Vison",
@@ -2251,8 +2257,8 @@
       },
       {
         "articulo": "Vintage",
-        "revenue_usd": 22270.14,
-        "units": 21,
+        "revenue_usd": 19884.14,
+        "units": 19,
         "categoria": "Alfombra persa"
       },
       {
@@ -2292,8 +2298,8 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Garadjeh",
-        "revenue_usd": 4147.63,
+        "articulo": "Lahore",
+        "revenue_usd": 3886.0,
         "units": 3,
         "categoria": "Alfombra persa"
       },
@@ -2313,6 +2319,12 @@
         "articulo": "Mafrash",
         "revenue_usd": 3370.68,
         "units": 4,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Garadjeh",
+        "revenue_usd": 2647.63,
+        "units": 2,
         "categoria": "Alfombra persa"
       },
       {
@@ -2496,12 +2508,6 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Varni- Sirdjan Design",
-        "revenue_usd": 778.44,
-        "units": 2,
-        "categoria": "Alfombra persa"
-      },
-      {
         "articulo": "Baloutch",
         "revenue_usd": 755.76,
         "units": 1,
@@ -2530,6 +2536,12 @@
         "revenue_usd": 604.0,
         "units": 1,
         "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Kilim Varni",
+        "revenue_usd": 584.44,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "2009001 garden chair 58x60x92",
@@ -2632,6 +2644,12 @@
         "revenue_usd": 196.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Varni- Sirdjan Design",
+        "revenue_usd": 194.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute Redonda con Diseño 150 x 150",
@@ -2870,12 +2888,6 @@
         "categoria": "Muebles"
       },
       {
-        "articulo": "Ghochan",
-        "revenue_usd": 2991.0,
-        "units": 4,
-        "categoria": "Alfombra persa"
-      },
-      {
         "articulo": "Yute y Lana Nuevas 300 x 400 Green",
         "revenue_usd": 2940.0,
         "units": 2,
@@ -2969,6 +2981,12 @@
         "articulo": "Kilim Afgan",
         "revenue_usd": 1995.0,
         "units": 5,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Ghochan",
+        "revenue_usd": 1976.0,
+        "units": 3,
         "categoria": "Alfombra persa"
       },
       {
@@ -3102,6 +3120,12 @@
         "revenue_usd": 1090.0,
         "units": 1,
         "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Kilim Gouchan",
+        "revenue_usd": 1015.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Banqueta BAR  40 x 45 x 110",
