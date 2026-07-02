@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-01T14:49:56.694055-03:00",
+  "_ultima_actualizacion": "2026-07-01T21:00:28.925333-03:00",
   "_rango": "01/01/24 → 01/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -470,6 +470,12 @@
           "revenue_usd": 412.8,
           "units": 1
         }
+      },
+      "7": {
+        "Pura Lana": {
+          "revenue_usd": 812.5,
+          "units": 1
+        }
       }
     },
     "2024": {
@@ -817,8 +823,8 @@
       "units": 42
     },
     "Pura Lana": {
-      "revenue_usd": 81458.01,
-      "units": 114
+      "revenue_usd": 82270.51,
+      "units": 115
     },
     "Yute y Lana": {
       "revenue_usd": 51658.27,
@@ -851,8 +857,8 @@
     },
     {
       "categoria": "Pura Lana",
-      "revenue_usd": 81458.01,
-      "units": 114
+      "revenue_usd": 82270.51,
+      "units": 115
     },
     {
       "categoria": "Muebles",
@@ -961,16 +967,16 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
+      "articulo": "Pura Lana 200 x 300 Natural",
+      "revenue_usd": 13137.5,
+      "units": 14,
+      "categoria": "Pura Lana"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
       "revenue_usd": 12883.69,
       "units": 16,
       "categoria": "Yute y Lana Nuevas"
-    },
-    {
-      "articulo": "Pura Lana 200 x 300 Natural",
-      "revenue_usd": 12325.0,
-      "units": 13,
-      "categoria": "Pura Lana"
     },
     {
       "articulo": "Pura Lana 300 x 400 Natural",
@@ -2274,6 +2280,12 @@
         "categoria": "Yute y Lana"
       },
       {
+        "articulo": "Pura Lana 200 x 300 Natural",
+        "revenue_usd": 4712.5,
+        "units": 5,
+        "categoria": "Pura Lana"
+      },
+      {
         "articulo": "Kashgai",
         "revenue_usd": 4534.94,
         "units": 3,
@@ -2284,12 +2296,6 @@
         "revenue_usd": 4147.63,
         "units": 3,
         "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Pura Lana 200 x 300 Natural",
-        "revenue_usd": 3900.0,
-        "units": 4,
-        "categoria": "Pura Lana"
       },
       {
         "articulo": "Varni Sirdjan",
