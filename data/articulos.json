@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-03T14:18:37.337450-03:00",
+  "_ultima_actualizacion": "2026-07-03T20:53:30.615270-03:00",
   "_rango": "01/01/24 → 03/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -473,8 +473,8 @@
       },
       "7": {
         "Pura Lana": {
-          "revenue_usd": 750.0,
-          "units": 1
+          "revenue_usd": 2092.5,
+          "units": 2
         }
       }
     },
@@ -823,8 +823,8 @@
       "units": 42
     },
     "Pura Lana": {
-      "revenue_usd": 82208.01,
-      "units": 115
+      "revenue_usd": 83550.51,
+      "units": 116
     },
     "Yute y Lana": {
       "revenue_usd": 51658.27,
@@ -857,8 +857,8 @@
     },
     {
       "categoria": "Pura Lana",
-      "revenue_usd": 82208.01,
-      "units": 115
+      "revenue_usd": 83550.51,
+      "units": 116
     },
     {
       "categoria": "Muebles",
@@ -1159,6 +1159,12 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
+      "articulo": "Pura Lana 250 x 350 Vison",
+      "revenue_usd": 4767.5,
+      "units": 4,
+      "categoria": "Pura Lana"
+    },
+    {
       "articulo": "Yute y Lana 250 x 250 Natural",
       "revenue_usd": 4757.0,
       "units": 6,
@@ -1223,12 +1229,6 @@
       "revenue_usd": 3477.5,
       "units": 3,
       "categoria": "Yute y Lana"
-    },
-    {
-      "articulo": "Pura Lana 250 x 350 Vison",
-      "revenue_usd": 3425.0,
-      "units": 3,
-      "categoria": "Pura Lana"
     },
     {
       "articulo": "Yute y Lana Nuevas 160 x 230 Green",
@@ -2322,6 +2322,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Pura Lana 250 x 350 Vison",
+        "revenue_usd": 2774.5,
+        "units": 2,
+        "categoria": "Pura Lana"
+      },
+      {
         "articulo": "Garadjeh",
         "revenue_usd": 2647.63,
         "units": 2,
@@ -2395,12 +2401,6 @@
       },
       {
         "articulo": "Pura Lana 250 x 350 Natural",
-        "revenue_usd": 1432.0,
-        "units": 1,
-        "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "Pura Lana 250 x 350 Vison",
         "revenue_usd": 1432.0,
         "units": 1,
         "categoria": "Pura Lana"
