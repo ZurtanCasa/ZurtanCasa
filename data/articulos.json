@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-03T09:51:58.532287-03:00",
+  "_ultima_actualizacion": "2026-07-03T14:18:37.337450-03:00",
   "_rango": "01/01/24 → 03/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -473,7 +473,7 @@
       },
       "7": {
         "Pura Lana": {
-          "revenue_usd": 812.5,
+          "revenue_usd": 750.0,
           "units": 1
         }
       }
@@ -823,7 +823,7 @@
       "units": 42
     },
     "Pura Lana": {
-      "revenue_usd": 82270.51,
+      "revenue_usd": 82208.01,
       "units": 115
     },
     "Yute y Lana": {
@@ -857,7 +857,7 @@
     },
     {
       "categoria": "Pura Lana",
-      "revenue_usd": 82270.51,
+      "revenue_usd": 82208.01,
       "units": 115
     },
     {
@@ -968,7 +968,7 @@
     },
     {
       "articulo": "Pura Lana 200 x 300 Natural",
-      "revenue_usd": 13137.5,
+      "revenue_usd": 13075.0,
       "units": 14,
       "categoria": "Pura Lana"
     },
@@ -2287,7 +2287,7 @@
       },
       {
         "articulo": "Pura Lana 200 x 300 Natural",
-        "revenue_usd": 4712.5,
+        "revenue_usd": 4650.0,
         "units": 5,
         "categoria": "Pura Lana"
       },
