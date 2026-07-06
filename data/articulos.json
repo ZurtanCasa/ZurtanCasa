@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-06T15:07:40.663712-03:00",
+  "_ultima_actualizacion": "2026-07-06T20:54:58.389805-03:00",
   "_rango": "01/01/24 → 06/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -458,6 +458,10 @@
         }
       },
       "7": {
+        "Alfombra persa": {
+          "revenue_usd": 3513.0,
+          "units": 1
+        },
         "Muebles": {
           "revenue_usd": 760.0,
           "units": 1
@@ -819,8 +823,8 @@
       "units": 125
     },
     "Alfombra persa": {
-      "revenue_usd": 492794.99,
-      "units": 404
+      "revenue_usd": 496307.99,
+      "units": 405
     },
     "Sin categoría": {
       "revenue_usd": 275167.77,
@@ -850,8 +854,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 492794.99,
-      "units": 404
+      "revenue_usd": 496307.99,
+      "units": 405
     },
     {
       "categoria": "Sin categoría",
@@ -904,8 +908,8 @@
     },
     {
       "articulo": "Heriz",
-      "revenue_usd": 67171.75,
-      "units": 19,
+      "revenue_usd": 70684.75,
+      "units": 20,
       "categoria": "Alfombra persa"
     },
     {
@@ -2270,15 +2274,15 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Patchwork",
-        "revenue_usd": 10392.84,
-        "units": 7,
+        "articulo": "Heriz",
+        "revenue_usd": 12455.25,
+        "units": 3,
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Heriz",
-        "revenue_usd": 8942.25,
-        "units": 2,
+        "articulo": "Patchwork",
+        "revenue_usd": 10392.84,
+        "units": 7,
         "categoria": "Alfombra persa"
       },
       {

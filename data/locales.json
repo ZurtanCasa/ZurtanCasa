@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-06T15:07:04.628583-03:00",
+  "_ultima_actualizacion": "2026-07-06T20:54:22.007883-03:00",
   "locales": [
     {
       "id": "juan_b_alberdi",
       "nombre": "Juan B Alberdi 6280",
       "mes_actual": {
-        "revenue": 5600.0,
-        "revenue_neto": 4787.5,
-        "orders_count": 6,
+        "revenue": 9113.0,
+        "revenue_neto": 8300.5,
+        "orders_count": 7,
         "devoluciones": 812.5
       },
       "historico_mensual": [
@@ -412,12 +412,12 @@
         {
           "year": 2026,
           "month": 7,
-          "revenue_bruto": 5600.0,
-          "revenue_neto": 4787.5,
+          "revenue_bruto": 9113.0,
+          "revenue_neto": 8300.5,
           "devoluciones": 812.5,
-          "orders_count": 6,
+          "orders_count": 7,
           "moneda_mix_original": {
-            "USD": 6412.5
+            "USD": 9925.5
           },
           "tasa_uyu_usd": 40.065091,
           "_emitida_filtered": true
