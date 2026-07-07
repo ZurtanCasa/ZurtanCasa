@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-07T14:55:04.794149-03:00",
+  "_ultima_actualizacion": "2026-07-07T20:42:43.742739-03:00",
   "_rango": "01/01/24 → 07/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -459,8 +459,8 @@
       },
       "7": {
         "Alfombra persa": {
-          "revenue_usd": 3513.0,
-          "units": 1
+          "revenue_usd": 3865.5,
+          "units": 2
         },
         "Muebles": {
           "revenue_usd": 760.0,
@@ -823,8 +823,8 @@
       "units": 125
     },
     "Alfombra persa": {
-      "revenue_usd": 496307.99,
-      "units": 405
+      "revenue_usd": 496660.49,
+      "units": 406
     },
     "Sin categoría": {
       "revenue_usd": 275167.77,
@@ -854,8 +854,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 496307.99,
-      "units": 405
+      "revenue_usd": 496660.49,
+      "units": 406
     },
     {
       "categoria": "Sin categoría",
@@ -1153,16 +1153,16 @@
       "categoria": "Muebles"
     },
     {
+      "articulo": "Ghouchan",
+      "revenue_usd": 5480.62,
+      "units": 14,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Pet Ivory 300x200",
       "revenue_usd": 5172.0,
       "units": 8,
       "categoria": "Exterior Pet"
-    },
-    {
-      "articulo": "Ghouchan",
-      "revenue_usd": 5128.12,
-      "units": 13,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Yute y Lana Nuevas 160 x 230 Beige",
@@ -2412,6 +2412,12 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
+        "articulo": "Ghouchan",
+        "revenue_usd": 1483.62,
+        "units": 4,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Vintage Ornate",
         "revenue_usd": 1478.0,
         "units": 1,
@@ -2458,12 +2464,6 @@
         "revenue_usd": 1147.5,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
-      },
-      {
-        "articulo": "Ghouchan",
-        "revenue_usd": 1131.12,
-        "units": 3,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 200 x 300 Grey",
