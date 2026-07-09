@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-09T14:51:21.985919-03:00",
+  "_ultima_actualizacion": "2026-07-09T20:56:21.574807-03:00",
   "_rango": "01/01/24 → 09/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -389,8 +389,8 @@
           "units": 2
         },
         "Yute y Lana": {
-          "revenue_usd": 2115.0,
-          "units": 2
+          "revenue_usd": 2910.11,
+          "units": 3
         },
         "Yute y Lana Nuevas": {
           "revenue_usd": 5490.0,
@@ -843,8 +843,8 @@
       "units": 116
     },
     "Yute y Lana": {
-      "revenue_usd": 53773.27,
-      "units": 59
+      "revenue_usd": 54568.38,
+      "units": 60
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 2864.0,
@@ -883,8 +883,8 @@
     },
     {
       "categoria": "Yute y Lana",
-      "revenue_usd": 53773.27,
-      "units": 59
+      "revenue_usd": 54568.38,
+      "units": 60
     },
     {
       "categoria": "Exterior Pet",
@@ -1169,6 +1169,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Yute y Lana 200 x 300 Natural",
+      "revenue_usd": 5276.11,
+      "units": 7,
+      "categoria": "Yute y Lana"
+    },
+    {
       "articulo": "Pet Ivory 300x200",
       "revenue_usd": 5172.0,
       "units": 8,
@@ -1195,12 +1201,6 @@
     {
       "articulo": "Yute y Lana 250 x 250 Natural",
       "revenue_usd": 4757.0,
-      "units": 6,
-      "categoria": "Yute y Lana"
-    },
-    {
-      "articulo": "Yute y Lana 200 x 300 Natural",
-      "revenue_usd": 4481.0,
       "units": 6,
       "categoria": "Yute y Lana"
     },
@@ -2552,6 +2552,12 @@
         "revenue_usd": 817.25,
         "units": 2,
         "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Yute y Lana 200 x 300 Natural",
+        "revenue_usd": 795.11,
+        "units": 1,
+        "categoria": "Yute y Lana"
       },
       {
         "articulo": "Afghan vintage carpet",
