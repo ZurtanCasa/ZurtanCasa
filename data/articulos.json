@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-08T20:57:01.713746-03:00",
-  "_rango": "01/01/24 → 08/07/26",
+  "_ultima_actualizacion": "2026-07-09T10:42:28.717617-03:00",
+  "_rango": "01/01/24 → 09/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -375,6 +375,28 @@
           "units": 3
         }
       },
+      "7": {
+        "Alfombra persa": {
+          "revenue_usd": 10800.75,
+          "units": 7
+        },
+        "Muebles": {
+          "revenue_usd": 760.0,
+          "units": 1
+        },
+        "Pura Lana": {
+          "revenue_usd": 2092.5,
+          "units": 2
+        },
+        "Yute y Lana": {
+          "revenue_usd": 2115.0,
+          "units": 2
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 5490.0,
+          "units": 7
+        }
+      },
       "5": {
         "Alfombra persa": {
           "revenue_usd": 35832.57,
@@ -455,28 +477,6 @@
         "Yute y Lana Nuevas": {
           "revenue_usd": 932.0,
           "units": 2
-        }
-      },
-      "7": {
-        "Alfombra persa": {
-          "revenue_usd": 9909.75,
-          "units": 6
-        },
-        "Muebles": {
-          "revenue_usd": 760.0,
-          "units": 1
-        },
-        "Pura Lana": {
-          "revenue_usd": 2092.5,
-          "units": 2
-        },
-        "Yute y Lana": {
-          "revenue_usd": 2115.0,
-          "units": 2
-        },
-        "Yute y Lana Nuevas": {
-          "revenue_usd": 5490.0,
-          "units": 7
         }
       },
       "1": {
@@ -827,8 +827,8 @@
       "units": 125
     },
     "Alfombra persa": {
-      "revenue_usd": 502704.74,
-      "units": 410
+      "revenue_usd": 503595.74,
+      "units": 411
     },
     "Sin categoría": {
       "revenue_usd": 275167.77,
@@ -858,8 +858,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 502704.74,
-      "units": 410
+      "revenue_usd": 503595.74,
+      "units": 411
     },
     {
       "categoria": "Sin categoría",
@@ -1253,6 +1253,12 @@
       "categoria": "Exterior Pet"
     },
     {
+      "articulo": "Bakthiari Mafrash",
+      "revenue_usd": 3660.0,
+      "units": 5,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana 300 x 400 Grey",
       "revenue_usd": 3477.5,
       "units": 3,
@@ -1317,12 +1323,6 @@
       "revenue_usd": 2810.0,
       "units": 2,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Bakthiari Mafrash",
-      "revenue_usd": 2769.0,
-      "units": 4,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Yute y Lana 250 x 250 Grey",
@@ -2522,6 +2522,12 @@
         "revenue_usd": 900.0,
         "units": 1,
         "categoria": "Muebles"
+      },
+      {
+        "articulo": "Bakthiari Mafrash",
+        "revenue_usd": 891.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 200 x 300 Natural Grey",
