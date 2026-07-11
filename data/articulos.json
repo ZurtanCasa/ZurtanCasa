@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-11T13:48:35.996123-03:00",
+  "_ultima_actualizacion": "2026-07-11T20:40:30.731663-03:00",
   "_rango": "01/01/24 → 11/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -381,8 +381,8 @@
           "units": 8
         },
         "Muebles": {
-          "revenue_usd": 1460.0,
-          "units": 3
+          "revenue_usd": 1874.0,
+          "units": 5
         },
         "Sin categoría": {
           "revenue_usd": 3757.5,
@@ -827,8 +827,8 @@
   },
   "por_categoria_total": {
     "Muebles": {
-      "revenue_usd": 62823.35,
-      "units": 127
+      "revenue_usd": 63237.35,
+      "units": 129
     },
     "Alfombra persa": {
       "revenue_usd": 502905.99,
@@ -882,8 +882,8 @@
     },
     {
       "categoria": "Muebles",
-      "revenue_usd": 62823.35,
-      "units": 127
+      "revenue_usd": 63237.35,
+      "units": 129
     },
     {
       "categoria": "Yute y Lana",
@@ -2714,6 +2714,12 @@
         "categoria": "Pura Lana"
       },
       {
+        "articulo": "NERO BAJA Coffee 50 x 50 x 35 Negra",
+        "revenue_usd": 246.0,
+        "units": 1,
+        "categoria": "Muebles"
+      },
+      {
         "articulo": "Yute y Lana con Diseño 160 x 230",
         "revenue_usd": 237.0,
         "units": 2,
@@ -2724,6 +2730,12 @@
         "revenue_usd": 196.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "NERO ALTA 30 x 30 x 45 Negra",
+        "revenue_usd": 168.0,
+        "units": 1,
+        "categoria": "Muebles"
       },
       {
         "articulo": "Yute Redonda con Diseño 150 x 150",
