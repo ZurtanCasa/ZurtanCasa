@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-11T08:43:25.529249-03:00",
+  "_ultima_actualizacion": "2026-07-11T13:48:35.996123-03:00",
   "_rango": "01/01/24 → 11/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,16 +377,16 @@
       },
       "7": {
         "Alfombra persa": {
-          "revenue_usd": 10800.75,
-          "units": 7
+          "revenue_usd": 12467.2,
+          "units": 8
         },
         "Muebles": {
-          "revenue_usd": 760.0,
-          "units": 1
+          "revenue_usd": 1460.0,
+          "units": 3
         },
         "Sin categoría": {
-          "revenue_usd": 954.95,
-          "units": 2
+          "revenue_usd": 3757.5,
+          "units": 5
         },
         "Pura Lana": {
           "revenue_usd": 2092.5,
@@ -827,16 +827,16 @@
   },
   "por_categoria_total": {
     "Muebles": {
-      "revenue_usd": 62123.35,
-      "units": 125
+      "revenue_usd": 62823.35,
+      "units": 127
     },
     "Alfombra persa": {
-      "revenue_usd": 501239.54,
-      "units": 408
+      "revenue_usd": 502905.99,
+      "units": 409
     },
     "Sin categoría": {
-      "revenue_usd": 274047.92,
-      "units": 284
+      "revenue_usd": 276850.47,
+      "units": 287
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -862,13 +862,13 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 501239.54,
-      "units": 408
+      "revenue_usd": 502905.99,
+      "units": 409
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 274047.92,
-      "units": 284
+      "revenue_usd": 276850.47,
+      "units": 287
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -882,8 +882,8 @@
     },
     {
       "categoria": "Muebles",
-      "revenue_usd": 62123.35,
-      "units": 125
+      "revenue_usd": 62823.35,
+      "units": 127
     },
     {
       "categoria": "Yute y Lana",
@@ -904,8 +904,8 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 266694.67,
-      "units": 259,
+      "revenue_usd": 269497.22,
+      "units": 262,
       "categoria": "Sin categoría"
     },
     {
@@ -952,8 +952,8 @@
     },
     {
       "articulo": "Kashgai",
-      "revenue_usd": 17933.44,
-      "units": 15,
+      "revenue_usd": 19599.89,
+      "units": 16,
       "categoria": "Alfombra persa"
     },
     {
@@ -2271,8 +2271,8 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 41289.52,
-        "units": 41,
+        "revenue_usd": 44092.07,
+        "units": 44,
         "categoria": "Sin categoría"
       },
       {
@@ -2294,15 +2294,15 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Fine Vintage",
-        "revenue_usd": 8290.0,
-        "units": 3,
+        "articulo": "Kashgai",
+        "revenue_usd": 8500.89,
+        "units": 5,
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Kashgai",
-        "revenue_usd": 6834.44,
-        "units": 4,
+        "articulo": "Fine Vintage",
+        "revenue_usd": 8290.0,
+        "units": 3,
         "categoria": "Alfombra persa"
       },
       {
@@ -2586,6 +2586,12 @@
         "revenue_usd": 740.0,
         "units": 2,
         "categoria": "Sin categoría"
+      },
+      {
+        "articulo": "Butaca Velvet GRIS",
+        "revenue_usd": 700.0,
+        "units": 2,
+        "categoria": "Muebles"
       },
       {
         "articulo": "Pet Anthracite 300x200",
