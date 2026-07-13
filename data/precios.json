@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-13T17:48:54.569924-03:00",
+  "_ultima_actualizacion": "2026-07-13T17:49:32.056975-03:00",
   "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27",
   "total_articulos": 1098,
   "articulos": [
@@ -155,8 +155,8 @@
     {
       "codigo": "H997",
       "nombre": "Afghan regular vintage carpet",
-      "precio_usd": 573.0,
-      "medida": "203 x 1"
+      "precio_usd": 718,
+      "medida": "203 x 100"
     },
     {
       "codigo": "14598",
