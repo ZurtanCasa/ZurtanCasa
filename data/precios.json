@@ -783,7 +783,7 @@
     },
     {
       "codigo": "1012",
-      "nombre": "Garadjeh",
+      "nombre": "Lahore",
       "precio_usd": 2248.0,
       "medida": "242 x 255"
     },
@@ -1147,13 +1147,13 @@
     },
     {
       "codigo": "1003",
-      "nombre": "Heriz",
+      "nombre": "Lahore",
       "precio_usd": 6910.0,
       "medida": "260 x 158"
     },
     {
       "codigo": "1004",
-      "nombre": "Heriz",
+      "nombre": "Lahore",
       "precio_usd": 4995.0,
       "medida": "243 x 155"
     },
@@ -1315,7 +1315,7 @@
     },
     {
       "codigo": "997",
-      "nombre": "Heriz",
+      "nombre": "Lahore",
       "precio_usd": 5350.0
     },
     {
@@ -2930,7 +2930,7 @@
     },
     {
       "codigo": "1243",
-      "nombre": "Patchwork",
+      "nombre": "Lahore",
       "precio_usd": 686.0,
       "medida": "208 x 210"
     },
@@ -4676,7 +4676,7 @@
     },
     {
       "codigo": "1211",
-      "nombre": "Vintage",
+      "nombre": "Lahore",
       "precio_usd": 509.0,
       "medida": "241 x 153"
     },
