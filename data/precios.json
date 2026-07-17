@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-17T12:54:58.362184-03:00",
+  "_ultima_actualizacion": "2026-07-17T12:55:24.899075-03:00",
   "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27",
   "total_articulos": 1098,
   "articulos": [
@@ -1201,7 +1201,7 @@
     },
     {
       "codigo": "1060",
-      "nombre": "Heriz",
+      "nombre": "Lahore",
       "precio_usd": 6423.0,
       "medida": "243 x 77"
     },
