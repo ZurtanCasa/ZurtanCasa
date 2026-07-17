@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-17T12:24:00.292441-03:00",
+  "_ultima_actualizacion": "2026-07-17T12:54:58.362184-03:00",
   "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27",
   "total_articulos": 1098,
   "articulos": [
@@ -1207,7 +1207,7 @@
     },
     {
       "codigo": "1061",
-      "nombre": "Heriz",
+      "nombre": "Super Karachi",
       "precio_usd": 4379.0,
       "medida": "310 x 222"
     },
@@ -1821,7 +1821,7 @@
     },
     {
       "codigo": "1037",
-      "nombre": "Kilim Afshari Design",
+      "nombre": "Super Karachi",
       "precio_usd": 832.0,
       "medida": "304 x 222"
     },
@@ -1833,7 +1833,7 @@
     },
     {
       "codigo": "1042",
-      "nombre": "Kilim Afshari Design",
+      "nombre": "Super Karachi",
       "precio_usd": 1085.0,
       "medida": "312 x 224"
     },
@@ -2049,7 +2049,7 @@
     },
     {
       "codigo": "1041",
-      "nombre": "Kilim Heriz",
+      "nombre": "Super Karachi",
       "precio_usd": 2669.0,
       "medida": "295 x 223"
     },
