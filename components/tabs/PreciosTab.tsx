@@ -353,7 +353,7 @@ export default function PreciosTab({ data, muebles, showStats = true }: Props) {
           {openPersas && (
             <div className="card seccion-body">
               <div className="precios-list">
-                {filtPersas.map((a) => <AlfombraRow key={a.codigo} a={a} />)}
+                {filtPersas.map((a) => <AlfombraRow key={`${a.codigo}|${a.nombre}`} a={a} />)}
               </div>
             </div>
           )}
