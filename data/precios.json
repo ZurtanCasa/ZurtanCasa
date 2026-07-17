@@ -717,7 +717,7 @@
     },
     {
       "codigo": "808",
-      "nombre": "Fine Vintage",
+      "nombre": "Lahore",
       "precio_usd": 5022.0,
       "medida": "155 x 85"
     },
@@ -1320,7 +1320,7 @@
     },
     {
       "codigo": "998",
-      "nombre": "Heriz",
+      "nombre": "Lahore",
       "precio_usd": 4237.0,
       "medida": "250 x 150"
     },
@@ -1815,7 +1815,7 @@
     },
     {
       "codigo": "1035",
-      "nombre": "Kilim Afshari Design",
+      "nombre": "Lahore",
       "precio_usd": 867.0,
       "medida": "244 x 173"
     },
@@ -4376,7 +4376,7 @@
     },
     {
       "codigo": "1155",
-      "nombre": "Vintage",
+      "nombre": "Lahore",
       "precio_usd": 1400.0,
       "medida": "177 x 65"
     },
@@ -4586,7 +4586,7 @@
     },
     {
       "codigo": "1193",
-      "nombre": "Vintage",
+      "nombre": "Comercial",
       "precio_usd": 598.0,
       "medida": "91 x 60"
     },
@@ -4670,7 +4670,7 @@
     },
     {
       "codigo": "1210",
-      "nombre": "Vintage",
+      "nombre": "Lahore",
       "precio_usd": 226.0,
       "medida": "238 x 164"
     },
