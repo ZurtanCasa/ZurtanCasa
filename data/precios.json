@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-13T17:49:32.056975-03:00",
+  "_ultima_actualizacion": "2026-07-17T12:24:00.292441-03:00",
   "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27",
   "total_articulos": 1098,
   "articulos": [
@@ -2774,7 +2774,7 @@
     },
     {
       "codigo": "1215",
-      "nombre": "Patchwork",
+      "nombre": "Lahore",
       "precio_usd": 1901.0,
       "medida": "225 x 157"
     },
