@@ -125,25 +125,25 @@
     {
       "codigo": "H26",
       "nombre": "Afghan regular vintage carpet",
-      "precio_usd": 4116,
+      "precio_usd": 3547.0,
       "medida": "393 x 296"
     },
     {
       "codigo": "H447",
       "nombre": "Afghan regular vintage carpet",
-      "precio_usd": 3664,
+      "precio_usd": 3160.0,
       "medida": "378 x 274"
     },
     {
       "codigo": "H460",
       "nombre": "Afghan regular vintage carpet",
-      "precio_usd": 2860,
+      "precio_usd": 2467.0,
       "medida": "330 x 245"
     },
     {
       "codigo": "H464",
       "nombre": "Afghan regular vintage carpet",
-      "precio_usd": 3099,
+      "precio_usd": 2672.0,
       "medida": "349 x 251"
     },
     {
@@ -718,7 +718,7 @@
     {
       "codigo": "808",
       "nombre": "Lahore",
-      "precio_usd": 5022.0,
+      "precio_usd": 575.0,
       "medida": "155 x 85"
     },
     {
@@ -760,13 +760,13 @@
     {
       "codigo": "1007",
       "nombre": "Karachi Silk",
-      "precio_usd": 2155.0,
+      "precio_usd": 1613.0,
       "medida": "255 x 162"
     },
     {
       "codigo": "1008",
       "nombre": "Garadjeh",
-      "precio_usd": 2303.0,
+      "precio_usd": 480.0,
       "medida": "254 x 160"
     },
     {
@@ -784,7 +784,7 @@
     {
       "codigo": "1012",
       "nombre": "Lahore",
-      "precio_usd": 2248.0,
+      "precio_usd": 2120.0,
       "medida": "242 x 255"
     },
     {
@@ -1154,7 +1154,7 @@
     {
       "codigo": "1004",
       "nombre": "Lahore",
-      "precio_usd": 4995.0,
+      "precio_usd": 2138.0,
       "medida": "243 x 155"
     },
     {
@@ -1202,13 +1202,13 @@
     {
       "codigo": "1060",
       "nombre": "Lahore",
-      "precio_usd": 6423.0,
+      "precio_usd": 651.0,
       "medida": "243 x 77"
     },
     {
       "codigo": "1061",
       "nombre": "Super Karachi",
-      "precio_usd": 4379.0,
+      "precio_usd": 2687.0,
       "medida": "310 x 222"
     },
     {
@@ -1816,13 +1816,13 @@
     {
       "codigo": "1035",
       "nombre": "Lahore",
-      "precio_usd": 867.0,
+      "precio_usd": 1648.0,
       "medida": "244 x 173"
     },
     {
       "codigo": "1037",
       "nombre": "Super Karachi",
-      "precio_usd": 832.0,
+      "precio_usd": 2635.0,
       "medida": "304 x 222"
     },
     {
@@ -1834,7 +1834,7 @@
     {
       "codigo": "1042",
       "nombre": "Super Karachi",
-      "precio_usd": 1085.0,
+      "precio_usd": 2728.0,
       "medida": "312 x 224"
     },
     {
@@ -2050,7 +2050,7 @@
     {
       "codigo": "1041",
       "nombre": "Super Karachi",
-      "precio_usd": 2669.0,
+      "precio_usd": 2568.0,
       "medida": "295 x 223"
     },
     {
@@ -2931,31 +2931,31 @@
     {
       "codigo": "1243",
       "nombre": "Lahore",
-      "precio_usd": 686.0,
+      "precio_usd": 1519.0,
       "medida": "208 x 210"
     },
     {
       "codigo": "1244",
       "nombre": "Patchwork",
-      "precio_usd": 305.0,
+      "precio_usd": 1241.0,
       "medida": "285 x 85"
     },
     {
       "codigo": "1245",
       "nombre": "Patchwork",
-      "precio_usd": 686.0,
+      "precio_usd": 1176.0,
       "medida": "280 x 82"
     },
     {
       "codigo": "1246",
       "nombre": "Patchwork",
-      "precio_usd": 686.0,
+      "precio_usd": 1209.0,
       "medida": "295 x 80"
     },
     {
       "codigo": "1247",
       "nombre": "Patchwork",
-      "precio_usd": 686.0,
+      "precio_usd": 1178.0,
       "medida": "303 x 76"
     },
     {
@@ -2967,7 +2967,7 @@
     {
       "codigo": "1249",
       "nombre": "Patchwork",
-      "precio_usd": 1500.0,
+      "precio_usd": 759.0,
       "medida": "195 x 76"
     },
     {
@@ -4137,7 +4137,7 @@
     {
       "codigo": "1110",
       "nombre": "Lahore",
-      "precio_usd": 795.0,
+      "precio_usd": 434.0,
       "medida": "198 x 63"
     },
     {
@@ -4377,7 +4377,7 @@
     {
       "codigo": "1155",
       "nombre": "Lahore",
-      "precio_usd": 1400.0,
+      "precio_usd": 400.0,
       "medida": "177 x 65"
     },
     {
@@ -4587,7 +4587,7 @@
     {
       "codigo": "1193",
       "nombre": "Comercial",
-      "precio_usd": 598.0,
+      "precio_usd": 108.0,
       "medida": "91 x 60"
     },
     {
@@ -4605,7 +4605,7 @@
     {
       "codigo": "1196",
       "nombre": "Lahore",
-      "precio_usd": 354.0,
+      "precio_usd": 1050.0,
       "medida": "222 x 136"
     },
     {
@@ -4677,7 +4677,7 @@
     {
       "codigo": "1211",
       "nombre": "Lahore",
-      "precio_usd": 509.0,
+      "precio_usd": 1282.0,
       "medida": "241 x 153"
     },
     {
@@ -5852,7 +5852,7 @@
     {
       "codigo": "13B",
       "nombre": "Fine Vintage",
-      "precio_usd": 3790.0,
+      "precio_usd": 1008.0,
       "medida": "200 x 118"
     },
     {
@@ -5882,13 +5882,13 @@
     {
       "codigo": "1256G",
       "nombre": "Heriz",
-      "precio_usd": 4571.0,
+      "precio_usd": 4675.0,
       "medida": "349 x 244"
     },
     {
       "codigo": "1257G",
       "nombre": "Heriz",
-      "precio_usd": 4239.0,
+      "precio_usd": 4334.0,
       "medida": "336 x 235"
     },
     {
@@ -5906,13 +5906,13 @@
     {
       "codigo": "2188",
       "nombre": "Heriz",
-      "precio_usd": 4054.0,
+      "precio_usd": 4146.0,
       "medida": "316 x 239"
     },
     {
       "codigo": "1007B",
       "nombre": "Karachi Silk",
-      "precio_usd": 2155.0,
+      "precio_usd": 2033.0,
       "medida": "240 x 217"
     },
     {
@@ -6116,7 +6116,7 @@
     {
       "codigo": "1250B",
       "nombre": "Kilim Varni",
-      "precio_usd": 2264.0,
+      "precio_usd": 2114.0,
       "medida": "250 x 165"
     },
     {
@@ -6164,13 +6164,13 @@
     {
       "codigo": "1125",
       "nombre": "Lahore",
-      "precio_usd": 1016.0,
+      "precio_usd": 425.0,
       "medida": "185 x 66"
     },
     {
       "codigo": "1198",
       "nombre": "Lahore",
-      "precio_usd": 1712.0,
+      "precio_usd": 1415.0,
       "medida": "213 x 141"
     },
     {
