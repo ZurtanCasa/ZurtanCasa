@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-17T14:06:16.934264-03:00",
+  "_ultima_actualizacion": "2026-07-17T20:39:45.951336-03:00",
   "_rango": "01/01/24 → 17/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,8 +377,8 @@
       },
       "7": {
         "Alfombra persa": {
-          "revenue_usd": 12467.2,
-          "units": 8
+          "revenue_usd": 13042.52,
+          "units": 9
         },
         "Muebles": {
           "revenue_usd": 1874.0,
@@ -831,8 +831,8 @@
       "units": 129
     },
     "Alfombra persa": {
-      "revenue_usd": 502905.99,
-      "units": 409
+      "revenue_usd": 503481.31,
+      "units": 410
     },
     "Sin categoría": {
       "revenue_usd": 276850.47,
@@ -862,8 +862,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 502905.99,
-      "units": 409
+      "revenue_usd": 503481.31,
+      "units": 410
     },
     {
       "categoria": "Sin categoría",
@@ -1054,8 +1054,8 @@
     },
     {
       "articulo": "Afghan vintage carpet",
-      "revenue_usd": 8379.4,
-      "units": 5,
+      "revenue_usd": 8954.72,
+      "units": 6,
       "categoria": "Alfombra persa"
     },
     {
@@ -2456,6 +2456,12 @@
         "categoria": "Pura Lana"
       },
       {
+        "articulo": "Afghan vintage carpet",
+        "revenue_usd": 1361.72,
+        "units": 3,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Mesa MOA 220 x 100 x 75",
         "revenue_usd": 1318.0,
         "units": 1,
@@ -2562,12 +2568,6 @@
         "revenue_usd": 795.11,
         "units": 1,
         "categoria": "Yute y Lana"
-      },
-      {
-        "articulo": "Afghan vintage carpet",
-        "revenue_usd": 786.4,
-        "units": 2,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Mesa OLGA 200 x 100 x 75 Grey Wash",
