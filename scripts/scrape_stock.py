@@ -28,33 +28,36 @@ def uy_now():
 # ─── Login ────────────────────────────────────────────────────────────────────
 
 def login(page, user, password):
+    # Login robusto (mismo flujo que scrape_articulos.py, ya probado):
+    # maneja tanto el form email+pass en una pantalla como el flujo email-first.
     page.goto(BASE_URL, timeout=60000, wait_until="domcontentloaded")
     try:
         page.wait_for_load_state("networkidle", timeout=30000)
     except Exception:
         pass
+
     print(f"  [login] URL: {page.url}")
 
-    try:
-        el = page.wait_for_selector("input[name='vUSULIBRAEMAIL']", timeout=15000)
-        el.fill(user)
-        page.wait_for_selector("input[name='vSIMPLEPASSWORD']", timeout=10000).fill(password)
-        page.click("input[name='BTNENTER']")
-        page.wait_for_load_state("networkidle", timeout=30000)
-        print("  Login OK (email+pass)")
-        return page.main_frame
-    except Exception:
-        pass
+    # ¿El campo de password ya está en el DOM?
+    has_pw = page.evaluate(
+        "() => !!document.querySelector(\"input[name='vSIMPLEPASSWORD']\")"
+    )
+    if not has_pw:
+        # Flujo email-first: el password aparece solo tras confirmar el email
+        print("  [login] Password no visible, probando flujo email-first...")
+        email_el = page.wait_for_selector("input[name='vUSULIBRAEMAIL']", timeout=30000)
+        email_el.fill(user)
+        email_el.press("Enter")
+        time.sleep(4)
 
-    try:
-        page.wait_for_selector("input[name='vSIMPLEPASSWORD']", timeout=10000).fill(password)
-        page.click("input[name='BTNENTER']")
-        page.wait_for_load_state("networkidle", timeout=30000)
-        print("  Login OK (pass)")
-        return page.main_frame
-    except Exception as e:
-        print(f"  ⚠ Login falló: {e}")
-        return page.main_frame
+    page.wait_for_selector("input[name='vSIMPLEPASSWORD']", timeout=60000)
+    page.fill("input[name='vUSULIBRAEMAIL']", user, timeout=30000)
+    page.fill("input[name='vSIMPLEPASSWORD']", password, timeout=30000)
+    page.click("input[name='BTNENTER']")
+    time.sleep(10)
+    frame = page.frames[0]
+    print(f"  Login OK — {frame.url}")
+    return frame
 
 # ─── Download helpers ─────────────────────────────────────────────────────────
 
@@ -208,8 +211,8 @@ def fetch_for_deposito(frame, page, deposito_text: str, tmp_dir: str, fname: str
     has_enter = frame.evaluate("() => !!document.querySelector('[name=\"BTNENTER\"]')")
     if has_enter:
         try:
-            frame.click("[name='BTNENTER']", timeout=10000)
-            page.wait_for_url("**/z.informes.procesosww**", timeout=30000)
+            frame.click("[name='BTNENTER']", timeout=15000)
+            page.wait_for_url("**/z.informes.procesosww**", timeout=120000)
             print("  ✅ En procesosww")
             ok = wait_and_download(frame, page, dest)
             return dest if ok else None
