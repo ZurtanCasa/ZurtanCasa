@@ -104,53 +104,85 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
         except Exception as e:
             print(f"    ⚠ Link directo falló: {e}")
 
-    # Estrategia 2: execEvt via el ÚLTIMO vACCIONES_* que tenga opción XLS
+    # Estrategia 2: disparar la acción "Descargar XLS" del ÚLTIMO vACCIONES_* que la tenga
     gxoch = frame.evaluate("""() => {
-        // Buscar en TODOS los selects vACCIONES_*, quedarse con el último que tenga XLS
         const selects = Array.from(document.querySelectorAll('select[name^="vACCIONES_"]'));
         let found = null;
         for (const sel of selects) {
             const opt = Array.from(sel.options).find(o => o.text.includes('XLS'));
-            if (opt) found = { name: sel.name, value: opt.value };
+            if (opt) found = {
+                name:     sel.name,
+                value:    opt.value,
+                id:       sel.id,
+                onchange: sel.getAttribute('onchange'),
+                outer:    sel.outerHTML.slice(0, 500),
+            };
         }
         return found;
     }""")
     print(f"    gxoch={gxoch}")
 
     if gxoch:
-        try:
-            with page.expect_download(timeout=60000) as dl_info:
-                frame.evaluate("""(info) => {
-                    const sel = document.querySelector('select[name="' + info.name + '"]');
-                    sel.value = info.value;
-                    sel.dispatchEvent(new Event('change', {bubbles: true}));
-                    if (typeof execEvt === 'function') execEvt(sel);
-                }""", gxoch)
-            dl_info.value.save_as(dest)
-            print(f"    ✅ Descargado vía execEvt ({gxoch['name']})")
-            return True
-        except Exception as e:
-            print(f"    ⚠ execEvt falló: {e}")
+        context = page.context
+        # Capturar descargas y popups a nivel de contexto (GeneXus a veces abre pestaña nueva)
+        captured: dict = {}
+        def _grab(d):
+            captured["dl"] = d
+        page.on("download", _grab)
+        def _on_page(pg):
+            try:
+                pg.on("download", _grab)
+            except Exception:
+                pass
+        context.on("page", _on_page)
 
-    # Estrategia 3: click en cualquier link/botón de descarga
-    clicked = frame.evaluate("""() => {
-        const all = Array.from(document.querySelectorAll('a, button, input[type="button"], input[type="submit"]'));
-        const el = all.find(e => {
-            const t = (e.textContent || e.value || '').toLowerCase();
-            return t.includes('xls') || t.includes('descargar') || t.includes('excel');
-        });
-        if (el) { el.click(); return el.textContent || el.value || el.href; }
-        return null;
-    }""")
-    if clicked:
+        # Disparar la acción. Preferimos select_option (nativo); si falla, JS.
         try:
-            with page.expect_download(timeout=60000) as dl_info:
-                pass  # ya hicimos click arriba
-            dl_info.value.save_as(dest)
-            print(f"    ✅ Descargado vía click: {clicked}")
-            return True
+            frame.select_option(f'select[name="{gxoch["name"]}"]', gxoch["value"], timeout=8000)
+            print(f"    ↳ select_option OK sobre {gxoch['name']}")
         except Exception as e:
-            print(f"    ⚠ Click descarga falló: {e}")
+            print(f"    ↳ select_option falló ({e}); usando JS change + onchange")
+            frame.evaluate("""(info) => {
+                const sel = document.querySelector('select[name="' + info.name + '"]');
+                if (!sel) return;
+                sel.value = info.value;
+                // Ejecutar el handler inline (GeneXus lo pone en onchange)
+                sel.dispatchEvent(new Event('change', {bubbles: true}));
+                try {
+                    if (info.onchange) {
+                        const fn = new Function('event', info.onchange);
+                        fn.call(sel, {type:'change', target: sel});
+                    }
+                } catch (err) {}
+                if (typeof execEvt === 'function') { try { execEvt(sel); } catch(e){} }
+            }""", gxoch)
+
+        # Esperar hasta 90s a que aparezca una descarga
+        for _ in range(90):
+            if "dl" in captured:
+                break
+            time.sleep(1)
+
+        if "dl" in captured:
+            try:
+                captured["dl"].save_as(dest)
+                print(f"    ✅ Descargado ({gxoch['name']})")
+                return True
+            except Exception as e:
+                print(f"    ⚠ save_as falló: {e}")
+        else:
+            print(f"    ⚠ La acción no generó evento download. Diagnóstico de red:")
+            # Volcar requests recientes que huelan a descarga/xls
+            reqs = frame.evaluate("""() => {
+                try {
+                    return performance.getEntriesByType('resource')
+                        .map(e => e.name)
+                        .filter(u => /xls|download|descarg|blob|\\.tmp|report/i.test(u))
+                        .slice(-15);
+                } catch (e) { return []; }
+            }""")
+            print(f"    recursos red={reqs}")
+            print(f"    onchange del select={gxoch.get('onchange')!r}")
 
     print(f"    ⚠ Todas las estrategias de descarga fallaron")
     return False
