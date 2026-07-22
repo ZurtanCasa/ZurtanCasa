@@ -3,37 +3,24 @@
 Zeta Software — scraper de stock actual (muebles + alfombras neutras).
 Requiere: ZETA_USER, ZETA_PASS
 
-Flujo:
-1. Login
-2. Navegar a Gestión → Informes → Stock Actual (z.informes.stockactual)
-3. Correr reporte para "Local"     (Casa Central) → descargar Excel
-4. Correr reporte para "Dialcaren"                → descargar Excel
-5. Parsear ambos Excels, filtrar muebles y neutras (yute/lana/PET)
-6. Guardar data/stock.json
+URL confirmada: z.gestion.reportes.stockactual
+Campos del formulario:
+  vLOCIDART  → Local empresa  (1=Casa Central, 2=Dialcaren)
+  vDEPIDSA   → Depósito       (1=Local, 2=Dialcaren, 3=Milanco, 4=Reserva)
+  vCATEGARTID→ Categoría      (vacío=todas)
+  vGENERARXLS→ checkbox XLS
+  BTNENTER   → Confirmar
 """
-import os, json, sys, tempfile, shutil, time, re
+import os, json, sys, tempfile, shutil, time
 from datetime import datetime, timezone, timedelta
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "stock.json")
 BASE_URL  = "https://www.zetasoftware.com/z.info.inicio"
+STOCK_URL = "https://www.zetasoftware.com/z.gestion.reportes.stockactual"
 UY_TZ     = timezone(timedelta(hours=-3))
 
-# Candidatos de URL para Stock Actual (GeneXus varía por instalación)
-INFORMES_URL = "https://www.zetasoftware.com/z.gestion.reportes.informesfavoritosusuario"
-
-STOCK_URL_CANDIDATES = [
-    "https://www.zetasoftware.com/z.gestion.reportes.stockactual",
-    "https://www.zetasoftware.com/z.gestion.reportes.stock",
-    "https://www.zetasoftware.com/z.gestion.reportes.stockactualww",
-    "https://www.zetasoftware.com/z.gestion.informes.stockactual",
-    "https://www.zetasoftware.com/z.informes.stockactual",
-]
-
-NEUTRAS_RE = re.compile(r'\b(yute|lana|pet)\b', re.IGNORECASE)
-
-# Nombres de campo candidatos para empresa y depósito (GeneXus varía por instalación)
-EMPRESA_FIELDS  = ["vEMPRESA", "vEMPRESA_0001", "vSEDE", "vCOMPANIA", "vLOCAL_EMP"]
-DEPOSITO_FIELDS = ["vDEPOSITO", "vDEPOSITO_0001", "vLOCAL", "vSUCURSAL", "vALMACEN"]
+# Categorías de neutras según Zeta
+NEUTRAS_CATS = {"pura lana", "yute y lana", "yute y lana diseño", "yute y lana nuevas", "exterior pet"}
 
 def uy_now():
     return datetime.now(UY_TZ)
@@ -69,50 +56,9 @@ def login(page, user, password):
         print(f"  ⚠ Login falló: {e}")
         return page.main_frame
 
-# ─── Helpers de formulario ────────────────────────────────────────────────────
-
-def discover_fields(frame):
-    """Imprime todos los campos del formulario para depuración."""
-    fields = frame.evaluate("""() =>
-        Array.from(document.querySelectorAll('input,select,button')).map(e => ({
-            tag:     e.tagName,
-            name:    e.name || e.id || '?',
-            type:    e.type || '',
-            value:   e.value || '',
-            options: e.tagName === 'SELECT'
-                ? Array.from(e.options).map(o => o.value + ':' + o.text.trim()).slice(0, 15)
-                : []
-        }))
-    """)
-    print(f"  [discover] {len(fields)} campos:")
-    for f in fields:
-        if f["options"]:
-            print(f"    SELECT name={f['name']!r}  options={f['options']}")
-        elif f["tag"] != "BUTTON":
-            print(f"    {f['tag']} name={f['name']!r} type={f['type']!r} val={f['value']!r}")
-
-def select_by_text(frame, candidate_names: list, search_text: str) -> str | None:
-    """Selecciona la opción de un select cuyo texto contenga search_text."""
-    result = frame.evaluate("""([names, text]) => {
-        for (const name of names) {
-            const el = document.querySelector('[name="' + name + '"]');
-            if (!el || el.tagName !== 'SELECT') continue;
-            const opt = Array.from(el.options).find(o =>
-                o.text.toLowerCase().includes(text.toLowerCase())
-            );
-            if (opt) {
-                el.value = opt.value;
-                el.dispatchEvent(new Event('change', {bubbles: true}));
-                el.dispatchEvent(new Event('blur',   {bubbles: true}));
-                return name + '=' + opt.value + ':' + opt.text.trim();
-            }
-        }
-        return null;
-    }""", [candidate_names, search_text])
-    return result
+# ─── Download helpers ─────────────────────────────────────────────────────────
 
 def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
-    """Espera 'Descargar XLS' en procesosww y descarga vía execEvt."""
     print(f"    Esperando proceso (máx {timeout_sec}s)...")
     try:
         frame.wait_for_function(
@@ -149,109 +95,61 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
 
 # ─── Fetch por depósito ───────────────────────────────────────────────────────
 
-def find_stock_url(frame, page) -> str | None:
-    """Prueba URLs candidatas y también escanea el menú de Zeta para encontrar Stock Actual."""
-    # 1. Probar URLs candidatas directamente
-    for url in STOCK_URL_CANDIDATES:
-        try:
-            frame.goto(url, wait_until="domcontentloaded", timeout=20000)
-            try:
-                frame.wait_for_load_state("networkidle", timeout=10000)
-            except Exception:
-                pass
-            time.sleep(1)
-            n_fields = frame.evaluate(
-                "() => document.querySelectorAll('input,select,button').length"
-            )
-            print(f"  Probando {url} → {n_fields} campos")
-            if n_fields > 0:
-                print(f"  ✅ URL encontrada: {url}")
-                return url
-        except Exception as e:
-            print(f"  ✗ {url}: {e}")
-
-    # 2. Navegar a la página de Informes de Gestión y buscar Stock Actual
-    print(f"  Navegando a Informes: {INFORMES_URL}")
-    frame.goto(INFORMES_URL, wait_until="domcontentloaded", timeout=30000)
-    try:
-        frame.wait_for_load_state("networkidle", timeout=15000)
-    except Exception:
-        pass
-    time.sleep(3)
-
-    # Buscar links con "stock" en texto o href
-    links = frame.evaluate("""() =>
-        Array.from(document.querySelectorAll('a[href]'))
-            .map(a => ({href: a.href, text: a.textContent.trim()}))
-            .filter(l => l.href.includes('zetasoftware') &&
-                         (l.href.toLowerCase().includes('stock') ||
-                          l.text.toLowerCase().includes('stock')))
-    """)
-    print(f"  Links de stock en página Informes: {links}")
-
-    if links:
-        url = links[0]["href"]
-        print(f"  ✅ URL encontrada en Informes: {url}")
-        return url
-
-    # 3. Imprimir todos los links de la página Informes para diagnóstico
-    all_links = frame.evaluate("""() =>
-        Array.from(document.querySelectorAll('a[href]'))
-            .map(a => ({href: a.href, text: a.textContent.trim()}))
-            .filter(l => l.href.includes('zetasoftware') && l.text)
-    """)
-    print(f"  [diag] Todos los links en Informes: {all_links}")
-
-    return None
-
-
-def fetch_for_deposito(frame, page, stock_url: str, deposito_text: str, tmp_dir: str, fname: str) -> str | None:
+def fetch_for_deposito(frame, page, deposito_text: str, tmp_dir: str, fname: str) -> str | None:
     """Genera y descarga el Excel de stock para un depósito. Devuelve ruta o None."""
     dest = os.path.join(tmp_dir, fname)
 
     print(f"  Navegando a Stock Actual ({deposito_text})...")
+    frame.goto(STOCK_URL, wait_until="domcontentloaded", timeout=30000)
     try:
-        frame.goto(stock_url, wait_until="domcontentloaded", timeout=30000)
-        try:
-            frame.wait_for_load_state("networkidle", timeout=15000)
-        except Exception:
-            pass
-    except Exception as e:
-        print(f"  ⚠ Navegación falló: {e}")
-        return None
-
+        frame.wait_for_load_state("networkidle", timeout=15000)
+    except Exception:
+        pass
     time.sleep(2)
-    discover_fields(frame)
 
-    # Seleccionar empresa (Casa Central) si hay dropdown para eso
-    r1 = select_by_text(frame, EMPRESA_FIELDS, "Casa Central")
-    print(f"  Empresa: {r1 or 'no encontrado (puede ser único)'}")
-    if r1:
-        time.sleep(2)  # esperar recarga AJAX de depósitos
-
-    # Seleccionar depósito
-    r2 = select_by_text(frame, DEPOSITO_FIELDS, deposito_text)
-    print(f"  Depósito: {r2 or '⚠ no encontrado'}")
-    if not r2:
-        print(f"  ⚠ No se encontró depósito '{deposito_text}' — abortando")
-        return None
-    time.sleep(1)
-
-    # Activar "Generar XLS" si existe
-    frame.evaluate("""() => {
+    # Configurar formulario
+    result = frame.evaluate(f"""() => {{
+        function setSelect(name, text) {{
+            const el = document.querySelector('[name="' + name + '"]');
+            if (!el || el.tagName !== 'SELECT') return 'not found: ' + name;
+            const opt = Array.from(el.options).find(o =>
+                o.text.toLowerCase().includes(text.toLowerCase())
+            );
+            if (!opt) return 'option not found: ' + text + ' in ' + name;
+            el.value = opt.value;
+            el.dispatchEvent(new Event('change', {{bubbles: true}}));
+            el.dispatchEvent(new Event('blur',   {{bubbles: true}}));
+            return name + '=' + opt.value + ':' + opt.text.trim();
+        }}
+        function clearSelect(name) {{
+            const el = document.querySelector('[name="' + name + '"]');
+            if (!el || el.tagName !== 'SELECT') return;
+            el.value = '';
+            el.dispatchEvent(new Event('change', {{bubbles: true}}));
+        }}
+        // Local siempre = Casa Central
+        const r1 = setSelect('vLOCIDART', 'Casa Central');
+        // Depósito según parámetro
+        const r2 = setSelect('vDEPIDSA', '{deposito_text}');
+        // Limpiar filtro de categoría para obtener todas
+        clearSelect('vCATEGARTID');
+        // Activar Generar XLS
         const xls = document.querySelector('[name="vGENERARXLS"]');
         if (xls && xls.type === 'checkbox' && !xls.checked)
-            xls.dispatchEvent(new MouseEvent('click', {bubbles: true, cancelable: true}));
-    }""")
+            xls.dispatchEvent(new MouseEvent('click', {{bubbles: true, cancelable: true}}));
+        return {{local: r1, deposito: r2}};
+    }}""")
+    print(f"  Formulario: {result}")
+
+    if result and "not found" in str(result.get("deposito", "")):
+        print(f"  ⚠ Depósito '{deposito_text}' no encontrado — abortando")
+        return None
+
     time.sleep(1)
 
-    btns = frame.evaluate("""() => ({
-        enter:  !!document.querySelector('[name="BTNENTER"]'),
-        export: !!document.querySelector('input#BTNEXPORT, [name="BTNEXPORT"]'),
-    })""")
-    print(f"  Botones: enter={btns.get('enter')} export={btns.get('export')}")
-
-    if btns.get("enter"):
+    # Submit
+    has_enter = frame.evaluate("() => !!document.querySelector('[name=\"BTNENTER\"]')")
+    if has_enter:
         try:
             frame.click("[name='BTNENTER']", timeout=10000)
             page.wait_for_url("**/z.informes.procesosww**", timeout=30000)
@@ -261,7 +159,9 @@ def fetch_for_deposito(frame, page, stock_url: str, deposito_text: str, tmp_dir:
         except Exception as e:
             print(f"  ⚠ BTNENTER falló: {e}")
 
-    if btns.get("export"):
+    # Fallback BTNEXPORT
+    has_export = frame.evaluate("() => !!document.querySelector('input#BTNEXPORT, [name=\"BTNEXPORT\"]')")
+    if has_export:
         try:
             with page.expect_download(timeout=60000) as dl_info:
                 frame.click("input#BTNEXPORT, [name='BTNEXPORT']", timeout=10000)
@@ -270,35 +170,54 @@ def fetch_for_deposito(frame, page, stock_url: str, deposito_text: str, tmp_dir:
         except Exception as e:
             print(f"  ⚠ BTNEXPORT falló: {e}")
 
-    print("  ⚠ No se encontró ningún botón de submit")
+    print("  ⚠ Sin botón de submit")
     return None
 
 # ─── Parseo de Excel ──────────────────────────────────────────────────────────
 
 def parse_stock_excel(path: str) -> dict[str, int]:
     """
-    Parsea Excel de Stock Actual. Devuelve {codigo: cantidad} filtrando
-    solo muebles (categoría contiene 'mueble') y neutras (nombre contiene yute/lana/PET).
+    Parsea Excel de Stock Actual.
+    Filtra muebles (cat='Muebles') y neutras (cat en NEUTRAS_CATS).
+    Devuelve {codigo: cantidad}.
     """
     import openpyxl
     wb = openpyxl.load_workbook(path, data_only=True)
     ws = wb.active
 
-    # Fila 5 = encabezados. Col 1=ARTICULO, 2=NOMBRE, 6=CATEGORÍA, 12=stock local
+    # Detectar fila de encabezados buscando "ARTICULO"
+    header_row = 5
+    for r in range(1, 10):
+        if any("ARTICULO" in str(ws.cell(r, c).value or "") for c in range(1, 5)):
+            header_row = r
+            break
+
+    # Mapear columnas desde encabezados
+    headers = {str(ws.cell(header_row, c).value or "").strip().upper(): c
+               for c in range(1, ws.max_column + 1)}
+    print(f"    Encabezados: {dict(list(headers.items())[:12])}")
+
+    col_cod  = headers.get("ARTICULO", 1)
+    col_nom  = headers.get("NOMBRE",   2)
+    col_cat  = headers.get("CATEGORÍA", headers.get("CATEGORIA", 6))
+    # Stock: última columna numérica con datos (generalmente la última)
+    col_stk  = ws.max_column
+
     result: dict[str, int] = {}
-    for r in range(6, ws.max_row + 1):
-        codigo    = ws.cell(r, 1).value
-        nombre    = str(ws.cell(r, 2).value or "")
-        categoria = str(ws.cell(r, 6).value or "").lower()
-        stock_val = ws.cell(r, 12).value
+    skipped = 0
+    for r in range(header_row + 1, ws.max_row + 1):
+        codigo   = ws.cell(r, col_cod).value
+        categoria = str(ws.cell(r, col_cat).value or "").strip().lower()
+        stock_val = ws.cell(r, col_stk).value
 
         if not codigo:
             continue
 
         is_mueble = "mueble" in categoria
-        is_neutra = bool(NEUTRAS_RE.search(nombre))
+        is_neutra = categoria in NEUTRAS_CATS
 
         if not (is_mueble or is_neutra):
+            skipped += 1
             continue
 
         try:
@@ -308,7 +227,7 @@ def parse_stock_excel(path: str) -> dict[str, int]:
 
         result[str(codigo).strip()] = qty
 
-    print(f"    Parseados: {len(result)} artículos (muebles + neutras)")
+    print(f"    Parseados: {len(result)} artículos (muebles+neutras), {skipped} omitidos")
     return result
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
@@ -336,15 +255,8 @@ def main():
             page    = browser.new_page()
             frame   = login(page, user, password)
 
-            print("\n[0/2] Buscando URL de Stock Actual...")
-            stock_url = find_stock_url(frame, page)
-            if not stock_url:
-                print("ERROR: No se encontró la URL de Stock Actual", file=sys.stderr)
-                sys.exit(1)
-
-            print(f"\n[1/2] Stock Local (Casa Central) — {stock_url}...")
+            print("\n[1/2] Stock Local (Casa Central)...")
             path_local = fetch_for_deposito(frame, page,
-                stock_url=stock_url,
                 deposito_text="Local",
                 tmp_dir=tmp_dir,
                 fname="stock_local.xlsx",
@@ -352,7 +264,6 @@ def main():
 
             print("\n[2/2] Stock Dialcaren...")
             path_dialcaren = fetch_for_deposito(frame, page,
-                stock_url=stock_url,
                 deposito_text="Dialcaren",
                 tmp_dir=tmp_dir,
                 fname="stock_dialcaren.xlsx",
@@ -375,7 +286,7 @@ def main():
         output = {
             "_status":               "ok",
             "_ultima_actualizacion": uy_now().strftime("%Y-%m-%dT%H:%M:%S"),
-            "_tiene_datos":          True,
+            "_tiene_datos":          bool(articulos),
             "articulos":             articulos,
         }
 
