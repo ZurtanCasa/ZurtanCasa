@@ -1,6 +1,6 @@
 {
-  "_status": "pendiente",
-  "_ultima_actualizacion": null,
-  "_tiene_datos": false,
+  "_status": "ok",
+  "_ultima_actualizacion": "2026-07-22T13:09:54",
+  "_tiene_datos": true,
   "articulos": {}
 }
