@@ -104,27 +104,30 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
         except Exception as e:
             print(f"    ⚠ Link directo falló: {e}")
 
-    # Estrategia 2: execEvt via select vACCIONES_0001
+    # Estrategia 2: execEvt via el ÚLTIMO vACCIONES_* que tenga opción XLS
     gxoch = frame.evaluate("""() => {
-        const sel = document.querySelector('select[name="vACCIONES_0001"]');
-        if (!sel) return null;
-        const opt = Array.from(sel.options).find(o => o.text.includes('XLS'));
-        if (opt) { sel.value = opt.value; return opt.value; }
-        return null;
+        // Buscar en TODOS los selects vACCIONES_*, quedarse con el último que tenga XLS
+        const selects = Array.from(document.querySelectorAll('select[name^="vACCIONES_"]'));
+        let found = null;
+        for (const sel of selects) {
+            const opt = Array.from(sel.options).find(o => o.text.includes('XLS'));
+            if (opt) found = { name: sel.name, value: opt.value };
+        }
+        return found;
     }""")
     print(f"    gxoch={gxoch}")
 
     if gxoch:
         try:
             with page.expect_download(timeout=60000) as dl_info:
-                frame.evaluate("""(val) => {
-                    const sel = document.querySelector('select[name="vACCIONES_0001"]');
-                    sel.value = val;
+                frame.evaluate("""(info) => {
+                    const sel = document.querySelector('select[name="' + info.name + '"]');
+                    sel.value = info.value;
                     sel.dispatchEvent(new Event('change', {bubbles: true}));
                     if (typeof execEvt === 'function') execEvt(sel);
                 }""", gxoch)
             dl_info.value.save_as(dest)
-            print(f"    ✅ Descargado vía execEvt")
+            print(f"    ✅ Descargado vía execEvt ({gxoch['name']})")
             return True
         except Exception as e:
             print(f"    ⚠ execEvt falló: {e}")
