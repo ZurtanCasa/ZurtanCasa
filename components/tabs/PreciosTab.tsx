@@ -25,9 +25,20 @@ interface NeutrasGroup {
   precio_usd: number;
 }
 
+interface StockEntry {
+  local: number;
+  dialcaren: number;
+}
+
+interface StockData {
+  _tiene_datos: boolean;
+  articulos: Record<string, StockEntry>;
+}
+
 interface Props {
   data: PreciosData;
   muebles?: PreciosData;
+  stock?: StockData;
   showStats?: boolean;
 }
 
@@ -123,6 +134,18 @@ function sortGroups(list: NeutrasGroup[], key: SortKey, dir: SortDir) {
   });
 }
 
+// ── Subcomponente: badge de stock ──────────────────────────────────────────
+function StockBadge({ local, dialcaren }: { local: number; dialcaren: number }) {
+  if (local === 0 && dialcaren === 0) return null;
+  return (
+    <div className="stock-badge">
+      {local > 0 && <span className="stock-local">{local} Local</span>}
+      {local > 0 && dialcaren > 0 && <span className="stock-sep">·</span>}
+      {dialcaren > 0 && <span className="stock-dialcaren">{dialcaren} Dialcaren</span>}
+    </div>
+  );
+}
+
 // ── Subcomponente: fila de alfombra ────────────────────────────────────────
 function AlfombraRow({ a }: { a: ArticuloPrecio }) {
   const precioDesc = a.precio_usd * (1 - DESCUENTO);
@@ -145,7 +168,7 @@ function AlfombraRow({ a }: { a: ArticuloPrecio }) {
 }
 
 // ── Subcomponente: fila de grupo neutra (tipo + medida, sin color) ─────────
-function NeutrasGroupRow({ g }: { g: NeutrasGroup }) {
+function NeutrasGroupRow({ g, stock }: { g: NeutrasGroup; stock?: StockEntry }) {
   const precioDesc = g.precio_usd * (1 - DESCUENTO);
   return (
     <div className="precio-row">
@@ -154,6 +177,7 @@ function NeutrasGroupRow({ g }: { g: NeutrasGroup }) {
           <div className="precio-row-codigo">{g.medida}</div>
         )}
         <div className="precio-row-nombre">{g.tipo || g.key}</div>
+        {stock && <StockBadge local={stock.local} dialcaren={stock.dialcaren} />}
       </div>
       <div className="precio-row-prices">
         <div className="precio-row-precio mono">{fmtUSD(g.precio_usd)}</div>
@@ -167,7 +191,7 @@ function NeutrasGroupRow({ g }: { g: NeutrasGroup }) {
 }
 
 // ── Subcomponente: fila de mueble (con foto) ───────────────────────────────
-function MuebleRow({ a }: { a: ArticuloPrecio }) {
+function MuebleRow({ a, stock }: { a: ArticuloPrecio; stock?: StockEntry }) {
   const precioDesc = a.precio_usd * (1 - DESCUENTO);
   return (
     <div className="precio-row precio-row-con-foto">
@@ -180,6 +204,7 @@ function MuebleRow({ a }: { a: ArticuloPrecio }) {
       <div className="precio-row-info">
         <div className="precio-row-codigo mono">#{a.codigo}</div>
         <div className="precio-row-nombre">{a.nombre}</div>
+        {stock && <StockBadge local={stock.local} dialcaren={stock.dialcaren} />}
       </div>
       <div className="precio-row-prices">
         <div className="precio-row-precio mono">{fmtUSD(a.precio_usd)}</div>
@@ -214,7 +239,7 @@ function SeccionHeader({
 }
 
 // ── Componente principal ───────────────────────────────────────────────────
-export default function PreciosTab({ data, muebles, showStats = true }: Props) {
+export default function PreciosTab({ data, muebles, stock, showStats = true }: Props) {
   const [query, setQuery] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("nombre");
   const [sortDir, setSortDir] = useState<SortDir>("asc");
@@ -258,6 +283,20 @@ export default function PreciosTab({ data, muebles, showStats = true }: Props) {
     ) : mueblesList;
     return sortArticulos(f, sortKey, sortDir);
   }, [mueblesList, q, sortKey, sortDir]);
+
+  // Stock por grupo de neutras (suma de todos los artículos del grupo)
+  const neutrasGroupStock = useMemo(() => {
+    if (!stock?._tiene_datos) return {} as Record<string, StockEntry>;
+    const map: Record<string, StockEntry> = {};
+    for (const a of neutrasRaw) {
+      const { key } = toNeutrasKey(a.nombre);
+      const s = stock.articulos[a.codigo] ?? { local: 0, dialcaren: 0 };
+      if (!map[key]) map[key] = { local: 0, dialcaren: 0 };
+      map[key].local     += s.local     || 0;
+      map[key].dialcaren += s.dialcaren || 0;
+    }
+    return map;
+  }, [neutrasRaw, stock]);
 
   const totalMostrado = filtPersas.length + filtNeutras.length + filtMuebles.length;
   const totalArticulos = alfombras.length + mueblesList.length;
@@ -368,7 +407,9 @@ export default function PreciosTab({ data, muebles, showStats = true }: Props) {
           {openNeutras && (
             <div className="card seccion-body">
               <div className="precios-list">
-                {filtNeutras.map((g) => <NeutrasGroupRow key={g.key} g={g} />)}
+                {filtNeutras.map((g) => (
+                  <NeutrasGroupRow key={g.key} g={g} stock={neutrasGroupStock[g.key]} />
+                ))}
               </div>
             </div>
           )}
@@ -383,7 +424,13 @@ export default function PreciosTab({ data, muebles, showStats = true }: Props) {
           {openMuebles && (
             <div className="card seccion-body">
               <div className="precios-list">
-                {filtMuebles.map((a) => <MuebleRow key={`${a.codigo}|${a.nombre}`} a={a} />)}
+                {filtMuebles.map((a) => (
+                  <MuebleRow
+                    key={`${a.codigo}|${a.nombre}`}
+                    a={a}
+                    stock={stock?._tiene_datos ? stock.articulos[a.codigo] : undefined}
+                  />
+                ))}
               </div>
             </div>
           )}

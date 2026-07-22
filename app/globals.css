@@ -248,6 +248,17 @@ tr:hover td { background: var(--bg-card-hover); }
   color: var(--text-muted);
   margin-top: 2px;
 }
+.stock-badge {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+.stock-local     { color: var(--green); }
+.stock-dialcaren { color: var(--accent); }
+.stock-sep       { color: var(--text-muted); }
 .precio-row-prices {
   text-align: right;
   flex-shrink: 0;
