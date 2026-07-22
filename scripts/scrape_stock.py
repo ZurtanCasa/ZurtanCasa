@@ -62,13 +62,49 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
     print(f"    Esperando proceso (máx {timeout_sec}s)...")
     try:
         frame.wait_for_function(
-            "() => document.body.innerText.includes('Descargar XLS')",
+            "() => document.body.innerText.includes('Descargar XLS') || "
+            "      document.body.innerText.includes('Descargar') || "
+            "      document.querySelector('a[href*=\".xls\"]')",
             timeout=timeout_sec * 1000,
         )
     except Exception as e:
-        print(f"    ⚠ Timeout: {e}")
+        print(f"    ⚠ Timeout esperando descarga: {e}")
         return False
 
+    # Diagnóstico: mostrar qué hay en la página
+    page_info = frame.evaluate("""() => ({
+        url:   location.href,
+        text:  document.body.innerText.slice(0, 400),
+        links: Array.from(document.querySelectorAll('a[href]'))
+                    .map(a => ({href: a.href, text: a.textContent.trim()}))
+                    .filter(l => l.href.includes('xls') || l.text.toLowerCase().includes('descargar') || l.text.includes('XLS'))
+                    .slice(0, 5),
+        selects: Array.from(document.querySelectorAll('select')).map(s => ({
+            name: s.name, options: Array.from(s.options).map(o => o.value+':'+o.text).slice(0,5)
+        })),
+    })""")
+    print(f"    [procesosww] URL={page_info.get('url','?')}")
+    print(f"    [procesosww] texto={page_info.get('text','')[:200]!r}")
+    print(f"    [procesosww] links XLS={page_info.get('links')}")
+    print(f"    [procesosww] selects={page_info.get('selects')}")
+
+    # Estrategia 1: link directo a .xls/.xlsx
+    direct = next(
+        (l["href"] for l in page_info.get("links", [])
+         if ".xls" in l["href"].lower()),
+        None
+    )
+    if direct:
+        try:
+            with page.expect_download(timeout=60000) as dl_info:
+                frame.evaluate("(href) => window.location.href = href", direct)
+            dl_info.value.save_as(dest)
+            print(f"    ✅ Descargado vía link directo")
+            return True
+        except Exception as e:
+            print(f"    ⚠ Link directo falló: {e}")
+
+    # Estrategia 2: execEvt via select vACCIONES_0001
     gxoch = frame.evaluate("""() => {
         const sel = document.querySelector('select[name="vACCIONES_0001"]');
         if (!sel) return null;
@@ -76,10 +112,11 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
         if (opt) { sel.value = opt.value; return opt.value; }
         return null;
     }""")
+    print(f"    gxoch={gxoch}")
 
     if gxoch:
         try:
-            with page.expect_download(timeout=180000) as dl_info:
+            with page.expect_download(timeout=60000) as dl_info:
                 frame.evaluate("""(val) => {
                     const sel = document.querySelector('select[name="vACCIONES_0001"]');
                     sel.value = val;
@@ -87,10 +124,32 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
                     if (typeof execEvt === 'function') execEvt(sel);
                 }""", gxoch)
             dl_info.value.save_as(dest)
-            print(f"    ✅ Descargado OK")
+            print(f"    ✅ Descargado vía execEvt")
             return True
         except Exception as e:
-            print(f"    ⚠ Download falló: {e}")
+            print(f"    ⚠ execEvt falló: {e}")
+
+    # Estrategia 3: click en cualquier link/botón de descarga
+    clicked = frame.evaluate("""() => {
+        const all = Array.from(document.querySelectorAll('a, button, input[type="button"], input[type="submit"]'));
+        const el = all.find(e => {
+            const t = (e.textContent || e.value || '').toLowerCase();
+            return t.includes('xls') || t.includes('descargar') || t.includes('excel');
+        });
+        if (el) { el.click(); return el.textContent || el.value || el.href; }
+        return null;
+    }""")
+    if clicked:
+        try:
+            with page.expect_download(timeout=60000) as dl_info:
+                pass  # ya hicimos click arriba
+            dl_info.value.save_as(dest)
+            print(f"    ✅ Descargado vía click: {clicked}")
+            return True
+        except Exception as e:
+            print(f"    ⚠ Click descarga falló: {e}")
+
+    print(f"    ⚠ Todas las estrategias de descarga fallaron")
     return False
 
 # ─── Fetch por depósito ───────────────────────────────────────────────────────
