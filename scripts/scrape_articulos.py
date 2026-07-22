@@ -121,12 +121,20 @@ def submit_report(frame, page, from_str: str, to_str: str, max_retries=3) -> boo
             print(f"  Intento {attempt}: xls={state.get('xls')} iva={state.get('iva')} depid={state.get('depid')} expresar={state.get('expresar')} btn={state.get('btn')}")
 
             frame.click("input[name='BTNENTER']", timeout=15000)
-            page.wait_for_url("**/z.informes.procesosww**", timeout=60000)
+            page.wait_for_url("**/z.informes.procesosww**", timeout=120000)
             print(f"  ✅ En procesosww")
             return True
 
         except Exception as e:
             print(f"  ⚠ Intento {attempt}: {e}")
+            # Diagnóstico: dónde quedó tras el click (Zeta lento vs. error de validación)
+            try:
+                cur = page.url
+                body = frame.evaluate("() => document.body.innerText.slice(0, 300)")
+                print(f"    URL actual: {cur}")
+                print(f"    Texto pantalla: {body!r}")
+            except Exception:
+                pass
             time.sleep(5)
 
     return False
