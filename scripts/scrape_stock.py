@@ -19,12 +19,14 @@ BASE_URL  = "https://www.zetasoftware.com/z.info.inicio"
 UY_TZ     = timezone(timedelta(hours=-3))
 
 # Candidatos de URL para Stock Actual (GeneXus varía por instalación)
+INFORMES_URL = "https://www.zetasoftware.com/z.gestion.reportes.informesfavoritosusuario"
+
 STOCK_URL_CANDIDATES = [
+    "https://www.zetasoftware.com/z.gestion.reportes.stockactual",
+    "https://www.zetasoftware.com/z.gestion.reportes.stock",
+    "https://www.zetasoftware.com/z.gestion.reportes.stockactualww",
     "https://www.zetasoftware.com/z.gestion.informes.stockactual",
-    "https://www.zetasoftware.com/z.gestion.informes.stock",
     "https://www.zetasoftware.com/z.informes.stockactual",
-    "https://www.zetasoftware.com/z.consultas.stockactual",
-    "https://www.zetasoftware.com/z.consultas.stock",
 ]
 
 NEUTRAS_RE = re.compile(r'\b(yute|lana|pet)\b', re.IGNORECASE)
@@ -168,69 +170,37 @@ def find_stock_url(frame, page) -> str | None:
         except Exception as e:
             print(f"  ✗ {url}: {e}")
 
-    # 2. Escanear enlaces del menú de Zeta
-    print("  Escaneando menú de Zeta para encontrar Stock Actual...")
-    frame.goto(BASE_URL, wait_until="domcontentloaded", timeout=30000)
+    # 2. Navegar a la página de Informes de Gestión y buscar Stock Actual
+    print(f"  Navegando a Informes: {INFORMES_URL}")
+    frame.goto(INFORMES_URL, wait_until="domcontentloaded", timeout=30000)
     try:
         frame.wait_for_load_state("networkidle", timeout=15000)
     except Exception:
         pass
     time.sleep(3)
 
-    # Imprimir todos los links que contengan "stock" o "informe"
+    # Buscar links con "stock" en texto o href
     links = frame.evaluate("""() =>
-        Array.from(document.querySelectorAll('a[href]'))
-            .map(a => ({href: a.href, text: a.textContent.trim()}))
-            .filter(l => l.href.includes('zetasoftware') &&
-                         (l.href.toLowerCase().includes('stock') ||
-                          l.text.toLowerCase().includes('stock') ||
-                          l.href.toLowerCase().includes('informe') ||
-                          l.text.toLowerCase().includes('informe')))
-    """)
-    print(f"  Links de stock/informe encontrados en home: {links}")
-
-    # Intentar expandir menú Gestión → Informes
-    clicked = frame.evaluate("""() => {
-        const all = Array.from(document.querySelectorAll('a, span, td, li, div'));
-        // Buscar "Gestión" o "Gestion"
-        const gestion = all.find(e =>
-            e.textContent.trim().toLowerCase() === 'gestión' ||
-            e.textContent.trim().toLowerCase() === 'gestion'
-        );
-        if (gestion) {
-            gestion.dispatchEvent(new MouseEvent('mouseover', {bubbles: true}));
-            gestion.dispatchEvent(new MouseEvent('mouseenter', {bubbles: true}));
-            gestion.click();
-            return 'Gestión clicked';
-        }
-        return null;
-    }""")
-    print(f"  Menú: {clicked}")
-    time.sleep(2)
-
-    # Escanear nuevamente
-    links2 = frame.evaluate("""() =>
         Array.from(document.querySelectorAll('a[href]'))
             .map(a => ({href: a.href, text: a.textContent.trim()}))
             .filter(l => l.href.includes('zetasoftware') &&
                          (l.href.toLowerCase().includes('stock') ||
                           l.text.toLowerCase().includes('stock')))
     """)
-    print(f"  Links de stock tras expandir menú: {links2}")
+    print(f"  Links de stock en página Informes: {links}")
 
-    if links2:
-        url = links2[0]["href"]
-        print(f"  ✅ URL encontrada en menú: {url}")
+    if links:
+        url = links[0]["href"]
+        print(f"  ✅ URL encontrada en Informes: {url}")
         return url
 
-    # 3. Imprimir TODOS los links de Zeta para diagnóstico
+    # 3. Imprimir todos los links de la página Informes para diagnóstico
     all_links = frame.evaluate("""() =>
         Array.from(document.querySelectorAll('a[href]'))
             .map(a => ({href: a.href, text: a.textContent.trim()}))
             .filter(l => l.href.includes('zetasoftware') && l.text)
-            .slice(0, 50)
     """)
-    print(f"  [diag] Todos los links Zeta: {all_links}")
+    print(f"  [diag] Todos los links en Informes: {all_links}")
 
     return None
 
