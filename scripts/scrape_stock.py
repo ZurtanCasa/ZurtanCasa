@@ -16,8 +16,16 @@ from datetime import datetime, timezone, timedelta
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "stock.json")
 BASE_URL  = "https://www.zetasoftware.com/z.info.inicio"
-STOCK_URL = "https://www.zetasoftware.com/z.informes.stockactual"
 UY_TZ     = timezone(timedelta(hours=-3))
+
+# Candidatos de URL para Stock Actual (GeneXus varía por instalación)
+STOCK_URL_CANDIDATES = [
+    "https://www.zetasoftware.com/z.gestion.informes.stockactual",
+    "https://www.zetasoftware.com/z.gestion.informes.stock",
+    "https://www.zetasoftware.com/z.informes.stockactual",
+    "https://www.zetasoftware.com/z.consultas.stockactual",
+    "https://www.zetasoftware.com/z.consultas.stock",
+]
 
 NEUTRAS_RE = re.compile(r'\b(yute|lana|pet)\b', re.IGNORECASE)
 
@@ -139,13 +147,101 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
 
 # ─── Fetch por depósito ───────────────────────────────────────────────────────
 
-def fetch_for_deposito(frame, page, deposito_text: str, tmp_dir: str, fname: str) -> str | None:
+def find_stock_url(frame, page) -> str | None:
+    """Prueba URLs candidatas y también escanea el menú de Zeta para encontrar Stock Actual."""
+    # 1. Probar URLs candidatas directamente
+    for url in STOCK_URL_CANDIDATES:
+        try:
+            frame.goto(url, wait_until="domcontentloaded", timeout=20000)
+            try:
+                frame.wait_for_load_state("networkidle", timeout=10000)
+            except Exception:
+                pass
+            time.sleep(1)
+            n_fields = frame.evaluate(
+                "() => document.querySelectorAll('input,select,button').length"
+            )
+            print(f"  Probando {url} → {n_fields} campos")
+            if n_fields > 0:
+                print(f"  ✅ URL encontrada: {url}")
+                return url
+        except Exception as e:
+            print(f"  ✗ {url}: {e}")
+
+    # 2. Escanear enlaces del menú de Zeta
+    print("  Escaneando menú de Zeta para encontrar Stock Actual...")
+    frame.goto(BASE_URL, wait_until="domcontentloaded", timeout=30000)
+    try:
+        frame.wait_for_load_state("networkidle", timeout=15000)
+    except Exception:
+        pass
+    time.sleep(3)
+
+    # Imprimir todos los links que contengan "stock" o "informe"
+    links = frame.evaluate("""() =>
+        Array.from(document.querySelectorAll('a[href]'))
+            .map(a => ({href: a.href, text: a.textContent.trim()}))
+            .filter(l => l.href.includes('zetasoftware') &&
+                         (l.href.toLowerCase().includes('stock') ||
+                          l.text.toLowerCase().includes('stock') ||
+                          l.href.toLowerCase().includes('informe') ||
+                          l.text.toLowerCase().includes('informe')))
+    """)
+    print(f"  Links de stock/informe encontrados en home: {links}")
+
+    # Intentar expandir menú Gestión → Informes
+    clicked = frame.evaluate("""() => {
+        const all = Array.from(document.querySelectorAll('a, span, td, li, div'));
+        // Buscar "Gestión" o "Gestion"
+        const gestion = all.find(e =>
+            e.textContent.trim().toLowerCase() === 'gestión' ||
+            e.textContent.trim().toLowerCase() === 'gestion'
+        );
+        if (gestion) {
+            gestion.dispatchEvent(new MouseEvent('mouseover', {bubbles: true}));
+            gestion.dispatchEvent(new MouseEvent('mouseenter', {bubbles: true}));
+            gestion.click();
+            return 'Gestión clicked';
+        }
+        return null;
+    }""")
+    print(f"  Menú: {clicked}")
+    time.sleep(2)
+
+    # Escanear nuevamente
+    links2 = frame.evaluate("""() =>
+        Array.from(document.querySelectorAll('a[href]'))
+            .map(a => ({href: a.href, text: a.textContent.trim()}))
+            .filter(l => l.href.includes('zetasoftware') &&
+                         (l.href.toLowerCase().includes('stock') ||
+                          l.text.toLowerCase().includes('stock')))
+    """)
+    print(f"  Links de stock tras expandir menú: {links2}")
+
+    if links2:
+        url = links2[0]["href"]
+        print(f"  ✅ URL encontrada en menú: {url}")
+        return url
+
+    # 3. Imprimir TODOS los links de Zeta para diagnóstico
+    all_links = frame.evaluate("""() =>
+        Array.from(document.querySelectorAll('a[href]'))
+            .map(a => ({href: a.href, text: a.textContent.trim()}))
+            .filter(l => l.href.includes('zetasoftware') && l.text)
+            .slice(0, 50)
+    """)
+    print(f"  [diag] Todos los links Zeta: {all_links}")
+
+    return None
+
+
+def fetch_for_deposito(frame, page, stock_url: str, deposito_text: str, tmp_dir: str, fname: str) -> str | None:
     """Genera y descarga el Excel de stock para un depósito. Devuelve ruta o None."""
     dest = os.path.join(tmp_dir, fname)
 
     print(f"  Navegando a Stock Actual ({deposito_text})...")
     try:
-        frame.goto(STOCK_URL, wait_until="domcontentloaded", timeout=30000)
+        frame.goto(stock_url, wait_until="domcontentloaded", timeout=30000)
         try:
             frame.wait_for_load_state("networkidle", timeout=15000)
         except Exception:
@@ -270,8 +366,15 @@ def main():
             page    = browser.new_page()
             frame   = login(page, user, password)
 
-            print("\n[1/2] Stock Local (Casa Central)...")
+            print("\n[0/2] Buscando URL de Stock Actual...")
+            stock_url = find_stock_url(frame, page)
+            if not stock_url:
+                print("ERROR: No se encontró la URL de Stock Actual", file=sys.stderr)
+                sys.exit(1)
+
+            print(f"\n[1/2] Stock Local (Casa Central) — {stock_url}...")
             path_local = fetch_for_deposito(frame, page,
+                stock_url=stock_url,
                 deposito_text="Local",
                 tmp_dir=tmp_dir,
                 fname="stock_local.xlsx",
@@ -279,6 +382,7 @@ def main():
 
             print("\n[2/2] Stock Dialcaren...")
             path_dialcaren = fetch_for_deposito(frame, page,
+                stock_url=stock_url,
                 deposito_text="Dialcaren",
                 tmp_dir=tmp_dir,
                 fname="stock_dialcaren.xlsx",
