@@ -104,7 +104,10 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
         except Exception as e:
             print(f"    ⚠ Link directo falló: {e}")
 
-    # Estrategia 2: disparar la acción "Descargar XLS" del ÚLTIMO vACCIONES_* que la tenga
+    # Estrategia 2: disparar la acción "Descargar XLS" del combo GeneXus DDO (oculto).
+    # El combo real es un <select> ConvertToDDO invisible; su acción está en
+    # data-gxoch0 = "if(gx.evt.jsEvent(this)){gx.evt.execEvt('',false,'EVACCIONES.CLICK.NNNN',this,ID);}..."
+    # jsEvent() exige gesto de usuario → lo puenteamos y ejecutamos execEvt directo.
     gxoch = frame.evaluate("""() => {
         const selects = Array.from(document.querySelectorAll('select[name^="vACCIONES_"]'));
         let found = null;
@@ -115,7 +118,7 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
                 value:    opt.value,
                 id:       sel.id,
                 onchange: sel.getAttribute('onchange'),
-                outer:    sel.outerHTML.slice(0, 500),
+                gxoch0:   sel.getAttribute('data-gxoch0'),
             };
         }
         return found;
@@ -136,53 +139,89 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
                 pass
         context.on("page", _on_page)
 
-        # Disparar la acción. Preferimos select_option (nativo); si falla, JS.
-        try:
-            frame.select_option(f'select[name="{gxoch["name"]}"]', gxoch["value"], timeout=8000)
-            print(f"    ↳ select_option OK sobre {gxoch['name']}")
-        except Exception as e:
-            print(f"    ↳ select_option falló ({e}); usando JS change + onchange")
-            frame.evaluate("""(info) => {
-                const sel = document.querySelector('select[name="' + info.name + '"]');
-                if (!sel) return;
-                sel.value = info.value;
-                // Ejecutar el handler inline (GeneXus lo pone en onchange)
-                sel.dispatchEvent(new Event('change', {bubbles: true}));
-                try {
-                    if (info.onchange) {
-                        const fn = new Function('event', info.onchange);
-                        fn.call(sel, {type:'change', target: sel});
-                    }
-                } catch (err) {}
-                if (typeof execEvt === 'function') { try { execEvt(sel); } catch(e){} }
-            }""", gxoch)
+        # Capturar respuesta HTTP con el archivo (por si llega como attachment y no como "download")
+        def _on_response(resp):
+            try:
+                if "resp" in captured:
+                    return
+                h  = resp.headers
+                cd = (h.get("content-disposition", "") or "").lower()
+                ct = (h.get("content-type", "") or "").lower()
+                if ("attachment" in cd) or ("spreadsheet" in ct) or ("ms-excel" in ct) \
+                   or ("officedocument" in ct) or (".xls" in cd):
+                    captured["resp"] = resp
+                    print(f"    ↳ respuesta con archivo: {resp.url[:120]} ct={ct} cd={cd[:60]}")
+            except Exception:
+                pass
+        page.on("response", _on_response)
 
-        # Esperar hasta 90s a que aparezca una descarga
-        for _ in range(90):
-            if "dl" in captured:
+        # Disparar el handler real de GeneXus, puenteando el guard jsEvent()
+        trig = frame.evaluate("""(info) => {
+            const sel = document.querySelector('select[name="' + info.name + '"]');
+            if (!sel) return 'no sel';
+            sel.value = info.value;  // opción "Descargar XLS"
+            let restore = null;
+            try {
+                if (window.gx && gx.evt && typeof gx.evt.jsEvent === 'function') {
+                    restore = gx.evt.jsEvent;
+                    gx.evt.jsEvent = function() { return true; };  // puentear guard de gesto
+                }
+            } catch (e) {}
+            try {
+                const h = info.gxoch0 || info.onchange;
+                if (h) {
+                    const fn = new Function('event', h);
+                    fn.call(sel, { type: 'change', target: sel });
+                    return 'ejecutado handler';
+                } else {
+                    sel.dispatchEvent(new Event('change', { bubbles: true }));
+                    return 'dispatch change';
+                }
+            } catch (err) {
+                return 'handler err: ' + err.message;
+            } finally {
+                if (restore) { try { gx.evt.jsEvent = restore; } catch (e) {} }
+            }
+        }""", gxoch)
+        print(f"    ↳ trigger={trig}")
+
+        # Esperar hasta 120s a que aparezca la descarga o la respuesta con archivo
+        for _ in range(120):
+            if "dl" in captured or "resp" in captured:
                 break
             time.sleep(1)
 
+        # a) Evento download nativo
         if "dl" in captured:
             try:
                 captured["dl"].save_as(dest)
-                print(f"    ✅ Descargado ({gxoch['name']})")
+                print(f"    ✅ Descargado vía download ({gxoch['name']})")
                 return True
             except Exception as e:
                 print(f"    ⚠ save_as falló: {e}")
-        else:
-            print(f"    ⚠ La acción no generó evento download. Diagnóstico de red:")
-            # Volcar requests recientes que huelan a descarga/xls
-            reqs = frame.evaluate("""() => {
-                try {
-                    return performance.getEntriesByType('resource')
-                        .map(e => e.name)
-                        .filter(u => /xls|download|descarg|blob|\\.tmp|report/i.test(u))
-                        .slice(-15);
-                } catch (e) { return []; }
-            }""")
-            print(f"    recursos red={reqs}")
-            print(f"    onchange del select={gxoch.get('onchange')!r}")
+
+        # b) Respuesta HTTP con el archivo → guardar el body
+        if "resp" in captured:
+            try:
+                body = captured["resp"].body()
+                with open(dest, "wb") as f:
+                    f.write(body)
+                print(f"    ✅ Descargado vía response ({len(body)} bytes)")
+                return True
+            except Exception as e:
+                print(f"    ⚠ guardar body falló: {e}")
+
+        # Diagnóstico si nada funcionó
+        print(f"    ⚠ La acción no generó descarga. Diagnóstico de red:")
+        reqs = frame.evaluate("""() => {
+            try {
+                return performance.getEntriesByType('resource')
+                    .map(e => e.name)
+                    .filter(u => /xls|download|descarg|blob|\\.tmp|report|gxfileupload|attach/i.test(u))
+                    .slice(-15);
+            } catch (e) { return []; }
+        }""")
+        print(f"    recursos red={reqs}")
 
     print(f"    ⚠ Todas las estrategias de descarga fallaron")
     return False
