@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-23T09:18:47.241527-03:00",
+  "_ultima_actualizacion": "2026-07-23T14:13:07.762815-03:00",
   "_rango": "01/01/24 → 23/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -393,8 +393,8 @@
           "units": 2
         },
         "Yute y Lana": {
-          "revenue_usd": 4065.89,
-          "units": 4
+          "revenue_usd": 5609.89,
+          "units": 5
         },
         "Yute y Lana Nuevas": {
           "revenue_usd": 5490.0,
@@ -847,8 +847,8 @@
       "units": 116
     },
     "Yute y Lana": {
-      "revenue_usd": 55724.16,
-      "units": 61
+      "revenue_usd": 57268.16,
+      "units": 62
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 2864.0,
@@ -887,8 +887,8 @@
     },
     {
       "categoria": "Yute y Lana",
-      "revenue_usd": 55724.16,
-      "units": 61
+      "revenue_usd": 57268.16,
+      "units": 62
     },
     {
       "categoria": "Exterior Pet",
@@ -1005,16 +1005,16 @@
       "categoria": "Pura Lana"
     },
     {
+      "articulo": "Yute y Lana 300 x 400 Natural",
+      "revenue_usd": 11715.5,
+      "units": 8,
+      "categoria": "Yute y Lana"
+    },
+    {
       "articulo": "Fine Vintage",
       "revenue_usd": 11676.0,
       "units": 4,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Yute y Lana 300 x 400 Natural",
-      "revenue_usd": 10171.5,
-      "units": 7,
-      "categoria": "Yute y Lana"
     },
     {
       "articulo": "Yute y Lana 400 x 500 Natural",
@@ -2436,6 +2436,12 @@
         "revenue_usd": 1575.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Yute y Lana 300 x 400 Natural",
+        "revenue_usd": 1544.0,
+        "units": 1,
+        "categoria": "Yute y Lana"
       },
       {
         "articulo": "Yute y Lana Nuevas 160 x 230 Ivory",
