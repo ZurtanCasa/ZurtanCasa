@@ -24,7 +24,16 @@ def meta_get(endpoint, params=None):
     p = params or {}
     p["access_token"] = ACCESS_TOKEN
     resp = requests.get(f"{API_BASE}/{endpoint}", params=p)
-    resp.raise_for_status()
+    if not resp.ok:
+        # Surface el error real de la Graph API (token expirado, sin permisos, cuenta inválida…)
+        try:
+            err = resp.json().get("error", {})
+            msg = err.get("message", resp.text[:300])
+            code = err.get("code", resp.status_code)
+            print(f"  ⚠ Meta API error {code}: {msg}", file=sys.stderr)
+        except Exception:
+            print(f"  ⚠ Meta API HTTP {resp.status_code}: {resp.text[:300]}", file=sys.stderr)
+        resp.raise_for_status()
     return resp.json()
 
 def load_contexto():
