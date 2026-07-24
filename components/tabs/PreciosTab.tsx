@@ -94,9 +94,11 @@ function toNeutrasKey(nombre: string): { key: string; tipo: string; medida: stri
   // Si era Qayyum, agregar el sufijo al tipo base
   const tipo = isQayyum ? `${tipoBase} Qayyum` : tipoBase;
 
+  // Normalizar orden de dimensiones (menor x mayor) para que, p.ej.,
+  // "300 x 70" y "70 x 300" caigan en el mismo grupo tipo·medida.
   const n1 = parseInt(m[1], 10);
   const n2 = parseInt(m[2], 10);
-  const medida = `${n1} x ${n2}`;
+  const medida = `${Math.min(n1, n2)} x ${Math.max(n1, n2)}`;
   const key = tipo ? `${tipo} ${medida}` : medida;
 
   return { key, tipo, medida };
