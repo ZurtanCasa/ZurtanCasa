@@ -1,0 +1,139 @@
+{
+  "2212071||Bar Chair": [
+    {
+      "z": "GR 2212071"
+    }
+  ],
+  "GR2102001-220||Cabinet Uruguay 1": [
+    {
+      "z": "GR 2102001",
+      "color": "Grey Wash"
+    }
+  ],
+  "GR2109012||Console Table 180": [
+    {
+      "z": "GR 2109012_180 CONSO",
+      "color": "Black"
+    }
+  ],
+  "GR2109012||Console Table 210": [
+    {
+      "z": "GR 2109012-210 NAT",
+      "color": "Grey Wash"
+    },
+    {
+      "z": "GR 2109012-210 BLACK",
+      "color": "Black"
+    }
+  ],
+  "YU200076A||Dining Chair Frame With Teak Wood": [
+    {
+      "z": "GR YU-200076 A"
+    },
+    {
+      "z": "GRYU200076A"
+    }
+  ],
+  "YU200076B||Dining Chair Frame With Teak Wood": [
+    {
+      "z": "GR YU200076 B"
+    }
+  ],
+  "GR2102007||Dining Table Uruguay 200": [
+    {
+      "z": "GR 2102007"
+    }
+  ],
+  "GR2102008||Dining Table Uruguay 220": [
+    {
+      "z": "2102008 GRAY WASH",
+      "color": "Gray Wash"
+    }
+  ],
+  "GR2109002||Dining Table Uruguay 300": [
+    {
+      "z": "GR 2109002 GRAY WASH",
+      "color": "Gray Wash"
+    }
+  ],
+  "GR2102002-270||Dressoir Uruguay": [
+    {
+      "z": "GR 2102002-270GRAY W",
+      "color": "Gray Wash"
+    }
+  ],
+  "2104003||Flare Console Table": [
+    {
+      "z": "2104003"
+    }
+  ],
+  "14576||Madura Dining Chair": [
+    {
+      "z": "GR 14576 NATURAL BEL",
+      "color": "Natural"
+    }
+  ],
+  "GR2102006||Metal Dining Table Uruguay 250": [
+    {
+      "z": "GR 2102006 GREY WASH",
+      "color": "Grey Wash"
+    }
+  ],
+  "2007014B||Nero Coffee Table": [
+    {
+      "z": "2007014"
+    }
+  ],
+  "1911026||Nero Stool": [
+    {
+      "z": "GR 1911026"
+    }
+  ],
+  "GR2109007||Prisma Chair": [
+    {
+      "z": "GR 2109007 BLACK",
+      "color": "Black"
+    },
+    {
+      "z": "GR 2109007 GREY WASH",
+      "color": "Grey Wash"
+    }
+  ],
+  "GR2102003B||Round Dining Table Uruguay 150": [
+    {
+      "z": "GR 2102003 B",
+      "color": "Grey Wash"
+    }
+  ],
+  "YU2007022-55||Round Side Table Table plain top no wood stripes": [
+    {
+      "z": "YU 2007022-55 GRAY W",
+      "color": "Gray Wash"
+    },
+    {
+      "z": "YU 2007022-55 BLACK",
+      "color": "Black"
+    }
+  ],
+  "YU2007025||Square Coffee Table plain top no wood stripes": [
+    {
+      "z": "GR YU2007025 GRAY WA",
+      "color": "Gray Wash"
+    }
+  ],
+  "203592||Waldorf Dining Table 200": [
+    {
+      "z": "GR 203592_200"
+    }
+  ],
+  "203592||Waldorf Dining Table 220": [
+    {
+      "z": "GR 203592"
+    }
+  ],
+  "203592||Waldorf Dining Table 250": [
+    {
+      "z": "GR 203592_250"
+    }
+  ]
+}

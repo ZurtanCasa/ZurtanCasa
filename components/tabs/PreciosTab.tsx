@@ -1,5 +1,11 @@
 "use client";
 import { useMemo, useState } from "react";
+import mueblesAlias from "@/data/muebles_stock_alias.json";
+
+// Mapa manual: mueble (codigo||nombre) -> códigos de stock de Zeta a sumar.
+// Necesario porque los códigos de la lista de precios y los del stock de Zeta
+// difieren (prefijos, sufijos de medida/color, variantes). Ver muebles_stock_alias.json.
+type MuebleAlias = Record<string, { z: string; color?: string }[]>;
 
 // ── Tipos ──────────────────────────────────────────────────────────────────
 interface ArticuloPrecio {
@@ -256,28 +262,67 @@ function NeutrasGroupRow({
 }
 
 // ── Subcomponente: fila de mueble (con foto) ───────────────────────────────
-function MuebleRow({ a, stock }: { a: ArticuloPrecio; stock?: StockEntry }) {
+// Si tiene 2+ variantes de color con stock, la fila es clickeable y despliega
+// una tabla de stock por color (igual que las alfombras neutras).
+function MuebleRow({
+  a, stockInfo, open, onToggle,
+}: {
+  a: ArticuloPrecio;
+  stockInfo?: { total: StockEntry; colors: ColorStock[] };
+  open: boolean; onToggle: () => void;
+}) {
   const precioDesc = a.precio_usd * (1 - DESCUENTO);
+  const total = stockInfo?.total;
+  const colors = stockInfo?.colors ?? [];
+  const distinctColors = colors.filter((c) => c.color).length;
+  const expandable = distinctColors > 1 && !!total && (total.local + total.dialcaren) > 0;
+
   return (
-    <div className="precio-row precio-row-con-foto">
-      {a.foto && (
-        <div className="precio-foto-wrap">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={a.foto} alt={a.nombre} className="precio-foto" loading="lazy" />
+    <div className="precio-group">
+      <div
+        className={`precio-row precio-row-con-foto${expandable ? " precio-row-expandable" : ""}`}
+        onClick={expandable ? onToggle : undefined}
+        role={expandable ? "button" : undefined}
+        aria-expanded={expandable ? open : undefined}
+      >
+        {a.foto && (
+          <div className="precio-foto-wrap">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={a.foto} alt={a.nombre} className="precio-foto" loading="lazy" />
+          </div>
+        )}
+        <div className="precio-row-info">
+          <div className="precio-row-codigo mono">
+            #{a.codigo}
+            {expandable && <span className="precio-caret">{open ? "▾" : "▸"}</span>}
+          </div>
+          <div className="precio-row-nombre">{a.nombre}</div>
+          {total && <StockBadge local={total.local} dialcaren={total.dialcaren} />}
+        </div>
+        <div className="precio-row-prices">
+          <div className="precio-row-precio mono">{fmtUSD(a.precio_usd)}</div>
+          <div className="precio-row-descuento mono">
+            {fmtUSD(precioDesc)}{" "}
+            <span className="precio-row-pct">-20%</span>
+          </div>
+        </div>
+      </div>
+      {expandable && open && (
+        <div className="stock-color-table">
+          <div className="stock-color-row stock-color-head">
+            <span>Color</span>
+            <span>Local</span>
+            <span>Dialcaren</span>
+          </div>
+          {colors.map((c) => (
+            <div className="stock-color-row" key={c.codigo}>
+              <span className="stock-color-name" title={c.codigo}>{c.color || "—"}</span>
+              <span className="stock-color-local mono">{c.local}</span>
+              <span className="stock-color-dial mono">{c.dialcaren}</span>
+            </div>
+          ))}
         </div>
       )}
-      <div className="precio-row-info">
-        <div className="precio-row-codigo mono">#{a.codigo}</div>
-        <div className="precio-row-nombre">{a.nombre}</div>
-        {stock && <StockBadge local={stock.local} dialcaren={stock.dialcaren} />}
-      </div>
-      <div className="precio-row-prices">
-        <div className="precio-row-precio mono">{fmtUSD(a.precio_usd)}</div>
-        <div className="precio-row-descuento mono">
-          {fmtUSD(precioDesc)}{" "}
-          <span className="precio-row-pct">-20%</span>
-        </div>
-      </div>
     </div>
   );
 }
@@ -394,6 +439,36 @@ export default function PreciosTab({ data, muebles, stock, showStats = true }: P
     }
     return map;
   }, [neutrasRaw, stock]);
+
+  // Stock de muebles vía alias manual (codigo||nombre -> códigos Zeta a sumar),
+  // con fallback a match directo por código.
+  const muebleStock = useMemo(() => {
+    const hasStock = !!stock?._tiene_datos;
+    const aliasMap = mueblesAlias as MuebleAlias;
+    const map: Record<string, { total: StockEntry; colors: ColorStock[] }> = {};
+    for (const a of mueblesList) {
+      const key = `${a.codigo}||${a.nombre}`;
+      let variants: ColorStock[] = [];
+      const entries = aliasMap[key];
+      if (entries && entries.length) {
+        variants = entries.map((e) => {
+          const s = hasStock
+            ? (stock!.articulos[e.z] ?? { local: 0, dialcaren: 0 })
+            : { local: 0, dialcaren: 0 };
+          return { color: e.color ?? "", codigo: e.z, local: s.local || 0, dialcaren: s.dialcaren || 0 };
+        });
+      } else if (hasStock && stock!.articulos[a.codigo]) {
+        const s = stock!.articulos[a.codigo];
+        variants = [{ color: "", codigo: a.codigo, local: s.local || 0, dialcaren: s.dialcaren || 0 }];
+      }
+      const total = variants.reduce(
+        (acc, v) => ({ local: acc.local + v.local, dialcaren: acc.dialcaren + v.dialcaren }),
+        { local: 0, dialcaren: 0 }
+      );
+      map[key] = { total, colors: variants };
+    }
+    return map;
+  }, [mueblesList, stock]);
 
   const totalMostrado = filtPersas.length + filtNeutras.length + filtMuebles.length;
   const totalArticulos = alfombras.length + mueblesList.length;
@@ -528,13 +603,18 @@ export default function PreciosTab({ data, muebles, stock, showStats = true }: P
           {openMuebles && (
             <div className="card seccion-body">
               <div className="precios-list">
-                {filtMuebles.map((a) => (
-                  <MuebleRow
-                    key={`${a.codigo}|${a.nombre}`}
-                    a={a}
-                    stock={stock?._tiene_datos ? stock.articulos[a.codigo] : undefined}
-                  />
-                ))}
+                {filtMuebles.map((a) => {
+                  const key = `${a.codigo}||${a.nombre}`;
+                  return (
+                    <MuebleRow
+                      key={`${a.codigo}|${a.nombre}`}
+                      a={a}
+                      stockInfo={muebleStock[key]}
+                      open={openGroups.has(key)}
+                      onToggle={() => toggleGroup(key)}
+                    />
+                  );
+                })}
               </div>
             </div>
           )}
