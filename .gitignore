@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Archivos de importacion temporales (Excel de origen)
+data/_*.xls
+data/_*.xlsx

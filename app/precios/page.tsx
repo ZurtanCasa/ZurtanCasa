@@ -1,6 +1,7 @@
 import PreciosTab from "@/components/tabs/PreciosTab";
 import preciosRaw from "@/data/precios.json";
 import mueblesRaw from "@/data/muebles.json";
+import stockRaw from "@/data/stock.json";
 
 export const revalidate = 0;
 
@@ -16,6 +17,7 @@ export default function PreciosPage() {
         <PreciosTab
           data={preciosRaw as any}
           muebles={mueblesRaw as any}
+          stock={stockRaw as any}
           showStats={false}
         />
       </main>
