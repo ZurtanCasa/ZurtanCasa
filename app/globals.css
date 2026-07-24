@@ -259,6 +259,47 @@ tr:hover td { background: var(--bg-card-hover); }
 .stock-local     { color: var(--green); }
 .stock-dialcaren { color: var(--accent); }
 .stock-sep       { color: var(--text-muted); }
+
+/* Grupo neutra expandible + tabla de stock por color */
+.precio-group { border-bottom: 1px solid var(--border); }
+.precio-group:last-child { border-bottom: none; }
+.precio-group .precio-row { border-bottom: none; }
+.precio-row-expandable { cursor: pointer; user-select: none; }
+.precio-row-expandable:hover { background: var(--bg-card-hover); }
+.precio-caret {
+  margin-left: 6px;
+  font-size: 10px;
+  color: var(--accent);
+}
+.stock-color-table {
+  margin: 0 4px 12px 4px;
+  padding: 8px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+}
+.stock-color-row {
+  display: grid;
+  grid-template-columns: 1fr 72px 72px;
+  gap: 12px;
+  padding: 5px 0;
+  align-items: center;
+}
+.stock-color-row + .stock-color-row { border-top: 1px solid var(--border); }
+.stock-color-head {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.stock-color-head span:not(:first-child),
+.stock-color-local,
+.stock-color-dial { text-align: right; }
+.stock-color-name { color: var(--text); }
+.stock-color-local { color: var(--green); }
+.stock-color-dial  { color: var(--accent); }
 .precio-row-prices {
   text-align: right;
   flex-shrink: 0;

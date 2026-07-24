@@ -30,6 +30,13 @@ interface StockEntry {
   dialcaren: number;
 }
 
+interface ColorStock {
+  color: string;
+  codigo: string;
+  local: number;
+  dialcaren: number;
+}
+
 interface StockData {
   _tiene_datos: boolean;
   articulos: Record<string, StockEntry>;
@@ -93,6 +100,27 @@ function toNeutrasKey(nombre: string): { key: string; tipo: string; medida: stri
   const key = tipo ? `${tipo} ${medida}` : medida;
 
   return { key, tipo, medida };
+}
+
+// Extrae la etiqueta de color de una neutra (lo que distingue variantes
+// dentro de un mismo grupo tipo·medida). El color suele ir después de la
+// medida ("... 120 x 80 Grey"), a veces antes tras guión o como Qayyum.
+function extractColor(nombre: string): string {
+  const m = SIZE_RE.exec(nombre);
+  if (!m) {
+    const c = nombre.match(COLORS_RE);
+    return c ? c[0] : "Natural";
+  }
+  const before = nombre.slice(0, m.index);
+  const after  = nombre.slice(m.index + m[0].length).trim();
+  if (after) return after.replace(/\s+/g, " ");
+  const dash = before.match(/-\s*([^-]+?)\s*$/);
+  if (dash) return dash[1].trim();
+  const qay = before.match(QAYYUM_COLORS_RE);
+  if (qay) return qay[0];
+  const col = before.match(COLORS_RE);
+  if (col) return col[0];
+  return "Natural";
 }
 
 function groupNeutras(articulos: ArticuloPrecio[]): NeutrasGroup[] {
@@ -168,24 +196,59 @@ function AlfombraRow({ a }: { a: ArticuloPrecio }) {
 }
 
 // ── Subcomponente: fila de grupo neutra (tipo + medida, sin color) ─────────
-function NeutrasGroupRow({ g, stock }: { g: NeutrasGroup; stock?: StockEntry }) {
+// Si hay stock, la fila es clickeable y despliega una tabla de stock por color.
+function NeutrasGroupRow({
+  g, stock, colors, open, onToggle,
+}: {
+  g: NeutrasGroup; stock?: StockEntry;
+  colors?: ColorStock[]; open: boolean; onToggle: () => void;
+}) {
   const precioDesc = g.precio_usd * (1 - DESCUENTO);
+  const total = (stock?.local ?? 0) + (stock?.dialcaren ?? 0);
+  const expandable = !!colors && colors.length > 0 && total > 0;
+
   return (
-    <div className="precio-row">
-      <div className="precio-row-info">
-        {g.medida && (
-          <div className="precio-row-codigo">{g.medida}</div>
-        )}
-        <div className="precio-row-nombre">{g.tipo || g.key}</div>
-        {stock && <StockBadge local={stock.local} dialcaren={stock.dialcaren} />}
-      </div>
-      <div className="precio-row-prices">
-        <div className="precio-row-precio mono">{fmtUSD(g.precio_usd)}</div>
-        <div className="precio-row-descuento mono">
-          {fmtUSD(precioDesc)}{" "}
-          <span className="precio-row-pct">-20%</span>
+    <div className="precio-group">
+      <div
+        className={`precio-row${expandable ? " precio-row-expandable" : ""}`}
+        onClick={expandable ? onToggle : undefined}
+        role={expandable ? "button" : undefined}
+        aria-expanded={expandable ? open : undefined}
+      >
+        <div className="precio-row-info">
+          {g.medida && (
+            <div className="precio-row-codigo">
+              {g.medida}
+              {expandable && <span className="precio-caret">{open ? "▾" : "▸"}</span>}
+            </div>
+          )}
+          <div className="precio-row-nombre">{g.tipo || g.key}</div>
+          {stock && <StockBadge local={stock.local} dialcaren={stock.dialcaren} />}
+        </div>
+        <div className="precio-row-prices">
+          <div className="precio-row-precio mono">{fmtUSD(g.precio_usd)}</div>
+          <div className="precio-row-descuento mono">
+            {fmtUSD(precioDesc)}{" "}
+            <span className="precio-row-pct">-20%</span>
+          </div>
         </div>
       </div>
+      {expandable && open && (
+        <div className="stock-color-table">
+          <div className="stock-color-row stock-color-head">
+            <span>Color</span>
+            <span>Local</span>
+            <span>Dialcaren</span>
+          </div>
+          {colors!.map((c) => (
+            <div className="stock-color-row" key={c.codigo}>
+              <span className="stock-color-name" title={c.codigo}>{c.color}</span>
+              <span className="stock-color-local mono">{c.local}</span>
+              <span className="stock-color-dial mono">{c.dialcaren}</span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -246,6 +309,16 @@ export default function PreciosTab({ data, muebles, stock, showStats = true }: P
   const [openPersas, setOpenPersas]   = useState(true);
   const [openNeutras, setOpenNeutras] = useState(true);
   const [openMuebles, setOpenMuebles] = useState(true);
+  const [openGroups, setOpenGroups]   = useState<Set<string>>(() => new Set());
+
+  function toggleGroup(key: string) {
+    setOpenGroups((prev) => {
+      const next = new Set(prev);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
+      return next;
+    });
+  }
 
   const alfombras   = data?.articulos ?? [];
   const mueblesList = muebles?.articulos ?? [];
@@ -294,6 +367,28 @@ export default function PreciosTab({ data, muebles, stock, showStats = true }: P
       if (!map[key]) map[key] = { local: 0, dialcaren: 0 };
       map[key].local     += s.local     || 0;
       map[key].dialcaren += s.dialcaren || 0;
+    }
+    return map;
+  }, [neutrasRaw, stock]);
+
+  // Stock por color dentro de cada grupo de neutras (para la tabla desplegable)
+  const neutrasGroupColors = useMemo(() => {
+    const map: Record<string, ColorStock[]> = {};
+    const hasStock = !!stock?._tiene_datos;
+    for (const a of neutrasRaw) {
+      const { key } = toNeutrasKey(a.nombre);
+      const s = hasStock
+        ? (stock!.articulos[a.codigo] ?? { local: 0, dialcaren: 0 })
+        : { local: 0, dialcaren: 0 };
+      (map[key] ??= []).push({
+        color: extractColor(a.nombre),
+        codigo: a.codigo,
+        local: s.local || 0,
+        dialcaren: s.dialcaren || 0,
+      });
+    }
+    for (const k in map) {
+      map[k].sort((a, b) => a.color.localeCompare(b.color, "es"));
     }
     return map;
   }, [neutrasRaw, stock]);
@@ -408,7 +503,14 @@ export default function PreciosTab({ data, muebles, stock, showStats = true }: P
             <div className="card seccion-body">
               <div className="precios-list">
                 {filtNeutras.map((g) => (
-                  <NeutrasGroupRow key={g.key} g={g} stock={neutrasGroupStock[g.key]} />
+                  <NeutrasGroupRow
+                    key={g.key}
+                    g={g}
+                    stock={neutrasGroupStock[g.key]}
+                    colors={neutrasGroupColors[g.key]}
+                    open={openGroups.has(g.key)}
+                    onToggle={() => toggleGroup(g.key)}
+                  />
                 ))}
               </div>
             </div>
