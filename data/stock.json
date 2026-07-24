@@ -1,597 +1,9 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-24T18:55:12",
+  "_ultima_actualizacion": "2026-07-24T20:58:43",
   "_tiene_datos": true,
   "articulos": {
-    "HO 53164-70X300": {
-      "local": 2,
-      "dialcaren": 9
-    },
-    "GR HO 53164 320 X 54": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "90032": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "HO10162-300*400": {
-      "local": 0,
-      "dialcaren": 6
-    },
-    "1346-70200": {
-      "local": 0,
-      "dialcaren": 15
-    },
-    "2406003": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "2406008": {
-      "local": 0,
-      "dialcaren": 4
-    },
-    "HO 51030-70X300": {
-      "local": 4,
-      "dialcaren": 11
-    },
-    "2103001_200": {
-      "local": 1,
-      "dialcaren": 1
-    },
-    "HO46063-160*230": {
-      "local": 0,
-      "dialcaren": 12
-    },
-    "GR 2102003 B": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "GR 2109012_180 CONSO": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "90021": {
-      "local": 2,
-      "dialcaren": 0
-    },
-    "GR SAFARI 32": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "GR YU-200076 A": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "1346-250350": {
-      "local": 1,
-      "dialcaren": 7
-    },
-    "1346B-70300": {
-      "local": 3,
-      "dialcaren": 7
-    },
-    "HO 52730-250X250": {
-      "local": 1,
-      "dialcaren": 3
-    },
-    "HO 53164-200X300": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "HO 52730-200X400": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "HO46598-200*300": {
-      "local": 2,
-      "dialcaren": 8
-    },
-    "HO 53164-250X350": {
-      "local": 3,
-      "dialcaren": 4
-    },
-    "245414": {
-      "local": 1,
-      "dialcaren": 2
-    },
-    "2406007": {
-      "local": 0,
-      "dialcaren": 3
-    },
-    "90022": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "HO 48548-250X350": {
-      "local": 1,
-      "dialcaren": 10
-    },
-    "2102008 GRAY WASH": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "789430": {
-      "local": 3,
-      "dialcaren": 0
-    },
-    "GR 14576 NATURAL BEL": {
-      "local": 2,
-      "dialcaren": 21
-    },
-    "HO10162G-160*230": {
-      "local": 2,
-      "dialcaren": 17
-    },
-    "90007": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "1346-300400": {
-      "local": 1,
-      "dialcaren": 9
-    },
-    "HO11346-70*200 [no activo]": {
-      "local": 9,
-      "dialcaren": 1
-    },
-    "1346-160230": {
-      "local": 1,
-      "dialcaren": 7
-    },
-    "GR 203592_220 PATAS [no activo]": {
-      "local": 2,
-      "dialcaren": 0
-    },
-    "GR YU2007025 GRAY WA": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "GR1005": {
-      "local": 0,
-      "dialcaren": 9
-    },
-    "2104003": {
-      "local": 1,
-      "dialcaren": 2
-    },
-    "GR2102010B": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "245416": {
-      "local": 0,
-      "dialcaren": 9
-    },
-    "2408031": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "245403": {
-      "local": 0,
-      "dialcaren": 7
-    },
-    "789405": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "HO 51030-300X400": {
-      "local": 1,
-      "dialcaren": 2
-    },
-    "789402": {
-      "local": 0,
-      "dialcaren": 7
-    },
-    "HO11326-80*120": {
-      "local": 5,
-      "dialcaren": 0
-    },
-    "BACT4548": {
-      "local": 0,
-      "dialcaren": 17
-    },
-    "HO 52730-250X350": {
-      "local": 2,
-      "dialcaren": 1
-    },
-    "HO46063-250*350": {
-      "local": 0,
-      "dialcaren": 8
-    },
-    "HO10162-400*500": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "POLTSPIRVER": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "2406009": {
-      "local": 1,
-      "dialcaren": 3
-    },
-    "GR 2102001": {
-      "local": 2,
-      "dialcaren": 1
-    },
-    "2406006": {
-      "local": 1,
-      "dialcaren": 3
-    },
-    "90015": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "HO 52730-70X300": {
-      "local": 3,
-      "dialcaren": 10
-    },
-    "HO 48548-300X400": {
-      "local": 0,
-      "dialcaren": 6
-    },
-    "HO 51030-70X200": {
-      "local": 4,
-      "dialcaren": 9
-    },
-    "789435": {
-      "local": 3,
-      "dialcaren": 3
-    },
-    "GR 1911026": {
-      "local": 1,
-      "dialcaren": 4
-    },
-    "GR 2109012-210 NAT": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "AMETISTA-BEIGE": {
-      "local": 2,
-      "dialcaren": 2
-    },
-    "1325-250350": {
-      "local": 1,
-      "dialcaren": 6
-    },
-    "2406012": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "789404": {
-      "local": 1,
-      "dialcaren": 3
-    },
-    "HO 53164-70X200": {
-      "local": 5,
-      "dialcaren": 10
-    },
-    "2406013": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "GR 2102002-270GRAY W": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "90026": {
-      "local": 5,
-      "dialcaren": 0
-    },
-    "HO 51030-250X350": {
-      "local": 2,
-      "dialcaren": 6
-    },
-    "GR YU200076 B": {
-      "local": 2,
-      "dialcaren": 13
-    },
-    "HO 48551-160X230": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "245413": {
-      "local": 7,
-      "dialcaren": 12
-    },
-    "HO 48548-70X300": {
-      "local": 3,
-      "dialcaren": 11
-    },
-    "HO 53164-80X120": {
-      "local": 1,
-      "dialcaren": 5
-    },
-    "2406010": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "GR 2109012-210 BLACK": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "HO46598-250*350": {
-      "local": 2,
-      "dialcaren": 0
-    },
-    "POLTDUNGRIS": {
-      "local": 1,
-      "dialcaren": 0
-    },
     "POLTSPIRBEI": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "2103001_250": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "GR MESA CLYPEA PATAS": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "90033": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "HO 52730-70X200": {
-      "local": 2,
-      "dialcaren": 6
-    },
-    "90040": {
-      "local": 1,
-      "dialcaren": 1
-    },
-    "HO11346-160*230 [no activo]": {
-      "local": 1,
-      "dialcaren": 7
-    },
-    "245404": {
-      "local": 1,
-      "dialcaren": 7
-    },
-    "HO10162-200*200": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "789403": {
-      "local": 1,
-      "dialcaren": 3
-    },
-    "MESCLYPLAT": {
-      "local": 2,
-      "dialcaren": 0
-    },
-    "2406001": {
-      "local": 1,
-      "dialcaren": 1
-    },
-    "HO11326-160*230": {
-      "local": 1,
-      "dialcaren": 8
-    },
-    "GR2109003B": {
-      "local": 2,
-      "dialcaren": 5
-    },
-    "HO 51030-80X120": {
-      "local": 3,
-      "dialcaren": 19
-    },
-    "HO46598-70*200": {
-      "local": 0,
-      "dialcaren": 5
-    },
-    "YU 2007018": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "GR 2102006 GREY WASH": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "90012": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "HO 48548-80X120": {
-      "local": 3,
-      "dialcaren": 11
-    },
-    "1325-300400": {
-      "local": 1,
-      "dialcaren": 5
-    },
-    "GR 203592": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "245412": {
-      "local": 3,
-      "dialcaren": 7
-    },
-    "HO 52730-160X230": {
-      "local": 0,
-      "dialcaren": 9
-    },
-    "1325-160230": {
-      "local": 2,
-      "dialcaren": 10
-    },
-    "8001308VO": {
-      "local": 2,
-      "dialcaren": 1
-    },
-    "HO10162-70*200": {
-      "local": 1,
-      "dialcaren": 10
-    },
-    "HO10162G-70*300": {
-      "local": 0,
-      "dialcaren": 9
-    },
-    "HO10162G-200*300": {
-      "local": 0,
-      "dialcaren": 18
-    },
-    "HO 11325-230X240": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "HO 48548-200X300": {
-      "local": 2,
-      "dialcaren": 0
-    },
-    "90034": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "2406002": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "MESA-CLYPEA-NAT-220": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "GR 203592_200": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "1346B-70200": {
-      "local": 3,
-      "dialcaren": 5
-    },
-    "HO10162-160*230": {
-      "local": 0,
-      "dialcaren": 13
-    },
-    "HO10162-80*120": {
-      "local": 7,
-      "dialcaren": 12
-    },
-    "1325-80120": {
-      "local": 1,
-      "dialcaren": 9
-    },
-    "GR 2109007 BLACK": {
-      "local": 5,
-      "dialcaren": 30
-    },
-    "0162G-250250": {
-      "local": 2,
-      "dialcaren": 0
-    },
-    "HO11326-250*350": {
-      "local": 3,
-      "dialcaren": 0
-    },
-    "HO 51030-160X230": {
-      "local": 0,
-      "dialcaren": 6
-    },
-    "1346B-250350": {
-      "local": 1,
-      "dialcaren": 3
-    },
-    "HO 51030-200X300": {
-      "local": 2,
-      "dialcaren": 8
-    },
-    "2406005": {
-      "local": 0,
-      "dialcaren": 4
-    },
-    "HO10162G-250*350": {
-      "local": 0,
-      "dialcaren": 7
-    },
-    "HO 53164-300X400": {
-      "local": 0,
-      "dialcaren": 7
-    },
-    "245402": {
-      "local": 0,
-      "dialcaren": 5
-    },
-    "HO10162-250*350": {
-      "local": 0,
-      "dialcaren": 9
-    },
-    "90019": {
-      "local": 1,
-      "dialcaren": 0
-    },
-    "HO46598-160*230": {
-      "local": 0,
-      "dialcaren": 13
-    },
-    "GR2109003": {
-      "local": 1,
-      "dialcaren": 3
-    },
-    "GR 2102007": {
-      "local": 1,
-      "dialcaren": 3
-    },
-    "GR MESA COMEDOR / RE": {
-      "local": 1,
-      "dialcaren": 2
-    },
-    "1346B-160230": {
-      "local": 0,
-      "dialcaren": 7
-    },
-    "1325-70200": {
-      "local": 1,
-      "dialcaren": 2
-    },
-    "1346-200300": {
-      "local": 4,
-      "dialcaren": 5
-    },
-    "90002": {
-      "local": 1,
-      "dialcaren": 1
-    },
-    "1346B-200300": {
-      "local": 4,
-      "dialcaren": 3
-    },
-    "GR 2109007 GREY WASH": {
-      "local": 1,
-      "dialcaren": 7
-    },
-    "HO10162G-250*250": {
-      "local": 2,
-      "dialcaren": 5
-    },
-    "GR 2212071": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "789436": {
-      "local": 1,
-      "dialcaren": 2
-    },
-    "1346-80120": {
-      "local": 4,
-      "dialcaren": 15
-    },
-    "HO 48548-160X230": {
-      "local": 1,
-      "dialcaren": 12
-    },
-    "HO10162G-70*200": {
-      "local": 0,
-      "dialcaren": 6
-    },
-    "GR 200 X 200 2454-01": {
-      "local": 0,
-      "dialcaren": 3
-    },
-    "2406011": {
       "local": 1,
       "dialcaren": 0
     },
@@ -599,71 +11,231 @@
       "local": 1,
       "dialcaren": 14
     },
+    "HO 53164-70X200": {
+      "local": 5,
+      "dialcaren": 10
+    },
+    "245404": {
+      "local": 1,
+      "dialcaren": 7
+    },
     "90031": {
       "local": 2,
       "dialcaren": 0
     },
-    "90024": {
-      "local": 0,
-      "dialcaren": 1
-    },
-    "HO10162-200*300": {
-      "local": 5,
-      "dialcaren": 14
-    },
-    "245408": {
+    "HO11326-160*230": {
       "local": 1,
       "dialcaren": 8
     },
-    "GR 203592_250": {
-      "local": 0,
-      "dialcaren": 2
-    },
-    "789434": {
-      "local": 0,
-      "dialcaren": 5
-    },
-    "8001308B": {
+    "HO10162-70*200": {
       "local": 1,
-      "dialcaren": 1
+      "dialcaren": 10
     },
-    "HO 51030-250*250": {
+    "HO10162G-70*200": {
       "local": 0,
       "dialcaren": 6
     },
-    "245409": {
+    "1346-300400": {
       "local": 1,
-      "dialcaren": 3
+      "dialcaren": 9
     },
-    "0162-250250": {
+    "YU 2007022-55 GRAY W": {
+      "local": 2,
+      "dialcaren": 6
+    },
+    "1346-80120": {
+      "local": 4,
+      "dialcaren": 15
+    },
+    "HO11346-160*230 [no activo]": {
       "local": 1,
-      "dialcaren": 3
+      "dialcaren": 7
+    },
+    "GR2102010B": {
+      "local": 1,
+      "dialcaren": 0
     },
     "YU 2007022-55 BLACK": {
       "local": 2,
       "dialcaren": 1
     },
-    "2406004": {
+    "1346-200300": {
+      "local": 4,
+      "dialcaren": 5
+    },
+    "90033": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "1325-70300": {
+      "local": 1,
+      "dialcaren": 6
+    },
+    "789437": {
+      "local": 3,
+      "dialcaren": 0
+    },
+    "245408": {
+      "local": 1,
+      "dialcaren": 8
+    },
+    "HO 51030-250*250": {
+      "local": 0,
+      "dialcaren": 6
+    },
+    "GR HO 53164 320 X 54": {
       "local": 0,
       "dialcaren": 1
     },
-    "HO11326-200*300": {
+    "1325-70200": {
+      "local": 1,
+      "dialcaren": 2
+    },
+    "GR 14576 NATURAL BEL": {
+      "local": 2,
+      "dialcaren": 21
+    },
+    "HO10162G-300*400": {
+      "local": 0,
+      "dialcaren": 5
+    },
+    "HO46598-160*230": {
+      "local": 0,
+      "dialcaren": 13
+    },
+    "245409": {
+      "local": 1,
+      "dialcaren": 3
+    },
+    "90019": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "HO10162-200*200": {
       "local": 0,
       "dialcaren": 2
     },
-    "1346-70300": {
+    "GR2109003B": {
       "local": 2,
-      "dialcaren": 13
+      "dialcaren": 5
     },
-    "1346B-300400": {
+    "2406008": {
       "local": 0,
       "dialcaren": 4
     },
-    "HO46063-70*200": {
-      "local": 0,
-      "dialcaren": 4
+    "HO10162-80*120": {
+      "local": 7,
+      "dialcaren": 12
     },
-    "HO 52730-80X120": {
+    "HO 51030-70X200": {
+      "local": 4,
+      "dialcaren": 9
+    },
+    "HO10162-250*350": {
+      "local": 0,
+      "dialcaren": 9
+    },
+    "0162-250250": {
+      "local": 1,
+      "dialcaren": 3
+    },
+    "1325-200300": {
+      "local": 3,
+      "dialcaren": 2
+    },
+    "2406012": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "2102008 GRAY WASH": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "GR 2109012-210 NAT": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "HO10162G-250*250": {
+      "local": 2,
+      "dialcaren": 5
+    },
+    "GR YU2007025 GRAY WA": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "245403": {
+      "local": 0,
+      "dialcaren": 7
+    },
+    "GR 2109012-210 BLACK": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "MESA-CLYPEA-NAT-220": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "1325-160230": {
+      "local": 2,
+      "dialcaren": 10
+    },
+    "90021": {
+      "local": 2,
+      "dialcaren": 0
+    },
+    "245401": {
+      "local": 2,
+      "dialcaren": 10
+    },
+    "2406011": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "1346B-70300": {
+      "local": 3,
+      "dialcaren": 7
+    },
+    "HO46063-70*300": {
+      "local": 0,
+      "dialcaren": 5
+    },
+    "GR 2102001-220 [no activo]": {
+      "local": 1,
+      "dialcaren": 1
+    },
+    "HO46598-250*350": {
+      "local": 2,
+      "dialcaren": 0
+    },
+    "HO 53164-160X230": {
+      "local": 4,
+      "dialcaren": 0
+    },
+    "HO 51030-160X230": {
+      "local": 0,
+      "dialcaren": 6
+    },
+    "HO 48551-160X230": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "0162G-250250": {
+      "local": 2,
+      "dialcaren": 0
+    },
+    "789434": {
+      "local": 0,
+      "dialcaren": 5
+    },
+    "1007662VO": {
+      "local": 1,
+      "dialcaren": 1
+    },
+    "2406006": {
+      "local": 1,
+      "dialcaren": 3
+    },
+    "HO 52730-160X230": {
       "local": 0,
       "dialcaren": 9
     },
@@ -671,109 +243,229 @@
       "local": 8,
       "dialcaren": 0
     },
-    "HO46063-70*300": {
-      "local": 0,
-      "dialcaren": 5
-    },
-    "GR1006": {
-      "local": 6,
-      "dialcaren": 5
-    },
-    "HO10162G-80*120": {
-      "local": 2,
-      "dialcaren": 6
-    },
-    "HO10162G-300*400": {
-      "local": 0,
-      "dialcaren": 5
-    },
-    "789437": {
+    "1346B-70200": {
       "local": 3,
-      "dialcaren": 0
+      "dialcaren": 5
     },
-    "789428": {
-      "local": 0,
-      "dialcaren": 7
-    },
-    "GR GR MESA CLYPEA PA": {
+    "2406009": {
       "local": 1,
-      "dialcaren": 0
-    },
-    "245401": {
-      "local": 2,
-      "dialcaren": 10
-    },
-    "HO46598-70*300": {
-      "local": 1,
-      "dialcaren": 4
-    },
-    "HO 53164-160X230": {
-      "local": 4,
-      "dialcaren": 0
-    },
-    "HO11325-160*230 [no activo]": {
-      "local": 0,
       "dialcaren": 3
-    },
-    "1325-200300": {
-      "local": 3,
-      "dialcaren": 2
-    },
-    "245411": {
-      "local": 0,
-      "dialcaren": 11
     },
     "2007014": {
       "local": 1,
       "dialcaren": 0
     },
-    "GR 2109002 GRAY WASH": {
+    "1346-250350": {
+      "local": 1,
+      "dialcaren": 7
+    },
+    "HO11326-80*120": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "2406010": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "HO 53164-200X300": {
       "local": 0,
       "dialcaren": 2
     },
-    "789429": {
+    "HO 11325-230X240": {
       "local": 1,
-      "dialcaren": 7
+      "dialcaren": 0
     },
-    "HO 48548-70X200": {
+    "2406003": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "789404": {
+      "local": 1,
+      "dialcaren": 3
+    },
+    "AMETISTA-BEIGE": {
       "local": 2,
-      "dialcaren": 7
+      "dialcaren": 2
     },
-    "HO10162-70*300": {
-      "local": 3,
-      "dialcaren": 10
-    },
-    "GRYU200076A": {
+    "POLTSPIRVER": {
       "local": 1,
-      "dialcaren": 1
+      "dialcaren": 0
+    },
+    "GR 1911026": {
+      "local": 1,
+      "dialcaren": 4
+    },
+    "2104003": {
+      "local": 1,
+      "dialcaren": 2
     },
     "90005": {
       "local": 3,
       "dialcaren": 0
     },
-    "GR 2102001-220 [no activo]": {
+    "GR GR MESA CLYPEA PA": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "HO 51030-200X300": {
+      "local": 2,
+      "dialcaren": 8
+    },
+    "GR 2102003 B": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "HO 52730-70X300": {
+      "local": 3,
+      "dialcaren": 10
+    },
+    "1346-160230": {
+      "local": 1,
+      "dialcaren": 7
+    },
+    "HO10162-200*300": {
+      "local": 5,
+      "dialcaren": 14
+    },
+    "90024": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "1346B-300400": {
+      "local": 0,
+      "dialcaren": 4
+    },
+    "BACT4548": {
+      "local": 0,
+      "dialcaren": 17
+    },
+    "HO10162-300*400": {
+      "local": 0,
+      "dialcaren": 6
+    },
+    "GR 203592_250": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "1325-300400": {
+      "local": 1,
+      "dialcaren": 5
+    },
+    "789430": {
+      "local": 3,
+      "dialcaren": 0
+    },
+    "HO 48548-160X230": {
+      "local": 1,
+      "dialcaren": 12
+    },
+    "HO 53164-250X350": {
+      "local": 3,
+      "dialcaren": 4
+    },
+    "GR MESA CLYPEA PATAS": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "GR SAFARI 32": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "245411": {
+      "local": 0,
+      "dialcaren": 11
+    },
+    "HO 52730-80X120": {
+      "local": 0,
+      "dialcaren": 9
+    },
+    "1346-70300": {
+      "local": 2,
+      "dialcaren": 13
+    },
+    "HO10162G-70*300": {
+      "local": 0,
+      "dialcaren": 9
+    },
+    "GR MESA COMEDOR / RE": {
+      "local": 1,
+      "dialcaren": 2
+    },
+    "HO 48548-70X200": {
+      "local": 2,
+      "dialcaren": 7
+    },
+    "GR 2102006 GREY WASH": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "GR1006": {
+      "local": 6,
+      "dialcaren": 5
+    },
+    "HO 52730-250X350": {
+      "local": 2,
+      "dialcaren": 1
+    },
+    "245416": {
+      "local": 0,
+      "dialcaren": 9
+    },
+    "90032": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "2103001_200": {
       "local": 1,
       "dialcaren": 1
     },
-    "HO11326-70*300": {
-      "local": 2,
+    "1346B-160230": {
+      "local": 0,
+      "dialcaren": 7
+    },
+    "1346B-250350": {
+      "local": 1,
       "dialcaren": 3
     },
-    "1007662VO": {
-      "local": 1,
-      "dialcaren": 1
+    "MESCLYPLAT": {
+      "local": 2,
+      "dialcaren": 0
+    },
+    "GR 2212071": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "HO46063-70*200": {
+      "local": 0,
+      "dialcaren": 4
     },
     "1711001": {
       "local": 1,
       "dialcaren": 10
     },
-    "1325-70300": {
+    "1325-80120": {
       "local": 1,
-      "dialcaren": 6
+      "dialcaren": 9
     },
-    "YU 2007022-55 GRAY W": {
+    "8001308VO": {
       "local": 2,
-      "dialcaren": 6
+      "dialcaren": 1
+    },
+    "HO11326-250*350": {
+      "local": 3,
+      "dialcaren": 0
+    },
+    "90040": {
+      "local": 1,
+      "dialcaren": 1
+    },
+    "789428": {
+      "local": 0,
+      "dialcaren": 7
+    },
+    "YU 2007018": {
+      "local": 0,
+      "dialcaren": 1
     },
     "1346B-80120": {
       "local": 3,
@@ -783,8 +475,316 @@
       "local": 1,
       "dialcaren": 2
     },
+    "HO 51030-250X350": {
+      "local": 2,
+      "dialcaren": 6
+    },
+    "HO10162G-160*230": {
+      "local": 2,
+      "dialcaren": 17
+    },
+    "GR 2109007 BLACK": {
+      "local": 5,
+      "dialcaren": 30
+    },
+    "GR YU-200076 A": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "HO10162G-250*350": {
+      "local": 0,
+      "dialcaren": 7
+    },
+    "GR 203592_220 PATAS [no activo]": {
+      "local": 2,
+      "dialcaren": 0
+    },
     "GR 203592_250 PATAS [no activo]": {
       "local": 2,
+      "dialcaren": 0
+    },
+    "789429": {
+      "local": 1,
+      "dialcaren": 7
+    },
+    "HO10162-70*300": {
+      "local": 3,
+      "dialcaren": 10
+    },
+    "GR 203592": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "2103001_250": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "90022": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "GR 2102001": {
+      "local": 2,
+      "dialcaren": 1
+    },
+    "HO46598-200*300": {
+      "local": 2,
+      "dialcaren": 8
+    },
+    "HO 48548-200X300": {
+      "local": 2,
+      "dialcaren": 0
+    },
+    "HO46598-70*200": {
+      "local": 0,
+      "dialcaren": 5
+    },
+    "90002": {
+      "local": 1,
+      "dialcaren": 1
+    },
+    "GR 203592_200": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "HO10162-160*230": {
+      "local": 0,
+      "dialcaren": 13
+    },
+    "HO46063-250*350": {
+      "local": 0,
+      "dialcaren": 8
+    },
+    "90012": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "1346-70200": {
+      "local": 0,
+      "dialcaren": 15
+    },
+    "HO10162G-80*120": {
+      "local": 2,
+      "dialcaren": 6
+    },
+    "HO11346-70*200 [no activo]": {
+      "local": 9,
+      "dialcaren": 1
+    },
+    "HO 51030-80X120": {
+      "local": 3,
+      "dialcaren": 19
+    },
+    "HO 48548-70X300": {
+      "local": 3,
+      "dialcaren": 11
+    },
+    "789435": {
+      "local": 3,
+      "dialcaren": 3
+    },
+    "2406005": {
+      "local": 0,
+      "dialcaren": 4
+    },
+    "245402": {
+      "local": 0,
+      "dialcaren": 5
+    },
+    "HO 53164-300X400": {
+      "local": 0,
+      "dialcaren": 7
+    },
+    "HO 52730-70X200": {
+      "local": 2,
+      "dialcaren": 6
+    },
+    "245414": {
+      "local": 1,
+      "dialcaren": 2
+    },
+    "HO 48548-300X400": {
+      "local": 0,
+      "dialcaren": 6
+    },
+    "GR 2109007 GREY WASH": {
+      "local": 1,
+      "dialcaren": 7
+    },
+    "HO11326-70*300": {
+      "local": 2,
+      "dialcaren": 3
+    },
+    "2406004": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "HO11326-200*300": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "1346B-200300": {
+      "local": 4,
+      "dialcaren": 3
+    },
+    "GR1005": {
+      "local": 0,
+      "dialcaren": 9
+    },
+    "90007": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "90026": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "789403": {
+      "local": 1,
+      "dialcaren": 3
+    },
+    "789402": {
+      "local": 0,
+      "dialcaren": 7
+    },
+    "1325-250350": {
+      "local": 1,
+      "dialcaren": 6
+    },
+    "789405": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "2406002": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "HO 48548-80X120": {
+      "local": 3,
+      "dialcaren": 11
+    },
+    "2406001": {
+      "local": 1,
+      "dialcaren": 1
+    },
+    "HO 51030-70X300": {
+      "local": 4,
+      "dialcaren": 11
+    },
+    "GR2109003": {
+      "local": 1,
+      "dialcaren": 3
+    },
+    "GR 2102002-270GRAY W": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "2406013": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "HO 53164-80X120": {
+      "local": 1,
+      "dialcaren": 5
+    },
+    "HO11325-160*230 [no activo]": {
+      "local": 0,
+      "dialcaren": 3
+    },
+    "HO 53164-70X300": {
+      "local": 2,
+      "dialcaren": 9
+    },
+    "789436": {
+      "local": 1,
+      "dialcaren": 2
+    },
+    "GR YU200076 B": {
+      "local": 2,
+      "dialcaren": 13
+    },
+    "HO10162-400*500": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "HO 52730-250X250": {
+      "local": 1,
+      "dialcaren": 3
+    },
+    "GRYU200076A": {
+      "local": 1,
+      "dialcaren": 1
+    },
+    "8001308B": {
+      "local": 1,
+      "dialcaren": 1
+    },
+    "HO10162G-200*300": {
+      "local": 0,
+      "dialcaren": 18
+    },
+    "HO46063-160*230": {
+      "local": 0,
+      "dialcaren": 12
+    },
+    "GR 2109002 GRAY WASH": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "2406007": {
+      "local": 0,
+      "dialcaren": 3
+    },
+    "HO 48548-250X350": {
+      "local": 1,
+      "dialcaren": 10
+    },
+    "90034": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "245412": {
+      "local": 3,
+      "dialcaren": 7
+    },
+    "POLTDUNGRIS": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "GR 200 X 200 2454-01": {
+      "local": 0,
+      "dialcaren": 3
+    },
+    "GR 2102007": {
+      "local": 1,
+      "dialcaren": 3
+    },
+    "HO46598-70*300": {
+      "local": 1,
+      "dialcaren": 4
+    },
+    "HO 51030-300X400": {
+      "local": 1,
+      "dialcaren": 2
+    },
+    "HO 52730-200X400": {
+      "local": 0,
+      "dialcaren": 2
+    },
+    "90015": {
+      "local": 1,
+      "dialcaren": 0
+    },
+    "245413": {
+      "local": 7,
+      "dialcaren": 12
+    },
+    "GR 2109012_180 CONSO": {
+      "local": 0,
+      "dialcaren": 1
+    },
+    "2408031": {
+      "local": 1,
       "dialcaren": 0
     }
   }
