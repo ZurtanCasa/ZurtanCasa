@@ -111,6 +111,22 @@ def main():
     contexto = load_contexto()
     now = uy_now()
 
+    # Diagnóstico: qué cuentas publicitarias puede leer este token.
+    # Si la cuenta objetivo no está en la lista, el problema es el ID o la
+    # asignación de la cuenta al usuario del sistema (no el scope del token).
+    print(f"  [diag] Cuenta objetivo: {account_id}")
+    try:
+        acc_data = meta_get("me/adaccounts", {"fields": "account_id,name", "limit": 100})
+        accts = acc_data.get("data", [])
+        print(f"  [diag] El token puede leer {len(accts)} cuenta(s):")
+        for a in accts:
+            print(f"     - act_{a.get('account_id')} : {a.get('name')}")
+        ids = {f"act_{a.get('account_id')}" for a in accts}
+        if account_id not in ids:
+            print(f"  [diag] ⚠ {account_id} NO está entre las cuentas accesibles por el token")
+    except Exception as e:
+        print(f"  [diag] ⚠ No se pudieron listar las cuentas del token ({e}) — probable falta de ads_read")
+
     periodos = {}
     for preset in ["today", "yesterday", "last_7d", "last_30d"]:
         insights = fetch_insights(account_id, date_preset=preset)
