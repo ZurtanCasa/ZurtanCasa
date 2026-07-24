@@ -61,70 +61,59 @@ def login(page, user, password):
 
 # ─── Download helpers ─────────────────────────────────────────────────────────
 
-def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
-    print(f"    Esperando proceso (máx {timeout_sec}s)...")
-    try:
-        frame.wait_for_function(
-            "() => document.body.innerText.includes('Descargar XLS') || "
-            "      document.body.innerText.includes('Descargar') || "
-            "      document.querySelector('a[href*=\".xls\"]')",
-            timeout=timeout_sec * 1000,
-        )
-    except Exception as e:
-        print(f"    ⚠ Timeout esperando descarga: {e}")
+def _row0001_ready(frame) -> bool:
+    """True si la fila 0001 (nuestro informe recién generado) ya ofrece 'Descargar XLS'."""
+    return bool(frame.evaluate("""() => {
+        const sel = document.querySelector('select[name="vACCIONES_0001"]');
+        if (!sel) return false;
+        return Array.from(sel.options).some(o => o.text.includes('XLS'));
+    }"""))
+
+
+def wait_and_download(frame, page, dest: str, timeout_sec=420) -> bool:
+    # Nuestro informe recién generado es SIEMPRE la fila más nueva = vACCIONES_0001.
+    # Mientras procesa, esa fila solo ofrece "Eliminar"; al terminar aparece
+    # "Descargar XLS". Recargamos procesosww hasta que 0001 esté listo.
+    print(f"    Esperando que el informe (fila 0001) termine (máx {timeout_sec}s)...")
+    deadline = time.time() + timeout_sec
+    ready = False
+    while time.time() < deadline:
+        try:
+            if _row0001_ready(frame):
+                ready = True
+                break
+        except Exception:
+            pass
+        time.sleep(5)
+        # Recargar para que procesosww actualice el estado del informe
+        try:
+            frame.goto("https://www.zetasoftware.com/z.informes.procesosww",
+                       wait_until="domcontentloaded", timeout=30000)
+            time.sleep(2)
+        except Exception:
+            pass
+
+    if not ready:
+        # Diagnóstico final
+        estado = frame.evaluate("""() => {
+            const sel = document.querySelector('select[name="vACCIONES_0001"]');
+            return sel ? Array.from(sel.options).map(o => o.text) : 'sin fila 0001';
+        }""")
+        print(f"    ⚠ La fila 0001 no llegó a ofrecer XLS a tiempo. Opciones: {estado}")
         return False
 
-    # Diagnóstico: mostrar qué hay en la página
-    page_info = frame.evaluate("""() => ({
-        url:   location.href,
-        text:  document.body.innerText.slice(0, 400),
-        links: Array.from(document.querySelectorAll('a[href]'))
-                    .map(a => ({href: a.href, text: a.textContent.trim()}))
-                    .filter(l => l.href.includes('xls') || l.text.toLowerCase().includes('descargar') || l.text.includes('XLS'))
-                    .slice(0, 5),
-        selects: Array.from(document.querySelectorAll('select')).map(s => ({
-            name: s.name, options: Array.from(s.options).map(o => o.value+':'+o.text).slice(0,5)
-        })),
-    })""")
-    print(f"    [procesosww] URL={page_info.get('url','?')}")
-    print(f"    [procesosww] texto={page_info.get('text','')[:200]!r}")
-    print(f"    [procesosww] links XLS={page_info.get('links')}")
-    print(f"    [procesosww] selects={page_info.get('selects')}")
+    print(f"    ✅ Informe terminado — descargando fila 0001...")
 
-    # Estrategia 1: link directo a .xls/.xlsx
-    direct = next(
-        (l["href"] for l in page_info.get("links", [])
-         if ".xls" in l["href"].lower()),
-        None
-    )
-    if direct:
-        try:
-            with page.expect_download(timeout=60000) as dl_info:
-                frame.evaluate("(href) => window.location.href = href", direct)
-            dl_info.value.save_as(dest)
-            print(f"    ✅ Descargado vía link directo")
-            return True
-        except Exception as e:
-            print(f"    ⚠ Link directo falló: {e}")
-
-    # Estrategia 2: método probado (igual que scrape_articulos): parsear los
-    # params de execEvt desde data-gxoch0 y llamar gx.evt.execEvt() directo
-    # dentro de page.expect_download(). El combo DDO está oculto (select_option
-    # no sirve), pero execEvt dispara la descarga que Playwright captura.
-    # OJO: en stock el select con XLS NO es vACCIONES_0001 (ese es un informe
-    # viejo con solo "Eliminar") — buscamos el ÚLTIMO vACCIONES_* con XLS.
+    # Descargar la fila 0001 vía execEvt (patrón probado en scrape_articulos)
     gxoch = frame.evaluate("""() => {
-        const selects = Array.from(document.querySelectorAll('select[name^="vACCIONES_"]'));
-        let found = null;
-        for (const sel of selects) {
-            const opt = Array.from(sel.options).find(o => o.text.includes('XLS'));
-            if (opt) found = {
-                name:   sel.name,
-                value:  opt.value,
-                gxoch0: sel.getAttribute('data-gxoch0'),
-            };
-        }
-        return found;
+        const sel = document.querySelector('select[name="vACCIONES_0001"]');
+        if (!sel) return null;
+        const opt = Array.from(sel.options).find(o => o.text.includes('XLS'));
+        return {
+            name:   'vACCIONES_0001',
+            value:  opt ? opt.value : '2',
+            gxoch0: sel.getAttribute('data-gxoch0'),
+        };
     }""")
     print(f"    gxoch={gxoch}")
 
@@ -135,7 +124,7 @@ def wait_and_download(frame, page, dest: str, timeout_sec=300) -> bool:
             xls_val = gxoch["value"]
             print(f"    execEvt params: evtname={evtname!r} rowid={rowid} val={xls_val}")
             try:
-                with page.expect_download(timeout=300000) as dl_info:
+                with page.expect_download(timeout=120000) as dl_info:
                     frame.evaluate(f"""() => {{
                         const sel = document.querySelector('select[name="{gxoch['name']}"]');
                         if (!sel) return;
