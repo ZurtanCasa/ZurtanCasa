@@ -7,7 +7,10 @@ import os, json, sys, requests
 from datetime import datetime, timezone, timedelta
 
 ACCESS_TOKEN = os.environ.get("META_ACCESS_TOKEN", "")
-ACCOUNT_ID = os.environ.get("META_ACCOUNT_ID", "")
+# Cuenta publicitaria ZurtanCasa (no es secreto — inútil sin un token válido).
+# Se puede sobreescribir con la env var META_ACCOUNT_ID si algún día cambia.
+DEFAULT_ACCOUNT_ID = "553705473356406"
+ACCOUNT_ID = os.environ.get("META_ACCOUNT_ID", "") or DEFAULT_ACCOUNT_ID
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "meta_ads.json")
 CONTEXTO_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "contexto_negocio.json")
 API_BASE = "https://graph.facebook.com/v23.0"

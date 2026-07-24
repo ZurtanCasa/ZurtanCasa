@@ -71,7 +71,7 @@ jobs:
         continue-on-error: true
         env:
           META_ACCESS_TOKEN: ${{ secrets.META_ACCESS_TOKEN }}
-          META_ACCOUNT_ID: ${{ secrets.META_ACCOUNT_ID }}
+          # META_ACCOUNT_ID vive en el script (DEFAULT_ACCOUNT_ID); no es secreto.
         run: python scripts/fetch_meta.py
 
       - name: Fetch Google Ads
