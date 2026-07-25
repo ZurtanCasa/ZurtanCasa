@@ -1,41 +1,53 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-24T21:03:56.674115-03:00",
+  "_ultima_actualizacion": "2026-07-25T08:57:58.095175-03:00",
   "periodos": {
     "today": {
-      "spend": 0.52,
+      "spend": 1.32,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 2844,
-      "clicks": 1
+      "impressions": 5264,
+      "clicks": 2
     },
     "yesterday": {
-      "spend": 0,
-      "revenue_reportado": 0,
-      "roas": 0,
+      "spend": 2.46,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
       "conversiones": 0,
-      "impressions": 0,
-      "clicks": 0
+      "impressions": 10198,
+      "clicks": 9
     },
     "last_7d": {
-      "spend": 0,
-      "revenue_reportado": 0,
-      "roas": 0,
+      "spend": 2.46,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
       "conversiones": 0,
-      "impressions": 0,
-      "clicks": 0
+      "impressions": 10198,
+      "clicks": 9
     },
     "last_30d": {
-      "spend": 0,
-      "revenue_reportado": 0,
-      "roas": 0,
+      "spend": 2.46,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
       "conversiones": 0,
-      "impressions": 0,
-      "clicks": 0
+      "impressions": 10198,
+      "clicks": 9
     }
   },
-  "campanas": [],
+  "campanas": [
+    {
+      "id": "120246829530680436",
+      "nombre": "New Awareness Campaign",
+      "tipo": "alcance",
+      "spend": 2.46,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
+      "conversiones": 0,
+      "impressions": 10198,
+      "clicks": 9
+    }
+  ],
   "historico_mensual": [
     {
       "year": 2026,
@@ -100,12 +112,12 @@
     {
       "year": 2026,
       "month": 7,
-      "spend": 0.52,
+      "spend": 3.78,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 2844,
-      "clicks": 1
+      "impressions": 15462,
+      "clicks": 11
     }
   ]
 }
