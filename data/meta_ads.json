@@ -1,21 +1,21 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-26T13:54:56.958567-03:00",
+  "_ultima_actualizacion": "2026-07-26T20:50:21.172083-03:00",
   "periodos": {
     "today": {
-      "spend": 3.25,
+      "spend": 6.79,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 12419,
-      "clicks": 9
+      "impressions": 26548,
+      "clicks": 19
     },
     "yesterday": {
       "spend": 7.91,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 30099,
+      "impressions": 30108,
       "clicks": 26
     },
     "last_7d": {
@@ -23,7 +23,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 40311,
+      "impressions": 40320,
       "clicks": 35
     },
     "last_30d": {
@@ -31,7 +31,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 40311,
+      "impressions": 40320,
       "clicks": 35
     }
   },
@@ -44,7 +44,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 40311,
+      "impressions": 40320,
       "clicks": 35
     }
   ],
@@ -112,12 +112,12 @@
     {
       "year": 2026,
       "month": 7,
-      "spend": 13.62,
+      "spend": 17.16,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 52730,
-      "clicks": 44
+      "impressions": 66868,
+      "clicks": 54
     }
   ]
 }
