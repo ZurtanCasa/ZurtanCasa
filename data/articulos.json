@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-27T14:38:43.733936-03:00",
+  "_ultima_actualizacion": "2026-07-27T20:52:07.447920-03:00",
   "_rango": "01/01/24 → 27/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -393,8 +393,8 @@
           "units": 2
         },
         "Yute y Lana": {
-          "revenue_usd": 5609.89,
-          "units": 5
+          "revenue_usd": 6582.69,
+          "units": 8
         },
         "Yute y Lana Nuevas": {
           "revenue_usd": 5490.0,
@@ -847,8 +847,8 @@
       "units": 116
     },
     "Yute y Lana": {
-      "revenue_usd": 57268.16,
-      "units": 62
+      "revenue_usd": 58240.96,
+      "units": 65
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 2864.0,
@@ -887,8 +887,8 @@
     },
     {
       "categoria": "Yute y Lana",
-      "revenue_usd": 57268.16,
-      "units": 62
+      "revenue_usd": 58240.96,
+      "units": 65
     },
     {
       "categoria": "Exterior Pet",
@@ -1251,6 +1251,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Yute y Lana 200 x 300 Grey",
+      "revenue_usd": 3695.2,
+      "units": 5,
+      "categoria": "Yute y Lana"
+    },
+    {
       "articulo": "Pet Ivory 350x250",
       "revenue_usd": 3695.0,
       "units": 4,
@@ -1291,12 +1297,6 @@
       "revenue_usd": 2999.75,
       "units": 6,
       "categoria": "Yute y Lana Nuevas"
-    },
-    {
-      "articulo": "Yute y Lana 200 x 300 Grey",
-      "revenue_usd": 2958.0,
-      "units": 4,
-      "categoria": "Yute y Lana"
     },
     {
       "articulo": "afghan handwoven kilim",
@@ -2594,6 +2594,12 @@
         "categoria": "Sin categoría"
       },
       {
+        "articulo": "Yute y Lana 200 x 300 Grey",
+        "revenue_usd": 737.2,
+        "units": 1,
+        "categoria": "Yute y Lana"
+      },
+      {
         "articulo": "Butaca Velvet GRIS",
         "revenue_usd": 700.0,
         "units": 2,
@@ -2730,6 +2736,12 @@
         "revenue_usd": 237.0,
         "units": 2,
         "categoria": "Yute y Lana Diseño"
+      },
+      {
+        "articulo": "Yute y Lana 120 x 80 Grey",
+        "revenue_usd": 235.6,
+        "units": 2,
+        "categoria": "Yute y Lana"
       },
       {
         "articulo": "Yute y Lana Nuevas 70 x 200 Ivory",
