@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-28T14:22:50.861809-03:00",
+  "_ultima_actualizacion": "2026-07-28T20:47:01.405804-03:00",
   "_rango": "01/01/24 → 28/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,8 +377,8 @@
       },
       "7": {
         "Alfombra persa": {
-          "revenue_usd": 13042.52,
-          "units": 9
+          "revenue_usd": 15057.08,
+          "units": 11
         },
         "Muebles": {
           "revenue_usd": 1874.0,
@@ -393,12 +393,12 @@
           "units": 2
         },
         "Yute y Lana": {
-          "revenue_usd": 6582.69,
-          "units": 8
+          "revenue_usd": 7164.69,
+          "units": 9
         },
         "Yute y Lana Nuevas": {
-          "revenue_usd": 5490.0,
-          "units": 7
+          "revenue_usd": 5836.8,
+          "units": 10
         }
       },
       "5": {
@@ -831,8 +831,8 @@
       "units": 129
     },
     "Alfombra persa": {
-      "revenue_usd": 503481.31,
-      "units": 410
+      "revenue_usd": 505495.87,
+      "units": 412
     },
     "Sin categoría": {
       "revenue_usd": 276850.47,
@@ -847,23 +847,23 @@
       "units": 116
     },
     "Yute y Lana": {
-      "revenue_usd": 58240.96,
-      "units": 65
+      "revenue_usd": 58822.96,
+      "units": 66
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 2864.0,
       "units": 11
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 141767.58,
-      "units": 184
+      "revenue_usd": 142114.38,
+      "units": 187
     }
   },
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 503481.31,
-      "units": 410
+      "revenue_usd": 505495.87,
+      "units": 412
     },
     {
       "categoria": "Sin categoría",
@@ -872,8 +872,8 @@
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 141767.58,
-      "units": 184
+      "revenue_usd": 142114.38,
+      "units": 187
     },
     {
       "categoria": "Pura Lana",
@@ -887,8 +887,8 @@
     },
     {
       "categoria": "Yute y Lana",
-      "revenue_usd": 58240.96,
-      "units": 65
+      "revenue_usd": 58822.96,
+      "units": 66
     },
     {
       "categoria": "Exterior Pet",
@@ -910,8 +910,8 @@
     },
     {
       "articulo": "Vintage",
-      "revenue_usd": 142505.47,
-      "units": 101,
+      "revenue_usd": 144520.03,
+      "units": 103,
       "categoria": "Alfombra persa"
     },
     {
@@ -1143,6 +1143,12 @@
       "categoria": "Exterior Pet"
     },
     {
+      "articulo": "Yute y Lana 200 x 300 Natural",
+      "revenue_usd": 5858.11,
+      "units": 8,
+      "categoria": "Yute y Lana"
+    },
+    {
       "articulo": "Mesa FRIDA 220 x 100 x 75 Grey Wash",
       "revenue_usd": 5630.0,
       "units": 3,
@@ -1171,12 +1177,6 @@
       "revenue_usd": 5312.85,
       "units": 6,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Yute y Lana 200 x 300 Natural",
-      "revenue_usd": 5276.11,
-      "units": 7,
-      "categoria": "Yute y Lana"
     },
     {
       "articulo": "Pet Ivory 300x200",
@@ -2277,8 +2277,8 @@
       },
       {
         "articulo": "Vintage",
-        "revenue_usd": 21207.14,
-        "units": 20,
+        "revenue_usd": 23221.7,
+        "units": 22,
         "categoria": "Alfombra persa"
       },
       {
@@ -2462,6 +2462,12 @@
         "categoria": "Pura Lana"
       },
       {
+        "articulo": "Yute y Lana 200 x 300 Natural",
+        "revenue_usd": 1377.11,
+        "units": 2,
+        "categoria": "Yute y Lana"
+      },
+      {
         "articulo": "Afghan vintage carpet",
         "revenue_usd": 1361.72,
         "units": 3,
@@ -2570,12 +2576,6 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Yute y Lana 200 x 300 Natural",
-        "revenue_usd": 795.11,
-        "units": 1,
-        "categoria": "Yute y Lana"
-      },
-      {
         "articulo": "Mesa OLGA 200 x 100 x 75 Grey Wash",
         "revenue_usd": 760.0,
         "units": 1,
@@ -2652,6 +2652,12 @@
         "revenue_usd": 352.0,
         "units": 2,
         "categoria": "Yute y Lana Diseño"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 80 x 120 Green",
+        "revenue_usd": 346.8,
+        "units": 3,
+        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "HANDMADE PET DHURRIES - BARK 230x160",
