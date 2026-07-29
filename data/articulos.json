@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-29T14:08:48.271581-03:00",
+  "_ultima_actualizacion": "2026-07-29T20:49:27.990502-03:00",
   "_rango": "01/01/24 → 29/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -385,8 +385,8 @@
           "units": 5
         },
         "Sin categoría": {
-          "revenue_usd": 3757.5,
-          "units": 5
+          "revenue_usd": 4539.9,
+          "units": 6
         },
         "Pura Lana": {
           "revenue_usd": 2092.5,
@@ -835,8 +835,8 @@
       "units": 412
     },
     "Sin categoría": {
-      "revenue_usd": 276850.47,
-      "units": 287
+      "revenue_usd": 277632.87,
+      "units": 288
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -867,8 +867,8 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 276850.47,
-      "units": 287
+      "revenue_usd": 277632.87,
+      "units": 288
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -904,8 +904,8 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 269497.22,
-      "units": 262,
+      "revenue_usd": 270279.62,
+      "units": 263,
       "categoria": "Sin categoría"
     },
     {
@@ -2271,8 +2271,8 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 44092.07,
-        "units": 44,
+        "revenue_usd": 44874.47,
+        "units": 45,
         "categoria": "Sin categoría"
       },
       {
