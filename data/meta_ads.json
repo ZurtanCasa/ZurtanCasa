@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-29T20:50:59.291626-03:00",
+  "_ultima_actualizacion": "2026-07-30T09:24:34.176423-03:00",
   "periodos": {
     "today": {
-      "spend": 5.34,
+      "spend": 0.76,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 18377,
-      "clicks": 38
+      "impressions": 100,
+      "clicks": 8
     },
     "yesterday": {
-      "spend": 7.91,
+      "spend": 5.88,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 31954,
-      "clicks": 24
+      "impressions": 18530,
+      "clicks": 51
     },
     "last_7d": {
-      "spend": 35.35,
+      "spend": 41.23,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 140417,
-      "clicks": 106
+      "impressions": 158947,
+      "clicks": 157
     },
     "last_30d": {
-      "spend": 35.35,
+      "spend": 41.23,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 140417,
-      "clicks": 106
+      "impressions": 158947,
+      "clicks": 157
     }
   },
   "campanas": [
@@ -40,12 +40,23 @@
       "id": "120246829530680436",
       "nombre": "New Awareness Campaign",
       "tipo": "alcance",
-      "spend": 35.35,
+      "spend": 40.0,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 140417,
-      "clicks": 106
+      "impressions": 158608,
+      "clicks": 120
+    },
+    {
+      "id": "120246926567220436",
+      "nombre": "CAMPAÑA MUEBLES",
+      "tipo": "performance",
+      "spend": 1.23,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
+      "conversiones": 0,
+      "impressions": 339,
+      "clicks": 37
     }
   ],
   "historico_mensual": [
@@ -112,12 +123,12 @@
     {
       "year": 2026,
       "month": 7,
-      "spend": 40.69,
+      "spend": 41.99,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 158794,
-      "clicks": 144
+      "impressions": 159047,
+      "clicks": 165
     }
   ]
 }
