@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-30T14:20:08.101748-03:00",
+  "_ultima_actualizacion": "2026-07-30T20:49:35.095667-03:00",
   "_rango": "01/01/24 → 30/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,8 +377,8 @@
       },
       "7": {
         "Alfombra persa": {
-          "revenue_usd": 15949.08,
-          "units": 12
+          "revenue_usd": 19983.48,
+          "units": 19
         },
         "Muebles": {
           "revenue_usd": 1874.0,
@@ -831,8 +831,8 @@
       "units": 129
     },
     "Alfombra persa": {
-      "revenue_usd": 506387.87,
-      "units": 413
+      "revenue_usd": 510422.27,
+      "units": 420
     },
     "Sin categoría": {
       "revenue_usd": 277632.87,
@@ -862,8 +862,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 506387.87,
-      "units": 413
+      "revenue_usd": 510422.27,
+      "units": 420
     },
     {
       "categoria": "Sin categoría",
@@ -939,6 +939,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Kashgai",
+      "revenue_usd": 20873.49,
+      "units": 18,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Ziegler",
       "revenue_usd": 20685.0,
       "units": 7,
@@ -948,12 +954,6 @@
       "articulo": "Varni Sirdjan",
       "revenue_usd": 20310.54,
       "units": 24,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Kashgai",
-      "revenue_usd": 19599.89,
-      "units": 16,
       "categoria": "Alfombra persa"
     },
     {
@@ -1041,6 +1041,12 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
+      "articulo": "Lahore",
+      "revenue_usd": 9347.8,
+      "units": 13,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Afghan regular vintage carpet",
       "revenue_usd": 9322.0,
       "units": 5,
@@ -1117,12 +1123,6 @@
       "revenue_usd": 7119.0,
       "units": 22,
       "categoria": "Muebles"
-    },
-    {
-      "articulo": "Lahore",
-      "revenue_usd": 7031.0,
-      "units": 9,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Ghochan",
@@ -1221,6 +1221,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Gardjeh",
+      "revenue_usd": 4267.0,
+      "units": 5,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Gashgai",
       "revenue_usd": 4264.0,
       "units": 10,
@@ -1236,12 +1242,6 @@
       "articulo": "vintage",
       "revenue_usd": 4165.17,
       "units": 3,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Gardjeh",
-      "revenue_usd": 3823.0,
-      "units": 4,
       "categoria": "Alfombra persa"
     },
     {
@@ -2288,21 +2288,27 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Kashgai",
+        "revenue_usd": 9774.49,
+        "units": 7,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Patchwork",
         "revenue_usd": 9043.84,
         "units": 6,
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Kashgai",
-        "revenue_usd": 8500.89,
-        "units": 5,
-        "categoria": "Alfombra persa"
-      },
-      {
         "articulo": "Fine Vintage",
         "revenue_usd": 8290.0,
         "units": 3,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Lahore",
+        "revenue_usd": 6202.8,
+        "units": 7,
         "categoria": "Alfombra persa"
       },
       {
@@ -2316,12 +2322,6 @@
         "revenue_usd": 4650.0,
         "units": 5,
         "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "Lahore",
-        "revenue_usd": 3886.0,
-        "units": 3,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Varni Sirdjan",
@@ -2646,6 +2646,12 @@
         "revenue_usd": 496.04,
         "units": 3,
         "categoria": "Sin categoría"
+      },
+      {
+        "articulo": "Gardjeh",
+        "revenue_usd": 444.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana con Diseño 70 x 300",
