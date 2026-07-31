@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-31T14:23:28.208045-03:00",
+  "_ultima_actualizacion": "2026-07-31T20:49:28.886016-03:00",
   "_rango": "01/01/24 → 31/07/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,8 +377,8 @@
       },
       "7": {
         "Alfombra persa": {
-          "revenue_usd": 19983.48,
-          "units": 19
+          "revenue_usd": 24081.08,
+          "units": 21
         },
         "Muebles": {
           "revenue_usd": 1874.0,
@@ -831,8 +831,8 @@
       "units": 129
     },
     "Alfombra persa": {
-      "revenue_usd": 510422.27,
-      "units": 420
+      "revenue_usd": 514519.87,
+      "units": 422
     },
     "Sin categoría": {
       "revenue_usd": 277632.87,
@@ -862,8 +862,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 510422.27,
-      "units": 420
+      "revenue_usd": 514519.87,
+      "units": 422
     },
     {
       "categoria": "Sin categoría",
@@ -927,6 +927,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Varni Sirdjan",
+      "revenue_usd": 22764.14,
+      "units": 25,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Garadjeh",
       "revenue_usd": 21835.99,
       "units": 35,
@@ -948,12 +954,6 @@
       "articulo": "Ziegler",
       "revenue_usd": 20685.0,
       "units": 7,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Varni Sirdjan",
-      "revenue_usd": 20310.54,
-      "units": 24,
       "categoria": "Alfombra persa"
     },
     {
@@ -1065,6 +1065,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Ghochan",
+      "revenue_usd": 8531.0,
+      "units": 9,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 300 x 400 Charcol",
       "revenue_usd": 8273.0,
       "units": 5,
@@ -1123,12 +1129,6 @@
       "revenue_usd": 7119.0,
       "units": 22,
       "categoria": "Muebles"
-    },
-    {
-      "articulo": "Ghochan",
-      "revenue_usd": 6887.0,
-      "units": 8,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Silla OTTO Teak Cuero Negro 50 x 52 x 85",
@@ -2312,6 +2312,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Varni Sirdjan",
+        "revenue_usd": 5928.59,
+        "units": 4,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Yute y Lana 400 x 500 Natural",
         "revenue_usd": 5076.0,
         "units": 2,
@@ -2322,12 +2328,6 @@
         "revenue_usd": 4650.0,
         "units": 5,
         "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "Varni Sirdjan",
-        "revenue_usd": 3474.99,
-        "units": 3,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
@@ -2430,6 +2430,12 @@
         "revenue_usd": 1647.5,
         "units": 2,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Ghochan",
+        "revenue_usd": 1644.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana Nuevas 300 x 400 Ivory",
@@ -2772,12 +2778,6 @@
         "revenue_usd": 164.0,
         "units": 1,
         "categoria": "Sin categoría"
-      },
-      {
-        "articulo": "Ghochan",
-        "revenue_usd": 0.0,
-        "units": 0,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 70 x 300 Grey",
