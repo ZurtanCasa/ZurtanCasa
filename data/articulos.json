@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-01T08:55:15.950257-03:00",
+  "_ultima_actualizacion": "2026-08-01T13:54:38.525997-03:00",
   "_rango": "01/01/24 → 01/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -496,6 +496,12 @@
           "revenue_usd": 412.8,
           "units": 1
         }
+      },
+      "8": {
+        "Pura Lana": {
+          "revenue_usd": 172.0,
+          "units": 1
+        }
       }
     },
     "2024": {
@@ -843,8 +849,8 @@
       "units": 42
     },
     "Pura Lana": {
-      "revenue_usd": 83550.51,
-      "units": 116
+      "revenue_usd": 83722.51,
+      "units": 117
     },
     "Yute y Lana": {
       "revenue_usd": 58822.96,
@@ -877,8 +883,8 @@
     },
     {
       "categoria": "Pura Lana",
-      "revenue_usd": 83550.51,
-      "units": 116
+      "revenue_usd": 83722.51,
+      "units": 117
     },
     {
       "categoria": "Muebles",
@@ -2766,6 +2772,12 @@
         "revenue_usd": 196.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Pura Lana Clay 080x160",
+        "revenue_usd": 172.0,
+        "units": 1,
+        "categoria": "Pura Lana"
       },
       {
         "articulo": "NERO ALTA 30 x 30 x 45 Negra",
