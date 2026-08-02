@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-01T20:47:05.230016-03:00",
+  "_ultima_actualizacion": "2026-08-02T08:54:37.469343-03:00",
   "periodos": {
     "today": {
-      "spend": 4.32,
+      "spend": 0.52,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 670,
-      "clicks": 68
+      "impressions": 81,
+      "clicks": 8
     },
     "yesterday": {
-      "spend": 3.67,
+      "spend": 4.87,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 599,
-      "clicks": 53
+      "impressions": 791,
+      "clicks": 89
     },
     "last_7d": {
-      "spend": 46.02,
+      "spend": 42.98,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 150024,
-      "clicks": 268
+      "impressions": 120705,
+      "clicks": 331
     },
     "last_30d": {
-      "spend": 48.48,
+      "spend": 53.35,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 160236,
-      "clicks": 277
+      "impressions": 161027,
+      "clicks": 366
     }
   },
   "campanas": [
@@ -51,12 +51,12 @@
       "id": "120246926567220436",
       "nombre": "CAMPAÑA MUEBLES",
       "tipo": "performance",
-      "spend": 8.48,
+      "spend": 13.35,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1628,
-      "clicks": 157
+      "impressions": 2419,
+      "clicks": 246
     }
   ],
   "historico_mensual": [
@@ -133,12 +133,12 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 4.32,
+      "spend": 5.39,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 670,
-      "clicks": 68
+      "impressions": 872,
+      "clicks": 97
     }
   ]
 }
