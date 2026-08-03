@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-03T10:33:03.765682-03:00",
+  "_ultima_actualizacion": "2026-08-03T14:46:11.108953-03:00",
   "_rango": "01/01/24 → 03/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -501,6 +501,10 @@
         "Pura Lana": {
           "revenue_usd": 172.0,
           "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 196.0,
+          "units": 1
         }
       }
     },
@@ -861,8 +865,8 @@
       "units": 11
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 142114.38,
-      "units": 187
+      "revenue_usd": 142310.38,
+      "units": 188
     }
   },
   "top_categorias": [
@@ -878,8 +882,8 @@
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 142114.38,
-      "units": 187
+      "revenue_usd": 142310.38,
+      "units": 188
     },
     {
       "categoria": "Pura Lana",
@@ -2766,6 +2770,12 @@
         "revenue_usd": 235.6,
         "units": 2,
         "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 70 x 200 Charcol",
+        "revenue_usd": 196.0,
+        "units": 1,
+        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "Yute y Lana Nuevas 70 x 200 Ivory",
