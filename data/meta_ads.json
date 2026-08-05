@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-05T14:28:12.465495-03:00",
+  "_ultima_actualizacion": "2026-08-05T20:48:31.915608-03:00",
   "periodos": {
     "today": {
-      "spend": 2.53,
+      "spend": 3.33,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 346,
-      "clicks": 18
+      "impressions": 451,
+      "clicks": 26
     },
     "yesterday": {
       "spend": 4.77,
@@ -133,12 +133,12 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 22.01,
+      "spend": 22.81,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 2922,
-      "clicks": 306
+      "impressions": 3027,
+      "clicks": 314
     }
   ]
 }
