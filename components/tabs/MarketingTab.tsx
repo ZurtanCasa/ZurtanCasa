@@ -86,12 +86,13 @@ export default function MarketingTab({ meta, locales }: { meta: any; locales: an
   );
   const cac = clientesMes > 0 ? monthSpend / clientesMes : null;
 
-  // ── Perfil y seguidores (IG + FB) ──
-  const profileVisits = (p.profile_visits_ig || 0) + (p.profile_visits_fb || 0);
+  // ── Perfil y seguidores ──
+  // Visitas al perfil: solo Instagram (Facebook eliminó esa métrica de páginas).
+  const profileVisits = p.profile_visits_ig || 0;
   const newFollowers = (p.new_followers_ig || 0) + (p.new_followers_fb || 0);
   const organicPend = !mkt._ig_ok && !mkt._fb_ok;
-  const socialSub = (ig?: number, fb?: number) =>
-    organicPend ? "IG/FB pendiente" : `IG ${ig || 0} · FB ${fb || 0}`;
+  const followersSub = organicPend ? "IG/FB pendiente" : `IG ${p.new_followers_ig || 0} · FB ${p.new_followers_fb || 0}`;
+  const visitsSub = organicPend ? "IG/FB pendiente" : "Instagram";
 
   const ads = [...mkt.por_anuncio].sort(
     (a, b) => (b.periodos[period]?.impressions || 0) - (a.periodos[period]?.impressions || 0)
@@ -137,8 +138,8 @@ export default function MarketingTab({ meta, locales }: { meta: any; locales: an
           <MetricCard label="Impresiones" value={fmtNum(p.impressions || 0)} />
           <MetricCard label="Alcance" value={fmtNum(p.reach || 0)} />
           <MetricCard label="CPM" value={fmtUSD(p.cpm || 0)} sub="costo por mil impresiones" />
-          <MetricCard label="Visitas al perfil" value={fmtNum(profileVisits)} sub={socialSub(p.profile_visits_ig, p.profile_visits_fb)} />
-          <MetricCard label="Seguidores nuevos" value={fmtNum(newFollowers)} sub={socialSub(p.new_followers_ig, p.new_followers_fb)} />
+          <MetricCard label="Visitas al perfil" value={fmtNum(profileVisits)} sub={visitsSub} />
+          <MetricCard label="Seguidores nuevos" value={fmtNum(newFollowers)} sub={followersSub} />
           <MetricCard label="Gasto" value={fmtUSD(p.spend || 0)} />
         </div>
         {organicPend && (

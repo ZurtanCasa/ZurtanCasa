@@ -187,42 +187,54 @@ def discover_pages(token):
     return out
 
 def fetch_fb_metrics(page_id, page_token, ranges):
-    """Facebook Page: visitas (page_views_total) y seguidores nuevos (page_fan_adds)."""
+    """Facebook Page: seguidores nuevos (page_daily_follows).
+    Nota: page_views_total y page_fan_adds fueron eliminadas en v23; Facebook ya
+    no expone 'visitas al perfil' de página, así que ese valor queda en 0."""
     res = {}
     for label, (since, until) in ranges.items():
         vals = {"profile_visits": 0, "new_followers": 0}
         try:
             data = meta_get(f"{page_id}/insights", {
-                "metric": "page_views_total,page_fan_adds",
+                "metric": "page_daily_follows",
                 "period": "day", "since": since, "until": until,
                 "access_token": page_token,
             })
             for m in data.get("data", []):
-                total = sum(int(_num(v.get("value"))) for v in m.get("values", []))
-                if m.get("name") == "page_views_total":
-                    vals["profile_visits"] = total
-                elif m.get("name") == "page_fan_adds":
-                    vals["new_followers"] = total
+                if m.get("name") == "page_daily_follows":
+                    vals["new_followers"] = sum(int(_num(v.get("value"))) for v in m.get("values", []))
         except Exception as e:
-            print(f"  [fb] {label}: {e}", file=sys.stderr)
+            print(f"  [fb] page_daily_follows {label}: {e}", file=sys.stderr)
         res[label] = vals
     return res
 
 def fetch_ig_metrics(ig_id, ranges):
-    """Instagram: visitas al perfil (profile_views) y seguidores nuevos (follower_count)."""
+    """Instagram: visitas al perfil (profile_views con metric_type=total_value)
+    y seguidores nuevos (follower_count, serie temporal)."""
     res = {}
     for label, (since, until) in ranges.items():
         vals = {"profile_visits": 0, "new_followers": 0}
-        for metric, key in [("profile_views", "profile_visits"), ("follower_count", "new_followers")]:
-            try:
-                data = meta_get(f"{ig_id}/insights", {
-                    "metric": metric, "period": "day", "since": since, "until": until,
-                })
-                for m in data.get("data", []):
-                    if m.get("name") == metric:
-                        vals[key] = sum(int(_num(v.get("value"))) for v in m.get("values", []))
-            except Exception as e:
-                print(f"  [ig] {metric} {label}: {e}", file=sys.stderr)
+        # profile_views: requiere metric_type=total_value → devuelve total del rango
+        try:
+            data = meta_get(f"{ig_id}/insights", {
+                "metric": "profile_views", "metric_type": "total_value",
+                "period": "day", "since": since, "until": until,
+            })
+            for m in data.get("data", []):
+                if m.get("name") == "profile_views":
+                    tv = m.get("total_value") or {}
+                    vals["profile_visits"] = int(_num(tv.get("value")))
+        except Exception as e:
+            print(f"  [ig] profile_views {label}: {e}", file=sys.stderr)
+        # follower_count: serie temporal → sumar el rango
+        try:
+            data = meta_get(f"{ig_id}/insights", {
+                "metric": "follower_count", "period": "day", "since": since, "until": until,
+            })
+            for m in data.get("data", []):
+                if m.get("name") == "follower_count":
+                    vals["new_followers"] = sum(int(_num(v.get("value"))) for v in m.get("values", []))
+        except Exception as e:
+            print(f"  [ig] follower_count {label}: {e}", file=sys.stderr)
         res[label] = vals
     return res
 
