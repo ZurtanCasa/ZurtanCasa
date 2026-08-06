@@ -25,7 +25,7 @@ def normalize_account_id(raw):
 
 def meta_get(endpoint, params=None):
     p = params or {}
-    p["access_token"] = ACCESS_TOKEN
+    p.setdefault("access_token", ACCESS_TOKEN)  # permite override con page token
     resp = requests.get(f"{API_BASE}/{endpoint}", params=p)
     if not resp.ok:
         # Surface el error real de la Graph API (token expirado, sin permisos, cuenta inválida…)
@@ -102,6 +102,167 @@ def fetch_campaigns_period(account_id, date_preset, contexto):
     campanas.sort(key=lambda c: c["spend"], reverse=True)
     return campanas
 
+# ─── Métricas de Marketing (impresiones, alcance, CPM, perfil, seguidores) ──────
+
+PERIODS = ["today", "yesterday", "last_7d", "last_30d"]
+
+def _num(x):
+    try:
+        return float(x)
+    except (TypeError, ValueError):
+        return 0.0
+
+def _cpm(spend, impressions):
+    return round(spend / impressions * 1000, 2) if impressions else 0.0
+
+def insights_query(obj, fields, level=None, date_preset=None, since=None, until=None, extra=None):
+    params = {"fields": fields, "limit": 300}
+    if level:
+        params["level"] = level
+    if date_preset:
+        params["date_preset"] = date_preset
+    elif since and until:
+        params["time_range"] = json.dumps({"since": since, "until": until})
+    if extra:
+        params.update(extra)
+    return meta_get(f"{obj}/insights", params).get("data", [])
+
+def build_ad_metrics(account_id):
+    """Métricas de anuncios por período: cuenta agregada + desglose por anuncio."""
+    periodos = {}
+    por_anuncio = {}  # ad_id -> {id, nombre, periodos}
+    for preset in PERIODS:
+        # Agregado de cuenta
+        acc = insights_query(account_id, "impressions,reach,spend,clicks",
+                             level="account", date_preset=preset)
+        if acc:
+            a = acc[0]
+            imp = int(_num(a.get("impressions")))
+            sp = _num(a.get("spend"))
+            periodos[preset] = {
+                "impressions": imp,
+                "reach": int(_num(a.get("reach"))),
+                "spend": round(sp, 2),
+                "cpm": _cpm(sp, imp),
+                "clicks": int(_num(a.get("clicks"))),
+            }
+        else:
+            periodos[preset] = {"impressions": 0, "reach": 0, "spend": 0, "cpm": 0, "clicks": 0}
+
+        # Desglose por anuncio
+        for ad in insights_query(account_id, "ad_id,ad_name,impressions,reach,spend",
+                                 level="ad", date_preset=preset):
+            aid = ad.get("ad_id") or ad.get("ad_name", "?")
+            imp = int(_num(ad.get("impressions")))
+            sp = _num(ad.get("spend"))
+            e = por_anuncio.setdefault(aid, {"id": aid, "nombre": ad.get("ad_name", ""), "periodos": {}})
+            e["periodos"][preset] = {
+                "impressions": imp,
+                "reach": int(_num(ad.get("reach"))),
+                "spend": round(sp, 2),
+                "cpm": _cpm(sp, imp),
+            }
+    return periodos, list(por_anuncio.values())
+
+def _period_ranges(now):
+    d = now.date()
+    return {
+        "today":     (d.isoformat(), d.isoformat()),
+        "yesterday": ((d - timedelta(days=1)).isoformat(), (d - timedelta(days=1)).isoformat()),
+        "last_7d":   ((d - timedelta(days=6)).isoformat(), d.isoformat()),
+        "last_30d":  ((d - timedelta(days=29)).isoformat(), d.isoformat()),
+    }
+
+def discover_pages(token):
+    """Páginas de FB accesibles + su cuenta de Instagram vinculada."""
+    data = meta_get("me/accounts", {"fields": "id,name,access_token,instagram_business_account"})
+    out = []
+    for p in data.get("data", []):
+        out.append({
+            "page_id": p.get("id"),
+            "page_name": p.get("name"),
+            "page_token": p.get("access_token"),
+            "ig_id": (p.get("instagram_business_account") or {}).get("id"),
+        })
+    return out
+
+def fetch_fb_metrics(page_id, page_token, ranges):
+    """Facebook Page: visitas (page_views_total) y seguidores nuevos (page_fan_adds)."""
+    res = {}
+    for label, (since, until) in ranges.items():
+        vals = {"profile_visits": 0, "new_followers": 0}
+        try:
+            data = meta_get(f"{page_id}/insights", {
+                "metric": "page_views_total,page_fan_adds",
+                "period": "day", "since": since, "until": until,
+                "access_token": page_token,
+            })
+            for m in data.get("data", []):
+                total = sum(int(_num(v.get("value"))) for v in m.get("values", []))
+                if m.get("name") == "page_views_total":
+                    vals["profile_visits"] = total
+                elif m.get("name") == "page_fan_adds":
+                    vals["new_followers"] = total
+        except Exception as e:
+            print(f"  [fb] {label}: {e}", file=sys.stderr)
+        res[label] = vals
+    return res
+
+def fetch_ig_metrics(ig_id, ranges):
+    """Instagram: visitas al perfil (profile_views) y seguidores nuevos (follower_count)."""
+    res = {}
+    for label, (since, until) in ranges.items():
+        vals = {"profile_visits": 0, "new_followers": 0}
+        for metric, key in [("profile_views", "profile_visits"), ("follower_count", "new_followers")]:
+            try:
+                data = meta_get(f"{ig_id}/insights", {
+                    "metric": metric, "period": "day", "since": since, "until": until,
+                })
+                for m in data.get("data", []):
+                    if m.get("name") == metric:
+                        vals[key] = sum(int(_num(v.get("value"))) for v in m.get("values", []))
+            except Exception as e:
+                print(f"  [ig] {metric} {label}: {e}", file=sys.stderr)
+        res[label] = vals
+    return res
+
+def build_marketing(account_id, now):
+    periodos, por_anuncio = build_ad_metrics(account_id)
+    marketing = {"periodos": periodos, "por_anuncio": por_anuncio, "_ig_ok": False, "_fb_ok": False}
+
+    # Métricas orgánicas (perfil + seguidores) de FB e IG — requieren scopes de páginas/IG
+    ranges = _period_ranges(now)
+    fb_tot = {k: {"profile_visits": 0, "new_followers": 0} for k in ranges}
+    ig_tot = {k: {"profile_visits": 0, "new_followers": 0} for k in ranges}
+    try:
+        pages = discover_pages(ACCESS_TOKEN)
+        print(f"  [organic] {len(pages)} página(s) accesible(s)")
+        for pg in pages:
+            if pg["page_id"] and pg["page_token"]:
+                fb = fetch_fb_metrics(pg["page_id"], pg["page_token"], ranges)
+                for k in ranges:
+                    fb_tot[k]["profile_visits"] += fb[k]["profile_visits"]
+                    fb_tot[k]["new_followers"] += fb[k]["new_followers"]
+                marketing["_fb_ok"] = True
+            if pg["ig_id"]:
+                ig = fetch_ig_metrics(pg["ig_id"], ranges)
+                for k in ranges:
+                    ig_tot[k]["profile_visits"] += ig[k]["profile_visits"]
+                    ig_tot[k]["new_followers"] += ig[k]["new_followers"]
+                marketing["_ig_ok"] = True
+    except Exception as e:
+        print(f"  [organic] no disponible ({e}) — regenerar token con permisos de páginas/IG", file=sys.stderr)
+
+    for k in ranges:
+        marketing["periodos"].setdefault(k, {})
+        marketing["periodos"][k]["profile_visits_fb"] = fb_tot[k]["profile_visits"]
+        marketing["periodos"][k]["profile_visits_ig"] = ig_tot[k]["profile_visits"]
+        marketing["periodos"][k]["new_followers_fb"]  = fb_tot[k]["new_followers"]
+        marketing["periodos"][k]["new_followers_ig"]  = ig_tot[k]["new_followers"]
+    return marketing
+
+# ─── Main ───────────────────────────────────────────────────────────────────────
+
 def main():
     if not ACCESS_TOKEN or not ACCOUNT_ID:
         print("ERROR: META_ACCESS_TOKEN y META_ACCOUNT_ID requeridos", file=sys.stderr)
@@ -156,6 +317,16 @@ def main():
         historico.append({"year": now.year, "month": month, **parsed})
     print(f"  Histórico {len(historico)} meses OK")
 
+    # Métricas de marketing (impresiones, alcance, CPM, perfil, seguidores).
+    # En try/except: si falla, no rompe el resto de meta_ads.json.
+    marketing = None
+    try:
+        marketing = build_marketing(account_id, now)
+        pa = len(marketing.get("por_anuncio", []))
+        print(f"  Marketing OK — {pa} anuncio(s) | IG={marketing['_ig_ok']} FB={marketing['_fb_ok']}")
+    except Exception as e:
+        print(f"  ⚠ Marketing metrics fallaron: {e}", file=sys.stderr)
+
     output = {
         "_status": "ok",
         "_ultima_actualizacion": now.isoformat(),
@@ -163,6 +334,8 @@ def main():
         "campanas": campanas,
         "historico_mensual": historico,
     }
+    if marketing:
+        output["marketing"] = marketing
 
     with open(DATA_PATH, "w") as f:
         json.dump(output, f, indent=2, ensure_ascii=False)

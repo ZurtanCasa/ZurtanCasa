@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
 
-export type TabId = "ceo" | "chat" | "performance" | "ads" | "roas" | "funnel" | "locales" | "articulos" | "precios" | "plan" | "tutorial";
+export type TabId = "ceo" | "chat" | "performance" | "ads" | "marketing" | "roas" | "funnel" | "locales" | "articulos" | "precios" | "plan" | "tutorial";
 
 const TABS: { id: TabId; icon: string; label: string }[] = [
   { id: "ceo", icon: "🧠", label: "CEO" },
   { id: "chat", icon: "💬", label: "Chat" },
   { id: "performance", icon: "📊", label: "Performance" },
   { id: "ads", icon: "📈", label: "Ads Daily" },
+  { id: "marketing", icon: "📣", label: "Métricas de Marketing" },
   { id: "roas", icon: "🎯", label: "ROAS Triangulado" },
   { id: "funnel", icon: "🛒", label: "Funnel & ML" },
   { id: "locales", icon: "🏪", label: "Locales Físicos" },

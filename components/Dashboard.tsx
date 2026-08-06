@@ -5,6 +5,7 @@ import CeoTab from "./tabs/CeoTab";
 import ChatTab from "./tabs/ChatTab";
 import PerformanceTab from "./tabs/PerformanceTab";
 import AdsTab from "./tabs/AdsTab";
+import MarketingTab from "./tabs/MarketingTab";
 import RoasTab from "./tabs/RoasTab";
 import FunnelTab from "./tabs/FunnelTab";
 import LocalesTab from "./tabs/LocalesTab";
@@ -34,6 +35,7 @@ const TAB_TITLES: Record<TabId, string> = {
   chat: "💬 Chat con el CEO",
   performance: "📊 Performance",
   ads: "📈 Ads Daily",
+  marketing: "📣 Métricas de Marketing",
   roas: "🎯 ROAS Triangulado",
   funnel: "🛒 Funnel & Marketplace",
   locales: "🏪 Locales Físicos",
@@ -118,6 +120,9 @@ export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, lo
           )}
           {tab === "ads" && (
             <AdsTab metaData={meta} googleData={google} />
+          )}
+          {tab === "marketing" && (
+            <MarketingTab meta={meta} locales={locales} />
           )}
           {tab === "roas" && (
             <RoasTab
