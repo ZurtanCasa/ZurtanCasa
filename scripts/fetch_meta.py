@@ -238,9 +238,19 @@ def fetch_ig_metrics(ig_id, ranges):
         res[label] = vals
     return res
 
+def fetch_ig_total_followers(ig_id):
+    """Total actual de seguidores de la cuenta de IG (número absoluto)."""
+    try:
+        data = meta_get(ig_id, {"fields": "followers_count"})
+        return int(_num(data.get("followers_count")))
+    except Exception as e:
+        print(f"  [ig] followers_count total: {e}", file=sys.stderr)
+        return None
+
 def build_marketing(account_id, now):
     periodos, por_anuncio = build_ad_metrics(account_id)
-    marketing = {"periodos": periodos, "por_anuncio": por_anuncio, "_ig_ok": False, "_fb_ok": False}
+    marketing = {"periodos": periodos, "por_anuncio": por_anuncio,
+                 "_ig_ok": False, "_fb_ok": False, "ig_followers_total": None}
 
     # Métricas orgánicas (perfil + seguidores) de FB e IG — requieren scopes de páginas/IG
     ranges = _period_ranges(now)
@@ -261,6 +271,8 @@ def build_marketing(account_id, now):
                 for k in ranges:
                     ig_tot[k]["profile_visits"] += ig[k]["profile_visits"]
                     ig_tot[k]["new_followers"] += ig[k]["new_followers"]
+                if marketing["ig_followers_total"] is None:
+                    marketing["ig_followers_total"] = fetch_ig_total_followers(pg["ig_id"])
                 marketing["_ig_ok"] = True
     except Exception as e:
         print(f"  [organic] no disponible ({e}) — regenerar token con permisos de páginas/IG", file=sys.stderr)

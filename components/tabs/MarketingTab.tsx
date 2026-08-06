@@ -33,6 +33,7 @@ interface Marketing {
   por_anuncio: AdRow[];
   _ig_ok: boolean;
   _fb_ok: boolean;
+  ig_followers_total?: number | null;
 }
 
 function fmtUSD(n: number) {
@@ -54,7 +55,7 @@ function MetricCard({ label, value, sub }: { label: string; value: string; sub?:
 }
 
 export default function MarketingTab({ meta, locales }: { meta: any; locales: any }) {
-  const [period, setPeriod] = useState<Period>("today");
+  const [period, setPeriod] = useState<Period>("last_30d");
   const mkt: Marketing | undefined = meta?.marketing;
 
   if (!mkt || meta?._status === "sin_datos") {
@@ -91,8 +92,9 @@ export default function MarketingTab({ meta, locales }: { meta: any; locales: an
   const profileVisits = p.profile_visits_ig || 0;
   const newFollowers = (p.new_followers_ig || 0) + (p.new_followers_fb || 0);
   const organicPend = !mkt._ig_ok && !mkt._fb_ok;
-  const followersSub = organicPend ? "IG/FB pendiente" : `IG ${p.new_followers_ig || 0} · FB ${p.new_followers_fb || 0}`;
+  const followersSub = organicPend ? "IG/FB pendiente" : `IG ${p.new_followers_ig || 0} · FB ${p.new_followers_fb || 0} (brutos)`;
   const visitsSub = organicPend ? "IG/FB pendiente" : "Instagram";
+  const igFollowersTotal = mkt.ig_followers_total ?? null;
 
   const ads = [...mkt.por_anuncio].sort(
     (a, b) => (b.periodos[period]?.impressions || 0) - (a.periodos[period]?.impressions || 0)
@@ -116,6 +118,11 @@ export default function MarketingTab({ meta, locales }: { meta: any; locales: an
           <div className="card-title">Inversión del mes</div>
           <div className="card-value mono">{fmtUSD(monthSpend)}</div>
           <div className="card-sub">Gasto en Meta Ads</div>
+        </div>
+        <div className="card">
+          <div className="card-title">Total seguidores IG</div>
+          <div className="card-value mono">{igFollowersTotal !== null ? fmtNum(igFollowersTotal) : "—"}</div>
+          <div className="card-sub">@zurtancasa · total actual</div>
         </div>
       </div>
 
