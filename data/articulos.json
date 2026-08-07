@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-07T13:46:08.594074-03:00",
+  "_ultima_actualizacion": "2026-08-07T20:22:12.131665-03:00",
   "_rango": "01/01/24 → 07/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -483,21 +483,11 @@
           "units": 2
         }
       },
-      "1": {
-        "Sin categoría": {
-          "revenue_usd": 2120.0,
-          "units": 1
-        },
-        "Pura Lana": {
-          "revenue_usd": 262.4,
+      "8": {
+        "Alfombra persa": {
+          "revenue_usd": 688.0,
           "units": 2
         },
-        "Yute y Lana Nuevas": {
-          "revenue_usd": 412.8,
-          "units": 1
-        }
-      },
-      "8": {
         "Sin categoría": {
           "revenue_usd": 3605.0,
           "units": 3
@@ -512,6 +502,20 @@
         },
         "Yute y Lana Nuevas": {
           "revenue_usd": 196.0,
+          "units": 1
+        }
+      },
+      "1": {
+        "Sin categoría": {
+          "revenue_usd": 2120.0,
+          "units": 1
+        },
+        "Pura Lana": {
+          "revenue_usd": 262.4,
+          "units": 2
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 412.8,
           "units": 1
         }
       }
@@ -849,8 +853,8 @@
       "units": 130
     },
     "Alfombra persa": {
-      "revenue_usd": 514519.87,
-      "units": 422
+      "revenue_usd": 515207.87,
+      "units": 424
     },
     "Sin categoría": {
       "revenue_usd": 281237.87,
@@ -880,8 +884,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 514519.87,
-      "units": 422
+      "revenue_usd": 515207.87,
+      "units": 424
     },
     {
       "categoria": "Sin categoría",
@@ -928,8 +932,8 @@
     },
     {
       "articulo": "Vintage",
-      "revenue_usd": 145412.03,
-      "units": 104,
+      "revenue_usd": 145890.43,
+      "units": 105,
       "categoria": "Alfombra persa"
     },
     {
@@ -1233,6 +1237,12 @@
       "categoria": "Yute y Lana"
     },
     {
+      "articulo": "Gashgai",
+      "revenue_usd": 4473.6,
+      "units": 11,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Kelim Afshari",
       "revenue_usd": 4302.0,
       "units": 2,
@@ -1242,12 +1252,6 @@
       "articulo": "Gardjeh",
       "revenue_usd": 4267.0,
       "units": 5,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Gashgai",
-      "revenue_usd": 4264.0,
-      "units": 10,
       "categoria": "Alfombra persa"
     },
     {
@@ -2295,8 +2299,8 @@
       },
       {
         "articulo": "Vintage",
-        "revenue_usd": 24113.7,
-        "units": 23,
+        "revenue_usd": 24592.1,
+        "units": 24,
         "categoria": "Alfombra persa"
       },
       {
@@ -2784,6 +2788,12 @@
         "revenue_usd": 235.6,
         "units": 2,
         "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Gashgai",
+        "revenue_usd": 209.6,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana Nuevas 70 x 200 Charcol",
