@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-04T20:50:57.443492-03:00",
-  "_rango": "01/01/24 → 04/08/26",
+  "_ultima_actualizacion": "2026-08-06T22:39:57.222613-03:00",
+  "_rango": "01/01/24 → 06/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -498,8 +498,16 @@
         }
       },
       "8": {
+        "Sin categoría": {
+          "revenue_usd": 3605.0,
+          "units": 3
+        },
         "Pura Lana": {
           "revenue_usd": 172.0,
+          "units": 1
+        },
+        "Muebles": {
+          "revenue_usd": 1530.0,
           "units": 1
         },
         "Yute y Lana Nuevas": {
@@ -837,16 +845,16 @@
   },
   "por_categoria_total": {
     "Muebles": {
-      "revenue_usd": 63237.35,
-      "units": 129
+      "revenue_usd": 64767.35,
+      "units": 130
     },
     "Alfombra persa": {
       "revenue_usd": 514519.87,
       "units": 422
     },
     "Sin categoría": {
-      "revenue_usd": 277632.87,
-      "units": 288
+      "revenue_usd": 281237.87,
+      "units": 291
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -877,8 +885,8 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 277632.87,
-      "units": 288
+      "revenue_usd": 281237.87,
+      "units": 291
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -892,8 +900,8 @@
     },
     {
       "categoria": "Muebles",
-      "revenue_usd": 63237.35,
-      "units": 129
+      "revenue_usd": 64767.35,
+      "units": 130
     },
     {
       "categoria": "Yute y Lana",
@@ -914,8 +922,8 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 270279.62,
-      "units": 263,
+      "revenue_usd": 273734.62,
+      "units": 265,
       "categoria": "Sin categoría"
     },
     {
@@ -2281,8 +2289,8 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 44874.47,
-        "units": 45,
+        "revenue_usd": 48329.47,
+        "units": 47,
         "categoria": "Sin categoría"
       },
       {
@@ -2458,6 +2466,12 @@
         "revenue_usd": 1544.0,
         "units": 1,
         "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Table Archie 300 Natural 300 X 120 X 75",
+        "revenue_usd": 1530.0,
+        "units": 1,
+        "categoria": "Muebles"
       },
       {
         "articulo": "Yute y Lana Nuevas 160 x 230 Ivory",
@@ -2798,6 +2812,12 @@
       {
         "articulo": "Yute Redonda con Diseño 150 x 150",
         "revenue_usd": 164.0,
+        "units": 1,
+        "categoria": "Sin categoría"
+      },
+      {
+        "articulo": "Yute Redonda 180 x 180",
+        "revenue_usd": 150.0,
         "units": 1,
         "categoria": "Sin categoría"
       },
