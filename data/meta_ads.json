@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-08T13:27:04.010367-03:00",
+  "_ultima_actualizacion": "2026-08-08T20:17:21.312042-03:00",
   "periodos": {
     "today": {
-      "spend": 2.08,
+      "spend": 4.04,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 170,
-      "clicks": 27
+      "impressions": 335,
+      "clicks": 41
     },
     "yesterday": {
       "spend": 4.67,
@@ -133,22 +133,22 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 35.87,
+      "spend": 37.83,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 4259,
-      "clicks": 432
+      "impressions": 4424,
+      "clicks": 446
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 170,
-        "reach": 130,
-        "spend": 2.08,
-        "cpm": 12.24,
-        "clicks": 27,
+        "impressions": 335,
+        "reach": 255,
+        "spend": 4.04,
+        "cpm": 12.06,
+        "clicks": 41,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -174,7 +174,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 1549,
         "new_followers_fb": 4,
-        "new_followers_ig": 168
+        "new_followers_ig": 176
       },
       "last_30d": {
         "impressions": 164325,
@@ -185,7 +185,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 5324,
         "new_followers_fb": 14,
-        "new_followers_ig": 699
+        "new_followers_ig": 707
       }
     },
     "por_anuncio": [
@@ -194,10 +194,10 @@
         "nombre": "Flyer",
         "periodos": {
           "today": {
-            "impressions": 170,
-            "reach": 128,
-            "spend": 2.08,
-            "cpm": 12.24
+            "impressions": 325,
+            "reach": 250,
+            "spend": 4.01,
+            "cpm": 12.34
           },
           "yesterday": {
             "impressions": 292,
@@ -223,6 +223,12 @@
         "id": "120246927679130436",
         "nombre": "Carrousel",
         "periodos": {
+          "today": {
+            "impressions": 10,
+            "reach": 10,
+            "spend": 0.03,
+            "cpm": 3.0
+          },
           "yesterday": {
             "impressions": 7,
             "reach": 6,
