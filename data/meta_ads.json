@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-09T08:28:48.923769-03:00",
+  "_ultima_actualizacion": "2026-08-09T13:35:03.867352-03:00",
   "periodos": {
     "today": {
-      "spend": 0.08,
+      "spend": 1.06,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 15,
-      "clicks": 0
+      "impressions": 124,
+      "clicks": 4
     },
     "yesterday": {
       "spend": 4.38,
@@ -133,22 +133,22 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 38.25,
+      "spend": 39.23,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 4490,
-      "clicks": 448
+      "impressions": 4599,
+      "clicks": 452
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 15,
-        "reach": 14,
-        "spend": 0.08,
-        "cpm": 5.33,
-        "clicks": 0,
+        "impressions": 124,
+        "reach": 104,
+        "spend": 1.06,
+        "cpm": 8.55,
+        "clicks": 4,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -194,10 +194,10 @@
         "nombre": "Flyer",
         "periodos": {
           "today": {
-            "impressions": 15,
-            "reach": 14,
-            "spend": 0.08,
-            "cpm": 5.33
+            "impressions": 124,
+            "reach": 98,
+            "spend": 1.06,
+            "cpm": 8.55
           },
           "yesterday": {
             "impressions": 376,
@@ -276,6 +276,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43121
+    "ig_followers_total": 43123
   }
 }
