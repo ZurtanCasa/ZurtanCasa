@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-11T08:38:15.977547-03:00",
+  "_ultima_actualizacion": "2026-08-11T13:54:28.078226-03:00",
   "periodos": {
     "today": {
-      "spend": 1.55,
+      "spend": 3.18,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 91,
-      "clicks": 12
+      "impressions": 219,
+      "clicks": 24
     },
     "yesterday": {
       "spend": 5.87,
@@ -133,22 +133,22 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 50.44,
+      "spend": 52.07,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 5604,
-      "clicks": 557
+      "impressions": 5732,
+      "clicks": 569
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 91,
-        "reach": 72,
-        "spend": 1.55,
-        "cpm": 17.03,
-        "clicks": 12,
+        "impressions": 219,
+        "reach": 171,
+        "spend": 3.18,
+        "cpm": 14.52,
+        "clicks": 24,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 1,
@@ -194,10 +194,10 @@
         "nombre": "Flyer",
         "periodos": {
           "today": {
-            "impressions": 40,
-            "reach": 34,
-            "spend": 1.12,
-            "cpm": 28.0
+            "impressions": 87,
+            "reach": 74,
+            "spend": 1.73,
+            "cpm": 19.89
           },
           "yesterday": {
             "impressions": 335,
@@ -224,10 +224,10 @@
         "nombre": "Video",
         "periodos": {
           "today": {
-            "impressions": 51,
-            "reach": 46,
-            "spend": 0.43,
-            "cpm": 8.43
+            "impressions": 132,
+            "reach": 113,
+            "spend": 1.45,
+            "cpm": 10.98
           },
           "yesterday": {
             "impressions": 212,
@@ -288,6 +288,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43135
+    "ig_followers_total": 43131
   }
 }
