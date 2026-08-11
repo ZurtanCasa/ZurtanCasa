@@ -1,7 +1,7 @@
 {
   "_status": "sin_datos",
   "_instrucciones": "Completar sueldo_mensual_usd y comision_pct de cada persona con el valor real, o editar desde el dashboard (pestaña Panel Financiero > Sueldos). La comisión se calcula sobre las ventas totales de la empresa (netas de IVA). Cuando los montos sean reales, cambiar _status a 'ok'.",
-  "_ultima_actualizacion": "2026-08-11T21:20:22.036Z",
+  "_ultima_actualizacion": "2026-08-11T21:20:27.509Z",
   "moneda": "USD",
   "cargas_sociales_pct": 0,
   "empleados": [
@@ -17,7 +17,7 @@
       "rol": "Marketing - Vendedor",
       "sueldo_mensual_usd": 700,
       "comision_pct": 0.01,
-      "activo": false
+      "activo": true
     },
     {
       "nombre": "Clara",
