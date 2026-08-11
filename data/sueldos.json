@@ -1,0 +1,15 @@
+{
+  "_status": "sin_datos",
+  "_instrucciones": "Completar sueldo_mensual_usd de cada persona con el valor real. Podés agregar/quitar empleados. Cuando los montos sean reales, cambiar _status a 'ok'.",
+  "_ultima_actualizacion": null,
+  "moneda": "USD",
+  "cargas_sociales_pct": 0,
+  "empleados": [
+    { "nombre": "Gerardo", "rol": "Dueño", "sueldo_mensual_usd": 0, "activo": true },
+    { "nombre": "Ignacio", "rol": "Marketing - Vendedor", "sueldo_mensual_usd": 0, "activo": true },
+    { "nombre": "Clara", "rol": "Community Manager - Vendedora", "sueldo_mensual_usd": 0, "activo": true },
+    { "nombre": "Maria", "rol": "Vendedora", "sueldo_mensual_usd": 0, "activo": true },
+    { "nombre": "Nicolas", "rol": "Mejora continua, sistemas, logística", "sueldo_mensual_usd": 0, "activo": true }
+  ],
+  "historico_mensual": []
+}

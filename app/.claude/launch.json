@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "zurtancasa-dashboard",
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "cd /Users/nachorbz/Documents/GitHub/ZurtanCasa && npm run dev"],
+      "port": 3000
+    }
+  ]
+}

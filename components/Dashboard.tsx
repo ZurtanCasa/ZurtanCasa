@@ -12,6 +12,7 @@ import LocalesTab from "./tabs/LocalesTab";
 import PlanTab from "./tabs/PlanTab";
 import ArticulosTab from "./tabs/ArticulosTab";
 import PreciosTab from "./tabs/PreciosTab";
+import FinancieroTab from "./tabs/FinancieroTab";
 import TutorialTab from "./tabs/TutorialTab";
 
 interface DashboardProps {
@@ -28,6 +29,8 @@ interface DashboardProps {
   plan: any;
   contexto: any;
   ceo: any;
+  sueldos: any;
+  gastos: any;
 }
 
 const TAB_TITLES: Record<TabId, string> = {
@@ -42,6 +45,7 @@ const TAB_TITLES: Record<TabId, string> = {
   articulos: "📦 Artículos & Categorías",
   precios: "💰 Lista de Precios",
   plan: "📅 Plan vs Real",
+  financiero: "🏦 Panel Financiero",
   tutorial: "📚 Tutorial",
 };
 
@@ -72,7 +76,7 @@ function buildPlanRows(plan: any, shopify: any, ml: any, locales: any): any[] {
   });
 }
 
-export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, articulos, precios, muebles, stock, plan, contexto, ceo }: DashboardProps) {
+export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, articulos, precios, muebles, stock, plan, contexto, ceo, sueldos, gastos }: DashboardProps) {
   const [tab, setTab] = useState<TabId>("ceo");
 
   const lastRefresh = ceo._ultima_actualizacion || shopify._ultima_actualizacion || null;
@@ -157,6 +161,18 @@ export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, lo
               targetAnual={plan.target_anual_usd || 0}
               realAnual={realAnualYTD}
               sinDatos={sinDatosAll}
+            />
+          )}
+          {tab === "financiero" && (
+            <FinancieroTab
+              shopify={shopify}
+              mercadolibre={mercadolibre}
+              locales={locales}
+              meta={meta}
+              google={google}
+              sueldos={sueldos}
+              gastos={gastos}
+              contexto={contexto}
             />
           )}
           {tab === "tutorial" && <TutorialTab />}

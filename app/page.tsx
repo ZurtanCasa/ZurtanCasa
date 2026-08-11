@@ -12,6 +12,8 @@ import articulosRaw from "@/data/articulos.json";
 import preciosRaw from "@/data/precios.json";
 import mueblesRaw from "@/data/muebles.json";
 import stockRaw   from "@/data/stock.json";
+import sueldosRaw from "@/data/sueldos.json";
+import gastosRaw  from "@/data/gastos.json";
 
 export const revalidate = 0;
 
@@ -28,6 +30,8 @@ export default function Home() {
       precios={preciosRaw as any}
       muebles={mueblesRaw as any}
       stock={stockRaw as any}
+      sueldos={sueldosRaw as any}
+      gastos={gastosRaw as any}
       plan={planRaw as any}
       contexto={contextoRaw as any}
       ceo={ceoRaw as any}
