@@ -1,7 +1,7 @@
 {
   "_status": "ok",
   "_instrucciones": "Completar monto_mensual_usd de cada categoría con el valor real. Podés agregar/quitar categorías. Cuando los montos sean reales, cambiar _status a 'ok'.",
-  "_ultima_actualizacion": "2026-08-11T21:28:46.259Z",
+  "_ultima_actualizacion": "2026-08-11T21:29:14.654Z",
   "moneda": "USD",
   "categorias": [
     {
@@ -21,7 +21,7 @@
       "monto_mensual_usd": 0
     },
     {
-      "categoria": "Logística / Envíos",
+      "categoria": "Jorge Fletes",
       "monto_mensual_usd": 0
     },
     {
