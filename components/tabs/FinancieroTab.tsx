@@ -28,6 +28,7 @@ interface Empleado {
   nombre: string;
   rol: string;
   sueldo_mensual_usd: number;
+  comision_pct: number;
   activo: boolean;
 }
 
@@ -48,6 +49,7 @@ interface Gastos {
 }
 
 interface Embarque {
+  id?: string;
   descripcion: string;
   proveedor: string;
   categoria: string;
@@ -94,6 +96,49 @@ function fmtFecha(f: string | null): string {
   return new Date(f).toLocaleDateString("es-UY", { timeZone: "America/Montevideo" });
 }
 
+async function apiCall(url: string, options: RequestInit = {}) {
+  const res = await fetch(url, {
+    ...options,
+    headers: { "Content-Type": "application/json", ...(options.headers || {}) },
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || "Error inesperado");
+  return data;
+}
+
+const AVISO_REDEPLOY = "Guardado. Puede tardar 1-2 minutos en reflejarse en el resto del dashboard mientras se redeploya.";
+
+function useEstadoGuardado() {
+  const [guardando, setGuardando] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [aviso, setAviso] = useState<string | null>(null);
+
+  async function ejecutar(fn: () => Promise<void>) {
+    setGuardando(true);
+    setError(null);
+    try {
+      await fn();
+      setAviso(AVISO_REDEPLOY);
+      setTimeout(() => setAviso(null), 6000);
+    } catch (err: any) {
+      setError(err.message || "Error inesperado");
+    } finally {
+      setGuardando(false);
+    }
+  }
+
+  return { guardando, error, aviso, ejecutar, setError };
+}
+
+function AvisosGuardado({ error, aviso }: { error: string | null; aviso: string | null }) {
+  return (
+    <>
+      {error && <div className="banner danger mb-16">⚠️ {error}</div>}
+      {aviso && <div className="banner success mb-16">✅ {aviso}</div>}
+    </>
+  );
+}
+
 export default function FinancieroTab({ shopify, mercadolibre, locales, meta, google, sueldos, gastos, inversiones, contexto }: Props) {
   const [subTab, setSubTab] = useState<SubTab>("resumen");
 
@@ -105,17 +150,16 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
   const totalVentasBruto = webRevenue + mlRevenueBruto + localesRevenue;
   const totalVentasNeto = webRevenue + mlRevenueNeto + localesRevenue;
 
+  const factorIva = contexto?.factor_iva_real ?? 0.22;
+  const ventasNetasIva = totalVentasBruto / (1 + factorIva);
+
   const empleadosActivos = (sueldos?.empleados || []).filter((e) => e.activo);
   const totalSueldos = empleadosActivos.reduce((s, e) => s + (e.sueldo_mensual_usd || 0), 0);
+  const totalComisiones = empleadosActivos.reduce((s, e) => s + ventasNetasIva * (e.comision_pct || 0), 0);
   const cargasSociales = totalSueldos * (sueldos?.cargas_sociales_pct || 0);
-  const totalCostoLaboral = totalSueldos + cargasSociales;
+  const totalCostoLaboral = totalSueldos + totalComisiones + cargasSociales;
 
   const totalGastos = (gastos?.categorias || []).reduce((s, c) => s + (c.monto_mensual_usd || 0), 0);
-
-  const embarques = inversiones?.embarques || [];
-  const totalInvertido = embarques.reduce((s, e) => s + (e.monto_usd || 0), 0);
-  const totalRecibido = embarques.filter((e) => e.estado === "recibido").reduce((s, e) => s + (e.monto_usd || 0), 0);
-  const totalPendiente = totalInvertido - totalRecibido;
 
   const spendMeta = meta?.periodos?.last_30d?.spend || 0;
   const spendGoogle = google?.periodos?.last_30d?.spend || 0;
@@ -127,7 +171,7 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
   const sinDatosVentas = shopify?._status === "sin_datos" && mercadolibre?._status === "sin_datos" && locales?._status === "sin_datos";
   const sinDatosSueldos = sueldos?._status === "sin_datos";
   const sinDatosGastos = gastos?._status === "sin_datos";
-  const sinDatosInversiones = embarques.length === 0;
+  const sinDatosInversiones = (inversiones?.embarques || []).length === 0;
 
   return (
     <div>
@@ -171,31 +215,22 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
 
       {subTab === "sueldos" && (
         <SueldosSection
-          empleados={sueldos?.empleados || []}
-          cargasSocialesPct={sueldos?.cargas_sociales_pct || 0}
-          totalSueldos={totalSueldos}
-          cargasSociales={cargasSociales}
-          totalCostoLaboral={totalCostoLaboral}
+          empleadosIniciales={sueldos?.empleados || []}
+          cargasSocialesPctInicial={sueldos?.cargas_sociales_pct || 0}
+          ventasNetasIva={ventasNetasIva}
           sinDatos={sinDatosSueldos}
         />
       )}
 
       {subTab === "gastos" && (
         <GastosSection
-          categorias={gastos?.categorias || []}
-          totalGastos={totalGastos}
+          categoriasIniciales={gastos?.categorias || []}
           sinDatos={sinDatosGastos}
         />
       )}
 
       {subTab === "inversiones" && (
-        <InversionesSection
-          embarques={embarques}
-          totalInvertido={totalInvertido}
-          totalRecibido={totalRecibido}
-          totalPendiente={totalPendiente}
-          sinDatos={sinDatosInversiones}
-        />
+        <InversionesSection embarquesIniciales={inversiones?.embarques || []} sinDatos={sinDatosInversiones} />
       )}
     </div>
   );
@@ -227,7 +262,7 @@ function ResumenSection({
     <div>
       {(sinDatosSueldos || sinDatosGastos) && (
         <div className="banner info mb-16">
-          ℹ️ Completá <span className="mono">data/sueldos.json</span> y <span className="mono">data/gastos.json</span> con los montos reales para que este resumen sea preciso.
+          ℹ️ Completá los sueldos y gastos reales en las pestañas correspondientes para que este resumen sea preciso.
         </div>
       )}
 
@@ -240,7 +275,7 @@ function ResumenSection({
               <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(totalVentasNeto)}</td>
             </tr>
             <tr>
-              <td>− Sueldos y cargas sociales</td>
+              <td>− Sueldos, comisiones y cargas sociales</td>
               <td className="td-mono text-red" style={{ textAlign: "right" }}>−{fmtUSD(totalCostoLaboral)}</td>
             </tr>
             <tr>
@@ -353,33 +388,115 @@ function VentasSection({
   );
 }
 
+interface EmpleadoForm {
+  nombre: string;
+  rol: string;
+  sueldo_mensual_usd: string;
+  comision_pct: string;
+  activo: boolean;
+}
+
+const EMPLEADO_FORM_VACIO: EmpleadoForm = { nombre: "", rol: "", sueldo_mensual_usd: "", comision_pct: "0", activo: true };
+
+function empleadoAForm(e: Empleado): EmpleadoForm {
+  return {
+    nombre: e.nombre,
+    rol: e.rol,
+    sueldo_mensual_usd: String(e.sueldo_mensual_usd),
+    comision_pct: String((e.comision_pct || 0) * 100),
+    activo: e.activo,
+  };
+}
+
 function SueldosSection({
-  empleados,
-  cargasSocialesPct,
-  totalSueldos,
-  cargasSociales,
-  totalCostoLaboral,
+  empleadosIniciales,
+  cargasSocialesPctInicial,
+  ventasNetasIva,
   sinDatos,
 }: {
-  empleados: Empleado[];
-  cargasSocialesPct: number;
-  totalSueldos: number;
-  cargasSociales: number;
-  totalCostoLaboral: number;
+  empleadosIniciales: Empleado[];
+  cargasSocialesPctInicial: number;
+  ventasNetasIva: number;
   sinDatos: boolean;
 }) {
+  const [empleados, setEmpleados] = useState<Empleado[]>(empleadosIniciales);
+  const [cargasSocialesPct, setCargasSocialesPct] = useState(cargasSocialesPctInicial);
+  const [cargasSocialesInput, setCargasSocialesInput] = useState(String(cargasSocialesPctInicial * 100));
+  const [mostrarForm, setMostrarForm] = useState(false);
+  const [form, setForm] = useState<EmpleadoForm>(EMPLEADO_FORM_VACIO);
+  const [editando, setEditando] = useState<string | null>(null);
+  const { guardando, error, aviso, ejecutar, setError } = useEstadoGuardado();
+
+  const totalSueldos = empleados.filter((e) => e.activo).reduce((s, e) => s + (e.sueldo_mensual_usd || 0), 0);
+  const totalComisiones = empleados.filter((e) => e.activo).reduce((s, e) => s + ventasNetasIva * (e.comision_pct || 0), 0);
+  const cargasSociales = totalSueldos * cargasSocialesPct;
+  const totalCostoLaboral = totalSueldos + totalComisiones + cargasSociales;
+
+  function parseForm(f: EmpleadoForm) {
+    const sueldo = parseFloat(f.sueldo_mensual_usd);
+    const comisionPct = parseFloat(f.comision_pct || "0");
+    if (!f.nombre.trim()) throw new Error("Falta el nombre.");
+    if (!f.rol.trim()) throw new Error("Falta el rol.");
+    if (Number.isNaN(sueldo) || sueldo < 0) throw new Error("Sueldo inválido.");
+    if (Number.isNaN(comisionPct) || comisionPct < 0) throw new Error("Comisión inválida.");
+    return { nombre: f.nombre.trim(), rol: f.rol.trim(), sueldo_mensual_usd: sueldo, comision_pct: comisionPct / 100, activo: f.activo };
+  }
+
+  async function handleAgregar(e: React.FormEvent) {
+    e.preventDefault();
+    await ejecutar(async () => {
+      const parsed = parseForm(form);
+      const data = await apiCall("/api/sueldos", { method: "POST", body: JSON.stringify(parsed) });
+      setEmpleados((prev) => [...prev, data.empleado]);
+      setForm(EMPLEADO_FORM_VACIO);
+      setMostrarForm(false);
+    });
+  }
+
+  async function handleGuardarEdicion(nombreOriginal: string, f: EmpleadoForm) {
+    await ejecutar(async () => {
+      const parsed = parseForm(f);
+      const data = await apiCall("/api/sueldos", { method: "PATCH", body: JSON.stringify({ nombre_original: nombreOriginal, ...parsed }) });
+      setEmpleados((prev) => prev.map((emp) => (emp.nombre === nombreOriginal ? data.empleado : emp)));
+      setEditando(null);
+    });
+  }
+
+  async function handleEliminar(nombre: string) {
+    if (!confirm(`¿Eliminar a ${nombre}?`)) return;
+    await ejecutar(async () => {
+      await apiCall(`/api/sueldos?nombre=${encodeURIComponent(nombre)}`, { method: "DELETE" });
+      setEmpleados((prev) => prev.filter((e) => e.nombre !== nombre));
+    });
+  }
+
+  async function handleGuardarCargasSociales() {
+    await ejecutar(async () => {
+      const pct = parseFloat(cargasSocialesInput);
+      if (Number.isNaN(pct) || pct < 0) throw new Error("Cargas sociales inválidas.");
+      await apiCall("/api/sueldos", { method: "POST", body: JSON.stringify({ resource: "config", cargas_sociales_pct: pct / 100 }) });
+      setCargasSocialesPct(pct / 100);
+    });
+  }
+
   return (
     <div>
       {sinDatos && (
         <div className="banner info mb-16">
-          ℹ️ Los sueldos están en 0. Editá <span className="mono">data/sueldos.json</span> con los montos reales de cada persona (y opcionalmente <span className="mono">cargas_sociales_pct</span>).
+          ℹ️ Los sueldos están en 0. Usá el formulario de abajo para cargar los montos reales.
         </div>
       )}
+
+      <AvisosGuardado error={error} aviso={aviso} />
 
       <div className="kpi-grid mb-16">
         <div className="card card-sm">
           <div className="card-title">Total sueldos</div>
           <div className="card-value-sm mono">{fmtUSD(totalSueldos)}</div>
+        </div>
+        <div className="card card-sm">
+          <div className="card-title">Total comisiones</div>
+          <div className="card-value-sm mono">{fmtUSD(totalComisiones)}</div>
         </div>
         <div className="card card-sm">
           <div className="card-title">Cargas sociales ({fmtPct(cargasSocialesPct)})</div>
@@ -391,8 +508,56 @@ function SueldosSection({
         </div>
       </div>
 
-      <div className="card section">
-        <div className="card-title mb-12">Equipo — sueldo mensual</div>
+      <div className="card section mb-16">
+        <div className="card-title mb-12">Cargas sociales</div>
+        <div className="form-grid" style={{ maxWidth: 320 }}>
+          <div>
+            <label className="form-label">Cargas sociales sobre sueldo fijo (%)</label>
+            <input
+              className="form-input mono"
+              type="number"
+              step="0.1"
+              min="0"
+              value={cargasSocialesInput}
+              onChange={(e) => setCargasSocialesInput(e.target.value)}
+            />
+          </div>
+          <button className="btn btn-primary" disabled={guardando} onClick={handleGuardarCargasSociales}>
+            Guardar
+          </button>
+        </div>
+      </div>
+
+      <div className="card section mb-16">
+        <div className="flex-between mb-12">
+          <div className="card-title" style={{ marginBottom: 0 }}>Equipo</div>
+          <button className="btn btn-sm" onClick={() => { setMostrarForm(!mostrarForm); setError(null); }}>
+            {mostrarForm ? "Cancelar" : "+ Agregar empleado"}
+          </button>
+        </div>
+
+        {mostrarForm && (
+          <form onSubmit={handleAgregar} className="form-grid mb-16" style={{ paddingBottom: 12, borderBottom: "1px solid var(--border)" }}>
+            <div>
+              <label className="form-label">Nombre</label>
+              <input className="form-input" value={form.nombre} onChange={(e) => setForm({ ...form, nombre: e.target.value })} required />
+            </div>
+            <div>
+              <label className="form-label">Rol</label>
+              <input className="form-input" value={form.rol} onChange={(e) => setForm({ ...form, rol: e.target.value })} required />
+            </div>
+            <div>
+              <label className="form-label">Sueldo mensual (USD)</label>
+              <input className="form-input mono" type="number" step="1" min="0" value={form.sueldo_mensual_usd} onChange={(e) => setForm({ ...form, sueldo_mensual_usd: e.target.value })} required />
+            </div>
+            <div>
+              <label className="form-label">Comisión sobre ventas (%)</label>
+              <input className="form-input mono" type="number" step="0.1" min="0" value={form.comision_pct} onChange={(e) => setForm({ ...form, comision_pct: e.target.value })} />
+            </div>
+            <button className="btn btn-primary" type="submit" disabled={guardando}>Guardar</button>
+          </form>
+        )}
+
         <div className="table-wrap">
           <table>
             <thead>
@@ -400,19 +565,44 @@ function SueldosSection({
                 <th>Nombre</th>
                 <th>Rol</th>
                 <th style={{ textAlign: "right" }}>Sueldo mensual</th>
+                <th style={{ textAlign: "right" }}>Comisión %</th>
+                <th style={{ textAlign: "right" }}>Comisión ganada</th>
+                <th style={{ textAlign: "right" }}>Total</th>
+                <th>Activo</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
-              {empleados.map((e) => (
-                <tr key={e.nombre}>
-                  <td>{e.nombre}</td>
-                  <td className="text-dim">{e.rol}</td>
-                  <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(e.sueldo_mensual_usd)}</td>
-                </tr>
+              {empleados.map((emp) => (
+                editando === emp.nombre ? (
+                  <FilaEmpleadoEdicion
+                    key={emp.nombre}
+                    empleado={emp}
+                    guardando={guardando}
+                    onCancelar={() => setEditando(null)}
+                    onGuardar={(f) => handleGuardarEdicion(emp.nombre, f)}
+                  />
+                ) : (
+                  <tr key={emp.nombre}>
+                    <td>{emp.nombre}</td>
+                    <td className="text-dim">{emp.rol}</td>
+                    <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(emp.sueldo_mensual_usd)}</td>
+                    <td className="td-mono" style={{ textAlign: "right" }}>{fmtPct(emp.comision_pct || 0)}</td>
+                    <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(emp.activo ? ventasNetasIva * (emp.comision_pct || 0) : 0)}</td>
+                    <td className="td-mono fw-600" style={{ textAlign: "right" }}>{fmtUSD(emp.activo ? emp.sueldo_mensual_usd + ventasNetasIva * (emp.comision_pct || 0) : 0)}</td>
+                    <td>{emp.activo ? "Sí" : "No"}</td>
+                    <td>
+                      <div className="btn-row">
+                        <button className="icon-btn" title="Editar" onClick={() => setEditando(emp.nombre)}>✏️</button>
+                        <button className="icon-btn" title="Eliminar" onClick={() => handleEliminar(emp.nombre)}>🗑️</button>
+                      </div>
+                    </td>
+                  </tr>
+                )
               ))}
               {empleados.length === 0 && (
                 <tr>
-                  <td colSpan={3} className="text-muted">Sin empleados cargados.</td>
+                  <td colSpan={8} className="text-muted">Sin empleados cargados.</td>
                 </tr>
               )}
             </tbody>
@@ -423,22 +613,107 @@ function SueldosSection({
   );
 }
 
+function FilaEmpleadoEdicion({
+  empleado,
+  guardando,
+  onCancelar,
+  onGuardar,
+}: {
+  empleado: Empleado;
+  guardando: boolean;
+  onCancelar: () => void;
+  onGuardar: (f: EmpleadoForm) => void;
+}) {
+  const [f, setF] = useState<EmpleadoForm>(empleadoAForm(empleado));
+
+  return (
+    <tr>
+      <td><input className="form-input" value={f.nombre} onChange={(e) => setF({ ...f, nombre: e.target.value })} /></td>
+      <td><input className="form-input" value={f.rol} onChange={(e) => setF({ ...f, rol: e.target.value })} /></td>
+      <td><input className="form-input mono" type="number" style={{ textAlign: "right" }} value={f.sueldo_mensual_usd} onChange={(e) => setF({ ...f, sueldo_mensual_usd: e.target.value })} /></td>
+      <td><input className="form-input mono" type="number" step="0.1" style={{ textAlign: "right" }} value={f.comision_pct} onChange={(e) => setF({ ...f, comision_pct: e.target.value })} /></td>
+      <td className="text-muted" style={{ textAlign: "right" }}>—</td>
+      <td className="text-muted" style={{ textAlign: "right" }}>—</td>
+      <td>
+        <input type="checkbox" checked={f.activo} onChange={(e) => setF({ ...f, activo: e.target.checked })} />
+      </td>
+      <td>
+        <div className="btn-row">
+          <button className="icon-btn" title="Guardar" disabled={guardando} onClick={() => onGuardar(f)}>💾</button>
+          <button className="icon-btn" title="Cancelar" disabled={guardando} onClick={onCancelar}>✖️</button>
+        </div>
+      </td>
+    </tr>
+  );
+}
+
+interface GastoForm {
+  categoria: string;
+  monto_mensual_usd: string;
+}
+
+const GASTO_FORM_VACIO: GastoForm = { categoria: "", monto_mensual_usd: "" };
+
 function GastosSection({
-  categorias,
-  totalGastos,
+  categoriasIniciales,
   sinDatos,
 }: {
-  categorias: CategoriaGasto[];
-  totalGastos: number;
+  categoriasIniciales: CategoriaGasto[];
   sinDatos: boolean;
 }) {
+  const [categorias, setCategorias] = useState<CategoriaGasto[]>(categoriasIniciales);
+  const [mostrarForm, setMostrarForm] = useState(false);
+  const [form, setForm] = useState<GastoForm>(GASTO_FORM_VACIO);
+  const [editando, setEditando] = useState<string | null>(null);
+  const [editForm, setEditForm] = useState<GastoForm>(GASTO_FORM_VACIO);
+  const { guardando, error, aviso, ejecutar, setError } = useEstadoGuardado();
+
+  const totalGastos = categorias.reduce((s, c) => s + (c.monto_mensual_usd || 0), 0);
+
+  function parseForm(f: GastoForm) {
+    const monto = parseFloat(f.monto_mensual_usd);
+    if (!f.categoria.trim()) throw new Error("Falta el nombre de la categoría.");
+    if (Number.isNaN(monto) || monto < 0) throw new Error("Monto inválido.");
+    return { categoria: f.categoria.trim(), monto_mensual_usd: monto };
+  }
+
+  async function handleAgregar(e: React.FormEvent) {
+    e.preventDefault();
+    await ejecutar(async () => {
+      const parsed = parseForm(form);
+      const data = await apiCall("/api/gastos", { method: "POST", body: JSON.stringify(parsed) });
+      setCategorias((prev) => [...prev, data.categoria]);
+      setForm(GASTO_FORM_VACIO);
+      setMostrarForm(false);
+    });
+  }
+
+  async function handleGuardarEdicion(categoriaOriginal: string) {
+    await ejecutar(async () => {
+      const parsed = parseForm(editForm);
+      const data = await apiCall("/api/gastos", { method: "PATCH", body: JSON.stringify({ categoria_original: categoriaOriginal, ...parsed }) });
+      setCategorias((prev) => prev.map((c) => (c.categoria === categoriaOriginal ? data.categoria : c)));
+      setEditando(null);
+    });
+  }
+
+  async function handleEliminar(categoria: string) {
+    if (!confirm(`¿Eliminar "${categoria}"?`)) return;
+    await ejecutar(async () => {
+      await apiCall(`/api/gastos?categoria=${encodeURIComponent(categoria)}`, { method: "DELETE" });
+      setCategorias((prev) => prev.filter((c) => c.categoria !== categoria));
+    });
+  }
+
   return (
     <div>
       {sinDatos && (
         <div className="banner info mb-16">
-          ℹ️ Los gastos están en 0. Editá <span className="mono">data/gastos.json</span> con los montos reales de cada categoría (podés agregar o quitar categorías).
+          ℹ️ Los gastos están en 0. Usá el formulario de abajo para cargar los montos reales.
         </div>
       )}
+
+      <AvisosGuardado error={error} aviso={aviso} />
 
       <div className="kpi-grid mb-16">
         <div className="card card-sm">
@@ -448,7 +723,27 @@ function GastosSection({
       </div>
 
       <div className="card section">
-        <div className="card-title mb-12">Gastos por categoría</div>
+        <div className="flex-between mb-12">
+          <div className="card-title" style={{ marginBottom: 0 }}>Gastos por categoría</div>
+          <button className="btn btn-sm" onClick={() => { setMostrarForm(!mostrarForm); setError(null); }}>
+            {mostrarForm ? "Cancelar" : "+ Agregar gasto"}
+          </button>
+        </div>
+
+        {mostrarForm && (
+          <form onSubmit={handleAgregar} className="form-grid mb-16" style={{ paddingBottom: 12, borderBottom: "1px solid var(--border)" }}>
+            <div>
+              <label className="form-label">Categoría</label>
+              <input className="form-input" value={form.categoria} onChange={(e) => setForm({ ...form, categoria: e.target.value })} required />
+            </div>
+            <div>
+              <label className="form-label">Monto mensual (USD)</label>
+              <input className="form-input mono" type="number" step="1" min="0" value={form.monto_mensual_usd} onChange={(e) => setForm({ ...form, monto_mensual_usd: e.target.value })} required />
+            </div>
+            <button className="btn btn-primary" type="submit" disabled={guardando}>Guardar</button>
+          </form>
+        )}
+
         <div className="table-wrap">
           <table>
             <thead>
@@ -456,19 +751,40 @@ function GastosSection({
                 <th>Categoría</th>
                 <th style={{ textAlign: "right" }}>Monto mensual</th>
                 <th style={{ textAlign: "right" }}>% del total</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
               {categorias.map((c) => (
-                <tr key={c.categoria}>
-                  <td>{c.categoria}</td>
-                  <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(c.monto_mensual_usd)}</td>
-                  <td className="td-mono" style={{ textAlign: "right" }}>{totalGastos > 0 ? fmtPct(c.monto_mensual_usd / totalGastos) : "—"}</td>
-                </tr>
+                editando === c.categoria ? (
+                  <tr key={c.categoria}>
+                    <td><input className="form-input" value={editForm.categoria} onChange={(e) => setEditForm({ ...editForm, categoria: e.target.value })} /></td>
+                    <td><input className="form-input mono" type="number" style={{ textAlign: "right" }} value={editForm.monto_mensual_usd} onChange={(e) => setEditForm({ ...editForm, monto_mensual_usd: e.target.value })} /></td>
+                    <td className="text-muted" style={{ textAlign: "right" }}>—</td>
+                    <td>
+                      <div className="btn-row">
+                        <button className="icon-btn" title="Guardar" disabled={guardando} onClick={() => handleGuardarEdicion(c.categoria)}>💾</button>
+                        <button className="icon-btn" title="Cancelar" disabled={guardando} onClick={() => setEditando(null)}>✖️</button>
+                      </div>
+                    </td>
+                  </tr>
+                ) : (
+                  <tr key={c.categoria}>
+                    <td>{c.categoria}</td>
+                    <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(c.monto_mensual_usd)}</td>
+                    <td className="td-mono" style={{ textAlign: "right" }}>{totalGastos > 0 ? fmtPct(c.monto_mensual_usd / totalGastos) : "—"}</td>
+                    <td>
+                      <div className="btn-row">
+                        <button className="icon-btn" title="Editar" onClick={() => { setEditando(c.categoria); setEditForm({ categoria: c.categoria, monto_mensual_usd: String(c.monto_mensual_usd) }); }}>✏️</button>
+                        <button className="icon-btn" title="Eliminar" onClick={() => handleEliminar(c.categoria)}>🗑️</button>
+                      </div>
+                    </td>
+                  </tr>
+                )
               ))}
               {categorias.length === 0 && (
                 <tr>
-                  <td colSpan={3} className="text-muted">Sin categorías cargadas.</td>
+                  <td colSpan={4} className="text-muted">Sin categorías cargadas.</td>
                 </tr>
               )}
             </tbody>
@@ -479,28 +795,120 @@ function GastosSection({
   );
 }
 
+interface EmbarqueForm {
+  descripcion: string;
+  proveedor: string;
+  categoria: string;
+  monto_usd: string;
+  fecha_pedido: string;
+  fecha_eta: string;
+  estado: string;
+  notas: string;
+}
+
+const EMBARQUE_FORM_VACIO: EmbarqueForm = {
+  descripcion: "",
+  proveedor: "",
+  categoria: "alfombras",
+  monto_usd: "",
+  fecha_pedido: "",
+  fecha_eta: "",
+  estado: "pedido",
+  notas: "",
+};
+
+function embarqueAForm(e: Embarque): EmbarqueForm {
+  return {
+    descripcion: e.descripcion,
+    proveedor: e.proveedor || "",
+    categoria: e.categoria,
+    monto_usd: String(e.monto_usd),
+    fecha_pedido: e.fecha_pedido || "",
+    fecha_eta: e.fecha_eta || "",
+    estado: e.estado,
+    notas: e.notas || "",
+  };
+}
+
 function InversionesSection({
-  embarques,
-  totalInvertido,
-  totalRecibido,
-  totalPendiente,
+  embarquesIniciales,
   sinDatos,
 }: {
-  embarques: Embarque[];
-  totalInvertido: number;
-  totalRecibido: number;
-  totalPendiente: number;
+  embarquesIniciales: Embarque[];
   sinDatos: boolean;
 }) {
+  const [embarques, setEmbarques] = useState<Embarque[]>(embarquesIniciales);
+  const [mostrarForm, setMostrarForm] = useState(false);
+  const [form, setForm] = useState<EmbarqueForm>(EMBARQUE_FORM_VACIO);
+  const [editando, setEditando] = useState<string | undefined>(undefined);
+  const { guardando, error, aviso, ejecutar, setError } = useEstadoGuardado();
+
+  const totalInvertido = embarques.reduce((s, e) => s + (e.monto_usd || 0), 0);
+  const totalRecibido = embarques.filter((e) => e.estado === "recibido").reduce((s, e) => s + (e.monto_usd || 0), 0);
+  const totalPendiente = totalInvertido - totalRecibido;
+
   const ordenados = [...embarques].sort((a, b) => (b.fecha_pedido || "").localeCompare(a.fecha_pedido || ""));
+
+  function parseForm(f: EmbarqueForm) {
+    const monto = parseFloat(f.monto_usd);
+    if (!f.descripcion.trim()) throw new Error("Falta la descripción.");
+    if (Number.isNaN(monto) || monto < 0) throw new Error("Monto inválido.");
+    return {
+      descripcion: f.descripcion.trim(),
+      proveedor: f.proveedor.trim(),
+      categoria: f.categoria,
+      monto_usd: monto,
+      fecha_pedido: f.fecha_pedido || null,
+      fecha_eta: f.fecha_eta || null,
+      estado: f.estado,
+      notas: f.notas.trim(),
+    };
+  }
+
+  async function handleAgregar(e: React.FormEvent) {
+    e.preventDefault();
+    await ejecutar(async () => {
+      const parsed = parseForm(form);
+      const data = await apiCall("/api/inversiones", { method: "POST", body: JSON.stringify(parsed) });
+      setEmbarques((prev) => [data.embarque, ...prev]);
+      setForm(EMBARQUE_FORM_VACIO);
+      setMostrarForm(false);
+    });
+  }
+
+  async function handleGuardarEdicion(id: string, f: EmbarqueForm) {
+    await ejecutar(async () => {
+      const parsed = parseForm(f);
+      const data = await apiCall("/api/inversiones", { method: "PATCH", body: JSON.stringify({ id, ...parsed }) });
+      setEmbarques((prev) => prev.map((emb) => (emb.id === id ? data.embarque : emb)));
+      setEditando(undefined);
+    });
+  }
+
+  async function handleEliminar(id: string, descripcion: string) {
+    if (!confirm(`¿Eliminar "${descripcion}"?`)) return;
+    await ejecutar(async () => {
+      await apiCall(`/api/inversiones?id=${encodeURIComponent(id)}`, { method: "DELETE" });
+      setEmbarques((prev) => prev.filter((e) => e.id !== id));
+    });
+  }
+
+  async function handleMarcarRecibido(id: string) {
+    await ejecutar(async () => {
+      const data = await apiCall("/api/inversiones", { method: "PATCH", body: JSON.stringify({ id, estado: "recibido" }) });
+      setEmbarques((prev) => prev.map((e) => (e.id === id ? data.embarque : e)));
+    });
+  }
 
   return (
     <div>
       {sinDatos && (
         <div className="banner info mb-16">
-          ℹ️ No hay embarques cargados. Editá <span className="mono">data/inversiones.json</span> agregando un objeto por cada embarque (alfombras, muebles, etc.) en <span className="mono">embarques</span>.
+          ℹ️ No hay embarques cargados. Usá el formulario de abajo para agregar el primero.
         </div>
       )}
+
+      <AvisosGuardado error={error} aviso={aviso} />
 
       <div className="kpi-grid mb-16">
         <div className="card card-sm">
@@ -518,7 +926,55 @@ function InversionesSection({
       </div>
 
       <div className="card section">
-        <div className="card-title mb-12">Embarques e inversiones</div>
+        <div className="flex-between mb-12">
+          <div className="card-title" style={{ marginBottom: 0 }}>Embarques e inversiones</div>
+          <button className="btn btn-sm" onClick={() => { setMostrarForm(!mostrarForm); setError(null); }}>
+            {mostrarForm ? "Cancelar" : "+ Agregar embarque"}
+          </button>
+        </div>
+
+        {mostrarForm && (
+          <form onSubmit={handleAgregar} className="form-grid mb-16" style={{ paddingBottom: 12, borderBottom: "1px solid var(--border)" }}>
+            <div>
+              <label className="form-label">Descripción</label>
+              <input className="form-input" value={form.descripcion} onChange={(e) => setForm({ ...form, descripcion: e.target.value })} required />
+            </div>
+            <div>
+              <label className="form-label">Proveedor</label>
+              <input className="form-input" value={form.proveedor} onChange={(e) => setForm({ ...form, proveedor: e.target.value })} />
+            </div>
+            <div>
+              <label className="form-label">Categoría</label>
+              <select className="form-select" value={form.categoria} onChange={(e) => setForm({ ...form, categoria: e.target.value })}>
+                {Object.entries(CATEGORIA_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="form-label">Monto (USD)</label>
+              <input className="form-input mono" type="number" step="1" min="0" value={form.monto_usd} onChange={(e) => setForm({ ...form, monto_usd: e.target.value })} required />
+            </div>
+            <div>
+              <label className="form-label">Fecha pedido</label>
+              <input className="form-input mono" type="date" value={form.fecha_pedido} onChange={(e) => setForm({ ...form, fecha_pedido: e.target.value })} />
+            </div>
+            <div>
+              <label className="form-label">ETA</label>
+              <input className="form-input mono" type="date" value={form.fecha_eta} onChange={(e) => setForm({ ...form, fecha_eta: e.target.value })} />
+            </div>
+            <div>
+              <label className="form-label">Estado</label>
+              <select className="form-select" value={form.estado} onChange={(e) => setForm({ ...form, estado: e.target.value })}>
+                {Object.entries(ESTADO_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+              </select>
+            </div>
+            <div>
+              <label className="form-label">Notas</label>
+              <input className="form-input" value={form.notas} onChange={(e) => setForm({ ...form, notas: e.target.value })} />
+            </div>
+            <button className="btn btn-primary" type="submit" disabled={guardando}>Guardar</button>
+          </form>
+        )}
+
         <div className="table-wrap">
           <table>
             <thead>
@@ -531,28 +987,48 @@ function InversionesSection({
                 <th>ETA</th>
                 <th>Estado</th>
                 <th>Notas</th>
+                <th></th>
               </tr>
             </thead>
             <tbody>
-              {ordenados.map((e, i) => (
-                <tr key={i}>
-                  <td>{e.descripcion}</td>
-                  <td className="text-dim">{e.proveedor}</td>
-                  <td>{CATEGORIA_LABELS[e.categoria] || e.categoria}</td>
-                  <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(e.monto_usd)}</td>
-                  <td className="mono">{fmtFecha(e.fecha_pedido)}</td>
-                  <td className="mono">{fmtFecha(e.fecha_eta)}</td>
-                  <td>
-                    <span className={`semaforo ${e.estado === "recibido" ? "verde" : e.estado === "en_aduana" ? "amarillo" : "rojo"}`}>
-                      {ESTADO_LABELS[e.estado] || e.estado}
-                    </span>
-                  </td>
-                  <td className="text-dim">{e.notas || "—"}</td>
-                </tr>
+              {ordenados.map((e) => (
+                editando === e.id ? (
+                  <FilaEmbarqueEdicion
+                    key={e.id}
+                    embarque={e}
+                    guardando={guardando}
+                    onCancelar={() => setEditando(undefined)}
+                    onGuardar={(f) => handleGuardarEdicion(e.id!, f)}
+                  />
+                ) : (
+                  <tr key={e.id}>
+                    <td>{e.descripcion}</td>
+                    <td className="text-dim">{e.proveedor}</td>
+                    <td>{CATEGORIA_LABELS[e.categoria] || e.categoria}</td>
+                    <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(e.monto_usd)}</td>
+                    <td className="mono">{fmtFecha(e.fecha_pedido)}</td>
+                    <td className="mono">{fmtFecha(e.fecha_eta)}</td>
+                    <td>
+                      <span className={`semaforo ${e.estado === "recibido" ? "verde" : e.estado === "en_aduana" ? "amarillo" : "rojo"}`}>
+                        {ESTADO_LABELS[e.estado] || e.estado}
+                      </span>
+                    </td>
+                    <td className="text-dim">{e.notas || "—"}</td>
+                    <td>
+                      <div className="btn-row">
+                        {e.estado !== "recibido" && (
+                          <button className="icon-btn" title="Marcar recibido" disabled={guardando} onClick={() => handleMarcarRecibido(e.id!)}>📦</button>
+                        )}
+                        <button className="icon-btn" title="Editar" onClick={() => setEditando(e.id)}>✏️</button>
+                        <button className="icon-btn" title="Eliminar" onClick={() => handleEliminar(e.id!, e.descripcion)}>🗑️</button>
+                      </div>
+                    </td>
+                  </tr>
+                )
               ))}
               {ordenados.length === 0 && (
                 <tr>
-                  <td colSpan={8} className="text-muted">Sin embarques cargados.</td>
+                  <td colSpan={9} className="text-muted">Sin embarques cargados.</td>
                 </tr>
               )}
             </tbody>
@@ -560,5 +1036,46 @@ function InversionesSection({
         </div>
       </div>
     </div>
+  );
+}
+
+function FilaEmbarqueEdicion({
+  embarque,
+  guardando,
+  onCancelar,
+  onGuardar,
+}: {
+  embarque: Embarque;
+  guardando: boolean;
+  onCancelar: () => void;
+  onGuardar: (f: EmbarqueForm) => void;
+}) {
+  const [f, setF] = useState<EmbarqueForm>(embarqueAForm(embarque));
+
+  return (
+    <tr>
+      <td><input className="form-input" value={f.descripcion} onChange={(e) => setF({ ...f, descripcion: e.target.value })} /></td>
+      <td><input className="form-input" value={f.proveedor} onChange={(e) => setF({ ...f, proveedor: e.target.value })} /></td>
+      <td>
+        <select className="form-select" value={f.categoria} onChange={(e) => setF({ ...f, categoria: e.target.value })}>
+          {Object.entries(CATEGORIA_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+        </select>
+      </td>
+      <td><input className="form-input mono" type="number" style={{ textAlign: "right" }} value={f.monto_usd} onChange={(e) => setF({ ...f, monto_usd: e.target.value })} /></td>
+      <td><input className="form-input mono" type="date" value={f.fecha_pedido} onChange={(e) => setF({ ...f, fecha_pedido: e.target.value })} /></td>
+      <td><input className="form-input mono" type="date" value={f.fecha_eta} onChange={(e) => setF({ ...f, fecha_eta: e.target.value })} /></td>
+      <td>
+        <select className="form-select" value={f.estado} onChange={(e) => setF({ ...f, estado: e.target.value })}>
+          {Object.entries(ESTADO_LABELS).map(([k, v]) => <option key={k} value={k}>{v}</option>)}
+        </select>
+      </td>
+      <td><input className="form-input" value={f.notas} onChange={(e) => setF({ ...f, notas: e.target.value })} /></td>
+      <td>
+        <div className="btn-row">
+          <button className="icon-btn" title="Guardar" disabled={guardando} onClick={() => onGuardar(f)}>💾</button>
+          <button className="icon-btn" title="Cancelar" disabled={guardando} onClick={onCancelar}>✖️</button>
+        </div>
+      </td>
+    </tr>
   );
 }
