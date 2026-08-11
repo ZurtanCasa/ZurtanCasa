@@ -1,17 +1,41 @@
 {
   "_status": "sin_datos",
   "_instrucciones": "Completar monto_mensual_usd de cada categoría con el valor real. Podés agregar/quitar categorías. Cuando los montos sean reales, cambiar _status a 'ok'.",
-  "_ultima_actualizacion": null,
+  "_ultima_actualizacion": "2026-08-11T21:25:10.576Z",
   "moneda": "USD",
   "categorias": [
-    { "categoria": "Alquiler locales", "monto_mensual_usd": 0 },
-    { "categoria": "Servicios (luz, agua, internet)", "monto_mensual_usd": 0 },
-    { "categoria": "Contador / Gestoría", "monto_mensual_usd": 0 },
-    { "categoria": "Software / Suscripciones", "monto_mensual_usd": 0 },
-    { "categoria": "Logística / Envíos", "monto_mensual_usd": 0 },
-    { "categoria": "Impuestos y tasas", "monto_mensual_usd": 0 },
-    { "categoria": "Mantenimiento", "monto_mensual_usd": 0 },
-    { "categoria": "Otros", "monto_mensual_usd": 0 }
+    {
+      "categoria": "Alquiler locales",
+      "monto_mensual_usd": 4325
+    },
+    {
+      "categoria": "Servicios (luz, agua, internet)",
+      "monto_mensual_usd": 0
+    },
+    {
+      "categoria": "Contador / Gestoría",
+      "monto_mensual_usd": 0
+    },
+    {
+      "categoria": "Software / Suscripciones",
+      "monto_mensual_usd": 0
+    },
+    {
+      "categoria": "Logística / Envíos",
+      "monto_mensual_usd": 0
+    },
+    {
+      "categoria": "Impuestos y tasas",
+      "monto_mensual_usd": 0
+    },
+    {
+      "categoria": "Mantenimiento",
+      "monto_mensual_usd": 0
+    },
+    {
+      "categoria": "Otros",
+      "monto_mensual_usd": 0
+    }
   ],
   "historico_mensual": []
 }
