@@ -31,6 +31,7 @@ interface DashboardProps {
   ceo: any;
   sueldos: any;
   gastos: any;
+  inversiones: any;
 }
 
 const TAB_TITLES: Record<TabId, string> = {
@@ -76,7 +77,7 @@ function buildPlanRows(plan: any, shopify: any, ml: any, locales: any): any[] {
   });
 }
 
-export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, articulos, precios, muebles, stock, plan, contexto, ceo, sueldos, gastos }: DashboardProps) {
+export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, locales, articulos, precios, muebles, stock, plan, contexto, ceo, sueldos, gastos, inversiones }: DashboardProps) {
   const [tab, setTab] = useState<TabId>("ceo");
 
   const lastRefresh = ceo._ultima_actualizacion || shopify._ultima_actualizacion || null;
@@ -172,6 +173,7 @@ export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, lo
               google={google}
               sueldos={sueldos}
               gastos={gastos}
+              inversiones={inversiones}
               contexto={contexto}
             />
           )}

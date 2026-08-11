@@ -1,13 +1,27 @@
 "use client";
 import { useState } from "react";
 
-type SubTab = "ventas" | "sueldos" | "gastos" | "resumen";
+type SubTab = "ventas" | "sueldos" | "gastos" | "inversiones" | "resumen";
 
 const SUBTAB_LABELS: Record<SubTab, string> = {
   ventas: "💰 Ventas",
   sueldos: "👥 Sueldos",
   gastos: "🧾 Gastos",
+  inversiones: "🚢 Inversiones",
   resumen: "📊 Resumen",
+};
+
+const ESTADO_LABELS: Record<string, string> = {
+  pedido: "Pedido",
+  en_transito: "En tránsito",
+  en_aduana: "En aduana",
+  recibido: "Recibido",
+};
+
+const CATEGORIA_LABELS: Record<string, string> = {
+  alfombras: "Alfombras",
+  muebles: "Muebles",
+  otro: "Otro",
 };
 
 interface Empleado {
@@ -33,6 +47,22 @@ interface Gastos {
   categorias: CategoriaGasto[];
 }
 
+interface Embarque {
+  descripcion: string;
+  proveedor: string;
+  categoria: string;
+  monto_usd: number;
+  fecha_pedido: string | null;
+  fecha_eta: string | null;
+  estado: string;
+  notas?: string;
+}
+
+interface Inversiones {
+  _status: string;
+  embarques: Embarque[];
+}
+
 interface Props {
   shopify: any;
   mercadolibre: any;
@@ -41,6 +71,7 @@ interface Props {
   google: any;
   sueldos: Sueldos;
   gastos: Gastos;
+  inversiones: Inversiones;
   contexto: any;
 }
 
@@ -58,7 +89,12 @@ function semClass(pct: number): string {
   return "rojo";
 }
 
-export default function FinancieroTab({ shopify, mercadolibre, locales, meta, google, sueldos, gastos, contexto }: Props) {
+function fmtFecha(f: string | null): string {
+  if (!f) return "—";
+  return new Date(f).toLocaleDateString("es-UY", { timeZone: "America/Montevideo" });
+}
+
+export default function FinancieroTab({ shopify, mercadolibre, locales, meta, google, sueldos, gastos, inversiones, contexto }: Props) {
   const [subTab, setSubTab] = useState<SubTab>("resumen");
 
   const webRevenue = shopify?.mes_actual?.revenue_bruto || 0;
@@ -76,6 +112,11 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
 
   const totalGastos = (gastos?.categorias || []).reduce((s, c) => s + (c.monto_mensual_usd || 0), 0);
 
+  const embarques = inversiones?.embarques || [];
+  const totalInvertido = embarques.reduce((s, e) => s + (e.monto_usd || 0), 0);
+  const totalRecibido = embarques.filter((e) => e.estado === "recibido").reduce((s, e) => s + (e.monto_usd || 0), 0);
+  const totalPendiente = totalInvertido - totalRecibido;
+
   const spendMeta = meta?.periodos?.last_30d?.spend || 0;
   const spendGoogle = google?.periodos?.last_30d?.spend || 0;
   const totalAds = spendMeta + spendGoogle;
@@ -86,6 +127,7 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
   const sinDatosVentas = shopify?._status === "sin_datos" && mercadolibre?._status === "sin_datos" && locales?._status === "sin_datos";
   const sinDatosSueldos = sueldos?._status === "sin_datos";
   const sinDatosGastos = gastos?._status === "sin_datos";
+  const sinDatosInversiones = embarques.length === 0;
 
   return (
     <div>
@@ -143,6 +185,16 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
           categorias={gastos?.categorias || []}
           totalGastos={totalGastos}
           sinDatos={sinDatosGastos}
+        />
+      )}
+
+      {subTab === "inversiones" && (
+        <InversionesSection
+          embarques={embarques}
+          totalInvertido={totalInvertido}
+          totalRecibido={totalRecibido}
+          totalPendiente={totalPendiente}
+          sinDatos={sinDatosInversiones}
         />
       )}
     </div>
@@ -417,6 +469,90 @@ function GastosSection({
               {categorias.length === 0 && (
                 <tr>
                   <td colSpan={3} className="text-muted">Sin categorías cargadas.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function InversionesSection({
+  embarques,
+  totalInvertido,
+  totalRecibido,
+  totalPendiente,
+  sinDatos,
+}: {
+  embarques: Embarque[];
+  totalInvertido: number;
+  totalRecibido: number;
+  totalPendiente: number;
+  sinDatos: boolean;
+}) {
+  const ordenados = [...embarques].sort((a, b) => (b.fecha_pedido || "").localeCompare(a.fecha_pedido || ""));
+
+  return (
+    <div>
+      {sinDatos && (
+        <div className="banner info mb-16">
+          ℹ️ No hay embarques cargados. Editá <span className="mono">data/inversiones.json</span> agregando un objeto por cada embarque (alfombras, muebles, etc.) en <span className="mono">embarques</span>.
+        </div>
+      )}
+
+      <div className="kpi-grid mb-16">
+        <div className="card card-sm">
+          <div className="card-title">Total invertido</div>
+          <div className="card-value-sm mono">{fmtUSD(totalInvertido)}</div>
+        </div>
+        <div className="card card-sm">
+          <div className="card-title">Pendiente de recibir</div>
+          <div className="card-value-sm mono text-yellow">{fmtUSD(totalPendiente)}</div>
+        </div>
+        <div className="card card-sm">
+          <div className="card-title">Recibido</div>
+          <div className="card-value-sm mono text-green">{fmtUSD(totalRecibido)}</div>
+        </div>
+      </div>
+
+      <div className="card section">
+        <div className="card-title mb-12">Embarques e inversiones</div>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Descripción</th>
+                <th>Proveedor</th>
+                <th>Categoría</th>
+                <th style={{ textAlign: "right" }}>Monto</th>
+                <th>Fecha pedido</th>
+                <th>ETA</th>
+                <th>Estado</th>
+                <th>Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+              {ordenados.map((e, i) => (
+                <tr key={i}>
+                  <td>{e.descripcion}</td>
+                  <td className="text-dim">{e.proveedor}</td>
+                  <td>{CATEGORIA_LABELS[e.categoria] || e.categoria}</td>
+                  <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(e.monto_usd)}</td>
+                  <td className="mono">{fmtFecha(e.fecha_pedido)}</td>
+                  <td className="mono">{fmtFecha(e.fecha_eta)}</td>
+                  <td>
+                    <span className={`semaforo ${e.estado === "recibido" ? "verde" : e.estado === "en_aduana" ? "amarillo" : "rojo"}`}>
+                      {ESTADO_LABELS[e.estado] || e.estado}
+                    </span>
+                  </td>
+                  <td className="text-dim">{e.notas || "—"}</td>
+                </tr>
+              ))}
+              {ordenados.length === 0 && (
+                <tr>
+                  <td colSpan={8} className="text-muted">Sin embarques cargados.</td>
                 </tr>
               )}
             </tbody>

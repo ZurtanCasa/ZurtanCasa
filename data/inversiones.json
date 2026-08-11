@@ -1,0 +1,7 @@
+{
+  "_status": "sin_datos",
+  "_instrucciones": "Cargar cada embarque/inversión (alfombras, muebles, etc.) como un objeto en 'embarques'. Estados posibles: 'pedido', 'en_transito', 'en_aduana', 'recibido'. Cuando haya datos reales, cambiar _status a 'ok'.",
+  "_ultima_actualizacion": null,
+  "moneda": "USD",
+  "embarques": []
+}
