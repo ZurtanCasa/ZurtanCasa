@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-13T08:38:39.794868-03:00",
+  "_ultima_actualizacion": "2026-08-13T13:50:14.383051-03:00",
   "_rango": "01/01/24 → 13/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -493,11 +493,15 @@
           "units": 3
         },
         "Pura Lana": {
-          "revenue_usd": 172.0,
-          "units": 1
+          "revenue_usd": 500.0,
+          "units": 3
         },
         "Muebles": {
           "revenue_usd": 1530.0,
+          "units": 1
+        },
+        "Yute y Lana": {
+          "revenue_usd": 180.0,
           "units": 1
         },
         "Yute y Lana Nuevas": {
@@ -865,12 +869,12 @@
       "units": 42
     },
     "Pura Lana": {
-      "revenue_usd": 83722.51,
-      "units": 117
+      "revenue_usd": 84050.51,
+      "units": 119
     },
     "Yute y Lana": {
-      "revenue_usd": 58822.96,
-      "units": 66
+      "revenue_usd": 59002.96,
+      "units": 67
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 2864.0,
@@ -899,8 +903,8 @@
     },
     {
       "categoria": "Pura Lana",
-      "revenue_usd": 83722.51,
-      "units": 117
+      "revenue_usd": 84050.51,
+      "units": 119
     },
     {
       "categoria": "Muebles",
@@ -909,8 +913,8 @@
     },
     {
       "categoria": "Yute y Lana",
-      "revenue_usd": 58822.96,
-      "units": 66
+      "revenue_usd": 59002.96,
+      "units": 67
     },
     {
       "categoria": "Exterior Pet",
@@ -2682,6 +2686,12 @@
         "categoria": "Sin categoría"
       },
       {
+        "articulo": "Pura Lana 80 x 120 Natural Grey",
+        "revenue_usd": 452.0,
+        "units": 3,
+        "categoria": "Pura Lana"
+      },
+      {
         "articulo": "Gardjeh",
         "revenue_usd": 444.0,
         "units": 1,
@@ -2734,12 +2744,6 @@
         "revenue_usd": 290.17,
         "units": 1,
         "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Pura Lana 80 x 120 Natural Grey",
-        "revenue_usd": 288.0,
-        "units": 2,
-        "categoria": "Pura Lana"
       },
       {
         "articulo": "Puff",
@@ -2808,6 +2812,12 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
+        "articulo": "Yute y Lana 70 x 200 Grey",
+        "revenue_usd": 180.0,
+        "units": 1,
+        "categoria": "Yute y Lana"
+      },
+      {
         "articulo": "Pura Lana Clay 080x160",
         "revenue_usd": 172.0,
         "units": 1,
@@ -2818,6 +2828,12 @@
         "revenue_usd": 168.0,
         "units": 1,
         "categoria": "Muebles"
+      },
+      {
+        "articulo": "Pura Lana 80 x 120 Grey",
+        "revenue_usd": 164.0,
+        "units": 1,
+        "categoria": "Pura Lana"
       },
       {
         "articulo": "Yute Redonda con Diseño 150 x 150",

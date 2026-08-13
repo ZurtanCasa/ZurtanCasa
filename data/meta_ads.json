@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-13T08:47:16.548731-03:00",
+  "_ultima_actualizacion": "2026-08-13T13:51:47.216124-03:00",
   "periodos": {
     "today": {
-      "spend": 0.39,
+      "spend": 1.69,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 40,
-      "clicks": 4
+      "impressions": 226,
+      "clicks": 23
     },
     "yesterday": {
       "spend": 4.48,
@@ -133,22 +133,22 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 58.99,
+      "spend": 60.29,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 6543,
-      "clicks": 628
+      "impressions": 6729,
+      "clicks": 647
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 40,
-        "reach": 29,
-        "spend": 0.39,
-        "cpm": 9.75,
-        "clicks": 4,
+        "impressions": 226,
+        "reach": 192,
+        "spend": 1.69,
+        "cpm": 7.48,
+        "clicks": 23,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -194,10 +194,10 @@
         "nombre": "Flyer",
         "periodos": {
           "today": {
-            "impressions": 11,
-            "reach": 9,
-            "spend": 0.15,
-            "cpm": 13.64
+            "impressions": 93,
+            "reach": 79,
+            "spend": 0.68,
+            "cpm": 7.31
           },
           "yesterday": {
             "impressions": 188,
@@ -224,8 +224,8 @@
         "nombre": "Carrousel",
         "periodos": {
           "today": {
-            "impressions": 2,
-            "reach": 1,
+            "impressions": 3,
+            "reach": 3,
             "spend": 0.0,
             "cpm": 0.0
           },
@@ -248,10 +248,10 @@
         "nombre": "Video",
         "periodos": {
           "today": {
-            "impressions": 27,
-            "reach": 21,
-            "spend": 0.24,
-            "cpm": 8.89
+            "impressions": 130,
+            "reach": 118,
+            "spend": 1.01,
+            "cpm": 7.77
           },
           "yesterday": {
             "impressions": 292,
@@ -288,6 +288,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43149
+    "ig_followers_total": 43151
   }
 }
