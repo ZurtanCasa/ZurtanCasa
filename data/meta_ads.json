@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-16T13:18:21.143756-03:00",
+  "_ultima_actualizacion": "2026-08-16T20:16:31.166142-03:00",
   "periodos": {
     "today": {
-      "spend": 1.85,
+      "spend": 3.77,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 218,
-      "clicks": 12
+      "impressions": 514,
+      "clicks": 41
     },
     "yesterday": {
       "spend": 4.03,
@@ -133,22 +133,22 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 71.63,
+      "spend": 73.55,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 8296,
-      "clicks": 817
+      "impressions": 8592,
+      "clicks": 846
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 218,
-        "reach": 188,
-        "spend": 1.85,
-        "cpm": 8.49,
-        "clicks": 12,
+        "impressions": 514,
+        "reach": 428,
+        "spend": 3.77,
+        "cpm": 7.33,
+        "clicks": 41,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 1,
@@ -174,7 +174,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 1031,
         "new_followers_fb": 6,
-        "new_followers_ig": 71
+        "new_followers_ig": 102
       },
       "last_30d": {
         "impressions": 168314,
@@ -185,7 +185,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 5959,
         "new_followers_fb": 19,
-        "new_followers_ig": 734
+        "new_followers_ig": 765
       }
     },
     "por_anuncio": [
@@ -194,10 +194,10 @@
         "nombre": "Flyer",
         "periodos": {
           "today": {
-            "impressions": 91,
-            "reach": 78,
-            "spend": 0.82,
-            "cpm": 9.01
+            "impressions": 213,
+            "reach": 180,
+            "spend": 1.51,
+            "cpm": 7.09
           },
           "yesterday": {
             "impressions": 257,
@@ -220,14 +220,38 @@
         }
       },
       {
+        "id": "120246927679130436",
+        "nombre": "Carrousel",
+        "periodos": {
+          "today": {
+            "impressions": 3,
+            "reach": 3,
+            "spend": 0.03,
+            "cpm": 10.0
+          },
+          "last_7d": {
+            "impressions": 16,
+            "reach": 13,
+            "spend": 0.1,
+            "cpm": 6.25
+          },
+          "last_30d": {
+            "impressions": 108,
+            "reach": 72,
+            "spend": 0.54,
+            "cpm": 5.0
+          }
+        }
+      },
+      {
         "id": "120246927870530436",
         "nombre": "Video",
         "periodos": {
           "today": {
-            "impressions": 127,
-            "reach": 123,
-            "spend": 1.03,
-            "cpm": 8.11
+            "impressions": 298,
+            "reach": 279,
+            "spend": 2.23,
+            "cpm": 7.48
           },
           "yesterday": {
             "impressions": 224,
@@ -250,24 +274,6 @@
         }
       },
       {
-        "id": "120246927679130436",
-        "nombre": "Carrousel",
-        "periodos": {
-          "last_7d": {
-            "impressions": 16,
-            "reach": 13,
-            "spend": 0.1,
-            "cpm": 6.25
-          },
-          "last_30d": {
-            "impressions": 108,
-            "reach": 72,
-            "spend": 0.54,
-            "cpm": 5.0
-          }
-        }
-      },
-      {
         "id": "120246829530700436",
         "nombre": "New Awareness Ad",
         "periodos": {
@@ -282,6 +288,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43198
+    "ig_followers_total": 43200
   }
 }
