@@ -1,21 +1,21 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-16T08:12:43.955687-03:00",
+  "_ultima_actualizacion": "2026-08-16T13:18:21.143756-03:00",
   "periodos": {
     "today": {
-      "spend": 0.24,
+      "spend": 1.85,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 35,
-      "clicks": 2
+      "impressions": 218,
+      "clicks": 12
     },
     "yesterday": {
       "spend": 4.03,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 480,
+      "impressions": 481,
       "clicks": 63
     },
     "last_7d": {
@@ -23,7 +23,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 3602,
+      "impressions": 3603,
       "clicks": 357
     },
     "last_30d": {
@@ -31,7 +31,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 168313,
+      "impressions": 168314,
       "clicks": 1082
     }
   },
@@ -44,7 +44,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 9705,
+      "impressions": 9706,
       "clicks": 962
     },
     {
@@ -133,32 +133,32 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 70.02,
+      "spend": 71.63,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 8112,
-      "clicks": 807
+      "impressions": 8296,
+      "clicks": 817
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 35,
-        "reach": 32,
-        "spend": 0.24,
-        "cpm": 6.86,
-        "clicks": 2,
+        "impressions": 218,
+        "reach": 188,
+        "spend": 1.85,
+        "cpm": 8.49,
+        "clicks": 12,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 1,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 480,
-        "reach": 371,
+        "impressions": 481,
+        "reach": 372,
         "spend": 4.03,
-        "cpm": 8.4,
+        "cpm": 8.38,
         "clicks": 63,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
@@ -166,10 +166,10 @@
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 3602,
+        "impressions": 3603,
         "reach": 2064,
         "spend": 31.61,
-        "cpm": 8.78,
+        "cpm": 8.77,
         "clicks": 357,
         "profile_visits_fb": 0,
         "profile_visits_ig": 1031,
@@ -177,7 +177,7 @@
         "new_followers_ig": 71
       },
       "last_30d": {
-        "impressions": 168313,
+        "impressions": 168314,
         "reach": 122601,
         "spend": 118.26,
         "cpm": 0.7,
@@ -194,10 +194,10 @@
         "nombre": "Flyer",
         "periodos": {
           "today": {
-            "impressions": 15,
-            "reach": 13,
-            "spend": 0.16,
-            "cpm": 10.67
+            "impressions": 91,
+            "reach": 78,
+            "spend": 0.82,
+            "cpm": 9.01
           },
           "yesterday": {
             "impressions": 257,
@@ -224,28 +224,28 @@
         "nombre": "Video",
         "periodos": {
           "today": {
-            "impressions": 20,
-            "reach": 20,
-            "spend": 0.08,
-            "cpm": 4.0
+            "impressions": 127,
+            "reach": 123,
+            "spend": 1.03,
+            "cpm": 8.11
           },
           "yesterday": {
-            "impressions": 223,
-            "reach": 202,
+            "impressions": 224,
+            "reach": 203,
             "spend": 1.83,
-            "cpm": 8.21
+            "cpm": 8.17
           },
           "last_7d": {
-            "impressions": 1697,
-            "reach": 1216,
+            "impressions": 1698,
+            "reach": 1218,
             "spend": 12.96,
-            "cpm": 7.64
+            "cpm": 7.63
           },
           "last_30d": {
-            "impressions": 4775,
+            "impressions": 4776,
             "reach": 2756,
             "spend": 33.74,
-            "cpm": 7.07
+            "cpm": 7.06
           }
         }
       },
@@ -282,6 +282,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43190
+    "ig_followers_total": 43198
   }
 }
