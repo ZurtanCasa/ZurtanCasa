@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-17T08:17:50.937384-03:00",
+  "_ultima_actualizacion": "2026-08-17T13:21:36.145518-03:00",
   "periodos": {
     "today": {
-      "spend": 0.7,
+      "spend": 1.43,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 34,
-      "clicks": 5
+      "impressions": 144,
+      "clicks": 18
     },
     "yesterday": {
       "spend": 4.39,
@@ -133,22 +133,22 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 74.87,
+      "spend": 75.6,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 8714,
-      "clicks": 860
+      "impressions": 8824,
+      "clicks": 873
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 34,
-        "reach": 29,
-        "spend": 0.7,
-        "cpm": 20.59,
-        "clicks": 5,
+        "impressions": 144,
+        "reach": 115,
+        "spend": 1.43,
+        "cpm": 9.93,
+        "clicks": 18,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -194,10 +194,10 @@
         "nombre": "Flyer",
         "periodos": {
           "today": {
-            "impressions": 15,
-            "reach": 13,
-            "spend": 0.41,
-            "cpm": 27.33
+            "impressions": 87,
+            "reach": 72,
+            "spend": 0.86,
+            "cpm": 9.89
           },
           "yesterday": {
             "impressions": 249,
@@ -224,10 +224,10 @@
         "nombre": "Video",
         "periodos": {
           "today": {
-            "impressions": 19,
-            "reach": 18,
-            "spend": 0.29,
-            "cpm": 15.26
+            "impressions": 57,
+            "reach": 52,
+            "spend": 0.57,
+            "cpm": 10.0
           },
           "yesterday": {
             "impressions": 350,
