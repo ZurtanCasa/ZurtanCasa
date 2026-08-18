@@ -1,8 +1,8 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-07-17T12:55:24.899075-03:00",
-  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27",
-  "total_articulos": 1098,
+  "_ultima_actualizacion": "2026-08-18T16:50:23.080399-03:00",
+  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27 | +43 persas agregadas 2026-08-18",
+  "total_articulos": 1141,
   "articulos": [
     {
       "codigo": "2009001 GARDEN CHAIR",
@@ -6411,6 +6411,221 @@
       "nombre": "Ziegler",
       "precio_usd": 2118.0,
       "medida": "246 x 168"
+    },
+    {
+      "codigo": "3947",
+      "nombre": "Ziegler",
+      "precio_usd": 5048.32
+    },
+    {
+      "codigo": "420",
+      "nombre": "Ziegler",
+      "precio_usd": 4994.36
+    },
+    {
+      "codigo": "399",
+      "nombre": "Ziegler",
+      "precio_usd": 4974.89
+    },
+    {
+      "codigo": "21021",
+      "nombre": "Ziegler",
+      "precio_usd": 4775.16
+    },
+    {
+      "codigo": "51C",
+      "nombre": "Fine Vintage",
+      "precio_usd": 4908.15
+    },
+    {
+      "codigo": "14664",
+      "nombre": "Fine Vintage",
+      "precio_usd": 3417.71
+    },
+    {
+      "codigo": "803B",
+      "nombre": "Fine Vintage",
+      "precio_usd": 3975.37
+    },
+    {
+      "codigo": "2243",
+      "nombre": "Vintage",
+      "precio_usd": 2313.53
+    },
+    {
+      "codigo": "801",
+      "nombre": "Fine Vintage",
+      "precio_usd": 3719.17
+    },
+    {
+      "codigo": "651B",
+      "nombre": "Ziegler",
+      "precio_usd": 4498.46
+    },
+    {
+      "codigo": "434",
+      "nombre": "Ziegler",
+      "precio_usd": 4752.51
+    },
+    {
+      "codigo": "2125",
+      "nombre": "Ziegler",
+      "precio_usd": 3824.55
+    },
+    {
+      "codigo": "21043",
+      "nombre": "Ziegler",
+      "precio_usd": 3731.71
+    },
+    {
+      "codigo": "461",
+      "nombre": "Bakthiari",
+      "precio_usd": 2128.87
+    },
+    {
+      "codigo": "2412",
+      "nombre": "Vintage",
+      "precio_usd": 2103.34
+    },
+    {
+      "codigo": "29B",
+      "nombre": "Vintage",
+      "precio_usd": 3960.08
+    },
+    {
+      "codigo": "14609",
+      "nombre": "Fine vintage",
+      "precio_usd": 4283.66
+    },
+    {
+      "codigo": "14248",
+      "nombre": "Fine Vintage",
+      "precio_usd": 4804.6
+    },
+    {
+      "codigo": "2205",
+      "nombre": "Vintage",
+      "precio_usd": 4056.67
+    },
+    {
+      "codigo": "1990",
+      "nombre": "Ziegler",
+      "precio_usd": 6539.45
+    },
+    {
+      "codigo": "1863",
+      "nombre": "Ziegler",
+      "precio_usd": 6287.15
+    },
+    {
+      "codigo": "2300",
+      "nombre": "Ziegler",
+      "precio_usd": 5797.6
+    },
+    {
+      "codigo": "5961",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 2738.3
+    },
+    {
+      "codigo": "3067",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 1586.61
+    },
+    {
+      "codigo": "21571",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 1587.52
+    },
+    {
+      "codigo": "2770",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 1828.39
+    },
+    {
+      "codigo": "21565",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 1549.28
+    },
+    {
+      "codigo": "5471",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 402.2
+    },
+    {
+      "codigo": "5494",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 413.12
+    },
+    {
+      "codigo": "5491",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 404.89
+    },
+    {
+      "codigo": "19924",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 400.84
+    },
+    {
+      "codigo": "6557",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 622.2
+    },
+    {
+      "codigo": "3727",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 563.82
+    },
+    {
+      "codigo": "3712",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 720.4
+    },
+    {
+      "codigo": "3732",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 578.1
+    },
+    {
+      "codigo": "3741",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 732.29
+    },
+    {
+      "codigo": "1568",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 263.52
+    },
+    {
+      "codigo": "1559",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 257.3
+    },
+    {
+      "codigo": "22417",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 281.91
+    },
+    {
+      "codigo": "2209",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 283.12
+    },
+    {
+      "codigo": "5478",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 270.55
+    },
+    {
+      "codigo": "15122",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 3678.3
+    },
+    {
+      "codigo": "22669",
+      "nombre": "Kilim Afghan",
+      "precio_usd": 2694.82
     }
   ]
 }
