@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-19T13:43:24.835172-03:00",
+  "_ultima_actualizacion": "2026-08-19T20:12:03.651135-03:00",
   "_rango": "01/01/24 → 19/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -485,8 +485,8 @@
       },
       "8": {
         "Alfombra persa": {
-          "revenue_usd": 1324.8,
-          "units": 3
+          "revenue_usd": 4712.6,
+          "units": 4
         },
         "Sin categoría": {
           "revenue_usd": 3605.0,
@@ -857,8 +857,8 @@
       "units": 130
     },
     "Alfombra persa": {
-      "revenue_usd": 515844.67,
-      "units": 425
+      "revenue_usd": 519232.47,
+      "units": 426
     },
     "Sin categoría": {
       "revenue_usd": 281237.87,
@@ -888,8 +888,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 515844.67,
-      "units": 425
+      "revenue_usd": 519232.47,
+      "units": 426
     },
     {
       "categoria": "Sin categoría",
@@ -948,14 +948,8 @@
     },
     {
       "articulo": "Patchwork",
-      "revenue_usd": 33617.14,
-      "units": 41,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Varni Sirdjan",
-      "revenue_usd": 22764.14,
-      "units": 25,
+      "revenue_usd": 35165.14,
+      "units": 42,
       "categoria": "Alfombra persa"
     },
     {
@@ -980,6 +974,12 @@
       "articulo": "Ziegler",
       "revenue_usd": 20685.0,
       "units": 7,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Varni Sirdjan",
+      "revenue_usd": 20311.14,
+      "units": 24,
       "categoria": "Alfombra persa"
     },
     {
@@ -1253,6 +1253,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Kilim Varni Sirdjan",
+      "revenue_usd": 4292.8,
+      "units": 1,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Gardjeh",
       "revenue_usd": 4267.0,
       "units": 5,
@@ -1520,12 +1526,6 @@
       "articulo": "Pura Lana 160 x 230 Natural",
       "revenue_usd": 1611.38,
       "units": 4,
-      "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Pura Lana 300 x 400 Grey",
-      "revenue_usd": 1596.0,
-      "units": 1,
       "categoria": "Pura Lana"
     }
   ],
@@ -2314,15 +2314,15 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Kashgai",
-        "revenue_usd": 9774.49,
+        "articulo": "Patchwork",
+        "revenue_usd": 10591.84,
         "units": 7,
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Patchwork",
-        "revenue_usd": 9043.84,
-        "units": 6,
+        "articulo": "Kashgai",
+        "revenue_usd": 9774.49,
+        "units": 7,
         "categoria": "Alfombra persa"
       },
       {
@@ -2338,12 +2338,6 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Varni Sirdjan",
-        "revenue_usd": 5928.59,
-        "units": 4,
-        "categoria": "Alfombra persa"
-      },
-      {
         "articulo": "Yute y Lana 400 x 500 Natural",
         "revenue_usd": 5076.0,
         "units": 2,
@@ -2354,6 +2348,18 @@
         "revenue_usd": 4650.0,
         "units": 5,
         "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Kilim Varni Sirdjan",
+        "revenue_usd": 4292.8,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Varni Sirdjan",
+        "revenue_usd": 3475.59,
+        "units": 3,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
