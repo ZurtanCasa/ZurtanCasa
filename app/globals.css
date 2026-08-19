@@ -588,6 +588,7 @@ tr:hover td { background: var(--bg-card-hover); }
 .form-input.mono, .form-select.mono { font-family: var(--mono); }
 .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; align-items: end; }
 .form-label { display: block; font-size: 11px; color: var(--text-muted); margin-bottom: 4px; }
+.form-hint { font-size: 11px; color: var(--text-muted); margin-top: 4px; line-height: 1.4; }
 
 .btn {
   background: var(--bg-card-hover);

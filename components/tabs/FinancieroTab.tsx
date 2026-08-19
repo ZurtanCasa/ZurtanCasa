@@ -753,7 +753,7 @@ function GastosSection({
           <div className="card-value-sm mono text-red">{fmtUSD(totalGastos)}</div>
         </div>
         <div className="card card-sm">
-          <div className="card-title">Total IVA registrado</div>
+          <div className="card-title">Total IVA incluido en gastos</div>
           <div className="card-value-sm mono">{fmtUSD(totalIvaGastos)}</div>
           <div className="card-sub">Ver detalle en "🏛️ Impuestos y cargas"</div>
         </div>
@@ -778,8 +778,9 @@ function GastosSection({
               <input className="form-input mono" type="number" step="1" min="0" value={form.monto_mensual_usd} onChange={(e) => setForm({ ...form, monto_mensual_usd: e.target.value })} required />
             </div>
             <div>
-              <label className="form-label">IVA (USD, opcional)</label>
+              <label className="form-label">IVA incluido en el monto (USD, opcional)</label>
               <input className="form-input mono" type="number" step="1" min="0" value={form.iva_usd} onChange={(e) => setForm({ ...form, iva_usd: e.target.value })} placeholder="0" />
+              <div className="form-hint">No es un monto extra: es la parte del monto mensual que ya corresponde a IVA. Dejalo en 0 si el gasto no lleva IVA.</div>
             </div>
             <button className="btn btn-primary" type="submit" disabled={guardando}>Guardar</button>
           </form>
@@ -791,7 +792,7 @@ function GastosSection({
               <tr>
                 <th>Categoría</th>
                 <th style={{ textAlign: "right" }}>Monto mensual</th>
-                <th style={{ textAlign: "right" }}>IVA</th>
+                <th style={{ textAlign: "right" }}>IVA incluido</th>
                 <th style={{ textAlign: "right" }}>% del total</th>
                 <th></th>
               </tr>
@@ -1203,9 +1204,9 @@ function ImpuestosSection({
           <div className="card-sub">Sobre embarques e inversiones</div>
         </div>
         <div className="card card-sm">
-          <div className="card-title">IVA de gastos</div>
+          <div className="card-title">IVA incluido en gastos</div>
           <div className="card-value-sm mono">{fmtUSD(totalIvaGastos)}</div>
-          <div className="card-sub">Registrado en gastos mensuales y puntuales</div>
+          <div className="card-sub">Ya está dentro del monto de cada gasto, no se suma aparte</div>
         </div>
       </div>
 
@@ -1301,9 +1302,9 @@ function ImpuestosSection({
       </div>
 
       <div className="card section" style={{ marginTop: 16 }}>
-        <div className="card-title mb-12">IVA registrado por gasto</div>
+        <div className="card-title mb-12">IVA incluido por gasto</div>
         <div className="banner info mb-16">
-          ℹ️ El monto de IVA de cada gasto se carga desde la pestaña "🧾 Gastos" (es opcional, no todos los gastos llevan IVA).
+          ℹ️ El monto de IVA de cada gasto se carga desde la pestaña "🧾 Gastos" (es opcional, no todos los gastos llevan IVA). Es la parte del monto que ya corresponde a IVA, no un cargo adicional.
         </div>
         <div className="table-wrap">
           <table>
@@ -1311,7 +1312,7 @@ function ImpuestosSection({
               <tr>
                 <th>Categoría de gasto</th>
                 <th style={{ textAlign: "right" }}>Monto del gasto</th>
-                <th style={{ textAlign: "right" }}>IVA</th>
+                <th style={{ textAlign: "right" }}>IVA incluido</th>
               </tr>
             </thead>
             <tbody>
