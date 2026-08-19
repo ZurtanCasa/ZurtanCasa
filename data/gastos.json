@@ -1,7 +1,7 @@
 {
   "_status": "ok",
   "_instrucciones": "Completar monto_mensual_usd de cada categoría con el valor real. Podés agregar/quitar categorías. Cuando los montos sean reales, cambiar _status a 'ok'.",
-  "_ultima_actualizacion": "2026-08-19T19:23:31.228Z",
+  "_ultima_actualizacion": "2026-08-19T20:06:42.738Z",
   "moneda": "USD",
   "categorias": [
     {
@@ -11,10 +11,6 @@
     {
       "categoria": "Servicios (luz, agua, internet)",
       "monto_mensual_usd": 316
-    },
-    {
-      "categoria": "Contador / Gestoría",
-      "monto_mensual_usd": 0
     },
     {
       "categoria": "Software / Suscripciones",
