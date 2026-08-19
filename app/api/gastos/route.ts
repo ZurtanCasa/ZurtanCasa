@@ -19,6 +19,9 @@ function validarCategoria(body: any) {
   if (typeof body.monto_mensual_usd !== "number" || body.monto_mensual_usd < 0) {
     throw new Error("El monto tiene que ser un número mayor o igual a 0.");
   }
+  if (body.iva_usd !== undefined && (typeof body.iva_usd !== "number" || Number.isNaN(body.iva_usd) || body.iva_usd < 0)) {
+    throw new Error("El IVA tiene que ser un número mayor o igual a 0.");
+  }
 }
 
 export async function POST(req: NextRequest) {
@@ -30,7 +33,7 @@ export async function POST(req: NextRequest) {
     if ((content.categorias || []).some((c: any) => c.categoria === body.categoria)) {
       throw new Error("Ya existe una categoría con ese nombre.");
     }
-    const categoria = { categoria: body.categoria, monto_mensual_usd: body.monto_mensual_usd };
+    const categoria = { categoria: body.categoria, monto_mensual_usd: body.monto_mensual_usd, iva_usd: body.iva_usd || 0 };
     content.categorias = [...(content.categorias || []), categoria];
     content._status = "ok";
     content._ultima_actualizacion = new Date().toISOString();

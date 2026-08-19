@@ -42,6 +42,7 @@ interface Sueldos {
 interface CategoriaGasto {
   categoria: string;
   monto_mensual_usd: number;
+  iva_usd?: number;
 }
 
 interface Gastos {
@@ -185,6 +186,7 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
   const totalCostoLaboral = totalSueldos + totalComisiones + cargasSociales;
 
   const totalGastos = categorias.reduce((s, c) => s + (c.monto_mensual_usd || 0), 0);
+  const totalIvaGastos = categorias.reduce((s, c) => s + (c.iva_usd || 0), 0);
 
   const totalImpuestosInversion = embarques.reduce((s, e) => s + (e.impuestos_usd || 0), 0);
 
@@ -273,6 +275,8 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
           setEmbarques={setEmbarques}
           totalImpuestosInversion={totalImpuestosInversion}
           sinDatosInversiones={sinDatosInversiones}
+          categorias={categorias}
+          totalIvaGastos={totalIvaGastos}
         />
       )}
     </div>
@@ -673,9 +677,10 @@ function FilaEmpleadoEdicion({
 interface GastoForm {
   categoria: string;
   monto_mensual_usd: string;
+  iva_usd: string;
 }
 
-const GASTO_FORM_VACIO: GastoForm = { categoria: "", monto_mensual_usd: "" };
+const GASTO_FORM_VACIO: GastoForm = { categoria: "", monto_mensual_usd: "", iva_usd: "" };
 
 function GastosSection({
   categorias,
@@ -693,12 +698,15 @@ function GastosSection({
   const { guardando, error, aviso, ejecutar, setError } = useEstadoGuardado();
 
   const totalGastos = categorias.reduce((s, c) => s + (c.monto_mensual_usd || 0), 0);
+  const totalIvaGastos = categorias.reduce((s, c) => s + (c.iva_usd || 0), 0);
 
   function parseForm(f: GastoForm) {
     const monto = parseFloat(f.monto_mensual_usd);
+    const iva = parseFloat(f.iva_usd || "0");
     if (!f.categoria.trim()) throw new Error("Falta el nombre de la categoría.");
     if (Number.isNaN(monto) || monto < 0) throw new Error("Monto inválido.");
-    return { categoria: f.categoria.trim(), monto_mensual_usd: monto };
+    if (Number.isNaN(iva) || iva < 0) throw new Error("IVA inválido.");
+    return { categoria: f.categoria.trim(), monto_mensual_usd: monto, iva_usd: iva };
   }
 
   async function handleAgregar(e: React.FormEvent) {
@@ -744,6 +752,11 @@ function GastosSection({
           <div className="card-title">Total gastos mensuales</div>
           <div className="card-value-sm mono text-red">{fmtUSD(totalGastos)}</div>
         </div>
+        <div className="card card-sm">
+          <div className="card-title">Total IVA registrado</div>
+          <div className="card-value-sm mono">{fmtUSD(totalIvaGastos)}</div>
+          <div className="card-sub">Ver detalle en "🏛️ Impuestos y cargas"</div>
+        </div>
       </div>
 
       <div className="card section">
@@ -764,6 +777,10 @@ function GastosSection({
               <label className="form-label">Monto mensual (USD)</label>
               <input className="form-input mono" type="number" step="1" min="0" value={form.monto_mensual_usd} onChange={(e) => setForm({ ...form, monto_mensual_usd: e.target.value })} required />
             </div>
+            <div>
+              <label className="form-label">IVA (USD, opcional)</label>
+              <input className="form-input mono" type="number" step="1" min="0" value={form.iva_usd} onChange={(e) => setForm({ ...form, iva_usd: e.target.value })} placeholder="0" />
+            </div>
             <button className="btn btn-primary" type="submit" disabled={guardando}>Guardar</button>
           </form>
         )}
@@ -774,6 +791,7 @@ function GastosSection({
               <tr>
                 <th>Categoría</th>
                 <th style={{ textAlign: "right" }}>Monto mensual</th>
+                <th style={{ textAlign: "right" }}>IVA</th>
                 <th style={{ textAlign: "right" }}>% del total</th>
                 <th></th>
               </tr>
@@ -784,6 +802,7 @@ function GastosSection({
                   <tr key={c.categoria}>
                     <td><input className="form-input" value={editForm.categoria} onChange={(e) => setEditForm({ ...editForm, categoria: e.target.value })} /></td>
                     <td><input className="form-input mono" type="number" style={{ textAlign: "right" }} value={editForm.monto_mensual_usd} onChange={(e) => setEditForm({ ...editForm, monto_mensual_usd: e.target.value })} /></td>
+                    <td><input className="form-input mono" type="number" style={{ textAlign: "right" }} value={editForm.iva_usd} onChange={(e) => setEditForm({ ...editForm, iva_usd: e.target.value })} /></td>
                     <td className="text-muted" style={{ textAlign: "right" }}>—</td>
                     <td>
                       <div className="btn-row">
@@ -796,10 +815,11 @@ function GastosSection({
                   <tr key={c.categoria}>
                     <td>{c.categoria}</td>
                     <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(c.monto_mensual_usd)}</td>
+                    <td className="td-mono" style={{ textAlign: "right" }}>{c.iva_usd ? fmtUSD(c.iva_usd) : "—"}</td>
                     <td className="td-mono" style={{ textAlign: "right" }}>{totalGastos > 0 ? fmtPct(c.monto_mensual_usd / totalGastos) : "—"}</td>
                     <td>
                       <div className="btn-row">
-                        <button className="icon-btn" title="Editar" onClick={() => { setEditando(c.categoria); setEditForm({ categoria: c.categoria, monto_mensual_usd: String(c.monto_mensual_usd) }); }}>✏️</button>
+                        <button className="icon-btn" title="Editar" onClick={() => { setEditando(c.categoria); setEditForm({ categoria: c.categoria, monto_mensual_usd: String(c.monto_mensual_usd), iva_usd: String(c.iva_usd || 0) }); }}>✏️</button>
                         <button className="icon-btn" title="Eliminar" onClick={() => handleEliminar(c.categoria)}>🗑️</button>
                       </div>
                     </td>
@@ -808,7 +828,7 @@ function GastosSection({
               ))}
               {categorias.length === 0 && (
                 <tr>
-                  <td colSpan={4} className="text-muted">Sin categorías cargadas.</td>
+                  <td colSpan={5} className="text-muted">Sin categorías cargadas.</td>
                 </tr>
               )}
             </tbody>
@@ -1127,6 +1147,8 @@ function ImpuestosSection({
   setEmbarques,
   totalImpuestosInversion,
   sinDatosInversiones,
+  categorias,
+  totalIvaGastos,
 }: {
   cargasSocialesPct: number;
   setCargasSocialesPct: React.Dispatch<React.SetStateAction<number>>;
@@ -1136,6 +1158,8 @@ function ImpuestosSection({
   setEmbarques: React.Dispatch<React.SetStateAction<Embarque[]>>;
   totalImpuestosInversion: number;
   sinDatosInversiones: boolean;
+  categorias: CategoriaGasto[];
+  totalIvaGastos: number;
 }) {
   const [cargasSocialesInput, setCargasSocialesInput] = useState(String(cargasSocialesPct * 100));
   const [editandoId, setEditandoId] = useState<string | undefined>(undefined);
@@ -1177,6 +1201,11 @@ function ImpuestosSection({
           <div className="card-title">Impuestos de importación</div>
           <div className="card-value-sm mono text-red">{fmtUSD(totalImpuestosInversion)}</div>
           <div className="card-sub">Sobre embarques e inversiones</div>
+        </div>
+        <div className="card card-sm">
+          <div className="card-title">IVA de gastos</div>
+          <div className="card-value-sm mono">{fmtUSD(totalIvaGastos)}</div>
+          <div className="card-sub">Registrado en gastos mensuales y puntuales</div>
         </div>
       </div>
 
@@ -1267,6 +1296,47 @@ function ImpuestosSection({
                 </tr>
               )}
             </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div className="card section" style={{ marginTop: 16 }}>
+        <div className="card-title mb-12">IVA registrado por gasto</div>
+        <div className="banner info mb-16">
+          ℹ️ El monto de IVA de cada gasto se carga desde la pestaña "🧾 Gastos" (es opcional, no todos los gastos llevan IVA).
+        </div>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Categoría de gasto</th>
+                <th style={{ textAlign: "right" }}>Monto del gasto</th>
+                <th style={{ textAlign: "right" }}>IVA</th>
+              </tr>
+            </thead>
+            <tbody>
+              {categorias.filter((c) => (c.iva_usd || 0) > 0).map((c) => (
+                <tr key={c.categoria}>
+                  <td>{c.categoria}</td>
+                  <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(c.monto_mensual_usd)}</td>
+                  <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(c.iva_usd || 0)}</td>
+                </tr>
+              ))}
+              {categorias.filter((c) => (c.iva_usd || 0) > 0).length === 0 && (
+                <tr>
+                  <td colSpan={3} className="text-muted">Ningún gasto tiene IVA registrado todavía.</td>
+                </tr>
+              )}
+            </tbody>
+            {totalIvaGastos > 0 && (
+              <tfoot>
+                <tr style={{ borderTop: "2px solid var(--border)" }}>
+                  <td className="fw-600">Total IVA</td>
+                  <td></td>
+                  <td className="td-mono fw-600" style={{ textAlign: "right" }}>{fmtUSD(totalIvaGastos)}</td>
+                </tr>
+              </tfoot>
+            )}
           </table>
         </div>
       </div>
