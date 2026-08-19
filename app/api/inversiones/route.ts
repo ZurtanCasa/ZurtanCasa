@@ -1,14 +1,28 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readDataFile, writeDataFile } from "@/lib/githubData";
 
+export const dynamic = "force-dynamic";
+
 const FILE_PATH = "data/inversiones.json";
 const ESTADOS = ["pedido", "en_transito", "en_aduana", "recibido"];
 const CATEGORIAS = ["alfombras", "muebles", "otro"];
+
+export async function GET() {
+  try {
+    const { content } = await readDataFile(FILE_PATH);
+    return NextResponse.json(content);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message || "Error inesperado" }, { status: 500 });
+  }
+}
 
 function validarEmbarque(body: any) {
   if (!body.descripcion || typeof body.descripcion !== "string") throw new Error("Falta la descripción.");
   if (typeof body.monto_usd !== "number" || Number.isNaN(body.monto_usd) || body.monto_usd < 0) {
     throw new Error("El monto tiene que ser un número mayor o igual a 0.");
+  }
+  if (body.impuestos_usd !== undefined && (typeof body.impuestos_usd !== "number" || Number.isNaN(body.impuestos_usd) || body.impuestos_usd < 0)) {
+    throw new Error("Los impuestos tienen que ser un número mayor o igual a 0.");
   }
   if (body.categoria && !CATEGORIAS.includes(body.categoria)) throw new Error("Categoría inválida.");
   if (body.estado && !ESTADOS.includes(body.estado)) throw new Error("Estado inválido.");
@@ -26,6 +40,7 @@ export async function POST(req: NextRequest) {
       proveedor: body.proveedor || "",
       categoria: body.categoria || "otro",
       monto_usd: body.monto_usd,
+      impuestos_usd: body.impuestos_usd || 0,
       fecha_pedido: body.fecha_pedido || null,
       fecha_eta: body.fecha_eta || null,
       estado: body.estado || "pedido",

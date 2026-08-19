@@ -1,13 +1,14 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-type SubTab = "ventas" | "sueldos" | "gastos" | "inversiones" | "resumen";
+type SubTab = "ventas" | "sueldos" | "gastos" | "inversiones" | "impuestos" | "resumen";
 
 const SUBTAB_LABELS: Record<SubTab, string> = {
   ventas: "💰 Ventas",
   sueldos: "👥 Sueldos",
   gastos: "🧾 Gastos",
   inversiones: "🚢 Inversiones",
+  impuestos: "🏛️ Impuestos y cargas",
   resumen: "📊 Resumen",
 };
 
@@ -54,6 +55,7 @@ interface Embarque {
   proveedor: string;
   categoria: string;
   monto_usd: number;
+  impuestos_usd: number;
   fecha_pedido: string | null;
   fecha_eta: string | null;
   estado: string;
@@ -142,6 +144,29 @@ function AvisosGuardado({ error, aviso }: { error: string | null; aviso: string 
 export default function FinancieroTab({ shopify, mercadolibre, locales, meta, google, sueldos, gastos, inversiones, contexto }: Props) {
   const [subTab, setSubTab] = useState<SubTab>("resumen");
 
+  // Estado "vivo": se inicializa con los datos estáticos del build y se refresca
+  // con lo último guardado en GitHub apenas monta el componente. Se mantiene acá
+  // (en el padre) para que sobreviva a cambios de sub-pestaña.
+  const [empleados, setEmpleados] = useState<Empleado[]>(sueldos?.empleados || []);
+  const [cargasSocialesPct, setCargasSocialesPct] = useState<number>(sueldos?.cargas_sociales_pct || 0);
+  const [categorias, setCategorias] = useState<CategoriaGasto[]>(gastos?.categorias || []);
+  const [embarques, setEmbarques] = useState<Embarque[]>(inversiones?.embarques || []);
+
+  useEffect(() => {
+    apiCall("/api/sueldos")
+      .then((data) => {
+        setEmpleados(data.empleados || []);
+        setCargasSocialesPct(data.cargas_sociales_pct || 0);
+      })
+      .catch(() => {});
+    apiCall("/api/gastos")
+      .then((data) => setCategorias(data.categorias || []))
+      .catch(() => {});
+    apiCall("/api/inversiones")
+      .then((data) => setEmbarques(data.embarques || []))
+      .catch(() => {});
+  }, []);
+
   const webRevenue = shopify?.mes_actual?.revenue_bruto || 0;
   const mlRevenueBruto = mercadolibre?.mes_actual?.revenue_bruto || 0;
   const mlRevenueNeto = mercadolibre?.mes_actual?.revenue_neto_post_comision || 0;
@@ -153,25 +178,27 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
   const factorIva = contexto?.factor_iva_real ?? 0.22;
   const ventasNetasIva = totalVentasBruto / (1 + factorIva);
 
-  const empleadosActivos = (sueldos?.empleados || []).filter((e) => e.activo);
+  const empleadosActivos = empleados.filter((e) => e.activo);
   const totalSueldos = empleadosActivos.reduce((s, e) => s + (e.sueldo_mensual_usd || 0), 0);
   const totalComisiones = empleadosActivos.reduce((s, e) => s + ventasNetasIva * (e.comision_pct || 0), 0);
-  const cargasSociales = totalSueldos * (sueldos?.cargas_sociales_pct || 0);
+  const cargasSociales = totalSueldos * cargasSocialesPct;
   const totalCostoLaboral = totalSueldos + totalComisiones + cargasSociales;
 
-  const totalGastos = (gastos?.categorias || []).reduce((s, c) => s + (c.monto_mensual_usd || 0), 0);
+  const totalGastos = categorias.reduce((s, c) => s + (c.monto_mensual_usd || 0), 0);
+
+  const totalImpuestosInversion = embarques.reduce((s, e) => s + (e.impuestos_usd || 0), 0);
 
   const spendMeta = meta?.periodos?.last_30d?.spend || 0;
   const spendGoogle = google?.periodos?.last_30d?.spend || 0;
   const totalAds = spendMeta + spendGoogle;
 
-  const resultadoNeto = totalVentasNeto - totalCostoLaboral - totalGastos - totalAds;
+  const resultadoNeto = totalVentasNeto - totalCostoLaboral - totalGastos - totalAds - totalImpuestosInversion;
   const breakeven = contexto?.breakeven_mensual?.usd || 0;
 
   const sinDatosVentas = shopify?._status === "sin_datos" && mercadolibre?._status === "sin_datos" && locales?._status === "sin_datos";
-  const sinDatosSueldos = sueldos?._status === "sin_datos";
-  const sinDatosGastos = gastos?._status === "sin_datos";
-  const sinDatosInversiones = (inversiones?.embarques || []).length === 0;
+  const sinDatosSueldos = empleados.length === 0;
+  const sinDatosGastos = categorias.length === 0;
+  const sinDatosInversiones = embarques.length === 0;
 
   return (
     <div>
@@ -193,6 +220,7 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
           totalCostoLaboral={totalCostoLaboral}
           totalGastos={totalGastos}
           totalAds={totalAds}
+          totalImpuestosInversion={totalImpuestosInversion}
           resultadoNeto={resultadoNeto}
           breakeven={breakeven}
           sinDatosSueldos={sinDatosSueldos}
@@ -215,8 +243,9 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
 
       {subTab === "sueldos" && (
         <SueldosSection
-          empleadosIniciales={sueldos?.empleados || []}
-          cargasSocialesPctInicial={sueldos?.cargas_sociales_pct || 0}
+          empleados={empleados}
+          setEmpleados={setEmpleados}
+          cargasSocialesPct={cargasSocialesPct}
           ventasNetasIva={ventasNetasIva}
           sinDatos={sinDatosSueldos}
         />
@@ -224,13 +253,27 @@ export default function FinancieroTab({ shopify, mercadolibre, locales, meta, go
 
       {subTab === "gastos" && (
         <GastosSection
-          categoriasIniciales={gastos?.categorias || []}
+          categorias={categorias}
+          setCategorias={setCategorias}
           sinDatos={sinDatosGastos}
         />
       )}
 
       {subTab === "inversiones" && (
-        <InversionesSection embarquesIniciales={inversiones?.embarques || []} sinDatos={sinDatosInversiones} />
+        <InversionesSection embarques={embarques} setEmbarques={setEmbarques} sinDatos={sinDatosInversiones} />
+      )}
+
+      {subTab === "impuestos" && (
+        <ImpuestosSection
+          cargasSocialesPct={cargasSocialesPct}
+          setCargasSocialesPct={setCargasSocialesPct}
+          totalSueldos={totalSueldos}
+          cargasSociales={cargasSociales}
+          embarques={embarques}
+          setEmbarques={setEmbarques}
+          totalImpuestosInversion={totalImpuestosInversion}
+          sinDatosInversiones={sinDatosInversiones}
+        />
       )}
     </div>
   );
@@ -241,6 +284,7 @@ function ResumenSection({
   totalCostoLaboral,
   totalGastos,
   totalAds,
+  totalImpuestosInversion,
   resultadoNeto,
   breakeven,
   sinDatosSueldos,
@@ -250,6 +294,7 @@ function ResumenSection({
   totalCostoLaboral: number;
   totalGastos: number;
   totalAds: number;
+  totalImpuestosInversion: number;
   resultadoNeto: number;
   breakeven: number;
   sinDatosSueldos: boolean;
@@ -285,6 +330,10 @@ function ResumenSection({
             <tr>
               <td>− Inversión en Ads (últimos 30 días)</td>
               <td className="td-mono text-red" style={{ textAlign: "right" }}>−{fmtUSD(totalAds)}</td>
+            </tr>
+            <tr>
+              <td>− Impuestos de importación (inversiones)</td>
+              <td className="td-mono text-red" style={{ textAlign: "right" }}>−{fmtUSD(totalImpuestosInversion)}</td>
             </tr>
             <tr style={{ borderTop: "2px solid var(--border)" }}>
               <td className="fw-600">Resultado neto</td>
@@ -409,19 +458,18 @@ function empleadoAForm(e: Empleado): EmpleadoForm {
 }
 
 function SueldosSection({
-  empleadosIniciales,
-  cargasSocialesPctInicial,
+  empleados,
+  setEmpleados,
+  cargasSocialesPct,
   ventasNetasIva,
   sinDatos,
 }: {
-  empleadosIniciales: Empleado[];
-  cargasSocialesPctInicial: number;
+  empleados: Empleado[];
+  setEmpleados: React.Dispatch<React.SetStateAction<Empleado[]>>;
+  cargasSocialesPct: number;
   ventasNetasIva: number;
   sinDatos: boolean;
 }) {
-  const [empleados, setEmpleados] = useState<Empleado[]>(empleadosIniciales);
-  const [cargasSocialesPct, setCargasSocialesPct] = useState(cargasSocialesPctInicial);
-  const [cargasSocialesInput, setCargasSocialesInput] = useState(String(cargasSocialesPctInicial * 100));
   const [mostrarForm, setMostrarForm] = useState(false);
   const [form, setForm] = useState<EmpleadoForm>(EMPLEADO_FORM_VACIO);
   const [editando, setEditando] = useState<string | null>(null);
@@ -470,15 +518,6 @@ function SueldosSection({
     });
   }
 
-  async function handleGuardarCargasSociales() {
-    await ejecutar(async () => {
-      const pct = parseFloat(cargasSocialesInput);
-      if (Number.isNaN(pct) || pct < 0) throw new Error("Cargas sociales inválidas.");
-      await apiCall("/api/sueldos", { method: "POST", body: JSON.stringify({ resource: "config", cargas_sociales_pct: pct / 100 }) });
-      setCargasSocialesPct(pct / 100);
-    });
-  }
-
   return (
     <div>
       {sinDatos && (
@@ -508,24 +547,8 @@ function SueldosSection({
         </div>
       </div>
 
-      <div className="card section mb-16">
-        <div className="card-title mb-12">Cargas sociales</div>
-        <div className="form-grid" style={{ maxWidth: 320 }}>
-          <div>
-            <label className="form-label">Cargas sociales sobre sueldo fijo (%)</label>
-            <input
-              className="form-input mono"
-              type="number"
-              step="0.1"
-              min="0"
-              value={cargasSocialesInput}
-              onChange={(e) => setCargasSocialesInput(e.target.value)}
-            />
-          </div>
-          <button className="btn btn-primary" disabled={guardando} onClick={handleGuardarCargasSociales}>
-            Guardar
-          </button>
-        </div>
+      <div className="banner info mb-16">
+        ℹ️ El porcentaje de cargas sociales se edita en la pestaña "🏛️ Impuestos y cargas".
       </div>
 
       <div className="card section mb-16">
@@ -655,13 +678,14 @@ interface GastoForm {
 const GASTO_FORM_VACIO: GastoForm = { categoria: "", monto_mensual_usd: "" };
 
 function GastosSection({
-  categoriasIniciales,
+  categorias,
+  setCategorias,
   sinDatos,
 }: {
-  categoriasIniciales: CategoriaGasto[];
+  categorias: CategoriaGasto[];
+  setCategorias: React.Dispatch<React.SetStateAction<CategoriaGasto[]>>;
   sinDatos: boolean;
 }) {
-  const [categorias, setCategorias] = useState<CategoriaGasto[]>(categoriasIniciales);
   const [mostrarForm, setMostrarForm] = useState(false);
   const [form, setForm] = useState<GastoForm>(GASTO_FORM_VACIO);
   const [editando, setEditando] = useState<string | null>(null);
@@ -800,6 +824,7 @@ interface EmbarqueForm {
   proveedor: string;
   categoria: string;
   monto_usd: string;
+  impuestos_usd: string;
   fecha_pedido: string;
   fecha_eta: string;
   estado: string;
@@ -811,6 +836,7 @@ const EMBARQUE_FORM_VACIO: EmbarqueForm = {
   proveedor: "",
   categoria: "alfombras",
   monto_usd: "",
+  impuestos_usd: "0",
   fecha_pedido: "",
   fecha_eta: "",
   estado: "pedido",
@@ -823,6 +849,7 @@ function embarqueAForm(e: Embarque): EmbarqueForm {
     proveedor: e.proveedor || "",
     categoria: e.categoria,
     monto_usd: String(e.monto_usd),
+    impuestos_usd: String(e.impuestos_usd || 0),
     fecha_pedido: e.fecha_pedido || "",
     fecha_eta: e.fecha_eta || "",
     estado: e.estado,
@@ -831,13 +858,14 @@ function embarqueAForm(e: Embarque): EmbarqueForm {
 }
 
 function InversionesSection({
-  embarquesIniciales,
+  embarques,
+  setEmbarques,
   sinDatos,
 }: {
-  embarquesIniciales: Embarque[];
+  embarques: Embarque[];
+  setEmbarques: React.Dispatch<React.SetStateAction<Embarque[]>>;
   sinDatos: boolean;
 }) {
-  const [embarques, setEmbarques] = useState<Embarque[]>(embarquesIniciales);
   const [mostrarForm, setMostrarForm] = useState(false);
   const [form, setForm] = useState<EmbarqueForm>(EMBARQUE_FORM_VACIO);
   const [editando, setEditando] = useState<string | undefined>(undefined);
@@ -851,13 +879,16 @@ function InversionesSection({
 
   function parseForm(f: EmbarqueForm) {
     const monto = parseFloat(f.monto_usd);
+    const impuestos = parseFloat(f.impuestos_usd || "0");
     if (!f.descripcion.trim()) throw new Error("Falta la descripción.");
     if (Number.isNaN(monto) || monto < 0) throw new Error("Monto inválido.");
+    if (Number.isNaN(impuestos) || impuestos < 0) throw new Error("Impuestos inválidos.");
     return {
       descripcion: f.descripcion.trim(),
       proveedor: f.proveedor.trim(),
       categoria: f.categoria,
       monto_usd: monto,
+      impuestos_usd: impuestos,
       fecha_pedido: f.fecha_pedido || null,
       fecha_eta: f.fecha_eta || null,
       estado: f.estado,
@@ -954,6 +985,10 @@ function InversionesSection({
               <input className="form-input mono" type="number" step="1" min="0" value={form.monto_usd} onChange={(e) => setForm({ ...form, monto_usd: e.target.value })} required />
             </div>
             <div>
+              <label className="form-label">Impuestos de importación (USD)</label>
+              <input className="form-input mono" type="number" step="1" min="0" value={form.impuestos_usd} onChange={(e) => setForm({ ...form, impuestos_usd: e.target.value })} />
+            </div>
+            <div>
               <label className="form-label">Fecha pedido</label>
               <input className="form-input mono" type="date" value={form.fecha_pedido} onChange={(e) => setForm({ ...form, fecha_pedido: e.target.value })} />
             </div>
@@ -983,6 +1018,7 @@ function InversionesSection({
                 <th>Proveedor</th>
                 <th>Categoría</th>
                 <th style={{ textAlign: "right" }}>Monto</th>
+                <th style={{ textAlign: "right" }}>Impuestos</th>
                 <th>Fecha pedido</th>
                 <th>ETA</th>
                 <th>Estado</th>
@@ -1006,6 +1042,7 @@ function InversionesSection({
                     <td className="text-dim">{e.proveedor}</td>
                     <td>{CATEGORIA_LABELS[e.categoria] || e.categoria}</td>
                     <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(e.monto_usd)}</td>
+                    <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(e.impuestos_usd || 0)}</td>
                     <td className="mono">{fmtFecha(e.fecha_pedido)}</td>
                     <td className="mono">{fmtFecha(e.fecha_eta)}</td>
                     <td>
@@ -1028,7 +1065,7 @@ function InversionesSection({
               ))}
               {ordenados.length === 0 && (
                 <tr>
-                  <td colSpan={9} className="text-muted">Sin embarques cargados.</td>
+                  <td colSpan={10} className="text-muted">Sin embarques cargados.</td>
                 </tr>
               )}
             </tbody>
@@ -1062,6 +1099,7 @@ function FilaEmbarqueEdicion({
         </select>
       </td>
       <td><input className="form-input mono" type="number" style={{ textAlign: "right" }} value={f.monto_usd} onChange={(e) => setF({ ...f, monto_usd: e.target.value })} /></td>
+      <td><input className="form-input mono" type="number" style={{ textAlign: "right" }} value={f.impuestos_usd} onChange={(e) => setF({ ...f, impuestos_usd: e.target.value })} /></td>
       <td><input className="form-input mono" type="date" value={f.fecha_pedido} onChange={(e) => setF({ ...f, fecha_pedido: e.target.value })} /></td>
       <td><input className="form-input mono" type="date" value={f.fecha_eta} onChange={(e) => setF({ ...f, fecha_eta: e.target.value })} /></td>
       <td>
@@ -1077,5 +1115,161 @@ function FilaEmbarqueEdicion({
         </div>
       </td>
     </tr>
+  );
+}
+
+function ImpuestosSection({
+  cargasSocialesPct,
+  setCargasSocialesPct,
+  totalSueldos,
+  cargasSociales,
+  embarques,
+  setEmbarques,
+  totalImpuestosInversion,
+  sinDatosInversiones,
+}: {
+  cargasSocialesPct: number;
+  setCargasSocialesPct: React.Dispatch<React.SetStateAction<number>>;
+  totalSueldos: number;
+  cargasSociales: number;
+  embarques: Embarque[];
+  setEmbarques: React.Dispatch<React.SetStateAction<Embarque[]>>;
+  totalImpuestosInversion: number;
+  sinDatosInversiones: boolean;
+}) {
+  const [cargasSocialesInput, setCargasSocialesInput] = useState(String(cargasSocialesPct * 100));
+  const [editandoId, setEditandoId] = useState<string | undefined>(undefined);
+  const [impuestoInput, setImpuestoInput] = useState("");
+  const { guardando, error, aviso, ejecutar, setError } = useEstadoGuardado();
+
+  async function handleGuardarCargasSociales() {
+    await ejecutar(async () => {
+      const pct = parseFloat(cargasSocialesInput);
+      if (Number.isNaN(pct) || pct < 0) throw new Error("Cargas sociales inválidas.");
+      await apiCall("/api/sueldos", { method: "POST", body: JSON.stringify({ resource: "config", cargas_sociales_pct: pct / 100 }) });
+      setCargasSocialesPct(pct / 100);
+    });
+  }
+
+  async function handleGuardarImpuesto(id: string) {
+    await ejecutar(async () => {
+      const impuestos = parseFloat(impuestoInput || "0");
+      if (Number.isNaN(impuestos) || impuestos < 0) throw new Error("Impuestos inválidos.");
+      const data = await apiCall("/api/inversiones", { method: "PATCH", body: JSON.stringify({ id, impuestos_usd: impuestos }) });
+      setEmbarques((prev) => prev.map((e) => (e.id === id ? data.embarque : e)));
+      setEditandoId(undefined);
+    });
+  }
+
+  const ordenados = [...embarques].sort((a, b) => (b.fecha_pedido || "").localeCompare(a.fecha_pedido || ""));
+
+  return (
+    <div>
+      <AvisosGuardado error={error} aviso={aviso} />
+
+      <div className="kpi-grid mb-16">
+        <div className="card card-sm">
+          <div className="card-title">Cargas sociales ({fmtPct(cargasSocialesPct)})</div>
+          <div className="card-value-sm mono">{fmtUSD(cargasSociales)}</div>
+          <div className="card-sub">Sobre {fmtUSD(totalSueldos)} de sueldos fijos</div>
+        </div>
+        <div className="card card-sm">
+          <div className="card-title">Impuestos de importación</div>
+          <div className="card-value-sm mono text-red">{fmtUSD(totalImpuestosInversion)}</div>
+          <div className="card-sub">Sobre embarques e inversiones</div>
+        </div>
+      </div>
+
+      <div className="card section mb-16">
+        <div className="card-title mb-12">Cargas sociales de empleados</div>
+        <div className="form-grid" style={{ maxWidth: 320 }}>
+          <div>
+            <label className="form-label">Cargas sociales sobre sueldo fijo (%)</label>
+            <input
+              className="form-input mono"
+              type="number"
+              step="0.1"
+              min="0"
+              value={cargasSocialesInput}
+              onChange={(e) => setCargasSocialesInput(e.target.value)}
+            />
+          </div>
+          <button className="btn btn-primary" disabled={guardando} onClick={handleGuardarCargasSociales}>
+            Guardar
+          </button>
+        </div>
+      </div>
+
+      <div className="card section">
+        <div className="card-title mb-12">Impuestos de importación por embarque</div>
+        {sinDatosInversiones && (
+          <div className="banner info mb-16">
+            ℹ️ No hay embarques cargados todavía. Agregalos desde la pestaña "🚢 Inversiones".
+          </div>
+        )}
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Descripción</th>
+                <th>Proveedor</th>
+                <th style={{ textAlign: "right" }}>Monto embarque</th>
+                <th style={{ textAlign: "right" }}>Impuestos</th>
+                <th>Estado</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {ordenados.map((e) => (
+                <tr key={e.id}>
+                  <td>{e.descripcion}</td>
+                  <td className="text-dim">{e.proveedor}</td>
+                  <td className="td-mono" style={{ textAlign: "right" }}>{fmtUSD(e.monto_usd)}</td>
+                  <td className="td-mono" style={{ textAlign: "right" }}>
+                    {editandoId === e.id ? (
+                      <input
+                        className="form-input mono"
+                        type="number"
+                        style={{ textAlign: "right" }}
+                        value={impuestoInput}
+                        onChange={(ev) => setImpuestoInput(ev.target.value)}
+                      />
+                    ) : (
+                      fmtUSD(e.impuestos_usd || 0)
+                    )}
+                  </td>
+                  <td>
+                    <span className={`semaforo ${e.estado === "recibido" ? "verde" : e.estado === "en_aduana" ? "amarillo" : "rojo"}`}>
+                      {ESTADO_LABELS[e.estado] || e.estado}
+                    </span>
+                  </td>
+                  <td>
+                    {editandoId === e.id ? (
+                      <div className="btn-row">
+                        <button className="icon-btn" title="Guardar" disabled={guardando} onClick={() => handleGuardarImpuesto(e.id!)}>💾</button>
+                        <button className="icon-btn" title="Cancelar" disabled={guardando} onClick={() => setEditandoId(undefined)}>✖️</button>
+                      </div>
+                    ) : (
+                      <button
+                        className="icon-btn"
+                        title="Editar impuestos"
+                        onClick={() => { setEditandoId(e.id); setImpuestoInput(String(e.impuestos_usd || 0)); setError(null); }}
+                      >
+                        ✏️
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
+              {ordenados.length === 0 && (
+                <tr>
+                  <td colSpan={6} className="text-muted">Sin embarques cargados.</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
   );
 }

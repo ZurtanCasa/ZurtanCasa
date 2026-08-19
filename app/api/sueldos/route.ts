@@ -1,7 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readDataFile, writeDataFile } from "@/lib/githubData";
 
+export const dynamic = "force-dynamic";
+
 const FILE_PATH = "data/sueldos.json";
+
+export async function GET() {
+  try {
+    const { content } = await readDataFile(FILE_PATH);
+    return NextResponse.json(content);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message || "Error inesperado" }, { status: 500 });
+  }
+}
 
 function validarEmpleado(body: any) {
   if (!body.nombre || typeof body.nombre !== "string") throw new Error("Falta el nombre.");
