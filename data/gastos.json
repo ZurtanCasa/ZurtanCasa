@@ -1,7 +1,7 @@
 {
   "_status": "ok",
   "_instrucciones": "Completar monto_mensual_usd de cada categoría con el valor real. Podés agregar/quitar categorías. Cuando los montos sean reales, cambiar _status a 'ok'.",
-  "_ultima_actualizacion": "2026-08-19T19:22:43.879Z",
+  "_ultima_actualizacion": "2026-08-19T19:23:02.018Z",
   "moneda": "USD",
   "categorias": [
     {
