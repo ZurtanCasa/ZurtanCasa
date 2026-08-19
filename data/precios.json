@@ -1,8 +1,8 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-18T16:50:23.080399-03:00",
-  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27 | +43 persas agregadas 2026-08-18",
-  "total_articulos": 1141,
+  "_ultima_actualizacion": "2026-08-19T12:22:55.286553-03:00",
+  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27 | +43 persas agregadas 2026-08-18 | +1 persa (15077) 2026-08-18",
+  "total_articulos": 1142,
   "articulos": [
     {
       "codigo": "2009001 GARDEN CHAIR",
@@ -6626,6 +6626,12 @@
       "codigo": "22669",
       "nombre": "Kilim Afghan",
       "precio_usd": 2694.82
+    },
+    {
+      "codigo": "15077",
+      "nombre": "Fine Vintage",
+      "precio_usd": 6551.0,
+      "medida": "485 x 346"
     }
   ]
 }
