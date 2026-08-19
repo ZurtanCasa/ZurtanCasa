@@ -1,7 +1,20 @@
 {
-  "_status": "sin_datos",
+  "_status": "ok",
   "_instrucciones": "Cargar cada embarque/inversión (alfombras, muebles, etc.) como un objeto en 'embarques'. Estados posibles: 'pedido', 'en_transito', 'en_aduana', 'recibido'. Cuando haya datos reales, cambiar _status a 'ok'.",
-  "_ultima_actualizacion": null,
+  "_ultima_actualizacion": "2026-08-19T16:04:44.394Z",
   "moneda": "USD",
-  "embarques": []
+  "embarques": [
+    {
+      "id": "36b9d4f0-0319-4228-bc73-2577068e4356",
+      "descripcion": "Zargar",
+      "proveedor": "Holanda",
+      "categoria": "alfombras",
+      "monto_usd": 23245,
+      "impuestos_usd": 0,
+      "fecha_pedido": "2016-06-11",
+      "fecha_eta": "2026-08-18",
+      "estado": "recibido",
+      "notas": ""
+    }
+  ]
 }
