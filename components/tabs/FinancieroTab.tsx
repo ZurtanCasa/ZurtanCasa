@@ -678,9 +678,26 @@ interface GastoForm {
   categoria: string;
   monto_mensual_usd: string;
   iva_usd: string;
+  iva_pct: string;
 }
 
-const GASTO_FORM_VACIO: GastoForm = { categoria: "", monto_mensual_usd: "", iva_usd: "" };
+const GASTO_FORM_VACIO: GastoForm = { categoria: "", monto_mensual_usd: "", iva_usd: "", iva_pct: "" };
+
+// El monto ya incluye IVA: iva = monto * pct / (100 + pct) (extrae el IVA de un precio con impuesto incluido).
+function calcularIvaDesdeMontoPct(montoStr: string, pctStr: string): string {
+  const monto = parseFloat(montoStr);
+  const pct = parseFloat(pctStr);
+  if (Number.isNaN(monto) || monto <= 0 || Number.isNaN(pct) || pct < 0) return "";
+  const iva = (monto * pct) / (100 + pct);
+  return iva.toFixed(2);
+}
+
+// Para sugerir el % al editar un gasto que ya tiene IVA cargado.
+function calcularPctDesdeMontoIva(monto: number, iva: number): string {
+  if (!monto || !iva || monto <= iva) return "";
+  const pct = (iva * 100) / (monto - iva);
+  return pct.toFixed(2);
+}
 
 function GastosSection({
   categorias,
@@ -775,12 +792,49 @@ function GastosSection({
             </div>
             <div>
               <label className="form-label">Monto mensual (USD)</label>
-              <input className="form-input mono" type="number" step="1" min="0" value={form.monto_mensual_usd} onChange={(e) => setForm({ ...form, monto_mensual_usd: e.target.value })} required />
+              <input
+                className="form-input mono"
+                type="number"
+                step="1"
+                min="0"
+                value={form.monto_mensual_usd}
+                onChange={(e) => {
+                  const monto = e.target.value;
+                  const iva = form.iva_pct ? calcularIvaDesdeMontoPct(monto, form.iva_pct) : form.iva_usd;
+                  setForm({ ...form, monto_mensual_usd: monto, iva_usd: iva });
+                }}
+                required
+              />
             </div>
             <div>
               <label className="form-label">IVA incluido en el monto (USD, opcional)</label>
-              <input className="form-input mono" type="number" step="1" min="0" value={form.iva_usd} onChange={(e) => setForm({ ...form, iva_usd: e.target.value })} placeholder="0" />
-              <div className="form-hint">No es un monto extra: es la parte del monto mensual que ya corresponde a IVA. Dejalo en 0 si el gasto no lleva IVA.</div>
+              <div style={{ display: "flex", gap: 6 }}>
+                <input
+                  className="form-input mono"
+                  type="number"
+                  step="1"
+                  min="0"
+                  value={form.iva_usd}
+                  onChange={(e) => setForm({ ...form, iva_usd: e.target.value, iva_pct: "" })}
+                  placeholder="0"
+                />
+                <input
+                  className="form-input mono"
+                  type="number"
+                  step="0.1"
+                  min="0"
+                  style={{ maxWidth: 90 }}
+                  value={form.iva_pct}
+                  onChange={(e) => {
+                    const pct = e.target.value;
+                    const iva = calcularIvaDesdeMontoPct(form.monto_mensual_usd, pct);
+                    setForm({ ...form, iva_pct: pct, iva_usd: iva || form.iva_usd });
+                  }}
+                  placeholder="% IVA"
+                  title="Poné el % de IVA y se calcula solo el monto"
+                />
+              </div>
+              <div className="form-hint">No es un monto extra: es la parte del monto mensual que ya corresponde a IVA. Poné el % (ej. 22) y se calcula solo, o cargá el monto directamente. Dejalo en 0 si el gasto no lleva IVA.</div>
             </div>
             <button className="btn btn-primary" type="submit" disabled={guardando}>Guardar</button>
           </form>
@@ -802,8 +856,44 @@ function GastosSection({
                 editando === c.categoria ? (
                   <tr key={c.categoria}>
                     <td><input className="form-input" value={editForm.categoria} onChange={(e) => setEditForm({ ...editForm, categoria: e.target.value })} /></td>
-                    <td><input className="form-input mono" type="number" style={{ textAlign: "right" }} value={editForm.monto_mensual_usd} onChange={(e) => setEditForm({ ...editForm, monto_mensual_usd: e.target.value })} /></td>
-                    <td><input className="form-input mono" type="number" style={{ textAlign: "right" }} value={editForm.iva_usd} onChange={(e) => setEditForm({ ...editForm, iva_usd: e.target.value })} /></td>
+                    <td>
+                      <input
+                        className="form-input mono"
+                        type="number"
+                        style={{ textAlign: "right" }}
+                        value={editForm.monto_mensual_usd}
+                        onChange={(e) => {
+                          const monto = e.target.value;
+                          const iva = editForm.iva_pct ? calcularIvaDesdeMontoPct(monto, editForm.iva_pct) : editForm.iva_usd;
+                          setEditForm({ ...editForm, monto_mensual_usd: monto, iva_usd: iva });
+                        }}
+                      />
+                    </td>
+                    <td>
+                      <div style={{ display: "flex", gap: 4 }}>
+                        <input
+                          className="form-input mono"
+                          type="number"
+                          style={{ textAlign: "right" }}
+                          value={editForm.iva_usd}
+                          onChange={(e) => setEditForm({ ...editForm, iva_usd: e.target.value, iva_pct: "" })}
+                        />
+                        <input
+                          className="form-input mono"
+                          type="number"
+                          step="0.1"
+                          style={{ textAlign: "right", maxWidth: 64 }}
+                          value={editForm.iva_pct}
+                          onChange={(e) => {
+                            const pct = e.target.value;
+                            const iva = calcularIvaDesdeMontoPct(editForm.monto_mensual_usd, pct);
+                            setEditForm({ ...editForm, iva_pct: pct, iva_usd: iva || editForm.iva_usd });
+                          }}
+                          placeholder="%"
+                          title="% IVA sobre el monto"
+                        />
+                      </div>
+                    </td>
                     <td className="text-muted" style={{ textAlign: "right" }}>—</td>
                     <td>
                       <div className="btn-row">
@@ -820,7 +910,21 @@ function GastosSection({
                     <td className="td-mono" style={{ textAlign: "right" }}>{totalGastos > 0 ? fmtPct(c.monto_mensual_usd / totalGastos) : "—"}</td>
                     <td>
                       <div className="btn-row">
-                        <button className="icon-btn" title="Editar" onClick={() => { setEditando(c.categoria); setEditForm({ categoria: c.categoria, monto_mensual_usd: String(c.monto_mensual_usd), iva_usd: String(c.iva_usd || 0) }); }}>✏️</button>
+                        <button
+                          className="icon-btn"
+                          title="Editar"
+                          onClick={() => {
+                            setEditando(c.categoria);
+                            setEditForm({
+                              categoria: c.categoria,
+                              monto_mensual_usd: String(c.monto_mensual_usd),
+                              iva_usd: String(c.iva_usd || 0),
+                              iva_pct: calcularPctDesdeMontoIva(c.monto_mensual_usd, c.iva_usd || 0),
+                            });
+                          }}
+                        >
+                          ✏️
+                        </button>
                         <button className="icon-btn" title="Eliminar" onClick={() => handleEliminar(c.categoria)}>🗑️</button>
                       </div>
                     </td>
