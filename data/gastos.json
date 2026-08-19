@@ -1,7 +1,7 @@
 {
   "_status": "ok",
   "_instrucciones": "Completar monto_mensual_usd de cada categoría con el valor real. Podés agregar/quitar categorías. Cuando los montos sean reales, cambiar _status a 'ok'.",
-  "_ultima_actualizacion": "2026-08-19T16:08:58.527Z",
+  "_ultima_actualizacion": "2026-08-19T16:18:14.952Z",
   "moneda": "USD",
   "categorias": [
     {
@@ -58,7 +58,8 @@
     },
     {
       "categoria": "Dialcaren",
-      "monto_mensual_usd": 1700
+      "monto_mensual_usd": 1326,
+      "iva_usd": 374
     },
     {
       "categoria": "Marketing",
