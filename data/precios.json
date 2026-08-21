@@ -1,8 +1,8 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-19T12:22:55.286553-03:00",
-  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27 | +43 persas agregadas 2026-08-18 | +1 persa (15077) 2026-08-18",
-  "total_articulos": 1142,
+  "_ultima_actualizacion": "2026-08-21T17:50:11.416313-03:00",
+  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27 | +43 persas agregadas 2026-08-18 | +1 persa (15077) 2026-08-18 | +1 persa (808B) 2026-08-18",
+  "total_articulos": 1143,
   "articulos": [
     {
       "codigo": "2009001 GARDEN CHAIR",
@@ -6632,6 +6632,12 @@
       "nombre": "Fine Vintage",
       "precio_usd": 6551.0,
       "medida": "485 x 346"
+    },
+    {
+      "codigo": "808B",
+      "nombre": "Fine Vintage",
+      "precio_usd": 4591.0,
+      "medida": "400 x 294"
     }
   ]
 }
