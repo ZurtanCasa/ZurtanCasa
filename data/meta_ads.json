@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-22T13:18:00.149440-03:00",
+  "_ultima_actualizacion": "2026-08-22T20:10:50.424017-03:00",
   "periodos": {
     "today": {
-      "spend": 4.22,
+      "spend": 9.52,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 2478,
-      "clicks": 95
+      "impressions": 5869,
+      "clicks": 188
     },
     "yesterday": {
       "spend": 9.35,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 5074,
-      "clicks": 202
+      "impressions": 5076,
+      "clicks": 203
     },
     "last_7d": {
       "spend": 41.71,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 17021,
-      "clicks": 794
+      "impressions": 17023,
+      "clicks": 795
     },
     "last_30d": {
       "spend": 155.94,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 184854,
-      "clicks": 1813
+      "impressions": 184856,
+      "clicks": 1814
     }
   },
   "campanas": [
@@ -66,8 +66,8 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 13751,
-      "clicks": 478
+      "impressions": 13753,
+      "clicks": 479
     }
   ],
   "historico_mensual": [
@@ -144,59 +144,59 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 111.68,
+      "spend": 116.98,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 27096,
-      "clicks": 1631
+      "impressions": 30489,
+      "clicks": 1725
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 2478,
-        "reach": 2343,
-        "spend": 4.22,
-        "cpm": 1.7,
-        "clicks": 95,
+        "impressions": 5869,
+        "reach": 5392,
+        "spend": 9.52,
+        "cpm": 1.62,
+        "clicks": 188,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 5074,
+        "impressions": 5076,
         "reach": 4645,
         "spend": 9.35,
         "cpm": 1.84,
-        "clicks": 202,
+        "clicks": 203,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 1,
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 17021,
+        "impressions": 17023,
         "reach": 13490,
         "spend": 41.71,
         "cpm": 2.45,
-        "clicks": 794,
+        "clicks": 795,
         "profile_visits_fb": 0,
         "profile_visits_ig": 1078,
         "new_followers_fb": 4,
-        "new_followers_ig": 83
+        "new_followers_ig": 126
       },
       "last_30d": {
-        "impressions": 184854,
+        "impressions": 184856,
         "reach": 134630,
         "spend": 155.94,
         "cpm": 0.84,
-        "clicks": 1813,
+        "clicks": 1814,
         "profile_visits_fb": 0,
         "profile_visits_ig": 6347,
         "new_followers_fb": 23,
-        "new_followers_ig": 760
+        "new_followers_ig": 803
       }
     },
     "por_anuncio": [
@@ -205,10 +205,10 @@
         "nombre": "Flyer",
         "periodos": {
           "today": {
-            "impressions": 53,
-            "reach": 40,
-            "spend": 0.61,
-            "cpm": 11.51
+            "impressions": 155,
+            "reach": 128,
+            "spend": 1.42,
+            "cpm": 9.16
           },
           "yesterday": {
             "impressions": 259,
@@ -235,10 +235,10 @@
         "nombre": "Video",
         "periodos": {
           "today": {
-            "impressions": 65,
-            "reach": 55,
-            "spend": 0.59,
-            "cpm": 9.08
+            "impressions": 170,
+            "reach": 137,
+            "spend": 1.32,
+            "cpm": 7.76
           },
           "yesterday": {
             "impressions": 146,
@@ -265,25 +265,25 @@
         "nombre": "Nuevo anuncio de Interacción",
         "periodos": {
           "today": {
-            "impressions": 2360,
-            "reach": 2258,
-            "spend": 3.02,
-            "cpm": 1.28
+            "impressions": 5544,
+            "reach": 5159,
+            "spend": 6.78,
+            "cpm": 1.22
           },
           "yesterday": {
-            "impressions": 4660,
+            "impressions": 4662,
             "reach": 4329,
             "spend": 5.71,
-            "cpm": 1.23
+            "cpm": 1.22
           },
           "last_7d": {
-            "impressions": 13751,
+            "impressions": 13753,
             "reach": 11377,
             "spend": 14.96,
             "cpm": 1.09
           },
           "last_30d": {
-            "impressions": 13751,
+            "impressions": 13753,
             "reach": 11377,
             "spend": 14.96,
             "cpm": 1.09
@@ -329,6 +329,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43277
+    "ig_followers_total": 43288
   }
 }
