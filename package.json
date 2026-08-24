@@ -6,17 +6,21 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:club-el-pais": "tsx scripts/test-club-el-pais.ts"
   },
   "dependencies": {
+    "fast-xml-parser": "^4.5.7",
+    "next": "14.2.35",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.35"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
-    "@types/react-dom": "^18"
+    "@types/react-dom": "^18",
+    "dotenv": "^16.6.1",
+    "tsx": "^4.23.12",
+    "typescript": "^5"
   }
 }
