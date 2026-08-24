@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { wsLogin, wsValidaDocumentoYTarjeta, ClubElPaisEnv } from "@/lib/club-el-pais";
-import { createSingleUsePercentageDiscount } from "@/lib/shopify-admin";
+import { createSaleAwarePercentageDiscount } from "@/lib/shopify-admin";
 
 export const dynamic = "force-dynamic";
 
@@ -62,7 +62,7 @@ export async function POST(req: NextRequest) {
     }
 
     const discountCode = `ELPAIS-${Date.now().toString(36).toUpperCase()}`;
-    const codigoCreado = await createSingleUsePercentageDiscount({
+    const codigoCreado = await createSaleAwarePercentageDiscount({
       code: discountCode,
       percentage: PORCENTAJE_DESCUENTO,
       title: `Club El País ${PORCENTAJE_DESCUENTO}% - tarjeta ${tarjeta.slice(-4)}`,

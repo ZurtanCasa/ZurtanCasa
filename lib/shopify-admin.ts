@@ -6,15 +6,19 @@ function shopifyGraphqlEndpoint(): string {
   return `${storeUrl}/admin/api/${API_VERSION}/graphql.json`;
 }
 
-async function shopifyGraphql<T>(query: string, variables: Record<string, unknown>): Promise<T> {
-  const accessToken = process.env.SHOPIFY_ACCESS_TOKEN || "";
-  if (!accessToken) throw new Error("Falta SHOPIFY_ACCESS_TOKEN");
+async function shopifyGraphql<T>(
+  query: string,
+  variables: Record<string, unknown>,
+  accessToken?: string,
+): Promise<T> {
+  const token = accessToken || process.env.SHOPIFY_ACCESS_TOKEN || "";
+  if (!token) throw new Error("Falta un access token de Shopify");
 
   const res = await fetch(shopifyGraphqlEndpoint(), {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "X-Shopify-Access-Token": accessToken,
+      "X-Shopify-Access-Token": token,
     },
     body: JSON.stringify({ query, variables }),
   });
@@ -26,20 +30,11 @@ async function shopifyGraphql<T>(query: string, variables: Record<string, unknow
   return json.data as T;
 }
 
-const CREATE_DISCOUNT_MUTATION = `
-  mutation discountCodeBasicCreate($basicCodeDiscount: DiscountCodeBasicInput!) {
-    discountCodeBasicCreate(basicCodeDiscount: $basicCodeDiscount) {
-      codeDiscountNode {
-        id
-        codeDiscount {
-          ... on DiscountCodeBasic {
-            codes(first: 1) {
-              nodes {
-                code
-              }
-            }
-          }
-        }
+const CREATE_APP_DISCOUNT_MUTATION = `
+  mutation discountCodeAppCreate($codeAppDiscount: DiscountCodeAppInput!) {
+    discountCodeAppCreate(codeAppDiscount: $codeAppDiscount) {
+      codeAppDiscount {
+        discountId
       }
       userErrors {
         field
@@ -50,10 +45,10 @@ const CREATE_DISCOUNT_MUTATION = `
 `;
 
 /**
- * Crea un código de descuento de un solo uso, porcentual, con vencimiento corto
- * (pensado para aplicarse en el momento dentro del mismo checkout).
+ * Crea un código de descuento de un solo uso que corre la función "club-el-pais-sin-sale":
+ * aplica el porcentaje solo a las líneas que NO están en oferta (no acumulable con sale).
  */
-export async function createSingleUsePercentageDiscount(params: {
+export async function createSaleAwarePercentageDiscount(params: {
   code: string;
   percentage: number;
   title: string;
@@ -61,33 +56,50 @@ export async function createSingleUsePercentageDiscount(params: {
 }): Promise<string> {
   const startsAt = new Date();
   const endsAt = new Date(startsAt.getTime() + params.expiresInMinutes * 60 * 1000);
+  const accessToken = process.env.SHOPIFY_CLUBELPAIS_ACCESS_TOKEN;
+  if (!accessToken) throw new Error("Falta SHOPIFY_CLUBELPAIS_ACCESS_TOKEN");
 
   const data = await shopifyGraphql<{
-    discountCodeBasicCreate: {
-      codeDiscountNode: { codeDiscount: { codes: { nodes: { code: string }[] } } } | null;
+    discountCodeAppCreate: {
+      codeAppDiscount: { discountId: string } | null;
       userErrors: { field: string[]; message: string }[];
     };
-  }>(CREATE_DISCOUNT_MUTATION, {
-    basicCodeDiscount: {
-      title: params.title,
-      code: params.code,
-      startsAt: startsAt.toISOString(),
-      endsAt: endsAt.toISOString(),
-      usageLimit: 1,
-      appliesOncePerCustomer: true,
-      customerSelection: { all: true },
-      customerGets: {
-        value: { percentage: params.percentage / 100 },
-        items: { all: true },
+  }>(
+    CREATE_APP_DISCOUNT_MUTATION,
+    {
+      codeAppDiscount: {
+        title: params.title,
+        code: params.code,
+        functionHandle: "club-el-pais-sin-sale",
+        discountClasses: ["PRODUCT"],
+        startsAt: startsAt.toISOString(),
+        endsAt: endsAt.toISOString(),
+        usageLimit: 1,
+        appliesOncePerCustomer: true,
+        combinesWith: {
+          productDiscounts: false,
+          orderDiscounts: false,
+          shippingDiscounts: false,
+        },
+        metafields: [
+          {
+            namespace: "$app:club-el-pais-sin-sale",
+            key: "function-configuration",
+            type: "json",
+            value: JSON.stringify({ percentage: params.percentage }),
+          },
+        ],
       },
     },
-  });
+    accessToken,
+  );
 
-  const result = data.discountCodeBasicCreate;
+  const result = data.discountCodeAppCreate;
   if (result.userErrors.length > 0) {
     throw new Error(`No se pudo crear el descuento: ${result.userErrors.map((e) => e.message).join(", ")}`);
   }
-  const code = result.codeDiscountNode?.codeDiscount.codes.nodes[0]?.code;
-  if (!code) throw new Error("Shopify no devolvió el código de descuento creado");
-  return code;
+  if (!result.codeAppDiscount) {
+    throw new Error("Shopify no devolvió el descuento creado");
+  }
+  return params.code;
 }
