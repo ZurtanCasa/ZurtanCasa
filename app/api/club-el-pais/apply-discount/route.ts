@@ -66,7 +66,7 @@ export async function POST(req: NextRequest) {
       code: discountCode,
       percentage: PORCENTAJE_DESCUENTO,
       title: `Club El País ${PORCENTAJE_DESCUENTO}% - tarjeta ${tarjeta.slice(-4)}`,
-      expiresInMinutes: 30,
+      expiresInMinutes: 10,
     });
 
     return json({ ok: true, discountCode: codigoCreado });
