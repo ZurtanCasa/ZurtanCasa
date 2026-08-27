@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-27T01:07:38.959582-03:00",
+  "_ultima_actualizacion": "2026-08-27T17:51:49.006061-03:00",
   "_rango": "01/01/24 → 27/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -507,6 +507,10 @@
         "Yute y Lana Nuevas": {
           "revenue_usd": 1076.0,
           "units": 2
+        },
+        "Yute y Lana Diseño": {
+          "revenue_usd": 500.0,
+          "units": 1
         }
       },
       "1": {
@@ -881,8 +885,8 @@
       "units": 187
     },
     "Yute y Lana Diseño": {
-      "revenue_usd": 2864.0,
-      "units": 11
+      "revenue_usd": 3364.0,
+      "units": 12
     }
   },
   "top_categorias": [
@@ -923,8 +927,8 @@
     },
     {
       "categoria": "Yute y Lana Diseño",
-      "revenue_usd": 2864.0,
-      "units": 11
+      "revenue_usd": 3364.0,
+      "units": 12
     }
   ],
   "top_articulos": [
@@ -1439,6 +1443,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Yute y Lana con Diseño 250 x 350",
+      "revenue_usd": 1970.0,
+      "units": 3,
+      "categoria": "Yute y Lana Diseño"
+    },
+    {
       "articulo": "Kilim Turkman",
       "revenue_usd": 1952.0,
       "units": 1,
@@ -1521,12 +1531,6 @@
       "revenue_usd": 1632.0,
       "units": 2,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Pura Lana 160 x 230 Natural",
-      "revenue_usd": 1611.38,
-      "units": 4,
-      "categoria": "Pura Lana"
     }
   ],
   "top_articulos_por_anio": {
@@ -2672,6 +2676,12 @@
         "revenue_usd": 516.0,
         "units": 1,
         "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Yute y Lana con Diseño 250 x 350",
+        "revenue_usd": 500.0,
+        "units": 1,
+        "categoria": "Yute y Lana Diseño"
       },
       {
         "articulo": "Yute Redonda 150 x 150",
