@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-26T13:44:01.300456-03:00",
-  "_rango": "01/01/24 → 26/08/26",
+  "_ultima_actualizacion": "2026-08-27T01:07:38.959582-03:00",
+  "_rango": "01/01/24 → 27/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -505,8 +505,8 @@
           "units": 1
         },
         "Yute y Lana Nuevas": {
-          "revenue_usd": 196.0,
-          "units": 1
+          "revenue_usd": 1076.0,
+          "units": 2
         }
       },
       "1": {
@@ -876,13 +876,13 @@
       "revenue_usd": 58030.16,
       "units": 64
     },
+    "Yute y Lana Nuevas": {
+      "revenue_usd": 142945.58,
+      "units": 187
+    },
     "Yute y Lana Diseño": {
       "revenue_usd": 2864.0,
       "units": 11
-    },
-    "Yute y Lana Nuevas": {
-      "revenue_usd": 142065.58,
-      "units": 186
     }
   },
   "top_categorias": [
@@ -898,8 +898,8 @@
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 142065.58,
-      "units": 186
+      "revenue_usd": 142945.58,
+      "units": 187
     },
     {
       "categoria": "Pura Lana",
@@ -2576,6 +2576,12 @@
         "revenue_usd": 891.0,
         "units": 1,
         "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Yute y Lana Beige 250x250",
+        "revenue_usd": 880.0,
+        "units": 1,
+        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "Pura Lana 200 x 300 Natural Grey",
