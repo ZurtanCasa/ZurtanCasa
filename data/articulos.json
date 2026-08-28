@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-28T03:29:22.719782-03:00",
+  "_ultima_actualizacion": "2026-08-28T18:17:57.334451-03:00",
   "_rango": "01/01/24 → 28/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -485,8 +485,8 @@
       },
       "8": {
         "Alfombra persa": {
-          "revenue_usd": 4712.6,
-          "units": 4
+          "revenue_usd": 5286.4,
+          "units": 5
         },
         "Sin categoría": {
           "revenue_usd": 3605.0,
@@ -861,8 +861,8 @@
       "units": 130
     },
     "Alfombra persa": {
-      "revenue_usd": 514375.34,
-      "units": 421
+      "revenue_usd": 514949.14,
+      "units": 422
     },
     "Sin categoría": {
       "revenue_usd": 281237.87,
@@ -892,8 +892,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 514375.34,
-      "units": 421
+      "revenue_usd": 514949.14,
+      "units": 422
     },
     {
       "categoria": "Sin categoría",
@@ -1203,6 +1203,12 @@
       "categoria": "Yute y Lana"
     },
     {
+      "articulo": "Varni- Sirdjan Design",
+      "revenue_usd": 5263.4,
+      "units": 6,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Pet Ivory 300x200",
       "revenue_usd": 5172.0,
       "units": 8,
@@ -1237,12 +1243,6 @@
       "revenue_usd": 4757.0,
       "units": 6,
       "categoria": "Yute y Lana"
-    },
-    {
-      "articulo": "Varni- Sirdjan Design",
-      "revenue_usd": 4689.6,
-      "units": 5,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Gashgai",
@@ -2618,6 +2618,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Varni- Sirdjan Design",
+        "revenue_usd": 767.8,
+        "units": 2,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Mesa OLGA 200 x 100 x 75 Grey Wash",
         "revenue_usd": 760.0,
         "units": 1,
@@ -2802,12 +2808,6 @@
         "revenue_usd": 196.0,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
-      },
-      {
-        "articulo": "Varni- Sirdjan Design",
-        "revenue_usd": 194.0,
-        "units": 1,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana 70 x 200 Grey",
