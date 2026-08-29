@@ -1,37 +1,37 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-29T12:24:41.902291-03:00",
+  "_ultima_actualizacion": "2026-08-29T16:06:03.431213-03:00",
   "periodos": {
     "today": {
-      "spend": 1.25,
+      "spend": 2.22,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 159,
-      "clicks": 13
+      "impressions": 281,
+      "clicks": 24
     },
     "yesterday": {
-      "spend": 3.74,
+      "spend": 3.75,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 563,
+      "impressions": 564,
       "clicks": 37
     },
     "last_7d": {
-      "spend": 57.61,
+      "spend": 57.62,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 30907,
+      "impressions": 30908,
       "clicks": 1081
     },
     "last_30d": {
-      "spend": 172.32,
+      "spend": 172.33,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 56816,
+      "impressions": 56817,
       "clicks": 2738
     }
   },
@@ -62,11 +62,11 @@
       "id": "120247527705010436",
       "nombre": "CAMPAÑA PROMOCION SETIEMBRE Campaña",
       "tipo": "performance",
-      "spend": 3.74,
+      "spend": 3.75,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 563,
+      "impressions": 564,
       "clicks": 37
     }
   ],
@@ -144,32 +144,32 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 166.32,
+      "spend": 167.3,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 55686,
-      "clicks": 2631
+      "impressions": 55809,
+      "clicks": 2642
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 159,
-        "reach": 124,
-        "spend": 1.25,
-        "cpm": 7.86,
-        "clicks": 13,
+        "impressions": 281,
+        "reach": 213,
+        "spend": 2.22,
+        "cpm": 7.9,
+        "clicks": 24,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 563,
+        "impressions": 564,
         "reach": 391,
-        "spend": 3.74,
-        "cpm": 6.64,
+        "spend": 3.75,
+        "cpm": 6.65,
         "clicks": 37,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
@@ -177,9 +177,9 @@
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 30907,
+        "impressions": 30908,
         "reach": 24499,
-        "spend": 57.61,
+        "spend": 57.62,
         "cpm": 1.86,
         "clicks": 1081,
         "profile_visits_fb": 0,
@@ -188,9 +188,9 @@
         "new_followers_ig": 90
       },
       "last_30d": {
-        "impressions": 56816,
+        "impressions": 56817,
         "reach": 36093,
-        "spend": 172.32,
+        "spend": 172.33,
         "cpm": 3.03,
         "clicks": 2738,
         "profile_visits_fb": 0,
@@ -205,28 +205,28 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 27/8/2026",
         "periodos": {
           "today": {
-            "impressions": 159,
-            "reach": 124,
-            "spend": 1.25,
-            "cpm": 7.86
+            "impressions": 281,
+            "reach": 213,
+            "spend": 2.22,
+            "cpm": 7.9
           },
           "yesterday": {
-            "impressions": 563,
+            "impressions": 564,
             "reach": 391,
-            "spend": 3.74,
-            "cpm": 6.64
+            "spend": 3.75,
+            "cpm": 6.65
           },
           "last_7d": {
-            "impressions": 563,
+            "impressions": 564,
             "reach": 391,
-            "spend": 3.74,
-            "cpm": 6.64
+            "spend": 3.75,
+            "cpm": 6.65
           },
           "last_30d": {
-            "impressions": 563,
+            "impressions": 564,
             "reach": 391,
-            "spend": 3.74,
-            "cpm": 6.64
+            "spend": 3.75,
+            "cpm": 6.65
           }
         }
       },
@@ -305,6 +305,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43377
+    "ig_followers_total": 43380
   }
 }
