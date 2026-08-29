@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-28T18:17:19.623976-03:00",
+  "_ultima_actualizacion": "2026-08-28T21:19:12.930842-03:00",
   "locales": [
     {
       "id": "juan_b_alberdi",
@@ -433,7 +433,7 @@
           "moneda_mix_original": {
             "USD": 17583.4
           },
-          "tasa_uyu_usd": 40.197285,
+          "tasa_uyu_usd": 40.199632,
           "_emitida_filtered": true
         }
       ]
