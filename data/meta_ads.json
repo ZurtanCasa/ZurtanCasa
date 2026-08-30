@@ -1,13 +1,13 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-29T16:06:03.431213-03:00",
+  "_ultima_actualizacion": "2026-08-29T21:51:03.552876-03:00",
   "periodos": {
     "today": {
       "spend": 2.22,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 281,
+      "impressions": 282,
       "clicks": 24
     },
     "yesterday": {
@@ -148,17 +148,17 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 55809,
+      "impressions": 55810,
       "clicks": 2642
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 281,
+        "impressions": 282,
         "reach": 213,
         "spend": 2.22,
-        "cpm": 7.9,
+        "cpm": 7.87,
         "clicks": 24,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
@@ -185,7 +185,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 976,
         "new_followers_fb": 4,
-        "new_followers_ig": 90
+        "new_followers_ig": 97
       },
       "last_30d": {
         "impressions": 56817,
@@ -196,7 +196,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 5848,
         "new_followers_fb": 19,
-        "new_followers_ig": 688
+        "new_followers_ig": 695
       }
     },
     "por_anuncio": [
@@ -205,10 +205,10 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 27/8/2026",
         "periodos": {
           "today": {
-            "impressions": 281,
+            "impressions": 282,
             "reach": 213,
             "spend": 2.22,
-            "cpm": 7.9
+            "cpm": 7.87
           },
           "yesterday": {
             "impressions": 564,
@@ -305,6 +305,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43380
+    "ig_followers_total": 43381
   }
 }
