@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-31T14:46:39.162179-03:00",
+  "_ultima_actualizacion": "2026-08-31T18:16:10.373080-03:00",
   "_rango": "01/01/24 → 31/08/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -485,12 +485,12 @@
       },
       "8": {
         "Alfombra persa": {
-          "revenue_usd": 6921.4,
+          "revenue_usd": 7358.4,
           "units": 6
         },
         "Sin categoría": {
-          "revenue_usd": 3605.0,
-          "units": 3
+          "revenue_usd": 4123.4,
+          "units": 4
         },
         "Pura Lana": {
           "revenue_usd": 500.0,
@@ -861,12 +861,12 @@
       "units": 130
     },
     "Alfombra persa": {
-      "revenue_usd": 516584.14,
+      "revenue_usd": 517021.14,
       "units": 423
     },
     "Sin categoría": {
-      "revenue_usd": 281237.87,
-      "units": 291
+      "revenue_usd": 281756.27,
+      "units": 292
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -892,13 +892,13 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 516584.14,
+      "revenue_usd": 517021.14,
       "units": 423
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 281237.87,
-      "units": 291
+      "revenue_usd": 281756.27,
+      "units": 292
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -934,8 +934,8 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 273734.62,
-      "units": 265,
+      "revenue_usd": 274253.02,
+      "units": 266,
       "categoria": "Sin categoría"
     },
     {
@@ -1071,12 +1071,6 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
-      "articulo": "Lahore",
-      "revenue_usd": 9347.8,
-      "units": 13,
-      "categoria": "Alfombra persa"
-    },
-    {
       "articulo": "Afghan regular vintage carpet",
       "revenue_usd": 9322.0,
       "units": 5,
@@ -1087,6 +1081,12 @@
       "revenue_usd": 9201.0,
       "units": 5,
       "categoria": "Pura Lana"
+    },
+    {
+      "articulo": "Lahore",
+      "revenue_usd": 9007.8,
+      "units": 12,
+      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Afghan vintage carpet",
@@ -1215,6 +1215,12 @@
       "categoria": "Exterior Pet"
     },
     {
+      "articulo": "Gardjeh",
+      "revenue_usd": 5044.0,
+      "units": 6,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 160 x 230 Beige",
       "revenue_usd": 4986.8,
       "units": 11,
@@ -1260,12 +1266,6 @@
       "articulo": "Kilim Varni Sirdjan",
       "revenue_usd": 4292.8,
       "units": 1,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Gardjeh",
-      "revenue_usd": 4267.0,
-      "units": 5,
       "categoria": "Alfombra persa"
     },
     {
@@ -2301,8 +2301,8 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 48329.47,
-        "units": 47,
+        "revenue_usd": 48847.87,
+        "units": 48,
         "categoria": "Sin categoría"
       },
       {
@@ -2337,8 +2337,8 @@
       },
       {
         "articulo": "Lahore",
-        "revenue_usd": 6202.8,
-        "units": 7,
+        "revenue_usd": 5862.8,
+        "units": 6,
         "categoria": "Alfombra persa"
       },
       {
@@ -2534,6 +2534,12 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
+        "articulo": "Gardjeh",
+        "revenue_usd": 1221.0,
+        "units": 2,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Naim 720",
         "revenue_usd": 1212.0,
         "units": 1,
@@ -2700,12 +2706,6 @@
         "revenue_usd": 452.0,
         "units": 3,
         "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "Gardjeh",
-        "revenue_usd": 444.0,
-        "units": 1,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana con Diseño 70 x 300",
