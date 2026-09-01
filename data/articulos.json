@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-01T12:17:45.052817-03:00",
+  "_ultima_actualizacion": "2026-09-01T16:07:57.250128-03:00",
   "_rango": "01/01/24 → 01/09/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -399,6 +399,12 @@
         "Yute y Lana Nuevas": {
           "revenue_usd": 5592.0,
           "units": 8
+        }
+      },
+      "9": {
+        "Muebles": {
+          "revenue_usd": 1860.0,
+          "units": 1
         }
       },
       "5": {
@@ -857,8 +863,8 @@
   },
   "por_categoria_total": {
     "Muebles": {
-      "revenue_usd": 64767.35,
-      "units": 130
+      "revenue_usd": 66627.35,
+      "units": 131
     },
     "Alfombra persa": {
       "revenue_usd": 517021.14,
@@ -912,8 +918,8 @@
     },
     {
       "categoria": "Muebles",
-      "revenue_usd": 64767.35,
-      "units": 130
+      "revenue_usd": 66627.35,
+      "units": 131
     },
     {
       "categoria": "Yute y Lana",
@@ -1479,6 +1485,12 @@
       "categoria": "Pura Lana"
     },
     {
+      "articulo": "Antonio Suar Wood Table 250 Natural 250 X 120 X 75",
+      "revenue_usd": 1860.0,
+      "units": 1,
+      "categoria": "Muebles"
+    },
+    {
       "articulo": "Yute y Lana 160 x 230 Natural",
       "revenue_usd": 1841.12,
       "units": 4,
@@ -1525,12 +1537,6 @@
       "revenue_usd": 1660.0,
       "units": 8,
       "categoria": "Muebles"
-    },
-    {
-      "articulo": "Naim 720",
-      "revenue_usd": 1632.0,
-      "units": 2,
-      "categoria": "Alfombra persa"
     }
   ],
   "top_articulos_por_anio": {
@@ -2448,6 +2454,12 @@
         "revenue_usd": 1869.6,
         "units": 1,
         "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Antonio Suar Wood Table 250 Natural 250 X 120 X 75",
+        "revenue_usd": 1860.0,
+        "units": 1,
+        "categoria": "Muebles"
       },
       {
         "articulo": "ziegler hand knotted carpet wool",
