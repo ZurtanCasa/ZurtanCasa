@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-31T22:30:25.318965-03:00",
+  "_ultima_actualizacion": "2026-09-01T12:19:16.376767-03:00",
   "periodos": {
     "today": {
-      "spend": 4.54,
+      "spend": 1.35,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 649,
-      "clicks": 45
+      "impressions": 164,
+      "clicks": 2
     },
     "yesterday": {
-      "spend": 3.54,
+      "spend": 4.9,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 575,
-      "clicks": 33
+      "impressions": 697,
+      "clicks": 48
     },
     "last_7d": {
-      "spend": 38.64,
+      "spend": 33.63,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 17597,
-      "clicks": 640
+      "impressions": 12766,
+      "clicks": 504
     },
     "last_30d": {
-      "spend": 170.84,
+      "spend": 170.87,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 56385,
-      "clicks": 2675
+      "impressions": 56291,
+      "clicks": 2634
     }
   },
   "campanas": [
@@ -40,12 +40,12 @@
       "id": "120246926567220436",
       "nombre": "CAMPAÑA MUEBLES",
       "tipo": "performance",
-      "spend": 111.38,
+      "spend": 106.51,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 13141,
-      "clicks": 1222
+      "impressions": 12350,
+      "clicks": 1133
     },
     {
       "id": "120247419139230436",
@@ -62,12 +62,12 @@
       "id": "120247527705010436",
       "nombre": "CAMPAÑA PROMOCION SETIEMBRE Campaña",
       "tipo": "performance",
-      "spend": 9.51,
+      "spend": 14.41,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1421,
-      "clicks": 94
+      "impressions": 2118,
+      "clicks": 142
     }
   ],
   "historico_mensual": [
@@ -144,59 +144,69 @@
     {
       "year": 2026,
       "month": 8,
-      "spend": 175.38,
+      "spend": 175.74,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 57034,
-      "clicks": 2720
+      "impressions": 57082,
+      "clicks": 2723
+    },
+    {
+      "year": 2026,
+      "month": 9,
+      "spend": 1.35,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
+      "conversiones": 0,
+      "impressions": 164,
+      "clicks": 2
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 649,
-        "reach": 490,
-        "spend": 4.54,
-        "cpm": 7.0,
-        "clicks": 45,
+        "impressions": 164,
+        "reach": 140,
+        "spend": 1.35,
+        "cpm": 8.23,
+        "clicks": 2,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 575,
-        "reach": 471,
-        "spend": 3.54,
-        "cpm": 6.16,
-        "clicks": 33,
+        "impressions": 697,
+        "reach": 534,
+        "spend": 4.9,
+        "cpm": 7.03,
+        "clicks": 48,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 17597,
-        "reach": 14755,
-        "spend": 38.64,
-        "cpm": 2.2,
-        "clicks": 640,
+        "impressions": 12766,
+        "reach": 10465,
+        "spend": 33.63,
+        "cpm": 2.63,
+        "clicks": 504,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 508,
-        "new_followers_fb": 3,
-        "new_followers_ig": 64
+        "profile_visits_ig": 282,
+        "new_followers_fb": 1,
+        "new_followers_ig": 36
       },
       "last_30d": {
-        "impressions": 56385,
-        "reach": 36130,
-        "spend": 170.84,
-        "cpm": 3.03,
-        "clicks": 2675,
+        "impressions": 56291,
+        "reach": 36181,
+        "spend": 170.87,
+        "cpm": 3.04,
+        "clicks": 2634,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 5205,
-        "new_followers_fb": 18,
-        "new_followers_ig": 572
+        "profile_visits_ig": 4787,
+        "new_followers_fb": 16,
+        "new_followers_ig": 514
       }
     },
     "por_anuncio": [
@@ -205,28 +215,28 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 27/8/2026",
         "periodos": {
           "today": {
-            "impressions": 649,
-            "reach": 490,
-            "spend": 4.54,
-            "cpm": 7.0
+            "impressions": 164,
+            "reach": 140,
+            "spend": 1.35,
+            "cpm": 8.23
           },
           "yesterday": {
-            "impressions": 575,
-            "reach": 471,
-            "spend": 3.54,
-            "cpm": 6.16
+            "impressions": 697,
+            "reach": 534,
+            "spend": 4.9,
+            "cpm": 7.03
           },
           "last_7d": {
-            "impressions": 1421,
-            "reach": 849,
-            "spend": 9.51,
-            "cpm": 6.69
+            "impressions": 2118,
+            "reach": 1202,
+            "spend": 14.41,
+            "cpm": 6.8
           },
           "last_30d": {
-            "impressions": 1421,
-            "reach": 849,
-            "spend": 9.51,
-            "cpm": 6.69
+            "impressions": 2118,
+            "reach": 1202,
+            "spend": 14.41,
+            "cpm": 6.8
           }
         }
       },
@@ -235,16 +245,16 @@
         "nombre": "Flyer",
         "periodos": {
           "last_7d": {
-            "impressions": 700,
-            "reach": 428,
-            "spend": 5.71,
-            "cpm": 8.16
+            "impressions": 522,
+            "reach": 336,
+            "spend": 3.69,
+            "cpm": 7.07
           },
           "last_30d": {
-            "impressions": 6944,
-            "reach": 3003,
-            "spend": 62.92,
-            "cpm": 9.06
+            "impressions": 6699,
+            "reach": 2932,
+            "spend": 61.75,
+            "cpm": 9.22
           }
         }
       },
@@ -259,10 +269,10 @@
             "cpm": 4.29
           },
           "last_30d": {
-            "impressions": 80,
-            "reach": 57,
-            "spend": 0.62,
-            "cpm": 7.75
+            "impressions": 79,
+            "reach": 56,
+            "spend": 0.6,
+            "cpm": 7.59
           }
         }
       },
@@ -271,16 +281,16 @@
         "nombre": "Video",
         "periodos": {
           "last_7d": {
-            "impressions": 686,
-            "reach": 516,
-            "spend": 5.23,
-            "cpm": 7.62
+            "impressions": 457,
+            "reach": 350,
+            "spend": 3.57,
+            "cpm": 7.81
           },
           "last_30d": {
-            "impressions": 6117,
-            "reach": 3428,
-            "spend": 47.84,
-            "cpm": 7.82
+            "impressions": 5572,
+            "reach": 3181,
+            "spend": 44.16,
+            "cpm": 7.93
           }
         }
       },
@@ -289,9 +299,9 @@
         "nombre": "Nuevo anuncio de Interacción",
         "periodos": {
           "last_7d": {
-            "impressions": 14783,
-            "reach": 13097,
-            "spend": 18.16,
+            "impressions": 9662,
+            "reach": 8767,
+            "spend": 11.93,
             "cpm": 1.23
           },
           "last_30d": {
@@ -305,6 +315,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43379
+    "ig_followers_total": 43375
   }
 }
