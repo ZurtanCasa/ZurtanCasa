@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-05T10:38:04.329315-03:00",
+  "_ultima_actualizacion": "2026-09-05T14:53:27.536751-03:00",
   "periodos": {
     "today": {
-      "spend": 1.14,
+      "spend": 2.22,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 167,
-      "clicks": 6
+      "impressions": 369,
+      "clicks": 8
     },
     "yesterday": {
       "spend": 4.02,
@@ -154,22 +154,22 @@
     {
       "year": 2026,
       "month": 9,
-      "spend": 19.37,
+      "spend": 20.45,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 3044,
-      "clicks": 144
+      "impressions": 3246,
+      "clicks": 146
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 167,
-        "reach": 138,
-        "spend": 1.14,
-        "cpm": 6.83,
-        "clicks": 6,
+        "impressions": 369,
+        "reach": 302,
+        "spend": 2.22,
+        "cpm": 6.02,
+        "clicks": 8,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -195,7 +195,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 310,
         "new_followers_fb": 0,
-        "new_followers_ig": 32
+        "new_followers_ig": 35
       },
       "last_30d": {
         "impressions": 56862,
@@ -206,7 +206,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 3992,
         "new_followers_fb": 14,
-        "new_followers_ig": 431
+        "new_followers_ig": 434
       }
     },
     "por_anuncio": [
@@ -215,10 +215,10 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 27/8/2026",
         "periodos": {
           "today": {
-            "impressions": 167,
-            "reach": 138,
-            "spend": 1.14,
-            "cpm": 6.83
+            "impressions": 368,
+            "reach": 302,
+            "spend": 2.22,
+            "cpm": 6.03
           },
           "yesterday": {
             "impressions": 805,
@@ -291,6 +291,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43377
+    "ig_followers_total": 43373
   }
 }
