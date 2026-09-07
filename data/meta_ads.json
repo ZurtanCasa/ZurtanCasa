@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-07T13:13:32.043851-03:00",
+  "_ultima_actualizacion": "2026-09-07T16:34:07.941984-03:00",
   "periodos": {
     "today": {
-      "spend": 2.24,
+      "spend": 3.45,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 320,
-      "clicks": 14
+      "impressions": 424,
+      "clicks": 18
     },
     "yesterday": {
       "spend": 4.24,
@@ -154,22 +154,22 @@
     {
       "year": 2026,
       "month": 9,
-      "spend": 28.27,
+      "spend": 29.48,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 4489,
-      "clicks": 205
+      "impressions": 4593,
+      "clicks": 209
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 320,
-        "reach": 251,
-        "spend": 2.24,
-        "cpm": 7.0,
-        "clicks": 14,
+        "impressions": 424,
+        "reach": 336,
+        "spend": 3.45,
+        "cpm": 8.14,
+        "clicks": 18,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -195,7 +195,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 310,
         "new_followers_fb": 0,
-        "new_followers_ig": 26
+        "new_followers_ig": 31
       },
       "last_30d": {
         "impressions": 57162,
@@ -206,7 +206,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 3961,
         "new_followers_fb": 14,
-        "new_followers_ig": 424
+        "new_followers_ig": 429
       }
     },
     "por_anuncio": [
@@ -215,10 +215,10 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 27/8/2026",
         "periodos": {
           "today": {
-            "impressions": 320,
-            "reach": 256,
-            "spend": 2.24,
-            "cpm": 7.0
+            "impressions": 424,
+            "reach": 336,
+            "spend": 3.45,
+            "cpm": 8.14
           },
           "yesterday": {
             "impressions": 671,
