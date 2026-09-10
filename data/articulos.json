@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-09T21:41:46.895315-03:00",
-  "_rango": "01/01/24 → 09/09/26",
+  "_ultima_actualizacion": "2026-09-10T11:42:25.022275-03:00",
+  "_rango": "01/01/24 → 10/09/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -405,6 +405,10 @@
         "Muebles": {
           "revenue_usd": 1860.0,
           "units": 1
+        },
+        "Alfombra persa": {
+          "revenue_usd": 5151.32,
+          "units": 4
         }
       },
       "5": {
@@ -867,8 +871,8 @@
       "units": 131
     },
     "Alfombra persa": {
-      "revenue_usd": 517021.14,
-      "units": 423
+      "revenue_usd": 522172.46,
+      "units": 427
     },
     "Sin categoría": {
       "revenue_usd": 281756.27,
@@ -898,8 +902,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 517021.14,
-      "units": 423
+      "revenue_usd": 522172.46,
+      "units": 427
     },
     {
       "categoria": "Sin categoría",
@@ -1233,6 +1237,12 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
+      "articulo": "Kilim Afsahari",
+      "revenue_usd": 4889.25,
+      "units": 4,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "ziegler hand knotted carpet wool",
       "revenue_usd": 4884.5,
       "units": 3,
@@ -1283,12 +1293,6 @@
     {
       "articulo": "vintage",
       "revenue_usd": 4165.17,
-      "units": 3,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Kilim Afsahari",
-      "revenue_usd": 3822.0,
       "units": 3,
       "categoria": "Alfombra persa"
     },
@@ -1344,6 +1348,12 @@
       "articulo": "afghan handwoven kilim",
       "revenue_usd": 2929.0,
       "units": 2,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Naim 720",
+      "revenue_usd": 2924.67,
+      "units": 3,
       "categoria": "Alfombra persa"
     },
     {
@@ -1531,12 +1541,6 @@
       "revenue_usd": 1723.0,
       "units": 1,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Banqueta BAR  40 x 45 x 110",
-      "revenue_usd": 1660.0,
-      "units": 8,
-      "categoria": "Muebles"
     }
   ],
   "top_articulos_por_anio": {
@@ -2402,6 +2406,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Naim 720",
+        "revenue_usd": 2504.67,
+        "units": 2,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Kashgai-Shiraz",
         "revenue_usd": 2478.77,
         "units": 1,
@@ -2504,6 +2514,12 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
+        "articulo": "Kilim Afghan",
+        "revenue_usd": 1498.73,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Vintage Ornate",
         "revenue_usd": 1478.0,
         "units": 1,
@@ -2534,6 +2550,12 @@
         "categoria": "Muebles"
       },
       {
+        "articulo": "Moud",
+        "revenue_usd": 1292.67,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Yute y Lana Nuevas 250 x 350 Ivory",
         "revenue_usd": 1287.14,
         "units": 1,
@@ -2552,16 +2574,16 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Naim 720",
-        "revenue_usd": 1212.0,
-        "units": 1,
-        "categoria": "Alfombra persa"
-      },
-      {
         "articulo": "Yute y Lana Nuevas 250 x 350 Beige",
         "revenue_usd": 1147.5,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Kilim Afsahari",
+        "revenue_usd": 1067.25,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 200 x 300 Grey",
