@@ -495,6 +495,17 @@ def main():
                         print(f"      ⚠ Sin archivo — usando ceros")
                         data = _empty_result(year, month)
 
+                    # Guard del mes en curso: su facturación solo crece durante el mes.
+                    # Si el scrape fresco trae MENOS órdenes que el registro previo, es
+                    # casi seguro un fallo transitorio (Zeta lento) — conservamos el valor
+                    # bueno anterior en vez de pisarlo con 0.
+                    if is_current and rec_prev and data["orders_count"] < rec_prev.get("orders_count", 0):
+                        print(f"      ⚠ mes actual: {data['orders_count']} órdenes < "
+                              f"{rec_prev.get('orders_count', 0)} previas → conservo valor anterior "
+                              f"(neto={rec_prev.get('revenue_neto', 0):.0f})")
+                        historico.append(rec_prev)
+                        continue
+
                     historico.append({
                         "year":  year,
                         "month": month,
