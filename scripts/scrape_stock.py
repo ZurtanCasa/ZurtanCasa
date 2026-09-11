@@ -332,6 +332,20 @@ def main():
             for cod in all_codes
         }
 
+        # Guard: no pisar stock bueno con vacío por un fallo transitorio de Zeta.
+        # Si el scrape devolvió 0 artículos pero ya había datos, conservamos el previo.
+        prev_count = 0
+        if os.path.exists(DATA_PATH):
+            try:
+                with open(DATA_PATH, encoding="utf-8") as f:
+                    prev_count = len(json.load(f).get("articulos", {}))
+            except Exception:
+                prev_count = 0
+        if not articulos and prev_count > 0:
+            print(f"⚠ Scrape devolvió 0 artículos pero el previo tenía {prev_count} — "
+                  f"conservo stock.json previo (posible fallo transitorio de Zeta)", file=sys.stderr)
+            return
+
         output = {
             "_status":               "ok",
             "_ultima_actualizacion": uy_now().strftime("%Y-%m-%dT%H:%M:%S"),
