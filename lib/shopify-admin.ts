@@ -53,6 +53,7 @@ export async function createSaleAwarePercentageDiscount(params: {
   percentage: number;
   title: string;
   expiresInMinutes: number;
+  tarjeta: string;
 }): Promise<string> {
   const startsAt = new Date();
   const endsAt = new Date(startsAt.getTime() + params.expiresInMinutes * 60 * 1000);
@@ -88,6 +89,14 @@ export async function createSaleAwarePercentageDiscount(params: {
             type: "json",
             value: JSON.stringify({ percentage: params.percentage }),
           },
+          {
+            // Namespace propio (no $app) para que el webhook de consumo, que corre
+            // con el mismo token de esta app, pueda leerlo al confirmarse la orden.
+            namespace: "club_el_pais",
+            key: "tarjeta_socio",
+            type: "single_line_text_field",
+            value: params.tarjeta,
+          },
         ],
       },
     },
@@ -102,4 +111,88 @@ export async function createSaleAwarePercentageDiscount(params: {
     throw new Error("Shopify no devolvió el descuento creado");
   }
   return params.code;
+}
+
+const GET_DISCOUNT_TARJETA_QUERY = `
+  query getDiscountTarjeta($code: String!) {
+    codeDiscountNodeByCode(code: $code) {
+      id
+      codeDiscount {
+        ... on DiscountCodeApp {
+          metafield(namespace: "club_el_pais", key: "tarjeta_socio") {
+            value
+          }
+        }
+      }
+    }
+  }
+`;
+
+/**
+ * Busca la tarjeta de Club El País asociada a un código de descuento ELPAIS-*
+ * previamente creado por createSaleAwarePercentageDiscount.
+ */
+export async function getTarjetaForDiscountCode(code: string): Promise<string | null> {
+  const accessToken = process.env.SHOPIFY_CLUBELPAIS_ACCESS_TOKEN;
+  if (!accessToken) throw new Error("Falta SHOPIFY_CLUBELPAIS_ACCESS_TOKEN");
+
+  const data = await shopifyGraphql<{
+    codeDiscountNodeByCode: { codeDiscount: { metafield: { value: string } | null } } | null;
+  }>(GET_DISCOUNT_TARJETA_QUERY, { code }, accessToken);
+
+  return data.codeDiscountNodeByCode?.codeDiscount?.metafield?.value ?? null;
+}
+
+const ORDER_METAFIELD_NAMESPACE = "club_el_pais";
+const ORDER_METAFIELD_KEY = "consumo_reportado";
+
+/**
+ * Chequea si ya se reportó el consumo de una orden a Club El País (idempotencia
+ * ante reintentos del webhook de Shopify).
+ */
+export async function yaSeReportoConsumo(orderId: string): Promise<boolean> {
+  const accessToken = process.env.SHOPIFY_CLUBELPAIS_ACCESS_TOKEN;
+  if (!accessToken) throw new Error("Falta SHOPIFY_CLUBELPAIS_ACCESS_TOKEN");
+
+  const data = await shopifyGraphql<{
+    order: { metafield: { value: string } | null } | null;
+  }>(
+    `query orderReportado($id: ID!) {
+      order(id: $id) {
+        metafield(namespace: "${ORDER_METAFIELD_NAMESPACE}", key: "${ORDER_METAFIELD_KEY}") {
+          value
+        }
+      }
+    }`,
+    { id: orderId },
+    accessToken,
+  );
+
+  return data.order?.metafield?.value === "true";
+}
+
+/** Marca una orden como ya reportada a Club El País. */
+export async function marcarConsumoReportado(orderId: string): Promise<void> {
+  const accessToken = process.env.SHOPIFY_CLUBELPAIS_ACCESS_TOKEN;
+  if (!accessToken) throw new Error("Falta SHOPIFY_CLUBELPAIS_ACCESS_TOKEN");
+
+  await shopifyGraphql(
+    `mutation setReportado($metafields: [MetafieldsSetInput!]!) {
+      metafieldsSet(metafields: $metafields) {
+        userErrors { field message }
+      }
+    }`,
+    {
+      metafields: [
+        {
+          ownerId: orderId,
+          namespace: ORDER_METAFIELD_NAMESPACE,
+          key: ORDER_METAFIELD_KEY,
+          type: "boolean",
+          value: "true",
+        },
+      ],
+    },
+    accessToken,
+  );
 }
