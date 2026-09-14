@@ -117,12 +117,8 @@ const GET_DISCOUNT_TARJETA_QUERY = `
   query getDiscountTarjeta($code: String!) {
     codeDiscountNodeByCode(code: $code) {
       id
-      codeDiscount {
-        ... on DiscountCodeApp {
-          metafield(namespace: "club_el_pais", key: "tarjeta_socio") {
-            value
-          }
-        }
+      metafield(namespace: "club_el_pais", key: "tarjeta_socio") {
+        value
       }
     }
   }
@@ -137,10 +133,10 @@ export async function getTarjetaForDiscountCode(code: string): Promise<string | 
   if (!accessToken) throw new Error("Falta SHOPIFY_CLUBELPAIS_ACCESS_TOKEN");
 
   const data = await shopifyGraphql<{
-    codeDiscountNodeByCode: { codeDiscount: { metafield: { value: string } | null } } | null;
+    codeDiscountNodeByCode: { metafield: { value: string } | null } | null;
   }>(GET_DISCOUNT_TARJETA_QUERY, { code }, accessToken);
 
-  return data.codeDiscountNodeByCode?.codeDiscount?.metafield?.value ?? null;
+  return data.codeDiscountNodeByCode?.metafield?.value ?? null;
 }
 
 const ORDER_METAFIELD_NAMESPACE = "club_el_pais";
