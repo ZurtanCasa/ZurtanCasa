@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-15T12:24:43.478015-03:00",
+  "_ultima_actualizacion": "2026-09-15T16:29:53.833771-03:00",
   "periodos": {
     "today": {
       "spend": 0,
@@ -206,7 +206,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 1584,
         "new_followers_fb": 4,
-        "new_followers_ig": 192
+        "new_followers_ig": 200
       },
       "last_30d": {
         "impressions": 61283,
@@ -217,7 +217,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 4506,
         "new_followers_fb": 13,
-        "new_followers_ig": 517
+        "new_followers_ig": 525
       }
     },
     "por_anuncio": [
@@ -308,6 +308,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43537
+    "ig_followers_total": 43533
   }
 }
