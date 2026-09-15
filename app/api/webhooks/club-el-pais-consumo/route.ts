@@ -76,9 +76,19 @@ export async function POST(req: NextRequest) {
       throw new Error(`Club El País rechazó el consumo de la orden ${order.name}: ${consumo.mensaje}`);
     }
 
-    await marcarConsumoReportado(orderGid);
-
     console.log(`Consumo reportado a Club El País: orden ${order.name}, solicitud ${consumo.solicitudId}`);
+
+    // El consumo ya se reportó: de acá en más, un fallo NO debe devolver 500, porque
+    // Shopify reintentaría el webhook y volveríamos a reportar el mismo consumo dos veces.
+    try {
+      await marcarConsumoReportado(orderGid);
+    } catch (err) {
+      console.error(
+        `Se reportó el consumo de la orden ${order.name} pero no se pudo marcar como reportada (posible reintento duplicado si Shopify reenvía este webhook):`,
+        err,
+      );
+    }
+
     return new NextResponse("ok", { status: 200 });
   } catch (err: any) {
     console.error(`Error reportando consumo de la orden ${order.name}:`, err);
