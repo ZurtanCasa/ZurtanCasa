@@ -1,16 +1,8 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-14T22:05:25.617710-03:00",
+  "_ultima_actualizacion": "2026-09-15T12:24:43.478015-03:00",
   "periodos": {
     "today": {
-      "spend": 0.0,
-      "revenue_reportado": 0.0,
-      "roas": 0,
-      "conversiones": 0,
-      "impressions": 0,
-      "clicks": 0
-    },
-    "yesterday": {
       "spend": 0,
       "revenue_reportado": 0,
       "roas": 0,
@@ -18,21 +10,29 @@
       "impressions": 0,
       "clicks": 0
     },
+    "yesterday": {
+      "spend": 0.0,
+      "revenue_reportado": 0.0,
+      "roas": 0,
+      "conversiones": 0,
+      "impressions": 0,
+      "clicks": 0
+    },
     "last_7d": {
-      "spend": 54.38,
+      "spend": 49.41,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 8110,
-      "clicks": 545
+      "impressions": 7465,
+      "clicks": 511
     },
     "last_30d": {
-      "spend": 190.4,
+      "spend": 186.37,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 61764,
-      "clicks": 2717
+      "impressions": 61283,
+      "clicks": 2654
     }
   },
   "campanas": [
@@ -62,12 +62,12 @@
       "id": "120246926567220436",
       "nombre": "CAMPAÑA MUEBLES",
       "tipo": "performance",
-      "spend": 45.63,
+      "spend": 41.6,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 5544,
-      "clicks": 480
+      "impressions": 5063,
+      "clicks": 417
     },
     {
       "id": "120247646816390436",
@@ -194,30 +194,30 @@
         "clicks": 0,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
-        "new_followers_fb": 1,
+        "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 8110,
-        "reach": 4449,
-        "spend": 54.38,
-        "cpm": 6.71,
-        "clicks": 545,
+        "impressions": 7465,
+        "reach": 4256,
+        "spend": 49.41,
+        "cpm": 6.62,
+        "clicks": 511,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 1666,
-        "new_followers_fb": 5,
-        "new_followers_ig": 205
+        "profile_visits_ig": 1584,
+        "new_followers_fb": 4,
+        "new_followers_ig": 192
       },
       "last_30d": {
-        "impressions": 61764,
-        "reach": 37106,
-        "spend": 190.4,
-        "cpm": 3.08,
-        "clicks": 2717,
+        "impressions": 61283,
+        "reach": 36908,
+        "spend": 186.37,
+        "cpm": 3.04,
+        "clicks": 2654,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 4590,
+        "profile_visits_ig": 4506,
         "new_followers_fb": 13,
-        "new_followers_ig": 532
+        "new_followers_ig": 517
       }
     },
     "por_anuncio": [
@@ -226,10 +226,10 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 27/8/2026",
         "periodos": {
           "last_7d": {
-            "impressions": 2610,
-            "reach": 1751,
-            "spend": 19.52,
-            "cpm": 7.48
+            "impressions": 1965,
+            "reach": 1408,
+            "spend": 14.55,
+            "cpm": 7.4
           },
           "last_30d": {
             "impressions": 8897,
@@ -262,10 +262,10 @@
         "nombre": "Flyer",
         "periodos": {
           "last_30d": {
-            "impressions": 2762,
-            "reach": 1396,
-            "spend": 23.2,
-            "cpm": 8.4
+            "impressions": 2505,
+            "reach": 1288,
+            "spend": 21.0,
+            "cpm": 8.38
           }
         }
       },
@@ -286,10 +286,10 @@
         "nombre": "Video",
         "periodos": {
           "last_30d": {
-            "impressions": 2761,
-            "reach": 1837,
-            "spend": 22.16,
-            "cpm": 8.03
+            "impressions": 2537,
+            "reach": 1725,
+            "spend": 20.33,
+            "cpm": 8.01
           }
         }
       },
@@ -308,6 +308,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43539
+    "ig_followers_total": 43537
   }
 }
