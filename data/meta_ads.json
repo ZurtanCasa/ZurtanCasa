@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-15T21:56:12.748898-03:00",
+  "_ultima_actualizacion": "2026-09-16T12:17:16.059969-03:00",
   "periodos": {
     "today": {
       "spend": 0,
@@ -11,28 +11,28 @@
       "clicks": 0
     },
     "yesterday": {
-      "spend": 0.0,
-      "revenue_reportado": 0.0,
+      "spend": 0,
+      "revenue_reportado": 0,
       "roas": 0,
       "conversiones": 0,
       "impressions": 0,
       "clicks": 0
     },
     "last_7d": {
-      "spend": 49.41,
+      "spend": 39.42,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 7465,
-      "clicks": 511
+      "impressions": 5596,
+      "clicks": 392
     },
     "last_30d": {
-      "spend": 186.37,
+      "spend": 181.96,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 61283,
-      "clicks": 2654
+      "impressions": 60680,
+      "clicks": 2604
     }
   },
   "campanas": [
@@ -62,12 +62,12 @@
       "id": "120246926567220436",
       "nombre": "CAMPAÑA MUEBLES",
       "tipo": "performance",
-      "spend": 41.6,
+      "spend": 37.19,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 5063,
-      "clicks": 417
+      "impressions": 4460,
+      "clicks": 367
     },
     {
       "id": "120247646816390436",
@@ -198,26 +198,26 @@
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 7465,
-        "reach": 4256,
-        "spend": 49.41,
-        "cpm": 6.62,
-        "clicks": 511,
+        "impressions": 5596,
+        "reach": 3443,
+        "spend": 39.42,
+        "cpm": 7.04,
+        "clicks": 392,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 1584,
+        "profile_visits_ig": 1464,
         "new_followers_fb": 4,
-        "new_followers_ig": 200
+        "new_followers_ig": 184
       },
       "last_30d": {
-        "impressions": 61283,
-        "reach": 36908,
-        "spend": 186.37,
-        "cpm": 3.04,
-        "clicks": 2654,
+        "impressions": 60680,
+        "reach": 36752,
+        "spend": 181.96,
+        "cpm": 3.0,
+        "clicks": 2604,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 4506,
+        "profile_visits_ig": 4462,
         "new_followers_fb": 13,
-        "new_followers_ig": 525
+        "new_followers_ig": 523
       }
     },
     "por_anuncio": [
@@ -226,10 +226,10 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 27/8/2026",
         "periodos": {
           "last_7d": {
-            "impressions": 1965,
-            "reach": 1408,
-            "spend": 14.55,
-            "cpm": 7.4
+            "impressions": 1336,
+            "reach": 1003,
+            "spend": 10.13,
+            "cpm": 7.58
           },
           "last_30d": {
             "impressions": 8897,
@@ -244,10 +244,10 @@
         "nombre": "Segundo lyer contenido",
         "periodos": {
           "last_7d": {
-            "impressions": 5500,
-            "reach": 3334,
-            "spend": 34.86,
-            "cpm": 6.34
+            "impressions": 4260,
+            "reach": 2759,
+            "spend": 29.29,
+            "cpm": 6.88
           },
           "last_30d": {
             "impressions": 5500,
@@ -262,10 +262,10 @@
         "nombre": "Flyer",
         "periodos": {
           "last_30d": {
-            "impressions": 2505,
-            "reach": 1288,
-            "spend": 21.0,
-            "cpm": 8.38
+            "impressions": 2255,
+            "reach": 1178,
+            "spend": 19.2,
+            "cpm": 8.51
           }
         }
       },
@@ -274,10 +274,10 @@
         "nombre": "Carrousel",
         "periodos": {
           "last_30d": {
-            "impressions": 21,
-            "reach": 17,
-            "spend": 0.27,
-            "cpm": 12.86
+            "impressions": 18,
+            "reach": 15,
+            "spend": 0.24,
+            "cpm": 13.33
           }
         }
       },
@@ -286,10 +286,10 @@
         "nombre": "Video",
         "periodos": {
           "last_30d": {
-            "impressions": 2537,
-            "reach": 1725,
-            "spend": 20.33,
-            "cpm": 8.01
+            "impressions": 2187,
+            "reach": 1472,
+            "spend": 17.75,
+            "cpm": 8.12
           }
         }
       },
@@ -308,6 +308,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43533
+    "ig_followers_total": 43534
   }
 }
