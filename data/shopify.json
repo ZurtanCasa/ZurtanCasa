@@ -1,5 +1,5 @@
 {
-  "_status": "sin_datos",
+  "_status": "error",
   "_ultima_actualizacion": null,
   "configuracion": {
     "tax_included": null,
@@ -12,5 +12,7 @@
     "aov": 0,
     "refunds": 0
   },
-  "historico_mensual": []
+  "historico_mensual": [],
+  "_error": "RuntimeError: SHOPIFY_STORE_URL y SHOPIFY_ACCESS_TOKEN son requeridos (¿secret vacío?)",
+  "_ultimo_intento": "2026-09-17T12:23:53.724332-03:00"
 }
