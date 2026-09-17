@@ -15,12 +15,17 @@ import os, json, sys, tempfile, shutil, time, re
 from datetime import datetime, timezone, timedelta
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "stock.json")
+# Todos los códigos que alguna vez reportó Zeta. El reporte omite los artículos con
+# stock 0, así que el sync usa esta lista para saber qué SKU faltante está agotado.
+CODIGOS_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "stock_codigos_zeta.json")
 BASE_URL  = "https://www.zetasoftware.com/z.info.inicio"
 STOCK_URL = "https://www.zetasoftware.com/z.gestion.reportes.stockactual"
 UY_TZ     = timezone(timedelta(hours=-3))
 
 # Categorías de neutras según Zeta
 NEUTRAS_CATS = {"pura lana", "yute y lana", "yute y lana diseño", "yute y lana nuevas", "exterior pet"}
+# Otras categorías que se sincronizan con Shopify
+OTRAS_CATS = {"olive wood"}
 
 def uy_now():
     return datetime.now(UY_TZ)
@@ -148,13 +153,20 @@ def fetch_for_deposito(frame, page, deposito_text: str, tmp_dir: str, fname: str
     """Genera y descarga el Excel de stock para un depósito. Devuelve ruta o None."""
     dest = os.path.join(tmp_dir, fname)
 
-    print(f"  Navegando a Stock Actual ({deposito_text})...")
-    frame.goto(STOCK_URL, wait_until="domcontentloaded", timeout=30000)
-    try:
-        frame.wait_for_load_state("networkidle", timeout=15000)
-    except Exception:
-        pass
-    time.sleep(2)
+    # En CI el formulario tarda más en aparecer que en local: esperar los campos, con un reintento.
+    for intento in (1, 2):
+        print(f"  Navegando a Stock Actual ({deposito_text}), intento {intento}...")
+        frame.goto(STOCK_URL, wait_until="domcontentloaded", timeout=60000)
+        try:
+            frame.wait_for_load_state("networkidle", timeout=15000)
+        except Exception:
+            pass
+        try:
+            frame.wait_for_selector('select[name="vDEPIDSA"] option:nth-child(2)', state="attached", timeout=45000)
+            break
+        except Exception:
+            print(f"  ⚠ El formulario no cargó (URL: {frame.url})")
+    time.sleep(1)
 
     # Configurar formulario
     result = frame.evaluate(f"""() => {{
@@ -264,8 +276,9 @@ def parse_stock_excel(path: str) -> dict[str, int]:
 
         is_mueble = "mueble" in categoria
         is_neutra = categoria in NEUTRAS_CATS
+        is_otra   = categoria in OTRAS_CATS
 
-        if not (is_mueble or is_neutra):
+        if not (is_mueble or is_neutra or is_otra):
             skipped += 1
             continue
 
@@ -276,7 +289,7 @@ def parse_stock_excel(path: str) -> dict[str, int]:
 
         result[str(codigo).strip()] = qty
 
-    print(f"    Parseados: {len(result)} artículos (muebles+neutras), {skipped} omitidos")
+    print(f"    Parseados: {len(result)} artículos (muebles+neutras+olive wood), {skipped} omitidos")
     return result
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
@@ -320,8 +333,15 @@ def main():
 
             browser.close()
 
-        local_data     = parse_stock_excel(path_local)     if path_local     else {}
-        dialcaren_data = parse_stock_excel(path_dialcaren) if path_dialcaren else {}
+        # Si falta un depósito, no escribimos: el sync a Shopify tomaría ese depósito como 0.
+        if not path_local or not path_dialcaren:
+            faltan = [n for n, p in (("Local", path_local), ("Dialcaren", path_dialcaren)) if not p]
+            print(f"ERROR: no se pudo bajar el stock de {', '.join(faltan)} — conservo stock.json previo",
+                  file=sys.stderr)
+            sys.exit(1)
+
+        local_data     = parse_stock_excel(path_local)
+        dialcaren_data = parse_stock_excel(path_dialcaren)
 
         all_codes = set(local_data) | set(dialcaren_data)
         articulos = {
@@ -355,6 +375,13 @@ def main():
 
         with open(DATA_PATH, "w", encoding="utf-8") as f:
             json.dump(output, f, ensure_ascii=False, indent=2)
+
+        conocidos = set()
+        if os.path.exists(CODIGOS_PATH):
+            with open(CODIGOS_PATH, encoding="utf-8") as f:
+                conocidos = set(json.load(f).get("codigos", []))
+        with open(CODIGOS_PATH, "w", encoding="utf-8") as f:
+            json.dump({"codigos": sorted(conocidos | set(articulos))}, f, ensure_ascii=False, indent=2)
 
         total_stock = sum(v["local"] + v["dialcaren"] for v in articulos.values())
         print(f"\n✅ stock.json: {len(articulos)} artículos, {total_stock} unidades totales")

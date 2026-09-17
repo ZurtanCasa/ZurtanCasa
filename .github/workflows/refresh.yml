@@ -47,6 +47,15 @@ jobs:
           ZETA_PASS: ${{ secrets.ZETA_PASS }}
         run: python scripts/scrape_stock.py
 
+      - name: Sync stock Zeta → Shopify
+        continue-on-error: true
+        env:
+          # El handle de la tienda no es secreto; se pone explícito para no
+          # depender del secret SHOPIFY_STORE_URL (que quedó con un valor viejo).
+          SHOPIFY_STORE_URL: https://xgdsfv-sx.myshopify.com
+          SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_STOCK_SYNC_TOKEN }}
+        run: python scripts/sync_shopify_stock.py
+
       # Lista de precios: no se incluye en el refresh automático.
       # Los precios se actualizan manualmente cuando se cargan productos
       # nuevos. El script scripts/scrape_precios.py queda disponible por

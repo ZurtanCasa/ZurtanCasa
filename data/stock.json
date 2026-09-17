@@ -774,6 +774,130 @@
     "POLTDUNGRIS": {
       "local": 1,
       "dialcaren": 0
+    },
+    "GL262": {
+      "local": 20,
+      "dialcaren": 0
+    },
+    "GB538": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "GB507": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "GN502": {
+      "local": 10,
+      "dialcaren": 0
+    },
+    "GB183": {
+      "local": 25,
+      "dialcaren": 0
+    },
+    "GL007-30 CM": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "GL261": {
+      "local": 30,
+      "dialcaren": 0
+    },
+    "GB120": {
+      "local": 10,
+      "dialcaren": 0
+    },
+    "GB281": {
+      "local": 50,
+      "dialcaren": 0
+    },
+    "GB537": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "GB531": {
+      "local": 25,
+      "dialcaren": 0
+    },
+    "GB586": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "GL59": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "GB030": {
+      "local": 15,
+      "dialcaren": 0
+    },
+    "GB2480": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "GB530": {
+      "local": 25,
+      "dialcaren": 0
+    },
+    "GB032": {
+      "local": 15,
+      "dialcaren": 0
+    },
+    "GB028": {
+      "local": 15,
+      "dialcaren": 0
+    },
+    "GB031": {
+      "local": 15,
+      "dialcaren": 0
+    },
+    "GB182": {
+      "local": 25,
+      "dialcaren": 0
+    },
+    "GB027": {
+      "local": 15,
+      "dialcaren": 0
+    },
+    "GB026": {
+      "local": 15,
+      "dialcaren": 0
+    },
+    "GB266": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "GS67": {
+      "local": 10,
+      "dialcaren": 0
+    },
+    "GN500": {
+      "local": 10,
+      "dialcaren": 0
+    },
+    "GN810": {
+      "local": 10,
+      "dialcaren": 0
+    },
+    "GN501": {
+      "local": 10,
+      "dialcaren": 0
+    },
+    "GB213": {
+      "local": 10,
+      "dialcaren": 0
+    },
+    "GB209": {
+      "local": 5,
+      "dialcaren": 0
+    },
+    "GB214": {
+      "local": 20,
+      "dialcaren": 0
+    },
+    "GB2402": {
+      "local": 5,
+      "dialcaren": 0
     }
   }
 }
