@@ -61,10 +61,13 @@ jobs:
       # nuevos. El script scripts/scrape_precios.py queda disponible por
       # si en el futuro se quiere automatizar.
 
+      # continue-on-error para que el resto del refresh y el commit corran igual;
+      # el paso "Fallar si algún fetch crítico falló" marca el run en rojo al final.
       - name: Fetch Shopify
+        id: fetch_shopify
         continue-on-error: true
         env:
-          SHOPIFY_STORE_URL: ${{ secrets.SHOPIFY_STORE_URL }}
+          SHOPIFY_STORE_URL: https://xgdsfv-sx.myshopify.com
           SHOPIFY_ACCESS_TOKEN: ${{ secrets.SHOPIFY_ACCESS_TOKEN }}
         run: python scripts/fetch_shopify.py
 
@@ -116,3 +119,9 @@ jobs:
           git add data/
           git diff --cached --quiet || git commit -m "chore: refresh data $(TZ='America/Montevideo' date '+%Y-%m-%d %H:%M UY')"
           git push
+
+      - name: Fallar si algún fetch crítico falló
+        if: steps.fetch_shopify.outcome == 'failure'
+        run: |
+          echo "::error title=Fetch Shopify falló::Ver el log del paso 'Fetch Shopify' y el campo _error en data/shopify.json"
+          exit 1
