@@ -14,5 +14,5 @@
   },
   "historico_mensual": [],
   "_error": "RuntimeError: SHOPIFY_STORE_URL y SHOPIFY_ACCESS_TOKEN son requeridos (¿secret vacío?)",
-  "_ultimo_intento": "2026-09-17T12:23:53.724332-03:00"
+  "_ultimo_intento": "2026-09-17T16:30:21.251927-03:00"
 }
