@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-11T11:41:17.322781-03:00",
-  "_rango": "01/01/24 → 11/09/26",
+  "_ultima_actualizacion": "2026-09-16T21:56:31.482503-03:00",
+  "_rango": "01/01/24 → 16/09/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -377,20 +377,28 @@
       },
       "9": {
         "Alfombra persa": {
-          "revenue_usd": 15564.39,
-          "units": 9
+          "revenue_usd": 21588.17,
+          "units": 14
         },
         "Muebles": {
           "revenue_usd": 1860.0,
           "units": 1
         },
         "Sin categoría": {
-          "revenue_usd": 2319.75,
+          "revenue_usd": 3159.75,
+          "units": 3
+        },
+        "Pura Lana": {
+          "revenue_usd": 1600.04,
           "units": 2
         },
+        "Yute y Lana": {
+          "revenue_usd": 354.0,
+          "units": 1
+        },
         "Yute y Lana Nuevas": {
-          "revenue_usd": 4157.07,
-          "units": 4
+          "revenue_usd": 6739.13,
+          "units": 6
         }
       },
       "7": {
@@ -879,28 +887,28 @@
       "units": 131
     },
     "Alfombra persa": {
-      "revenue_usd": 532585.53,
-      "units": 432
+      "revenue_usd": 538609.31,
+      "units": 437
     },
     "Sin categoría": {
-      "revenue_usd": 284076.02,
-      "units": 294
+      "revenue_usd": 284916.02,
+      "units": 295
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
       "units": 42
     },
     "Pura Lana": {
-      "revenue_usd": 84050.51,
-      "units": 119
+      "revenue_usd": 85650.55,
+      "units": 121
     },
     "Yute y Lana": {
-      "revenue_usd": 58030.16,
-      "units": 64
+      "revenue_usd": 58384.16,
+      "units": 65
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 147102.65,
-      "units": 191
+      "revenue_usd": 149684.71,
+      "units": 193
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 3364.0,
@@ -910,23 +918,23 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 532585.53,
-      "units": 432
+      "revenue_usd": 538609.31,
+      "units": 437
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 284076.02,
-      "units": 294
+      "revenue_usd": 284916.02,
+      "units": 295
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 147102.65,
-      "units": 191
+      "revenue_usd": 149684.71,
+      "units": 193
     },
     {
       "categoria": "Pura Lana",
-      "revenue_usd": 84050.51,
-      "units": 119
+      "revenue_usd": 85650.55,
+      "units": 121
     },
     {
       "categoria": "Muebles",
@@ -935,8 +943,8 @@
     },
     {
       "categoria": "Yute y Lana",
-      "revenue_usd": 58030.16,
-      "units": 64
+      "revenue_usd": 58384.16,
+      "units": 65
     },
     {
       "categoria": "Exterior Pet",
@@ -952,14 +960,14 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 276572.77,
-      "units": 268,
+      "revenue_usd": 277412.77,
+      "units": 269,
       "categoria": "Sin categoría"
     },
     {
       "articulo": "Vintage",
-      "revenue_usd": 145839.76,
-      "units": 105,
+      "revenue_usd": 147926.72,
+      "units": 107,
       "categoria": "Alfombra persa"
     },
     {
@@ -1029,16 +1037,16 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
+      "articulo": "Pura Lana 250 x 350 Natural",
+      "revenue_usd": 14932.0,
+      "units": 10,
+      "categoria": "Pura Lana"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
       "revenue_usd": 13744.38,
       "units": 17,
       "categoria": "Yute y Lana Nuevas"
-    },
-    {
-      "articulo": "Pura Lana 250 x 350 Natural",
-      "revenue_usd": 13500.0,
-      "units": 9,
-      "categoria": "Pura Lana"
     },
     {
       "articulo": "Pura Lana 200 x 300 Natural",
@@ -1065,6 +1073,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Yute y Lana Nuevas 300 x 400 Charcol",
+      "revenue_usd": 11569.37,
+      "units": 7,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
       "articulo": "Afghan vintage carpet",
       "revenue_usd": 10273.73,
       "units": 6,
@@ -1077,16 +1091,16 @@
       "categoria": "Yute y Lana"
     },
     {
-      "articulo": "Yute y Lana Nuevas 300 x 400 Charcol",
-      "revenue_usd": 9848.0,
-      "units": 6,
-      "categoria": "Yute y Lana Nuevas"
-    },
-    {
       "articulo": "Kashgai-Shiraz",
       "revenue_usd": 9726.77,
       "units": 5,
       "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Yute y Lana Nuevas 200 x 300 Green",
+      "revenue_usd": 9699.88,
+      "units": 12,
+      "categoria": "Yute y Lana Nuevas"
     },
     {
       "articulo": "Yute y Lana Nuevas 300 x 400 Ivory",
@@ -1117,12 +1131,6 @@
       "revenue_usd": 9007.8,
       "units": 12,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Yute y Lana Nuevas 200 x 300 Green",
-      "revenue_usd": 8839.19,
-      "units": 11,
-      "categoria": "Yute y Lana Nuevas"
     },
     {
       "articulo": "Kilim Ghouchan",
@@ -1401,6 +1409,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Vintage Ornate",
+      "revenue_usd": 2486.34,
+      "units": 3,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Poltrona Nube Verde Oliva",
       "revenue_usd": 2400.0,
       "units": 2,
@@ -1413,10 +1427,28 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Kilim Afghan",
+      "revenue_usd": 2325.73,
+      "units": 2,
+      "categoria": "Alfombra persa"
+    },
+    {
+      "articulo": "Moud",
+      "revenue_usd": 2227.12,
+      "units": 1,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Poltrona NUBE Beige",
       "revenue_usd": 2212.0,
       "units": 2,
       "categoria": "Muebles"
+    },
+    {
+      "articulo": "Yute y Lana 160 x 230 Natural",
+      "revenue_usd": 2195.12,
+      "units": 5,
+      "categoria": "Yute y Lana"
     },
     {
       "articulo": "Silla PRISMA 48 x 40 x 87 Negra",
@@ -1447,12 +1479,6 @@
       "revenue_usd": 2101.0,
       "units": 3,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Vintage Ornate",
-      "revenue_usd": 2056.0,
-      "units": 2,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Poltrona Versatile Beige",
@@ -1509,12 +1535,6 @@
       "categoria": "Muebles"
     },
     {
-      "articulo": "Yute y Lana 160 x 230 Natural",
-      "revenue_usd": 1841.12,
-      "units": 4,
-      "categoria": "Yute y Lana"
-    },
-    {
       "articulo": "Aparador Escandinavo Negro 220 x 48 x 85",
       "revenue_usd": 1820.0,
       "units": 1,
@@ -1536,18 +1556,6 @@
       "articulo": "Zabol Kilim",
       "revenue_usd": 1806.0,
       "units": 3,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Bokhara",
-      "revenue_usd": 1782.0,
-      "units": 1,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Lahore WL",
-      "revenue_usd": 1723.0,
-      "units": 1,
       "categoria": "Alfombra persa"
     }
   ],
@@ -2319,14 +2327,14 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 51167.62,
-        "units": 50,
+        "revenue_usd": 52007.62,
+        "units": 51,
         "categoria": "Sin categoría"
       },
       {
         "articulo": "Vintage",
-        "revenue_usd": 24541.43,
-        "units": 24,
+        "revenue_usd": 26628.39,
+        "units": 26,
         "categoria": "Alfombra persa"
       },
       {
@@ -2366,6 +2374,12 @@
         "categoria": "Yute y Lana"
       },
       {
+        "articulo": "Yute y Lana Nuevas 300 x 400 Charcol",
+        "revenue_usd": 5017.37,
+        "units": 3,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
         "articulo": "Pura Lana 200 x 300 Natural",
         "revenue_usd": 4650.0,
         "units": 5,
@@ -2402,9 +2416,9 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Yute y Lana Nuevas 300 x 400 Charcol",
-        "revenue_usd": 3296.0,
-        "units": 2,
+        "articulo": "Yute y Lana Nuevas 200 x 300 Green",
+        "revenue_usd": 3368.88,
+        "units": 4,
         "categoria": "Yute y Lana Nuevas"
       },
       {
@@ -2426,6 +2440,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Pura Lana 250 x 350 Natural",
+        "revenue_usd": 2864.0,
+        "units": 2,
+        "categoria": "Pura Lana"
+      },
+      {
         "articulo": "Pura Lana 250 x 350 Vison",
         "revenue_usd": 2774.5,
         "units": 2,
@@ -2442,12 +2462,6 @@
         "revenue_usd": 2647.63,
         "units": 2,
         "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Yute y Lana Nuevas 200 x 300 Green",
-        "revenue_usd": 2508.19,
-        "units": 3,
-        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "Naim 720",
@@ -2474,6 +2488,18 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
+        "articulo": "Kilim Afghan",
+        "revenue_usd": 2325.73,
+        "units": 2,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Moud",
+        "revenue_usd": 2227.12,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Yute y Lana 300 x 400 Grey",
         "revenue_usd": 2030.0,
         "units": 2,
@@ -2484,6 +2510,12 @@
         "revenue_usd": 1968.0,
         "units": 1,
         "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Vintage Ornate",
+        "revenue_usd": 1908.34,
+        "units": 2,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Silla OTTO Teak Cuero Marron 50 x 52 x 85",
@@ -2506,6 +2538,12 @@
       {
         "articulo": "ziegler hand knotted carpet wool",
         "revenue_usd": 1798.5,
+        "units": 1,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Bakthiari",
+        "revenue_usd": 1745.03,
         "units": 1,
         "categoria": "Alfombra persa"
       },
@@ -2534,24 +2572,6 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
-        "articulo": "Kilim Afghan",
-        "revenue_usd": 1498.73,
-        "units": 1,
-        "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Vintage Ornate",
-        "revenue_usd": 1478.0,
-        "units": 1,
-        "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Pura Lana 250 x 350 Natural",
-        "revenue_usd": 1432.0,
-        "units": 1,
-        "categoria": "Pura Lana"
-      },
-      {
         "articulo": "Yute y Lana 200 x 300 Natural",
         "revenue_usd": 1377.11,
         "units": 2,
@@ -2564,16 +2584,16 @@
         "categoria": "Muebles"
       },
       {
+        "articulo": "Yute y Lana 160 x 230 Natural",
+        "revenue_usd": 1309.62,
+        "units": 3,
+        "categoria": "Yute y Lana"
+      },
+      {
         "articulo": "2009002 garden chair seater 200x53x92",
         "revenue_usd": 1305.0,
         "units": 4,
         "categoria": "Muebles"
-      },
-      {
-        "articulo": "Moud",
-        "revenue_usd": 1292.67,
-        "units": 1,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana Nuevas 250 x 350 Ivory",
@@ -2616,12 +2636,6 @@
         "revenue_usd": 958.8,
         "units": 1,
         "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Yute y Lana 160 x 230 Natural",
-        "revenue_usd": 955.62,
-        "units": 2,
-        "categoria": "Yute y Lana"
       },
       {
         "articulo": "Yute y Lana Nuevas 160 x 230 Beige",
@@ -2866,6 +2880,12 @@
       {
         "articulo": "Pura Lana Clay 080x160",
         "revenue_usd": 172.0,
+        "units": 1,
+        "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Pura Lana 80 x 120 Natural",
+        "revenue_usd": 168.04,
         "units": 1,
         "categoria": "Pura Lana"
       },
