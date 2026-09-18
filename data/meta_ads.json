@@ -1,37 +1,37 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-18T11:43:50.826377-03:00",
+  "_ultima_actualizacion": "2026-09-18T15:49:12.969669-03:00",
   "periodos": {
     "today": {
-      "spend": 1.64,
+      "spend": 3.9,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 173,
-      "clicks": 8
+      "impressions": 497,
+      "clicks": 20
     },
     "yesterday": {
-      "spend": 1.81,
+      "spend": 1.83,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 300,
+      "impressions": 301,
       "clicks": 10
     },
     "last_7d": {
-      "spend": 10.4,
+      "spend": 10.42,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1448,
+      "impressions": 1449,
       "clicks": 107
     },
     "last_30d": {
-      "spend": 176.84,
+      "spend": 176.86,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 60058,
+      "impressions": 60059,
       "clicks": 2529
     }
   },
@@ -84,11 +84,11 @@
       "id": "120247781368450436",
       "nombre": "Flyer club el pais20 Campaña",
       "tipo": "performance",
-      "spend": 1.81,
+      "spend": 1.83,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 300,
+      "impressions": 301,
       "clicks": 10
     }
   ],
@@ -176,32 +176,32 @@
     {
       "year": 2026,
       "month": 9,
-      "spend": 83.86,
+      "spend": 86.14,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 12752,
-      "clicks": 754
+      "impressions": 13077,
+      "clicks": 766
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 173,
-        "reach": 128,
-        "spend": 1.64,
-        "cpm": 9.48,
-        "clicks": 8,
+        "impressions": 497,
+        "reach": 383,
+        "spend": 3.9,
+        "cpm": 7.85,
+        "clicks": 20,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 300,
+        "impressions": 301,
         "reach": 233,
-        "spend": 1.81,
-        "cpm": 6.03,
+        "spend": 1.83,
+        "cpm": 6.08,
         "clicks": 10,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
@@ -209,26 +209,26 @@
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 1448,
+        "impressions": 1449,
         "reach": 1079,
-        "spend": 10.4,
-        "cpm": 7.18,
+        "spend": 10.42,
+        "cpm": 7.19,
         "clicks": 107,
         "profile_visits_fb": 0,
         "profile_visits_ig": 348,
         "new_followers_fb": 1,
-        "new_followers_ig": 53
+        "new_followers_ig": 55
       },
       "last_30d": {
-        "impressions": 60058,
+        "impressions": 60059,
         "reach": 36589,
-        "spend": 176.84,
+        "spend": 176.86,
         "cpm": 2.94,
         "clicks": 2529,
         "profile_visits_fb": 0,
         "profile_visits_ig": 4287,
         "new_followers_fb": 10,
-        "new_followers_ig": 507
+        "new_followers_ig": 509
       }
     },
     "por_anuncio": [
@@ -237,28 +237,28 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 16/9/2026",
         "periodos": {
           "today": {
-            "impressions": 177,
-            "reach": 128,
-            "spend": 1.66,
-            "cpm": 9.38
+            "impressions": 497,
+            "reach": 390,
+            "spend": 3.9,
+            "cpm": 7.85
           },
           "yesterday": {
-            "impressions": 300,
+            "impressions": 301,
             "reach": 233,
-            "spend": 1.81,
-            "cpm": 6.03
+            "spend": 1.83,
+            "cpm": 6.08
           },
           "last_7d": {
-            "impressions": 300,
+            "impressions": 301,
             "reach": 233,
-            "spend": 1.81,
-            "cpm": 6.03
+            "spend": 1.83,
+            "cpm": 6.08
           },
           "last_30d": {
-            "impressions": 300,
+            "impressions": 301,
             "reach": 233,
-            "spend": 1.81,
-            "cpm": 6.03
+            "spend": 1.83,
+            "cpm": 6.08
           }
         }
       },

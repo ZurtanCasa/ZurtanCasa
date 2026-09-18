@@ -1,46 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-09-16T19:12:48.385948-03:00",
+  "_ultima_sincronizacion": "2026-09-18T15:49:11.581270-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "1325-80120",
-      "producto": "Alfombra Pura Lana Natural",
-      "actual": 10,
-      "nuevo": 9
-    },
-    {
-      "sku": "1325-250350",
-      "producto": "Alfombra Pura Lana Natural",
-      "actual": 7,
-      "nuevo": 6
-    },
-    {
-      "sku": "HO 51030-300X400",
-      "producto": "Alfombra Yute y Lana Charcoal",
-      "actual": 2,
-      "nuevo": 1
-    },
-    {
-      "sku": "HO 48548-200X300",
-      "producto": "Alfombra Yute y Lana Green",
-      "actual": 1,
-      "nuevo": 0
-    },
-    {
-      "sku": "HO10162-160*230",
-      "producto": "Alfombra Yute y Lana Natural",
-      "actual": 13,
-      "nuevo": 12
-    },
-    {
-      "sku": "2103001_250",
-      "producto": "Mesa de Comedor Suar",
-      "actual": 1,
-      "nuevo": 0
-    }
-  ],
-  "sin_cambios": 179,
+  "actualizados": [],
+  "sin_cambios": 185,
   "excluidos_manualmente": [
     {
       "sku": "245413",

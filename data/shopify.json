@@ -1,18 +1,16 @@
 {
-  "_status": "error",
-  "_ultima_actualizacion": null,
+  "_status": "ok",
+  "_ultima_actualizacion": "2026-09-18T15:49:11.725626-03:00",
   "configuracion": {
-    "tax_included": null,
+    "tax_included": true,
     "moneda": "USD"
   },
   "mes_actual": {
     "orders_count": 0,
     "revenue_bruto": 0,
-    "revenue_neto_sin_iva": 0,
+    "revenue_neto_sin_iva": 0.0,
     "aov": 0,
-    "refunds": 0
+    "refunds": 243.2
   },
-  "historico_mensual": [],
-  "_error": "RuntimeError: SHOPIFY_STORE_URL y SHOPIFY_ACCESS_TOKEN son requeridos (¿secret vacío?)",
-  "_ultimo_intento": "2026-09-18T11:43:50.527827-03:00"
+  "historico_mensual": []
 }
