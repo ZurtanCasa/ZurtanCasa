@@ -166,7 +166,12 @@ def main():
     mtd_orders = [o for o in all_orders if order_month(o) == (now.year, now.month)]
     mtd_sales = [o for o in mtd_orders if is_valid_sale(o)]
     mtd_revenue = sum(float(o.get("total_price", 0)) for o in mtd_sales)
-    mtd_refunds = sum(refunded_amount(o) for o in mtd_orders)
+    # Solo refunds de órdenes reales — excluir canceladas/anuladas y de prueba
+    # (si no, los checkouts de test reembolsados se cuentan como devoluciones).
+    mtd_refunds = sum(
+        refunded_amount(o) for o in mtd_orders
+        if not o.get("cancelled_at") and not o.get("test")
+    )
     mtd_aov = mtd_revenue / len(mtd_sales) if mtd_sales else 0
 
     existing = load_existing()
