@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-20T11:25:12.276894-03:00",
+  "_ultima_actualizacion": "2026-09-20T15:27:46.677653-03:00",
   "periodos": {
     "today": {
-      "spend": 3.54,
+      "spend": 5.24,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 453,
-      "clicks": 16
+      "impressions": 663,
+      "clicks": 25
     },
     "yesterday": {
       "spend": 8.32,
@@ -176,22 +176,22 @@
     {
       "year": 2026,
       "month": 9,
-      "spend": 101.93,
+      "spend": 103.63,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 14886,
-      "clicks": 840
+      "impressions": 15096,
+      "clicks": 849
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 453,
-        "reach": 371,
-        "spend": 3.54,
-        "cpm": 7.81,
-        "clicks": 16,
+        "impressions": 663,
+        "reach": 526,
+        "spend": 5.24,
+        "cpm": 7.9,
+        "clicks": 25,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -217,7 +217,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 122,
         "new_followers_fb": 0,
-        "new_followers_ig": 23
+        "new_followers_ig": 24
       },
       "last_30d": {
         "impressions": 51971,
@@ -228,7 +228,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 3634,
         "new_followers_fb": 9,
-        "new_followers_ig": 429
+        "new_followers_ig": 430
       }
     },
     "por_anuncio": [
@@ -237,10 +237,10 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 16/9/2026",
         "periodos": {
           "today": {
-            "impressions": 453,
-            "reach": 375,
-            "spend": 3.54,
-            "cpm": 7.81
+            "impressions": 663,
+            "reach": 526,
+            "spend": 5.24,
+            "cpm": 7.9
           },
           "yesterday": {
             "impressions": 904,
