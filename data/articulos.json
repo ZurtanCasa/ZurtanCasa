@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-22T16:28:41.025959-03:00",
+  "_ultima_actualizacion": "2026-09-22T22:00:11.355391-03:00",
   "_rango": "01/01/24 → 22/09/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,8 +377,8 @@
       },
       "9": {
         "Alfombra persa": {
-          "revenue_usd": 21588.17,
-          "units": 14
+          "revenue_usd": 22470.57,
+          "units": 15
         },
         "Muebles": {
           "revenue_usd": 1860.0,
@@ -887,8 +887,8 @@
       "units": 131
     },
     "Alfombra persa": {
-      "revenue_usd": 538609.31,
-      "units": 437
+      "revenue_usd": 539491.71,
+      "units": 438
     },
     "Sin categoría": {
       "revenue_usd": 284916.02,
@@ -918,8 +918,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 538609.31,
-      "units": 437
+      "revenue_usd": 539491.71,
+      "units": 438
     },
     {
       "categoria": "Sin categoría",
@@ -1080,8 +1080,8 @@
     },
     {
       "articulo": "Afghan vintage carpet",
-      "revenue_usd": 10273.73,
-      "units": 6,
+      "revenue_usd": 11156.13,
+      "units": 7,
       "categoria": "Alfombra persa"
     },
     {
@@ -2404,6 +2404,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Afghan vintage carpet",
+        "revenue_usd": 3563.13,
+        "units": 4,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Varni Sirdjan",
         "revenue_usd": 3475.59,
         "units": 3,
@@ -2450,12 +2456,6 @@
         "revenue_usd": 2774.5,
         "units": 2,
         "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "Afghan vintage carpet",
-        "revenue_usd": 2680.73,
-        "units": 3,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Garadjeh",
