@@ -1,8 +1,16 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-24T21:59:02.072684-03:00",
+  "_ultima_actualizacion": "2026-09-25T12:40:56.030715-03:00",
   "periodos": {
     "today": {
+      "spend": 0,
+      "revenue_reportado": 0,
+      "roas": 0,
+      "conversiones": 0,
+      "impressions": 0,
+      "clicks": 0
+    },
+    "yesterday": {
       "spend": 3.82,
       "revenue_reportado": 0.0,
       "roas": 0.0,
@@ -10,29 +18,21 @@
       "impressions": 387,
       "clicks": 11
     },
-    "yesterday": {
-      "spend": 10.46,
-      "revenue_reportado": 0.0,
-      "roas": 0.0,
-      "conversiones": 0,
-      "impressions": 802,
-      "clicks": 24
-    },
     "last_7d": {
-      "spend": 61.41,
+      "spend": 63.4,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 7043,
-      "clicks": 258
+      "impressions": 7129,
+      "clicks": 259
     },
     "last_30d": {
-      "spend": 175.45,
+      "spend": 168.24,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 32088,
-      "clicks": 1498
+      "impressions": 26242,
+      "clicks": 1267
     }
   },
   "campanas": [
@@ -40,12 +40,12 @@
       "id": "120247781368450436",
       "nombre": "Flyer club el pais20 Campaña",
       "tipo": "performance",
-      "spend": 61.41,
+      "spend": 65.23,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 7043,
-      "clicks": 258
+      "impressions": 7430,
+      "clicks": 269
     },
     {
       "id": "120247527705010436",
@@ -73,23 +73,23 @@
       "id": "120247419139230436",
       "nombre": "Publicacion Alfombras",
       "tipo": "performance",
-      "spend": 11.93,
+      "spend": 4.43,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 9662,
-      "clicks": 297
+      "impressions": 3887,
+      "clicks": 91
     },
     {
       "id": "120246926567220436",
       "nombre": "CAMPAÑA MUEBLES",
       "tipo": "performance",
-      "spend": 7.29,
+      "spend": 3.76,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 986,
-      "clicks": 65
+      "impressions": 528,
+      "clicks": 29
     }
   ],
   "historico_mensual": [
@@ -187,6 +187,17 @@
   "marketing": {
     "periodos": {
       "today": {
+        "impressions": 0,
+        "reach": 0,
+        "spend": 0,
+        "cpm": 0,
+        "clicks": 0,
+        "profile_visits_fb": 0,
+        "profile_visits_ig": 0,
+        "new_followers_fb": 1,
+        "new_followers_ig": 0
+      },
+      "yesterday": {
         "impressions": 387,
         "reach": 327,
         "spend": 3.82,
@@ -197,38 +208,27 @@
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
-      "yesterday": {
-        "impressions": 802,
-        "reach": 640,
-        "spend": 10.46,
-        "cpm": 13.04,
-        "clicks": 24,
-        "profile_visits_fb": 0,
-        "profile_visits_ig": 0,
-        "new_followers_fb": 0,
-        "new_followers_ig": 0
-      },
       "last_7d": {
-        "impressions": 7043,
-        "reach": 3841,
-        "spend": 61.41,
-        "cpm": 8.72,
-        "clicks": 258,
+        "impressions": 7129,
+        "reach": 3963,
+        "spend": 63.4,
+        "cpm": 8.89,
+        "clicks": 259,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 274,
-        "new_followers_fb": 0,
-        "new_followers_ig": 42
+        "profile_visits_ig": 380,
+        "new_followers_fb": 1,
+        "new_followers_ig": 38
       },
       "last_30d": {
-        "impressions": 32088,
-        "reach": 17232,
-        "spend": 175.45,
-        "cpm": 5.47,
-        "clicks": 1498,
+        "impressions": 26242,
+        "reach": 12481,
+        "spend": 168.24,
+        "cpm": 6.41,
+        "clicks": 1267,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 2631,
+        "profile_visits_ig": 2649,
         "new_followers_fb": 6,
-        "new_followers_ig": 345
+        "new_followers_ig": 332
       }
     },
     "por_anuncio": [
@@ -236,29 +236,23 @@
         "id": "120247781368440436",
         "nombre": "Anuncio Campaña de mensajes personalizada 16/9/2026",
         "periodos": {
-          "today": {
+          "yesterday": {
             "impressions": 387,
             "reach": 327,
             "spend": 3.82,
             "cpm": 9.87
           },
-          "yesterday": {
-            "impressions": 802,
-            "reach": 640,
-            "spend": 10.46,
-            "cpm": 13.04
-          },
           "last_7d": {
-            "impressions": 7043,
-            "reach": 3841,
-            "spend": 61.41,
-            "cpm": 8.72
+            "impressions": 7129,
+            "reach": 3963,
+            "spend": 63.4,
+            "cpm": 8.89
           },
           "last_30d": {
-            "impressions": 7043,
-            "reach": 3841,
-            "spend": 61.41,
-            "cpm": 8.72
+            "impressions": 7430,
+            "reach": 4028,
+            "spend": 65.23,
+            "cpm": 8.78
           }
         }
       },
@@ -267,10 +261,10 @@
         "nombre": "Flyer",
         "periodos": {
           "last_30d": {
-            "impressions": 522,
-            "reach": 336,
-            "spend": 3.69,
-            "cpm": 7.07
+            "impressions": 259,
+            "reach": 184,
+            "spend": 1.8,
+            "cpm": 6.95
           }
         }
       },
@@ -279,10 +273,10 @@
         "nombre": "Carrousel",
         "periodos": {
           "last_30d": {
-            "impressions": 7,
-            "reach": 7,
-            "spend": 0.03,
-            "cpm": 4.29
+            "impressions": 3,
+            "reach": 3,
+            "spend": 0.01,
+            "cpm": 3.33
           }
         }
       },
@@ -291,10 +285,10 @@
         "nombre": "Video",
         "periodos": {
           "last_30d": {
-            "impressions": 457,
-            "reach": 350,
-            "spend": 3.57,
-            "cpm": 7.81
+            "impressions": 266,
+            "reach": 218,
+            "spend": 1.95,
+            "cpm": 7.33
           }
         }
       },
@@ -303,10 +297,10 @@
         "nombre": "Nuevo anuncio de Interacción",
         "periodos": {
           "last_30d": {
-            "impressions": 9662,
-            "reach": 8767,
-            "spend": 11.93,
-            "cpm": 1.23
+            "impressions": 3887,
+            "reach": 3688,
+            "spend": 4.43,
+            "cpm": 1.14
           }
         }
       },
@@ -337,6 +331,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43555
+    "ig_followers_total": 43563
   }
 }
