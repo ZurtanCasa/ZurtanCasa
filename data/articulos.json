@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-25T12:39:23.864046-03:00",
+  "_ultima_actualizacion": "2026-09-25T16:46:14.636948-03:00",
   "_rango": "01/01/24 → 25/09/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,8 +377,8 @@
       },
       "9": {
         "Alfombra persa": {
-          "revenue_usd": 22470.57,
-          "units": 15
+          "revenue_usd": 22854.57,
+          "units": 16
         },
         "Muebles": {
           "revenue_usd": 1860.0,
@@ -887,8 +887,8 @@
       "units": 131
     },
     "Alfombra persa": {
-      "revenue_usd": 539491.71,
-      "units": 438
+      "revenue_usd": 539875.71,
+      "units": 439
     },
     "Sin categoría": {
       "revenue_usd": 308546.02,
@@ -918,8 +918,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 539491.71,
-      "units": 438
+      "revenue_usd": 539875.71,
+      "units": 439
     },
     {
       "categoria": "Sin categoría",
@@ -1115,6 +1115,12 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
+      "articulo": "Lahore",
+      "revenue_usd": 9391.8,
+      "units": 13,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Afghan regular vintage carpet",
       "revenue_usd": 9322.0,
       "units": 5,
@@ -1125,12 +1131,6 @@
       "revenue_usd": 9201.0,
       "units": 5,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Lahore",
-      "revenue_usd": 9007.8,
-      "units": 12,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Kilim Ghouchan",
@@ -2363,8 +2363,8 @@
       },
       {
         "articulo": "Lahore",
-        "revenue_usd": 5862.8,
-        "units": 6,
+        "revenue_usd": 6246.8,
+        "units": 7,
         "categoria": "Alfombra persa"
       },
       {
