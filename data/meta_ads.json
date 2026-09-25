@@ -1,13 +1,13 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-24T16:44:11.853140-03:00",
+  "_ultima_actualizacion": "2026-09-24T21:59:02.072684-03:00",
   "periodos": {
     "today": {
-      "spend": 3.73,
+      "spend": 3.82,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 379,
+      "impressions": 387,
       "clicks": 11
     },
     "yesterday": {
@@ -176,21 +176,21 @@
     {
       "year": 2026,
       "month": 9,
-      "spend": 145.55,
+      "spend": 145.64,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 19701,
+      "impressions": 19709,
       "clicks": 1005
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 379,
-        "reach": 321,
-        "spend": 3.73,
-        "cpm": 9.84,
+        "impressions": 387,
+        "reach": 327,
+        "spend": 3.82,
+        "cpm": 9.87,
         "clicks": 11,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
@@ -237,10 +237,10 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 16/9/2026",
         "periodos": {
           "today": {
-            "impressions": 379,
-            "reach": 320,
-            "spend": 3.73,
-            "cpm": 9.84
+            "impressions": 387,
+            "reach": 327,
+            "spend": 3.82,
+            "cpm": 9.87
           },
           "yesterday": {
             "impressions": 802,
@@ -337,6 +337,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43550
+    "ig_followers_total": 43555
   }
 }
