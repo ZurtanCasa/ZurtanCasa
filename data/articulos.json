@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-25T16:46:14.636948-03:00",
+  "_ultima_actualizacion": "2026-09-25T21:59:41.914710-03:00",
   "_rango": "01/01/24 → 25/09/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,8 +377,8 @@
       },
       "9": {
         "Alfombra persa": {
-          "revenue_usd": 22854.57,
-          "units": 16
+          "revenue_usd": 22957.57,
+          "units": 17
         },
         "Muebles": {
           "revenue_usd": 1860.0,
@@ -887,8 +887,8 @@
       "units": 131
     },
     "Alfombra persa": {
-      "revenue_usd": 539875.71,
-      "units": 439
+      "revenue_usd": 539978.71,
+      "units": 440
     },
     "Sin categoría": {
       "revenue_usd": 308546.02,
@@ -918,8 +918,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 539875.71,
-      "units": 439
+      "revenue_usd": 539978.71,
+      "units": 440
     },
     {
       "categoria": "Sin categoría",
@@ -2912,6 +2912,12 @@
         "revenue_usd": 150.0,
         "units": 1,
         "categoria": "Sin categoría"
+      },
+      {
+        "articulo": "Comercial",
+        "revenue_usd": 103.0,
+        "units": 1,
+        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana Nuevas 80 x 120 Green",
