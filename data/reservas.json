@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T20:12:59.160Z",
+  "_ultima_actualizacion": "2026-09-28T17:18:37.871104-03:00",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -146,6 +146,36 @@
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-09-28T17:12:10.887827-03:00",
       "updated_at": "2026-09-28T20:12:59.160Z"
+    },
+    {
+      "id": "b0b4dd0d-ac8a-40da-a2b8-c9832245b95a",
+      "nombre": "POLO CLIENTE OBRA PRIMA",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "2 de 3 x 160 lana latte y una de 250 x 130 lana latte esta entregado en obra prima",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Alfombras a Medida",
+      "created_at": "2026-09-28T17:18:37.871104-03:00",
+      "updated_at": "2026-09-28T17:18:37.871104-03:00"
+    },
+    {
+      "id": "65506961-3ff8-4051-90d4-3d2898890073",
+      "nombre": "pago seña",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "LANA VISON 370 X 245 / 2 DE 320 X 220 / UNA DE 135 X 090",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Alfombras a Medida",
+      "created_at": "2026-09-28T17:18:37.871104-03:00",
+      "updated_at": "2026-09-28T17:18:37.871104-03:00"
     }
   ]
 }
