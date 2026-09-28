@@ -1,8 +1,8 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-08-21T17:50:11.416313-03:00",
-  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27 | +43 persas agregadas 2026-08-18 | +1 persa (15077) 2026-08-18 | +1 persa (808B) 2026-08-18",
-  "total_articulos": 1143,
+  "_ultima_actualizacion": "2026-09-28T14:55:13.694850-03:00",
+  "_fuente": "Stock Actual (Zeta) — Precio Venta 2026 con IVA — cargado manualmente 2026-05-27 | +43 persas agregadas 2026-08-18 | +1 persa (15077) 2026-08-18 | +1 persa (808B) 2026-08-18 | +1 persa (1042B) 2026-09-28",
+  "total_articulos": 1144,
   "articulos": [
     {
       "codigo": "2009001 GARDEN CHAIR",
@@ -6638,6 +6638,12 @@
       "nombre": "Fine Vintage",
       "precio_usd": 4591.0,
       "medida": "400 x 294"
+    },
+    {
+      "codigo": "1042B",
+      "nombre": "Kilim Varni",
+      "precio_usd": 1085.0,
+      "medida": "275 x 77"
     }
   ]
 }
