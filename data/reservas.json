@@ -1,5 +1,136 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T18:55:28.070Z",
-  "reservas": []
+  "_ultima_actualizacion": "2026-09-28T16:34:56.781080-03:00",
+  "reservas": [
+    {
+      "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
+      "nombre": "OSVALDO MURATORIO",
+      "celular": "99891950",
+      "ci": "",
+      "direccion": "",
+      "articulos": "A FAVOR US 100",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "902f12a1-6e02-460e-b32e-a06022056bae",
+      "nombre": "AUTOMOTORA oliva",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "DEVOLVIO CAMINERO 300 X 70 YUTE Y LANA NUEVAS SALDO A FAVOR",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "285f161f-f819-4962-ba89-66b255063504",
+      "nombre": "INES SUAREZ",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "SALDO A FAVOR USD 242 - 10/5/24",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "c3849457-e484-444b-a272-99797c54a2c8",
+      "nombre": "VERO ZEBALLOS",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "200 DOLARES A FAVOR",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "7f701eb2-c997-4a66-bcaa-f27bd1554e44",
+      "nombre": "MERCEDES FILGUEIRA",
+      "celular": "95515000",
+      "ci": "",
+      "direccion": "",
+      "articulos": "SALDO A FAVOR USD 288 X CAMBIO DE ALFOMBRAS- 18/6/24",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "10f30922-b10f-497b-80be-c88de7ccd1ff",
+      "nombre": "LESLIE TIPICO ESTUDIO",
+      "celular": "99927765",
+      "ci": "",
+      "direccion": "",
+      "articulos": "cambia por 350 x 250 yute grey y tiene saldo comparadao una de lana 350 x 250 TIRNE A FAVOR",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "768d6abd-1480-4dea-b0a6-41767058051c",
+      "nombre": "sofia ruiz",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "a favor 238 dolares por cambio",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "d1db71ed-2ed7-468f-889a-00ebe54485ee",
+      "nombre": "UNIVERSIDAD CATOLICA",
+      "celular": "96301823",
+      "ci": "",
+      "direccion": "",
+      "articulos": "TIENE A FAVOR 107 DOLARES",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "574444ac-fc7e-4468-baf7-6fd08fc9bfca",
+      "nombre": "FLORENCIA SEIZER",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "YUTE Y LANA GREEN 4 X 3 TIEN SALDO A FAVOR EN PESOS",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "46b3a456-5d94-4818-bb1d-05dc35a5ef8e",
+      "nombre": "CORINE",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "RESERVA UNA DE PURA LANA VISON 350X 250 PATA EN PORMO DE JULIO",
+      "sena": "",
+      "notas": "",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-09-28T16:34:56.781080-03:00",
+      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    }
+  ]
 }
