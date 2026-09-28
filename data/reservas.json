@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T20:30:54.603Z",
+  "_ultima_actualizacion": "2026-09-28T20:32:06.863Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -371,6 +371,21 @@
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-09-28T17:28:47.170552-03:00",
       "updated_at": "2026-09-28T17:28:47.170552-03:00"
+    },
+    {
+      "id": "386257da-08ec-40be-b037-5a40647cc28b",
+      "nombre": "Catarossi",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "pura lana 400 x 300 latte, son dos.",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Préstamos",
+      "created_at": "2026-09-28T20:32:06.863Z",
+      "updated_at": "2026-09-28T20:32:06.863Z"
     }
   ]
 }
