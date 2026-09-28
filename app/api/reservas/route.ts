@@ -15,6 +15,8 @@ const ESTADOS = [
   "Pago y No Llegó Mercadería",
   "Saldo a Favor",
   "S/F",
+  "Alfombras a Medida",
+  "Préstamos",
   "Pago y Entregado",
 ];
 

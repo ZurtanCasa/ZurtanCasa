@@ -9,6 +9,8 @@ const ESTADOS_ACTIVOS = [
   { key: "Pago y No Llegó Mercadería",  color: "#f97316" },
   { key: "Saldo a Favor",               color: "#9ca3af" },
   { key: "S/F",                         color: "#d946ef" },
+  { key: "Alfombras a Medida",          color: "#a855f7" },
+  { key: "Préstamos",                   color: "#14b8a6" },
 ];
 const ESTADO_ARCHIVADO = "Pago y Entregado";
 const TODOS = [...ESTADOS_ACTIVOS.map((e) => e.key), ESTADO_ARCHIVADO];
