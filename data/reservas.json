@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T18:43:35.800Z",
+  "_ultima_actualizacion": "2026-09-28T18:43:39.237Z",
   "reservas": [
     {
       "id": "1b4acb15-ee40-48c4-83dd-68ebbb79c1cc",
@@ -11,9 +11,9 @@
       "articulos": "yuye y lana 3x2 natural",
       "sena": "50",
       "notas": "Prueba",
-      "estado": "Pago y Sin Entregar",
+      "estado": "Pago y Entregado",
       "created_at": "2026-09-28T18:43:22.575Z",
-      "updated_at": "2026-09-28T18:43:35.800Z"
+      "updated_at": "2026-09-28T18:43:39.237Z"
     }
   ]
 }
