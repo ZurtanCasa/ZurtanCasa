@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T18:38:34.231Z",
+  "_ultima_actualizacion": "2026-09-28T18:38:39.896Z",
   "reservas": [
     {
       "id": "8ba994a1-a89e-476f-9b53-0a20e2639293",
@@ -11,9 +11,9 @@
       "articulos": "yute y lana",
       "sena": "100 usd",
       "notas": "prueba",
-      "estado": "Entregado y Sin Pagar",
+      "estado": "Pago y Sin Entregar",
       "created_at": "2026-09-28T18:38:26.490Z",
-      "updated_at": "2026-09-28T18:38:34.231Z"
+      "updated_at": "2026-09-28T18:38:39.896Z"
     }
   ]
 }
