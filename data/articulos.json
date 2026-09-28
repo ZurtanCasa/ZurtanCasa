@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T15:18:39.098782-03:00",
+  "_ultima_actualizacion": "2026-09-28T18:31:17.852619-03:00",
   "_rango": "01/01/24 → 28/09/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -385,8 +385,8 @@
           "units": 1
         },
         "Sin categoría": {
-          "revenue_usd": 26789.75,
-          "units": 4
+          "revenue_usd": 26939.75,
+          "units": 5
         },
         "Pura Lana": {
           "revenue_usd": 1600.04,
@@ -397,8 +397,8 @@
           "units": 1
         },
         "Yute y Lana Nuevas": {
-          "revenue_usd": 6739.13,
-          "units": 6
+          "revenue_usd": 7045.13,
+          "units": 9
         }
       },
       "7": {
@@ -891,8 +891,8 @@
       "units": 440
     },
     "Sin categoría": {
-      "revenue_usd": 308546.02,
-      "units": 296
+      "revenue_usd": 308696.02,
+      "units": 297
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -907,8 +907,8 @@
       "units": 65
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 149684.71,
-      "units": 193
+      "revenue_usd": 149990.71,
+      "units": 196
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 3364.0,
@@ -923,13 +923,13 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 308546.02,
-      "units": 296
+      "revenue_usd": 308696.02,
+      "units": 297
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 149684.71,
-      "units": 193
+      "revenue_usd": 149990.71,
+      "units": 196
     },
     {
       "categoria": "Pura Lana",
@@ -2788,6 +2788,12 @@
         "categoria": "Muebles"
       },
       {
+        "articulo": "Yute y Lana Nuevas 80 x 120 Beige",
+        "revenue_usd": 306.0,
+        "units": 3,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
         "articulo": "Kilim Soumak",
         "revenue_usd": 305.1,
         "units": 1,
@@ -2804,6 +2810,12 @@
         "revenue_usd": 300.0,
         "units": 2,
         "categoria": "Muebles"
+      },
+      {
+        "articulo": "Yute Redonda 180 x 180",
+        "revenue_usd": 300.0,
+        "units": 2,
+        "categoria": "Sin categoría"
       },
       {
         "articulo": "vintage",
@@ -2904,12 +2916,6 @@
       {
         "articulo": "Yute Redonda con Diseño 150 x 150",
         "revenue_usd": 164.0,
-        "units": 1,
-        "categoria": "Sin categoría"
-      },
-      {
-        "articulo": "Yute Redonda 180 x 180",
-        "revenue_usd": 150.0,
         "units": 1,
         "categoria": "Sin categoría"
       },

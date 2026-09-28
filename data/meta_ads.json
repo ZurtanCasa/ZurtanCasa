@@ -1,13 +1,13 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T15:20:12.085334-03:00",
+  "_ultima_actualizacion": "2026-09-28T18:32:52.946090-03:00",
   "periodos": {
     "today": {
-      "spend": 0,
-      "revenue_reportado": 0,
+      "spend": 0.0,
+      "revenue_reportado": 0.0,
       "roas": 0,
       "conversiones": 0,
-      "impressions": 0,
+      "impressions": 1,
       "clicks": 0
     },
     "yesterday": {
@@ -165,21 +165,21 @@
     {
       "year": 2026,
       "month": 9,
-      "spend": 145.64,
+      "spend": 145.66,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 19709,
+      "impressions": 19713,
       "clicks": 1005
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 0,
-        "reach": 0,
-        "spend": 0,
-        "cpm": 0,
+        "impressions": 4,
+        "reach": 1,
+        "spend": 0.02,
+        "cpm": 5.0,
         "clicks": 0,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
@@ -206,7 +206,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 670,
         "new_followers_fb": 2,
-        "new_followers_ig": 116
+        "new_followers_ig": 130
       },
       "last_30d": {
         "impressions": 21263,
@@ -217,7 +217,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 2909,
         "new_followers_fb": 7,
-        "new_followers_ig": 406
+        "new_followers_ig": 420
       }
     },
     "por_anuncio": [
@@ -266,6 +266,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43619
+    "ig_followers_total": 43618
   }
 }
