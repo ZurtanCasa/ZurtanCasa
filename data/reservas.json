@@ -1,19 +1,5 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T18:55:23.464Z",
-  "reservas": [
-    {
-      "id": "970cc3e9-5237-4e58-a5ea-2a61fdb02ebb",
-      "nombre": "nicolas",
-      "celular": "095622112",
-      "ci": "",
-      "direccion": "hq 6555",
-      "articulos": "yute y lana",
-      "sena": "100",
-      "notas": "prueba",
-      "estado": "S/F",
-      "created_at": "2026-09-28T18:53:57.385Z",
-      "updated_at": "2026-09-28T18:55:16.597Z"
-    }
-  ]
+  "_ultima_actualizacion": "2026-09-28T18:55:28.070Z",
+  "reservas": []
 }
