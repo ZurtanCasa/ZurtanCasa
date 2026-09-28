@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T17:18:37.871104-03:00",
+  "_ultima_actualizacion": "2026-09-28T17:21:44.990423-03:00",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -176,6 +176,96 @@
       "estado": "Alfombras a Medida",
       "created_at": "2026-09-28T17:18:37.871104-03:00",
       "updated_at": "2026-09-28T17:18:37.871104-03:00"
+    },
+    {
+      "id": "a0c21f47-fc24-44e7-8eaa-9ec1f6d84811",
+      "nombre": "CORINE",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "300 X 400 PET NUVAS FLW 24758 1700 SIN DESCUENTOS",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y No Llegó Mercadería",
+      "created_at": "2026-09-28T17:21:44.990423-03:00",
+      "updated_at": "2026-09-28T17:21:44.990423-03:00"
+    },
+    {
+      "id": "00803497-96c4-431d-98b4-b90c0e9df318",
+      "nombre": "CARRAU",
+      "celular": "91253250",
+      "ci": "",
+      "direccion": "",
+      "articulos": "PET FLW 24758 250 X 250",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y No Llegó Mercadería",
+      "created_at": "2026-09-28T17:21:44.990423-03:00",
+      "updated_at": "2026-09-28T17:21:44.990423-03:00"
+    },
+    {
+      "id": "53345134-abd7-46db-a9ca-dddfe20d4b5c",
+      "nombre": "ESTEFABIA DE CUNTO",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "FLW 24682 420 X 300",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y No Llegó Mercadería",
+      "created_at": "2026-09-28T17:21:44.990423-03:00",
+      "updated_at": "2026-09-28T17:21:44.990423-03:00"
+    },
+    {
+      "id": "d88007e0-15da-45a6-98c4-cc95fef5339e",
+      "nombre": "VIRGINIA TARIGO CLIENTA CARO",
+      "celular": "99140206",
+      "ci": "",
+      "direccion": "",
+      "articulos": "24682 CANVAS 400 X 300 USD 1920 MENOS 20 + 5",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y No Llegó Mercadería",
+      "created_at": "2026-09-28T17:21:44.990423-03:00",
+      "updated_at": "2026-09-28T17:21:44.990423-03:00"
+    },
+    {
+      "id": "4a25a6ff-f76e-48bb-8326-d1f13e5116b9",
+      "nombre": "AGUSTINA MARTINEZ",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "PET NUEVA RIS FLW 24758 300 X 200 A DEFINIR COLOR",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y No Llegó Mercadería",
+      "created_at": "2026-09-28T17:21:44.990423-03:00",
+      "updated_at": "2026-09-28T17:21:44.990423-03:00"
+    },
+    {
+      "id": "a0158c93-9994-4d4a-9099-a6d1e8c30ef1",
+      "nombre": "ANDREA CLIENTA CARO",
+      "celular": "96471059",
+      "ci": "",
+      "direccion": "",
+      "articulos": "PET CANVA 300 X 200 Y 350 X 250",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y No Llegó Mercadería",
+      "created_at": "2026-09-28T17:21:44.990423-03:00",
+      "updated_at": "2026-09-28T17:21:44.990423-03:00"
     }
   ]
 }
