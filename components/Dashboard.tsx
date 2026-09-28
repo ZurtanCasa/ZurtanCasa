@@ -12,6 +12,7 @@ import LocalesTab from "./tabs/LocalesTab";
 import PlanTab from "./tabs/PlanTab";
 import ArticulosTab from "./tabs/ArticulosTab";
 import PreciosTab from "./tabs/PreciosTab";
+import ReservasTab from "./tabs/ReservasTab";
 import FinancieroTab from "./tabs/FinancieroTab";
 import TutorialTab from "./tabs/TutorialTab";
 
@@ -45,6 +46,7 @@ const TAB_TITLES: Record<TabId, string> = {
   locales: "🏪 Locales Físicos",
   articulos: "📦 Artículos & Categorías",
   precios: "💰 Lista de Precios",
+  reservas: "📋 Reservas",
   plan: "📅 Plan vs Real",
   financiero: "🏦 Panel Financiero",
   tutorial: "📚 Tutorial",
@@ -156,6 +158,7 @@ export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, lo
           )}
           {tab === "articulos" && <ArticulosTab data={articulos} />}
           {tab === "precios" && <PreciosTab data={precios} muebles={muebles} stock={stock} />}
+          {tab === "reservas" && <ReservasTab />}
           {tab === "plan" && (
             <PlanTab
               rows={planRows}

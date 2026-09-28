@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 
-export type TabId = "ceo" | "chat" | "performance" | "ads" | "marketing" | "roas" | "funnel" | "locales" | "articulos" | "precios" | "plan" | "financiero" | "tutorial";
+export type TabId = "ceo" | "chat" | "performance" | "ads" | "marketing" | "roas" | "funnel" | "locales" | "articulos" | "precios" | "reservas" | "plan" | "financiero" | "tutorial";
 
 const TABS: { id: TabId; icon: string; label: string }[] = [
   { id: "ceo", icon: "🧠", label: "CEO" },
@@ -14,6 +14,7 @@ const TABS: { id: TabId; icon: string; label: string }[] = [
   { id: "locales", icon: "🏪", label: "Locales Físicos" },
   { id: "articulos", icon: "📦", label: "Artículos" },
   { id: "precios", icon: "💰", label: "Lista de Precios" },
+  { id: "reservas", icon: "📋", label: "Reservas" },
   { id: "plan", icon: "📅", label: "Plan vs Real" },
   { id: "financiero", icon: "🏦", label: "Panel Financiero" },
   { id: "tutorial", icon: "📚", label: "Tutorial" },
