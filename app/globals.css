@@ -710,3 +710,5 @@ tr:hover td { background: var(--bg-card-hover); }
 @media (max-width: 640px) {
   .reserva-field-row { flex-direction: column; gap: 0; }
 }
+
+.reserva-card-fecha { color: var(--accent); font-weight: 500; }

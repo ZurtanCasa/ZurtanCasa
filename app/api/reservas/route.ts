@@ -34,6 +34,7 @@ function normalizar(body: any) {
     direccion: (body.direccion ?? "").toString().trim(),
     articulos: (body.articulos ?? "").toString().trim(),
     sena: (body.sena ?? "").toString().trim(),
+    fecha_entrega: (body.fecha_entrega ?? "").toString().trim(),
     notas: (body.notas ?? "").toString().trim(),
     estado,
   };

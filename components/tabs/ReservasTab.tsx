@@ -24,13 +24,31 @@ interface Reserva {
   direccion: string;
   articulos: string;
   sena: string;
+  fecha_entrega: string;
   notas: string;
   estado: string;
   created_at: string;
   updated_at: string;
 }
 
-const VACIA = { nombre: "", celular: "", ci: "", direccion: "", articulos: "", sena: "", notas: "", estado: "S/F" };
+const VACIA = { nombre: "", celular: "", ci: "", direccion: "", articulos: "", sena: "", fecha_entrega: "", notas: "", estado: "S/F" };
+
+function fmtFecha(f?: string) {
+  if (!f) return "";
+  const [y, m, d] = f.split("-");
+  return d && m && y ? `${d}/${m}/${y}` : f;
+}
+
+// Ordena por fecha de entrega ascendente (más cercana primero); sin fecha al final.
+function porFechaEntrega(cards: Reserva[]) {
+  return [...cards].sort((a, b) => {
+    const fa = a.fecha_entrega || "", fb = b.fecha_entrega || "";
+    if (!fa && !fb) return 0;
+    if (!fa) return 1;
+    if (!fb) return -1;
+    return fa.localeCompare(fb);
+  });
+}
 
 export default function ReservasTab() {
   const [reservas, setReservas] = useState<Reserva[]>([]);
@@ -126,7 +144,7 @@ export default function ReservasTab() {
 
   function abrirNueva() { setForm(VACIA); setEditId(null); setFormOpen(true); }
   function abrirEditar(r: Reserva) {
-    setForm({ nombre: r.nombre, celular: r.celular, ci: r.ci, direccion: r.direccion, articulos: r.articulos, sena: r.sena, notas: r.notas, estado: r.estado });
+    setForm({ nombre: r.nombre, celular: r.celular, ci: r.ci, direccion: r.direccion, articulos: r.articulos, sena: r.sena, fecha_entrega: r.fecha_entrega || "", notas: r.notas, estado: r.estado });
     setEditId(r.id);
     setFormOpen(true);
   }
@@ -155,7 +173,9 @@ export default function ReservasTab() {
       {!loading && view === "kanban" && (
         <div className="kanban-board">
           {ESTADOS_ACTIVOS.map((col) => {
-            const cards = activas.filter((r) => r.estado === col.key);
+            let cards = activas.filter((r) => r.estado === col.key);
+            // "Pago y Sin Entregar": ordenar por fecha de entrega más cercana primero
+            if (col.key === "Pago y Sin Entregar") cards = porFechaEntrega(cards);
             return (
               <div
                 key={col.key}
@@ -249,8 +269,12 @@ export default function ReservasTab() {
                 <input value={form.ci} onChange={(e) => setForm({ ...form, ci: e.target.value })} /></label>
             </div>
 
-            <label className="reserva-field"><span>Dirección</span>
-              <input value={form.direccion} onChange={(e) => setForm({ ...form, direccion: e.target.value })} /></label>
+            <div className="reserva-field-row">
+              <label className="reserva-field"><span>Dirección</span>
+                <input value={form.direccion} onChange={(e) => setForm({ ...form, direccion: e.target.value })} /></label>
+              <label className="reserva-field"><span>Fecha de entrega (opcional)</span>
+                <input type="date" value={form.fecha_entrega} onChange={(e) => setForm({ ...form, fecha_entrega: e.target.value })} /></label>
+            </div>
 
             <label className="reserva-field"><span>Artículos</span>
               <textarea rows={3} value={form.articulos} onChange={(e) => setForm({ ...form, articulos: e.target.value })} /></label>
@@ -291,6 +315,7 @@ function ReservaCard({ r, onDragStart, onDragEnd, onEstado, onEdit, onDelete }: 
       {r.celular && <div className="reserva-card-line">📱 {r.celular}</div>}
       {r.articulos && <div className="reserva-card-line reserva-card-arts">🛋️ {r.articulos}</div>}
       {r.sena && <div className="reserva-card-line reserva-card-sena">💵 Seña: {r.sena}</div>}
+      {r.fecha_entrega && <div className="reserva-card-line reserva-card-fecha">📅 Entrega: {fmtFecha(r.fecha_entrega)}</div>}
       <select className="reserva-card-estado" value={r.estado} onChange={(e) => onEstado(e.target.value)}>
         {TODOS.map((e) => <option key={e} value={e}>{e}{e === ESTADO_ARCHIVADO ? " (archivar)" : ""}</option>)}
       </select>
