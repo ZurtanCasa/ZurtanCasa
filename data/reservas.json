@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T17:21:44.990423-03:00",
+  "_ultima_actualizacion": "2026-09-28T17:22:40.077950-03:00",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -266,6 +266,21 @@
       "estado": "Pago y No Llegó Mercadería",
       "created_at": "2026-09-28T17:21:44.990423-03:00",
       "updated_at": "2026-09-28T17:21:44.990423-03:00"
+    },
+    {
+      "id": "87c13a60-4819-4f9e-bc21-738c13949175",
+      "nombre": "OBRA PRIMA PRESTAMO",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "120 X 80 / 350 X 250 / 300 X 200 DOS DE ESTAS / TODAS PURA LANA VISON",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Préstamos",
+      "created_at": "2026-09-28T17:22:40.077950-03:00",
+      "updated_at": "2026-09-28T17:22:40.077950-03:00"
     }
   ]
 }
