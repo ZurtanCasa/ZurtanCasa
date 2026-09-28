@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T17:12:10.887827-03:00",
+  "_ultima_actualizacion": "2026-09-28T20:12:59.160Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -142,10 +142,10 @@
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "",
-      "notas": "",
+      "notas": "Pago 2 pet ivory 3 x 2 29 05",
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-09-28T17:12:10.887827-03:00",
-      "updated_at": "2026-09-28T17:12:10.887827-03:00"
+      "updated_at": "2026-09-28T20:12:59.160Z"
     }
   ]
 }
