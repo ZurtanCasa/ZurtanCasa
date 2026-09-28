@@ -712,3 +712,7 @@ tr:hover td { background: var(--bg-card-hover); }
 }
 
 .reserva-card-fecha { color: var(--accent); font-weight: 500; }
+
+.reserva-card-devuelta { color: var(--text-muted); }
+.reserva-check { display: flex; align-items: center; gap: 8px; margin: 4px 0 14px; font-size: 13px; color: var(--text); cursor: pointer; }
+.reserva-check input { width: 16px; height: 16px; accent-color: var(--accent); cursor: pointer; }

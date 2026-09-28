@@ -24,6 +24,7 @@ interface Reserva {
   direccion: string;
   articulos: string;
   sena: string;
+  sena_devuelta: boolean;
   fecha_entrega: string;
   notas: string;
   estado: string;
@@ -31,7 +32,7 @@ interface Reserva {
   updated_at: string;
 }
 
-const VACIA = { nombre: "", celular: "", ci: "", direccion: "", articulos: "", sena: "", fecha_entrega: "", notas: "", estado: "S/F" };
+const VACIA = { nombre: "", celular: "", ci: "", direccion: "", articulos: "", sena: "", sena_devuelta: false, fecha_entrega: "", notas: "", estado: "S/F" };
 
 function fmtFecha(f?: string) {
   if (!f) return "";
@@ -144,7 +145,7 @@ export default function ReservasTab() {
 
   function abrirNueva() { setForm(VACIA); setEditId(null); setFormOpen(true); }
   function abrirEditar(r: Reserva) {
-    setForm({ nombre: r.nombre, celular: r.celular, ci: r.ci, direccion: r.direccion, articulos: r.articulos, sena: r.sena, fecha_entrega: r.fecha_entrega || "", notas: r.notas, estado: r.estado });
+    setForm({ nombre: r.nombre, celular: r.celular, ci: r.ci, direccion: r.direccion, articulos: r.articulos, sena: r.sena, sena_devuelta: !!r.sena_devuelta, fecha_entrega: r.fecha_entrega || "", notas: r.notas, estado: r.estado });
     setEditId(r.id);
     setFormOpen(true);
   }
@@ -286,6 +287,11 @@ export default function ReservasTab() {
                 <input value={form.notas} onChange={(e) => setForm({ ...form, notas: e.target.value })} /></label>
             </div>
 
+            <label className="reserva-check">
+              <input type="checkbox" checked={form.sena_devuelta} onChange={(e) => setForm({ ...form, sena_devuelta: e.target.checked })} />
+              <span>Se devolvió la seña</span>
+            </label>
+
             <div className="reserva-modal-actions">
               {editId && <button className="reserva-btn-danger" onClick={() => { setFormOpen(false); eliminar(editId, form.nombre); }} disabled={saving}>Eliminar</button>}
               <div style={{ flex: 1 }} />
@@ -315,6 +321,7 @@ function ReservaCard({ r, onDragStart, onDragEnd, onEstado, onEdit, onDelete }: 
       {r.celular && <div className="reserva-card-line">📱 {r.celular}</div>}
       {r.articulos && <div className="reserva-card-line reserva-card-arts">🛋️ {r.articulos}</div>}
       {r.sena && <div className="reserva-card-line reserva-card-sena">💵 Seña: {r.sena}</div>}
+      {r.sena_devuelta && <div className="reserva-card-line reserva-card-devuelta">↩️ Seña devuelta</div>}
       {r.fecha_entrega && <div className="reserva-card-line reserva-card-fecha">📅 Entrega: {fmtFecha(r.fecha_entrega)}</div>}
       <select className="reserva-card-estado" value={r.estado} onChange={(e) => onEstado(e.target.value)}>
         {TODOS.map((e) => <option key={e} value={e}>{e}{e === ESTADO_ARCHIVADO ? " (archivar)" : ""}</option>)}
