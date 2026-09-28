@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T16:34:56.781080-03:00",
+  "_ultima_actualizacion": "2026-09-28T17:12:10.887827-03:00",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -131,6 +131,21 @@
       "estado": "Saldo a Favor",
       "created_at": "2026-09-28T16:34:56.781080-03:00",
       "updated_at": "2026-09-28T16:34:56.781080-03:00"
+    },
+    {
+      "id": "d2bb4dbb-2364-4e22-81c0-b4a61dfacdba",
+      "nombre": "Graciela Gerlero",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "MUEBLE Y 2 PET IVORY 300 X 200\n1 lana vison 3x2. 1 lana natural 3x2. 1 yute y lana ivory 3x2. 1 caminero ivory 3mts. 1 caminero lana 3mts",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Entregado y Sin Pagar",
+      "created_at": "2026-09-28T17:12:10.887827-03:00",
+      "updated_at": "2026-09-28T17:12:10.887827-03:00"
     }
   ]
 }
