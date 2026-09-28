@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T17:22:40.077950-03:00",
+  "_ultima_actualizacion": "2026-09-28T17:28:47.170552-03:00",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -281,6 +281,96 @@
       "estado": "Préstamos",
       "created_at": "2026-09-28T17:22:40.077950-03:00",
       "updated_at": "2026-09-28T17:22:40.077950-03:00"
+    },
+    {
+      "id": "8c040213-a461-4f54-b4e7-5b63f24ab718",
+      "nombre": "GUS BONO",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "DOS BOLSOS PUFFS",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-09-28T17:28:47.170552-03:00",
+      "updated_at": "2026-09-28T17:28:47.170552-03:00"
+    },
+    {
+      "id": "25a26b33-976c-4c3e-8538-78d87ef2f643",
+      "nombre": "VIRGINIA",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "YUTE Y LANA 300 X 200 LLEVO A PUNTA DE ESTE",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-09-28T17:28:47.170552-03:00",
+      "updated_at": "2026-09-28T17:28:47.170552-03:00"
+    },
+    {
+      "id": "41a6df72-9dd5-4315-b84a-2929583fc9fe",
+      "nombre": "FRIGORIFICO",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "MESA TECA SEPARADA EN DEPOSITO / ALFOMBRA SBARBARO GRIS 400 X 300 / TABLA DE TECA",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-09-28T17:28:47.170552-03:00",
+      "updated_at": "2026-09-28T17:28:47.170552-03:00"
+    },
+    {
+      "id": "c900323a-f88d-412c-8c48-64e0bcbb47df",
+      "nombre": "Francisca Etcheverry",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "Patch 3x2 cod 1222. Ya pago, no borrar porq en setiembre abre empresa y va a querer hacer la factura denuevo.",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-09-28T17:28:47.170552-03:00",
+      "updated_at": "2026-09-28T17:28:47.170552-03:00"
+    },
+    {
+      "id": "7e29bef5-8994-4798-a83e-29e1ca20a14e",
+      "nombre": "GABRIELA WOLCAN",
+      "celular": "98929517",
+      "ci": "",
+      "direccion": "",
+      "articulos": "YUTE Y LANA 300 X 200 GREEN MURILLO 6096 ENTRE BOLONIA Y DUBLIN",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-09-28T17:28:47.170552-03:00",
+      "updated_at": "2026-09-28T17:28:47.170552-03:00"
+    },
+    {
+      "id": "c883426b-8af1-418a-986b-e9d7fd131923",
+      "nombre": "ROMINA CLIENTA V PASSANANTE",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "PURA LANA LATTE 350 X 250",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-09-28T17:28:47.170552-03:00",
+      "updated_at": "2026-09-28T17:28:47.170552-03:00"
     }
   ]
 }
