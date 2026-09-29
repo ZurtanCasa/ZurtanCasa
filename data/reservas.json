@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-28T21:34:24.303Z",
+  "_ultima_actualizacion": "2026-09-29T14:23:12.412Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -442,10 +442,10 @@
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-09-28",
-      "notas": "LLEVO ELLA A PROBAR",
+      "notas": "LLEVO ELLA A PROBAR. EL CAMINERO YA LO PAGÓ",
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-09-28T21:34:24.303Z",
-      "updated_at": "2026-09-28T21:34:24.303Z"
+      "updated_at": "2026-09-29T14:23:12.412Z"
     }
   ]
 }
