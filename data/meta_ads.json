@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-29T13:43:21.296418-03:00",
+  "_ultima_actualizacion": "2026-09-29T17:25:17.433335-03:00",
   "periodos": {
     "today": {
-      "spend": 11.68,
+      "spend": 15.77,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1725,
-      "clicks": 47
+      "impressions": 2533,
+      "clicks": 79
     },
     "yesterday": {
       "spend": 17.83,
@@ -165,22 +165,22 @@
     {
       "year": 2026,
       "month": 9,
-      "spend": 175.15,
+      "spend": 179.24,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 23496,
-      "clicks": 1125
+      "impressions": 24304,
+      "clicks": 1157
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 1725,
-        "reach": 1374,
-        "spend": 11.68,
-        "cpm": 6.77,
-        "clicks": 47,
+        "impressions": 2533,
+        "reach": 1966,
+        "spend": 15.77,
+        "cpm": 6.23,
+        "clicks": 79,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -206,7 +206,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 668,
         "new_followers_fb": 2,
-        "new_followers_ig": 124
+        "new_followers_ig": 130
       },
       "last_30d": {
         "impressions": 23043,
@@ -217,7 +217,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 2909,
         "new_followers_fb": 7,
-        "new_followers_ig": 415
+        "new_followers_ig": 421
       }
     },
     "por_anuncio": [
@@ -226,10 +226,10 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 16/9/2026",
         "periodos": {
           "today": {
-            "impressions": 1725,
-            "reach": 1374,
-            "spend": 11.68,
-            "cpm": 6.77
+            "impressions": 2536,
+            "reach": 1966,
+            "spend": 15.83,
+            "cpm": 6.24
           },
           "yesterday": {
             "impressions": 2062,
@@ -278,6 +278,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43618
+    "ig_followers_total": 43619
   }
 }
