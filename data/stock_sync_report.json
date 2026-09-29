@@ -1,16 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-09-28T18:32:51.741628-03:00",
+  "_ultima_sincronizacion": "2026-09-28T23:23:17.786290-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "HO 52730-80X120",
-      "producto": "Alfombra Yute y Lana Beige",
-      "actual": 9,
-      "nuevo": 6
-    }
-  ],
-  "sin_cambios": 184,
+  "actualizados": [],
+  "sin_cambios": 185,
   "excluidos_manualmente": [
     {
       "sku": "245413",
