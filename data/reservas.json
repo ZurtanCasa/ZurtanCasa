@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-29T15:24:55.199Z",
+  "_ultima_actualizacion": "2026-09-29T19:26:34.317Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -438,14 +438,14 @@
       "celular": "097351544",
       "ci": "35599046",
       "direccion": "HORACIO QUIROGA 6297 ESQ CORCEGA",
-      "articulos": "ALFOMBRITA 60025",
+      "articulos": "LAHORE 758 Y 798",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-09-28",
       "notas": "LLEVO ELLA A PROBAR.",
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-09-28T21:34:24.303Z",
-      "updated_at": "2026-09-29T15:24:55.199Z"
+      "updated_at": "2026-09-29T19:26:34.317Z"
     }
   ]
 }
