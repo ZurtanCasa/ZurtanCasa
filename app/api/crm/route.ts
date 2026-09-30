@@ -11,6 +11,7 @@ const ESTADOS = [
   "Interesado",
   "Se llevó anotadas",
   "Dejó separadas para probar",
+  "Muestra prestada",
   "Precio no le convenció",
   "En seguimiento",
   "Compró",

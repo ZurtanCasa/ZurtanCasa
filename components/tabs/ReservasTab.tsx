@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import KanbanBoard from "../KanbanBoard";
 
 // ── Estados ──────────────────────────────────────────────────────────────────
 const ESTADOS_ACTIVOS = [
@@ -174,7 +175,7 @@ export default function ReservasTab() {
 
       {/* ── Kanban ── */}
       {!loading && view === "kanban" && (
-        <div className="kanban-board">
+        <KanbanBoard>
           {ESTADOS_ACTIVOS.map((col) => {
             let cards = activas.filter((r) => r.estado === col.key);
             // "Pago y Sin Entregar": ordenar por fecha de entrega más cercana primero
@@ -208,7 +209,7 @@ export default function ReservasTab() {
               </div>
             );
           })}
-        </div>
+        </KanbanBoard>
       )}
 
       {/* ── Archivadas ── */}

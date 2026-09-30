@@ -743,3 +743,15 @@ tr:hover td { background: var(--bg-card-hover); }
 .crm-accion {
   margin-top: 6px; font-size: 11.5px; font-weight: 500; line-height: 1.3; word-break: break-word;
 }
+
+/* ── Kanban: barra de scroll horizontal fija al pie de la pantalla ────────── */
+.kanban-board-nobar { scrollbar-width: none; padding-bottom: 24px; }
+.kanban-board-nobar::-webkit-scrollbar { height: 0; display: none; }
+.kanban-hscroll {
+  position: fixed; bottom: 0; z-index: 40;
+  height: 15px; overflow-x: auto; overflow-y: hidden;
+  background: var(--bg-sidebar); border-top: 1px solid var(--border);
+}
+.kanban-hscroll::-webkit-scrollbar { height: 11px; }
+.kanban-hscroll::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 6px; }
+.kanban-hscroll::-webkit-scrollbar-track { background: transparent; }

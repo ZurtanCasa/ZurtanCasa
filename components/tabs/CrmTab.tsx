@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
+import KanbanBoard from "../KanbanBoard";
 
 // Columnas del embudo (color = etapa)
 const ESTADOS = [
@@ -7,6 +8,7 @@ const ESTADOS = [
   { key: "Se llevó anotadas",           color: "#06b6d4" },
   { key: "No concretó",                 color: "#6b7280" },
   { key: "Dejó separadas para probar",  color: "#a855f7" },
+  { key: "Muestra prestada",            color: "#14b8a6" },
   { key: "Precio no le convenció",      color: "#f97316" },
   { key: "En seguimiento",              color: "#eab308" },
   { key: "Compró",                      color: "#22c55e" },
@@ -167,7 +169,7 @@ export default function CrmTab() {
       {error && <div className="banner danger">⚠ {error}</div>}
 
       {!loading && (
-        <div className="kanban-board">
+        <KanbanBoard>
           {ESTADOS.map((col) => {
             const cards = ordenarLeads(visibles.filter((l) => l.estado === col.key), col.key);
             return (
@@ -210,7 +212,7 @@ export default function CrmTab() {
               </div>
             );
           })}
-        </div>
+        </KanbanBoard>
       )}
 
       {/* Modal */}
