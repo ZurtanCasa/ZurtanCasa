@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-29T19:26:34.317Z",
+  "_ultima_actualizacion": "2026-09-30T16:52:00.290Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -37,9 +37,9 @@
       "articulos": "SALDO A FAVOR USD 242 - 10/5/24",
       "sena": "",
       "notas": "",
-      "estado": "Saldo a Favor",
+      "estado": "Pago y Entregado",
       "created_at": "2026-09-28T16:34:56.781080-03:00",
-      "updated_at": "2026-09-28T16:34:56.781080-03:00"
+      "updated_at": "2026-09-30T16:52:00.290Z"
     },
     {
       "id": "c3849457-e484-444b-a272-99797c54a2c8",
