@@ -5,14 +5,15 @@ import { useEffect, useMemo, useState } from "react";
 const ESTADOS = [
   { key: "Interesado",                  color: "#4f8ef7" },
   { key: "Se llevó anotadas",           color: "#06b6d4" },
+  { key: "No concretó",                 color: "#6b7280" },
   { key: "Dejó separadas para probar",  color: "#a855f7" },
   { key: "Precio no le convenció",      color: "#f97316" },
   { key: "En seguimiento",              color: "#eab308" },
   { key: "Compró",                      color: "#22c55e" },
-  { key: "No concretó",                 color: "#6b7280" },
 ];
 const KEYS = ESTADOS.map((e) => e.key);
 const CERRADOS = ["Compró", "No concretó"];
+const VENDEDORES = ["Nico", "Nacho", "Clara", "María", "Gerardo"];
 
 // Color de la tarjeta según el estado de la próxima acción
 const ACCION: Record<string, { color: string; icon: string; label: string }> = {
@@ -235,7 +236,10 @@ export default function CrmTab() {
               <label className="reserva-field"><span>Celular</span>
                 <input value={form.celular} onChange={(e) => setForm({ ...form, celular: e.target.value })} inputMode="tel" /></label>
               <label className="reserva-field"><span>Vendedor</span>
-                <input value={form.vendedor} onChange={(e) => setForm({ ...form, vendedor: e.target.value })} /></label>
+                <select value={form.vendedor} onChange={(e) => setForm({ ...form, vendedor: e.target.value })}>
+                  <option value="">—</option>
+                  {VENDEDORES.map((v) => <option key={v} value={v}>{v}</option>)}
+                </select></label>
             </div>
 
             <label className="reserva-field"><span>Qué le interesa</span>
@@ -245,7 +249,9 @@ export default function CrmTab() {
               <label className="reserva-field"><span>Próxima acción</span>
                 <input value={form.proxima_accion} onChange={(e) => setForm({ ...form, proxima_accion: e.target.value })} placeholder="ej: Llamar con descuento" /></label>
               <label className="reserva-field"><span>Fecha de la acción</span>
-                <input type="date" value={form.fecha_accion} onChange={(e) => setForm({ ...form, fecha_accion: e.target.value })} /></label>
+                <input type="date" value={form.fecha_accion}
+                  onChange={(e) => setForm({ ...form, fecha_accion: e.target.value })}
+                  onClick={(e) => (e.currentTarget as any).showPicker?.()} /></label>
             </div>
 
             <label className="reserva-field"><span>Notas</span>

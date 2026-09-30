@@ -276,7 +276,9 @@ export default function ReservasTab() {
               <label className="reserva-field"><span>Dirección</span>
                 <input value={form.direccion} onChange={(e) => setForm({ ...form, direccion: e.target.value })} /></label>
               <label className="reserva-field"><span>Fecha de entrega (opcional)</span>
-                <input type="date" value={form.fecha_entrega} onChange={(e) => setForm({ ...form, fecha_entrega: e.target.value })} /></label>
+                <input type="date" value={form.fecha_entrega}
+                  onChange={(e) => setForm({ ...form, fecha_entrega: e.target.value })}
+                  onClick={(e) => (e.currentTarget as any).showPicker?.()} /></label>
             </div>
 
             <label className="reserva-field"><span>Artículos</span>
