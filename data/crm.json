@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-30T19:00:09.530Z",
+  "_ultima_actualizacion": "2026-09-30T19:01:50.039Z",
   "leads": [
     {
       "id": "eb55bbca-4de1-4852-af58-5107c43b4a7b",
@@ -66,6 +66,19 @@
       "estado": "Dejó separadas para probar",
       "created_at": "2026-09-30T19:00:09.530Z",
       "updated_at": "2026-09-30T19:00:09.530Z"
+    },
+    {
+      "id": "feaa6c4f-3b3b-460b-902b-819c88288e3f",
+      "nombre": "Cecilia de Brun",
+      "celular": "+5491139495957",
+      "interes": "alfombras 4x3 vintage con color",
+      "vendedor": "Nico",
+      "proxima_accion": "escribir de nuevo",
+      "fecha_accion": "2026-10-04",
+      "notas": "",
+      "estado": "Interesado",
+      "created_at": "2026-09-30T19:01:50.039Z",
+      "updated_at": "2026-09-30T19:01:50.039Z"
     }
   ]
 }
