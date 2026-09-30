@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-29T22:42:12.922154-03:00",
+  "_ultima_actualizacion": "2026-09-30T13:35:01.717742-03:00",
   "periodos": {
     "today": {
-      "spend": 21.83,
+      "spend": 9.28,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 3441,
-      "clicks": 105
+      "impressions": 2555,
+      "clicks": 54
     },
     "yesterday": {
-      "spend": 17.83,
+      "spend": 23.71,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 2062,
-      "clicks": 73
+      "impressions": 3943,
+      "clicks": 115
     },
     "last_7d": {
-      "spend": 43.69,
+      "spend": 55.82,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 4518,
-      "clicks": 163
+      "impressions": 7194,
+      "clicks": 223
     },
     "last_30d": {
-      "spend": 171.91,
+      "spend": 192.08,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 23043,
-      "clicks": 1159
+      "impressions": 26411,
+      "clicks": 1241
     }
   },
   "campanas": [
@@ -40,23 +40,23 @@
       "id": "120247781368450436",
       "nombre": "Flyer club el pais20 Campaña",
       "tipo": "performance",
-      "spend": 83.06,
+      "spend": 106.77,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 9492,
-      "clicks": 342
+      "impressions": 13435,
+      "clicks": 457
     },
     {
       "id": "120247527705010436",
       "nombre": "CAMPAÑA PROMOCION SETIEMBRE Campaña",
       "tipo": "performance",
-      "spend": 53.99,
+      "spend": 50.45,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 8051,
-      "clicks": 397
+      "impressions": 7476,
+      "clicks": 364
     },
     {
       "id": "120247646816390436",
@@ -68,17 +68,6 @@
       "conversiones": 0,
       "impressions": 5500,
       "clicks": 420
-    },
-    {
-      "id": "120246926567220436",
-      "nombre": "CAMPAÑA MUEBLES",
-      "tipo": "performance",
-      "spend": 0.0,
-      "revenue_reportado": 0.0,
-      "roas": 0,
-      "conversiones": 0,
-      "impressions": 0,
-      "clicks": 0
     }
   ],
   "historico_mensual": [
@@ -165,59 +154,59 @@
     {
       "year": 2026,
       "month": 9,
-      "spend": 185.3,
+      "spend": 196.46,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 25212,
-      "clicks": 1183
+      "impressions": 28269,
+      "clicks": 1247
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 3441,
-        "reach": 2561,
-        "spend": 21.83,
-        "cpm": 6.34,
-        "clicks": 105,
+        "impressions": 2555,
+        "reach": 2044,
+        "spend": 9.28,
+        "cpm": 3.63,
+        "clicks": 54,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 2062,
-        "reach": 1763,
-        "spend": 17.83,
-        "cpm": 8.65,
-        "clicks": 73,
+        "impressions": 3943,
+        "reach": 2885,
+        "spend": 23.71,
+        "cpm": 6.01,
+        "clicks": 115,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 4518,
-        "reach": 3231,
-        "spend": 43.69,
-        "cpm": 9.67,
-        "clicks": 163,
+        "impressions": 7194,
+        "reach": 4723,
+        "spend": 55.82,
+        "cpm": 7.76,
+        "clicks": 223,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 668,
+        "profile_visits_ig": 581,
         "new_followers_fb": 2,
-        "new_followers_ig": 130
+        "new_followers_ig": 112
       },
       "last_30d": {
-        "impressions": 23043,
-        "reach": 9979,
-        "spend": 171.91,
-        "cpm": 7.46,
-        "clicks": 1159,
+        "impressions": 26411,
+        "reach": 11746,
+        "spend": 192.08,
+        "cpm": 7.27,
+        "clicks": 1241,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 2909,
+        "profile_visits_ig": 2930,
         "new_followers_fb": 7,
-        "new_followers_ig": 421
+        "new_followers_ig": 413
       }
     },
     "por_anuncio": [
@@ -226,28 +215,28 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 16/9/2026",
         "periodos": {
           "today": {
-            "impressions": 3441,
-            "reach": 2561,
-            "spend": 21.83,
-            "cpm": 6.34
+            "impressions": 2555,
+            "reach": 2044,
+            "spend": 9.28,
+            "cpm": 3.63
           },
           "yesterday": {
-            "impressions": 2062,
-            "reach": 1763,
-            "spend": 17.83,
-            "cpm": 8.65
+            "impressions": 3943,
+            "reach": 2885,
+            "spend": 23.71,
+            "cpm": 6.01
           },
           "last_7d": {
-            "impressions": 4518,
-            "reach": 3231,
-            "spend": 43.69,
-            "cpm": 9.67
+            "impressions": 7194,
+            "reach": 4723,
+            "spend": 55.82,
+            "cpm": 7.76
           },
           "last_30d": {
-            "impressions": 9492,
-            "reach": 5393,
-            "spend": 83.06,
-            "cpm": 8.75
+            "impressions": 13435,
+            "reach": 7264,
+            "spend": 106.77,
+            "cpm": 7.95
           }
         }
       },
@@ -256,10 +245,10 @@
         "nombre": "Anuncio Campaña de mensajes personalizada 27/8/2026",
         "periodos": {
           "last_30d": {
-            "impressions": 8051,
-            "reach": 4080,
-            "spend": 53.99,
-            "cpm": 6.71
+            "impressions": 7476,
+            "reach": 3885,
+            "spend": 50.45,
+            "cpm": 6.75
           }
         }
       },
