@@ -12,7 +12,7 @@ import LocalesTab from "./tabs/LocalesTab";
 import PlanTab from "./tabs/PlanTab";
 import ArticulosTab from "./tabs/ArticulosTab";
 import PreciosTab from "./tabs/PreciosTab";
-import ReservasTab from "./tabs/ReservasTab";
+import ReservasCrmPanel from "./ReservasCrmPanel";
 import FinancieroTab from "./tabs/FinancieroTab";
 import TutorialTab from "./tabs/TutorialTab";
 
@@ -158,7 +158,7 @@ export default function Dashboard({ shopify, mercadolibre, meta, google, ga4, lo
           )}
           {tab === "articulos" && <ArticulosTab data={articulos} />}
           {tab === "precios" && <PreciosTab data={precios} muebles={muebles} stock={stock} />}
-          {tab === "reservas" && <ReservasTab />}
+          {tab === "reservas" && <ReservasCrmPanel />}
           {tab === "plan" && (
             <PlanTab
               rows={planRows}
