@@ -1,5 +1,19 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": null,
-  "leads": []
+  "_ultima_actualizacion": "2026-09-30T18:36:10.593Z",
+  "leads": [
+    {
+      "id": "eb55bbca-4de1-4852-af58-5107c43b4a7b",
+      "nombre": "Veronica Zeballos",
+      "celular": "099351181",
+      "interes": "Dejo separadas dos vintage de 3.5x2.5",
+      "vendedor": "Nico",
+      "proxima_accion": "Escribir en próximo descuento",
+      "fecha_accion": "2026-10-15",
+      "notas": "Estaba con dudas y al final no terminó de concretar",
+      "estado": "No concretó",
+      "created_at": "2026-09-30T18:36:10.593Z",
+      "updated_at": "2026-09-30T18:36:10.593Z"
+    }
+  ]
 }
