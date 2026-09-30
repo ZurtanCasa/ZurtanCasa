@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-30T19:02:57.296Z",
+  "_ultima_actualizacion": "2026-09-30T19:05:33.300Z",
   "leads": [
     {
       "id": "eb55bbca-4de1-4852-af58-5107c43b4a7b",
@@ -92,6 +92,19 @@
       "estado": "Interesado",
       "created_at": "2026-09-30T19:02:57.296Z",
       "updated_at": "2026-09-30T19:02:57.296Z"
+    },
+    {
+      "id": "a7d69374-a6a4-41e3-948c-b32b048afdfb",
+      "nombre": "Luis Bajac",
+      "celular": "099210111",
+      "interes": "Ya compró un mafrash pero queria otro en su momento",
+      "vendedor": "Nico",
+      "proxima_accion": "escribirle en proximo descuento",
+      "fecha_accion": "2026-10-04",
+      "notas": "cuando le escribi estaba esguinzado del tobillo y no podia pasar por el local.",
+      "estado": "Interesado",
+      "created_at": "2026-09-30T19:05:33.299Z",
+      "updated_at": "2026-09-30T19:05:33.299Z"
     }
   ]
 }
