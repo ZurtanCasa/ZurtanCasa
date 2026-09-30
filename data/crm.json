@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-30T18:43:45.337Z",
+  "_ultima_actualizacion": "2026-09-30T18:45:06.974Z",
   "leads": [
     {
       "id": "eb55bbca-4de1-4852-af58-5107c43b4a7b",
@@ -27,6 +27,19 @@
       "estado": "Precio no le convenció",
       "created_at": "2026-09-30T18:43:45.337Z",
       "updated_at": "2026-09-30T18:43:45.337Z"
+    },
+    {
+      "id": "0455e3a0-4aed-42af-b085-0ddb81eaa405",
+      "nombre": "Maria Eugenia Camacho",
+      "celular": "099633761",
+      "interes": "Quería alfombras de nudo de 2.5x1.5 aprox pero no encontró ninguna que le convenza",
+      "vendedor": "Nico",
+      "proxima_accion": "Decirle que vuelva y buscamos mas opciones",
+      "fecha_accion": "2026-10-07",
+      "notas": "",
+      "estado": "Se llevó anotadas",
+      "created_at": "2026-09-30T18:45:06.974Z",
+      "updated_at": "2026-09-30T18:45:06.974Z"
     }
   ]
 }
