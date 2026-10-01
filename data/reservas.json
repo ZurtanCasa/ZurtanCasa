@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-30T22:20:32.450Z",
+  "_ultima_actualizacion": "2026-10-01T21:58:43.696Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -461,6 +461,21 @@
       "estado": "Préstamos",
       "created_at": "2026-09-30T19:29:56.779Z",
       "updated_at": "2026-09-30T19:29:56.779Z"
+    },
+    {
+      "id": "bbcfebad-d15b-4870-bd68-bf548b4510f5",
+      "nombre": "VERONICA SANZ",
+      "celular": "99128142",
+      "ci": "25787819",
+      "direccion": "DEAUVILLE 6861 ESQ NARIÑO.",
+      "articulos": "2 YUTE Y LANA GREEN 3X2. MESA MADERA PETRIFICADA GRANDE.",
+      "sena": "420",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "PAGA CUANDO LLEGUEN LAS GREEN.",
+      "estado": "Pedido",
+      "created_at": "2026-10-01T21:58:43.696Z",
+      "updated_at": "2026-10-01T21:58:43.696Z"
     }
   ]
 }
