@@ -1,16 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-09-30T13:35:00.173747-03:00",
+  "_ultima_sincronizacion": "2026-09-30T22:39:55.015430-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "HO10162-200*300",
-      "producto": "Alfombra Yute y Lana Natural",
-      "actual": 18,
-      "nuevo": 17
-    }
-  ],
-  "sin_cambios": 184,
+  "actualizados": [],
+  "sin_cambios": 186,
   "excluidos_manualmente": [
     {
       "sku": "245413",
@@ -96,7 +89,6 @@
     "2406006",
     "2406010",
     "2406011",
-    "90012",
     "90033",
     "GB214",
     "GL007-30 CM",
