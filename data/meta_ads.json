@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-01T14:13:20.599252-03:00",
+  "_ultima_actualizacion": "2026-10-01T17:46:03.298748-03:00",
   "periodos": {
     "today": {
-      "spend": 0,
-      "revenue_reportado": 0,
-      "roas": 0,
+      "spend": 1.45,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
       "conversiones": 0,
-      "impressions": 0,
-      "clicks": 0
+      "impressions": 1820,
+      "clicks": 94
     },
     "yesterday": {
       "spend": 13.13,
@@ -164,22 +164,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 0,
-      "revenue_reportado": 0,
-      "roas": 0,
+      "spend": 1.45,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
       "conversiones": 0,
-      "impressions": 0,
-      "clicks": 0
+      "impressions": 1820,
+      "clicks": 94
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 0,
-        "reach": 0,
-        "spend": 0,
-        "cpm": 0,
-        "clicks": 0,
+        "impressions": 1820,
+        "reach": 1430,
+        "spend": 1.45,
+        "cpm": 0.8,
+        "clicks": 94,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -205,7 +205,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 480,
         "new_followers_fb": 1,
-        "new_followers_ig": 96
+        "new_followers_ig": 98
       },
       "last_30d": {
         "impressions": 29508,
@@ -216,10 +216,22 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 2879,
         "new_followers_fb": 7,
-        "new_followers_ig": 418
+        "new_followers_ig": 420
       }
     },
     "por_anuncio": [
+      {
+        "id": "120247964557330436",
+        "nombre": "Setup fotos",
+        "periodos": {
+          "today": {
+            "impressions": 1820,
+            "reach": 1430,
+            "spend": 1.45,
+            "cpm": 0.8
+          }
+        }
+      },
       {
         "id": "120247781368440436",
         "nombre": "Anuncio Campaña de mensajes personalizada 16/9/2026",
