@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-01T21:58:43.696Z",
+  "_ultima_actualizacion": "2026-10-05T18:55:14.676Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -476,6 +476,21 @@
       "estado": "Pedido",
       "created_at": "2026-10-01T21:58:43.696Z",
       "updated_at": "2026-10-01T21:58:43.696Z"
+    },
+    {
+      "id": "ce082997-a275-4414-973f-8d0b3432ce2a",
+      "nombre": "OBRA PRIMA",
+      "celular": "",
+      "ci": "",
+      "direccion": "SAN SEBASTIAN 7419",
+      "articulos": "DOS FARDOS DE ALFOMBRAS LLEGADOS POR AVION \n1 ALFOM DE 350 X 250 PURA LANA NATURAL \n2 ALFOM DE 400 X 300 PURA LANA NATURAL",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-05",
+      "notas": "",
+      "estado": "Entregado y Sin Pagar",
+      "created_at": "2026-10-05T18:55:14.676Z",
+      "updated_at": "2026-10-05T18:55:14.676Z"
     }
   ]
 }
