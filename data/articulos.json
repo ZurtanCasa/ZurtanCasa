@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-04T22:20:40.760324-03:00",
-  "_rango": "01/01/24 → 04/10/26",
+  "_ultima_actualizacion": "2026-10-05T16:26:23.013542-03:00",
+  "_rango": "01/01/24 → 05/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -543,6 +543,10 @@
         "Alfombra persa": {
           "revenue_usd": 363.0,
           "units": 1
+        },
+        "Sin categoría": {
+          "revenue_usd": 1514.4,
+          "units": 1
         }
       },
       "1": {
@@ -897,8 +901,8 @@
       "units": 444
     },
     "Sin categoría": {
-      "revenue_usd": 309278.02,
-      "units": 298
+      "revenue_usd": 310792.42,
+      "units": 299
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -929,8 +933,8 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 309278.02,
-      "units": 298
+      "revenue_usd": 310792.42,
+      "units": 299
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -966,8 +970,8 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 301624.77,
-      "units": 271,
+      "revenue_usd": 303139.17,
+      "units": 272,
       "categoria": "Sin categoría"
     },
     {
@@ -2333,8 +2337,8 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 76219.62,
-        "units": 53,
+        "revenue_usd": 77734.02,
+        "units": 54,
         "categoria": "Sin categoría"
       },
       {
