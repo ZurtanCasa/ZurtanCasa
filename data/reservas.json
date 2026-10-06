@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-05T19:38:17.207Z",
+  "_ultima_actualizacion": "2026-10-06T19:32:32.295Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -506,6 +506,21 @@
       "estado": "Pedido",
       "created_at": "2026-10-05T19:38:17.207Z",
       "updated_at": "2026-10-05T19:38:17.207Z"
+    },
+    {
+      "id": "92861f23-9bfd-4efb-b489-d1466b86244f",
+      "nombre": "OBRA PRIMA",
+      "celular": "",
+      "ci": "",
+      "direccion": "SAN SEBASTIAN",
+      "articulos": "PURA LANA 400 X 300 NATURAL",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-06",
+      "notas": "",
+      "estado": "Entregado y Sin Pagar",
+      "created_at": "2026-10-06T19:32:32.295Z",
+      "updated_at": "2026-10-06T19:32:32.295Z"
     }
   ]
 }
