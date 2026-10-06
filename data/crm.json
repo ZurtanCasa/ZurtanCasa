@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-09-30T19:34:32.010Z",
+  "_ultima_actualizacion": "2026-10-06T20:49:39.910Z",
   "leads": [
     {
       "id": "eb55bbca-4de1-4852-af58-5107c43b4a7b",
@@ -157,6 +157,19 @@
       "estado": "Dejó separadas para probar",
       "created_at": "2026-09-30T19:19:32.833Z",
       "updated_at": "2026-09-30T19:19:32.833Z"
+    },
+    {
+      "id": "138d22c5-39bb-4c09-80a2-b13deadeab2d",
+      "nombre": "Silvina",
+      "celular": "097572001",
+      "interes": "Alfombras de yute y lana, alfombras de lana y alguna ziegler chica. Mesas ratonas.",
+      "vendedor": "Nacho",
+      "proxima_accion": "",
+      "fecha_accion": "2026-10-03",
+      "notas": "Se llevo de todo anotado y daba la sensacion de que iba a comprar.",
+      "estado": "En seguimiento",
+      "created_at": "2026-10-06T20:49:39.910Z",
+      "updated_at": "2026-10-06T20:49:39.910Z"
     }
   ]
 }
