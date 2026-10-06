@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-06T19:32:32.295Z",
+  "_ultima_actualizacion": "2026-10-06T20:07:42.514Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -443,9 +443,9 @@
       "sena_devuelta": false,
       "fecha_entrega": "2026-09-28",
       "notas": "LLEVO ELLA A PROBAR.",
-      "estado": "Entregado y Sin Pagar",
+      "estado": "Pago y Entregado",
       "created_at": "2026-09-28T21:34:24.303Z",
-      "updated_at": "2026-09-30T22:20:32.450Z"
+      "updated_at": "2026-10-06T20:07:42.514Z"
     },
     {
       "id": "e88fe762-cf5e-481b-ad11-14fbe6428106",
