@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-06T20:34:20.551Z",
+  "_ultima_actualizacion": "2026-10-07T16:02:17.959Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -521,6 +521,21 @@
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-10-06T19:32:32.295Z",
       "updated_at": "2026-10-06T19:32:32.295Z"
+    },
+    {
+      "id": "4264f009-05f1-4d27-9b14-b0bbb7e6d919",
+      "nombre": "PILAR",
+      "celular": "099594800",
+      "ci": "",
+      "direccion": "",
+      "articulos": "MUESTRA YUTE Y LANA CHARCOL Y BEIGE \nVINTAGE 689 / 59844",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "LLEVO ELLA A PROBAR",
+      "estado": "Entregado y Sin Pagar",
+      "created_at": "2026-10-07T16:02:17.959Z",
+      "updated_at": "2026-10-07T16:02:17.959Z"
     }
   ]
 }
