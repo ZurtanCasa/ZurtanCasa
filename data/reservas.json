@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-07T19:47:06.483Z",
+  "_ultima_actualizacion": "2026-10-07T20:01:30.445Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -536,6 +536,21 @@
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-10-07T16:02:17.959Z",
       "updated_at": "2026-10-07T16:02:17.959Z"
+    },
+    {
+      "id": "205dfe9f-dec5-4892-b85a-424cac85cfdb",
+      "nombre": "ESTUDIO GABI G",
+      "celular": "092232933",
+      "ci": "",
+      "direccion": "",
+      "articulos": "DOS MUESTRAS - IVORY Y LANA NATURAL",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Préstamos",
+      "created_at": "2026-10-07T20:01:30.445Z",
+      "updated_at": "2026-10-07T20:01:30.445Z"
     }
   ]
 }
