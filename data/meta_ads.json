@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-08T14:40:36.454430-03:00",
+  "_ultima_actualizacion": "2026-10-08T18:00:00.590096-03:00",
   "periodos": {
     "today": {
-      "spend": 2.29,
+      "spend": 3.16,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1578,
-      "clicks": 224
+      "impressions": 2286,
+      "clicks": 303
     },
     "yesterday": {
       "spend": 4.61,
@@ -175,131 +175,12 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 34.67,
+      "spend": 35.54,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 36272,
-      "clicks": 3410
+      "impressions": 36980,
+      "clicks": 3489
     }
-  ],
-  "marketing": {
-    "periodos": {
-      "today": {
-        "impressions": 1578,
-        "reach": 939,
-        "spend": 2.29,
-        "cpm": 1.45,
-        "clicks": 224,
-        "profile_visits_fb": 0,
-        "profile_visits_ig": 0,
-        "new_followers_fb": 0,
-        "new_followers_ig": 0
-      },
-      "yesterday": {
-        "impressions": 4706,
-        "reach": 2274,
-        "spend": 4.61,
-        "cpm": 0.98,
-        "clicks": 450,
-        "profile_visits_fb": 0,
-        "profile_visits_ig": 0,
-        "new_followers_fb": 1,
-        "new_followers_ig": 0
-      },
-      "last_7d": {
-        "impressions": 34694,
-        "reach": 10429,
-        "spend": 32.38,
-        "cpm": 0.93,
-        "clicks": 3186,
-        "profile_visits_fb": 0,
-        "profile_visits_ig": 1062,
-        "new_followers_fb": 3,
-        "new_followers_ig": 115
-      },
-      "last_30d": {
-        "impressions": 59388,
-        "reach": 22804,
-        "spend": 201.69,
-        "cpm": 3.4,
-        "clicks": 4232,
-        "profile_visits_fb": 0,
-        "profile_visits_ig": 3604,
-        "new_followers_fb": 9,
-        "new_followers_ig": 494
-      }
-    },
-    "por_anuncio": [
-      {
-        "id": "120247964557330436",
-        "nombre": "Setup fotos",
-        "periodos": {
-          "today": {
-            "impressions": 1578,
-            "reach": 939,
-            "spend": 2.29,
-            "cpm": 1.45
-          },
-          "yesterday": {
-            "impressions": 4706,
-            "reach": 2274,
-            "spend": 4.61,
-            "cpm": 0.98
-          },
-          "last_7d": {
-            "impressions": 34694,
-            "reach": 10429,
-            "spend": 32.38,
-            "cpm": 0.93
-          },
-          "last_30d": {
-            "impressions": 34694,
-            "reach": 10429,
-            "spend": 32.38,
-            "cpm": 0.93
-          }
-        }
-      },
-      {
-        "id": "120247527705000436",
-        "nombre": "Anuncio Campaña de mensajes personalizada 27/8/2026",
-        "periodos": {
-          "last_30d": {
-            "impressions": 1965,
-            "reach": 1408,
-            "spend": 14.55,
-            "cpm": 7.4
-          }
-        }
-      },
-      {
-        "id": "120247646816370436",
-        "nombre": "Segundo lyer contenido",
-        "periodos": {
-          "last_30d": {
-            "impressions": 5500,
-            "reach": 3334,
-            "spend": 34.86,
-            "cpm": 6.34
-          }
-        }
-      },
-      {
-        "id": "120247781368440436",
-        "nombre": "Anuncio Campaña de mensajes personalizada 16/9/2026",
-        "periodos": {
-          "last_30d": {
-            "impressions": 17229,
-            "reach": 9459,
-            "spend": 119.9,
-            "cpm": 6.96
-          }
-        }
-      }
-    ],
-    "_ig_ok": true,
-    "_fb_ok": true,
-    "ig_followers_total": 43714
-  }
+  ]
 }

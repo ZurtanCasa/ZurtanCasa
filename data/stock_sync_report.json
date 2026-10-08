@@ -1,16 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-10-08T14:40:35.288240-03:00",
+  "_ultima_sincronizacion": "2026-10-08T17:59:58.869834-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "HO 48548-250X350",
-      "producto": "Alfombra Yute y Lana Green",
-      "actual": 11,
-      "nuevo": 10
-    }
-  ],
-  "sin_cambios": 185,
+  "actualizados": [],
+  "sin_cambios": 186,
   "excluidos_manualmente": [
     {
       "sku": "245413",
