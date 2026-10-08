@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-08T20:51:50.177Z",
+  "_ultima_actualizacion": "2026-10-08T20:53:27.974Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -581,6 +581,21 @@
       "estado": "Préstamos",
       "created_at": "2026-10-08T20:51:50.177Z",
       "updated_at": "2026-10-08T20:51:50.177Z"
+    },
+    {
+      "id": "d01af37a-efcd-4e17-9636-9876a86b94bd",
+      "nombre": "NANCY OUTEIRO",
+      "celular": "",
+      "ci": "",
+      "direccion": "ABRE 2136 ESQ MANUEL OTERO",
+      "articulos": "LLEVARIAS VARIAS DEPUES VER Q",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-09",
+      "notas": "",
+      "estado": "Pedido",
+      "created_at": "2026-10-08T20:53:27.974Z",
+      "updated_at": "2026-10-08T20:53:27.974Z"
     }
   ]
 }
