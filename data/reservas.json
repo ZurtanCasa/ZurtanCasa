@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-07T20:01:30.445Z",
+  "_ultima_actualizacion": "2026-10-08T19:54:11.803Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -551,6 +551,21 @@
       "estado": "Préstamos",
       "created_at": "2026-10-07T20:01:30.445Z",
       "updated_at": "2026-10-07T20:01:30.445Z"
+    },
+    {
+      "id": "b8afd0ce-6116-435c-a752-c781bb34d7ec",
+      "nombre": "Agro. Flores",
+      "celular": "099749360",
+      "ci": "39558737",
+      "direccion": "Flores",
+      "articulos": "",
+      "sena": "u$300",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "Dejo sena de u$300, pago las dos alfombras por Itau quedando en espera que regrese de viaje y pase los local.",
+      "estado": "Saldo a Favor",
+      "created_at": "2026-10-08T19:54:11.803Z",
+      "updated_at": "2026-10-08T19:54:11.803Z"
     }
   ]
 }
