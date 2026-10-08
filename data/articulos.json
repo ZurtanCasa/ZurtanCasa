@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-07T23:19:35.572807-03:00",
-  "_rango": "01/01/24 → 07/10/26",
+  "_ultima_actualizacion": "2026-10-08T14:39:02.225548-03:00",
+  "_rango": "01/01/24 → 08/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -547,6 +547,10 @@
         "Sin categoría": {
           "revenue_usd": 1514.4,
           "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 1101.6,
+          "units": 1
         }
       },
       "1": {
@@ -917,8 +921,8 @@
       "units": 65
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 149990.71,
-      "units": 196
+      "revenue_usd": 151092.31,
+      "units": 197
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 3364.0,
@@ -938,8 +942,8 @@
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 149990.71,
-      "units": 196
+      "revenue_usd": 151092.31,
+      "units": 197
     },
     {
       "categoria": "Pura Lana",
@@ -1143,16 +1147,16 @@
       "categoria": "Pura Lana"
     },
     {
+      "articulo": "Yute y Lana Nuevas 250 x 350 Green",
+      "revenue_usd": 9027.6,
+      "units": 8,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
       "articulo": "Kilim Ghouchan",
       "revenue_usd": 7949.0,
       "units": 6,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Yute y Lana Nuevas 250 x 350 Green",
-      "revenue_usd": 7926.0,
-      "units": 7,
-      "categoria": "Yute y Lana Nuevas"
     },
     {
       "articulo": "Silla PRISMA 48 x 40 x 87 Grey wash",
@@ -2626,6 +2630,12 @@
       {
         "articulo": "Yute y Lana Nuevas 250 x 350 Beige",
         "revenue_usd": 1147.5,
+        "units": 1,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 250 x 350 Green",
+        "revenue_usd": 1101.6,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
       },
