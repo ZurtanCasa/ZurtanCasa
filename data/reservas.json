@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-09T18:35:10.529Z",
+  "_ultima_actualizacion": "2026-10-09T18:36:43.173Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -528,14 +528,14 @@
       "celular": "099594800",
       "ci": "",
       "direccion": "",
-      "articulos": "MUESTRA YUTE Y LANA CHARCOL Y BEIGE \nVINTAGE 689 / 59844",
+      "articulos": "MUESTRA YUTE Y LANA CHARCOL Y BEIGE",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "",
       "notas": "LLEVO ELLA A PROBAR",
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-10-07T16:02:17.959Z",
-      "updated_at": "2026-10-07T16:02:17.959Z"
+      "updated_at": "2026-10-09T18:36:43.173Z"
     },
     {
       "id": "205dfe9f-dec5-4892-b85a-424cac85cfdb",
