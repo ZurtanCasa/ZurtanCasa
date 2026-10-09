@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-08T23:37:22.321301-03:00",
-  "_rango": "01/01/24 → 08/10/26",
+  "_ultima_actualizacion": "2026-10-09T14:15:10.315046-03:00",
+  "_rango": "01/01/24 → 09/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -509,6 +509,20 @@
           "units": 2
         }
       },
+      "10": {
+        "Sin categoría": {
+          "revenue_usd": 1614.4,
+          "units": 2
+        },
+        "Alfombra persa": {
+          "revenue_usd": 363.0,
+          "units": 1
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 1101.6,
+          "units": 1
+        }
+      },
       "8": {
         "Alfombra persa": {
           "revenue_usd": 7358.4,
@@ -536,20 +550,6 @@
         },
         "Yute y Lana Diseño": {
           "revenue_usd": 500.0,
-          "units": 1
-        }
-      },
-      "10": {
-        "Alfombra persa": {
-          "revenue_usd": 363.0,
-          "units": 1
-        },
-        "Sin categoría": {
-          "revenue_usd": 1514.4,
-          "units": 1
-        },
-        "Yute y Lana Nuevas": {
-          "revenue_usd": 1101.6,
           "units": 1
         }
       },
@@ -905,8 +905,8 @@
       "units": 444
     },
     "Sin categoría": {
-      "revenue_usd": 310792.42,
-      "units": 299
+      "revenue_usd": 310892.42,
+      "units": 300
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -937,8 +937,8 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 310792.42,
-      "units": 299
+      "revenue_usd": 310892.42,
+      "units": 300
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -1316,8 +1316,8 @@
     },
     {
       "articulo": "Exento Iva",
-      "revenue_usd": 4170.51,
-      "units": 9,
+      "revenue_usd": 4270.51,
+      "units": 10,
       "categoria": "Sin categoría"
     },
     {
@@ -2712,6 +2712,12 @@
         "categoria": "Muebles"
       },
       {
+        "articulo": "Exento Iva",
+        "revenue_usd": 840.0,
+        "units": 3,
+        "categoria": "Sin categoría"
+      },
+      {
         "articulo": "Varni- Sirdjan Design",
         "revenue_usd": 767.8,
         "units": 2,
@@ -2728,12 +2734,6 @@
         "revenue_usd": 755.76,
         "units": 1,
         "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Exento Iva",
-        "revenue_usd": 740.0,
-        "units": 2,
-        "categoria": "Sin categoría"
       },
       {
         "articulo": "Butaca Velvet GRIS",
