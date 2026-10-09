@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-09T14:16:42.255773-03:00",
+  "_ultima_actualizacion": "2026-10-09T17:28:27.770416-03:00",
   "periodos": {
     "today": {
-      "spend": 1.98,
+      "spend": 2.78,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1376,
-      "clicks": 186
+      "impressions": 2119,
+      "clicks": 262
     },
     "yesterday": {
-      "spend": 5.02,
+      "spend": 5.04,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 3725,
-      "clicks": 480
+      "clicks": 482
     },
     "last_7d": {
-      "spend": 34.2,
+      "spend": 34.22,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 34471,
-      "clicks": 3403
+      "clicks": 3405
     },
     "last_30d": {
-      "spend": 196.72,
+      "spend": 196.74,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 61244,
-      "clicks": 4593
+      "clicks": 4595
     }
   },
   "campanas": [
@@ -51,12 +51,12 @@
       "id": "120247964557320436",
       "nombre": "Octubre Ad catalogo",
       "tipo": "performance",
-      "spend": 37.4,
+      "spend": 37.42,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 38419,
-      "clicks": 3666
+      "clicks": 3668
     },
     {
       "id": "120247646816390436",
@@ -175,22 +175,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 39.38,
+      "spend": 40.2,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 39795,
-      "clicks": 3852
+      "impressions": 40538,
+      "clicks": 3930
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 1376,
-        "reach": 792,
-        "spend": 1.98,
-        "cpm": 1.44,
-        "clicks": 186,
+        "impressions": 2119,
+        "reach": 1138,
+        "spend": 2.78,
+        "cpm": 1.31,
+        "clicks": 262,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -199,9 +199,9 @@
       "yesterday": {
         "impressions": 3725,
         "reach": 1777,
-        "spend": 5.02,
+        "spend": 5.04,
         "cpm": 1.35,
-        "clicks": 480,
+        "clicks": 482,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -210,9 +210,9 @@
       "last_7d": {
         "impressions": 34471,
         "reach": 9567,
-        "spend": 34.2,
+        "spend": 34.22,
         "cpm": 0.99,
-        "clicks": 3403,
+        "clicks": 3405,
         "profile_visits_fb": 0,
         "profile_visits_ig": 1113,
         "new_followers_fb": 3,
@@ -221,9 +221,9 @@
       "last_30d": {
         "impressions": 61244,
         "reach": 22990,
-        "spend": 196.72,
+        "spend": 196.74,
         "cpm": 3.21,
-        "clicks": 4593,
+        "clicks": 4595,
         "profile_visits_fb": 0,
         "profile_visits_ig": 3594,
         "new_followers_fb": 9,
@@ -236,27 +236,27 @@
         "nombre": "Setup fotos",
         "periodos": {
           "today": {
-            "impressions": 1376,
-            "reach": 786,
-            "spend": 1.98,
-            "cpm": 1.44
+            "impressions": 2119,
+            "reach": 1112,
+            "spend": 2.78,
+            "cpm": 1.31
           },
           "yesterday": {
             "impressions": 3725,
             "reach": 1777,
-            "spend": 5.02,
+            "spend": 5.04,
             "cpm": 1.35
           },
           "last_7d": {
             "impressions": 34471,
             "reach": 9567,
-            "spend": 34.2,
+            "spend": 34.22,
             "cpm": 0.99
           },
           "last_30d": {
             "impressions": 38419,
             "reach": 11100,
-            "spend": 37.4,
+            "spend": 37.42,
             "cpm": 0.97
           }
         }
