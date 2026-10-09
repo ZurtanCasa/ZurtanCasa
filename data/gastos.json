@@ -1,7 +1,7 @@
 {
   "_status": "ok",
   "_instrucciones": "Completar monto_mensual_usd de cada categoría con el valor real. Podés agregar/quitar categorías. Cuando los montos sean reales, cambiar _status a 'ok'.",
-  "_ultima_actualizacion": "2026-08-19T20:06:42.738Z",
+  "_ultima_actualizacion": "2026-10-09T15:23:35.248Z",
   "moneda": "USD",
   "categorias": [
     {
@@ -18,7 +18,8 @@
     },
     {
       "categoria": "Jorge Fletes",
-      "monto_mensual_usd": 70
+      "monto_mensual_usd": 200,
+      "iva_usd": 0
     },
     {
       "categoria": "Impuestos y tasas",
