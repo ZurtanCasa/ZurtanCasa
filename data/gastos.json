@@ -1,7 +1,7 @@
 {
   "_status": "ok",
   "_instrucciones": "Completar monto_mensual_usd de cada categoría con el valor real. Podés agregar/quitar categorías. Cuando los montos sean reales, cambiar _status a 'ok'.",
-  "_ultima_actualizacion": "2026-10-09T15:23:35.248Z",
+  "_ultima_actualizacion": "2026-10-09T15:24:03.296Z",
   "moneda": "USD",
   "categorias": [
     {
@@ -60,7 +60,7 @@
     },
     {
       "categoria": "Marketing",
-      "monto_mensual_usd": 900,
+      "monto_mensual_usd": 300,
       "iva_usd": 0
     }
   ],
