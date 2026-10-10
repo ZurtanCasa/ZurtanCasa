@@ -41,6 +41,8 @@ BCU_RATES: dict[tuple[int, int], float] = {
 # Clave: year, month, day (opcional), total_usd exacto ± tolerancia USD.
 EXCLUSIONES: list[dict] = [
     {"year": 2026, "month": 6, "total_usd": 20281.0, "tolerancia": 10.0},
+    # Venta Contado 1030, CLIENTE RUT — $8.540 UYU — no cuenta para reportes.
+    {"year": 2026, "month": 10, "day": 9, "total_uyu": 8540.0, "tolerancia": 2.0},
 ]
 
 def get_usd_uyu_rate(year: int, month: int) -> float:
@@ -373,10 +375,15 @@ def parse_excel(path: str, year: int, month: int) -> dict:
                     except ValueError:
                         pass
             for exc in EXCLUSIONES:
-                if (exc["year"] == year and exc["month"] == month
-                        and (exc.get("day") is None or _day == exc["day"])
-                        and abs(total_usd - exc["total_usd"]) <= exc.get("tolerancia", 10.0)):
-                    print(f"        [EXCL] Factura excluida: {tipo_raw!r} USD {total_usd:,.0f} día={_day}")
+                if not (exc["year"] == year and exc["month"] == month
+                        and (exc.get("day") is None or _day == exc["day"])):
+                    continue
+                tol = exc.get("tolerancia", 10.0)
+                # Matchea por monto USD convertido o por monto original en pesos (sin depender de la tasa)
+                match_usd = "total_usd" in exc and abs(total_usd - exc["total_usd"]) <= tol
+                match_uyu = "total_uyu" in exc and moneda_key == "UYU" and abs(total_orig - exc["total_uyu"]) <= tol
+                if match_usd or match_uyu:
+                    print(f"        [EXCL] Factura excluida: {tipo_raw!r} día={_day} orig={total_orig:,.0f} {moneda_key}")
                     _excluida = True
                     break
         if _excluida:
@@ -495,13 +502,13 @@ def main():
                         print(f"      ⚠ Sin archivo — usando ceros")
                         data = _empty_result(year, month)
 
-                    # Guard del mes en curso: su facturación solo crece durante el mes.
-                    # Si el scrape fresco trae MENOS órdenes que el registro previo, es
-                    # casi seguro un fallo transitorio (Zeta lento) — conservamos el valor
-                    # bueno anterior en vez de pisarlo con 0.
-                    if is_current and rec_prev and data["orders_count"] < rec_prev.get("orders_count", 0):
-                        print(f"      ⚠ mes actual: {data['orders_count']} órdenes < "
-                              f"{rec_prev.get('orders_count', 0)} previas → conservo valor anterior "
+                    # Guard del mes en curso contra fallos del scrape: si trae 0 órdenes
+                    # pero el registro previo tenía datos, es casi seguro un fallo
+                    # transitorio (Zeta lento) — conservamos el valor bueno anterior.
+                    # Bajas legítimas (una factura excluida, una devolución) pasan igual.
+                    if is_current and rec_prev and data["orders_count"] == 0 and rec_prev.get("orders_count", 0) > 0:
+                        print(f"      ⚠ mes actual: scrape trajo 0 órdenes y el previo tenía "
+                              f"{rec_prev.get('orders_count', 0)} → conservo valor anterior "
                               f"(neto={rec_prev.get('revenue_neto', 0):.0f})")
                         historico.append(rec_prev)
                         continue
