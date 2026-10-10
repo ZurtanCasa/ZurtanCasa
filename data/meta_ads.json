@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-10T13:01:02.944597-03:00",
+  "_ultima_actualizacion": "2026-10-10T16:42:28.933350-03:00",
   "periodos": {
     "today": {
-      "spend": 1.51,
+      "spend": 2.46,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1258,
-      "clicks": 147
+      "impressions": 2035,
+      "clicks": 239
     },
     "yesterday": {
       "spend": 4.93,
@@ -175,22 +175,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 43.86,
+      "spend": 44.81,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 43735,
-      "clicks": 4292
+      "impressions": 44512,
+      "clicks": 4384
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 1258,
-        "reach": 810,
-        "spend": 1.51,
-        "cpm": 1.2,
-        "clicks": 147,
+        "impressions": 2035,
+        "reach": 1189,
+        "spend": 2.46,
+        "cpm": 1.21,
+        "clicks": 239,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -216,7 +216,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 1083,
         "new_followers_fb": 3,
-        "new_followers_ig": 97
+        "new_followers_ig": 107
       },
       "last_30d": {
         "impressions": 62749,
@@ -227,7 +227,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 3311,
         "new_followers_fb": 7,
-        "new_followers_ig": 450
+        "new_followers_ig": 460
       }
     },
     "por_anuncio": [
@@ -236,10 +236,10 @@
         "nombre": "Setup fotos",
         "periodos": {
           "today": {
-            "impressions": 1258,
-            "reach": 810,
-            "spend": 1.51,
-            "cpm": 1.2
+            "impressions": 2035,
+            "reach": 1189,
+            "spend": 2.46,
+            "cpm": 1.21
           },
           "yesterday": {
             "impressions": 4058,
