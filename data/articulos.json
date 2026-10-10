@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-09T17:26:56.484851-03:00",
+  "_ultima_actualizacion": "2026-10-09T22:58:00.550734-03:00",
   "_rango": "01/01/24 → 09/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -511,16 +511,16 @@
       },
       "10": {
         "Sin categoría": {
-          "revenue_usd": 1614.4,
-          "units": 2
+          "revenue_usd": 1826.78,
+          "units": 3
         },
         "Alfombra persa": {
-          "revenue_usd": 363.0,
-          "units": 1
+          "revenue_usd": 3109.64,
+          "units": 2
         },
         "Yute y Lana Nuevas": {
-          "revenue_usd": 1101.6,
-          "units": 1
+          "revenue_usd": 1833.1,
+          "units": 2
         }
       },
       "8": {
@@ -901,12 +901,12 @@
       "units": 131
     },
     "Alfombra persa": {
-      "revenue_usd": 542965.71,
-      "units": 444
+      "revenue_usd": 545712.35,
+      "units": 445
     },
     "Sin categoría": {
-      "revenue_usd": 310892.42,
-      "units": 300
+      "revenue_usd": 311104.8,
+      "units": 301
     },
     "Exterior Pet": {
       "revenue_usd": 27618.0,
@@ -921,8 +921,8 @@
       "units": 65
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 151092.31,
-      "units": 197
+      "revenue_usd": 151823.81,
+      "units": 198
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 3364.0,
@@ -932,18 +932,18 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 542965.71,
-      "units": 444
+      "revenue_usd": 545712.35,
+      "units": 445
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 310892.42,
-      "units": 300
+      "revenue_usd": 311104.8,
+      "units": 301
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 151092.31,
-      "units": 197
+      "revenue_usd": 151823.81,
+      "units": 198
     },
     {
       "categoria": "Pura Lana",
@@ -974,8 +974,8 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 303139.17,
-      "units": 272,
+      "revenue_usd": 303351.55,
+      "units": 273,
       "categoria": "Sin categoría"
     },
     {
@@ -986,8 +986,8 @@
     },
     {
       "articulo": "Heriz",
-      "revenue_usd": 70684.75,
-      "units": 20,
+      "revenue_usd": 73431.39,
+      "units": 21,
       "categoria": "Alfombra persa"
     },
     {
@@ -2341,8 +2341,8 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 77734.02,
-        "units": 54,
+        "revenue_usd": 77946.4,
+        "units": 55,
         "categoria": "Sin categoría"
       },
       {
@@ -2352,15 +2352,15 @@
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Patchwork",
-        "revenue_usd": 14499.87,
-        "units": 9,
+        "articulo": "Heriz",
+        "revenue_usd": 15201.89,
+        "units": 4,
         "categoria": "Alfombra persa"
       },
       {
-        "articulo": "Heriz",
-        "revenue_usd": 12455.25,
-        "units": 3,
+        "articulo": "Patchwork",
+        "revenue_usd": 14499.87,
+        "units": 9,
         "categoria": "Alfombra persa"
       },
       {
@@ -2734,6 +2734,12 @@
         "revenue_usd": 755.76,
         "units": 1,
         "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Yute y Lana Charcoal 250x250",
+        "revenue_usd": 731.5,
+        "units": 1,
+        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "Butaca Velvet GRIS",

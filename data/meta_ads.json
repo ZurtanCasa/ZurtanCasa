@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-09T17:28:27.770416-03:00",
+  "_ultima_actualizacion": "2026-10-09T22:59:35.949275-03:00",
   "periodos": {
     "today": {
-      "spend": 2.78,
+      "spend": 4.69,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 2119,
-      "clicks": 262
+      "impressions": 3829,
+      "clicks": 453
     },
     "yesterday": {
       "spend": 5.04,
@@ -175,22 +175,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 40.2,
+      "spend": 42.11,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 40538,
-      "clicks": 3930
+      "impressions": 42248,
+      "clicks": 4121
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 2119,
-        "reach": 1138,
-        "spend": 2.78,
-        "cpm": 1.31,
-        "clicks": 262,
+        "impressions": 3829,
+        "reach": 1872,
+        "spend": 4.69,
+        "cpm": 1.22,
+        "clicks": 453,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -216,7 +216,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 1113,
         "new_followers_fb": 3,
-        "new_followers_ig": 119
+        "new_followers_ig": 127
       },
       "last_30d": {
         "impressions": 61244,
@@ -227,7 +227,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 3594,
         "new_followers_fb": 9,
-        "new_followers_ig": 493
+        "new_followers_ig": 501
       }
     },
     "por_anuncio": [
@@ -236,10 +236,10 @@
         "nombre": "Setup fotos",
         "periodos": {
           "today": {
-            "impressions": 2119,
-            "reach": 1112,
-            "spend": 2.78,
-            "cpm": 1.31
+            "impressions": 3829,
+            "reach": 1872,
+            "spend": 4.69,
+            "cpm": 1.22
           },
           "yesterday": {
             "impressions": 3725,
@@ -300,6 +300,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43712
+    "ig_followers_total": 43717
   }
 }
