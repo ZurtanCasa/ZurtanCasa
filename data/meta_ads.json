@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-12T17:04:36.950067-03:00",
+  "_ultima_actualizacion": "2026-10-12T19:43:27.583334-03:00",
   "periodos": {
     "today": {
-      "spend": 2.53,
+      "spend": 3.76,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 2555,
-      "clicks": 249
+      "impressions": 3810,
+      "clicks": 365
     },
     "yesterday": {
       "spend": 4.78,
@@ -164,22 +164,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 54.75,
+      "spend": 55.98,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 55849,
-      "clicks": 5365
+      "impressions": 57104,
+      "clicks": 5481
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 2555,
-        "reach": 1480,
-        "spend": 2.53,
+        "impressions": 3810,
+        "reach": 1892,
+        "spend": 3.76,
         "cpm": 0.99,
-        "clicks": 249,
+        "clicks": 365,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -205,7 +205,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 1280,
         "new_followers_fb": 1,
-        "new_followers_ig": 65
+        "new_followers_ig": 80
       },
       "last_30d": {
         "impressions": 70523,
@@ -216,7 +216,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 2949,
         "new_followers_fb": 5,
-        "new_followers_ig": 349
+        "new_followers_ig": 364
       }
     },
     "por_anuncio": [
@@ -225,9 +225,9 @@
         "nombre": "Setup fotos",
         "periodos": {
           "today": {
-            "impressions": 2555,
-            "reach": 1480,
-            "spend": 2.53,
+            "impressions": 3810,
+            "reach": 1892,
+            "spend": 3.76,
             "cpm": 0.99
           },
           "yesterday": {
@@ -265,6 +265,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43725
+    "ig_followers_total": 43724
   }
 }
