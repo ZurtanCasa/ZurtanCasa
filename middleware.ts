@@ -6,6 +6,15 @@ export function middleware(req: NextRequest) {
   // requiere contraseña cuando BASIC_AUTH_USER/PASS están configurados en Vercel.
   if (req.nextUrl.pathname.startsWith("/precios")) return NextResponse.next();
 
+  // Endpoints de Club El País: los llama la tienda Shopify (cross-origin, sin
+  // credenciales) y Shopify mismo (webhook, ya protegido con firma HMAC).
+  if (
+    req.nextUrl.pathname.startsWith("/api/club-el-pais/") ||
+    req.nextUrl.pathname.startsWith("/api/webhooks/")
+  ) {
+    return NextResponse.next();
+  }
+
   const user = process.env.BASIC_AUTH_USER;
   const pass = process.env.BASIC_AUTH_PASS;
 
