@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-13T21:56:27.525Z",
+  "_ultima_actualizacion": "2026-10-13T21:58:35.265Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -656,6 +656,21 @@
       "estado": "Pedido",
       "created_at": "2026-10-13T21:56:27.525Z",
       "updated_at": "2026-10-13T21:56:27.525Z"
+    },
+    {
+      "id": "c3ae565b-4257-4a78-bceb-f58a5c01379b",
+      "nombre": "Rolando Rozemblum (Silvina)",
+      "celular": "097 572 001",
+      "ci": "",
+      "direccion": "Trump Tower 2205 y 2405",
+      "articulos": "1 pura lana vison 3.5x2.5. 1 pura lana natural 3.5x2.5.",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-15",
+      "notas": "",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-10-13T21:58:35.265Z",
+      "updated_at": "2026-10-13T21:58:35.265Z"
     }
   ]
 }
