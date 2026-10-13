@@ -1,56 +1,41 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 /**
- * Envuelve las columnas del Kanban y agrega una barra de scroll horizontal
- * FIJA al pie de la pantalla, sincronizada con el tablero. Así no hay que
- * bajar hasta el final de las tarjetas para scrollear en horizontal.
+ * Envuelve las columnas del Kanban. El tablero ocupa el alto disponible de la
+ * pantalla, así su barra de scroll horizontal queda SIEMPRE visible al pie
+ * (no hay que bajar hasta el final de las tarjetas). Las columnas scrollean
+ * verticalmente por dentro, manteniendo los encabezados a la vista.
  */
 export default function KanbanBoard({ children }: { children: React.ReactNode }) {
-  const boardRef = useRef<HTMLDivElement>(null);
-  const barRef = useRef<HTMLDivElement>(null);
-  const [bar, setBar] = useState({ left: 0, width: 0, content: 0, show: false });
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const board = boardRef.current;
-    if (!board) return;
-    const update = () => {
-      const rect = board.getBoundingClientRect();
-      setBar({
-        left: rect.left,
-        width: rect.width,
-        content: board.scrollWidth,
-        show: board.scrollWidth > board.clientWidth + 4,
-      });
+    const el = ref.current;
+    if (!el) return;
+    const fit = () => {
+      const top = el.getBoundingClientRect().top;
+      const h = window.innerHeight - top - 22; // dejar lugar para la barra
+      el.style.height = Math.max(240, h) + "px";
     };
-    update();
-    const ro = new ResizeObserver(update);
-    ro.observe(board);
-    const mo = new MutationObserver(update);
-    mo.observe(board, { childList: true, subtree: true });
-    window.addEventListener("resize", update);
-    const t = setTimeout(update, 200);
-    return () => { ro.disconnect(); mo.disconnect(); window.removeEventListener("resize", update); clearTimeout(t); };
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(document.body);
+    window.addEventListener("resize", fit);
+    window.addEventListener("scroll", fit, true);
+    const t1 = setTimeout(fit, 150);
+    const t2 = setTimeout(fit, 500);
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", fit);
+      window.removeEventListener("scroll", fit, true);
+      clearTimeout(t1); clearTimeout(t2);
+    };
   }, []);
 
-  const fromBoard = () => { if (barRef.current && boardRef.current) barRef.current.scrollLeft = boardRef.current.scrollLeft; };
-  const fromBar = () => { if (barRef.current && boardRef.current) boardRef.current.scrollLeft = barRef.current.scrollLeft; };
-
   return (
-    <>
-      <div className="kanban-board kanban-board-nobar" ref={boardRef} onScroll={fromBoard}>
-        {children}
-      </div>
-      {bar.show && (
-        <div
-          className="kanban-hscroll"
-          ref={barRef}
-          onScroll={fromBar}
-          style={{ left: bar.left, width: bar.width }}
-        >
-          <div style={{ width: bar.content, height: 1 }} />
-        </div>
-      )}
-    </>
+    <div className="kanban-board kanban-board-fit" ref={ref}>
+      {children}
+    </div>
   );
 }
