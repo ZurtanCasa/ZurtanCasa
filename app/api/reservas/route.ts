@@ -12,6 +12,7 @@ const ESTADOS = [
   "Pago y Sin Entregar",
   "Entregado y Sin Pagar",
   "Ir a probar",
+  "Cliente llevó a probar",
   "Pedido",
   "Pago y No Llegó Mercadería",
   "Saldo a Favor",

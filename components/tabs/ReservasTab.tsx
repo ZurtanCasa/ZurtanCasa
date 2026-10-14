@@ -7,6 +7,7 @@ const ESTADOS_ACTIVOS = [
   { key: "Pago y Sin Entregar",         color: "#22c55e" },
   { key: "Entregado y Sin Pagar",       color: "#eab308" },
   { key: "Ir a probar",                 color: "#06b6d4" },
+  { key: "Cliente llevó a probar",      color: "#ec4899" },
   { key: "Pedido",                      color: "#ef4444" },
   { key: "Pago y No Llegó Mercadería",  color: "#f97316" },
   { key: "Saldo a Favor",               color: "#9ca3af" },
