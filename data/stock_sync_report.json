@@ -1,9 +1,22 @@
 {
-  "_ultima_sincronizacion": "2026-10-13T17:58:25.934640-03:00",
+  "_ultima_sincronizacion": "2026-10-13T22:29:27.587908-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [],
-  "sin_cambios": 186,
+  "actualizados": [
+    {
+      "sku": "1325-250350",
+      "producto": "Alfombra Pura Lana Natural",
+      "actual": 6,
+      "nuevo": 5
+    },
+    {
+      "sku": "1346B-250350",
+      "producto": "Alfombra Pura Lana Vison",
+      "actual": 4,
+      "nuevo": 3
+    }
+  ],
+  "sin_cambios": 184,
   "excluidos_manualmente": [
     {
       "sku": "245413",
