@@ -15,6 +15,13 @@ export function middleware(req: NextRequest) {
     return NextResponse.next();
   }
 
+  // Feed de calendario (.ics) para suscripción desde el iPhone. No usa Basic
+  // Auth (los calendarios suscritos no la manejan bien): se protege con un
+  // token secreto en la URL, validado dentro de la propia ruta.
+  if (req.nextUrl.pathname.startsWith("/api/calendario")) {
+    return NextResponse.next();
+  }
+
   const user = process.env.BASIC_AUTH_USER;
   const pass = process.env.BASIC_AUTH_PASS;
 
