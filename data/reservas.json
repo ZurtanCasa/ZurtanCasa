@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-14T14:36:53.248Z",
+  "_ultima_actualizacion": "2026-10-14T14:52:21.288Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -299,7 +299,7 @@
     },
     {
       "id": "25a26b33-976c-4c3e-8538-78d87ef2f643",
-      "nombre": "VIRGINIA",
+      "nombre": "VIRGINIA FYNN",
       "celular": "",
       "ci": "",
       "direccion": "",
@@ -308,9 +308,9 @@
       "sena_devuelta": false,
       "fecha_entrega": "",
       "notas": "",
-      "estado": "Pago y Sin Entregar",
+      "estado": "Pago y Entregado",
       "created_at": "2026-09-28T17:28:47.170552-03:00",
-      "updated_at": "2026-09-28T17:28:47.170552-03:00"
+      "updated_at": "2026-10-14T14:52:21.288Z"
     },
     {
       "id": "41a6df72-9dd5-4315-b84a-2929583fc9fe",
