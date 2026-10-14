@@ -1,16 +1,34 @@
 {
-  "_ultima_sincronizacion": "2026-10-14T12:44:36.261354-03:00",
+  "_ultima_sincronizacion": "2026-10-14T16:57:13.681930-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
   "actualizados": [
     {
-      "sku": "HO 51030-250*250",
-      "producto": "Alfombra Yute y Lana Charcoal",
-      "actual": 5,
-      "nuevo": 4
+      "sku": "HO10162G-80*120",
+      "producto": "Alfombra Yute y Lana Grey",
+      "actual": 7,
+      "nuevo": 9
+    },
+    {
+      "sku": "HO10162G-200*300",
+      "producto": "Alfombra Yute y Lana Grey",
+      "actual": 18,
+      "nuevo": 19
+    },
+    {
+      "sku": "HO10162-80*120",
+      "producto": "Alfombra Yute y Lana Natural",
+      "actual": 19,
+      "nuevo": 17
+    },
+    {
+      "sku": "HO10162-200*300",
+      "producto": "Alfombra Yute y Lana Natural",
+      "actual": 17,
+      "nuevo": 16
     }
   ],
-  "sin_cambios": 185,
+  "sin_cambios": 182,
   "excluidos_manualmente": [
     {
       "sku": "245413",

@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-13T22:27:55.378746-03:00",
-  "_rango": "01/01/24 → 13/10/26",
+  "_ultima_actualizacion": "2026-10-14T16:55:39.375872-03:00",
+  "_rango": "01/01/24 → 14/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -523,8 +523,8 @@
           "units": 2
         },
         "Yute y Lana Nuevas": {
-          "revenue_usd": 1833.1,
-          "units": 2
+          "revenue_usd": 2713.1,
+          "units": 3
         }
       },
       "8": {
@@ -925,8 +925,8 @@
       "units": 65
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 151823.81,
-      "units": 198
+      "revenue_usd": 152703.81,
+      "units": 199
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 3364.0,
@@ -946,8 +946,8 @@
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 151823.81,
-      "units": 198
+      "revenue_usd": 152703.81,
+      "units": 199
     },
     {
       "categoria": "Pura Lana",
@@ -2566,6 +2566,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Yute y Lana Charcoal 250x250",
+        "revenue_usd": 1611.5,
+        "units": 2,
+        "categoria": "Yute y Lana Nuevas"
+      },
+      {
         "articulo": "Yute y Lana Nuevas 300 x 400 Ivory",
         "revenue_usd": 1575.0,
         "units": 1,
@@ -2738,12 +2744,6 @@
         "revenue_usd": 755.76,
         "units": 1,
         "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Yute y Lana Charcoal 250x250",
-        "revenue_usd": 731.5,
-        "units": 1,
-        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "Butaca Velvet GRIS",
