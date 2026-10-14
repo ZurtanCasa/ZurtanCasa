@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-14T14:52:21.288Z",
+  "_ultima_actualizacion": "2026-10-14T14:53:55.777Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -483,14 +483,14 @@
       "celular": "",
       "ci": "",
       "direccion": "SAN SEBASTIAN 7419",
-      "articulos": "DOS FARDOS DE ALFOMBRAS LLEGADOS POR AVION \n1 ALFOM DE 350 X 250 PURA LANA NATURAL \n3 ALFOM DE 400 X 300 PURA LANA NATURAL",
+      "articulos": "DOS FARDOS DE ALFOMBRAS LLEGADOS POR AVION \n4 ALFOMBRAS A MEDIDA",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-10-05",
       "notas": "",
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-10-05T18:55:14.676Z",
-      "updated_at": "2026-10-14T14:36:53.248Z"
+      "updated_at": "2026-10-14T14:53:55.777Z"
     },
     {
       "id": "92861f23-9bfd-4efb-b489-d1466b86244f",
