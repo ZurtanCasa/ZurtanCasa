@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-14T17:20:28.982Z",
+  "_ultima_actualizacion": "2026-10-14T17:56:46.632Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -651,11 +651,11 @@
       "articulos": "1 pura lana vison 3.5x2.5. 1 pura lana natural 3.5x2.5.",
       "sena": "",
       "sena_devuelta": false,
-      "fecha_entrega": "2026-10-15",
+      "fecha_entrega": "2026-10-16",
       "notas": "",
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-10-13T21:58:35.265Z",
-      "updated_at": "2026-10-13T21:58:35.265Z"
+      "updated_at": "2026-10-14T17:56:46.632Z"
     },
     {
       "id": "9b96e1d9-9a5b-4cfb-9cb1-a46bdb983e03",
