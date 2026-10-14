@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-14T14:53:55.777Z",
+  "_ultima_actualizacion": "2026-10-14T14:55:24.763Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -656,6 +656,21 @@
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-10-13T21:58:35.265Z",
       "updated_at": "2026-10-13T21:58:35.265Z"
+    },
+    {
+      "id": "9b96e1d9-9a5b-4cfb-9cb1-a46bdb983e03",
+      "nombre": "OBRA PRIMA",
+      "celular": "",
+      "ci": "",
+      "direccion": "SAN SEBASTIAN 7419",
+      "articulos": "1 PURA LANA 3.5X2.5 NATURAL\n3 PURA LANA 4X3 NATURAL",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "DEVUELVEN CON LLEGADA DE NOVIEMBRE",
+      "estado": "Préstamos",
+      "created_at": "2026-10-14T14:55:24.763Z",
+      "updated_at": "2026-10-14T14:55:24.763Z"
     }
   ]
 }
