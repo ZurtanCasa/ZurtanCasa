@@ -115,11 +115,12 @@ export async function GET(req: NextRequest) {
     lines.push(fold(`SUMMARY:${esc("🛋️ Entrega: " + (r.nombre || "(sin nombre)"))}`));
     if ((r.direccion || "").trim()) lines.push(fold(`LOCATION:${esc(r.direccion.trim())}`));
     lines.push(fold(`DESCRIPTION:${esc(descripcion)}`));
-    // Recordatorio el día PREVIO a las 09:00 (evento all-day arranca 00:00).
+    // Recordatorio el día PREVIO a las 11:00 (evento all-day arranca 00:00,
+    // así que 11:00 del día anterior = 13 horas antes).
     lines.push("BEGIN:VALARM");
     lines.push("ACTION:DISPLAY");
     lines.push(fold(`DESCRIPTION:${esc("Entrega mañana: " + (r.nombre || ""))}`));
-    lines.push("TRIGGER:-PT15H");
+    lines.push("TRIGGER:-PT13H");
     lines.push("END:VALARM");
     lines.push("END:VEVENT");
   }
