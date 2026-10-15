@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-15T20:40:53.068Z",
+  "_ultima_actualizacion": "2026-10-15T22:00:25.836Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -701,6 +701,21 @@
       "estado": "Ir a probar",
       "created_at": "2026-10-15T20:17:47.468Z",
       "updated_at": "2026-10-15T20:40:53.068Z"
+    },
+    {
+      "id": "05816d91-89d1-48e6-b968-e5dca6d073b8",
+      "nombre": "DAMIAN CATZ",
+      "celular": "098748466",
+      "ci": "",
+      "direccion": "RAMBLA O HIGGINS 5077 APT 403",
+      "articulos": "PET 4X3 IVORY",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-16",
+      "notas": "11 A 13",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-10-15T22:00:25.836Z",
+      "updated_at": "2026-10-15T22:00:25.836Z"
     }
   ]
 }
