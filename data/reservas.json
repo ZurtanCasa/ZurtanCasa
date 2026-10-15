@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-14T17:56:46.632Z",
+  "_ultima_actualizacion": "2026-10-15T20:07:07.914Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -671,6 +671,21 @@
       "estado": "Préstamos",
       "created_at": "2026-10-14T14:55:24.763Z",
       "updated_at": "2026-10-14T14:55:24.763Z"
+    },
+    {
+      "id": "c562b530-01c4-42ab-b2e9-bafea1986cce",
+      "nombre": "SOLANGE ETCHEVERRY",
+      "celular": "098111063",
+      "ci": "",
+      "direccion": "VINEDOS DE LA TAHONA",
+      "articulos": "PARA LIVING ZIGLER 1863 / PARA LIVING Y COMEDOR 3947, 420 , 21021 / VESTIDOR ZIGLER 1698 / CORREDOR 523, 455 / ESTAR 253, 13372 Y LLEVAR OPCION VINTAGE PARA LA ENTRADA",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-11-05",
+      "notas": "JUEVES 5 DE NOVIEMBRE 11HS",
+      "estado": "Ir a probar",
+      "created_at": "2026-10-15T20:07:07.914Z",
+      "updated_at": "2026-10-15T20:07:07.914Z"
     }
   ]
 }
