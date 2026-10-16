@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-16T12:04:13.596244-03:00",
+  "_ultima_actualizacion": "2026-10-16T16:11:24.294968-03:00",
   "_rango": "01/01/24 → 16/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -375,6 +375,28 @@
           "units": 3
         }
       },
+      "10": {
+        "Alfombra persa": {
+          "revenue_usd": 6213.84,
+          "units": 4
+        },
+        "Sin categoría": {
+          "revenue_usd": 3266.78,
+          "units": 4
+        },
+        "Exterior Pet": {
+          "revenue_usd": 1954.0,
+          "units": 2
+        },
+        "Pura Lana": {
+          "revenue_usd": 2448.0,
+          "units": 2
+        },
+        "Yute y Lana Nuevas": {
+          "revenue_usd": 2713.1,
+          "units": 3
+        }
+      },
       "9": {
         "Alfombra persa": {
           "revenue_usd": 25581.57,
@@ -507,28 +529,6 @@
         "Yute y Lana Nuevas": {
           "revenue_usd": 932.0,
           "units": 2
-        }
-      },
-      "10": {
-        "Sin categoría": {
-          "revenue_usd": 3266.78,
-          "units": 4
-        },
-        "Exterior Pet": {
-          "revenue_usd": 1954.0,
-          "units": 2
-        },
-        "Alfombra persa": {
-          "revenue_usd": 3109.64,
-          "units": 2
-        },
-        "Pura Lana": {
-          "revenue_usd": 2448.0,
-          "units": 2
-        },
-        "Yute y Lana Nuevas": {
-          "revenue_usd": 2713.1,
-          "units": 3
         }
       },
       "8": {
@@ -909,8 +909,8 @@
       "units": 131
     },
     "Alfombra persa": {
-      "revenue_usd": 545712.35,
-      "units": 445
+      "revenue_usd": 548816.55,
+      "units": 447
     },
     "Sin categoría": {
       "revenue_usd": 312544.8,
@@ -940,8 +940,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 545712.35,
-      "units": 445
+      "revenue_usd": 548816.55,
+      "units": 447
     },
     {
       "categoria": "Sin categoría",
@@ -1011,6 +1011,12 @@
       "categoria": "Alfombra persa"
     },
     {
+      "articulo": "Kashgai",
+      "revenue_usd": 22996.79,
+      "units": 19,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Garadjeh",
       "revenue_usd": 21835.99,
       "units": 35,
@@ -1020,12 +1026,6 @@
       "articulo": "patchwork",
       "revenue_usd": 21290.0,
       "units": 11,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Kashgai",
-      "revenue_usd": 20873.49,
-      "units": 18,
       "categoria": "Alfombra persa"
     },
     {
@@ -1077,6 +1077,12 @@
       "categoria": "Pura Lana"
     },
     {
+      "articulo": "Afghan vintage carpet",
+      "revenue_usd": 12137.03,
+      "units": 8,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Pura Lana 300 x 400 Natural",
       "revenue_usd": 11957.6,
       "units": 6,
@@ -1099,12 +1105,6 @@
       "revenue_usd": 11569.37,
       "units": 7,
       "categoria": "Yute y Lana Nuevas"
-    },
-    {
-      "articulo": "Afghan vintage carpet",
-      "revenue_usd": 11156.13,
-      "units": 7,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Yute y Lana 400 x 500 Natural",
@@ -2373,8 +2373,8 @@
       },
       {
         "articulo": "Kashgai",
-        "revenue_usd": 9774.49,
-        "units": 7,
+        "revenue_usd": 11897.79,
+        "units": 8,
         "categoria": "Alfombra persa"
       },
       {
@@ -2414,6 +2414,12 @@
         "categoria": "Pura Lana"
       },
       {
+        "articulo": "Afghan vintage carpet",
+        "revenue_usd": 4544.03,
+        "units": 5,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
         "revenue_usd": 4241.38,
         "units": 5,
@@ -2441,12 +2447,6 @@
         "articulo": "Ziegler",
         "revenue_usd": 3895.63,
         "units": 1,
-        "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Afghan vintage carpet",
-        "revenue_usd": 3563.13,
-        "units": 4,
         "categoria": "Alfombra persa"
       },
       {
