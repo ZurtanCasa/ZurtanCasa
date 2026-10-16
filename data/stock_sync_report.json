@@ -1,16 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-10-15T21:53:48.713165-03:00",
+  "_ultima_sincronizacion": "2026-10-16T12:05:44.120818-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "245409",
-      "producto": "Alfombra PET Reciclado Ivory",
-      "actual": 4,
-      "nuevo": 3
-    }
-  ],
-  "sin_cambios": 185,
+  "actualizados": [],
+  "sin_cambios": 186,
   "excluidos_manualmente": [
     {
       "sku": "245413",
