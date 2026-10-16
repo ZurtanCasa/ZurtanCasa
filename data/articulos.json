@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-15T16:37:23.672000-03:00",
+  "_ultima_actualizacion": "2026-10-15T21:52:17.673404-03:00",
   "_rango": "01/01/24 → 15/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -514,13 +514,13 @@
           "revenue_usd": 3266.78,
           "units": 4
         },
+        "Exterior Pet": {
+          "revenue_usd": 1954.0,
+          "units": 2
+        },
         "Alfombra persa": {
           "revenue_usd": 3109.64,
           "units": 2
-        },
-        "Exterior Pet": {
-          "revenue_usd": 700.0,
-          "units": 1
         },
         "Pura Lana": {
           "revenue_usd": 2448.0,
@@ -917,8 +917,8 @@
       "units": 302
     },
     "Exterior Pet": {
-      "revenue_usd": 28318.0,
-      "units": 43
+      "revenue_usd": 29572.0,
+      "units": 44
     },
     "Pura Lana": {
       "revenue_usd": 88098.55,
@@ -970,8 +970,8 @@
     },
     {
       "categoria": "Exterior Pet",
-      "revenue_usd": 28318.0,
-      "units": 43
+      "revenue_usd": 29572.0,
+      "units": 44
     },
     {
       "categoria": "Yute y Lana Diseño",
@@ -2628,6 +2628,12 @@
         "revenue_usd": 1287.14,
         "units": 1,
         "categoria": "Yute y Lana Nuevas"
+      },
+      {
+        "articulo": "HANDMADE PET DHURRIES - IVORY 4x3",
+        "revenue_usd": 1254.0,
+        "units": 1,
+        "categoria": "Exterior Pet"
       },
       {
         "articulo": "Yute y Lana Nuevas 250 x 350 Charcol",

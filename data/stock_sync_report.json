@@ -1,13 +1,13 @@
 {
-  "_ultima_sincronizacion": "2026-10-15T16:38:57.798891-03:00",
+  "_ultima_sincronizacion": "2026-10-15T21:53:48.713165-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
   "actualizados": [
     {
-      "sku": "245403",
-      "producto": "Alfombra PET Reciclado Bark",
-      "actual": 7,
-      "nuevo": 6
+      "sku": "245409",
+      "producto": "Alfombra PET Reciclado Ivory",
+      "actual": 4,
+      "nuevo": 3
     }
   ],
   "sin_cambios": 185,
