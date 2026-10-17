@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-16T16:11:24.294968-03:00",
+  "_ultima_actualizacion": "2026-10-16T21:51:07.329511-03:00",
   "_rango": "01/01/24 → 16/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -380,9 +380,13 @@
           "revenue_usd": 6213.84,
           "units": 4
         },
+        "Muebles": {
+          "revenue_usd": 1320.0,
+          "units": 1
+        },
         "Sin categoría": {
-          "revenue_usd": 3266.78,
-          "units": 4
+          "revenue_usd": 4136.78,
+          "units": 5
         },
         "Exterior Pet": {
           "revenue_usd": 1954.0,
@@ -905,16 +909,16 @@
   },
   "por_categoria_total": {
     "Muebles": {
-      "revenue_usd": 66627.35,
-      "units": 131
+      "revenue_usd": 67947.35,
+      "units": 132
     },
     "Alfombra persa": {
       "revenue_usd": 548816.55,
       "units": 447
     },
     "Sin categoría": {
-      "revenue_usd": 312544.8,
-      "units": 302
+      "revenue_usd": 313414.8,
+      "units": 303
     },
     "Exterior Pet": {
       "revenue_usd": 29572.0,
@@ -945,8 +949,8 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 312544.8,
-      "units": 302
+      "revenue_usd": 313414.8,
+      "units": 303
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -960,8 +964,8 @@
     },
     {
       "categoria": "Muebles",
-      "revenue_usd": 66627.35,
-      "units": 131
+      "revenue_usd": 67947.35,
+      "units": 132
     },
     {
       "categoria": "Yute y Lana",
@@ -1269,6 +1273,12 @@
       "categoria": "Exterior Pet"
     },
     {
+      "articulo": "Exento Iva",
+      "revenue_usd": 5140.51,
+      "units": 11,
+      "categoria": "Sin categoría"
+    },
+    {
       "articulo": "Gardjeh",
       "revenue_usd": 5044.0,
       "units": 6,
@@ -1321,12 +1331,6 @@
       "revenue_usd": 4302.0,
       "units": 2,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Exento Iva",
-      "revenue_usd": 4270.51,
-      "units": 10,
-      "categoria": "Sin categoría"
     },
     {
       "articulo": "vintage",
@@ -2570,6 +2574,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Exento Iva",
+        "revenue_usd": 1710.0,
+        "units": 4,
+        "categoria": "Sin categoría"
+      },
+      {
         "articulo": "Yute y Lana Charcoal 250x250",
         "revenue_usd": 1611.5,
         "units": 2,
@@ -2604,6 +2614,12 @@
         "revenue_usd": 1377.11,
         "units": 2,
         "categoria": "Yute y Lana"
+      },
+      {
+        "articulo": "Antonio Suar Wood Table 220 Natural 220 X 100 X 75",
+        "revenue_usd": 1320.0,
+        "units": 1,
+        "categoria": "Muebles"
       },
       {
         "articulo": "Mesa MOA 220 x 100 x 75",
@@ -2730,12 +2746,6 @@
         "revenue_usd": 849.8,
         "units": 1,
         "categoria": "Muebles"
-      },
-      {
-        "articulo": "Exento Iva",
-        "revenue_usd": 840.0,
-        "units": 3,
-        "categoria": "Sin categoría"
       },
       {
         "articulo": "Varni- Sirdjan Design",
