@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-17T15:07:21.713509-03:00",
+  "_ultima_actualizacion": "2026-10-17T21:30:23.224915-03:00",
   "periodos": {
     "today": {
-      "spend": 2.42,
+      "spend": 4.67,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1798,
-      "clicks": 241
+      "impressions": 3532,
+      "clicks": 464
     },
     "yesterday": {
-      "spend": 4.5,
+      "spend": 4.51,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 4273,
-      "clicks": 446
+      "clicks": 447
     },
     "last_7d": {
-      "spend": 33.76,
+      "spend": 33.77,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 32699,
-      "clicks": 3344
+      "clicks": 3345
     },
     "last_30d": {
-      "spend": 196.01,
+      "spend": 196.02,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 92405,
-      "clicks": 8024
+      "clicks": 8025
     }
   },
   "campanas": [
@@ -51,12 +51,12 @@
       "id": "120247964557320436",
       "nombre": "Octubre Ad catalogo",
       "tipo": "performance",
-      "spend": 76.11,
+      "spend": 76.12,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 75176,
-      "clicks": 7489
+      "clicks": 7490
     }
   ],
   "historico_mensual": [
@@ -153,22 +153,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 78.53,
+      "spend": 80.79,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 76974,
-      "clicks": 7730
+      "impressions": 78708,
+      "clicks": 7954
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 1798,
-        "reach": 1000,
-        "spend": 2.42,
-        "cpm": 1.35,
-        "clicks": 241,
+        "impressions": 3532,
+        "reach": 1677,
+        "spend": 4.67,
+        "cpm": 1.32,
+        "clicks": 464,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -177,9 +177,9 @@
       "yesterday": {
         "impressions": 4273,
         "reach": 1963,
-        "spend": 4.5,
-        "cpm": 1.05,
-        "clicks": 446,
+        "spend": 4.51,
+        "cpm": 1.06,
+        "clicks": 447,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -188,9 +188,9 @@
       "last_7d": {
         "impressions": 32699,
         "reach": 8973,
-        "spend": 33.76,
+        "spend": 33.77,
         "cpm": 1.03,
-        "clicks": 3344,
+        "clicks": 3345,
         "profile_visits_fb": 0,
         "profile_visits_ig": 1883,
         "new_followers_fb": 0,
@@ -199,9 +199,9 @@
       "last_30d": {
         "impressions": 92405,
         "reach": 26350,
-        "spend": 196.01,
+        "spend": 196.02,
         "cpm": 2.12,
-        "clicks": 8024,
+        "clicks": 8025,
         "profile_visits_fb": 0,
         "profile_visits_ig": 4484,
         "new_followers_fb": 5,
@@ -214,27 +214,27 @@
         "nombre": "Setup fotos",
         "periodos": {
           "today": {
-            "impressions": 1798,
-            "reach": 1000,
-            "spend": 2.42,
-            "cpm": 1.35
+            "impressions": 3532,
+            "reach": 1677,
+            "spend": 4.67,
+            "cpm": 1.32
           },
           "yesterday": {
             "impressions": 4273,
             "reach": 1963,
-            "spend": 4.5,
-            "cpm": 1.05
+            "spend": 4.51,
+            "cpm": 1.06
           },
           "last_7d": {
             "impressions": 32699,
             "reach": 8973,
-            "spend": 33.76,
+            "spend": 33.77,
             "cpm": 1.03
           },
           "last_30d": {
             "impressions": 75176,
             "reach": 16759,
-            "spend": 76.11,
+            "spend": 76.12,
             "cpm": 1.01
           }
         }
