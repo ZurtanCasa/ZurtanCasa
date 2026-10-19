@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-18T21:34:16.257117-03:00",
-  "_rango": "01/01/24 → 18/10/26",
+  "_ultima_actualizacion": "2026-10-19T14:14:38.223380-03:00",
+  "_rango": "01/01/24 → 19/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -377,8 +377,8 @@
       },
       "10": {
         "Alfombra persa": {
-          "revenue_usd": 6213.84,
-          "units": 4
+          "revenue_usd": 10401.44,
+          "units": 7
         },
         "Muebles": {
           "revenue_usd": 1320.0,
@@ -395,6 +395,10 @@
         "Pura Lana": {
           "revenue_usd": 2448.0,
           "units": 2
+        },
+        "Yute y Lana": {
+          "revenue_usd": 737.2,
+          "units": 1
         },
         "Yute y Lana Nuevas": {
           "revenue_usd": 2713.1,
@@ -913,8 +917,8 @@
       "units": 132
     },
     "Alfombra persa": {
-      "revenue_usd": 548816.55,
-      "units": 447
+      "revenue_usd": 553004.15,
+      "units": 450
     },
     "Sin categoría": {
       "revenue_usd": 313414.8,
@@ -929,8 +933,8 @@
       "units": 123
     },
     "Yute y Lana": {
-      "revenue_usd": 58384.16,
-      "units": 65
+      "revenue_usd": 59121.36,
+      "units": 66
     },
     "Yute y Lana Nuevas": {
       "revenue_usd": 152703.81,
@@ -944,8 +948,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 548816.55,
-      "units": 447
+      "revenue_usd": 553004.15,
+      "units": 450
     },
     {
       "categoria": "Sin categoría",
@@ -969,8 +973,8 @@
     },
     {
       "categoria": "Yute y Lana",
-      "revenue_usd": 58384.16,
-      "units": 65
+      "revenue_usd": 59121.36,
+      "units": 66
     },
     {
       "categoria": "Exterior Pet",
@@ -992,8 +996,8 @@
     },
     {
       "articulo": "Vintage",
-      "revenue_usd": 147926.72,
-      "units": 107,
+      "revenue_usd": 150648.28,
+      "units": 109,
       "categoria": "Alfombra persa"
     },
     {
@@ -1004,8 +1008,8 @@
     },
     {
       "articulo": "Patchwork",
-      "revenue_usd": 39073.17,
-      "units": 44,
+      "revenue_usd": 40539.21,
+      "units": 45,
       "categoria": "Alfombra persa"
     },
     {
@@ -1219,6 +1223,12 @@
       "categoria": "Muebles"
     },
     {
+      "articulo": "Yute y Lana 200 x 300 Natural",
+      "revenue_usd": 6595.31,
+      "units": 9,
+      "categoria": "Yute y Lana"
+    },
+    {
       "articulo": "Pet Bark 350x250",
       "revenue_usd": 6263.0,
       "units": 8,
@@ -1229,12 +1239,6 @@
       "revenue_usd": 5991.5,
       "units": 5,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Yute y Lana 200 x 300 Natural",
-      "revenue_usd": 5858.11,
-      "units": 8,
-      "categoria": "Yute y Lana"
     },
     {
       "articulo": "Mesa FRIDA 220 x 100 x 75 Grey Wash",
@@ -2359,20 +2363,20 @@
       },
       {
         "articulo": "Vintage",
-        "revenue_usd": 26628.39,
-        "units": 26,
+        "revenue_usd": 29349.95,
+        "units": 28,
+        "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Patchwork",
+        "revenue_usd": 15965.91,
+        "units": 10,
         "categoria": "Alfombra persa"
       },
       {
         "articulo": "Heriz",
         "revenue_usd": 15201.89,
         "units": 4,
-        "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Patchwork",
-        "revenue_usd": 14499.87,
-        "units": 9,
         "categoria": "Alfombra persa"
       },
       {
@@ -2526,6 +2530,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Yute y Lana 200 x 300 Natural",
+        "revenue_usd": 2114.31,
+        "units": 3,
+        "categoria": "Yute y Lana"
+      },
+      {
         "articulo": "Yute y Lana 300 x 400 Grey",
         "revenue_usd": 2030.0,
         "units": 2,
@@ -2608,12 +2618,6 @@
         "revenue_usd": 1515.75,
         "units": 3,
         "categoria": "Yute y Lana Nuevas"
-      },
-      {
-        "articulo": "Yute y Lana 200 x 300 Natural",
-        "revenue_usd": 1377.11,
-        "units": 2,
-        "categoria": "Yute y Lana"
       },
       {
         "articulo": "Antonio Suar Wood Table 220 Natural 220 X 100 X 75",
