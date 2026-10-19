@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-19T19:42:21.966Z",
+  "_ultima_actualizacion": "2026-10-19T19:43:32.782Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -693,14 +693,14 @@
       "celular": "094276784",
       "ci": "",
       "direccion": "calle 18 (baupres) 940, entre 29 y 30",
-      "articulos": "Patchwork 1214 y 1234 probar en entrada\nA la izquierda de la escalera cuando subis, medir alfombra mas larga que hay en el pasillo\nFijarse si entran las poltronas en el lugar que me dijo",
+      "articulos": "reservo patchwork 59453\nquedo en confirmar mafrash",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-10-16",
-      "notas": "Es solo probar y ver medidas, no se van a quedar con ninguna en la prueba",
+      "notas": "",
       "estado": "Pedido",
       "created_at": "2026-10-15T20:17:47.468Z",
-      "updated_at": "2026-10-19T19:42:21.965Z"
+      "updated_at": "2026-10-19T19:43:32.782Z"
     },
     {
       "id": "05816d91-89d1-48e6-b968-e5dca6d073b8",
