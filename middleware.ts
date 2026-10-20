@@ -6,6 +6,22 @@ export function middleware(req: NextRequest) {
   // requiere contraseña cuando BASIC_AUTH_USER/PASS están configurados en Vercel.
   if (req.nextUrl.pathname.startsWith("/precios")) return NextResponse.next();
 
+  // Recursos estáticos que el NAVEGADOR pide solo al abrir cualquier página
+  // (iconos de Apple en el iPhone, manifest, robots, imágenes, fuentes...).
+  // No son sensibles y no deben disparar el cartel de usuario/contraseña:
+  // esa era la causa de que /precios pidiera login todo el tiempo.
+  const p = req.nextUrl.pathname;
+  if (
+    p.startsWith("/apple-touch-icon") ||
+    p === "/manifest.json" ||
+    p === "/site.webmanifest" ||
+    p === "/robots.txt" ||
+    p === "/sitemap.xml" ||
+    /\.(png|jpe?g|gif|svg|webp|ico|bmp|woff2?|ttf|otf)$/i.test(p)
+  ) {
+    return NextResponse.next();
+  }
+
   // Endpoints de Club El País: los llama la tienda Shopify (cross-origin, sin
   // credenciales) y Shopify mismo (webhook, ya protegido con firma HMAC).
   if (
