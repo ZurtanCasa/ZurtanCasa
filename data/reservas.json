@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-19T19:43:32.782Z",
+  "_ultima_actualizacion": "2026-10-20T14:20:27.170Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -592,10 +592,10 @@
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "",
-      "notas": "",
+      "notas": "paga en efectivo la semana q viene",
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-10-09T14:57:34.160Z",
-      "updated_at": "2026-10-09T14:57:34.160Z"
+      "updated_at": "2026-10-20T14:20:27.170Z"
     },
     {
       "id": "5fc89417-64e9-418b-8065-617d17549152",
