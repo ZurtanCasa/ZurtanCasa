@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-20T12:26:22.950104-03:00",
+  "_ultima_actualizacion": "2026-10-20T16:47:36.424087-03:00",
   "_rango": "01/01/24 → 20/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,8 +377,8 @@
       },
       "10": {
         "Alfombra persa": {
-          "revenue_usd": 10401.44,
-          "units": 7
+          "revenue_usd": 11835.84,
+          "units": 8
         },
         "Muebles": {
           "revenue_usd": 1320.0,
@@ -917,8 +917,8 @@
       "units": 132
     },
     "Alfombra persa": {
-      "revenue_usd": 553004.15,
-      "units": 450
+      "revenue_usd": 554438.55,
+      "units": 451
     },
     "Sin categoría": {
       "revenue_usd": 313414.8,
@@ -948,8 +948,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 553004.15,
-      "units": 450
+      "revenue_usd": 554438.55,
+      "units": 451
     },
     {
       "categoria": "Sin categoría",
@@ -1008,8 +1008,8 @@
     },
     {
       "articulo": "Patchwork",
-      "revenue_usd": 40539.21,
-      "units": 45,
+      "revenue_usd": 41973.61,
+      "units": 46,
       "categoria": "Alfombra persa"
     },
     {
@@ -2369,8 +2369,8 @@
       },
       {
         "articulo": "Patchwork",
-        "revenue_usd": 15965.91,
-        "units": 10,
+        "revenue_usd": 17400.31,
+        "units": 11,
         "categoria": "Alfombra persa"
       },
       {
