@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-20T16:49:08.597833-03:00",
+  "_ultima_actualizacion": "2026-10-20T22:06:24.924816-03:00",
   "periodos": {
     "today": {
-      "spend": 2.44,
+      "spend": 3.84,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1615,
-      "clicks": 251
+      "impressions": 2510,
+      "clicks": 377
     },
     "yesterday": {
       "spend": 4.7,
@@ -153,22 +153,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 94.07,
+      "spend": 95.47,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 88554,
-      "clicks": 9312
+      "impressions": 89449,
+      "clicks": 9438
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 1615,
-        "reach": 893,
-        "spend": 2.44,
-        "cpm": 1.51,
-        "clicks": 251,
+        "impressions": 2510,
+        "reach": 1212,
+        "spend": 3.84,
+        "cpm": 1.53,
+        "clicks": 377,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -214,10 +214,10 @@
         "nombre": "Setup fotos",
         "periodos": {
           "today": {
-            "impressions": 1615,
-            "reach": 893,
-            "spend": 2.44,
-            "cpm": 1.51
+            "impressions": 2510,
+            "reach": 1212,
+            "spend": 3.84,
+            "cpm": 1.53
           },
           "yesterday": {
             "impressions": 3297,
@@ -254,6 +254,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 43779
+    "ig_followers_total": 43782
   }
 }
