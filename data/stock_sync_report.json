@@ -1,5 +1,5 @@
 {
-  "_ultima_sincronizacion": "2026-10-20T22:06:23.508986-03:00",
+  "_ultima_sincronizacion": "2026-10-21T12:45:21.606270-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
   "actualizados": [],
@@ -32,6 +32,14 @@
     "Sillón de 4 Módulos Beige"
   ],
   "sku_shopify_sin_match_en_zeta": [
+    {
+      "sku": "1805",
+      "producto": "Alfombra de Yute y Algodón Beige"
+    },
+    {
+      "sku": "1805-B",
+      "producto": "Alfombra de Yute y Algodón Maíz"
+    },
     {
       "sku": "HO30102-150*150",
       "producto": "Alfombra Yute Redonda"
