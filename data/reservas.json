@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-22T19:00:48.217Z",
+  "_ultima_actualizacion": "2026-10-22T19:06:16.923Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -791,6 +791,21 @@
       "estado": "Reservas Día del Club",
       "created_at": "2026-10-22T18:58:54.403Z",
       "updated_at": "2026-10-22T18:58:54.403Z"
+    },
+    {
+      "id": "8a21ced8-8d94-4248-b0d5-bddbb78660bb",
+      "nombre": "MARIA NOEL MOSCA",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "ZIGLER 407X278  2300 o 2190",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-30",
+      "notas": "LLEVAR A PROBAR A LAS 15HS",
+      "estado": "Ir a probar",
+      "created_at": "2026-10-22T19:06:16.923Z",
+      "updated_at": "2026-10-22T19:06:16.923Z"
     }
   ]
 }
