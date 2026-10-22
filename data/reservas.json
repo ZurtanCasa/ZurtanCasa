@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-22T19:00:22.370Z",
+  "_ultima_actualizacion": "2026-10-22T19:00:48.217Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -640,7 +640,7 @@
       "notas": "Llevar en cuanto llegue el embarque. Facturar y cobrar.",
       "estado": "Pedido",
       "created_at": "2026-10-13T21:56:27.525Z",
-      "updated_at": "2026-10-13T21:56:27.525Z"
+      "updated_at": "2026-10-22T19:00:48.217Z"
     },
     {
       "id": "c3ae565b-4257-4a78-bceb-f58a5c01379b",
