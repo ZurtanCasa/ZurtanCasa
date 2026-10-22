@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-22T18:58:54.403Z",
+  "_ultima_actualizacion": "2026-10-22T18:59:19.717Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -743,9 +743,9 @@
       "sena_devuelta": false,
       "fecha_entrega": "2026-10-14",
       "notas": "Paga en Promo Noviembre",
-      "estado": "Entregado y Sin Pagar",
+      "estado": "Reservas Día del Club",
       "created_at": "2026-10-16T19:23:12.259Z",
-      "updated_at": "2026-10-16T19:23:12.259Z"
+      "updated_at": "2026-10-22T18:59:19.717Z"
     },
     {
       "id": "56358e41-2449-4843-b38f-dbd656c893a0",
