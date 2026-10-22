@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-22T17:25:10.297Z",
+  "_ultima_actualizacion": "2026-10-22T18:57:58.788Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -623,9 +623,9 @@
       "sena_devuelta": false,
       "fecha_entrega": "",
       "notas": "",
-      "estado": "Cliente llevó a probar",
+      "estado": "Reservas Día del Club",
       "created_at": "2026-10-13T20:28:32.136Z",
-      "updated_at": "2026-10-14T17:20:28.982Z"
+      "updated_at": "2026-10-22T18:57:58.788Z"
     },
     {
       "id": "30d17cae-9fcf-4755-9820-3bb9ea1d17d7",
