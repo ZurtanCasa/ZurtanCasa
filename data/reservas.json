@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-22T18:57:58.788Z",
+  "_ultima_actualizacion": "2026-10-22T18:58:54.403Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -776,6 +776,21 @@
       "estado": "Pago y Entregado",
       "created_at": "2026-10-21T19:11:13.180Z",
       "updated_at": "2026-10-22T17:25:10.297Z"
+    },
+    {
+      "id": "22e08b92-8677-431b-a480-20641dd4ed91",
+      "nombre": "ROSINA ORTIZ",
+      "celular": "099668264",
+      "ci": "",
+      "direccion": "",
+      "articulos": "300 X 200 BEIGE YUTE Y LANA NUEVAS",
+      "sena": "150",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "ENTREGAR CUANDO LLEGUEN",
+      "estado": "Reservas Día del Club",
+      "created_at": "2026-10-22T18:58:54.403Z",
+      "updated_at": "2026-10-22T18:58:54.403Z"
     }
   ]
 }
