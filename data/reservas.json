@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-23T18:18:56.508Z",
+  "_ultima_actualizacion": "2026-10-23T21:23:31.811Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -806,6 +806,21 @@
       "estado": "Ir a probar",
       "created_at": "2026-10-22T19:06:16.923Z",
       "updated_at": "2026-10-22T19:06:16.923Z"
+    },
+    {
+      "id": "2f409ba0-d982-4c18-a5e7-b6c8b98b3257",
+      "nombre": "Pablo Alvarez",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "Caminero Persa 59827 regresa a local\nse queda con dos, probado por Gerardo.",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-23",
+      "notas": "",
+      "estado": "Entregado y Sin Pagar",
+      "created_at": "2026-10-23T21:23:31.811Z",
+      "updated_at": "2026-10-23T21:23:31.811Z"
     }
   ]
 }
