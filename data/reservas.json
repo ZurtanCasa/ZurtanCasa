@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-23T21:23:31.811Z",
+  "_ultima_actualizacion": "2026-10-23T21:55:09.501Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -821,6 +821,21 @@
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-10-23T21:23:31.811Z",
       "updated_at": "2026-10-23T21:23:31.811Z"
+    },
+    {
+      "id": "56875244-5089-4663-a184-ba85cd42d17a",
+      "nombre": "MARIA MARTA",
+      "celular": "098307193",
+      "ci": "",
+      "direccion": "CARMELO",
+      "articulos": "2 DE 230 X 160 YUTE Y LANA NATURAL\n350 X 250 YUTE Y LANA NATURAL\n1 200 X 300 YUTE Y LANA NATURAL",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-27",
+      "notas": "",
+      "estado": "Cliente llevó a probar",
+      "created_at": "2026-10-23T21:55:09.501Z",
+      "updated_at": "2026-10-23T21:55:09.501Z"
     }
   ]
 }
