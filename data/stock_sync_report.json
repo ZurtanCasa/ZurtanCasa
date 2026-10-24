@@ -1,22 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-10-23T16:44:44.433421-03:00",
+  "_ultima_sincronizacion": "2026-10-23T22:14:21.543554-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "GB182",
-      "producto": "Frutero Rústico de Madera de Olivo",
-      "actual": 22,
-      "nuevo": 25
-    },
-    {
-      "sku": "GB183",
-      "producto": "Frutero Rústico de Madera de Olivo",
-      "actual": 28,
-      "nuevo": 25
-    }
-  ],
-  "sin_cambios": 185,
+  "actualizados": [],
+  "sin_cambios": 187,
   "excluidos_manualmente": [
     {
       "sku": "245413",
