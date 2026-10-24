@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-24T11:10:34.203492-03:00",
+  "_ultima_actualizacion": "2026-10-24T15:31:13.203964-03:00",
   "_rango": "01/01/24 → 24/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -381,8 +381,8 @@
           "units": 9
         },
         "Muebles": {
-          "revenue_usd": 1320.0,
-          "units": 1
+          "revenue_usd": 1650.0,
+          "units": 3
         },
         "Sin categoría": {
           "revenue_usd": 4136.78,
@@ -913,8 +913,8 @@
   },
   "por_categoria_total": {
     "Muebles": {
-      "revenue_usd": 67947.35,
-      "units": 132
+      "revenue_usd": 68277.35,
+      "units": 134
     },
     "Alfombra persa": {
       "revenue_usd": 556365.65,
@@ -968,8 +968,8 @@
     },
     {
       "categoria": "Muebles",
-      "revenue_usd": 67947.35,
-      "units": 132
+      "revenue_usd": 68277.35,
+      "units": 134
     },
     {
       "categoria": "Yute y Lana",
@@ -2830,6 +2830,12 @@
         "categoria": "Sin categoría"
       },
       {
+        "articulo": "Banco Mesa Lateral Rattan Bajo 45",
+        "revenue_usd": 482.0,
+        "units": 5,
+        "categoria": "Muebles"
+      },
+      {
         "articulo": "Pura Lana 80 x 120 Natural Grey",
         "revenue_usd": 452.0,
         "units": 3,
@@ -2842,16 +2848,16 @@
         "categoria": "Yute y Lana Diseño"
       },
       {
+        "articulo": "NERO ALTA 30 x 30 x 45 Negra",
+        "revenue_usd": 336.0,
+        "units": 2,
+        "categoria": "Muebles"
+      },
+      {
         "articulo": "HANDMADE PET DHURRIES - BARK 230x160",
         "revenue_usd": 328.0,
         "units": 1,
         "categoria": "Exterior Pet"
-      },
-      {
-        "articulo": "Banco Mesa Lateral Rattan Bajo 45",
-        "revenue_usd": 320.0,
-        "units": 4,
-        "categoria": "Muebles"
       },
       {
         "articulo": "Yute y Lana Nuevas 80 x 120 Beige",
@@ -2966,12 +2972,6 @@
         "revenue_usd": 168.04,
         "units": 1,
         "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "NERO ALTA 30 x 30 x 45 Negra",
-        "revenue_usd": 168.0,
-        "units": 1,
-        "categoria": "Muebles"
       },
       {
         "articulo": "Pura Lana 80 x 120 Grey",
