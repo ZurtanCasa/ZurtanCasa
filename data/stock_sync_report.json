@@ -1,22 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-10-24T15:32:45.212096-03:00",
+  "_ultima_sincronizacion": "2026-10-24T21:38:33.305252-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "GR 1911026",
-      "producto": "Mesa Lateral Nero Alta",
-      "actual": 5,
-      "nuevo": 4
-    },
-    {
-      "sku": "90026",
-      "producto": "Stool de Rattan Bajo",
-      "actual": 5,
-      "nuevo": 4
-    }
-  ],
-  "sin_cambios": 185,
+  "actualizados": [],
+  "sin_cambios": 187,
   "excluidos_manualmente": [
     {
       "sku": "245413",
