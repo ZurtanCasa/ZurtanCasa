@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-26T19:09:06.085Z",
+  "_ultima_actualizacion": "2026-10-26T19:18:49.003Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -618,14 +618,14 @@
       "celular": "",
       "ci": "",
       "direccion": "",
-      "articulos": "REDONDA YUTE 150-23.10 La regresa\nVINTAGE 1182-23.10 La regresa\n\n Y 59881\nPIA YUTE Y LANA GREEN 120 X 80",
+      "articulos": "REDONDA 59881\nPIA YUTE Y LANA GREEN 120 X 80",
       "sena": "",
       "sena_devuelta": false,
-      "fecha_entrega": "",
+      "fecha_entrega": "2026-11-19",
       "notas": "",
       "estado": "Reservas Día del Club",
       "created_at": "2026-10-13T20:28:32.136Z",
-      "updated_at": "2026-10-23T18:18:56.508Z"
+      "updated_at": "2026-10-26T19:18:49.003Z"
     },
     {
       "id": "30d17cae-9fcf-4755-9820-3bb9ea1d17d7",
