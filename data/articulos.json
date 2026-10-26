@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-25T21:47:40.612185-03:00",
-  "_rango": "01/01/24 → 25/10/26",
+  "_ultima_actualizacion": "2026-10-26T14:03:43.285106-03:00",
+  "_rango": "01/01/24 → 26/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -385,8 +385,8 @@
           "units": 3
         },
         "Sin categoría": {
-          "revenue_usd": 4136.78,
-          "units": 5
+          "revenue_usd": 4303.03,
+          "units": 6
         },
         "Exterior Pet": {
           "revenue_usd": 1954.0,
@@ -401,8 +401,8 @@
           "units": 1
         },
         "Yute y Lana Nuevas": {
-          "revenue_usd": 2713.1,
-          "units": 3
+          "revenue_usd": 3730.55,
+          "units": 4
         }
       },
       "9": {
@@ -419,8 +419,8 @@
           "units": 6
         },
         "Pura Lana": {
-          "revenue_usd": 1600.04,
-          "units": 2
+          "revenue_usd": 168.04,
+          "units": 1
         },
         "Yute y Lana": {
           "revenue_usd": 354.0,
@@ -921,24 +921,24 @@
       "units": 452
     },
     "Sin categoría": {
-      "revenue_usd": 313414.8,
-      "units": 303
+      "revenue_usd": 313581.05,
+      "units": 304
     },
     "Exterior Pet": {
       "revenue_usd": 29572.0,
       "units": 44
     },
     "Pura Lana": {
-      "revenue_usd": 88098.55,
-      "units": 123
+      "revenue_usd": 86666.55,
+      "units": 122
     },
     "Yute y Lana": {
       "revenue_usd": 59121.36,
       "units": 66
     },
     "Yute y Lana Nuevas": {
-      "revenue_usd": 152703.81,
-      "units": 199
+      "revenue_usd": 153721.26,
+      "units": 200
     },
     "Yute y Lana Diseño": {
       "revenue_usd": 3364.0,
@@ -953,18 +953,18 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 313414.8,
-      "units": 303
+      "revenue_usd": 313581.05,
+      "units": 304
     },
     {
       "categoria": "Yute y Lana Nuevas",
-      "revenue_usd": 152703.81,
-      "units": 199
+      "revenue_usd": 153721.26,
+      "units": 200
     },
     {
       "categoria": "Pura Lana",
-      "revenue_usd": 88098.55,
-      "units": 123
+      "revenue_usd": 86666.55,
+      "units": 122
     },
     {
       "categoria": "Muebles",
@@ -1055,12 +1055,6 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
-      "articulo": "Pura Lana 250 x 350 Natural",
-      "revenue_usd": 16156.0,
-      "units": 11,
-      "categoria": "Pura Lana"
-    },
-    {
       "articulo": "Yute y Lana Nuevas 200 x 300 Beige",
       "revenue_usd": 15783.69,
       "units": 20,
@@ -1071,6 +1065,12 @@
       "revenue_usd": 15307.0,
       "units": 10,
       "categoria": "Yute y Lana Nuevas"
+    },
+    {
+      "articulo": "Pura Lana 250 x 350 Natural",
+      "revenue_usd": 14724.0,
+      "units": 10,
+      "categoria": "Pura Lana"
     },
     {
       "articulo": "Yute y Lana Nuevas 200 x 300 Ivory",
@@ -1115,6 +1115,12 @@
       "categoria": "Yute y Lana Nuevas"
     },
     {
+      "articulo": "Yute y Lana Nuevas 250 x 350 Charcol",
+      "revenue_usd": 10426.45,
+      "units": 9,
+      "categoria": "Yute y Lana Nuevas"
+    },
+    {
       "articulo": "Yute y Lana 400 x 500 Natural",
       "revenue_usd": 9856.0,
       "units": 4,
@@ -1142,12 +1148,6 @@
       "articulo": "Yute y Lana Nuevas 300 x 400 Ivory",
       "revenue_usd": 9596.0,
       "units": 6,
-      "categoria": "Yute y Lana Nuevas"
-    },
-    {
-      "articulo": "Yute y Lana Nuevas 250 x 350 Charcol",
-      "revenue_usd": 9409.0,
-      "units": 8,
       "categoria": "Yute y Lana Nuevas"
     },
     {
@@ -2434,12 +2434,6 @@
         "categoria": "Yute y Lana Nuevas"
       },
       {
-        "articulo": "Pura Lana 250 x 350 Natural",
-        "revenue_usd": 4088.0,
-        "units": 3,
-        "categoria": "Pura Lana"
-      },
-      {
         "articulo": "Pura Lana 250 x 350 Vison",
         "revenue_usd": 3998.5,
         "units": 3,
@@ -2488,6 +2482,12 @@
         "categoria": "Yute y Lana"
       },
       {
+        "articulo": "Pura Lana 250 x 350 Natural",
+        "revenue_usd": 2656.0,
+        "units": 2,
+        "categoria": "Pura Lana"
+      },
+      {
         "articulo": "Garadjeh",
         "revenue_usd": 2647.63,
         "units": 2,
@@ -2522,6 +2522,12 @@
         "revenue_usd": 2325.73,
         "units": 2,
         "categoria": "Alfombra persa"
+      },
+      {
+        "articulo": "Yute y Lana Nuevas 250 x 350 Charcol",
+        "revenue_usd": 2241.45,
+        "units": 2,
+        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "Moud",
@@ -2654,12 +2660,6 @@
         "revenue_usd": 1254.0,
         "units": 1,
         "categoria": "Exterior Pet"
-      },
-      {
-        "articulo": "Yute y Lana Nuevas 250 x 350 Charcol",
-        "revenue_usd": 1224.0,
-        "units": 1,
-        "categoria": "Yute y Lana Nuevas"
       },
       {
         "articulo": "Gardjeh",
@@ -2836,6 +2836,12 @@
         "categoria": "Muebles"
       },
       {
+        "articulo": "Yute Redonda 180 x 180",
+        "revenue_usd": 466.25,
+        "units": 3,
+        "categoria": "Sin categoría"
+      },
+      {
         "articulo": "Pura Lana 80 x 120 Natural Grey",
         "revenue_usd": 452.0,
         "units": 3,
@@ -2882,12 +2888,6 @@
         "revenue_usd": 300.0,
         "units": 2,
         "categoria": "Muebles"
-      },
-      {
-        "articulo": "Yute Redonda 180 x 180",
-        "revenue_usd": 300.0,
-        "units": 2,
-        "categoria": "Sin categoría"
       },
       {
         "articulo": "vintage",

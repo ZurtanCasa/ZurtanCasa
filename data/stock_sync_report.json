@@ -1,9 +1,22 @@
 {
-  "_ultima_sincronizacion": "2026-10-25T21:49:12.825400-03:00",
+  "_ultima_sincronizacion": "2026-10-26T14:05:16.390603-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [],
-  "sin_cambios": 187,
+  "actualizados": [
+    {
+      "sku": "1325-250350",
+      "producto": "Alfombra Pura Lana Natural",
+      "actual": 5,
+      "nuevo": 6
+    },
+    {
+      "sku": "HO 51030-250X350",
+      "producto": "Alfombra Yute y Lana Charcoal",
+      "actual": 8,
+      "nuevo": 7
+    }
+  ],
+  "sin_cambios": 185,
   "excluidos_manualmente": [
     {
       "sku": "245413",
