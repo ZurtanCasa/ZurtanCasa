@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-26T19:18:49.003Z",
+  "_ultima_actualizacion": "2026-10-26T20:30:07.339Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -798,14 +798,14 @@
       "celular": "",
       "ci": "",
       "direccion": "",
-      "articulos": "ZIGLER 407X278  2300 o 2190",
+      "articulos": "ZIGLER 407X278  2300 o 2190 MAS VINTAGE",
       "sena": "",
       "sena_devuelta": false,
-      "fecha_entrega": "2026-10-30",
+      "fecha_entrega": "2026-11-03",
       "notas": "LLEVAR A PROBAR A LAS 15HS",
       "estado": "Ir a probar",
       "created_at": "2026-10-22T19:06:16.923Z",
-      "updated_at": "2026-10-22T19:06:16.923Z"
+      "updated_at": "2026-10-26T20:30:07.339Z"
     },
     {
       "id": "2f409ba0-d982-4c18-a5e7-b6c8b98b3257",
