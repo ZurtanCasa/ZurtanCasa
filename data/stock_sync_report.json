@@ -1,22 +1,28 @@
 {
-  "_ultima_sincronizacion": "2026-10-26T14:05:16.390603-03:00",
+  "_ultima_sincronizacion": "2026-10-26T17:52:14.410878-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
   "actualizados": [
     {
-      "sku": "1325-250350",
-      "producto": "Alfombra Pura Lana Natural",
-      "actual": 5,
-      "nuevo": 6
+      "sku": "245414",
+      "producto": "Alfombra PET Reciclado Bark",
+      "actual": 3,
+      "nuevo": 2
     },
     {
-      "sku": "HO 51030-250X350",
-      "producto": "Alfombra Yute y Lana Charcoal",
-      "actual": 8,
-      "nuevo": 7
+      "sku": "HO 53164-70X200",
+      "producto": "Alfombra Yute y Lana Ivory",
+      "actual": 15,
+      "nuevo": 13
+    },
+    {
+      "sku": "2007014",
+      "producto": "Mesa Lateral Nero Baja",
+      "actual": 1,
+      "nuevo": 4
     }
   ],
-  "sin_cambios": 185,
+  "sin_cambios": 184,
   "excluidos_manualmente": [
     {
       "sku": "245413",
