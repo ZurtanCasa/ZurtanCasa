@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-26T20:30:07.339Z",
+  "_ultima_actualizacion": "2026-10-26T21:24:40.543Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -881,6 +881,21 @@
       "estado": "Reservas Día del Club",
       "created_at": "2026-10-26T18:58:26.854Z",
       "updated_at": "2026-10-26T18:58:26.854Z"
+    },
+    {
+      "id": "debbd9f5-459c-4193-a452-2074c37f9131",
+      "nombre": "Cecilia Hughes",
+      "celular": "099668653",
+      "ci": "",
+      "direccion": "",
+      "articulos": "Tabla de olivo irregular 50 cm",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "ya se le entregó",
+      "estado": "Reservas Día del Club",
+      "created_at": "2026-10-26T21:24:40.543Z",
+      "updated_at": "2026-10-26T21:24:40.543Z"
     }
   ]
 }
