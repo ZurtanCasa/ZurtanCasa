@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-26T14:51:01.272Z",
+  "_ultima_actualizacion": "2026-10-26T17:12:34.629Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -828,14 +828,14 @@
       "celular": "098307193",
       "ci": "",
       "direccion": "CARMELO",
-      "articulos": "2 DE 230 X 160 YUTE Y LANA NATURAL\n350 X 250 YUTE Y LANA NATURAL\n1 200 X 300 YUTE Y LANA NATURAL",
+      "articulos": "2 DE 230 X 160 YUTE Y LANA NATURAL\n350 X 250 YUTE Y LANA NATURAL\n1 200 X 300 YUTE Y LANA NATURAL\n1159 VINTAGE \nH464 VINTAGE\n59510 PATCH\n674 VINTAGE \n59516 PATCH \n2274 VINTAGE",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-10-27",
-      "notas": "",
+      "notas": "DESCUENTO DEL 20 + 5",
       "estado": "Cliente llevó a probar",
       "created_at": "2026-10-23T21:55:09.501Z",
-      "updated_at": "2026-10-26T14:46:55.933Z"
+      "updated_at": "2026-10-26T17:12:34.629Z"
     },
     {
       "id": "a7d33320-1a37-45b9-b9c1-9be4a59133b8",
