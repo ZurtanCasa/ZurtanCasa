@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-23T21:55:09.501Z",
+  "_ultima_actualizacion": "2026-10-26T14:46:55.933Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -824,7 +824,7 @@
     },
     {
       "id": "56875244-5089-4663-a184-ba85cd42d17a",
-      "nombre": "MARIA MARTA",
+      "nombre": "MARIA MARTA /  EL LEGADO",
       "celular": "098307193",
       "ci": "",
       "direccion": "CARMELO",
@@ -835,7 +835,7 @@
       "notas": "",
       "estado": "Cliente llevó a probar",
       "created_at": "2026-10-23T21:55:09.501Z",
-      "updated_at": "2026-10-23T21:55:09.501Z"
+      "updated_at": "2026-10-26T14:46:55.933Z"
     }
   ]
 }
