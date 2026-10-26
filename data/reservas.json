@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-26T17:14:51.266Z",
+  "_ultima_actualizacion": "2026-10-26T17:54:20.866Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -851,6 +851,21 @@
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-10-26T14:50:05.163Z",
       "updated_at": "2026-10-26T14:51:01.272Z"
+    },
+    {
+      "id": "91eafdbe-8e71-4cf0-b58b-9ab2b5a62571",
+      "nombre": "MARIA EUGENIA ALGORTA",
+      "celular": "093709084",
+      "ci": "",
+      "direccion": "ING ANDRES ANDREONI 7223",
+      "articulos": "VINTAGE 43 / 656\nVINTAGE 2705 / 174\nVINYAGE 1164\nVINTAGE 2195 / 271\nESCULTURA DE JUAN DE ANDRES",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-27",
+      "notas": "LLEVAR A PORBAR A LAS 16HS",
+      "estado": "Ir a probar",
+      "created_at": "2026-10-26T17:54:20.866Z",
+      "updated_at": "2026-10-26T17:54:20.866Z"
     }
   ]
 }
