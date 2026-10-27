@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-27T16:37:42.489Z",
+  "_ultima_actualizacion": "2026-10-27T18:45:00.014Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -896,6 +896,21 @@
       "estado": "Reservas Día del Club",
       "created_at": "2026-10-26T21:24:40.543Z",
       "updated_at": "2026-10-26T21:24:40.543Z"
+    },
+    {
+      "id": "3ac12758-3f48-456a-bf83-3e0724de40f9",
+      "nombre": "CLAUDIA CABYLLON",
+      "celular": "099218438",
+      "ci": "32868109",
+      "direccion": "6 DE ABRIL 1293 CASI RBLA.",
+      "articulos": "PURA LANA 160X230 VISON",
+      "sena": "PAGO TOTAL",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-10-27",
+      "notas": "Pendiente de entrega",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-10-27T18:45:00.014Z",
+      "updated_at": "2026-10-27T18:45:00.014Z"
     }
   ]
 }
