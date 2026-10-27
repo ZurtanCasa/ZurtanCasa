@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-27T16:35:00.625Z",
+  "_ultima_actualizacion": "2026-10-27T16:37:42.489Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -813,14 +813,14 @@
       "celular": "",
       "ci": "",
       "direccion": "",
-      "articulos": "Caminero Persa 59827 regresa a local\nse queda con dos, probado por Gerardo.",
+      "articulos": "Caminero Persa 59827 regresa a local\nse queda con dos, probado por Gerardo.\n1005 G\n1252 KILIM HERIZ",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-10-23",
-      "notas": "",
+      "notas": "ES UN CAMBIO",
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-10-23T21:23:31.811Z",
-      "updated_at": "2026-10-23T21:23:31.811Z"
+      "updated_at": "2026-10-27T16:37:42.489Z"
     },
     {
       "id": "56875244-5089-4663-a184-ba85cd42d17a",
