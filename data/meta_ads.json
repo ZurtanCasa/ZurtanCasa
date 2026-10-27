@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-26T17:52:15.503996-03:00",
+  "_ultima_actualizacion": "2026-10-26T22:41:27.549938-03:00",
   "periodos": {
     "today": {
-      "spend": 3.1,
+      "spend": 5.75,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 2198,
-      "clicks": 281
+      "impressions": 4241,
+      "clicks": 458
     },
     "yesterday": {
       "spend": 5.24,
@@ -153,22 +153,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 124.57,
+      "spend": 127.22,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 113441,
-      "clicks": 12166
+      "impressions": 115484,
+      "clicks": 12343
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 2198,
-        "reach": 950,
-        "spend": 3.1,
-        "cpm": 1.41,
-        "clicks": 281,
+        "impressions": 4241,
+        "reach": 2174,
+        "spend": 5.75,
+        "cpm": 1.36,
+        "clicks": 458,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 3,
@@ -214,10 +214,10 @@
         "nombre": "Setup fotos",
         "periodos": {
           "today": {
-            "impressions": 2198,
-            "reach": 940,
-            "spend": 3.1,
-            "cpm": 1.41
+            "impressions": 3196,
+            "reach": 1242,
+            "spend": 4.36,
+            "cpm": 1.36
           },
           "yesterday": {
             "impressions": 4597,
@@ -240,6 +240,18 @@
         }
       },
       {
+        "id": "120248349674720436",
+        "nombre": "Anuncio de Tráfico con la configuración recomendada",
+        "periodos": {
+          "today": {
+            "impressions": 1036,
+            "reach": 890,
+            "spend": 1.37,
+            "cpm": 1.32
+          }
+        }
+      },
+      {
         "id": "120247781368440436",
         "nombre": "Anuncio Campaña de mensajes personalizada 16/9/2026",
         "periodos": {
@@ -254,6 +266,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44166
+    "ig_followers_total": 44168
   }
 }
