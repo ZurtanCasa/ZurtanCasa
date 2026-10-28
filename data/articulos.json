@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-27T13:06:30.758567-03:00",
+  "_ultima_actualizacion": "2026-10-27T22:51:06.903661-03:00",
   "_rango": "01/01/24 → 27/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -377,8 +377,8 @@
       },
       "10": {
         "Alfombra persa": {
-          "revenue_usd": 13762.94,
-          "units": 9
+          "revenue_usd": 16872.76,
+          "units": 11
         },
         "Muebles": {
           "revenue_usd": 1650.0,
@@ -393,8 +393,8 @@
           "units": 3
         },
         "Pura Lana": {
-          "revenue_usd": 2448.0,
-          "units": 2
+          "revenue_usd": 3021.8,
+          "units": 3
         },
         "Yute y Lana": {
           "revenue_usd": 737.2,
@@ -917,8 +917,8 @@
       "units": 134
     },
     "Alfombra persa": {
-      "revenue_usd": 556365.65,
-      "units": 452
+      "revenue_usd": 559475.47,
+      "units": 454
     },
     "Sin categoría": {
       "revenue_usd": 313581.05,
@@ -929,8 +929,8 @@
       "units": 45
     },
     "Pura Lana": {
-      "revenue_usd": 86666.55,
-      "units": 122
+      "revenue_usd": 87240.35,
+      "units": 123
     },
     "Yute y Lana": {
       "revenue_usd": 59121.36,
@@ -948,8 +948,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 556365.65,
-      "units": 452
+      "revenue_usd": 559475.47,
+      "units": 454
     },
     {
       "categoria": "Sin categoría",
@@ -963,8 +963,8 @@
     },
     {
       "categoria": "Pura Lana",
-      "revenue_usd": 86666.55,
-      "units": 122
+      "revenue_usd": 87240.35,
+      "units": 123
     },
     {
       "categoria": "Muebles",
@@ -1002,14 +1002,14 @@
     },
     {
       "articulo": "Heriz",
-      "revenue_usd": 73431.39,
-      "units": 21,
+      "revenue_usd": 75139.39,
+      "units": 22,
       "categoria": "Alfombra persa"
     },
     {
       "articulo": "Patchwork",
-      "revenue_usd": 43900.71,
-      "units": 47,
+      "revenue_usd": 45302.53,
+      "units": 48,
       "categoria": "Alfombra persa"
     },
     {
@@ -2369,14 +2369,14 @@
       },
       {
         "articulo": "Patchwork",
-        "revenue_usd": 19327.41,
-        "units": 12,
+        "revenue_usd": 20729.23,
+        "units": 13,
         "categoria": "Alfombra persa"
       },
       {
         "articulo": "Heriz",
-        "revenue_usd": 15201.89,
-        "units": 4,
+        "revenue_usd": 16909.89,
+        "units": 5,
         "categoria": "Alfombra persa"
       },
       {
@@ -2674,6 +2674,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Pura Lana 160 x 230 Vison",
+        "revenue_usd": 1177.8,
+        "units": 2,
+        "categoria": "Pura Lana"
+      },
+      {
         "articulo": "Yute y Lana Nuevas 250 x 350 Beige",
         "revenue_usd": 1147.5,
         "units": 1,
@@ -2797,12 +2803,6 @@
         "articulo": "Pura Lana 70 x 200 Vison",
         "revenue_usd": 651.0,
         "units": 3,
-        "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "Pura Lana 160 x 230 Vison",
-        "revenue_usd": 604.0,
-        "units": 1,
         "categoria": "Pura Lana"
       },
       {

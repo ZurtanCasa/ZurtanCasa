@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-27T13:08:01.439675-03:00",
+  "_ultima_actualizacion": "2026-10-27T22:52:37.823832-03:00",
   "periodos": {
     "today": {
-      "spend": 3.44,
+      "spend": 9.24,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1582,
-      "clicks": 168
+      "impressions": 4575,
+      "clicks": 503
     },
     "yesterday": {
-      "spend": 6.72,
+      "spend": 6.74,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 4864,
-      "clicks": 517
+      "clicks": 519
     },
     "last_7d": {
-      "spend": 36.56,
+      "spend": 36.58,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 29168,
-      "clicks": 3341
+      "clicks": 3343
     },
     "last_30d": {
-      "spend": 182.86,
+      "spend": 182.88,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 125906,
-      "clicks": 12668
+      "clicks": 12670
     }
   },
   "campanas": [
@@ -40,12 +40,12 @@
       "id": "120247964557320436",
       "nombre": "Octubre Ad catalogo",
       "tipo": "performance",
-      "spend": 126.32,
+      "spend": 126.34,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 114778,
-      "clicks": 12332
+      "clicks": 12334
     },
     {
       "id": "120247781368450436",
@@ -164,22 +164,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 131.63,
+      "spend": 137.45,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 117689,
-      "clicks": 12570
+      "impressions": 120682,
+      "clicks": 12907
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 1582,
-        "reach": 1223,
-        "spend": 3.44,
-        "cpm": 2.17,
-        "clicks": 168,
+        "impressions": 4575,
+        "reach": 3269,
+        "spend": 9.24,
+        "cpm": 2.02,
+        "clicks": 503,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 6,
@@ -188,9 +188,9 @@
       "yesterday": {
         "impressions": 4864,
         "reach": 2592,
-        "spend": 6.72,
-        "cpm": 1.38,
-        "clicks": 517,
+        "spend": 6.74,
+        "cpm": 1.39,
+        "clicks": 519,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 3,
@@ -199,24 +199,24 @@
       "last_7d": {
         "impressions": 29168,
         "reach": 8373,
-        "spend": 36.56,
+        "spend": 36.58,
         "cpm": 1.25,
-        "clicks": 3341,
+        "clicks": 3343,
         "profile_visits_fb": 0,
         "profile_visits_ig": 1378,
         "new_followers_fb": 14,
-        "new_followers_ig": 374
+        "new_followers_ig": 405
       },
       "last_30d": {
         "impressions": 125906,
         "reach": 30115,
-        "spend": 182.86,
+        "spend": 182.88,
         "cpm": 1.45,
-        "clicks": 12668,
+        "clicks": 12670,
         "profile_visits_fb": 0,
         "profile_visits_ig": 5458,
         "new_followers_fb": 17,
-        "new_followers_ig": 714
+        "new_followers_ig": 745
       }
     },
     "por_anuncio": [
@@ -225,27 +225,27 @@
         "nombre": "Setup fotos",
         "periodos": {
           "today": {
-            "impressions": 657,
-            "reach": 383,
-            "spend": 1.4,
-            "cpm": 2.13
+            "impressions": 2289,
+            "reach": 1177,
+            "spend": 4.36,
+            "cpm": 1.9
           },
           "yesterday": {
             "impressions": 3535,
             "reach": 1345,
-            "spend": 4.85,
-            "cpm": 1.37
+            "spend": 4.87,
+            "cpm": 1.38
           },
           "last_7d": {
             "impressions": 27839,
             "reach": 7146,
-            "spend": 34.69,
+            "spend": 34.71,
             "cpm": 1.25
           },
           "last_30d": {
             "impressions": 114778,
             "reach": 22169,
-            "spend": 126.32,
+            "spend": 126.34,
             "cpm": 1.1
           }
         }
@@ -255,10 +255,10 @@
         "nombre": "Anuncio de Tráfico con la configuración recomendada",
         "periodos": {
           "today": {
-            "impressions": 925,
-            "reach": 834,
-            "spend": 2.04,
-            "cpm": 2.21
+            "impressions": 2286,
+            "reach": 1992,
+            "spend": 4.88,
+            "cpm": 2.13
           },
           "yesterday": {
             "impressions": 1329,
@@ -295,6 +295,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44173
+    "ig_followers_total": 44175
   }
 }
