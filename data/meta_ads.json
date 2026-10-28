@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-28T13:54:51.389459-03:00",
+  "_ultima_actualizacion": "2026-10-28T17:45:12.594259-03:00",
   "periodos": {
     "today": {
-      "spend": 3.7,
+      "spend": 5.83,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1784,
-      "clicks": 175
+      "impressions": 2738,
+      "clicks": 307
     },
     "yesterday": {
       "spend": 10.41,
@@ -164,22 +164,22 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 142.32,
+      "spend": 144.45,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 123118,
-      "clicks": 13152
+      "impressions": 124072,
+      "clicks": 13284
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 1784,
-        "reach": 1251,
-        "spend": 3.7,
-        "cpm": 2.07,
-        "clicks": 175,
+        "impressions": 2738,
+        "reach": 1893,
+        "spend": 5.83,
+        "cpm": 2.13,
+        "clicks": 307,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 8,
@@ -225,10 +225,10 @@
         "nombre": "Setup fotos",
         "periodos": {
           "today": {
-            "impressions": 872,
-            "reach": 444,
-            "spend": 1.71,
-            "cpm": 1.96
+            "impressions": 1342,
+            "reach": 654,
+            "spend": 2.96,
+            "cpm": 2.21
           },
           "yesterday": {
             "impressions": 2645,
@@ -255,10 +255,10 @@
         "nombre": "Anuncio de Tráfico con la configuración recomendada",
         "periodos": {
           "today": {
-            "impressions": 912,
-            "reach": 807,
-            "spend": 1.99,
-            "cpm": 2.18
+            "impressions": 1396,
+            "reach": 1229,
+            "spend": 2.87,
+            "cpm": 2.06
           },
           "yesterday": {
             "impressions": 2582,

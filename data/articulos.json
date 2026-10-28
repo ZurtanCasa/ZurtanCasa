@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-28T13:53:19.966438-03:00",
+  "_ultima_actualizacion": "2026-10-28T17:43:41.088064-03:00",
   "_rango": "01/01/24 → 28/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -403,6 +403,10 @@
         "Yute y Lana Nuevas": {
           "revenue_usd": 3730.55,
           "units": 4
+        },
+        "Yute y Lana Diseño": {
+          "revenue_usd": 153.04,
+          "units": 1
         }
       },
       "9": {
@@ -941,8 +945,8 @@
       "units": 200
     },
     "Yute y Lana Diseño": {
-      "revenue_usd": 3364.0,
-      "units": 12
+      "revenue_usd": 3517.04,
+      "units": 13
     }
   },
   "top_categorias": [
@@ -983,8 +987,8 @@
     },
     {
       "categoria": "Yute y Lana Diseño",
-      "revenue_usd": 3364.0,
-      "units": 12
+      "revenue_usd": 3517.04,
+      "units": 13
     }
   ],
   "top_articulos": [
@@ -2848,6 +2852,12 @@
         "categoria": "Sin categoría"
       },
       {
+        "articulo": "Yute y Lana con Diseño 70 x 200",
+        "revenue_usd": 458.04,
+        "units": 3,
+        "categoria": "Yute y Lana Diseño"
+      },
+      {
         "articulo": "Pura Lana 80 x 120 Natural Grey",
         "revenue_usd": 452.0,
         "units": 3,
@@ -2882,12 +2892,6 @@
         "revenue_usd": 305.1,
         "units": 1,
         "categoria": "Alfombra persa"
-      },
-      {
-        "articulo": "Yute y Lana con Diseño 70 x 200",
-        "revenue_usd": 305.0,
-        "units": 2,
-        "categoria": "Yute y Lana Diseño"
       },
       {
         "articulo": "Butaca RATTAN Grey",
