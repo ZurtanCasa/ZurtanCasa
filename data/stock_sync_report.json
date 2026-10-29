@@ -1,9 +1,22 @@
 {
-  "_ultima_sincronizacion": "2026-10-29T14:12:34.738541-03:00",
+  "_ultima_sincronizacion": "2026-10-29T17:49:06.940319-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [],
-  "sin_cambios": 187,
+  "actualizados": [
+    {
+      "sku": "245403",
+      "producto": "Alfombra PET Reciclado Bark",
+      "actual": 6,
+      "nuevo": 7
+    },
+    {
+      "sku": "HO10162G-200*300",
+      "producto": "Alfombra Yute y Lana Grey",
+      "actual": 19,
+      "nuevo": 18
+    }
+  ],
+  "sin_cambios": 185,
   "excluidos_manualmente": [
     {
       "sku": "245413",
