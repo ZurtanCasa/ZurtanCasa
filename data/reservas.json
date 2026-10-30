@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-29T21:02:07.960Z",
+  "_ultima_actualizacion": "2026-10-30T15:34:06.617Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -908,9 +908,9 @@
       "sena_devuelta": false,
       "fecha_entrega": "2026-10-27",
       "notas": "Pendiente de entrega",
-      "estado": "Pago y Sin Entregar",
+      "estado": "Pago y Entregado",
       "created_at": "2026-10-27T18:45:00.014Z",
-      "updated_at": "2026-10-27T18:45:00.014Z"
+      "updated_at": "2026-10-30T15:34:06.617Z"
     },
     {
       "id": "50175c5f-64b5-45b9-a208-4f87bca70e8b",
