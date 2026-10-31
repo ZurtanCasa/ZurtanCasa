@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-31T12:56:50.551653-03:00",
+  "_ultima_actualizacion": "2026-10-31T16:42:11.011450-03:00",
   "periodos": {
     "today": {
-      "spend": 1.72,
+      "spend": 2.82,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 918,
-      "clicks": 55
+      "impressions": 1620,
+      "clicks": 91
     },
     "yesterday": {
-      "spend": 10.64,
+      "spend": 10.66,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 6493,
-      "clicks": 567
+      "impressions": 6494,
+      "clicks": 568
     },
     "last_7d": {
-      "spend": 58.7,
+      "spend": 58.72,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 37083,
-      "clicks": 3619
+      "impressions": 37084,
+      "clicks": 3620
     },
     "last_30d": {
-      "spend": 169.26,
+      "spend": 169.28,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 138454,
-      "clicks": 14537
+      "impressions": 138455,
+      "clicks": 14538
     }
   },
   "campanas": [
@@ -40,12 +40,12 @@
       "id": "120247964557320436",
       "nombre": "Octubre Ad catalogo",
       "tipo": "performance",
-      "spend": 145.97,
+      "spend": 145.99,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
       "impressions": 125826,
-      "clicks": 13774
+      "clicks": 13775
     },
     {
       "id": "120248349674700436",
@@ -55,7 +55,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 12628,
+      "impressions": 12629,
       "clicks": 763
     }
   ],
@@ -153,59 +153,59 @@
     {
       "year": 2026,
       "month": 10,
-      "spend": 170.98,
+      "spend": 172.1,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 139372,
-      "clicks": 14592
+      "impressions": 140075,
+      "clicks": 14629
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 918,
-        "reach": 858,
-        "spend": 1.72,
-        "cpm": 1.87,
-        "clicks": 55,
+        "impressions": 1620,
+        "reach": 1512,
+        "spend": 2.82,
+        "cpm": 1.74,
+        "clicks": 91,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 4,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 6493,
-        "reach": 4293,
-        "spend": 10.64,
+        "impressions": 6494,
+        "reach": 4297,
+        "spend": 10.66,
         "cpm": 1.64,
-        "clicks": 567,
+        "clicks": 568,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 11,
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 37083,
+        "impressions": 37084,
         "reach": 15287,
-        "spend": 58.7,
+        "spend": 58.72,
         "cpm": 1.58,
-        "clicks": 3619,
+        "clicks": 3620,
         "profile_visits_fb": 0,
         "profile_visits_ig": 1261,
         "new_followers_fb": 40,
-        "new_followers_ig": 123
+        "new_followers_ig": 153
       },
       "last_30d": {
-        "impressions": 138454,
+        "impressions": 138455,
         "reach": 31732,
-        "spend": 169.26,
+        "spend": 169.28,
         "cpm": 1.22,
-        "clicks": 14537,
+        "clicks": 14538,
         "profile_visits_fb": 0,
         "profile_visits_ig": 6187,
         "new_followers_fb": 48,
-        "new_followers_ig": 747
+        "new_followers_ig": 777
       }
     },
     "por_anuncio": [
@@ -214,25 +214,25 @@
         "nombre": "Anuncio de Tráfico con la configuración recomendada",
         "periodos": {
           "today": {
-            "impressions": 918,
-            "reach": 858,
-            "spend": 1.72,
-            "cpm": 1.87
+            "impressions": 1620,
+            "reach": 1539,
+            "spend": 2.82,
+            "cpm": 1.74
           },
           "yesterday": {
-            "impressions": 3151,
-            "reach": 2902,
+            "impressions": 3152,
+            "reach": 2904,
             "spend": 5.5,
-            "cpm": 1.75
+            "cpm": 1.74
           },
           "last_7d": {
-            "impressions": 12628,
+            "impressions": 12629,
             "reach": 8427,
             "spend": 23.29,
             "cpm": 1.84
           },
           "last_30d": {
-            "impressions": 12628,
+            "impressions": 12629,
             "reach": 8427,
             "spend": 23.29,
             "cpm": 1.84
@@ -246,19 +246,19 @@
           "yesterday": {
             "impressions": 3342,
             "reach": 1501,
-            "spend": 5.14,
+            "spend": 5.16,
             "cpm": 1.54
           },
           "last_7d": {
             "impressions": 24455,
             "reach": 6552,
-            "spend": 35.41,
+            "spend": 35.43,
             "cpm": 1.45
           },
           "last_30d": {
             "impressions": 125826,
             "reach": 24228,
-            "spend": 145.97,
+            "spend": 145.99,
             "cpm": 1.16
           }
         }
@@ -266,6 +266,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44231
+    "ig_followers_total": 44244
   }
 }
