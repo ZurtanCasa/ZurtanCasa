@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-30T22:54:57.579796-03:00",
-  "_rango": "01/01/24 → 30/10/26",
+  "_ultima_actualizacion": "2026-10-31T12:55:19.567764-03:00",
+  "_rango": "01/01/24 → 31/10/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -377,8 +377,8 @@
       },
       "10": {
         "Alfombra persa": {
-          "revenue_usd": 21846.76,
-          "units": 12
+          "revenue_usd": 22725.16,
+          "units": 13
         },
         "Muebles": {
           "revenue_usd": 1650.0,
@@ -921,8 +921,8 @@
       "units": 134
     },
     "Alfombra persa": {
-      "revenue_usd": 564449.47,
-      "units": 455
+      "revenue_usd": 565327.87,
+      "units": 456
     },
     "Sin categoría": {
       "revenue_usd": 313581.05,
@@ -952,8 +952,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 564449.47,
-      "units": 455
+      "revenue_usd": 565327.87,
+      "units": 456
     },
     {
       "categoria": "Sin categoría",
@@ -1383,6 +1383,12 @@
       "categoria": "Exterior Pet"
     },
     {
+      "articulo": "Kilim Afghan",
+      "revenue_usd": 3204.13,
+      "units": 3,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 200 x 300 Charcol",
       "revenue_usd": 3098.0,
       "units": 4,
@@ -1457,12 +1463,6 @@
     {
       "articulo": "Kilim Gouchan",
       "revenue_usd": 2382.0,
-      "units": 2,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Kilim Afghan",
-      "revenue_usd": 2325.73,
       "units": 2,
       "categoria": "Alfombra persa"
     },
@@ -2486,6 +2486,12 @@
         "categoria": "Yute y Lana"
       },
       {
+        "articulo": "Kilim Afghan",
+        "revenue_usd": 3204.13,
+        "units": 3,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Pura Lana 250 x 350 Natural",
         "revenue_usd": 2656.0,
         "units": 2,
@@ -2520,12 +2526,6 @@
         "revenue_usd": 2371.0,
         "units": 2,
         "categoria": "Yute y Lana Nuevas"
-      },
-      {
-        "articulo": "Kilim Afghan",
-        "revenue_usd": 2325.73,
-        "units": 2,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Yute y Lana Nuevas 250 x 350 Charcol",
