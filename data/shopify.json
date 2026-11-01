@@ -1,15 +1,15 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-31T22:36:14.595535-03:00",
+  "_ultima_actualizacion": "2026-11-01T13:58:55.344753-03:00",
   "configuracion": {
     "tax_included": true,
     "moneda": "USD"
   },
   "mes_actual": {
-    "orders_count": 1,
-    "revenue_bruto": 770.0,
-    "revenue_neto_sin_iva": 631.15,
-    "aov": 770.0,
+    "orders_count": 0,
+    "revenue_bruto": 0,
+    "revenue_neto_sin_iva": 0.0,
+    "aov": 0,
     "refunds": 0
   },
   "historico_mensual": [
