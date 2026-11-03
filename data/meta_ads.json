@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-03T15:10:22.239156-03:00",
+  "_ultima_actualizacion": "2026-11-03T18:26:39.173216-03:00",
   "periodos": {
     "today": {
-      "spend": 13.52,
+      "spend": 15.05,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 9373,
-      "clicks": 326
+      "impressions": 9949,
+      "clicks": 350
     },
     "yesterday": {
       "spend": 33.58,
@@ -174,22 +174,22 @@
     {
       "year": 2026,
       "month": 11,
-      "spend": 80.56,
+      "spend": 82.09,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 47583,
-      "clicks": 1423
+      "impressions": 48159,
+      "clicks": 1447
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 9373,
-        "reach": 9326,
-        "spend": 13.52,
-        "cpm": 1.44,
-        "clicks": 326,
+        "impressions": 9949,
+        "reach": 9949,
+        "spend": 15.05,
+        "cpm": 1.51,
+        "clicks": 350,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 5,
@@ -235,9 +235,9 @@
         "nombre": "Anuncio de Tráfico con la configuración recomendada",
         "periodos": {
           "today": {
-            "impressions": 1608,
-            "reach": 1507,
-            "spend": 2.57,
+            "impressions": 2084,
+            "reach": 1980,
+            "spend": 3.33,
             "cpm": 1.6
           },
           "yesterday": {
@@ -265,10 +265,10 @@
         "nombre": "Promo nov catalogo",
         "periodos": {
           "today": {
-            "impressions": 7701,
-            "reach": 7701,
+            "impressions": 7711,
+            "reach": 7711,
             "spend": 10.52,
-            "cpm": 1.37
+            "cpm": 1.36
           },
           "yesterday": {
             "impressions": 15618,
@@ -295,10 +295,10 @@
         "nombre": "boost reel",
         "periodos": {
           "today": {
-            "impressions": 64,
-            "reach": 52,
-            "spend": 0.43,
-            "cpm": 6.72
+            "impressions": 159,
+            "reach": 130,
+            "spend": 1.22,
+            "cpm": 7.67
           }
         }
       },

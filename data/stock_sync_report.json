@@ -1,34 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-11-03T15:10:21.145958-03:00",
+  "_ultima_sincronizacion": "2026-11-03T18:26:38.098139-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "1346B-80120",
-      "producto": "Alfombra Pura Lana Vison",
-      "actual": 4,
-      "nuevo": 2
-    },
-    {
-      "sku": "HO10162-160*230",
-      "producto": "Alfombra Yute y Lana Natural",
-      "actual": 12,
-      "nuevo": 10
-    },
-    {
-      "sku": "HO10162-200*300",
-      "producto": "Alfombra Yute y Lana Natural",
-      "actual": 15,
-      "nuevo": 14
-    },
-    {
-      "sku": "HO10162-250*350",
-      "producto": "Alfombra Yute y Lana Natural",
-      "actual": 9,
-      "nuevo": 8
-    }
-  ],
-  "sin_cambios": 183,
+  "actualizados": [],
+  "sin_cambios": 187,
   "excluidos_manualmente": [
     {
       "sku": "245413",
