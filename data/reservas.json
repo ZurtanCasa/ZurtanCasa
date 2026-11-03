@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-10-31T16:02:13.637Z",
+  "_ultima_actualizacion": "2026-11-03T14:35:43.231Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -926,6 +926,21 @@
       "estado": "Préstamos",
       "created_at": "2026-10-29T19:20:29.445Z",
       "updated_at": "2026-10-29T19:20:29.445Z"
+    },
+    {
+      "id": "3d15ac1d-c40e-47c3-9e06-13fb20875738",
+      "nombre": "Ana Pose",
+      "celular": "099624546",
+      "ci": "12668416",
+      "direccion": "lombardria 6066 esq ancona y bolonia",
+      "articulos": "kilim gouchan 57347 268x138",
+      "sena": "160 usd",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-11-19",
+      "notas": "",
+      "estado": "Reservas Día del Club",
+      "created_at": "2026-11-03T14:35:43.231Z",
+      "updated_at": "2026-11-03T14:35:43.231Z"
     }
   ]
 }
