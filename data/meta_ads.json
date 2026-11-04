@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-03T18:26:39.173216-03:00",
+  "_ultima_actualizacion": "2026-11-03T23:48:37.805425-03:00",
   "periodos": {
     "today": {
-      "spend": 15.05,
+      "spend": 18.26,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 9949,
-      "clicks": 350
+      "impressions": 12428,
+      "clicks": 509
     },
     "yesterday": {
       "spend": 33.58,
@@ -174,22 +174,22 @@
     {
       "year": 2026,
       "month": 11,
-      "spend": 82.09,
+      "spend": 85.3,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 48159,
-      "clicks": 1447
+      "impressions": 50638,
+      "clicks": 1606
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 9949,
-        "reach": 9949,
-        "spend": 15.05,
-        "cpm": 1.51,
-        "clicks": 350,
+        "impressions": 12428,
+        "reach": 11908,
+        "spend": 18.26,
+        "cpm": 1.47,
+        "clicks": 509,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 5,
@@ -235,10 +235,10 @@
         "nombre": "Anuncio de Tráfico con la configuración recomendada",
         "periodos": {
           "today": {
-            "impressions": 2084,
-            "reach": 1980,
-            "spend": 3.33,
-            "cpm": 1.6
+            "impressions": 2942,
+            "reach": 2734,
+            "spend": 4.81,
+            "cpm": 1.63
           },
           "yesterday": {
             "impressions": 3327,
@@ -265,10 +265,10 @@
         "nombre": "Promo nov catalogo",
         "periodos": {
           "today": {
-            "impressions": 7711,
-            "reach": 7711,
-            "spend": 10.52,
-            "cpm": 1.36
+            "impressions": 9262,
+            "reach": 9177,
+            "spend": 11.86,
+            "cpm": 1.28
           },
           "yesterday": {
             "impressions": 15618,
@@ -295,10 +295,10 @@
         "nombre": "boost reel",
         "periodos": {
           "today": {
-            "impressions": 159,
-            "reach": 130,
-            "spend": 1.22,
-            "cpm": 7.67
+            "impressions": 224,
+            "reach": 191,
+            "spend": 1.59,
+            "cpm": 7.1
           }
         }
       },
@@ -323,6 +323,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44410
+    "ig_followers_total": 44427
   }
 }
