@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-04T15:09:22.260Z",
+  "_ultima_actualizacion": "2026-11-04T17:43:22.575Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -949,13 +949,13 @@
       "ci": "",
       "direccion": "JUAN BENITO BLANCO 1239 AP 601",
       "articulos": "LLEVAR VARIAS ALFOMBRAS G PARA PROBAR",
-      "sena": "",
+      "sena": "300",
       "sena_devuelta": false,
-      "fecha_entrega": "2026-11-04",
-      "notas": "DE 13 A 16HS",
-      "estado": "Ir a probar",
+      "fecha_entrega": "2026-11-19",
+      "notas": "",
+      "estado": "Reservas Día del Club",
       "created_at": "2026-11-03T19:47:24.924Z",
-      "updated_at": "2026-11-03T19:47:24.924Z"
+      "updated_at": "2026-11-04T17:43:22.575Z"
     },
     {
       "id": "a56df1b1-a56a-406a-a6a9-fa99a331285c",
