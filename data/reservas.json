@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-04T18:39:02.610Z",
+  "_ultima_actualizacion": "2026-11-04T21:39:58.817Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -960,17 +960,17 @@
     {
       "id": "a56df1b1-a56a-406a-a6a9-fa99a331285c",
       "nombre": "UCU",
-      "celular": "",
+      "celular": "096301823",
       "ci": "",
-      "direccion": "Averiguar",
-      "articulos": "Tabriz y heriZ 4x3",
+      "direccion": "cornelio cantera 2738",
+      "articulos": "Tabriz y heriz 4x3 \nAlfombra de nudo 342x230 de alquiler",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-05",
       "notas": "Post medio dia",
       "estado": "Ir a probar",
       "created_at": "2026-11-04T00:21:04.390Z",
-      "updated_at": "2026-11-04T00:21:04.390Z"
+      "updated_at": "2026-11-04T21:39:58.817Z"
     },
     {
       "id": "725299f4-bea4-43db-98ed-700daeaefbd4",
