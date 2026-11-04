@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-03T23:47:06.937457-03:00",
-  "_rango": "01/01/24 → 03/11/26",
+  "_ultima_actualizacion": "2026-11-04T15:28:02.724213-03:00",
+  "_rango": "01/01/24 → 04/11/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -437,8 +437,8 @@
       },
       "11": {
         "Alfombra persa": {
-          "revenue_usd": 2147.76,
-          "units": 4
+          "revenue_usd": 3424.03,
+          "units": 6
         },
         "Pura Lana": {
           "revenue_usd": 246.0,
@@ -935,8 +935,8 @@
       "units": 134
     },
     "Alfombra persa": {
-      "revenue_usd": 567475.63,
-      "units": 460
+      "revenue_usd": 568751.9,
+      "units": 462
     },
     "Sin categoría": {
       "revenue_usd": 313581.05,
@@ -966,8 +966,8 @@
   "top_categorias": [
     {
       "categoria": "Alfombra persa",
-      "revenue_usd": 567475.63,
-      "units": 460
+      "revenue_usd": 568751.9,
+      "units": 462
     },
     {
       "categoria": "Sin categoría",
@@ -1265,6 +1265,12 @@
       "categoria": "Muebles"
     },
     {
+      "articulo": "Kilim Varni Sirdjan",
+      "revenue_usd": 5626.72,
+      "units": 3,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Mafrash",
       "revenue_usd": 5621.68,
       "units": 7,
@@ -1311,12 +1317,6 @@
       "revenue_usd": 4986.8,
       "units": 11,
       "categoria": "Yute y Lana Nuevas"
-    },
-    {
-      "articulo": "Kilim Varni Sirdjan",
-      "revenue_usd": 4980.8,
-      "units": 2,
-      "categoria": "Alfombra persa"
     },
     {
       "articulo": "Kilim Afsahari",
@@ -1385,6 +1385,12 @@
       "categoria": "Yute y Lana"
     },
     {
+      "articulo": "Kilim Varni",
+      "revenue_usd": 3459.79,
+      "units": 3,
+      "categoria": "Alfombra persa"
+    },
+    {
       "articulo": "Yute y Lana Nuevas 160 x 230 Green",
       "revenue_usd": 3362.0,
       "units": 7,
@@ -1436,12 +1442,6 @@
       "articulo": "Bachtiari Mafrash",
       "revenue_usd": 2884.0,
       "units": 6,
-      "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Kilim Varni",
-      "revenue_usd": 2829.44,
-      "units": 2,
       "categoria": "Alfombra persa"
     },
     {
@@ -2416,6 +2416,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Kilim Varni Sirdjan",
+        "revenue_usd": 5626.72,
+        "units": 3,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Yute y Lana 400 x 500 Natural",
         "revenue_usd": 5076.0,
         "units": 2,
@@ -2432,12 +2438,6 @@
         "revenue_usd": 5017.37,
         "units": 3,
         "categoria": "Yute y Lana Nuevas"
-      },
-      {
-        "articulo": "Kilim Varni Sirdjan",
-        "revenue_usd": 4980.8,
-        "units": 2,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "Pura Lana 200 x 300 Natural",
@@ -2692,6 +2692,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Kilim Varni",
+        "revenue_usd": 1214.79,
+        "units": 2,
+        "categoria": "Alfombra persa"
+      },
+      {
         "articulo": "Pura Lana 160 x 230 Vison",
         "revenue_usd": 1177.8,
         "units": 2,
@@ -2828,12 +2834,6 @@
         "revenue_usd": 651.0,
         "units": 3,
         "categoria": "Pura Lana"
-      },
-      {
-        "articulo": "Kilim Varni",
-        "revenue_usd": 584.44,
-        "units": 1,
-        "categoria": "Alfombra persa"
       },
       {
         "articulo": "2009001 garden chair 58x60x92",
