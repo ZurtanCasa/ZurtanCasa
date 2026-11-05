@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-05T21:44:39.062Z",
+  "_ultima_actualizacion": "2026-11-05T21:45:49.031Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -469,13 +469,13 @@
       "ci": "25787819",
       "direccion": "DEAUVILLE 6861 ESQ NARIÑO.",
       "articulos": "2 YUTE Y LANA GREEN 3X2\ndecoradora MARIANA JAUME 099285321\nLA MESA LA ESTA RETIRANDO 3 DE NOV",
-      "sena": "420",
+      "sena": "420 SE LE DEBE",
       "sena_devuelta": false,
       "fecha_entrega": "",
       "notas": "PAGA CUANDO LLEGUEN LAS GREEN.",
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-10-01T21:58:43.696Z",
-      "updated_at": "2026-11-05T18:06:08.982Z"
+      "updated_at": "2026-11-05T21:45:49.031Z"
     },
     {
       "id": "ce082997-a275-4414-973f-8d0b3432ce2a",
