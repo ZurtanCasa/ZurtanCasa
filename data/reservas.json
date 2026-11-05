@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-05T21:45:49.031Z",
+  "_ultima_actualizacion": "2026-11-05T21:46:12.869Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -472,10 +472,10 @@
       "sena": "420 SE LE DEBE",
       "sena_devuelta": false,
       "fecha_entrega": "",
-      "notas": "PAGA CUANDO LLEGUEN LAS GREEN.",
+      "notas": "SE LE DEBE LA SENA",
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-10-01T21:58:43.696Z",
-      "updated_at": "2026-11-05T21:45:49.031Z"
+      "updated_at": "2026-11-05T21:46:12.869Z"
     },
     {
       "id": "ce082997-a275-4414-973f-8d0b3432ce2a",
