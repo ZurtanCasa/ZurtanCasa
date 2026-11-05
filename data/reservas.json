@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-05T21:43:21.497Z",
+  "_ultima_actualizacion": "2026-11-05T21:43:54.178Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -858,14 +858,14 @@
       "celular": "093709084",
       "ci": "",
       "direccion": "ING ANDRES ANDREONI 7223",
-      "articulos": "VINTAGE 2705 / 174\nVINTAGE 2195 / 271\nHAY Q RETIRAR UNA SUPUESTAMENTE",
+      "articulos": "VINTAGE 2195 / 271",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-03",
       "notas": "",
       "estado": "Reservas Día del Club",
       "created_at": "2026-10-26T17:54:20.866Z",
-      "updated_at": "2026-11-03T21:42:45.931Z"
+      "updated_at": "2026-11-05T21:43:54.178Z"
     },
     {
       "id": "eaa1848c-6d5b-4188-86dd-34ef7f964b92",
