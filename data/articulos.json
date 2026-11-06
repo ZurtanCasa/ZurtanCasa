@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-04T23:59:09.233510-03:00",
-  "_rango": "01/01/24 → 04/11/26",
+  "_ultima_actualizacion": "2026-11-05T23:56:20.673824-03:00",
+  "_rango": "01/01/24 → 05/11/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -439,6 +439,14 @@
         "Alfombra persa": {
           "revenue_usd": 3424.03,
           "units": 6
+        },
+        "Muebles": {
+          "revenue_usd": 700.0,
+          "units": 1
+        },
+        "Sin categoría": {
+          "revenue_usd": 1470.0,
+          "units": 2
         },
         "Pura Lana": {
           "revenue_usd": 246.0,
@@ -931,16 +939,16 @@
   },
   "por_categoria_total": {
     "Muebles": {
-      "revenue_usd": 68277.35,
-      "units": 134
+      "revenue_usd": 68977.35,
+      "units": 135
     },
     "Alfombra persa": {
       "revenue_usd": 568751.9,
       "units": 462
     },
     "Sin categoría": {
-      "revenue_usd": 313581.05,
-      "units": 304
+      "revenue_usd": 315051.05,
+      "units": 306
     },
     "Exterior Pet": {
       "revenue_usd": 30192.0,
@@ -971,8 +979,8 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 313581.05,
-      "units": 304
+      "revenue_usd": 315051.05,
+      "units": 306
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -986,8 +994,8 @@
     },
     {
       "categoria": "Muebles",
-      "revenue_usd": 68277.35,
-      "units": 134
+      "revenue_usd": 68977.35,
+      "units": 135
     },
     {
       "categoria": "Yute y Lana",
@@ -1008,8 +1016,8 @@
   "top_articulos": [
     {
       "articulo": "Otros",
-      "revenue_usd": 304791.55,
-      "units": 274,
+      "revenue_usd": 306261.55,
+      "units": 276,
       "categoria": "Sin categoría"
     },
     {
@@ -2375,8 +2383,8 @@
     "2026": [
       {
         "articulo": "Otros",
-        "revenue_usd": 79386.4,
-        "units": 56,
+        "revenue_usd": 80856.4,
+        "units": 58,
         "categoria": "Sin categoría"
       },
       {
@@ -2821,6 +2829,12 @@
         "articulo": "Butaca Velvet GRIS",
         "revenue_usd": 700.0,
         "units": 2,
+        "categoria": "Muebles"
+      },
+      {
+        "articulo": "Mesa Madera Petrificada 80 x 55 x 45",
+        "revenue_usd": 700.0,
+        "units": 1,
         "categoria": "Muebles"
       },
       {
