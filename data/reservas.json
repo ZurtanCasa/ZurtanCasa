@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-06T14:32:34.273Z",
+  "_ultima_actualizacion": "2026-11-06T14:44:19.875Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1030,7 +1030,7 @@
       "notas": "",
       "estado": "Cliente llevó a probar",
       "created_at": "2026-11-05T20:27:22.569Z",
-      "updated_at": "2026-11-05T20:27:22.569Z"
+      "updated_at": "2026-11-06T14:44:19.875Z"
     },
     {
       "id": "1c87a7d6-d84f-4cea-9216-d40471e697be",
