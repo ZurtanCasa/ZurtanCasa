@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-07T15:39:34.732Z",
+  "_ultima_actualizacion": "2026-11-07T17:02:19.550Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1106,6 +1106,21 @@
       "estado": "Cliente llevó a probar",
       "created_at": "2026-11-07T15:37:50.939Z",
       "updated_at": "2026-11-07T15:37:50.939Z"
+    },
+    {
+      "id": "ba3c58b5-38af-4e35-9141-92fb031ec803",
+      "nombre": "PABLO OLIVERA",
+      "celular": "099299458",
+      "ci": "",
+      "direccion": "",
+      "articulos": "HERIZ 1256",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Reservas Día del Club",
+      "created_at": "2026-11-07T17:02:19.550Z",
+      "updated_at": "2026-11-07T17:02:19.550Z"
     }
   ]
 }
