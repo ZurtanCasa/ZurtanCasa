@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-09T17:09:24.757Z",
+  "_ultima_actualizacion": "2026-11-09T21:35:43.906Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1034,7 +1034,7 @@
     },
     {
       "id": "1c87a7d6-d84f-4cea-9216-d40471e697be",
-      "nombre": "JOSEFINA",
+      "nombre": "JOSEFINA W",
       "celular": "096665891",
       "ci": "",
       "direccion": "",
@@ -1045,7 +1045,7 @@
       "notas": "LLAMAR",
       "estado": "Reservas Día del Club",
       "created_at": "2026-11-06T14:32:34.273Z",
-      "updated_at": "2026-11-06T14:32:34.273Z"
+      "updated_at": "2026-11-09T21:35:43.906Z"
     },
     {
       "id": "ab2beeb0-bb23-47e2-b213-fbd571e0696a",
