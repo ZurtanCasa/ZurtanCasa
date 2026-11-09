@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-09T15:19:28.972Z",
+  "_ultima_actualizacion": "2026-11-09T15:19:57.768Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1127,7 +1127,7 @@
       "nombre": "CAROLINA ANTUNEZ",
       "celular": "099923671",
       "ci": "",
-      "direccion": "",
+      "direccion": "RAMBLA G 615 APTO 301",
       "articulos": "LLEVAR A PORBAR VARIAAS",
       "sena": "",
       "sena_devuelta": false,
@@ -1135,7 +1135,7 @@
       "notas": "16.30HS",
       "estado": "Ir a probar",
       "created_at": "2026-11-09T15:19:28.972Z",
-      "updated_at": "2026-11-09T15:19:28.972Z"
+      "updated_at": "2026-11-09T15:19:57.768Z"
     }
   ]
 }
