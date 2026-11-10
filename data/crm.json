@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-10T20:43:18.236Z",
+  "_ultima_actualizacion": "2026-11-10T20:44:19.796Z",
   "leads": [
     {
       "id": "eb55bbca-4de1-4852-af58-5107c43b4a7b",
@@ -100,11 +100,11 @@
       "interes": "Ya compró un mafrash pero queria otro en su momento",
       "vendedor": "Nico",
       "proxima_accion": "escribirle en proximo descuento",
-      "fecha_accion": "2026-10-04",
+      "fecha_accion": "2026-11-16",
       "notas": "cuando le escribi estaba esguinzado del tobillo y no podia pasar por el local.",
       "estado": "Interesado",
       "created_at": "2026-09-30T19:05:33.299Z",
-      "updated_at": "2026-09-30T19:05:33.299Z"
+      "updated_at": "2026-11-10T20:44:19.796Z"
     },
     {
       "id": "20eb2857-6925-45ed-92c5-f94117d4b76a",
