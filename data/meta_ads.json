@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-10T18:38:34.586769-03:00",
+  "_ultima_actualizacion": "2026-11-10T23:21:12.406559-03:00",
   "periodos": {
     "today": {
-      "spend": 4.15,
+      "spend": 6.11,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 6964,
-      "clicks": 245
+      "impressions": 10061,
+      "clicks": 340
     },
     "yesterday": {
       "spend": 6.0,
@@ -185,22 +185,22 @@
     {
       "year": 2026,
       "month": 11,
-      "spend": 142.69,
+      "spend": 144.65,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 125796,
-      "clicks": 4562
+      "impressions": 128893,
+      "clicks": 4657
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 6964,
-        "reach": 4211,
-        "spend": 4.15,
-        "cpm": 0.6,
-        "clicks": 245,
+        "impressions": 10061,
+        "reach": 5658,
+        "spend": 6.11,
+        "cpm": 0.61,
+        "clicks": 340,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 1,
@@ -246,10 +246,10 @@
         "nombre": "Promo nov catalogo",
         "periodos": {
           "today": {
-            "impressions": 6987,
-            "reach": 4211,
-            "spend": 4.16,
-            "cpm": 0.6
+            "impressions": 10061,
+            "reach": 5658,
+            "spend": 6.11,
+            "cpm": 0.61
           },
           "yesterday": {
             "impressions": 10511,
@@ -322,6 +322,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44614
+    "ig_followers_total": 44634
   }
 }
