@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-10T23:34:17.987Z",
+  "_ultima_actualizacion": "2026-11-11T19:33:20.040Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1136,6 +1136,21 @@
       "estado": "Ir a probar",
       "created_at": "2026-11-10T21:34:14.577Z",
       "updated_at": "2026-11-10T21:34:14.577Z"
+    },
+    {
+      "id": "620301ef-1b71-4753-a075-a5ce23870a19",
+      "nombre": "PABLO RICALDONI",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "VINTAGE 1117\nAFGHAN 24631\nPATCHWORK 59896\n\nUN SBARBARO DOBLE",
+      "sena": "",
+      "sena_devuelta": true,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Reservas Día del Club",
+      "created_at": "2026-11-11T19:33:20.040Z",
+      "updated_at": "2026-11-11T19:33:20.040Z"
     }
   ]
 }
