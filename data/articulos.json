@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-12T15:39:18.793864-03:00",
+  "_ultima_actualizacion": "2026-11-12T19:00:29.941924-03:00",
   "_rango": "01/01/24 → 12/11/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
@@ -441,8 +441,8 @@
           "units": 6
         },
         "Sin categoría": {
-          "revenue_usd": 34207.0,
-          "units": 13
+          "revenue_usd": 34497.0,
+          "units": 14
         },
         "Muebles": {
           "revenue_usd": 700.0,
@@ -947,8 +947,8 @@
       "units": 462
     },
     "Sin categoría": {
-      "revenue_usd": 347788.05,
-      "units": 317
+      "revenue_usd": 348078.05,
+      "units": 318
     },
     "Exterior Pet": {
       "revenue_usd": 30192.0,
@@ -979,8 +979,8 @@
     },
     {
       "categoria": "Sin categoría",
-      "revenue_usd": 347788.05,
-      "units": 317
+      "revenue_usd": 348078.05,
+      "units": 318
     },
     {
       "categoria": "Yute y Lana Nuevas",
@@ -1261,16 +1261,16 @@
       "categoria": "Exterior Pet"
     },
     {
+      "articulo": "Exento Iva",
+      "revenue_usd": 6030.51,
+      "units": 13,
+      "categoria": "Sin categoría"
+    },
+    {
       "articulo": "Pura Lana 250 x 350 Vison",
       "revenue_usd": 5991.5,
       "units": 5,
       "categoria": "Pura Lana"
-    },
-    {
-      "articulo": "Exento Iva",
-      "revenue_usd": 5740.51,
-      "units": 12,
-      "categoria": "Sin categoría"
     },
     {
       "articulo": "Mesa FRIDA 220 x 100 x 75 Grey Wash",
@@ -2532,6 +2532,12 @@
         "categoria": "Alfombra persa"
       },
       {
+        "articulo": "Exento Iva",
+        "revenue_usd": 2600.0,
+        "units": 6,
+        "categoria": "Sin categoría"
+      },
+      {
         "articulo": "Naim 720",
         "revenue_usd": 2504.67,
         "units": 2,
@@ -2554,12 +2560,6 @@
         "revenue_usd": 2371.0,
         "units": 2,
         "categoria": "Yute y Lana Nuevas"
-      },
-      {
-        "articulo": "Exento Iva",
-        "revenue_usd": 2310.0,
-        "units": 5,
-        "categoria": "Sin categoría"
       },
       {
         "articulo": "Yute y Lana Nuevas 250 x 350 Charcol",
