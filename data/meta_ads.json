@@ -1,21 +1,21 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-13T15:17:00.878198-03:00",
+  "_ultima_actualizacion": "2026-11-13T18:47:59.623920-03:00",
   "periodos": {
     "today": {
-      "spend": 3.44,
+      "spend": 4.63,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 5702,
-      "clicks": 221
+      "impressions": 7633,
+      "clicks": 269
     },
     "yesterday": {
       "spend": 7.39,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 12020,
+      "impressions": 12023,
       "clicks": 421
     },
     "last_7d": {
@@ -23,7 +23,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 80754,
+      "impressions": 80757,
       "clicks": 2927
     },
     "last_30d": {
@@ -31,7 +31,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 231659,
+      "impressions": 231662,
       "clicks": 14107
     }
   },
@@ -44,7 +44,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 131693,
+      "impressions": 131696,
       "clicks": 4401
     },
     {
@@ -185,30 +185,30 @@
     {
       "year": 2026,
       "month": 11,
-      "spend": 162.59,
+      "spend": 163.78,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 157899,
-      "clicks": 5690
+      "impressions": 159833,
+      "clicks": 5738
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 5702,
-        "reach": 3727,
-        "spend": 3.44,
-        "cpm": 0.6,
-        "clicks": 221,
+        "impressions": 7633,
+        "reach": 4587,
+        "spend": 4.63,
+        "cpm": 0.61,
+        "clicks": 269,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 1,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 12020,
-        "reach": 6744,
+        "impressions": 12023,
+        "reach": 6747,
         "spend": 7.39,
         "cpm": 0.61,
         "clicks": 421,
@@ -218,18 +218,18 @@
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 80754,
-        "reach": 22001,
+        "impressions": 80757,
+        "reach": 22011,
         "spend": 52.55,
         "cpm": 0.65,
         "clicks": 2927,
         "profile_visits_fb": 0,
         "profile_visits_ig": 4087,
         "new_followers_fb": 6,
-        "new_followers_ig": 265
+        "new_followers_ig": 305
       },
       "last_30d": {
-        "impressions": 231659,
+        "impressions": 231662,
         "reach": 91550,
         "spend": 272.18,
         "cpm": 1.17,
@@ -237,7 +237,7 @@
         "profile_visits_fb": 0,
         "profile_visits_ig": 10367,
         "new_followers_fb": 72,
-        "new_followers_ig": 1139
+        "new_followers_ig": 1179
       }
     },
     "por_anuncio": [
@@ -246,25 +246,25 @@
         "nombre": "Promo nov catalogo",
         "periodos": {
           "today": {
-            "impressions": 5702,
-            "reach": 3727,
-            "spend": 3.44,
-            "cpm": 0.6
+            "impressions": 7633,
+            "reach": 4587,
+            "spend": 4.63,
+            "cpm": 0.61
           },
           "yesterday": {
-            "impressions": 12020,
-            "reach": 6744,
+            "impressions": 12023,
+            "reach": 6747,
             "spend": 7.39,
             "cpm": 0.61
           },
           "last_7d": {
-            "impressions": 78954,
-            "reach": 20395,
+            "impressions": 78957,
+            "reach": 20412,
             "spend": 49.26,
             "cpm": 0.62
           },
           "last_30d": {
-            "impressions": 131693,
+            "impressions": 131696,
             "reach": 62380,
             "spend": 126.72,
             "cpm": 0.96
@@ -316,6 +316,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44738
+    "ig_followers_total": 44742
   }
 }
