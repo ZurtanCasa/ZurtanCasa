@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-13T18:40:58.945Z",
+  "_ultima_actualizacion": "2026-11-14T14:41:12.692Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -250,7 +250,7 @@
       "notas": "",
       "estado": "Pago y No Llegó Mercadería",
       "created_at": "2026-09-28T17:21:44.990423-03:00",
-      "updated_at": "2026-09-28T17:21:44.990423-03:00"
+      "updated_at": "2026-11-14T14:41:12.692Z"
     },
     {
       "id": "a0158c93-9994-4d4a-9099-a6d1e8c30ef1",
