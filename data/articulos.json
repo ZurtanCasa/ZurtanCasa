@@ -1,7 +1,7 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-15T23:26:51.635535-03:00",
-  "_rango": "01/01/24 → 15/11/26",
+  "_ultima_actualizacion": "2026-11-16T17:44:48.336711-03:00",
+  "_rango": "01/01/24 → 16/11/26",
   "_nota": "Sin categoría = artículos facturados sin categoría en sistema",
   "por_anio_mes_categoria": {
     "2025": {
@@ -453,8 +453,8 @@
           "units": 2
         },
         "Yute y Lana": {
-          "revenue_usd": 2705.6,
-          "units": 4
+          "revenue_usd": 3311.6,
+          "units": 5
         }
       },
       "7": {
@@ -959,8 +959,8 @@
       "units": 125
     },
     "Yute y Lana": {
-      "revenue_usd": 62602.96,
-      "units": 71
+      "revenue_usd": 63208.96,
+      "units": 72
     },
     "Yute y Lana Nuevas": {
       "revenue_usd": 153721.26,
@@ -999,8 +999,8 @@
     },
     {
       "categoria": "Yute y Lana",
-      "revenue_usd": 62602.96,
-      "units": 71
+      "revenue_usd": 63208.96,
+      "units": 72
     },
     {
       "categoria": "Exterior Pet",
@@ -1297,6 +1297,12 @@
       "categoria": "Muebles"
     },
     {
+      "articulo": "Yute y Lana 250 x 250 Natural",
+      "revenue_usd": 5363.0,
+      "units": 7,
+      "categoria": "Yute y Lana"
+    },
+    {
       "articulo": "Yute y Lana 250 x 350 Grey",
       "revenue_usd": 5336.78,
       "units": 5,
@@ -1343,12 +1349,6 @@
       "revenue_usd": 4852.62,
       "units": 13,
       "categoria": "Alfombra persa"
-    },
-    {
-      "articulo": "Yute y Lana 250 x 250 Natural",
-      "revenue_usd": 4757.0,
-      "units": 6,
-      "categoria": "Yute y Lana"
     },
     {
       "articulo": "Gashgai",
@@ -2854,6 +2854,12 @@
         "revenue_usd": 651.0,
         "units": 3,
         "categoria": "Pura Lana"
+      },
+      {
+        "articulo": "Yute y Lana 250 x 250 Natural",
+        "revenue_usd": 606.0,
+        "units": 1,
+        "categoria": "Yute y Lana"
       },
       {
         "articulo": "2009001 garden chair 58x60x92",
