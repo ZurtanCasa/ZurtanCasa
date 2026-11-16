@@ -1,12 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { wsLogin, wsValidaDocumentoYTarjeta, ClubElPaisEnv } from "@/lib/club-el-pais";
 import { createSaleAwarePercentageDiscount } from "@/lib/shopify-admin";
+import { porcentajeDescuentoVigenteUY } from "@/lib/club-el-pais-descuento";
 
 export const dynamic = "force-dynamic";
-
-const UY_TZ_OFFSET_HOURS = -3;
-const DIAS_CON_DESCUENTO = [1, 2, 3]; // lunes, martes, miércoles (0=domingo)
-const PORCENTAJE_DESCUENTO = 20;
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
@@ -22,14 +19,10 @@ export async function OPTIONS() {
   return new NextResponse(null, { status: 204, headers: CORS_HEADERS });
 }
 
-function esDiaConDescuentoUY(): boolean {
-  const ahoraUY = new Date(Date.now() + UY_TZ_OFFSET_HOURS * 60 * 60 * 1000);
-  return DIAS_CON_DESCUENTO.includes(ahoraUY.getUTCDay());
-}
-
 export async function POST(req: NextRequest) {
   try {
-    if (!esDiaConDescuentoUY()) {
+    const porcentaje = porcentajeDescuentoVigenteUY();
+    if (porcentaje === null) {
       return json({ ok: false, mensaje: "El descuento de Club El País solo aplica lunes, martes y miércoles." }, 400);
     }
 
@@ -64,8 +57,8 @@ export async function POST(req: NextRequest) {
     const discountCode = `ELPAIS-${Date.now().toString(36).toUpperCase()}`;
     const codigoCreado = await createSaleAwarePercentageDiscount({
       code: discountCode,
-      percentage: PORCENTAJE_DESCUENTO,
-      title: `Club El País ${PORCENTAJE_DESCUENTO}% - tarjeta ${tarjeta.slice(-4)}`,
+      percentage: porcentaje,
+      title: `Club El País ${porcentaje}% - tarjeta ${tarjeta.slice(-4)}`,
       expiresInMinutes: 10,
       tarjeta,
     });
