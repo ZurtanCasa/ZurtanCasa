@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-17T18:13:10.006Z",
+  "_ultima_actualizacion": "2026-11-17T20:33:21.824Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -243,14 +243,14 @@
       "celular": "",
       "ci": "",
       "direccion": "",
-      "articulos": "PET NUEVA RIS FLW 24758 300 X 200 A DEFINIR COLOR",
+      "articulos": "PET NUEVA RIS FLW 24758 300 X 200 A SE LLEVO LA CANVAS 300 X 200 ESTA PAGA \n MAS UNA DE LANA DE 160 X 230 PARA VER MEDIDAS",
       "sena": "",
       "sena_devuelta": false,
-      "fecha_entrega": "",
+      "fecha_entrega": "2026-11-19",
       "notas": "",
-      "estado": "Pago y No Llegó Mercadería",
+      "estado": "Reservas Día del Club",
       "created_at": "2026-09-28T17:21:44.990423-03:00",
-      "updated_at": "2026-11-14T14:41:12.692Z"
+      "updated_at": "2026-11-17T20:33:21.824Z"
     },
     {
       "id": "a0158c93-9994-4d4a-9099-a6d1e8c30ef1",
