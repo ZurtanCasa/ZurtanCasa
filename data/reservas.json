@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-17T16:57:56.415Z",
+  "_ultima_actualizacion": "2026-11-17T16:58:29.915Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -233,9 +233,9 @@
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-18",
       "notas": "QUIJOTE 2643 BARRIO PARQUES  DE 9 A 13HS",
-      "estado": "Pago y No Llegó Mercadería",
+      "estado": "Pago y Sin Entregar",
       "created_at": "2026-09-28T17:21:44.990423-03:00",
-      "updated_at": "2026-11-17T16:57:56.415Z"
+      "updated_at": "2026-11-17T16:58:29.915Z"
     },
     {
       "id": "4a25a6ff-f76e-48bb-8326-d1f13e5116b9",
