@@ -1,5 +1,5 @@
 {
-  "_status": "ok",
+  "_status": "error",
   "_ultima_actualizacion": "2026-11-16T17:46:22.128319-03:00",
   "configuracion": {
     "tax_included": true,
@@ -20,5 +20,7 @@
       "orders_count": 1,
       "total_tax": 143.98
     }
-  ]
+  ],
+  "_error": "ReadTimeout: HTTPSConnectionPool(host='xgdsfv-sx.myshopify.com', port=443): Read timed out. (read timeout=30)",
+  "_ultimo_intento": "2026-11-16T21:00:41.982891-03:00"
 }

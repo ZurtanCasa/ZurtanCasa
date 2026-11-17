@@ -1,16 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-11-16T17:46:22.018410-03:00",
+  "_ultima_sincronizacion": "2026-11-16T21:00:11.836392-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "0162-250250",
-      "producto": "Alfombra Yute y Lana Natural",
-      "actual": 4,
-      "nuevo": 3
-    }
-  ],
-  "sin_cambios": 187,
+  "actualizados": [],
+  "sin_cambios": 188,
   "excluidos_manualmente": [
     {
       "sku": "245413",

@@ -1,21 +1,21 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-16T17:46:23.214266-03:00",
+  "_ultima_actualizacion": "2026-11-16T21:00:42.197763-03:00",
   "periodos": {
     "today": {
-      "spend": 4.51,
+      "spend": 5.52,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 8057,
-      "clicks": 302
+      "impressions": 9748,
+      "clicks": 365
     },
     "yesterday": {
       "spend": 7.18,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 12172,
+      "impressions": 12173,
       "clicks": 432
     },
     "last_7d": {
@@ -23,7 +23,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 77721,
+      "impressions": 77722,
       "clicks": 2708
     },
     "last_30d": {
@@ -31,7 +31,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 253041,
+      "impressions": 253042,
       "clicks": 13915
     }
   },
@@ -44,7 +44,7 @@
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 165538,
+      "impressions": 165539,
       "clicks": 5608
     },
     {
@@ -185,29 +185,29 @@
     {
       "year": 2026,
       "month": 11,
-      "spend": 184.25,
+      "spend": 185.26,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 194099,
-      "clicks": 6978
+      "impressions": 195791,
+      "clicks": 7041
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 8057,
-        "reach": 5188,
-        "spend": 4.51,
-        "cpm": 0.56,
-        "clicks": 302,
+        "impressions": 9748,
+        "reach": 5973,
+        "spend": 5.52,
+        "cpm": 0.57,
+        "clicks": 365,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 12172,
+        "impressions": 12173,
         "reach": 6409,
         "spend": 7.18,
         "cpm": 0.59,
@@ -218,7 +218,7 @@
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 77721,
+        "impressions": 77722,
         "reach": 19916,
         "spend": 47.2,
         "cpm": 0.61,
@@ -229,7 +229,7 @@
         "new_followers_ig": 266
       },
       "last_30d": {
-        "impressions": 253041,
+        "impressions": 253042,
         "reach": 93664,
         "spend": 278.7,
         "cpm": 1.1,
@@ -246,25 +246,25 @@
         "nombre": "Promo nov catalogo",
         "periodos": {
           "today": {
-            "impressions": 8057,
-            "reach": 5188,
-            "spend": 4.51,
-            "cpm": 0.56
+            "impressions": 9748,
+            "reach": 5973,
+            "spend": 5.52,
+            "cpm": 0.57
           },
           "yesterday": {
-            "impressions": 12172,
+            "impressions": 12173,
             "reach": 6409,
             "spend": 7.18,
             "cpm": 0.59
           },
           "last_7d": {
-            "impressions": 77721,
+            "impressions": 77722,
             "reach": 19916,
             "spend": 47.2,
             "cpm": 0.61
           },
           "last_30d": {
-            "impressions": 165538,
+            "impressions": 165539,
             "reach": 66594,
             "spend": 147.31,
             "cpm": 0.89
@@ -310,6 +310,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44827
+    "ig_followers_total": 44832
   }
 }
