@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-17T20:50:48.618Z",
+  "_ultima_actualizacion": "2026-11-17T21:15:28.059Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -180,17 +180,17 @@
     {
       "id": "a0c21f47-fc24-44e7-8eaa-9ec1f6d84811",
       "nombre": "CORINE",
-      "celular": "",
+      "celular": "094449398",
       "ci": "",
-      "direccion": "",
+      "direccion": "deauville 1728 apt 101",
       "articulos": "300 X 400 PET NUVAS FLW 24758 1700 SIN DESCUENTOS",
       "sena": "",
       "sena_devuelta": false,
-      "fecha_entrega": "",
-      "notas": "",
-      "estado": "Pago y No Llegó Mercadería",
+      "fecha_entrega": "2026-11-19",
+      "notas": "confirmar horario",
+      "estado": "Pago y Sin Entregar",
       "created_at": "2026-09-28T17:21:44.990423-03:00",
-      "updated_at": "2026-09-28T17:21:44.990423-03:00"
+      "updated_at": "2026-11-17T21:15:28.059Z"
     },
     {
       "id": "00803497-96c4-431d-98b4-b90c0e9df318",
