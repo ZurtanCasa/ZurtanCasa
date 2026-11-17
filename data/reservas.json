@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-16T20:51:39.982Z",
+  "_ultima_actualizacion": "2026-11-17T01:45:16.714Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1188,14 +1188,14 @@
       "celular": "",
       "ci": "",
       "direccion": "",
-      "articulos": "llevar patch 4x3",
+      "articulos": "patch 4x3 abajo de escalera",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-16",
-      "notas": "12:45 estar ahi",
-      "estado": "Ir a probar",
+      "notas": "pedir datos",
+      "estado": "Reservas Día del Club",
       "created_at": "2026-11-13T18:40:58.945Z",
-      "updated_at": "2026-11-13T18:40:58.945Z"
+      "updated_at": "2026-11-17T01:45:16.714Z"
     }
   ]
 }
