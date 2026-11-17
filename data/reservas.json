@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-17T20:50:31.440Z",
+  "_ultima_actualizacion": "2026-11-17T20:50:48.618Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -216,11 +216,11 @@
       "articulos": "FLW 24682 420 X 300\nVINEDOS DE LA TAHONA  I7 / ENTREGAR HASTA LAS 17.15HS",
       "sena": "",
       "sena_devuelta": false,
-      "fecha_entrega": "",
+      "fecha_entrega": "2026-11-23",
       "notas": "",
       "estado": "Pago y No Llegó Mercadería",
       "created_at": "2026-09-28T17:21:44.990423-03:00",
-      "updated_at": "2026-11-17T20:50:31.440Z"
+      "updated_at": "2026-11-17T20:50:48.618Z"
     },
     {
       "id": "d88007e0-15da-45a6-98c4-cc95fef5339e",
