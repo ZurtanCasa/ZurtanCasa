@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-18T19:51:43.865Z",
+  "_ultima_actualizacion": "2026-11-18T19:53:50.801Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1214,18 +1214,18 @@
     },
     {
       "id": "cca5b8c9-2e2f-4bbd-b4a0-d1ddcc81584e",
-      "nombre": "PILAR",
-      "celular": "",
+      "nombre": "PILAR VARANGOT",
+      "celular": "099594800",
       "ci": "",
       "direccion": "",
-      "articulos": "LLEVO ELLA A PORBAR DOS HERIZ 59380 / 1001",
+      "articulos": "QUEDO EN CONFIRMAR HERIZ 59729 379X317",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-19",
       "notas": "LLAMAR",
       "estado": "Reservas Día del Club",
       "created_at": "2026-11-17T20:41:22.009Z",
-      "updated_at": "2026-11-18T14:56:21.298Z"
+      "updated_at": "2026-11-18T19:53:50.801Z"
     },
     {
       "id": "d7a5d327-9541-41fd-bcf8-2ef754753156",
