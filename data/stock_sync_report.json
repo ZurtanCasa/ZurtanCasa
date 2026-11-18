@@ -1,28 +1,9 @@
 {
-  "_ultima_sincronizacion": "2026-11-17T20:23:20.381566-03:00",
+  "_ultima_sincronizacion": "2026-11-18T00:57:48.646665-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
-  "actualizados": [
-    {
-      "sku": "24758-300X400",
-      "producto": "Alfombra Polipropileno Light Brown",
-      "actual": 5,
-      "nuevo": 4
-    },
-    {
-      "sku": "24682C-200X300",
-      "producto": "Alfombra Polyester PP Canvas",
-      "actual": 8,
-      "nuevo": 7
-    },
-    {
-      "sku": "24682C-250X350",
-      "producto": "Alfombra Polyester PP Canvas",
-      "actual": 6,
-      "nuevo": 5
-    }
-  ],
-  "sin_cambios": 195,
+  "actualizados": [],
+  "sin_cambios": 198,
   "excluidos_manualmente": [
     {
       "sku": "245413",
