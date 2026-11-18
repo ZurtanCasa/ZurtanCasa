@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-18T20:35:07.376Z",
+  "_ultima_actualizacion": "2026-11-18T20:57:52.017Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1263,14 +1263,14 @@
       "celular": "094420900",
       "ci": "",
       "direccion": "",
-      "articulos": "PATCHWORK 59928 350X250 APROX",
+      "articulos": "PATCHWORK 59928 350X250 APROX\npet ivory 230x160",
       "sena": "SIN SEÑA",
       "sena_devuelta": true,
       "fecha_entrega": "",
       "notas": "LLAMAR PARA COBRAR",
       "estado": "Reservas Día del Club",
       "created_at": "2026-11-18T19:50:12.433Z",
-      "updated_at": "2026-11-18T19:50:12.433Z"
+      "updated_at": "2026-11-18T20:57:52.017Z"
     }
   ]
 }
