@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-18T14:56:21.298Z",
+  "_ultima_actualizacion": "2026-11-18T14:57:27.958Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -243,14 +243,14 @@
       "celular": "",
       "ci": "",
       "direccion": "",
-      "articulos": "PET NUEVA RIS FLW 24758 300 X 200 A SE LLEVO LA CANVAS 300 X 200 ESTA PAGA \n MAS UNA DE LANA DE 160 X 230 PARA VER MEDIDAS",
+      "articulos": "PET NUEVA RIS FLW 24758 300 X 200 A SE LLEVO LA CANVAS 300 X 200 ESTA PAGA , LA DEVUELVE Y LLEVA 300 X 200 ANTRA\nQUIERE 300 X 200 YUTE Y LANA CHARCOL",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-19",
       "notas": "",
       "estado": "Reservas Día del Club",
       "created_at": "2026-09-28T17:21:44.990423-03:00",
-      "updated_at": "2026-11-17T20:33:21.824Z"
+      "updated_at": "2026-11-18T14:57:27.958Z"
     },
     {
       "id": "a0158c93-9994-4d4a-9099-a6d1e8c30ef1",
