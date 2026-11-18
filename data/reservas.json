@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-18T20:29:54.131Z",
+  "_ultima_actualizacion": "2026-11-18T20:31:38.272Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -799,13 +799,13 @@
       "ci": "",
       "direccion": "",
       "articulos": "ZIGLER 407X278  2300.",
-      "sena": "",
+      "sena": "SIN SENA",
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-19",
-      "notas": "SE LA QUEDO. SIN SENA",
+      "notas": "DATOS AGREGADOS",
       "estado": "Reservas Día del Club",
       "created_at": "2026-10-22T19:06:16.923Z",
-      "updated_at": "2026-11-03T20:25:45.030Z"
+      "updated_at": "2026-11-18T20:31:38.272Z"
     },
     {
       "id": "2f409ba0-d982-4c18-a5e7-b6c8b98b3257",
