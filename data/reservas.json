@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-19T20:45:32.047Z",
+  "_ultima_actualizacion": "2026-11-19T20:46:28.540Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -614,18 +614,18 @@
     },
     {
       "id": "1151044a-4f1a-45da-a7f3-d94399de706a",
-      "nombre": "VALENTINA Y PIA",
+      "nombre": "VALENTINA PEREZ",
       "celular": "",
       "ci": "",
       "direccion": "",
-      "articulos": "REDONDA 59881\nPIA YUTE Y LANA GREEN 120 X 80",
+      "articulos": "REDONDA 59881",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-19",
       "notas": "",
       "estado": "Reservas Día del Club",
       "created_at": "2026-10-13T20:28:32.136Z",
-      "updated_at": "2026-10-26T19:18:49.003Z"
+      "updated_at": "2026-11-19T20:46:28.540Z"
     },
     {
       "id": "30d17cae-9fcf-4755-9820-3bb9ea1d17d7",
