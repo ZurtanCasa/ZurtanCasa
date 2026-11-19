@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { wsLogin, wsValidaDocumentoYTarjeta, ClubElPaisEnv } from "@/lib/club-el-pais";
+import { wsLogin, wsValidaDocumentoYTarjeta, wsTarjetaHabilitada, ClubElPaisEnv } from "@/lib/club-el-pais";
 import { createSaleAwarePercentageDiscount } from "@/lib/shopify-admin";
 import { porcentajeDescuentoVigenteUY } from "@/lib/club-el-pais-descuento";
 
@@ -27,8 +27,9 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const tarjeta = String(body.tarjeta || "").trim();
-    const ci = String(body.ci || "").trim();
+    // Sin espacios ni guiones (tarjeta) ni puntos/guiones/espacios (cédula): el Club los guarda solo con dígitos.
+    const tarjeta = String(body.tarjeta || "").replace(/[\s-]/g, "");
+    const ci = String(body.ci || "").replace(/[\s.-]/g, "");
 
     if (!tarjeta || !ci) {
       return json({ ok: false, mensaje: "Faltan datos: tarjeta y cédula son obligatorios." }, 400);
@@ -51,6 +52,16 @@ export async function POST(req: NextRequest) {
 
     const validacion = await wsValidaDocumentoYTarjeta(env, login.tokenId, usuario, tarjeta, "CI", ci);
     if (!validacion.socioHabilitado) {
+      let soloTarjeta = "sin dato";
+      try {
+        const h = await wsTarjetaHabilitada(env, login.tokenId, usuario, tarjeta);
+        soloTarjeta = `${h.socioHabilitado ? "HABILITADA" : "no habilitada"} (${h.mensaje})`;
+      } catch (e: any) {
+        soloTarjeta = `error ${e?.message ?? e}`;
+      }
+      console.warn(
+        `Club El País rechazó la validación [ambiente=${env}]: tarjeta ****${tarjeta.slice(-4)} (${tarjeta.length} dígitos), ci de ${ci.length} caracteres, mensaje="${validacion.mensaje}", solo tarjeta: ${soloTarjeta}`,
+      );
       return json({ ok: false, mensaje: validacion.mensaje || "La tarjeta no está habilitada o no coincide con la cédula ingresada." });
     }
 

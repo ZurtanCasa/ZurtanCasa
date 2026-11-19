@@ -48,6 +48,87 @@ const CREATE_APP_DISCOUNT_MUTATION = `
  * Crea un código de descuento de un solo uso que corre la función "club-el-pais-sin-sale":
  * aplica el porcentaje solo a las líneas que NO están en oferta (no acumulable con sale).
  */
+// Colección automática "sin precio tachado" (Club El País - productos sin oferta). Se usa cuando Shopify
+// no deja activar la función "club-el-pais-sin-sale" (exige plan Plus para apps custom): el descuento
+// normal se limita a esa colección, así los productos en oferta quedan afuera igual.
+const COLECCION_SIN_OFERTA_ID =
+  process.env.CLUB_EL_PAIS_COLECCION_SIN_OFERTA_ID || "gid://shopify/Collection/512776765625";
+
+const CREATE_BASIC_DISCOUNT_MUTATION = `
+  mutation discountCodeBasicCreate($basicCodeDiscount: DiscountCodeBasicInput!) {
+    discountCodeBasicCreate(basicCodeDiscount: $basicCodeDiscount) {
+      codeDiscountNode { id }
+      userErrors { field message }
+    }
+  }
+`;
+
+const SET_DISCOUNT_TARJETA_MUTATION = `
+  mutation setTarjeta($metafields: [MetafieldsSetInput!]!) {
+    metafieldsSet(metafields: $metafields) {
+      userErrors { field message }
+    }
+  }
+`;
+
+async function createBasicPercentageDiscountSinOferta(
+  params: { code: string; percentage: number; title: string; expiresInMinutes: number; tarjeta: string },
+  accessToken: string,
+): Promise<string> {
+  const startsAt = new Date();
+  const endsAt = new Date(startsAt.getTime() + params.expiresInMinutes * 60 * 1000);
+  const data = await shopifyGraphql<{
+    discountCodeBasicCreate: {
+      codeDiscountNode: { id: string } | null;
+      userErrors: { field: string[]; message: string }[];
+    };
+  }>(
+    CREATE_BASIC_DISCOUNT_MUTATION,
+    {
+      basicCodeDiscount: {
+        title: params.title,
+        code: params.code,
+        startsAt: startsAt.toISOString(),
+        endsAt: endsAt.toISOString(),
+        usageLimit: 1,
+        appliesOncePerCustomer: true,
+        customerSelection: { all: true },
+        combinesWith: { productDiscounts: false, orderDiscounts: false, shippingDiscounts: false },
+        customerGets: {
+          value: { percentage: params.percentage / 100 },
+          items: { collections: { add: [COLECCION_SIN_OFERTA_ID] } },
+        },
+      },
+    },
+    accessToken,
+  );
+  const r = data.discountCodeBasicCreate;
+  if (r.userErrors.length > 0) {
+    throw new Error(`No se pudo crear el descuento (básico): ${r.userErrors.map((e) => e.message).join(", ")}`);
+  }
+  if (!r.codeDiscountNode) throw new Error("Shopify no devolvió el descuento básico creado");
+
+  const m = await shopifyGraphql<{ metafieldsSet: { userErrors: { message: string }[] } }>(
+    SET_DISCOUNT_TARJETA_MUTATION,
+    {
+      metafields: [
+        {
+          ownerId: r.codeDiscountNode.id,
+          namespace: "club_el_pais",
+          key: "tarjeta_socio",
+          type: "single_line_text_field",
+          value: params.tarjeta,
+        },
+      ],
+    },
+    accessToken,
+  );
+  if (m.metafieldsSet.userErrors.length > 0) {
+    throw new Error(`No se pudo guardar la tarjeta en el descuento: ${m.metafieldsSet.userErrors.map((e) => e.message).join(", ")}`);
+  }
+  return params.code;
+}
+
 export async function createSaleAwarePercentageDiscount(params: {
   code: string;
   percentage: number;
@@ -60,7 +141,9 @@ export async function createSaleAwarePercentageDiscount(params: {
   const accessToken = process.env.SHOPIFY_CLUBELPAIS_ACCESS_TOKEN;
   if (!accessToken) throw new Error("Falta SHOPIFY_CLUBELPAIS_ACCESS_TOKEN");
 
-  const data = await shopifyGraphql<{
+  let data;
+  try {
+    data = await shopifyGraphql<{
     discountCodeAppCreate: {
       codeAppDiscount: { discountId: string } | null;
       userErrors: { field: string[]; message: string }[];
@@ -102,8 +185,19 @@ export async function createSaleAwarePercentageDiscount(params: {
     },
     accessToken,
   );
+  } catch (err: any) {
+    if (String(err?.message ?? "").includes("Plus plan")) {
+      console.warn("Función de descuento no disponible en este plan; usando descuento básico sobre la colección sin oferta.");
+      return createBasicPercentageDiscountSinOferta(params, accessToken);
+    }
+    throw err;
+  }
 
   const result = data.discountCodeAppCreate;
+  if (result.userErrors.some((e) => e.message.includes("Plus plan"))) {
+    console.warn("Función de descuento no disponible en este plan; usando descuento básico sobre la colección sin oferta.");
+    return createBasicPercentageDiscountSinOferta(params, accessToken);
+  }
   if (result.userErrors.length > 0) {
     throw new Error(`No se pudo crear el descuento: ${result.userErrors.map((e) => e.message).join(", ")}`);
   }
