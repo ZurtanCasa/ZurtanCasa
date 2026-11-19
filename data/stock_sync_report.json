@@ -1,88 +1,16 @@
 {
-  "_ultima_sincronizacion": "2026-11-19T16:16:28.821586-03:00",
+  "_ultima_sincronizacion": "2026-11-19T19:53:48.446083-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
   "actualizados": [
     {
-      "sku": "245408",
-      "producto": "Alfombra PET Reciclado Ivory",
-      "actual": 9,
-      "nuevo": 8
-    },
-    {
-      "sku": "24682G-200X300",
-      "producto": "Alfombra Polyester PP Gold",
-      "actual": 8,
-      "nuevo": 7
-    },
-    {
-      "sku": "789405",
-      "producto": "Alfombra Pura Lana Latte",
-      "actual": 1,
-      "nuevo": 2
-    },
-    {
-      "sku": "1346B-250350",
-      "producto": "Alfombra Pura Lana Vison",
-      "actual": 6,
-      "nuevo": 5
-    },
-    {
-      "sku": "HO 52730-200X400",
-      "producto": "Alfombra Yute y Lana Beige",
-      "actual": 6,
-      "nuevo": 5
-    },
-    {
-      "sku": "HO 51030-200X300",
-      "producto": "Alfombra Yute y Lana Charcoal",
-      "actual": 10,
-      "nuevo": 9
-    },
-    {
-      "sku": "HO 48548-250X350",
+      "sku": "HO 48548-80X120",
       "producto": "Alfombra Yute y Lana Green",
-      "actual": 10,
-      "nuevo": 8
-    },
-    {
-      "sku": "HO10162G-250*350",
-      "producto": "Alfombra Yute y Lana Grey",
-      "actual": 7,
-      "nuevo": 6
-    },
-    {
-      "sku": "HO 53164-250X350",
-      "producto": "Alfombra Yute y Lana Ivory",
-      "actual": 11,
-      "nuevo": 10
-    },
-    {
-      "sku": "HO10162-300*400",
-      "producto": "Alfombra Yute y Lana Natural",
-      "actual": 6,
-      "nuevo": 5
-    },
-    {
-      "sku": "GB032",
-      "producto": "Tabla de Madera de Olivo con Mango",
-      "actual": 15,
-      "nuevo": 14
-    },
-    {
-      "sku": "GB026",
-      "producto": "Tabla de Madera de Olivo Irregular",
-      "actual": 15,
-      "nuevo": 13
-    },
-    {
-      "sku": "GB028",
-      "producto": "Tabla de Madera de Olivo Irregular",
-      "actual": 15,
-      "nuevo": 14
+      "actual": 13,
+      "nuevo": 12
     }
   ],
-  "sin_cambios": 185,
+  "sin_cambios": 197,
   "excluidos_manualmente": [
     {
       "sku": "245413",
