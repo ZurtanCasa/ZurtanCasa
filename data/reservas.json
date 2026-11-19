@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-19T20:27:49.198Z",
+  "_ultima_actualizacion": "2026-11-19T20:32:18.961Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -685,7 +685,7 @@
       "notas": "llamar",
       "estado": "Reservas Día del Club",
       "created_at": "2026-10-15T20:07:07.914Z",
-      "updated_at": "2026-11-05T16:14:06.164Z"
+      "updated_at": "2026-11-19T20:32:18.961Z"
     },
     {
       "id": "c01c89cf-69ea-4d84-9071-64c12dbe5e16",
