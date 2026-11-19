@@ -33,7 +33,14 @@ export async function POST(req: NextRequest) {
       /^ELPAIS-/i.test(d.code),
     )?.code;
 
-    if (!discountCode) {
+    // Tarjeta guardada en el carrito al validarla (atributo del pedido). Sirve cuando el código de
+    // descuento no llegó a aplicarse (por ejemplo, carrito solo con productos en oferta): el consumo
+    // igual se informa al Club.
+    const tarjetaDelPedido: string | undefined = (order.note_attributes || []).find(
+      (a: { name: string }) => a.name === "club_el_pais_tarjeta",
+    )?.value;
+
+    if (!discountCode && !tarjetaDelPedido) {
       // Orden sin descuento de Club El País, no hay nada que reportar.
       return new NextResponse("ok", { status: 200 });
     }
@@ -44,7 +51,9 @@ export async function POST(req: NextRequest) {
       return new NextResponse("ya reportado", { status: 200 });
     }
 
-    const tarjeta = await getTarjetaForDiscountCode(discountCode);
+    const tarjeta = discountCode
+      ? ((await getTarjetaForDiscountCode(discountCode)) || tarjetaDelPedido)
+      : tarjetaDelPedido;
     if (!tarjeta) {
       console.error(`No se encontró la tarjeta asociada al código ${discountCode} (orden ${order.name})`);
       return new NextResponse("sin tarjeta asociada", { status: 200 });
