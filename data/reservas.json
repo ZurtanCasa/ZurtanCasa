@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-19T16:24:50.448Z",
+  "_ultima_actualizacion": "2026-11-19T16:26:12.993Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -803,9 +803,9 @@
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-19",
       "notas": "DATOS AGREGADOS",
-      "estado": "Reservas Día del Club",
+      "estado": "Pago y Entregado",
       "created_at": "2026-10-22T19:06:16.923Z",
-      "updated_at": "2026-11-18T20:31:38.272Z"
+      "updated_at": "2026-11-19T16:26:12.993Z"
     },
     {
       "id": "2f409ba0-d982-4c18-a5e7-b6c8b98b3257",
