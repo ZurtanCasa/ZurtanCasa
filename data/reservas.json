@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-20T14:14:41.338Z",
+  "_ultima_actualizacion": "2026-11-20T14:51:20.422Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -998,9 +998,9 @@
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-19",
       "notas": "CON DESCIENTO LLAMARLA",
-      "estado": "Reservas Día del Club",
+      "estado": "Pago y Entregado",
       "created_at": "2026-11-04T18:34:24.455Z",
-      "updated_at": "2026-11-04T18:39:02.610Z"
+      "updated_at": "2026-11-20T14:51:20.422Z"
     },
     {
       "id": "0214d83b-b35e-4871-b685-c7229aa73868",
