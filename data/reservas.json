@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-20T14:59:17.162Z",
+  "_ultima_actualizacion": "2026-11-20T15:12:57.549Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -873,14 +873,14 @@
       "celular": "099114811",
       "ci": "",
       "direccion": "",
-      "articulos": "RESERVA DE YUTE Y LANA NUEVA BEIGE \n300 X 200\nPOR EL PAGO LLAMAR A PILAR LA MAMA",
+      "articulos": "YUTE Y LANA NUEVA BEIGE \n300 X 200",
       "sena": "200",
-      "sena_devuelta": false,
+      "sena_devuelta": true,
       "fecha_entrega": "2026-11-19",
-      "notas": "LLAMAR A PILAR LA MAMA",
-      "estado": "Reservas Día del Club",
+      "notas": "",
+      "estado": "Pago y Sin Entregar",
       "created_at": "2026-10-26T18:58:26.854Z",
-      "updated_at": "2026-11-17T20:42:22.455Z"
+      "updated_at": "2026-11-20T15:12:57.549Z"
     },
     {
       "id": "debbd9f5-459c-4193-a452-2074c37f9131",
