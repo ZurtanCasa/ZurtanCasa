@@ -1,15 +1,15 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-19T19:53:48.593056-03:00",
+  "_ultima_actualizacion": "2026-11-20T00:48:05.211356-03:00",
   "configuracion": {
     "tax_included": true,
     "moneda": "USD"
   },
   "mes_actual": {
-    "orders_count": 1,
-    "revenue_bruto": 1320.0,
-    "revenue_neto_sin_iva": 1081.97,
-    "aov": 1320.0,
+    "orders_count": 2,
+    "revenue_bruto": 1370.0,
+    "revenue_neto_sin_iva": 1122.95,
+    "aov": 685.0,
     "refunds": 0
   },
   "historico_mensual": [
@@ -23,9 +23,9 @@
     {
       "year": 2026,
       "month": 11,
-      "revenue_bruto": 1320.0,
-      "orders_count": 1,
-      "total_tax": 246.83
+      "revenue_bruto": 1370.0,
+      "orders_count": 2,
+      "total_tax": 256.18
     }
   ]
 }
