@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-20T21:18:45.748Z",
+  "_ultima_actualizacion": "2026-11-20T21:59:08.922Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1406,6 +1406,21 @@
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-11-20T16:34:58.424Z",
       "updated_at": "2026-11-20T16:34:58.424Z"
+    },
+    {
+      "id": "bf9cf40d-f37c-492e-b5ce-74a299c7369c",
+      "nombre": "SOFIA GONZALEZ",
+      "celular": "091710426",
+      "ci": "",
+      "direccion": "",
+      "articulos": "PET IVORY 350 X 250",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "",
+      "notas": "",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-11-20T21:59:08.922Z",
+      "updated_at": "2026-11-20T21:59:08.922Z"
     }
   ]
 }
