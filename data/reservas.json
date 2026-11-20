@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-20T22:36:27.113Z",
+  "_ultima_actualizacion": "2026-11-20T22:37:40.008Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1413,14 +1413,14 @@
       "celular": "091710426",
       "ci": "",
       "direccion": "",
-      "articulos": "PET IVORY 350 X 250",
+      "articulos": "PET IVORY 350 X 250\nPET ANTH 300 X 200",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "",
       "notas": "",
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-11-20T21:59:08.922Z",
-      "updated_at": "2026-11-20T21:59:08.922Z"
+      "updated_at": "2026-11-20T22:37:40.008Z"
     },
     {
       "id": "05ead119-6afb-49e3-aae6-7df80651638b",
