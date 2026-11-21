@@ -1,22 +1,16 @@
 {
-  "_ultima_sincronizacion": "2026-11-21T00:37:02.530503-03:00",
+  "_ultima_sincronizacion": "2026-11-21T14:51:32.515108-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
   "actualizados": [
     {
-      "sku": "GB027",
-      "producto": "Tabla de Madera de Olivo Irregular",
-      "actual": 15,
-      "nuevo": 14
-    },
-    {
-      "sku": "GB028",
-      "producto": "Tabla de Madera de Olivo Irregular",
-      "actual": 14,
-      "nuevo": 13
+      "sku": "1325-250350",
+      "producto": "Alfombra Pura Lana Natural",
+      "actual": 6,
+      "nuevo": 5
     }
   ],
-  "sin_cambios": 196,
+  "sin_cambios": 197,
   "excluidos_manualmente": [
     {
       "sku": "245413",
