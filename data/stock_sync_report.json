@@ -1,52 +1,22 @@
 {
-  "_ultima_sincronizacion": "2026-11-20T15:56:20.316062-03:00",
+  "_ultima_sincronizacion": "2026-11-21T00:37:02.530503-03:00",
   "dry_run": false,
   "location": "Zurtan Casa",
   "actualizados": [
     {
-      "sku": "245404",
-      "producto": "Alfombra PET Reciclado Bark",
-      "actual": 8,
-      "nuevo": 7
-    },
-    {
-      "sku": "245414",
-      "producto": "Alfombra PET Reciclado Bark",
-      "actual": 2,
-      "nuevo": 1
-    },
-    {
-      "sku": "1325-80120",
-      "producto": "Alfombra Pura Lana Natural",
+      "sku": "GB027",
+      "producto": "Tabla de Madera de Olivo Irregular",
       "actual": 15,
+      "nuevo": 14
+    },
+    {
+      "sku": "GB028",
+      "producto": "Tabla de Madera de Olivo Irregular",
+      "actual": 14,
       "nuevo": 13
-    },
-    {
-      "sku": "HO 52730-200X300",
-      "producto": "Alfombra Yute y Lana Beige",
-      "actual": 10,
-      "nuevo": 8
-    },
-    {
-      "sku": "HO 48548-70X200",
-      "producto": "Alfombra Yute y Lana Green",
-      "actual": 9,
-      "nuevo": 7
-    },
-    {
-      "sku": "HO10162G-80*120",
-      "producto": "Alfombra Yute y Lana Grey",
-      "actual": 9,
-      "nuevo": 8
-    },
-    {
-      "sku": "GN500",
-      "producto": "Tabla de Madera de Olivo Rectangular End-grain",
-      "actual": 10,
-      "nuevo": 9
     }
   ],
-  "sin_cambios": 191,
+  "sin_cambios": 196,
   "excluidos_manualmente": [
     {
       "sku": "245413",
