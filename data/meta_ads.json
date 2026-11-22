@@ -1,8 +1,16 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-21T23:44:15.165569-03:00",
+  "_ultima_actualizacion": "2026-11-22T15:09:41.391222-03:00",
   "periodos": {
     "today": {
+      "spend": 0,
+      "revenue_reportado": 0,
+      "roas": 0,
+      "conversiones": 0,
+      "impressions": 0,
+      "clicks": 0
+    },
+    "yesterday": {
       "spend": 0.0,
       "revenue_reportado": 0.0,
       "roas": 0,
@@ -10,29 +18,21 @@
       "impressions": 0,
       "clicks": 0
     },
-    "yesterday": {
-      "spend": 3.69,
-      "revenue_reportado": 0.0,
-      "roas": 0.0,
-      "conversiones": 0,
-      "impressions": 6304,
-      "clicks": 254
-    },
     "last_7d": {
-      "spend": 44.88,
+      "spend": 37.78,
       "revenue_reportado": 1320.0,
-      "roas": 29.41,
+      "roas": 34.94,
       "conversiones": 1,
-      "impressions": 76159,
-      "clicks": 2868
+      "impressions": 64765,
+      "clicks": 2446
     },
     "last_30d": {
-      "spend": 284.67,
+      "spend": 279.44,
       "revenue_reportado": 1320.0,
-      "roas": 4.64,
+      "roas": 4.72,
       "conversiones": 1,
-      "impressions": 287065,
-      "clicks": 13450
+      "impressions": 282980,
+      "clicks": 12936
     }
   },
   "campanas": [
@@ -62,12 +62,12 @@
       "id": "120247964557320436",
       "nombre": "Octubre Ad catalogo",
       "tipo": "performance",
-      "spend": 45.28,
+      "spend": 40.05,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 32081,
-      "clicks": 3808
+      "impressions": 27996,
+      "clicks": 3294
     },
     {
       "id": "120248473641720436",
@@ -203,41 +203,41 @@
         "clicks": 0,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
-        "new_followers_fb": 2,
-        "new_followers_ig": 0
-      },
-      "yesterday": {
-        "impressions": 6304,
-        "reach": 4096,
-        "spend": 3.69,
-        "cpm": 0.59,
-        "clicks": 254,
-        "profile_visits_fb": 0,
-        "profile_visits_ig": 0,
         "new_followers_fb": 0,
         "new_followers_ig": 0
       },
-      "last_7d": {
-        "impressions": 76159,
-        "reach": 19659,
-        "spend": 44.88,
-        "cpm": 0.59,
-        "clicks": 2868,
+      "yesterday": {
+        "impressions": 0,
+        "reach": 0,
+        "spend": 0,
+        "cpm": 0,
+        "clicks": 0,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 1809,
+        "profile_visits_ig": 0,
+        "new_followers_fb": 2,
+        "new_followers_ig": 0
+      },
+      "last_7d": {
+        "impressions": 64765,
+        "reach": 18323,
+        "spend": 37.78,
+        "cpm": 0.58,
+        "clicks": 2446,
+        "profile_visits_fb": 0,
+        "profile_visits_ig": 1231,
         "new_followers_fb": 3,
-        "new_followers_ig": 124
+        "new_followers_ig": 113
       },
       "last_30d": {
-        "impressions": 287065,
-        "reach": 96202,
-        "spend": 284.67,
+        "impressions": 282980,
+        "reach": 95452,
+        "spend": 279.44,
         "cpm": 0.99,
-        "clicks": 13450,
+        "clicks": 12936,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 12197,
-        "new_followers_fb": 77,
-        "new_followers_ig": 1126
+        "profile_visits_ig": 12023,
+        "new_followers_fb": 75,
+        "new_followers_ig": 1079
       }
     },
     "por_anuncio": [
@@ -245,17 +245,11 @@
         "id": "120248395191940436",
         "nombre": "Promo nov catalogo",
         "periodos": {
-          "yesterday": {
-            "impressions": 6304,
-            "reach": 4096,
-            "spend": 3.69,
-            "cpm": 0.59
-          },
           "last_7d": {
-            "impressions": 76159,
-            "reach": 19659,
-            "spend": 44.88,
-            "cpm": 0.59
+            "impressions": 64765,
+            "reach": 18323,
+            "spend": 37.78,
+            "cpm": 0.58
           },
           "last_30d": {
             "impressions": 218131,
@@ -270,10 +264,10 @@
         "nombre": "Setup fotos",
         "periodos": {
           "last_30d": {
-            "impressions": 32081,
-            "reach": 8295,
-            "spend": 45.28,
-            "cpm": 1.41
+            "impressions": 27996,
+            "reach": 7451,
+            "spend": 40.05,
+            "cpm": 1.43
           }
         }
       },
@@ -304,6 +298,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44887
+    "ig_followers_total": 44893
   }
 }
