@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-21T18:25:32.449375-03:00",
+  "_ultima_actualizacion": "2026-11-21T23:44:15.165569-03:00",
   "periodos": {
     "today": {
       "spend": 0.0,
@@ -304,6 +304,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44886
+    "ig_followers_total": 44887
   }
 }
