@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-23T14:26:52.883Z",
+  "_ultima_actualizacion": "2026-11-23T14:36:35.460Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1466,6 +1466,21 @@
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-11-21T15:16:04.730Z",
       "updated_at": "2026-11-23T14:26:52.883Z"
+    },
+    {
+      "id": "514254a8-f1a8-4242-a7f9-ab567c810fa5",
+      "nombre": "MARIA EMILIA SAPELLI",
+      "celular": "099249487",
+      "ci": "",
+      "direccion": "",
+      "articulos": "TABLA DE MADERA DE OLIVO RECTANGULAR END. GRAIN 50X",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-11-20",
+      "notas": "PENDIENTE DE ENTREGA, PARA REGALO",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-11-23T14:36:35.460Z",
+      "updated_at": "2026-11-23T14:36:35.460Z"
     }
   ]
 }
