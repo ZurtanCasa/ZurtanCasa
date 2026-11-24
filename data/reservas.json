@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-24T19:21:11.290Z",
+  "_ultima_actualizacion": "2026-11-24T19:26:03.894Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -175,7 +175,7 @@
       "notas": "",
       "estado": "Alfombras a Medida",
       "created_at": "2026-09-28T17:18:37.871104-03:00",
-      "updated_at": "2026-09-28T17:18:37.871104-03:00"
+      "updated_at": "2026-11-24T19:26:03.894Z"
     },
     {
       "id": "a0c21f47-fc24-44e7-8eaa-9ec1f6d84811",
