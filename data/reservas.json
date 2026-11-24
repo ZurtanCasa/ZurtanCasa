@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-24T00:47:16.758Z",
+  "_ultima_actualizacion": "2026-11-24T14:38:00.784Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1496,6 +1496,21 @@
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-11-23T17:34:31.324Z",
       "updated_at": "2026-11-23T17:34:31.324Z"
+    },
+    {
+      "id": "4c3ea04b-bac0-4910-aa6c-923dcb0f2c51",
+      "nombre": "Luis",
+      "celular": "",
+      "ci": "",
+      "direccion": "",
+      "articulos": "Retiro cuatro alfombras de las cuales regreso dos codigos 60047 y 58018.\nFacturar, abona por transferencia.",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-11-23",
+      "notas": "Ver con Nicolas.",
+      "estado": "Entregado y Sin Pagar",
+      "created_at": "2026-11-24T14:38:00.784Z",
+      "updated_at": "2026-11-24T14:38:00.784Z"
     }
   ]
 }
