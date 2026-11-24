@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-24T15:41:59.404Z",
+  "_ultima_actualizacion": "2026-11-24T17:41:30.598Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1511,6 +1511,21 @@
       "estado": "Entregado y Sin Pagar",
       "created_at": "2026-11-24T14:38:00.784Z",
       "updated_at": "2026-11-24T14:38:00.784Z"
+    },
+    {
+      "id": "00960c51-8789-4d22-9625-0ac1f3e304cf",
+      "nombre": "VALERIA BAGATTINI",
+      "celular": "099681711",
+      "ci": "17787465",
+      "direccion": "RAMBLA ARMENIA 3873 AP. 501 EDIFICIO ALFA TOWR",
+      "articulos": "HERIZ CODIGO 59695",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-11-25",
+      "notas": "COORDINAR, HAY QUE CORRER MUEBLES",
+      "estado": "Pago y Sin Entregar",
+      "created_at": "2026-11-24T17:41:30.598Z",
+      "updated_at": "2026-11-24T17:41:30.598Z"
     }
   ]
 }
