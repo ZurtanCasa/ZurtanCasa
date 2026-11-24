@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-24T15:34:24.178Z",
+  "_ultima_actualizacion": "2026-11-24T15:37:19.995Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1281,11 +1281,11 @@
       "articulos": "YUTE Y LANA NUEVAS 250 . 350 GREEN",
       "sena": "",
       "sena_devuelta": false,
-      "fecha_entrega": "2026-11-30",
-      "notas": "COORDINAR ENTREGA DIA LUNES.",
+      "fecha_entrega": "2026-11-24",
+      "notas": "en la tarde",
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-11-19T15:32:29.964Z",
-      "updated_at": "2026-11-19T15:32:29.964Z"
+      "updated_at": "2026-11-24T15:37:19.995Z"
     },
     {
       "id": "67024645-2db4-4c6c-a1b9-c70bb31bc1aa",
