@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-24T15:22:23.402Z",
+  "_ultima_actualizacion": "2026-11-24T15:25:35.802Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1176,11 +1176,11 @@
       "articulos": "patch 4x3 abajo de escalera",
       "sena": "SIN SEÑA",
       "sena_devuelta": false,
-      "fecha_entrega": "2026-11-23",
-      "notas": "",
+      "fecha_entrega": "2026-11-24",
+      "notas": "En la tarde",
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-11-13T18:40:58.945Z",
-      "updated_at": "2026-11-19T15:24:10.931Z"
+      "updated_at": "2026-11-24T15:25:35.802Z"
     },
     {
       "id": "99f67b71-c17b-4be8-a5d9-0e678fd0e5af",
