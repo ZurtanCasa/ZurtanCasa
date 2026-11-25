@@ -41,6 +41,7 @@ function normalizar(body: any) {
     sena: (body.sena ?? "").toString().trim(),
     sena_devuelta: body.sena_devuelta === true,
     fecha_entrega: (body.fecha_entrega ?? "").toString().trim(),
+    horario: (body.horario ?? "").toString().trim(),
     notas: (body.notas ?? "").toString().trim(),
     estado,
   };

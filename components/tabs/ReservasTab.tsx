@@ -32,13 +32,14 @@ interface Reserva {
   sena: string;
   sena_devuelta: boolean;
   fecha_entrega: string;
+  horario: string;
   notas: string;
   estado: string;
   created_at: string;
   updated_at: string;
 }
 
-const VACIA = { nombre: "", celular: "", ci: "", direccion: "", articulos: "", sena: "", sena_devuelta: false, fecha_entrega: "", notas: "", estado: "S/F" };
+const VACIA = { nombre: "", celular: "", ci: "", direccion: "", articulos: "", sena: "", sena_devuelta: false, fecha_entrega: "", horario: "", notas: "", estado: "S/F" };
 
 function fmtFecha(f?: string) {
   if (!f) return "";
@@ -151,7 +152,7 @@ export default function ReservasTab() {
 
   function abrirNueva() { setForm(VACIA); setEditId(null); setFormOpen(true); }
   function abrirEditar(r: Reserva) {
-    setForm({ nombre: r.nombre, celular: r.celular, ci: r.ci, direccion: r.direccion, articulos: r.articulos, sena: r.sena, sena_devuelta: !!r.sena_devuelta, fecha_entrega: r.fecha_entrega || "", notas: r.notas, estado: r.estado });
+    setForm({ nombre: r.nombre, celular: r.celular, ci: r.ci, direccion: r.direccion, articulos: r.articulos, sena: r.sena, sena_devuelta: !!r.sena_devuelta, fecha_entrega: r.fecha_entrega || "", horario: r.horario || "", notas: r.notas, estado: r.estado });
     setEditId(r.id);
     setFormOpen(true);
   }
@@ -282,7 +283,11 @@ export default function ReservasTab() {
               <label className="reserva-field"><span>Fecha de entrega (opcional)</span>
                 <input type="date" value={form.fecha_entrega}
                   onChange={(e) => setForm({ ...form, fecha_entrega: e.target.value })}
-                  onClick={(e) => (e.currentTarget as any).showPicker?.()} /></label>
+                  onClick={(e) => (e.currentTarget as any).showPicker?.()} />
+                <input value={form.horario}
+                  onChange={(e) => setForm({ ...form, horario: e.target.value })}
+                  placeholder="Horario (texto libre, ej: En la tarde)"
+                  style={{ marginTop: 6 }} /></label>
             </div>
 
             <label className="reserva-field"><span>Artículos</span>
@@ -330,7 +335,8 @@ function ReservaCard({ r, onDragStart, onDragEnd, onEstado, onEdit, onDelete }: 
       {r.articulos && <div className="reserva-card-line reserva-card-arts">🛋️ {r.articulos}</div>}
       {r.sena && <div className="reserva-card-line reserva-card-sena">💵 Seña: {r.sena}</div>}
       {r.sena_devuelta && <div className="reserva-card-line reserva-card-devuelta">↩️ Seña devuelta</div>}
-      {r.fecha_entrega && <div className="reserva-card-line reserva-card-fecha">📅 Entrega: {fmtFecha(r.fecha_entrega)}</div>}
+      {r.fecha_entrega && <div className="reserva-card-line reserva-card-fecha">📅 Entrega: {fmtFecha(r.fecha_entrega)}{r.horario ? ` · ${r.horario}` : ""}</div>}
+      {!r.fecha_entrega && r.horario && <div className="reserva-card-line reserva-card-fecha">🕐 {r.horario}</div>}
       <select className="reserva-card-estado" value={r.estado} onChange={(e) => onEstado(e.target.value)}>
         {TODOS.map((e) => <option key={e} value={e}>{e}{e === ESTADO_ARCHIVADO ? " (archivar)" : ""}</option>)}
       </select>
