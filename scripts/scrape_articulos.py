@@ -524,6 +524,33 @@ def main():
             **agg,
         }
 
+        # --- Guardia anti "filtro pegado" / reporte parcial ---
+        # Zeta (GeneXus) recuerda el último filtro de categoría usado. Si quedó
+        # pegado uno (p.ej. "Olive Wood" tras un informe manual), el XLS vuelve
+        # con una sola categoría y sobrescribiría los datos buenos con casi nada.
+        # Si el nuevo pull colapsa frente al archivo anterior, lo conservamos.
+        nuevas_cats = len(agg["top_categorias"])
+        nuevo_rev = sum(c["revenue_usd"] for c in agg["top_categorias"])
+        try:
+            with open(DATA_PATH) as f:
+                prev = json.load(f)
+            prev_cats = len(prev.get("top_categorias", []))
+            prev_rev = sum(c.get("revenue_usd", 0) for c in prev.get("top_categorias", []))
+        except Exception:
+            prev_cats, prev_rev = 0, 0.0
+
+        sospechoso = prev_cats >= 3 and (
+            nuevas_cats <= 1 or (prev_rev > 0 and nuevo_rev < prev_rev * 0.3)
+        )
+        if sospechoso:
+            print(
+                f"⚠ GUARDIA: el reporte volvió con {nuevas_cats} categoría(s) / USD {nuevo_rev:,.0f} "
+                f"vs {prev_cats} / USD {prev_rev:,.0f} previas. Parece un filtro de categoría pegado "
+                f"en Zeta; NO se sobrescribe articulos.json (se conserva lo anterior).",
+                file=sys.stderr,
+            )
+            return
+
         with open(DATA_PATH, "w") as f:
             json.dump(output, f, indent=2, ensure_ascii=False)
 
