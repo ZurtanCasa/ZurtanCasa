@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-25T02:16:33.249001-03:00",
+  "_ultima_actualizacion": "2026-11-25T17:28:31.509479-03:00",
   "periodos": {
     "today": {
-      "spend": 0,
-      "revenue_reportado": 0,
-      "roas": 0,
+      "spend": 0.04,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
       "conversiones": 0,
-      "impressions": 0,
-      "clicks": 0
+      "impressions": 8,
+      "clicks": 1
     },
     "yesterday": {
       "spend": 0,
@@ -185,22 +185,22 @@
     {
       "year": 2026,
       "month": 11,
-      "spend": 210.34,
+      "spend": 210.38,
       "revenue_reportado": 1320.0,
-      "roas": 6.28,
+      "roas": 6.27,
       "conversiones": 1,
-      "impressions": 238635,
-      "clicks": 8690
+      "impressions": 238643,
+      "clicks": 8691
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 0,
-        "reach": 0,
-        "spend": 0,
-        "cpm": 0,
-        "clicks": 0,
+        "impressions": 8,
+        "reach": 3,
+        "spend": 0.04,
+        "cpm": 5.0,
+        "clicks": 1,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 0,
@@ -224,9 +224,9 @@
         "cpm": 0.59,
         "clicks": 1137,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 665,
+        "profile_visits_ig": 672,
         "new_followers_fb": 3,
-        "new_followers_ig": 46
+        "new_followers_ig": 89
       },
       "last_30d": {
         "impressions": 269567,
@@ -235,12 +235,24 @@
         "cpm": 0.98,
         "clicks": 11534,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 11532,
+        "profile_visits_ig": 11539,
         "new_followers_fb": 64,
-        "new_followers_ig": 905
+        "new_followers_ig": 948
       }
     },
     "por_anuncio": [
+      {
+        "id": "120247886882020436",
+        "nombre": "Coleccion olivos",
+        "periodos": {
+          "today": {
+            "impressions": 8,
+            "reach": 3,
+            "spend": 0.04,
+            "cpm": 5.0
+          }
+        }
+      },
       {
         "id": "120248395191940436",
         "nombre": "Promo nov catalogo",
@@ -298,6 +310,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44923
+    "ig_followers_total": 44940
   }
 }
