@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-25T18:20:42.826Z",
+  "_ultima_actualizacion": "2026-11-25T19:42:34.271Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1541,6 +1541,22 @@
       "estado": "Reservas",
       "created_at": "2026-11-25T18:20:42.826Z",
       "updated_at": "2026-11-25T18:20:42.826Z"
+    },
+    {
+      "id": "4047e5dc-9851-40dc-b2db-7fbdcac5ab75",
+      "nombre": "Graciela Di Russo",
+      "celular": "095283916",
+      "ci": "11368271",
+      "direccion": "Punta del Este",
+      "articulos": "Es un cambio de numero 1235 a dos de pura lana chicas y una patchw. 2 x 250",
+      "sena": "",
+      "sena_devuelta": false,
+      "fecha_entrega": "2026-11-25",
+      "horario": "",
+      "notas": "esperar confirmacion y realizar NCto por la de ingreso y facturar la salida.",
+      "estado": "Cliente llevó a probar",
+      "created_at": "2026-11-25T19:42:34.271Z",
+      "updated_at": "2026-11-25T19:42:34.271Z"
     }
   ]
 }
