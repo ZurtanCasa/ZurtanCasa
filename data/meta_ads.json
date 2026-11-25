@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-24T21:28:15.935929-03:00",
+  "_ultima_actualizacion": "2026-11-25T02:16:33.249001-03:00",
   "periodos": {
     "today": {
       "spend": 0,
@@ -19,20 +19,20 @@
       "clicks": 0
     },
     "last_7d": {
-      "spend": 23.73,
+      "spend": 17.0,
       "revenue_reportado": 1320.0,
-      "roas": 55.63,
+      "roas": 77.65,
       "conversiones": 1,
-      "impressions": 40613,
-      "clicks": 1569
+      "impressions": 28698,
+      "clicks": 1137
     },
     "last_30d": {
-      "spend": 269.19,
+      "spend": 263.95,
       "revenue_reportado": 1320.0,
-      "roas": 4.9,
+      "roas": 5.0,
       "conversiones": 1,
-      "impressions": 274164,
-      "clicks": 12011
+      "impressions": 269567,
+      "clicks": 11534
     }
   },
   "campanas": [
@@ -62,12 +62,12 @@
       "id": "120247964557320436",
       "nombre": "Octubre Ad catalogo",
       "tipo": "performance",
-      "spend": 29.8,
+      "spend": 24.56,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 19180,
-      "clicks": 2369
+      "impressions": 14583,
+      "clicks": 1892
     },
     {
       "id": "120248473641720436",
@@ -203,7 +203,7 @@
         "clicks": 0,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
-        "new_followers_fb": 1,
+        "new_followers_fb": 0,
         "new_followers_ig": 0
       },
       "yesterday": {
@@ -214,30 +214,30 @@
         "clicks": 0,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
-        "new_followers_fb": 0,
+        "new_followers_fb": 1,
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 40613,
-        "reach": 13340,
-        "spend": 23.73,
-        "cpm": 0.58,
-        "clicks": 1569,
+        "impressions": 28698,
+        "reach": 11094,
+        "spend": 17.0,
+        "cpm": 0.59,
+        "clicks": 1137,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 786,
-        "new_followers_fb": 4,
-        "new_followers_ig": 73
+        "profile_visits_ig": 665,
+        "new_followers_fb": 3,
+        "new_followers_ig": 46
       },
       "last_30d": {
-        "impressions": 274164,
-        "reach": 93929,
-        "spend": 269.19,
+        "impressions": 269567,
+        "reach": 93200,
+        "spend": 263.95,
         "cpm": 0.98,
-        "clicks": 12011,
+        "clicks": 11534,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 11515,
-        "new_followers_fb": 70,
-        "new_followers_ig": 936
+        "profile_visits_ig": 11532,
+        "new_followers_fb": 64,
+        "new_followers_ig": 905
       }
     },
     "por_anuncio": [
@@ -246,10 +246,10 @@
         "nombre": "Promo nov catalogo",
         "periodos": {
           "last_7d": {
-            "impressions": 40613,
-            "reach": 13340,
-            "spend": 23.73,
-            "cpm": 0.58
+            "impressions": 28698,
+            "reach": 11094,
+            "spend": 17.0,
+            "cpm": 0.59
           },
           "last_30d": {
             "impressions": 218131,
@@ -264,10 +264,10 @@
         "nombre": "Setup fotos",
         "periodos": {
           "last_30d": {
-            "impressions": 19180,
-            "reach": 5501,
-            "spend": 29.8,
-            "cpm": 1.55
+            "impressions": 14583,
+            "reach": 4676,
+            "spend": 24.56,
+            "cpm": 1.68
           }
         }
       },
@@ -298,6 +298,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 44904
+    "ig_followers_total": 44923
   }
 }
