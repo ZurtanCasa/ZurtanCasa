@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-26T21:37:55.273Z",
+  "_ultima_actualizacion": "2026-11-26T21:54:15.271Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -760,7 +760,7 @@
       "notas": "10 A 17HS LLEVAR SOMBRILLA",
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-10-16T19:24:40.187Z",
-      "updated_at": "2026-11-19T16:24:50.448Z"
+      "updated_at": "2026-11-26T21:54:15.271Z"
     },
     {
       "id": "c726d384-45c5-4853-b518-b13f92bd0a39",
