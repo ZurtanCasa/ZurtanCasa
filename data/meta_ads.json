@@ -1,37 +1,37 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-27T01:48:25.975971-03:00",
+  "_ultima_actualizacion": "2026-11-27T16:54:50.108213-03:00",
   "periodos": {
     "today": {
-      "spend": 0.19,
+      "spend": 4.08,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 88,
-      "clicks": 3
+      "impressions": 930,
+      "clicks": 24
     },
     "yesterday": {
-      "spend": 5.12,
+      "spend": 5.13,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1113,
+      "impressions": 1120,
       "clicks": 45
     },
     "last_7d": {
-      "spend": 11.32,
+      "spend": 11.33,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 7890,
+      "impressions": 7897,
       "clicks": 321
     },
     "last_30d": {
-      "spend": 254.43,
+      "spend": 254.44,
       "revenue_reportado": 1320.0,
       "roas": 5.19,
       "conversiones": 1,
-      "impressions": 261061,
+      "impressions": 261068,
       "clicks": 10509
     }
   },
@@ -73,11 +73,11 @@
       "id": "120247886882040436",
       "nombre": "Coleccion Olivos",
       "tipo": "performance",
-      "spend": 7.63,
+      "spend": 7.64,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1586,
+      "impressions": 1593,
       "clicks": 67
     },
     {
@@ -196,32 +196,32 @@
     {
       "year": 2026,
       "month": 11,
-      "spend": 218.16,
+      "spend": 222.06,
       "revenue_reportado": 1320.0,
-      "roas": 6.05,
+      "roas": 5.94,
       "conversiones": 1,
-      "impressions": 240309,
-      "clicks": 8760
+      "impressions": 241158,
+      "clicks": 8781
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 88,
-        "reach": 68,
-        "spend": 0.19,
-        "cpm": 2.16,
-        "clicks": 3,
+        "impressions": 930,
+        "reach": 543,
+        "spend": 4.08,
+        "cpm": 4.39,
+        "clicks": 24,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 3,
         "new_followers_ig": 0
       },
       "yesterday": {
-        "impressions": 1113,
-        "reach": 643,
-        "spend": 5.12,
-        "cpm": 4.6,
+        "impressions": 1120,
+        "reach": 646,
+        "spend": 5.13,
+        "cpm": 4.58,
         "clicks": 45,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
@@ -229,26 +229,26 @@
         "new_followers_ig": 0
       },
       "last_7d": {
-        "impressions": 7890,
-        "reach": 4825,
-        "spend": 11.32,
+        "impressions": 7897,
+        "reach": 4834,
+        "spend": 11.33,
         "cpm": 1.43,
         "clicks": 321,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 742,
+        "profile_visits_ig": 749,
         "new_followers_fb": 5,
-        "new_followers_ig": 116
+        "new_followers_ig": 158
       },
       "last_30d": {
-        "impressions": 261061,
-        "reach": 91285,
-        "spend": 254.43,
+        "impressions": 261068,
+        "reach": 91296,
+        "spend": 254.44,
         "cpm": 0.97,
         "clicks": 10509,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 11715,
+        "profile_visits_ig": 11722,
         "new_followers_fb": 52,
-        "new_followers_ig": 989
+        "new_followers_ig": 1031
       }
     },
     "por_anuncio": [
@@ -257,28 +257,28 @@
         "nombre": "Coleccion olivos",
         "periodos": {
           "today": {
-            "impressions": 88,
-            "reach": 68,
-            "spend": 0.19,
-            "cpm": 2.16
+            "impressions": 930,
+            "reach": 535,
+            "spend": 4.08,
+            "cpm": 4.39
           },
           "yesterday": {
-            "impressions": 1113,
-            "reach": 643,
-            "spend": 5.12,
-            "cpm": 4.6
+            "impressions": 1120,
+            "reach": 646,
+            "spend": 5.13,
+            "cpm": 4.58
           },
           "last_7d": {
-            "impressions": 1586,
-            "reach": 843,
-            "spend": 7.63,
-            "cpm": 4.81
+            "impressions": 1593,
+            "reach": 846,
+            "spend": 7.64,
+            "cpm": 4.8
           },
           "last_30d": {
-            "impressions": 1586,
-            "reach": 843,
-            "spend": 7.63,
-            "cpm": 4.81
+            "impressions": 1593,
+            "reach": 846,
+            "spend": 7.64,
+            "cpm": 4.8
           }
         }
       },
@@ -339,6 +339,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 45005
+    "ig_followers_total": 45025
   }
 }
