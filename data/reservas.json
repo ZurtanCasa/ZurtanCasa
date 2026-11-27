@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-27T14:55:09.455Z",
+  "_ultima_actualizacion": "2026-11-27T15:00:21.269Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -1627,7 +1627,7 @@
     {
       "id": "18fa4c6f-afb1-41b0-96cb-5527c94fa06f",
       "nombre": "Camila Ginevra",
-      "celular": "",
+      "celular": "094888533",
       "ci": "64633895",
       "direccion": "PUNTA DEL ESTE, Edificio Oceano Manantiales apatrtamento 501 sobre ruta 10 casi ruta 104.",
       "articulos": "Numero 24758 gold 3x2 poliester Y DOS UNIDADES DE  245411 PET BARK 230 X 160.",
@@ -1638,7 +1638,7 @@
       "notas": "",
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-11-27T14:55:09.455Z",
-      "updated_at": "2026-11-27T14:55:09.455Z"
+      "updated_at": "2026-11-27T15:00:21.269Z"
     }
   ]
 }
