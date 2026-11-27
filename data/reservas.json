@@ -1,6 +1,6 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-27T15:00:21.269Z",
+  "_ultima_actualizacion": "2026-11-27T15:22:21.349Z",
   "reservas": [
     {
       "id": "01be2f95-dc5e-48b9-b7ca-f2a70b0540b1",
@@ -753,14 +753,15 @@
       "celular": "097532840",
       "ci": "",
       "direccion": "ARAUCANA 1353 ESQ LUSARNA",
-      "articulos": "ARAUCANA 1353 ESQ LUSARNA\nMESA SUAR 250",
+      "articulos": "ARAUCANA 1353 ESQ LUSARNA\nMESA SUAR 220",
       "sena": "",
       "sena_devuelta": false,
       "fecha_entrega": "2026-11-30",
       "notas": "10 A 17HS LLEVAR SOMBRILLA",
       "estado": "Pago y Sin Entregar",
       "created_at": "2026-10-16T19:24:40.187Z",
-      "updated_at": "2026-11-26T21:54:15.271Z"
+      "updated_at": "2026-11-27T15:22:21.349Z",
+      "horario": ""
     },
     {
       "id": "c726d384-45c5-4853-b518-b13f92bd0a39",
