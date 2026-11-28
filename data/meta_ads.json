@@ -1,14 +1,14 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-27T16:54:50.108213-03:00",
+  "_ultima_actualizacion": "2026-11-27T21:03:25.204336-03:00",
   "periodos": {
     "today": {
-      "spend": 4.08,
+      "spend": 5.65,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 930,
-      "clicks": 24
+      "impressions": 1510,
+      "clicks": 34
     },
     "yesterday": {
       "spend": 5.13,
@@ -196,22 +196,22 @@
     {
       "year": 2026,
       "month": 11,
-      "spend": 222.06,
+      "spend": 223.63,
       "revenue_reportado": 1320.0,
-      "roas": 5.94,
+      "roas": 5.9,
       "conversiones": 1,
-      "impressions": 241158,
-      "clicks": 8781
+      "impressions": 241738,
+      "clicks": 8791
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 930,
-        "reach": 543,
-        "spend": 4.08,
-        "cpm": 4.39,
-        "clicks": 24,
+        "impressions": 1510,
+        "reach": 814,
+        "spend": 5.65,
+        "cpm": 3.74,
+        "clicks": 34,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 3,
@@ -257,10 +257,10 @@
         "nombre": "Coleccion olivos",
         "periodos": {
           "today": {
-            "impressions": 930,
-            "reach": 535,
-            "spend": 4.08,
-            "cpm": 4.39
+            "impressions": 1510,
+            "reach": 814,
+            "spend": 5.65,
+            "cpm": 3.74
           },
           "yesterday": {
             "impressions": 1120,
@@ -339,6 +339,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 45025
+    "ig_followers_total": 45032
   }
 }
