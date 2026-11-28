@@ -1,38 +1,38 @@
 {
   "_status": "ok",
-  "_ultima_actualizacion": "2026-11-27T21:03:25.204336-03:00",
+  "_ultima_actualizacion": "2026-11-28T01:33:09.410775-03:00",
   "periodos": {
     "today": {
-      "spend": 5.65,
+      "spend": 0.66,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1510,
-      "clicks": 34
+      "impressions": 446,
+      "clicks": 11
     },
     "yesterday": {
-      "spend": 5.13,
+      "spend": 7.33,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1120,
-      "clicks": 45
+      "impressions": 2555,
+      "clicks": 46
     },
     "last_7d": {
-      "spend": 11.33,
+      "spend": 14.97,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 7897,
-      "clicks": 321
+      "impressions": 4148,
+      "clicks": 113
     },
     "last_30d": {
-      "spend": 254.44,
+      "spend": 252.09,
       "revenue_reportado": 1320.0,
-      "roas": 5.19,
+      "roas": 5.24,
       "conversiones": 1,
-      "impressions": 261068,
-      "clicks": 10509
+      "impressions": 258547,
+      "clicks": 10061
     }
   },
   "campanas": [
@@ -51,34 +51,34 @@
       "id": "120248349674700436",
       "nombre": "Flyer IVA Noviembre",
       "tipo": "performance",
-      "spend": 52.51,
+      "spend": 47.43,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 32718,
-      "clicks": 1763
-    },
-    {
-      "id": "120247964557320436",
-      "nombre": "Octubre Ad catalogo",
-      "tipo": "performance",
-      "spend": 14.79,
-      "revenue_reportado": 0.0,
-      "roas": 0.0,
-      "conversiones": 0,
-      "impressions": 8402,
-      "clicks": 1052
+      "impressions": 30135,
+      "clicks": 1610
     },
     {
       "id": "120247886882040436",
       "nombre": "Coleccion Olivos",
       "tipo": "performance",
-      "spend": 7.64,
+      "spend": 14.97,
       "revenue_reportado": 0.0,
       "roas": 0.0,
       "conversiones": 0,
-      "impressions": 1593,
-      "clicks": 67
+      "impressions": 4148,
+      "clicks": 113
+    },
+    {
+      "id": "120247964557320436",
+      "nombre": "Octubre Ad catalogo",
+      "tipo": "performance",
+      "spend": 10.19,
+      "revenue_reportado": 0.0,
+      "roas": 0.0,
+      "conversiones": 0,
+      "impressions": 5909,
+      "clicks": 711
     },
     {
       "id": "120248473641720436",
@@ -196,59 +196,59 @@
     {
       "year": 2026,
       "month": 11,
-      "spend": 223.63,
+      "spend": 225.97,
       "revenue_reportado": 1320.0,
-      "roas": 5.9,
+      "roas": 5.84,
       "conversiones": 1,
-      "impressions": 241738,
-      "clicks": 8791
+      "impressions": 243229,
+      "clicks": 8814
     }
   ],
   "marketing": {
     "periodos": {
       "today": {
-        "impressions": 1510,
-        "reach": 814,
-        "spend": 5.65,
-        "cpm": 3.74,
-        "clicks": 34,
-        "profile_visits_fb": 0,
-        "profile_visits_ig": 0,
-        "new_followers_fb": 3,
-        "new_followers_ig": 0
-      },
-      "yesterday": {
-        "impressions": 1120,
-        "reach": 646,
-        "spend": 5.13,
-        "cpm": 4.58,
-        "clicks": 45,
+        "impressions": 446,
+        "reach": 336,
+        "spend": 0.66,
+        "cpm": 1.48,
+        "clicks": 11,
         "profile_visits_fb": 0,
         "profile_visits_ig": 0,
         "new_followers_fb": 1,
         "new_followers_ig": 0
       },
-      "last_7d": {
-        "impressions": 7897,
-        "reach": 4834,
-        "spend": 11.33,
-        "cpm": 1.43,
-        "clicks": 321,
+      "yesterday": {
+        "impressions": 2555,
+        "reach": 1349,
+        "spend": 7.33,
+        "cpm": 2.87,
+        "clicks": 46,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 749,
-        "new_followers_fb": 5,
-        "new_followers_ig": 158
+        "profile_visits_ig": 0,
+        "new_followers_fb": 3,
+        "new_followers_ig": 0
+      },
+      "last_7d": {
+        "impressions": 4148,
+        "reach": 1936,
+        "spend": 14.97,
+        "cpm": 3.61,
+        "clicks": 113,
+        "profile_visits_fb": 0,
+        "profile_visits_ig": 938,
+        "new_followers_fb": 6,
+        "new_followers_ig": 149
       },
       "last_30d": {
-        "impressions": 261068,
-        "reach": 91296,
-        "spend": 254.44,
-        "cpm": 0.97,
-        "clicks": 10509,
+        "impressions": 258547,
+        "reach": 91356,
+        "spend": 252.09,
+        "cpm": 0.98,
+        "clicks": 10061,
         "profile_visits_fb": 0,
-        "profile_visits_ig": 11722,
-        "new_followers_fb": 52,
-        "new_followers_ig": 1031
+        "profile_visits_ig": 11750,
+        "new_followers_fb": 42,
+        "new_followers_ig": 1024
       }
     },
     "por_anuncio": [
@@ -257,46 +257,28 @@
         "nombre": "Coleccion olivos",
         "periodos": {
           "today": {
-            "impressions": 1510,
-            "reach": 814,
-            "spend": 5.65,
-            "cpm": 3.74
+            "impressions": 446,
+            "reach": 357,
+            "spend": 0.66,
+            "cpm": 1.48
           },
           "yesterday": {
-            "impressions": 1120,
-            "reach": 646,
-            "spend": 5.13,
-            "cpm": 4.58
+            "impressions": 2555,
+            "reach": 1349,
+            "spend": 7.33,
+            "cpm": 2.87
           },
           "last_7d": {
-            "impressions": 1593,
-            "reach": 846,
-            "spend": 7.64,
-            "cpm": 4.8
+            "impressions": 4148,
+            "reach": 1936,
+            "spend": 14.97,
+            "cpm": 3.61
           },
           "last_30d": {
-            "impressions": 1593,
-            "reach": 846,
-            "spend": 7.64,
-            "cpm": 4.8
-          }
-        }
-      },
-      {
-        "id": "120248395191940436",
-        "nombre": "Promo nov catalogo",
-        "periodos": {
-          "last_7d": {
-            "impressions": 6304,
-            "reach": 4096,
-            "spend": 3.69,
-            "cpm": 0.59
-          },
-          "last_30d": {
-            "impressions": 218131,
-            "reach": 72188,
-            "spend": 177.91,
-            "cpm": 0.82
+            "impressions": 4148,
+            "reach": 1936,
+            "spend": 14.97,
+            "cpm": 3.61
           }
         }
       },
@@ -305,10 +287,10 @@
         "nombre": "Setup fotos",
         "periodos": {
           "last_30d": {
-            "impressions": 8402,
-            "reach": 3070,
-            "spend": 14.79,
-            "cpm": 1.76
+            "impressions": 5909,
+            "reach": 2399,
+            "spend": 10.19,
+            "cpm": 1.72
           }
         }
       },
@@ -317,10 +299,22 @@
         "nombre": "Anuncio de Tráfico con la configuración recomendada",
         "periodos": {
           "last_30d": {
-            "impressions": 32718,
-            "reach": 18984,
-            "spend": 52.51,
-            "cpm": 1.6
+            "impressions": 30135,
+            "reach": 17833,
+            "spend": 47.43,
+            "cpm": 1.57
+          }
+        }
+      },
+      {
+        "id": "120248395191940436",
+        "nombre": "Promo nov catalogo",
+        "periodos": {
+          "last_30d": {
+            "impressions": 218131,
+            "reach": 72188,
+            "spend": 177.91,
+            "cpm": 0.82
           }
         }
       },
@@ -339,6 +333,6 @@
     ],
     "_ig_ok": true,
     "_fb_ok": true,
-    "ig_followers_total": 45032
+    "ig_followers_total": 45041
   }
 }
